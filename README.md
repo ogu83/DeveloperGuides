@@ -1,12 +1,12 @@
 # DeveloperGuides
 
-Curated reference notes distilled from respected software engineering books.
+Curated reference notes distilled from respectable software engineering books.
 
 ## Guides
 
-- [Practical Debugging for .NET Developers - Reference Guide](Practical_Debugging_DotNet_Reference.md) — Debugging workflows, tools, and checklists for .NET applications.
-- [Database Tuning Reference Guide](Database_Tuning_Reference.md) — Principles and practical steps to diagnose and improve database performance.
-- [Refactoring Guide for LLM Agents](Refactoring_Guide_for_LLM_Agents.md) — Refactoring concepts, code smells, and patterns tailored for LLM-driven code edits.
+- [Practical Debugging for .NET Developers - Reference Guide](Practical_Debugging_DotNet_Reference.md): Debugging workflows, tools, and checklists for .NET applications.
+- [Database Tuning Reference Guide](Database_Tuning_Reference.md): Principles and practical steps to diagnose and improve database performance.
+- [Refactoring Guide for LLM Agents](Refactoring_Guide_for_LLM_Agents.md): Refactoring concepts, code smells, and patterns tailored for LLM-driven code edits.
 
 ## How to use
 
