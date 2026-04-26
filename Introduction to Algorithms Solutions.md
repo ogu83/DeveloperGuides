@@ -1,7 +1,5 @@
 # Solutions for Introduction to algorithms second edition
-
 ## Philip Bille
-
 The author of this document takes absolutely no responsibility for the contents. This is merely
 a vague suggestion to a solution to some of the exercises posed in the book Introduction to algorithms by Cormen, Leiserson and Rivest. It is very likely that there are many errors and that the
 solutions are wrong. If you have found an error, have a better solution or wish to contribute in
@@ -15,9 +13,6 @@ Best regards,
 Philip Bille
 
 Last update: December 9, 2002
-
-
------
 
 1.2 − 2
 
@@ -54,9 +49,6 @@ n! 9 11 12 13 15 17
 
 2
 
-
------
-
 2.1 − 2
 
 In line 5 of INSERTION-SORT alter A[i] > key to A[i] < key in order to sort the elements in
@@ -64,18 +56,18 @@ nonincreasing order.
 
 2.1 − 3
 
-**Algorithm 1 LINEAR-SEARCH(A, v)**
+Algorithm 1 LINEAR-SEARCH(A, v)
 
-**Input: A = ⟨a1, a2, . . . an⟩** and a value v.
-**Output: An index i such that v = A[i] or nil if v** A
+Input: A = ⟨a1, a2, . . . an⟩ and a value v.
+Output: An index i such that v = A[i] or nil if v A
 ̸∈
-**for i** 1 to n do
+for i 1 to n do
 ←
-**if A[i] = v then**
-**return i**
-**end if**
-**end for**
-**return nil**
+if A[i] = v then
+return i
+end if
+end for
+return nil
 
 As a loop invariant we say that none of the elements at index A[1, . . ., i − 1] are equal to v.
 Clearly, all properties are fullfilled by this loop invariant.
@@ -89,32 +81,28 @@ n[3]/1000 − 100n[2] − 100n + 3 = Θ(n[3]).
 Assume that FIND-MIN(A, r, s) returns the index of the smallest element in A between indices r
 and s. Clearly, this can be implemented in O(s − r) time if r ⩾ s.
 
-**Algorithm 2 SELECTION-SORT(A)**
+Algorithm 2 SELECTION-SORT(A)
 
-**Input: A = ⟨a1, a2, . . . an⟩**
-**Output: sorted A.**
-**for i** 1 to n − 1 do
+Input: A = ⟨a1, a2, . . . an⟩
+Output: sorted A.
+for i 1 to n − 1 do
 ←
 j FIND-MIN(A, i, n)
 ←
 A[j] A[i]
 ↔
-**end for**
+end for
 
 As a loop invariant we choose that A[1, . . ., i − 1] are sorted and all other elements are greater
 than these. We only need to iterate to n − 1 since according to the invariant the nth element will
 then the largest.
 The n calls of FIND-MIN gives the following bound on the time complexity:
 
-
 �
-
 
 = Θ(n[2])
 
-
 Θ
-
 
 � n
 �
@@ -122,7 +110,6 @@ The n calls of FIND-MIN gives the following bound on the time complexity:
 i
 
 i=1
-
 
 This holds for both the best- and worst-case running time.
 
@@ -135,9 +122,6 @@ be in the second half. Both the worst-case and average-case of LINEAR-SEARCH is 
 
 3
 
-
------
-
 2.2 − 4
 
 One can modify an algorithm to have a best-case running time by specializing it to handle a bestcase input efficiently.
@@ -146,52 +130,49 @@ One can modify an algorithm to have a best-case running time by specializing it 
 
 A recursive version of binary search on an array. Clearly, the worst-case running time is Θ(lg n).
 
-**Algorithm 3 BINARY-SEARCH(A, v, p, r)**
+Algorithm 3 BINARY-SEARCH(A, v, p, r)
 
-**Input: A sorted array A and a value v.**
-**Output: An index i such that v = A[i] or nil.**
-**if p ⩾** r and v ̸= A[p] then
-**return nil**
-**end if**
+Input: A sorted array A and a value v.
+Output: An index i such that v = A[i] or nil.
+if p ⩾ r and v ̸= A[p] then
+return nil
+end if
 j A[ (r − p)/2 ]
 ← ⌊ ⌋
-**if v = A[j] then**
-**return j**
-**else**
-**if v < A[j] then**
-**return BINARY-SEARCH(A, v, p, j)**
-**else**
-**return BINARY-SEARCH(A, v, j, r)**
-**end if**
-**end if**
+if v = A[j] then
+return j
+else
+if v < A[j] then
+return BINARY-SEARCH(A, v, p, j)
+else
+return BINARY-SEARCH(A, v, j, r)
+end if
+end if
 
 2.3 − 7
 
 Give a Θ(n lg n) time algorithm for determining if there exist two elements in an set S whose sum
 is exactly some value x.
 
-**Algorithm 4 CHECKSUMS(A, x)**
+Algorithm 4 CHECKSUMS(A, x)
 
-**Input: An array A and a value x.**
-**Output: A boolean value indicating if there is two elements in A whose sum is x.**
+Input: An array A and a value x.
+Output: A boolean value indicating if there is two elements in A whose sum is x.
 A SORT(A)
 ←
-n _length[A]_
+n length[A]
 ←
-**for i** **to n do**
+for i to n do
 ←
-**if A[i] ⩾** 0 and BINARY-SEARCH(A, A[i] − x, 1, n) then
-**return true**
-**end if**
-**end for**
-**return false**
+if A[i] ⩾ 0 and BINARY-SEARCH(A, A[i] − x, 1, n) then
+return true
+end if
+end for
+return false
 
 Clearly, this algorithm does the job. (It is assumed that nil cannot be true in the if-statement.)
 
 4
-
-
------
 
 3.1 − 1
 
@@ -210,19 +191,19 @@ The first inequality could not be satisfied otherwise.
 
 2[n][+][1] = O(2[n]) since 2[n][+][1] = 2 · 2[n] ⩽ 2 · 2[n]! However 2[2n] is not O(2[n]): by definition we have
 2[2n] = (2[n])[2] which for no constant c asymptotically may be less than or equal to c 2[n].
-                                                                       
+
 3 − 4
 
 Let f(n) and g(n) be asymptotically positive functions.
 
-**a.** No, f(n) = O(g(n)) does not imply g(n) = O(f(n)). Clearly, n = O(n[2]) but n[2] = O(n).
+a. No, f(n) = O(g(n)) does not imply g(n) = O(f(n)). Clearly, n = O(n[2]) but n[2] = O(n).
 ̸
 
-**b.** No, f(n) + g(n) is not Θ(min(f(n), g(n))). As an example notice that n + 1 = Θ(min(n, 1)) =
+b. No, f(n) + g(n) is not Θ(min(f(n), g(n))). As an example notice that n + 1 = Θ(min(n, 1)) =
 ̸
 Θ(1).
 
-**c.** Yes, if f(n) = O(g(n)) then lg(f(n)) = O(lg(g(n))) provided that f(n) ⩾ 1 and lg(g(n)) ⩾ 1
+c. Yes, if f(n) = O(g(n)) then lg(f(n)) = O(lg(g(n))) provided that f(n) ⩾ 1 and lg(g(n)) ⩾ 1
 are greater than or equal 1. We have that:
 
 f(n) ⩽ cg(n) lg f(n) ⩽ lg(cg(n)) = lg c + lg g(n)
@@ -235,33 +216,26 @@ b = [lg][(][c][) +][ lg][ g][(][n][)] = lg c
 
 lg g(n) lg g(n) [+][ 1][ ⩽] [lg][ c][ +][ 1]
 
-
 The last inequality holds since lg g(n) ⩾ 1.
 
-**d.** No, f(n) = O(g(n)) does not imply 2[f][(][n][)] = O(2[g][(][n][)]). If f(n) = 2n and g(n) = n we have that
+d. No, f(n) = O(g(n)) does not imply 2[f][(][n][)] = O(2[g][(][n][)]). If f(n) = 2n and g(n) = n we have that
 2n ⩽ 2 · n but not 2[2n] ⩽ c2[n] for any constant c by exercise 3.1 − 4.
 
-**e.** Yes and no, if f(n) < 1 for large n then f(n)[2] < f(n) and the upper bound will not hold.
+e. Yes and no, if f(n) < 1 for large n then f(n)[2] < f(n) and the upper bound will not hold.
 Otherwise f(n) > 1 and the statement is trivially true.
 
-**f.** Yes, f(n) = O(g(n)) implies g(n) = Ω(f(n)). We have f(n) ⩽ cg(n) for positive c and thus
+f. Yes, f(n) = O(g(n)) implies g(n) = Ω(f(n)). We have f(n) ⩽ cg(n) for positive c and thus
 1/c · f(n) ⩽ g(n).
 
-
 √
-**g.** No, clearly 2[n] ⩽̸ c2[n/2] = c
-
+g. No, clearly 2[n] ⩽̸ c2[n/2] = c
 
 2[n] for any constant c if n is sufficiently large.
 
-
-**h.** By a small modification to exercise 3.1−1 we have that f(n)+o(f(n)) = Θ(max(f(n), o(f(n)))) =
+h. By a small modification to exercise 3.1−1 we have that f(n)+o(f(n)) = Θ(max(f(n), o(f(n)))) =
 Θ(f(n)).
 
 5
-
-
------
 
 4.1 − 1
 
@@ -303,25 +277,23 @@ lg n−1
 i=0
 
 = n [(][3/2][)][lg][ n][ −] [1] + Θ(n[lg][ 3])
-                        
+
 (3/2) − 1
 
 = 2(n(3/2)[lg][ n] − n) + Θ(n[lg][ 3])
-
 
 = 2n [3][lg][ n]
 
 2[lg][ n][ −] [2n][ +][ Θ][(][n][lg][ 3][)]
 
 = 2 3[lg][ n] − 2n + Θ(n[lg][ 3])
-                        
+
 = 2n[lg][ 3] − 2n + Θ(n[lg][ 3])
 
 = Θ(n[lg][ 3])
 
 We can prove this by substitution by assumming that T (⌊n/2⌋) ⩽ c⌊n/2⌋[lg][ 3] − c⌊n/2⌋. We
 obtain:
-
 
 T (n) = 3T ( n/2 ) + n
 ⌊ ⌋
@@ -342,9 +314,6 @@ Where the last inequality holds for c ⩾ 2.
 
 6
 
-
------
-
 4.2 − 3
 
 Draw the recursion tree of T (n) = 4T ( n/2 ) + cn. The height of the tree is lg n, the out degree
@@ -356,11 +325,9 @@ contributes 4[lg][ n]Θ(1) = Θ(n[2]). Hence we have a bound on the sum given by
 T (n) = 4T ( n/2 ) + cn
 ⌊ ⌋
 
-
 =
 
 ⩽
-
 
 lg n−1
 �
@@ -377,7 +344,6 @@ lg n−1
 
        i=0
 
-
 lg n−1
 �
 
@@ -386,7 +352,7 @@ lg n−1
 i=0
 
 = cn [2][lg][ n][ −] [1] + Θ(n[2])
-                                    
+
 2 − 1
 
 = Θ(n[2])
@@ -394,14 +360,12 @@ i=0
 Using the substitution method we can verify this bound. Assume the following clever induction
 hypothesis. Let T (⌊n/2⌋) ⩽ c⌊n/2⌋[2] − c⌊n/2⌋. We have:
 
-
 T (n) = 4T ( n/2 ) + cn
 ⌊ ⌋
 
 ⩽ 4(c⌊n/2⌋[2] − c⌊n/2⌋) + cn
 
 < 4c(n/2)[2] − 4cn/2 + cn
-
 
 = cn[2] − 2cn + cn
 
@@ -414,17 +378,14 @@ n[log][2][ 4] = n[2]
 
 T (n) = 4T (n/2) + n. Since n = O(n[2][−][ϵ]) case 1 applies and we get T (n) = Θ(n[2]).
 
-  
+
 T (n) = 4T (n/2) + n[2]. Since n[2] = Θ(n[2]) we have T (n) = Θ(n[2] lg n).
 
-  
+
   - T (n) = 4T (n/2) + n[3]. Since n[3] = Ω(n[2][+][ϵ]) and 4(n/2)[3] = 1/2n[3] ⩽ cn[3] for some c < 1 we
 have that T (n) = Θ(n[3]).
 
 7
-
-
------
 
 6.1 − 1
 
@@ -484,41 +445,38 @@ A[PARENT(i)].
 
 8
 
-
------
-
-**Initialization:** Before the first iteration of the while the only change of the max-heap is that A[i]
+Initialization: Before the first iteration of the while the only change of the max-heap is that A[i]
 is increased an may therefore violate the max-heap property.
 
-**Maintenance:** Immediately before the iteration i and the child that violated the max-heap property has been exchanged thus restoring the max-heap property between these. This can only
+Maintenance: Immediately before the iteration i and the child that violated the max-heap property has been exchanged thus restoring the max-heap property between these. This can only
 destroy the max-heap property between i and the parent of i.
 
-**Termination:** The termination condition of the while states that at the end of the iteration the
+Termination: The termination condition of the while states that at the end of the iteration the
 max-heap property between i and its parent is restored or the i is the root of the heap.
 We see by the loop invariant that the heap property is restored at end of the iteration.
 
 6.5 − 7
 
-**Algorithm 5 HEAP-DELETE(A, i)**
+Algorithm 5 HEAP-DELETE(A, i)
 
-**Input: A max-heap A and integers i.**
-**Output: The heap A with the element a position i deleted.**
+Input: A max-heap A and integers i.
+Output: The heap A with the element a position i deleted.
 A[i] A[heap-size[A]]
 ↔
-_heap-size[A]_ _heap-size[A] −_ 1
+heap-size[A] heap-size[A] − 1
 ←
-_key_ A[i]
+key A[i]
 ←
-**if key ⩽** A[PARENT(i)] then
+if key ⩽ A[PARENT(i)] then
 MAX-HEAPIFY(A, i)
-**else**
-**while i > 1 and A[PARENT(i)] < key do**
+else
+while i > 1 and A[PARENT(i)] < key do
 A[i] A[PARENT(i)]
 ↔
 i PARENT(i)
 ←
-**end while**
-**end if**
+end while
+end if
 
 6.5 − 8
 
@@ -530,36 +488,30 @@ running time is O(n lg k).
 
 6 − 2
 
-**a.** A d-ary heap can be implemented using a dimensional array as follows. The root is kept in
+a. A d-ary heap can be implemented using a dimensional array as follows. The root is kept in
 A[1], its d children are kept in order in A[2] through A[d+1] and so on. The procedures to map a
 node with index i to its parent and its jth child are given by:
 D-ARY-PARENT(i)
-**return** (i − 2)/d + 1
+return (i − 2)/d + 1
 ⌊ ⌋
 
 D-ARY-CHILD(i, j)
-**return d(i −** 1) + j + 1
+return d(i − 1) + j + 1
 
-**b.** Since each node has d children the height of the tree is Θ(logd n).
+b. Since each node has d children the height of the tree is Θ(logd n).
 
-**c.** The HEAP-EXTRACT-MAX algorithm given in the text works fine for d-ary heaps; the problem
+c. The HEAP-EXTRACT-MAX algorithm given in the text works fine for d-ary heaps; the problem
 is MAX-HEAPIFY. Here we need to compare the argument node to all its children. This takes
 Θ(d logd n) and dominates the overall time spent by HEAP-EXTRACT-MAX.
 
 9
 
-
------
-
-**d.** The MAX-HEAP-INSERT given in the text works fine as well. The worst-case running time is
+d. The MAX-HEAP-INSERT given in the text works fine as well. The worst-case running time is
 the height of the heap, that is Θ(logd n).
 
-**e.** The HEAP-INCREASE-KEY algorithm given in the text works fine.
+e. The HEAP-INCREASE-KEY algorithm given in the text works fine.
 
 10
-
-
------
 
 7.1 − 2
 
@@ -592,18 +544,15 @@ we have worst-case partitioning. The running time is again Θ(n[2]).
 
 7 − 4
 
-**a.** Clearly, the QUICKSORT’ does exactly the same as the original QUICKSORT and therefore works
+a. Clearly, the QUICKSORT’ does exactly the same as the original QUICKSORT and therefore works
 correctly.
 
-**b.** Worst-case partitioning can cause the stack depth of QUICKSORT’ to be Θ(n).
+b. Worst-case partitioning can cause the stack depth of QUICKSORT’ to be Θ(n).
 
-**c.** If we recursively call QUICKSORT’ on the smallest subarray returned by PARTITION we will
+c. If we recursively call QUICKSORT’ on the smallest subarray returned by PARTITION we will
 avoid the problem and retain a O(lg n) bound on the stack depth.
 
 11
-
-
------
 
 8.2 − 3
 
@@ -634,20 +583,17 @@ Show ho to improve the worst-case running time of bucket sort to O(n lg n). Simp
 insertion sort used to sort the linked lists with some worst case O(n lg n) sorting algorithm, e.g.
 merge sort. The sorting then takes time:
 
-
 n−1
 �
 
 O(ni lg ni) ⩽
 i=0
 
-
 n−1
 �
 
 O(ni lg n) = O(lg n)
 i=0
-
 
 n−1
 �
@@ -656,14 +602,9 @@ O(ni) = O(n lg n)
 
 i=0
 
-
 The total time of bucket sort is thus O(n lg n).
 
-
 12
-
-
------
 
 9.1 − 1
 
@@ -698,18 +639,15 @@ T (n) ⩽ T (⌈n/k⌉) + T (3n/4 + k) + O(n)
 Solving by substitution we obtain a bound for which k the algorithm will be linear. Assume
 T (n) ⩽ cn for all smaller n. We have:
 
-
 � n
 T (n) ⩽ c
 
 k
 
-
 � � 3n �
 + c + O(n)
 
 4 [+][ k]
-
 
 ⩽ c( [n] + ck + O(n)
 
@@ -743,29 +681,23 @@ how to find an arbitrary order statistic in O(n).
 
 13
 
+Algorithm 6 SELECT(A, i)
 
------
-
-**Algorithm 6 SELECT(A, i)**
-
-**Input: Array A and integer i.**
-**Output: The ith largest element of A.**
+Input: Array A and integer i.
+Output: The ith largest element of A.
 x MEDIAN(A).
 ←
 Partition A around x
-**if i ⩽** ⌊(n + 1)/2⌋ **then**
+if i ⩽ ⌊(n + 1)/2⌋ then
 Recursively find the ith in the first half
-**else**
+else
 Recursively find (i − (n + 1)/2 )th in the second half
 ⌊ ⌋
-**end if**
+end if
 
 Clearly, this algorithm does the job.
 
 14
-
-
------
 
 10.1 − 2
 
@@ -792,9 +724,6 @@ a new element to the front of the list and POP is done by deleting the first ele
 
 15
 
-
------
-
 11.1 − 1
 
 Find the maximum element in a direct-address table T of length m. In the worst-case searching
@@ -818,9 +747,6 @@ can be optimized in the following way: Comparing the keys should be done first c
 hash values and if succesfull then comparing the keys.
 
 16
-
-
------
 
 12.1 − 2
 
@@ -859,42 +785,36 @@ Similarly if x is the right child then running TREE-PREDECESSOR yields y.
 
 12.3 − 1
 
-**Algorithm 7 TREE-INSERT(z, k)**
+Algorithm 7 TREE-INSERT(z, k)
 
-**Input: A node z and value k.**
-**Output: The binary tree with k inserted.**
-**if z = nil then**
-_key[z]_ k
+Input: A node z and value k.
+Output: The binary tree with k inserted.
+if z = nil then
+key[z] k
 ←
-_left[z]_ **nil**
+left[z] nil
 ←
-_right[z]_ **nil**
+right[z] nil
 ←
-**else**
-**if k < key[z] then**
+else
+if k < key[z] then
 TREE-INSERT(left[z], k)
-**else**
+else
 TREE-INSERT(right[z], k)
-**end if**
-**end if**
+end if
+end if
 
 17
-
-
------
 
 12.3 − 5
 
 The deletion operation is not commutative. A counterexample is shown in figure 1.
 
-
 Delete 1
 
 1 4 4
 
-
 Delete 2
-
 
 Delete 2 Delete 1
 
@@ -905,9 +825,6 @@ Delete 2 Delete 1
 Figure 1: Two deletions where the order of the operations matter.
 
 18
-
-
------
 
 13.1 − 5
 
@@ -931,9 +848,6 @@ Inserting the keys 41, 38, 31, 12, 19, 8 into an initially empty red-black tree 
 in figure 2 on page 20.
 
 19
-
-
------
 
 41 b
 
@@ -960,9 +874,7 @@ b 41 b
 
 19 b 41 b
 
-
 1
-
 
 r 41 r
 
@@ -978,12 +890,9 @@ b 41 b
 
 19 r 41 b
 
-
 b 41 b
 
-
 3
-
 
 Figure 2: Inserting 41, 38, 31, 12, 19, 8 into a red-black tree. The arrows indicate transformations.
 Notice that the root is always coloured black
@@ -995,9 +904,6 @@ Show that property 5 is preserved in figure 13.5 and 13.6 assumming the height o
 have black height k. Node C has black height k + 1 on the left and k + 2 on the right since the
 
 20
-
-
------
 
 black height of its black children is k + 1. For 13.6 it is clearly seen that both A, B and C have black
 height k + 1. We see that the black height is well defined and the property is maintained through
@@ -1012,12 +918,9 @@ the structure and one that changes the colour.
 
 Insert 1 Delete 1
 
-
 b
 
-
 Delete 1
-
 
 3 [r]
 
@@ -1025,26 +928,19 @@ Delete 1
 
 2 b 4
 
-
 1 r 3 r
 
 3 b
 
 2 r 4 r
 
-
 2 r 4
 
-
 r
-
 
 Figure 3: Inserting and deleting 1
 
 21
-
-
------
 
 15.1 − 5
 
@@ -1067,14 +963,11 @@ By cancelling out the a’s we obtain a contradiction and the statement follows.
 Solve the matrix chain order for a specific problem. This can be done by computing MATRIXCHAIN-ORDER(p) where p = 5, 10, 3, 12, 5, 50, 6 or simply using the equation:
 ⟨ ⟩
 
-
 m[i, j] =
-
 
 �
 0 if i = j
 mini⩽k<j{m[i, k] + m[k + 1, j] + pi−1pkpj} if i < j
-
 
 The resulting table is the following:
 
@@ -1105,61 +998,55 @@ therefore memoization will not improve the running time.
 
 Give an efficient memoized implementation of LCS-LENGTH. This can done directly by using:
 
-
 0 if i = 0 or j = 0
 c[i − 1, j − 1] + 1 if i, j > 0 and xi = yj
 max(c[i, j − 1], c[i − 1, j]) if i, j > 0 and xi ̸= yj
 
 22
 
-
 c[i, j] =
-
 
 
 
 
 
 
+Algorithm 8 LCS-LENGTH(X, Y)
 
------
-
-**Algorithm 8 LCS-LENGTH(X, Y)**
-
-**Input: The two strings X and Y.**
-**Output: The longest common substring of X and Y.**
-m _length[X]_
+Input: The two strings X and Y.
+Output: The longest common substring of X and Y.
+m length[X]
 ←
-n _length[Y]_
+n length[Y]
 ←
-**for i** 1 to m do
+for i 1 to m do
 ←
-**for j** 1 to n do
+for j 1 to n do
 ←
 c[i, j] −1
 ←
-**end for**
-**end for**
-**return LOOKUP-LENGTH(X, Y, m, n)**
+end for
+end for
+return LOOKUP-LENGTH(X, Y, m, n)
 
-**Algorithm 9 LOOKUP-LENGTH(X, Y, i, j)**
+Algorithm 9 LOOKUP-LENGTH(X, Y, i, j)
 
-**if c[i, j] > −1 then**
-**return c[i, j]**
-**end if**
-**if i = 0 or j = 0 then**
+if c[i, j] > −1 then
+return c[i, j]
+end if
+if i = 0 or j = 0 then
 c[i, j] 0
 ←
-**else**
-**if xi = yi then**
+else
+if xi = yi then
 c[i, j] LOOKUP-LENGTH(X, Y, i − 1, j − 1) + 1
 ←
-**else**
+else
 c[i, j] max{LOOKUP-LENGTH(X, Y, i, j − 1), LOOKUP-LENGTH(X, Y, i − 1, j)}
 ←
-**end if**
-**end if**
-**return c[i, j]**
+end if
+end if
+return c[i, j]
 
 15.4 − 5
 
@@ -1178,23 +1065,20 @@ dynamic programming.
 First define B[0, 0] = 0. We will determine the value of B[i + 1, k] for some fixed i and for all k,
 1 ⩽ k ⩽ i + 1 by using B-values from the first i rows and i columns of B.
 
-**Case 1:** k < i. The minimun cost disjoint paths from 1 to i + 1 and from 1 to k must contain the
+Case 1: k < i. The minimun cost disjoint paths from 1 to i + 1 and from 1 to k must contain the
 edge (i, i + 1). Therefore
 
 B[i + 1, k] = B[i, k] + w(i, i + 1)
 
 23
 
-
------
-
-**Case 2:** k = i. In other words, we a looking for B[i + 1, i]. The edge ending in i + 1 comes from
+Case 2: k = i. In other words, we a looking for B[i + 1, i]. The edge ending in i + 1 comes from
 u, 1 ⩽ u < i. Hence
 
 B[i + 1, i] = min
 1⩽u<1[{][B][[][i, u][] +][ w][(][u, i][ +][ 1][)][}]
 
-**Case 3:** k = i + 1. The two edges entering i + 1 must come from i and from some u,1 ⩽ u < i.
+Case 3: k = i + 1. The two edges entering i + 1 must come from i and from some u,1 ⩽ u < i.
 Therefore
 
 B[i + 1, i + 1] = min
@@ -1209,41 +1093,32 @@ is maximised. Let v = T (x, c) be the conviviality of the three rooted at the no
 with colour c. We can construct the following recursion:
 If x is a leaf with convivialty v and colour c then:
 
-
 T (x, c) =
-
 
 �
 v if x = RED
 0 if x = WHITE
 
-
 If x is not a leaf then similarly:
 
-
 T (x, c) =
-
 
 �
 v + [�]i [T] [(][x.][child][i][,][ W][HITE][)] if x = RED
 �i [max][(][T] [(][x.][child][i][,][ W][HITE][)][, T] [(][x.][child][i][,][ R][ED][))] if x = WHITE
 
-
 The maximal conviviality vmax is then given by vmax = max(T (root, WHITE), T (root, RED). Implementing this recursion yields a straight forward algorithm using memoization. Since there is
 exactly one subproblem for each node the running time will be O(n) for an n node tree.
 
-**Notes for the exercises**
+Notes for the exercises
 
 Thanks to Jarl Friis for the tedious calculation of the table in exercise 15.2 − 1.
 
-  
+
 Thanks to Pawel Winter for providing a solution to 15 − 1.
 
-  
+
 24
-
-
------
 
 16.1 − 3
 
@@ -1291,60 +1166,54 @@ S − {i} is an optimal solution for W − wi with value v(S [′]) = v(S) − v
 We can express this in the following recursion. Let c[i, w] denote the value of the solution for
 items 1, . . ., i and maximum weight w.
 
-
 0 if i = 0 or w = 0
 c[i − 1, w] if wi > w
 max(vi + c[i − 1, w − wi], c[i − 1, w]) if i > 0 and w ⩾ wi
 
 25
 
-
 c[i, w] =
-
 
 
 
 
 
 
-
------
-
 Notice that the last case determines whether or not the ith element should be included in an
 optimal solution. We can use this recursion to create a straight forward dynamic programming
 algorithm:
 
-**Algorithm 10 DYNAMIC-0-1-KNAPSACK (v, w, n, W)**
+Algorithm 10 DYNAMIC-0-1-KNAPSACK (v, w, n, W)
 
-**Input: Two sequences v = ⟨v1, . . ., vn⟩** and w = ⟨w1, . . ., wn⟩ the number of items n and the
+Input: Two sequences v = ⟨v1, . . ., vn⟩ and w = ⟨w1, . . ., wn⟩ the number of items n and the
 maximum weight W.
-**Output: The optimal value of the knapsack.**
-**for w** 0 to W do
+Output: The optimal value of the knapsack.
+for w 0 to W do
 ←
 c[0, w] 0
 ←
-**end for**
-**for i** 1 to n do
+end for
+for i 1 to n do
 ←
 c[i, 0] 0
 ←
-**for w** 1 to W do
+for w 1 to W do
 ←
-**if wi ⩽** w then
-**if vi + c[i −** 1, w − wi] > c[i − 1, w] then
+if wi ⩽ w then
+if vi + c[i − 1, w − wi] > c[i − 1, w] then
 c[i, w] vi + c[i − 1, w − wi]
 ←
-**else**
+else
 c[i, w] c[i − 1, w]
 ←
-**end if**
-**else**
+end if
+else
 c[i, w] c[i − 1, w]
 ←
-**end if**
-**end for**
-**end for**
-**return c[n, W]**
+end if
+end for
+end for
+return c[n, W]
 
 For the analysis notice that there are (n + 1) (W + 1) = Θ(nW) entries in the table c each
                                        taking Θ(1) to fill out. The total running time is thus Θ(nW).
@@ -1370,9 +1239,6 @@ cannot hope to actually compress the source file.
 
 26
 
-
------
-
 17.1 − 2
 
 If a DECREMENT operation is added we can easily force the counter to change all bits per operation
@@ -1385,13 +1251,11 @@ an exact power of two and 1 otherwise. Determine the amortized cost of each oper
 the aggregate method. Let ci denote the cost of the ith operation. Summing the cost of the n
 operations yield:
 
-
 n
 �
 
 ci ⩽ n +
 i=0
-
 
 ⌊lg n⌋
 �
@@ -1399,7 +1263,6 @@ i=0
 2[j] = n + 2[⌊][lg][ n][⌋][+][1] − 1 < n + 2n − 1 < 3n
 
 j=0
-
 
 Thus the amortized time of each operation is less than 3n/n = O(1).
 
@@ -1430,12 +1293,12 @@ If k = 0 then the actual cost is i and the amortized cost is given by:
 c^i = ci + Φ(Di) − Φ(Di−1)
 
 = i + 0 − 2 (2[j] − 1 − 2[j][−][1])
-                                         
+
 = i −(2 (2[j] − 2[j][−][1]) − 2)
-                                       
+
 = i −(2[j] (2 − 1) − 2)
 
-                                    
+
 = i − i + 2
 = 2
 
@@ -1449,27 +1312,24 @@ c^i = ci + Φ(Di) − Φ(Di−1)
 
 27
 
-
------
-
 17.4 − 3
 
 Show that the amortized cost of TABLE-DELETE when αi−1 ⩾ 1/2 is bounded above by a constant.
 Notice that the ith operation cannot cause the table to contract since contract only occurs when
 ai < 1/4. We need to consider cases for the load factor αi. For both cases numi = numi−1 − 1 and
-_sizei = sizei−1._
+sizei = sizei−1.
 Assume αi ⩾ 1/2.
 
 c^i = ci + Φi − Φi−1
-= 1 + (2 · numi − _sizei) −(2 · numi−1 −_ _sizei−1)_
-= 1 + (2 · numi − _sizei) −(2 · (numi + 1) −_ _sizei)_
+= 1 + (2 · numi − sizei) −(2 · numi−1 − sizei−1)
+= 1 + (2 · numi − sizei) −(2 · (numi + 1) − sizei)
 
 = −1
 
 Then consider αi < 1/2.
 
 c^i = ci + Φi − Φi−1
-= 1 + (2 · numi − _sizei) −(sizei−1/2 −_ _numi−1)_
+= 1 + (2 · numi − sizei) −(sizei−1/2 − numi−1)
 
 = 3 · numi − 3/2 · sizei + 2
 = 3αi · sizei − 3/2 · sizei + 2
@@ -1483,9 +1343,8 @@ Construct a dynamic binary search data structure. Let k = lg(n + 1) . Maintain k
 ⌈ ⌉
 A0, A1, . . . Ak−1 such that the length of Ai is 2[i].
 
-**a.** A SEARCH operation can be implemented by using a binary search on all the arrays. The
+a. A SEARCH operation can be implemented by using a binary search on all the arrays. The
 worst-case complexity of this must be:
-
 
 k
 �
@@ -1493,7 +1352,6 @@ k
 lg(2[i]) =
 
 i=0
-
 
 k
 �
@@ -1504,8 +1362,7 @@ i = [k][(][k][ +][ 1][)] = O(k[2]) = O(lg[2] n)
 
 i=0
 
-
-**b.** The worst-case of the INSERT operation occurs when all the sorted array have to be merged
+b. The worst-case of the INSERT operation occurs when all the sorted array have to be merged
 into a new array. That is, when n increases from 2[k] − 1 to 2[k] for some k. Using k-way merging as
 in exercise 6.5 − 8 with a total of n elements yields a running time of O(n lg k) = O(n lg lg n).
 From the analysis of incrementing a binary counter we have that the ith bit is flipped a total of
@@ -1514,14 +1371,12 @@ n/2[i] times in n INCREMENT operations. The correspondance to this problem is th
 the ith bit in n is flipped we need to merge the lists Ai, Ai−1, . . . A0 using time O(2[i] lg i). The
 total running time is thus:
 
-
 ⌊lg n⌋
 �
 
 n/2[i] 2[i] lg i < n
 ⌊ ⌋
 i=1
-
 
 lg n
 �
@@ -1530,7 +1385,6 @@ lg i = n lg(
 
 i=1
 
-
 lg n
 �
 
@@ -1538,17 +1392,13 @@ i) = O(n lg((lg n)!)) = O(n lg n lg lg n)
 
 i=1
 
-
 The amortized complexity is therefore lg n lg lg n.
 
-**c.** The DELETE operation should be implemented like the one used in dynamic tables (section
+c. The DELETE operation should be implemented like the one used in dynamic tables (section
 17.4). One should wait linear time before deallocating an array in order to avoid the worst-case
 complexity.
 
 28
-
-
------
 
 19.1 − 1
 
@@ -1580,25 +1430,22 @@ total time is thus O(V + E lg V).
 
 Consider the while loop of line 5 − 12.
 
-  
-**– We can at most extract O(E) edges in line 7 taking a total of (E lg V) time.**
 
-**– The i** = j check can be done in time O(1) by enumerating the sets.
+– We can at most extract O(E) edges in line 7 taking a total of (E lg V) time.
+
+– The i = j check can be done in time O(1) by enumerating the sets.
 ̸
 
-**– The then branch is at most taken O(V) times since it reduces the number of Vi’s by one**
+– The then branch is at most taken O(V) times since it reduces the number of Vi’s by one
 every time. Insertion into T can be done in O(1) time using a linked list. Merging Vi’s
 take O(lg V). Merging Ei’s take O(lg E) = O(lg V [2]) = O(lg V).
 
 The total time of the while loop is then O(E lg V + V lg V + V lg V).
 
-  
+
 The overall running time is seen to be O(E lg V).
 
 29
-
-
------
 
 20.2 − 5
 
@@ -1606,23 +1453,20 @@ If all the comparison based mergeable-heap operations ran in time O(1) then we c
 
 30
 
-
------
-
 21.3 − 2
 
 Give a non-recursive implementation of FIND-SET with path compression. The following algorithm
 does the job using pointer reversal:
 
-**Algorithm 11 FIND-SET(x)**
+Algorithm 11 FIND-SET(x)
 
-**Input: The node x.**
-**Output: The root of the tree root to the representative of x.**
+Input: The node x.
+Output: The root of the tree root to the representative of x.
 y p[x]
 ←
 p[x] x
 ←
-**while x** = y do
+while x = y do
 ̸
 z p[y]
 ←
@@ -1632,25 +1476,25 @@ x y
 ←
 y z
 ←
-**end while**
-_root_ x
+end while
+root x
 ←
 y p[x]
 ←
 p[x] x
 ←
-**while x** = y do
+while x = y do
 ̸
 z p[y]
 ←
-p[y] _root_
+p[y] root
 ←
 x y
 ←
 y z
 ←
-**end while**
-**return root**
+end while
+return root
 
 The first while loop traverses the path from x to the root of the tree while reversing all parent
 pointers along the way. The second while loop returns along this path and sets all parent pointers
@@ -1684,10 +1528,7 @@ such that extracted[i] is the return value of the ith EXTRACT-MIN call.
 
 31
 
-
------
-
-**a.** Consider the following sequence:
+a. Consider the following sequence:
 
 4, 8, E, 3, E, 9, 2, 6, E, E, E, 1, 7, E, 5
 
@@ -1695,9 +1536,9 @@ The corresponding extracted array is:
 
 4, 3, 2, 6, 8, 1
 
-**b.** Running an example convinces one of the correctness of the algorithm.
+b. Running an example convinces one of the correctness of the algorithm.
 
-**c.** Using UNION-FIND techniques we can construct an efficient implementation of the algorithm.
+c. Using UNION-FIND techniques we can construct an efficient implementation of the algorithm.
 Initially create disjoint-sets for the subsequences I1, . . . Im+1 and place the representative of each
 set in a linked list in sorted order. Additionally, label each representative with its subsequence
 number. We proceed as follows:
@@ -1707,10 +1548,10 @@ Line 2 is implemented by a FIND-SET operation on i yielding the representative o
 
 In line 5 the next set can found from the root as the next set in the linked list.
 
-  
+
 Line 6 is implemented with a UNION operation and a deletion in the linked list.
 
-  
+
 The overall running time is seen to be O(mα(n)).
 
 21 − 2
@@ -1718,46 +1559,37 @@ The overall running time is seen to be O(mα(n)).
 Consider the depth-determination problem where we maintain a forest F = {Ti} of rooted trees
 and support the MAKE-TREE, FIND-DEPTH and Graft operations.
 
-**a.** Show that m operations using a simple disjoint trees takes Θ(m[2]). Create single node trees
+a. Show that m operations using a simple disjoint trees takes Θ(m[2]). Create single node trees
 v0, . . ., vk with MAKE-TREE, where k = 3[1] [m][. Then use][ k][ −] [1][ G][RAFT][ operations to link them into a]
 
 single path v0, . . ., vk with root vk. Finally, call FIND-DEPTH(v0) k times. These m + 1 operations
 takes (k + 1) + k + k[2] < ( 3[1] [m][)][2][ =][ Θ][(][m][2][)][ time.]
 
-
-**b.** implement MAKE-DEPTH(v) by creating a disjoint-set S with the node v an setting d[v] 0.
+b. implement MAKE-DEPTH(v) by creating a disjoint-set S with the node v an setting d[v] 0.
 ←
 
-**c.** Consider FIND-DEPTH(v) and let v = v0, . . ., vk be the path to the root. For each vi compute
+c. Consider FIND-DEPTH(v) and let v = v0, . . ., vk be the path to the root. For each vi compute
 d[vi] ← [�][k]i=[−]j[1] [d][[][v][j][]][. Then use the ordinary F][IND][-S][ET][ with path compression.]
 
-**d.** Show how to implement GRAFT(r, v). We will use the ordinary UNION operation and update
+d. Show how to implement GRAFT(r, v). We will use the ordinary UNION operation and update
 the pseudodistances appropriately. There are two cases to consider as shown in figure 5.
 
 32
 
-
------
-
 w
 
-
 w
-
 
 r
-
 
 (b)
 
 (c)
 
-
 (a)
 
-
 Figure 5: (a) The tree before GRAFT(r, v). The cases on the right show the tree after GRAFT(r, v)
-and the two cases: (b) rank(r) ⩽ _rank(w) (c) rank(r) > rank(w)_
+and the two cases: (b) rank(r) ⩽ rank(w) (c) rank(r) > rank(w)
 
 Let the path from v to w be v = v0, . . ., vk = w. The depth of any node in the subtree rooted
 at r is increased by [�]i[k]=0 [d][[][v][i][]][ while the depths of the other nodes is unaffected. For case (b) this]
@@ -1766,12 +1598,9 @@ and then set d[w] d[w] − d[r]. Both cases are easily handled without extra cos
 ←
 operation.
 
-**e.** Clearly, the total cost is O(mα(n)) as in UNION-FIND algorithm.
+e. Clearly, the total cost is O(mα(n)) as in UNION-FIND algorithm.
 
 33
-
-
------
 
 22.1 − 1
 
@@ -1818,23 +1647,17 @@ therefore easily construct the partition. The running time is O(E + V).
 The diameter of a tree can computed in a bottom-up fashion using a recursive solution. If x is a
 node with a depth d(x) in the tree then the diameter D(x) must be:
 
-
 D(x) =
-
 
 �
 max{maxi{D(x.childi)}, maxij{d(x.childi) + d(x.childj)} + 2}, if x is an internal node
 0 if x is a leaf
-
 
 Since the diameter must be in one of the subtrees or pass through the root and the longest path
 from the root must be the depth. The depth can easily be computed at the same time. Using
 dynamic programming we obtain a linear solution.
 
 34
-
-
------
 
 Actually, the problem can also be solved by computing the longest shortest path from an arbitrary node. The node farthest away will be the endpoint of a diameter and we can thus compute
 the longest shortest path from this node to obtain the diameter. See relevant litterature for a proof
@@ -1876,21 +1699,18 @@ acyclic and we will have seen a back edge.
 
 22 − 3
 
-**a.** If G has an Euler tour any path going “into” a vertex must “leave” it. Conversely, if the in and
+a. If G has an Euler tour any path going “into” a vertex must “leave” it. Conversely, if the in and
 out-degrees of any vertex is the same any we can construct a path that visits all edges.
 
-**b.** Since the edges of any Euler graph can be split into disjoint cycles, we can simply find these
+b. Since the edges of any Euler graph can be split into disjoint cycles, we can simply find these
 cycles and “merge” them into an Euler tour.
 
-**Notes for the exercises**
+Notes for the exercises
 
 Thanks to Stephen Alstrup for providing a solution to exercise 22.2 − 7.
 
-  
+
 35
-
-
------
 
 23.1 − 1
 
@@ -1922,18 +1742,18 @@ Consider the running times of Prims algorithm implemented with either a binary h
 
 Binary: O(E lg V) = O(V lg V)
 
-  
+
 Fibonnacci: O(E + V lg V) = O(V lg V)
 
-  
+
 If |E| = Θ(V [2]) then:
 
 Binary: O(E lg V) = O(V [2] lg V)
 
-  
+
 Fibonnacci: O(E + V lg V) = O(V [2])
 
-  
+
 The Fibonnacci heap beats the binary heap implementation of Prims algorithm when |E| =
 ω(V) since O(E + V lg V) = O(V lg V) t for |E| = O(V lg V) but O(E lg V) = ω(V lg V) for |E| =
 ω(V). For |E| = ω(V lg V) the Fibonnacci version clearly has a better running time than the
@@ -1945,10 +1765,10 @@ Assume that E ⩾ V − 1. The running time of Kruskals algorithm can be analyse
 
 Sorting the edges: O(E lg E) time.
 
-  
+
 O(E) operations on a disjoint-set forest taking O(Eα(V)).
 
-  
+
 The sort dominates and hence the total time is O(E lg E). Sorting using counting sort when
 the edges fall in the range 1, . . ., |V| yields O(V + E) = O(E) time sorting. The total time is then
 O(Eα(V)). If the edges fall in the range 1, . . ., W for any constant W we still need to use Ω(E)
@@ -1956,22 +1776,19 @@ time for sorting and the total running time cannot be improved further.
 
 36
 
-
------
-
 23.2 − 5
 
 The running time of Prims algorithm is composed :
 
 O(V) initialization.
 
-  
+
 O(V time for EXTRACT-MIN).
 
-  -  
+  -
 O(E time for DECREASE-KEY).
 
-  -  
+  -
 If the edges are in the range 1, . . ., |V| the Van Emde Boas priority queue can speed up EXTRACTMIN and DECREASE-KEY to O(lg lg V) thus yielding a total running time of O(V lg lg V +E lg lg V) =
 O(E lg lg V). If the edges are in the range from 1 to W we can implement the queue as an array
 
@@ -1989,14 +1806,14 @@ spanning tree T then the weight of (u, v) must be greater or equal than the weig
 the path from u to v in T . Otherwise we could replace (u, v) with a heavier edge on the path to
 obtain a lighter minimum spanning tree.
 
-**a.** Show that the minimum spanning tree is unique but the second-best minimum spanning tree
+a. Show that the minimum spanning tree is unique but the second-best minimum spanning tree
 need not be unique. Assume T and T [′] are distinct minimum spanning trees. Then some edge (u, v)
 is in T but not in T [′]. Since all edge weights are distinct the edges on the unique path from u to v
 in T [′] must then be strictly lighter than (u, v) contradicting the fact that T is a minimum spanning
 tree.
 It can easily be seen by example that the second-best minimum spanning trees is not unique.
 
-**b.** Show that a second-best minimum spanning tree can be obtained from the minimum spanning
+b. Show that a second-best minimum spanning tree can be obtained from the minimum spanning
 tree by replacing a single edge from the tree with another edge not in the tree.
 Let T be a minimun spanning tree. We wish to find a tree that has the smallest possible weight
 that is larger than the weight of T . We can insert an edge (u, v) T by removing some other edge
@@ -2005,29 +1822,26 @@ on the unique path between u and v. By the above property such a replacement mus
 weight of the tree. By carefully considering the cases it is seen that replacing two or more edges
 will not produce a tree better than the second best minimum spanning tree.
 
-**c.** Let max(u, v) be the weight of the edge of maximum weight on the unique path between u
+c. Let max(u, v) be the weight of the edge of maximum weight on the unique path between u
 and v in a spanning tree. To compute this in O(V [2]) time for all nodes in the tree do the following:
 For each node v perform a traversal of the tree. Inorder to compute max(v, k) for all k V
 ∈
 simply maintain the largest weight encounted so far for the path being investigated. Doing this
 yields a linear time algorithm for each node and we therefore obtain a total of O(V [2]) time.
 
-**d.** Using the idea of the second subexercise and the provided algorithm in the third subexercise,
+d. Using the idea of the second subexercise and the provided algorithm in the third subexercise,
 we can now compute T2 from T in the following way:
 Compute max(u, v) for all vertices in T . Compute for any edge (u, v) not in T the difference
 w(u, v) − max(u, v). The two edges yielding the smallest positive difference should be replaced.
 
 37
 
-
------
-
 23 − 4
 
 We consider the three proposed minimum spanning tree algorithms. For each we prove or disprove
 it’s correctness and give an efficient implementation.
 
-**a.** The algorithm clearly produces a spanning tree T . Consider two vertices u and v such that
+a. The algorithm clearly produces a spanning tree T . Consider two vertices u and v such that
 the edge (u, v) is in G but not in T . Then w(u, v) is at least as large as any weight of an edge e on
 the path from u to v since otherwise e would have been removed earlier. By exercise 23.1 − 5 this
 implies that the algorithm produces a minimum spanning tree.
@@ -2035,34 +1849,31 @@ The sort on the edges can be done in O(E lg E) = O(E lg V) time. Using a depth-f
 determine connectivity in line 5 the total running time is O(E lg V + E(V + E)) = O(E[2] + EV). The
 running time can be reduced using results on the “decremental connectivity problem”.
 
-**b.** This algorithm simply produces a spanning tree, but clearly does not gaurantee that the tree
+b. This algorithm simply produces a spanning tree, but clearly does not gaurantee that the tree
 is of minimum weight. Line 3 and 4 in the algorithm can be implemented using disjoint-set
 operations yielding a total running time of O(Eα(V)).
 
-**c.** The algorithm produces a spanning tree T . Observe that on completion any edge (u, v) in G
+c. The algorithm produces a spanning tree T . Observe that on completion any edge (u, v) in G
 but not in T will be a maximum weight edge on the path from u to v. Again by exercise 23.1 − 5
 the algorithm produces a minimum spanning tree.
 We can implement the algorithm as follows:
 
 Line 3 can be done in O(1) time by appending the edge to the proper adjancency list.
 
-  
+
 Line 4 can be done in O(V) time using a depth-first search as described in exercise 22.4 − 3.
 
-  
+
 Since the number of edges in T is at most O(V) line 5 can be done using a linear search on
 
   the edges in O(V) time.
 
 Line 6 can be done using a search on the adjancency list taking at most O(V) time.
 
-  
+
 The for loop iterates at most O(E) times and the total running time is thus O(EV).
 
 38
-
-
------
 
 24.1 − 3
 
@@ -2077,14 +1888,11 @@ We count the number of directed paths in a directed acyclic graph G = (V, E) as 
 perform a topological sort of the input. Then for all v V compute, B(v) defined as follows.
 ∈
 
-
 B(v) =
-
 
 �
 1 v is last in the order
 1 + [�](v,w)∈E [B][(][w][)] otherwise
-
 
 B(v) computes the number of directed paths beginning at v since if v is last in the order the only
 path starting at v is the empty one. Otherwise for each node w, (v, w) E, (v, w) concatenated
@@ -2129,9 +1937,6 @@ the running time of the modified algorithm will be O(VW + E).
 
 39
 
-
------
-
 24.3 − 7
 
 Consider the problem from the above exercise. Notice that every time a node v is extracted by
@@ -2147,21 +1952,18 @@ to O(V lg W + E).
 
 We consider d-dimensional boxes.
 
-**a.** The nesting relation is clearly transitive.
+a. The nesting relation is clearly transitive.
 
-**b.** We can determine if a box nests within another by sorting the dimensions of each box and
+b. We can determine if a box nests within another by sorting the dimensions of each box and
 comparing them sequentially.
 
-**c.** To find the longest nest sequence we determine the nesting relations on all boxes by sorting
+c. To find the longest nest sequence we determine the nesting relations on all boxes by sorting
 each in O(d lg d) time and comparing then pairwise in O(d) time for each of the O(n[2]) pairs. This
 produces a partial relation (by definition of nesting) and thus a directed acyclic graph in which we
 find the longest path using O(n[2]+n) time. The total running time is thus O(d lg d+dn[2]+n[2]+n) =
 O(d(n[2] + lg d)).
 
 40
-
-
------
 
 25.1 − 3
 
@@ -2207,24 +2009,21 @@ every node encountered in E[∗]. This takes O(VE) time.
 We consider the problem of dynamically maintaining the transitive closure of a graph G = (V, E)
 represented by a boolean matrix B. First notice that given two connected components C1 and C2
 
-**a.** For a connected component C in G we have Bij = 1 if i, j ∈ C × C. Thus for two connected
+a. For a connected component C in G we have Bij = 1 if i, j ∈ C × C. Thus for two connected
 components C1 and C2 with no edges between them we can compute C1 C2 simply by setting
 ∪
 Bij = 1 if i, j ∈ C1 ∪ C2 × C1 ∪ C2. In the matrix this can be done by computing the bitwise or of
 row i and j, denoted by r, in B if edge the edge (i, j) is added. The kth bit in r is 1 if and only if
 k ∈ C1 ∪ C2. We set each row in C1 ∪ C2 to r.
 
-**b.** Let G = (V, E) be a graph with an even number of vertices. Let C1 and C2 be two connect
+b. Let G = (V, E) be a graph with an even number of vertices. Let C1 and C2 be two connect
 components partitioning G such that |C1| = |C2| = |V/2|. Assume there are no edges between
 C1 and C2. Then half of B contains zeros but adding an edge between C1 and C2 will leave B
 consisting completely of zeros. This takes Ω(V [2]) time.
 
 41
 
-
------
-
-**c.** Notice that when adding an edge (i, j) we can check if that alters the transitive closure in
+c. Notice that when adding an edge (i, j) we can check if that alters the transitive closure in
 O(V) time. If the ith and jth row are the same then i and j are in the same connected component
 and there is no need to update the matrix. Thus we need only perform the O(V [2]) update is the
 connected components are altered. This happens at most V + 1 times. The other O(V [2]) use O(V)
@@ -2234,20 +2033,20 @@ time at most. The total time is O(V [3]) for any sequence of n insertions.
 
 We consider an ϵ-dense graph G = (V, E) where |E| = Θ(V [1][+][ϵ]).
 
-**a.** By exercise 6−2 INSERT and DECREASE-KEY can be done in O(logd n) time while EXTRACT-MIN
+a. By exercise 6−2 INSERT and DECREASE-KEY can be done in O(logd n) time while EXTRACT-MIN
 takes O(d logd n) time. For d = n[α] we obtain running times of 1/α and n[α]/α.
 
-**b.** Using dijkstra’s algorithm the running time depends on the priority queue as follows.
+b. Using dijkstra’s algorithm the running time depends on the priority queue as follows.
 
 |V| INSERT
 
-  -  
+  -
 |V| EXTRACT-MIN
 
-  -  
+  -
 |E| DECREASE-KEY
 
-  -  
+  -
 With d-ary heaps and d = Θ(V [ϵ]) we obtain a running time of
 
 VV [ϵ] + E
@@ -2255,16 +2054,12 @@ VV [ϵ] + E
 = O(E)
 ϵ
 
-
 for constant ϵ, 0 < ϵ ⩽ 1.
 
-**c.** Compute single source shortest path from each vertex v V using the algorithm from subex∈
+c. Compute single source shortest path from each vertex v V using the algorithm from subex∈
 ercise b.
 
 42
-
-
------
 
 26.1 − 1
 
@@ -2276,21 +2071,20 @@ symmetry f(u, v) = f(v, u) = 0.
 Let f1 and f2 be flows in a flow network G = (V, E). The sum f1 + f2 is defined by (f1 + f2)(u, v) =
 f1(u, v) + f2(u, v) for all u, v ∈ V. Of the tree flow properties the following are satified by f1 + f2:
 
-**Capacity constraint:** May clearly be violated.
+Capacity constraint: May clearly be violated.
 
-**Skew symmetry:** We have:
+Skew symmetry: We have:
 
 (f1 + f2)(u, v) = f1(u, v) + f2(u, v) = −f1(v, u) − f2(v, u)
 = −(f1(v, u) + f2(v, u)) = −(f1 + f2)(v, u)
 
-**Flow conservation:** Let u V − s, t be given. Then:
+Flow conservation: Let u V − s, t be given. Then:
 ∈
 
 � � � �
 
 (f1 + f2)(u, v) = (f1(u, v) + f2(u, v)) = f1(u, v) + f2(u, v)
 v∈V v∈V v∈V v∈V
-
 
 = 0 + 0 = 0
 
@@ -2308,35 +2102,28 @@ cf(u, v) + cf(v, u) = c(u, v) − f(u, v) + c(v, u) − f(v, u)
 
 Show that the function f given by:
 
-
 fp(u, v) =
-
 
 
 
 
 
 
-
 cf(p) if (u, v) is on p
 −cf(p) if (v, u) is on p
 0 otherwise
 
-
 is a flow in Gf with value |fp| = cf(p) > 0. We simply check that the three properties are satified:
 
-**Capacity constraint:** Since cf(p) is a minimum capacity on the path p and 0 otherwise, no
+Capacity constraint: Since cf(p) is a minimum capacity on the path p and 0 otherwise, no
 capacities can be exceeded.
 
-**Skew symmetry:** If u and v are on p the definition clearly satifies this constraint. Otherwise the
+Skew symmetry: If u and v are on p the definition clearly satifies this constraint. Otherwise the
 flow is 0 and the constraint is again satified.
 
-**Flow conservation:** Since cf(p) is constant along a path flow conservation must clearly be preserved.
+Flow conservation: Since cf(p) is constant along a path flow conservation must clearly be preserved.
 
 43
-
-
------
 
 26.2 − 9
 
@@ -2362,9 +2149,6 @@ Crossing between L and R as many times as it can without using a vertex twice. A
 1.
 
 44
-
-
------
 
 32.1 − 2
 
@@ -2400,9 +2184,6 @@ We can determine if T is a cyclic rotation of T [′] matching T [′] against T
 
 45
 
-
------
-
 33.1 − 4
 
 Show how to determine if three point are collinear in a set of n points. For each point p0 sort the
@@ -2437,18 +2218,15 @@ The n points can be transformed into points in the plane by letting a point i ma
 
 33 − 1
 
-**a.** Compute the convex layers of n points in the plane. Let hi denote the number of points in
+a. Compute the convex layers of n points in the plane. Let hi denote the number of points in
 the ith layer. Initially, compute the convex hull using Jarvis’ march. Removing these points and
 repeating the procedure until no points exists does the job since [�] hi = n and the complete
 running time therefore is O(n[2]).
 
-**b.** Clearly, if a lower bound for computing the convex hull is Ω(n lg n) by exercise 33.3 − 2 this
+b. Clearly, if a lower bound for computing the convex hull is Ω(n lg n) by exercise 33.3 − 2 this
 must also be a lower bound for computing the convex layers.
 
 46
-
-
------
 
 34.1 − 4
 
@@ -2477,7 +2255,6 @@ otherwise it is not.
 L P since x L x L.
 
   - ∈ ∈ ⇐⇒ ̸∈
-
   - L1L2 ∈ P. Given a string x of length n denote its substring from index i to j by xij. We can
 then decide x by deciding x1k L1 and xk+1n L2 for all the n possible values of k.
 ∈ ∈
@@ -2519,15 +2296,11 @@ NP = co − NP. Since P is closed under complement the statement is obvious.
 
 47
 
-
------
-
 34.3 − 2
 
 Show that ⩽p is a transitive relation. Let L1 ⩽p L2 and L2 ⩽p L3. Then there exists polynomialtime computable reduction functions f1 and f2 such that:
 
   - x ∈ L1 ⇐⇒ f1(x) ∈ L2
-
   - x ∈ L2 ⇐⇒ f2(x) ∈ L3
 
 The function f2(f1(x)) is polynomial-time computable and satifies that x ∈ L1 ⇐⇒ f2(f1(x)) ∈
@@ -2587,9 +2360,6 @@ a single vertex. This dag induces a partial order, which we then extend to a tot
 
 48
 
-
------
-
 topological sort. For each xi, if the component of vi precedes the component of vi, set xi = 0 else
 set xi = 1. We claim that this is a valid truth assignment, i. e., that (i) all literals in the same
 component are assigned the same values and (ii) if a component B is reachable from A then A, B
@@ -2632,15 +2402,12 @@ construct a reduction from the hamilton-cycle problem. Given a graph G pick any 
 make a “copy” of v, u that is connected to the same vertices as v. It can be shown that this graph
 has a hamiltonian path from v to u if and only if G has a hamilton-cycle.
 
-**Notes for the exercises**
+Notes for the exercises
 
 The solution to exercise 34.4 − 7 is largely taken from a solution given by Edith Cohen.
 
-  
+
 49
-
-
------
 
 35.1 − 1
 
@@ -2705,9 +2472,6 @@ does not give a constant ratio bound on the original problem.
 
 50
 
-
------
-
 35.5 − 4
 
 We can modify the approximation scheme to find a value greater than t that is the sum of some
@@ -2715,7 +2479,3 @@ subset S [′] of a list S by running the approximation algorithm and then summi
 the complement list S − S [′].
 
 51
-
-
------
-

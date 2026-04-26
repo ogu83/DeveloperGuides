@@ -1,23 +1,17 @@
 # Comprehensive Algorithm Guide for LLM Agents
-
 This guide synthesizes fundamental algorithm knowledge for training LLM agents to understand, analyze, design, and implement algorithms effectively.
 
----
-
 ## Part I: Foundations of Algorithm Analysis
-
 ### 1. What is an Algorithm?
-
 An algorithm is a well-defined computational procedure that takes input and produces output through a finite sequence of steps. Key properties:
 
-- **Correctness**: Produces the correct output for all valid inputs
-- **Finiteness**: Terminates after a finite number of steps
-- **Definiteness**: Each step is precisely defined
-- **Input/Output**: Has zero or more inputs and one or more outputs
-- **Effectiveness**: Each step is basic enough to be carried out
+- Correctness: Produces the correct output for all valid inputs
+- Finiteness: Terminates after a finite number of steps
+- Definiteness: Each step is precisely defined
+- Input/Output: Has zero or more inputs and one or more outputs
+- Effectiveness: Each step is basic enough to be carried out
 
 ### 2. Asymptotic Notation
-
 Asymptotic notation describes algorithm efficiency as input size grows toward infinity.
 
 #### Big-O Notation (Upper Bound)
@@ -26,7 +20,7 @@ f(n) = O(g(n)) if there exist constants c > 0 and n₀ ≥ 0 such that
 f(n) ≤ c·g(n) for all n ≥ n₀
 ```
 
-**Common complexity classes (slowest to fastest growth):**
+Common complexity classes (slowest to fastest growth):
 - O(1) - Constant time
 - O(log n) - Logarithmic time
 - O(n) - Linear time
@@ -48,22 +42,20 @@ f(n) = Θ(g(n)) if f(n) = O(g(n)) and f(n) = Ω(g(n))
 ```
 
 ### 3. Proving Big-O Bounds
-
-**Method 1: Direct Proof**
+Method 1: Direct Proof
 To prove f(n) = O(g(n)), find specific values of c and n₀ that satisfy the definition.
 
 Example: Prove 3n² + 5n + 2 = O(n²)
 - For n ≥ 1: 3n² + 5n + 2 ≤ 3n² + 5n² + 2n² = 10n²
 - Choose c = 10, n₀ = 1
 
-**Method 2: Limit Method**
+Method 2: Limit Method
 ```
 If lim(n→∞) f(n)/g(n) = L where 0 < L < ∞, then f(n) = Θ(g(n))
 If lim(n→∞) f(n)/g(n) = 0, then f(n) = O(g(n)) but f(n) ≠ Θ(g(n))
 ```
 
 ### 4. Recurrence Relations
-
 Recurrences express runtime of recursive algorithms.
 
 #### Master Theorem
@@ -75,25 +67,21 @@ Let c_crit = log_b(a)
 2. If f(n) = Θ(n^c_crit), then T(n) = Θ(n^c_crit · log n)
 3. If f(n) = Ω(n^(c_crit + ε)) for some ε > 0 and af(n/b) ≤ cf(n), then T(n) = Θ(f(n))
 
-**Common recurrences:**
+Common recurrences:
 - T(n) = T(n/2) + O(1) → T(n) = O(log n) [Binary search]
 - T(n) = 2T(n/2) + O(n) → T(n) = O(n log n) [Merge sort]
 - T(n) = 2T(n/2) + O(1) → T(n) = O(n) [Tree traversal]
 - T(n) = T(n-1) + O(n) → T(n) = O(n²) [Selection sort]
 - T(n) = T(n-1) + O(1) → T(n) = O(n) [Linear recursion]
 
----
-
 ## Part II: Algorithm Design Paradigms
-
 ### 1. Divide and Conquer
+Strategy:
+1. Divide the problem into smaller subproblems
+2. Conquer subproblems recursively
+3. Combine solutions to solve original problem
 
-**Strategy:**
-1. **Divide** the problem into smaller subproblems
-2. **Conquer** subproblems recursively
-3. **Combine** solutions to solve original problem
-
-**Template:**
+Template:
 ```
 function divideAndConquer(problem):
     if problem is small enough:
@@ -104,7 +92,7 @@ function divideAndConquer(problem):
     return combine(solutions)
 ```
 
-**Classic Examples:**
+Classic Examples:
 
 #### Merge Sort - O(n log n)
 ```
@@ -142,18 +130,17 @@ function binarySearch(A, target, low, high):
 ```
 
 ### 2. Dynamic Programming
+Key Insight: Solve each subproblem once and store results to avoid redundant computation.
 
-**Key Insight:** Solve each subproblem once and store results to avoid redundant computation.
+Requirements:
+1. Optimal Substructure: Optimal solution contains optimal solutions to subproblems
+2. Overlapping Subproblems: Same subproblems recur many times
 
-**Requirements:**
-1. **Optimal Substructure**: Optimal solution contains optimal solutions to subproblems
-2. **Overlapping Subproblems**: Same subproblems recur many times
+Approaches:
+- Top-down (Memoization): Recursive with caching
+- Bottom-up (Tabulation): Iterative, solve smaller subproblems first
 
-**Approaches:**
-- **Top-down (Memoization)**: Recursive with caching
-- **Bottom-up (Tabulation)**: Iterative, solve smaller subproblems first
-
-**Template:**
+Template:
 ```
 # Top-down with memoization
 function dpTopDown(problem, memo={}):
@@ -175,7 +162,7 @@ function dpBottomUp(n):
     return dp[n]
 ```
 
-**Classic Examples:**
+Classic Examples:
 
 #### Fibonacci Numbers
 ```
@@ -241,14 +228,13 @@ function LCS(X, Y):
 ```
 
 ### 3. Greedy Algorithms
+Strategy: Make locally optimal choices at each step, hoping to find global optimum.
 
-**Strategy:** Make locally optimal choices at each step, hoping to find global optimum.
-
-**When to use:**
+When to use:
 - Problem has optimal substructure
 - Greedy choice property: locally optimal leads to globally optimal
 
-**Template:**
+Template:
 ```
 function greedy(problem):
     solution = empty
@@ -259,7 +245,7 @@ function greedy(problem):
     return solution
 ```
 
-**Classic Examples:**
+Classic Examples:
 
 #### Activity Selection
 Select maximum non-overlapping activities.
@@ -292,12 +278,9 @@ function huffman(frequencies):
     return heap.extractMin()  # Root of Huffman tree
 ```
 
----
 
 ## Part III: Sorting Algorithms
-
 ### Comparison-Based Sorting
-
 | Algorithm | Best | Average | Worst | Space | Stable |
 |-----------|------|---------|-------|-------|--------|
 | Insertion Sort | O(n) | O(n²) | O(n²) | O(1) | Yes |
@@ -307,10 +290,9 @@ function huffman(frequencies):
 | Quick Sort | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
 | Heap Sort | O(n log n) | O(n log n) | O(n log n) | O(1) | No |
 
-**Lower bound for comparison sorts: Ω(n log n)**
+Lower bound for comparison sorts: Ω(n log n)
 
 ### Key Implementations
-
 #### Insertion Sort
 ```
 function insertionSort(A):
@@ -323,7 +305,7 @@ function insertionSort(A):
         A[i + 1] = key
 ```
 
-**Loop Invariant:** At the start of each iteration, A[0..j-1] contains the original elements in sorted order.
+Loop Invariant: At the start of each iteration, A[0..j-1] contains the original elements in sorted order.
 
 #### Quick Sort
 ```
@@ -367,7 +349,6 @@ function maxHeapify(A, i):
 ```
 
 ### Non-Comparison Sorting (Linear Time)
-
 #### Counting Sort - O(n + k)
 For integers in range [0, k].
 ```
@@ -396,24 +377,20 @@ function radixSort(A, d):
         stableSort A on digit i  # Using counting sort
 ```
 
----
 
 ## Part IV: Graph Algorithms
-
 ### Graph Representations
-
-**Adjacency List:** Space O(V + E), preferred for sparse graphs
+Adjacency List: Space O(V + E), preferred for sparse graphs
 ```
 graph[v] = list of vertices adjacent to v
 ```
 
-**Adjacency Matrix:** Space O(V²), preferred for dense graphs
+Adjacency Matrix: Space O(V²), preferred for dense graphs
 ```
 matrix[u][v] = 1 if edge (u,v) exists, 0 otherwise
 ```
 
 ### Graph Traversals
-
 #### Breadth-First Search (BFS) - O(V + E)
 ```
 function BFS(G, source):
@@ -431,7 +408,7 @@ function BFS(G, source):
                 queue.enqueue(v)
 ```
 
-**Use cases:** Shortest path in unweighted graphs, level-order traversal
+Use cases: Shortest path in unweighted graphs, level-order traversal
 
 #### Depth-First Search (DFS) - O(V + E)
 ```
@@ -456,10 +433,9 @@ function DFSVisit(G, u):
     finish[u] = time
 ```
 
-**Use cases:** Topological sort, cycle detection, strongly connected components
+Use cases: Topological sort, cycle detection, strongly connected components
 
 ### Shortest Path Algorithms
-
 #### Dijkstra's Algorithm - O((V + E) log V)
 Single-source shortest paths for non-negative edge weights.
 ```
@@ -510,7 +486,6 @@ function floydWarshall(G):
 ```
 
 ### Minimum Spanning Trees
-
 #### Kruskal's Algorithm - O(E log E)
 ```
 function kruskal(G):
@@ -545,7 +520,6 @@ function prim(G, root):
 ```
 
 ### Topological Sort
-
 For directed acyclic graphs (DAGs).
 ```
 function topologicalSort(G):
@@ -566,10 +540,8 @@ function topologicalSort(G):
     return result
 ```
 
----
 
 ## Part V: Data Structures for Algorithms
-
 ### Arrays and Dynamic Arrays
 - Access: O(1)
 - Search: O(n) unsorted, O(log n) sorted
@@ -634,20 +606,17 @@ function union(x, y):
         rank[rootX] = rank[rootX] + 1
 ```
 
----
 
 ## Part VI: Algorithm Correctness
-
 ### Mathematical Induction
-
 Used to prove algorithm correctness for recursive algorithms.
 
-**Structure:**
-1. **Base Case:** Prove P(0) or P(1) is true
-2. **Inductive Hypothesis:** Assume P(k) is true for some k
-3. **Inductive Step:** Prove P(k+1) is true using the hypothesis
+Structure:
+1. Base Case: Prove P(0) or P(1) is true
+2. Inductive Hypothesis: Assume P(k) is true for some k
+3. Inductive Step: Prove P(k+1) is true using the hypothesis
 
-**Example: Proving sum formula**
+Example: Proving sum formula
 Prove: 1 + 2 + ... + n = n(n+1)/2
 
 Base case (n=1): 1 = 1(2)/2 = 1 ✓
@@ -658,25 +627,21 @@ Inductive step: Assume true for k. For k+1:
                         = (k+1)(k+2)/2 ✓
 
 ### Loop Invariants
-
 A property that holds before and after each iteration.
 
-**Three steps:**
-1. **Initialization:** Invariant is true before first iteration
-2. **Maintenance:** If true before an iteration, remains true after
-3. **Termination:** When loop terminates, invariant gives useful property
+Three steps:
+1. Initialization: Invariant is true before first iteration
+2. Maintenance: If true before an iteration, remains true after
+3. Termination: When loop terminates, invariant gives useful property
 
-**Example: Insertion Sort**
+Example: Insertion Sort
 Invariant: A[0..j-1] contains original elements in sorted order.
 
 - Initialization: Before j=1, A[0..0] has one element, trivially sorted
 - Maintenance: Moving A[j] into sorted position maintains sorted property
 - Termination: When j=n, A[0..n-1] is sorted
 
----
-
 ## Part VII: Problem-Solving Strategies
-
 ### 1. Understand the Problem
 - What are the inputs and outputs?
 - What are the constraints?
@@ -706,10 +671,7 @@ Invariant: A[0..j-1] contains original elements in sorted order.
 - Can we use better data structures?
 - Is there a different algorithmic approach?
 
----
-
 ## Part VIII: Common Patterns and Techniques
-
 ### Two Pointers
 Use when processing arrays/strings from both ends or finding pairs.
 ```
@@ -773,12 +735,9 @@ for i = 1 to n:
 sum(i, j) = prefix[j+1] - prefix[i]
 ```
 
----
 
 ## Part IX: Advanced Topics
-
 ### String Algorithms
-
 #### KMP Pattern Matching - O(n + m)
 ```
 function computeLPS(pattern):
@@ -803,7 +762,6 @@ function computeLPS(pattern):
 Uses rolling hash for pattern matching.
 
 ### Number Theory
-
 #### GCD (Euclidean Algorithm)
 ```
 function gcd(a, b):
@@ -825,7 +783,6 @@ function power(base, exp, mod):
 ```
 
 ### Bit Manipulation
-
 ```
 x & (x - 1)      # Clear lowest set bit
 x | (x + 1)      # Set lowest clear bit
@@ -833,10 +790,8 @@ x & -x           # Extract lowest set bit
 x ^ y            # XOR for finding unique elements
 ```
 
----
 
 ## Part X: Complexity Classes
-
 ### P (Polynomial Time)
 Problems solvable in polynomial time. Examples: sorting, shortest path.
 
@@ -846,7 +801,7 @@ Problems whose solutions can be verified in polynomial time.
 ### NP-Complete
 Hardest problems in NP. If any NP-complete problem has a polynomial solution, then P = NP.
 
-**Classic NP-Complete Problems:**
+Classic NP-Complete Problems:
 - SAT (Boolean Satisfiability)
 - Traveling Salesman Problem (decision version)
 - Graph Coloring
@@ -857,15 +812,12 @@ Hardest problems in NP. If any NP-complete problem has a polynomial solution, th
 At least as hard as NP-complete problems, but may not be in NP.
 
 ### Dealing with NP-Hard Problems
-1. **Approximation algorithms:** Find near-optimal solutions
-2. **Heuristics:** No guarantees but often work well
-3. **Parameterized algorithms:** Efficient for small parameter values
-4. **Special cases:** Some instances may be tractable
-
----
+1. Approximation algorithms: Find near-optimal solutions
+2. Heuristics: No guarantees but often work well
+3. Parameterized algorithms: Efficient for small parameter values
+4. Special cases: Some instances may be tractable
 
 ## Summary: Algorithm Selection Guide
-
 | Problem Type | Consider |
 |--------------|----------|
 | Sorted array search | Binary search O(log n) |
@@ -883,17 +835,14 @@ At least as hard as NP-complete problems, but may not be in NP.
 | Processing in levels | BFS |
 | Processing to depth | DFS |
 
----
-
 ## Key Takeaways for Algorithm Design
-
-1. **Start simple:** Begin with brute force, then optimize
-2. **Know your paradigms:** D&C, DP, Greedy, Backtracking
-3. **Analyze before implementing:** Ensure complexity is acceptable
-4. **Choose right data structures:** They often determine algorithm efficiency
-5. **Prove correctness:** Use induction and loop invariants
-6. **Consider edge cases:** Empty input, single element, duplicates
-7. **Practice pattern recognition:** Many problems reduce to known patterns
-8. **Trade-offs exist:** Time vs space, simplicity vs efficiency
+1. Start simple: Begin with brute force, then optimize
+2. Know your paradigms: D&C, DP, Greedy, Backtracking
+3. Analyze before implementing: Ensure complexity is acceptable
+4. Choose right data structures: They often determine algorithm efficiency
+5. Prove correctness: Use induction and loop invariants
+6. Consider edge cases: Empty input, single element, duplicates
+7. Practice pattern recognition: Many problems reduce to known patterns
+8. Trade-offs exist: Time vs space, simplicity vs efficiency
 
 This guide provides the foundational knowledge needed to analyze, design, and implement algorithms effectively. Mastery comes through practice and applying these concepts to diverse problem sets.

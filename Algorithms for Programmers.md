@@ -1,6 +1,5 @@
 # Algorithms for programmers
 ### ideas and source code
-
 This document is work in progress: read the ”important remarks” near the beginning
 
 #### J¨org Arndt
@@ -10,16 +9,12 @@ This document is work in progress: read the ”important remarks” near the beg
 ```
 This document[1] was L[A]TEX’d at September 26, 2002
 
-
------
-
 # Contents
+Some important remarks about this document 6
 
-**Some important remarks about this document** **6**
+List of important symbols 7
 
-**List of important symbols** **7**
-
-**1** **The Fourier transform** **8**
+1 The Fourier transform 8
 
 1.1 The discrete Fourier transform . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
 
@@ -71,12 +66,9 @@ This document[1] was L[A]TEX’d at September 26, 2002
 
 1.11 Automatic generation of FFT codes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 33
 
+CONTENTS 2
 
------
-
-_CONTENTS_ 2
-
-**2** **Convolutions** **36**
+2 Convolutions 36
 
 2.1 Definition and computation via FFT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 36
 
@@ -106,7 +98,7 @@ _CONTENTS_ 2
 
 2.8.4 Fractional Fourier transform by ZT . . . . . . . . . . . . . . . . . . . . . . . . . . . 48
 
-**3** **The Hartley transform (HT)** **49**
+3 The Hartley transform (HT) 49
 
 3.1 Definition of the HT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
 
@@ -130,7 +122,7 @@ _CONTENTS_ 2
 
 3.9 Negacyclic convolution via FHT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 62
 
-**4** **Numbertheoretic transforms (NTTs)** **63**
+4 Numbertheoretic transforms (NTTs) 63
 
 4.1 Prime modulus: Z/pZ = Fp . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
 
@@ -150,10 +142,7 @@ _CONTENTS_ 2
 
 4.7 Numbertheoretic Hartley transform . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 72
 
-
------
-
-_CONTENTS_ 3
+CONTENTS 3
 
 5.1 Basis functions of the Walsh transforms . . . . . . . . . . . . . . . . . . . . . . . . . . . . 77
 
@@ -161,13 +150,13 @@ _CONTENTS_ 3
 
 5.3 The slant transform . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
 
-**6** **The Haar transform** **82**
+6 The Haar transform 82
 
 6.1 Inplace Haar transform . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 83
 
 6.2 Integer to integer Haar transform . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
 
-**7** **Some bit wizardry** **88**
+7 Some bit wizardry 88
 
 7.1 Trivia . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 88
 
@@ -205,7 +194,7 @@ _CONTENTS_ 3
 
 7.18 Manipulation of colors . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 113
 
-**8** **Permutations** **115**
+8 Permutations 115
 
 8.1 The revbin permutation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 115
 
@@ -229,10 +218,7 @@ _CONTENTS_ 3
 
 8.4.2 Zip and unzip . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 123
 
-
------
-
-_CONTENTS_ 4
+CONTENTS 4
 
 8.6 General permutations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 127
 
@@ -254,7 +240,7 @@ _CONTENTS_ 4
 
 8.7.5 Yet another order . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 138
 
-**9** **Sorting and searching** **140**
+9 Sorting and searching 140
 
 9.1 Sorting . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 140
 
@@ -270,7 +256,7 @@ _CONTENTS_ 4
 
 9.7 Misc . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 148
 
-**10 Selected combinatorical algorithms** **152**
+10 Selected combinatorical algorithms 152
 
 10.1 Offline functions: funcemu . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 152
 
@@ -292,7 +278,7 @@ _CONTENTS_ 4
 
 10.10Partitions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 167
 
-**11 Arithmetical algorithms** **170**
+11 Arithmetical algorithms 170
 
 11.1 Asymptotics of algorithms . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 170
 
@@ -308,10 +294,7 @@ _CONTENTS_ 4
 
 11.3.1 Division . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 174
 
-
------
-
-_CONTENTS_ 5
+CONTENTS 5
 
 11.3.3 Cube root extraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 176
 
@@ -359,25 +342,21 @@ _CONTENTS_ 5
 
 11.14Continued fractions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 204
 
-**A Summary of definitions of FTs** **206**
+A Summary of definitions of FTs 206
 
-**B The pseudo language Sprache** **208**
+B The pseudo language Sprache 208
 
-**C Optimisation considerations for fast transforms** **211**
+C Optimisation considerations for fast transforms 211
 
-**D Properties of the ZT** **212**
+D Properties of the ZT 212
 
-**E Eigenvectors of the Fourier transform** **214**
+E Eigenvectors of the Fourier transform 214
 
-**Bibliography** **214**
+Bibliography 214
 
-**Index** **218**
-
-
------
+Index 218
 
 # Some important remarks
-
 . . . about this document.
 
 This draft is intended to turn into a book about selected algorithms. The audience in mind are programmers who are interested in the treated algorithms and actually want to have/create working and
@@ -425,149 +404,132 @@ Enjoy reading !
 
 1marked with [source file: filename] at the end of the corresponding listings
 
-
------
-
 # List of important Symbols
+x real part of x
+ℜ
 
-_x_ real part of x
-_ℜ_
+x imaginary part of x
+ℑ
 
-_x_ imaginary part of x
-_ℑ_
+x[∗] complex conjugate of x
 
-_x[∗]_ complex conjugate of x
+a a sequence, e.g. {a0, a1, ..., an−1}, the index always starts with zero.
 
-_a_ a sequence, e.g. {a0, a1, ..., an−1}, the index always starts with zero.
-
-_aˆ_ transformed (e.g. Fourier transformed) sequence
+aˆ transformed (e.g. Fourier transformed) sequence
 
 =m emphasize that the sequences to the left and right are all of length m
 
-_F [a]_ (= c) (discrete) Fourier transform (FT) of a, ck = _√1n_ �nx=0−1 _[a][x][ z][x k][ where][ z][ =][ e][±][2][ π i/n]_
+F [a] (= c) (discrete) Fourier transform (FT) of a, ck = √1n �nx=0−1 [a][x][ z][x k][ where][ z][ =][ e][±][2][ π i/n]
 
-_F_ _[−][1]_ [a] inverse (discrete) Fourier transform (IFT) of a, F _[−][1]_ [a]k = _√1n_ �nx=0−1 _[a][x][ z][−][x k]_
+F [−][1] [a] inverse (discrete) Fourier transform (IFT) of a, F [−][1] [a]k = √1n �nx=0−1 [a][x][ z][−][x k]
 
-_S_ _[k]a_ a sequence c with elements cx := ax e[±][ k][ 2][ π i x/n]
+S [k]a a sequence c with elements cx := ax e[±][ k][ 2][ π i x/n]
 
 [a] discrete Hartley transform (HT) of a
-_H_
+H
 
-_a_ sequence reversed around element with index n/2
+a sequence reversed around element with index n/2
 
-_aS_ the symmetric part of a sequence: aS := a + a
+aS the symmetric part of a sequence: aS := a + a
 
-_aA_ the antisymmetric part of a sequence: aA := a − _a_
+aA the antisymmetric part of a sequence: aA := a − a
 
 [a] discrete z-transform (ZT) of a
-_Z_
+Z
 
-_Wv [a]_ discrete weighted transform of a, weight (sequence) v
+Wv [a] discrete weighted transform of a, weight (sequence) v
 
-_Wv[−][1]_ [a] inverse discrete weighted transform of a, weight v
+Wv[−][1] [a] inverse discrete weighted transform of a, weight v
 
-_a ⊛_ _b_ cyclic (or circular) convolution of sequence a with sequence b
+a ⊛ b cyclic (or circular) convolution of sequence a with sequence b
 
-_a ⊛ac b_ acyclic (or linear) convolution of sequence a with sequence b
+a ⊛ac b acyclic (or linear) convolution of sequence a with sequence b
 
-_a ⊛−_ _b_ negacyclic (or skew circular) convolution of sequence a with sequence b
+a ⊛− b negacyclic (or skew circular) convolution of sequence a with sequence b
 
-_a ⊛{v} b_ weighted convolution of sequence a with sequence b, weight v
+a ⊛{v} b weighted convolution of sequence a with sequence b, weight v
 
-_a ⊛⊕_ _b_ dyadic convolution of sequence a with sequence b
+a ⊛⊕ b dyadic convolution of sequence a with sequence b
 
-_n_ _N_ _n divides N_
-_\_
+n N n divides N
+\
 
-_n_ _m_ gcd(n, m) = 1
-_⊥_
+n m gcd(n, m) = 1
+⊥
 
-_a[(][j][%][m][)]_ sequence consisting of the elements of a with indices k: k _j mod m_ e.g.
-_≡_
+a[(][j][%][m][)] sequence consisting of the elements of a with indices k: k j mod m e.g.
+≡
 
-_a[(][even][)], a[(][odd][)]_ _a[(0%2)], a[(1%2)]_
+a[(][even][)], a[(][odd][)] a[(0%2)], a[(1%2)]
 
-_a[(][j/m][)]_ sequence consisting of the elements of a with indices k: j _n/m_ _k < (j + 1)_ _n/m_ e.g.
-_·_ _≤_ _·_
+a[(][j/m][)] sequence consisting of the elements of a with indices k: j n/m k < (j + 1) n/m e.g.
+· ≤ ·
 
-_a[(][left][)], a[(][right][)]_ _a[(0][/][2)], a[(1][/][2)]_
-
-
------
+a[(][left][)], a[(][right][)] a[(0][/][2)], a[(1][/][2)]
 
 ## Chapter 1
-
 # The Fourier transform
-
 #### 1.1 The discrete Fourier transform
-
 The discrete Fourier transform (DFT or simply FT) of a complex sequence a of length n is defined as
 
-_c_ = [a] (1.1)
-_F_
+c = [a] (1.1)
+F
 
-1 _n−1_
+1 n−1
 
 �
 
-_ck_ := _√_ _ax z[+][x k]_ where _z = e[±][ 2][ π i/n]_ (1.2)
-_n_
+ck := √ ax z[+][x k] where z = e[±][ 2][ π i/n] (1.2)
+n
 
-_x=0_
+x=0
 
-_z is an n-th root of unity: z[n]_ = 1.
+z is an n-th root of unity: z[n] = 1.
 
 Backtransform (or inverse discrete Fourier transform IDFT or simply IFT) is then
 
-_a_ = [c] (1.3)
-_F_ _[−][1]_
+a = [c] (1.3)
+F [−][1]
 
-1 _n−1_
+1 n−1
 
 �
 
-_ax_ = _√_ _ck z[−][x k]_ (1.4)
-_n_
+ax = √ ck z[−][x k] (1.4)
+n
 
-_k=0_
+k=0
 
 To see this, consider element y of the IFT of the FT of a:
 
-
 1
-_F_ _[−][1]_ [F [a]]y = _√_
-_n_
+F [−][1] [F [a]]y = √
+n
 
-
-_n−1_
+n−1
 �
 
-_k=0_
-
+k=0
 
 1
-_√_
-_n_
+√
+n
 
-
-_n−1_
+n−1
 �
 
 (ax z[x k]) z[−][y k] (1.5)
-_x=0_
-
+x=0
 
 1
 =
 
-_n_
-
+n
 
 � �
 
-_ax_ (z[x][−][y])[k] (1.6)
-_x_ _k_
-
+ax (z[x][−][y])[k] (1.6)
+x k
 
 As [�]k [(][z][x][−][y][)][k][ =][ n][ for][ x][ =][ y][ and zero else (because][ z][ is an][ n][-th root of unity). Therefore the whole]
 
@@ -577,57 +539,50 @@ expression is equal to
 
 �
 
-_ax δx,y_ = _ay_ (1.7)
+ax δx,y = ay (1.7)
 
-_n [n]_
+n [n]
 
-_x_
-
+x
 
 where
 
 � 1 (x = y)
-_δx,y_ = 0 (x = y) (1.8)
-_̸_
+δx,y = 0 (x = y) (1.8)
+̸
 
 Here we will call the FT with the plus in the exponent the forward transform. The choice is actually
 arbitrary[1].
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 9
+CHAPTER 1. THE FOURIER TRANSFORM 9
 
 The FT is a linear transform, i.e. for α, β ∈ C
 
-[α a + β b] = _α_ [a] + β [b] (1.9)
-_F_ _F_ _F_
+[α a + β b] = α [a] + β [b] (1.9)
+F F F
 
 For the FT Parseval’s equation holds, let c = [a], then
-_F_
+F
 
-
-_n−1_
+n−1
 �
 
-_a[2]x_ =
-_x=0_
+a[2]x =
+x=0
 
-
-_n−1_
+n−1
 �
 
-_c[2]k_ (1.10)
-_k=0_
+c[2]k (1.10)
+k=0
 
-
-The normalization factor _√1n in front of the FT sums is sometimes replaced by a single_ _n[1]_ [in front of the]
+The normalization factor √1n in front of the FT sums is sometimes replaced by a single n[1] [in front of the]
 
 inverse FT sum which is often convenient in computation. Then, of course, Parseval’s equation has to be
 modified accordingly.
 A straight forward implementation of the discrete Fourier transform, i.e. the computation of n sums each
-of length n requires _n[2]_ operations:
-_∼_
+of length n requires n[2] operations:
+∼
 ```
 void slow_ft(Complex *f, long n, int is)
 {
@@ -647,7 +602,7 @@ void slow_ft(Complex *f, long n, int is)
 
 ```
 [FXT: slow ft in slow/slowft.cc] is must be +1 (forward transform) or 1 (backward transform),
-_−_
+−
 ```
 SinCos(x) returns a Complex(cos(x), sin(x)).
 
@@ -657,186 +612,164 @@ value computes to n (p − 1) logp(n). In the special case p = 2 even n/2 log2(n
 suffice. There are several different FFT algorithms with many variants.
 
 #### 1.2 Symmetries of the Fourier transform
-
 A bit of notation turns out to be useful:
 Let a be the sequence a (length n) reversed around element with index n/2:
 
-_a0_ := _a0_ (1.11)
+a0 := a0 (1.11)
 
-_an/2_ := _an/2_ if n even (1.12)
+an/2 := an/2 if n even (1.12)
 
-_ak_ := _an−k_ (1.13)
+ak := an−k (1.13)
 
 Let aS, aA be the symmetric, antisymmetric part of the sequence a, respectively:
 
-_aS_ := _a + a_ (1.14)
+aS := a + a (1.14)
 
-_aA_ := _a −_ _a_ (1.15)
+aA := a − a (1.15)
 
 (The elements with indices 0 and n/2 of aA are zero). Now let a ∈ R (meaning that each element of a is
-_∈_ R), then
+∈ R), then
 
-_F [aS]_ _∈_ R (1.16)
+F [aS] ∈ R (1.16)
 
-_F [aS]_ = _F [aS]_ (1.17)
-_F [aA]_ _∈_ _i R_ (1.18)
+F [aS] = F [aS] (1.17)
+F [aA] ∈ i R (1.18)
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 10
+CHAPTER 1. THE FOURIER TRANSFORM 10
 
 i.e. the FT of a real symmetric sequence is real and symmetric and the FT of a real antisymmetric
 sequence is purely imaginary and antisymmetric. Thereby the FT of a general real sequence is the
 complex conjugate of its reversed:
 
-_F [a]_ = _F [a]∗_ _for_ _a ∈_ R (1.20)
+F [a] = F [a]∗ for a ∈ R (1.20)
 
-Similarly, for a purely imaginary sequence b ∈ _iR:_
+Similarly, for a purely imaginary sequence b ∈ iR:
 
-_F [bS]_ _∈_ _i R_ (1.21)
-_F [bS]_ = _F [bS]_ (1.22)
+F [bS] ∈ i R (1.21)
+F [bS] = F [bS] (1.22)
 
-_F [bA]_ _∈_ R (1.23)
-_F [bA]_ = _−F [bA]_ (1.24)
+F [bA] ∈ R (1.23)
+F [bA] = −F [bA] (1.24)
 
 The FT of a complex symmetric/antisymmetric sequence is symmetric/antisymmetric, respectively.
 
 #### 1.3 Radix 2 FFT algorithms
-
 ##### 1.3.1 A little bit of notation
-
 Always assume a is a length-n sequence (n a power of two) in what follows:
 
 Let a[(][even][)], a[(][odd][)] denote the (length-n/2) subsequences of those elements of a that have even or odd
 indices, respectively.
 
 Let a[(][left][)] denote the subsequence of those elements of a that have indices 0 . . . n/2 1.
-_−_
+−
 
 Similarly, a[(][right][)] for indices n/2 . . . n 1.
-_−_
+−
 
-Let S _[k]a denote the sequence with elements ax e[±][ k][ 2][ π i x/n]_ where n is the length of the sequence a and
+Let S [k]a denote the sequence with elements ax e[±][ k][ 2][ π i x/n] where n is the length of the sequence a and
 the sign is that of the transform. The symbol shall suggest a shift operator. In the next two sections
-_S_
+S
 only will appear. is the identity operator.
-_S_ [1][/][2] _S_ [0]
+S [1][/][2] S [0]
 
 ##### 1.3.2 Decimation in time (DIT) FFT
-
 The following observation is the key to the decimation in time (DIT) FFT[2] algorithm:
 For n even the k-th element of the Fourier transform is
 
-
-_n/2−1_
+n/2−1
 �
 
-_a2 x+1 z[(2][ x][+1)][ k]_ (1.25)
-_x=0_
+a2 x+1 z[(2][ x][+1)][ k] (1.25)
+x=0
 
-
-_n−1_
+n−1
 �
 
-_ax z[x k]_ =
-_x=0_
+ax z[x k] =
+x=0
 
 =
 
-
-_n/2−1_
+n/2−1
 �
 
-_a2 x z[2][ x k]_ +
-_x=0_
+a2 x z[2][ x k] +
+x=0
 
-
-_n/2−1_ _n/2−1_
+n/2−1 n/2−1
 � �
 
-_a2 x z[2][ x k]_ + z[k] _a2 x+1 z[2][ x k]_ (1.26)
-_x=0_ _x=0_
-
+a2 x z[2][ x k] + z[k] a2 x+1 z[2][ x k] (1.26)
+x=0 x=0
 
 where z = e[±][i][ 2][ π/n] and k 0, 1, . . ., n 1 .
-_∈{_ _−_ _}_
+∈{ − }
 
 The last identity tells us how to compute the k-th element of the length-n Fourier transform from the
 length-n/2 Fourier transforms of the even and odd indexed subsequences.
 
 To actually rewrite the length-n FT in terms of length-n/2 FTs one has to distinguish the cases 0
-_≤_
-_k < n/2 and n/2 ≤_ _k < n, therefore we rewrite k ∈{0, 1, 2, . . ., n −_ 1} as k = j + δ _[n]2_ [where][ j][ ∈]
+≤
+k < n/2 and n/2 ≤ k < n, therefore we rewrite k ∈{0, 1, 2, . . ., n − 1} as k = j + δ [n]2 [where][ j][ ∈]
 
 2also called Cooley-Tukey FFT.
 
+CHAPTER 1. THE FOURIER TRANSFORM 11
 
------
+0, 1, . . ., n/2 1 , δ 0, 1 .
+{ − } ∈{ }
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 11
+n/2−1
+� a[(]x[odd][)] z[2][ x][ (][j][+][δ][ n]2 [)] (1.27)
 
-0, 1, . . ., n/2 1 _,_ _δ_ 0, 1 .
-_{_ _−_ _}_ _∈{_ _}_
+x=0
 
+n−1
+� ax z[x][ (][j][+][δ][ n]2 [)] =
 
-_n/2−1_
-� _a[(]x[odd][)]_ _z[2][ x][ (][j][+][δ][ n]2_ [)] (1.27)
-
-_x=0_
-
-
-_n−1_
-� _ax z[x][ (][j][+][δ][ n]2_ [)] =
-
-_x=0_
+x=0
 
 =
 
+n/2−1
+� ax[(][even][)] z[2][ x][ (][j][+][δ][ n]2 [)] + z[j][+][δ][ n]2
 
-_n/2−1_
-� _ax[(][even][)]_ _z[2][ x][ (][j][+][δ][ n]2_ [)] + z[j][+][δ][ n]2
-
-_x=0_
-
+x=0
 
 
 
 
 
 
-
 (1.28)
 
-
-_n/2−1_ _n/2−1_
+n/2−1 n/2−1
 � �
 
-_a[(]x[even][)]_ _z[2][ x j]_ + z[j] _a[(]x[odd][)]_ _z[2][ x j]_ for _δ = 0_
-_x=0_ _x=0_
+a[(]x[even][)] z[2][ x j] + z[j] a[(]x[odd][)] z[2][ x j] for δ = 0
+x=0 x=0
 
-_n/2−1_ _n/2−1_
+n/2−1 n/2−1
 � �
 
-_a[(]x[even][)]_ _z[2][ x j]_ _−_ _z[j]_ _a[(]x[odd][)]_ _z[2][ x j]_ for _δ = 1_
-_x=0_ _x=0_
-
+a[(]x[even][)] z[2][ x j] − z[j] a[(]x[odd][)] z[2][ x j] for δ = 1
+x=0 x=0
 
 Noting that z[2] is just the root of unity that appears in a length-n/2 FT one can rewrite the last two
 equations as the
 
-**Idea 1.1 (FFT radix 2 DIT step) Radix 2 decimation in time step for the FFT:**
+Idea 1.1 (FFT radix 2 DIT step) Radix 2 decimation in time step for the FFT:
 
-_n/2_ � �
-[a][(][left][)] = _a[(][even][)][�]_ + _a[(][odd][)][�]_ (1.29)
-_F_ _F_ _S_ [1][/][2]F
+n/2 � �
+[a][(][left][)] = a[(][even][)][�] + a[(][odd][)][�] (1.29)
+F F S [1][/][2]F
 
-_n/2_ � �
-[a][(][right][)] = _a[(][even][)][�]_ _a[(][odd][)][�]_ (1.30)
-_F_ _F_ _−S_ [1][/][2]F
+n/2 � �
+[a][(][right][)] = a[(][even][)][�] a[(][odd][)][�] (1.30)
+F F −S [1][/][2]F
 
 (Here it is silently assumed that ’+’ or ’ ’ between two sequences denotes elementwise addition or
-_−_
+−
 subtraction.)
 
 The length-n transform has been replaced by two transforms of length n/2. If n is a power of 2 this
@@ -844,8 +777,8 @@ scheme can be applied recursively until length-one transforms (identity operatio
 the operation count is improved to proportional n · log2(n): There are log2(n) splitting steps, the work
 in each step is proportional to n.
 
-**Code 1.1 (recursive radix 2 DIT FFT) Pseudo code for a recursive procedure of the (radix 2) DIT**
-_FFT algorithm, is must be +1 (forward transform) or -1 (backward transform):_
+Code 1.1 (recursive radix 2 DIT FFT) Pseudo code for a recursive procedure of the (radix 2) DIT
+FFT algorithm, is must be +1 (forward transform) or -1 (backward transform):
 ```
 procedure rec_fft_dit2(a[], n, x[], is)
 // complex a[0..n-1] input
@@ -877,18 +810,17 @@ procedure rec_fft_dit2(a[], n, x[], is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 12
+CHAPTER 1. THE FOURIER TRANSFORM 12
 
 The data length n must be a power of 2. The result is in x[]. Note that normalization (i.e. multiplication
 of each element of x[] by 1/[√]n) is not included here.
 
 [FXT: recursive dit2 fft in slow/recfft2.cc] The procedure uses the subroutine
 
-**Code 1.2 (Fourier shift) For each element in c[0..n-1] replace c[k] by c[k] times e[v][ 2][ π i k/n]. Used with**
-_v =_ 1/2 for the Fourier transform.
-_±_
+Code 1.2 (Fourier shift) For each element in c[0..n-1] replace c[k] by c[k] times e[v][ 2][ π i k/n]. Used with
+v = 1/2 for the Fourier transform.
+±
 ```
 procedure fourier_shift(c[], n, v)
 {
@@ -907,8 +839,8 @@ all. The price is the necessity of an additional data reordering: The procedure 
 rearranges the array a[] in a way that each element ax is swapped with ax˜, where ˜x is obtained from x
 by reversing its binary digits. This is discussed in section 8.1.
 
-**Code 1.3 (radix 2 DIT FFT, localized) Pseudo code for a non-recursive procedure of the (radix 2)**
-_DIT algorithm, is must be -1 or +1:_
+Code 1.3 (radix 2 DIT FFT, localized) Pseudo code for a non-recursive procedure of the (radix 2)
+DIT algorithm, is must be -1 or +1:
 ```
 procedure fft_dit2_localized(a[], ldn, is)
 // complex a[0..2**ldn-1] input, result
@@ -934,25 +866,24 @@ procedure fft_dit2_localized(a[], ldn, is)
 }
 
 ```
-**[source file: fftdit2localized.spr]**
+[source file: fftdit2localized.spr]
 
 [FXT: dit2 fft localized in fft/fftdit2.cc]
 
 This version of a non-recursive FFT procedure already avoids the calling overhead and it works in place.
-It works as given, but is a bit wasteful. The (expensive!) computation e := exp(is*2*PI*I*j/m) is
+It works as given, but is a bit wasteful. The (expensive!) computation e := exp(is2PIIj/m) is
 done n/2 · log2(n) times. To reduce the number of trigonometric computations, one can simply swap the
 two inner loops, leading to the first ‘real world’ FFT procedure presented here:
 
-**Code 1.4 (radix 2 DIT FFT) Pseudo code for a non-recursive procedure of the (radix 2) DIT algo-**
-_rithm, is must be -1 or +1:_
+Code 1.4 (radix 2 DIT FFT) Pseudo code for a non-recursive procedure of the (radix 2) DIT algo-
+rithm, is must be -1 or +1:
 ```
 procedure fft dit2(a[] ldn is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 13
+CHAPTER 1. THE FOURIER TRANSFORM 13
 ```
 {
   n := 2**ldn
@@ -976,7 +907,7 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 13
 }
 
 ```
-**[source file: fftdit2.spr]**
+[source file: fftdit2.spr]
 
 [FXT: dit2 fft in fft/fftdit2.cc]
 
@@ -1009,117 +940,104 @@ by
 The simple splitting of the Fourier sum into a left and right half (for n even) leads to the decimation in
 frequency (DIF) FFT[3]:
 
-
-_n_
+n
 �
 
-_ax z[x k]_ (1.31)
-_x=n/2_
+ax z[x k] (1.31)
+x=n/2
 
-_n/2−1_
+n/2−1
 �
 
-_ax+n/2 z[(][x][+][n/][2)][ k]_ (1.32)
-_x=0_
+ax+n/2 z[(][x][+][n/][2)][ k] (1.32)
+x=0
 
-
-_n−1_
+n−1
 �
 
-_ax z[x k]_ =
-_x=0_
+ax z[x k] =
+x=0
 
 =
 
 =
 
-
-_n/2−1_
+n/2−1
 �
 
-_ax z[x k]_ +
-_x=0_
+ax z[x k] +
+x=0
 
-_n/2−1_
+n/2−1
 �
 
-_ax z[x k]_ +
-_x=0_
+ax z[x k] +
+x=0
 
-
-_n/2−1_
+n/2−1
 �
 
-(a[(]x[left][)] + z[k n/][2] _a[(]x[right][)]) z[x k]_ (1.33)
-_x=0_
+(a[(]x[left][)] + z[k n/][2] a[(]x[right][)]) z[x k] (1.33)
+x=0
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 14
+CHAPTER 1. THE FOURIER TRANSFORM 14
 
 (where z = e[±][i][ 2][ π/n] and k 0, 1, . . ., n 1 )
-_∈{_ _−_ _}_
+∈{ − }
 
 Here one has to distinguish the cases k even or odd, therefore we rewrite k 0, 1, 2, . . ., n 1 as
-_∈{_ _−_ _}_
-_k = 2 j + δ where j ∈{0, 2, . . .,_ _[n]2_ _[−]_ [1][}][,] _δ ∈{0, 1}._
+∈{ − }
+k = 2 j + δ where j ∈{0, 2, . . ., [n]2 [−] [1][}][,] δ ∈{0, 1}.
 
-
-_n−1_
+n−1
 �
 
-_ax z[x][ (2][ j][+][δ][)]_ =
-_x=0_
+ax z[x][ (2][ j][+][δ][)] =
+x=0
 
 =
 
-
-_n/2−1_
+n/2−1
 �
 
-(a[(]x[left][)] + z[(2][ j][+][δ][)][ n/][2] _a[(]x[right][)]) z[x][ (2][ j][+][δ][)]_ (1.34)
-_x=0_
-
+(a[(]x[left][)] + z[(2][ j][+][δ][)][ n/][2] a[(]x[right][)]) z[x][ (2][ j][+][δ][)] (1.34)
+x=0
 
 
 
 
 
 
-
 (1.35)
 
-
-_n/2−1_
+n/2−1
 �
 
-(a[(]x[left][)] + a[(]x[right][)]) z[2][ x j] for _δ = 0_
-_x=0_
+(a[(]x[left][)] + a[(]x[right][)]) z[2][ x j] for δ = 0
+x=0
 
-_n/2−1_
+n/2−1
 �
 
-_z[x](a[(]x[left][)]_ _−_ _a[(]x[right][)]) z[2][ x j]_ for _δ = 1_
-_x=0_
+z[x](a[(]x[left][)] − a[(]x[right][)]) z[2][ x j] for δ = 1
+x=0
 
-
-_z[(2][ j][+][δ][)][ n/][2]_ = e[±][π i δ] is equal to plus/minus 1 for δ = 0/1 (k even/odd), respectively.
+z[(2][ j][+][δ][)][ n/][2] = e[±][π i δ] is equal to plus/minus 1 for δ = 0/1 (k even/odd), respectively.
 
 The last two equations are, more compactly written, the
 
-**Idea 1.2 (radix 2 DIF step) Radix 2 decimation in frequency step for the FFT:**
+Idea 1.2 (radix 2 DIF step) Radix 2 decimation in frequency step for the FFT:
 
-_n/2_ �
-[a][(][even][)] = _a[(][left][)]_ + a[(][right][)][�] (1.36)
-_F_ _F_
+n/2 �
+[a][(][even][)] = a[(][left][)] + a[(][right][)][�] (1.36)
+F F
 
-_n/2_ �
-[a][(][odd][)] = _a[(][left][)]_ _a[(][right][)][��]_ (1.37)
-_F_ _F_ _S_ [1][/][2][ �] _−_
+n/2 �
+[a][(][odd][)] = a[(][left][)] a[(][right][)][��] (1.37)
+F F S [1][/][2][ �] −
 
-**Code 1.5 (recursive radix 2 DIF FFT) Pseudo code for a recursive procedure of the (radix 2) deci-**
-_mation in frequency FFT algorithm, is must be +1 (forward transform) or -1 (backward transform):_
+Code 1.5 (recursive radix 2 DIF FFT) Pseudo code for a recursive procedure of the (radix 2) deci-
+mation in frequency FFT algorithm, is must be +1 (forward transform) or -1 (backward transform):
 ```
 procedure rec_fft_dif2(a[], n, x[], is)
 // complex a[0..n-1] input
@@ -1155,19 +1073,16 @@ procedure rec_fft_dif2(a[], n, x[], is)
 }
 
 ```
-**[source file: recfftdif2.spr]**
+[source file: recfftdif2.spr]
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 15
+CHAPTER 1. THE FOURIER TRANSFORM 15
 
 [FXT: recursive dif2 fft in slow/recfft2.cc]
 
 The non-recursive procedure looks like this:
 
-**Code 1.6 (radix 2 DIF FFT) Pseudo code for a non-recursive procedure of the (radix 2) DIF algo-**
-_rithm, is must be -1 or +1:_
+Code 1.6 (radix 2 DIF FFT) Pseudo code for a non-recursive procedure of the (radix 2) DIF algo-
+rithm, is must be -1 or +1:
 ```
 procedure fft_dif2(a[],ldn,is)
 // complex a[0..2**ldn-1] input, result
@@ -1193,7 +1108,7 @@ procedure fft_dif2(a[],ldn,is)
 }
 
 ```
-**[source file: fftdif2.spr]**
+[source file: fftdif2.spr]
 
 cf. [FXT: dif2 fft in fft/fftdif2.cc]
 
@@ -1224,82 +1139,76 @@ before the call of revbin_permute(a[], n).
 TBD: extraction of the j=0 case
 
 #### 1.4 Saving trigonometric computations
-
 The trigonometric (sin()- and cos()-) computations are an expensive part of any FFT. There are two
 apparent ways for saving the involved CPU cycles, the use of lookup-tables and recursive methods.
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 16
+CHAPTER 1. THE FOURIER TRANSFORM 16
 
 ##### 1.4.1 Using lookup tables
-
 The idea is to save all necessary sin/cos-values in an array and later looking up the values needed. This is
 a good idea if one wants to compute many FFTs of the same (small) length. For FFTs of large sequences
 one gets large lookup tables that can introduce a high cache-miss rate. Thereby one is likely experiencing
 little or no speed gain, even a notable slowdown is possible. However, for a length-n FFT one does not
 need to store all the (n complex or 2 n real) sin/cos-values exp(2 π i k/n), k = 0, 1, 2, 3, . . ., n 1. Already
-_−_
+−
 a table cos(2 π i k/n), k = 0, 1, 2, 3, . . ., n/4 1 (of n/4 reals) contains all different trig-values that occur
-_−_
+−
 in the computation. The size of the trig-table is thereby cut by a factor of 8. For the lookups one can
 use the symmetry relations
 
 cos(π + x) = cos(x) (1.38)
-_−_
+−
 
 sin(π + x) = sin(x) (1.39)
-_−_
+−
 
 (reducing the interval from 0 . . . 2π to 0 . . . π),
 
 cos(π/2 + x) = sin(x) (1.40)
-_−_
+−
 sin(π/2 + x) = + cos(x) (1.41)
 
 (reducing the interval to 0 . . . π/2) and
 
-sin(x) = cos(π/2 _x)_ (1.42)
-_−_
+sin(x) = cos(π/2 x) (1.42)
+−
 
 (only cos()-table needed).
 
 ##### 1.4.2 Recursive generation of the sin/cos-values
-
 In the computation of FFTs one typically needs the values
 
-exp(i ω 0) = 1, exp(i ω δ), exp(i ω 2 δ), exp(i ω 3 δ), _. . ._
-_{_ _}_
+exp(i ω 0) = 1, exp(i ω δ), exp(i ω 2 δ), exp(i ω 3 δ), . . .
+{ }
 
 in sequence. The naive idea for a recursive computation of these values is to precompute d = exp(i ω δ)
 and then compute the next following value using the identity exp(i ω k δ)) = d exp(i ω (k 1) δ). This
-_·_ _−_
+· −
 method, however, is of no practical value because the numerical error grows (exponentially) in the process.
 
 Here is a stable version of a trigonometric recursion for the computation of the sequence: Precompute
 
-_c_ = cos ω, (1.43)
-_s_ = sin ω, (1.44)
+c = cos ω, (1.43)
+s = sin ω, (1.44)
 
-_α_ = 1 cos δ cancellation! (1.45)
-_−_
+α = 1 cos δ cancellation! (1.45)
+−
 
-= 2 (sin _[δ]_ ok. (1.46)
+= 2 (sin [δ] ok. (1.46)
 
 2 [)][2]
 
-_β_ = sin δ (1.47)
+β = sin δ (1.47)
 
 Then compute the next power from the previous as:
 
-_cnext_ = _c −_ (α c + β s); (1.48)
+cnext = c − (α c + β s); (1.48)
 
-_snext_ = _s −_ (α s − _β c);_ (1.49)
+snext = s − (α s − β c); (1.49)
 
-(The underlying idea is to use (with e(x) := exp(2 π i x)) the ansatz e(ω + _δ) = e(ω)_ _e(ω)_ _z which leads_
-_−_ _·_
-to z = 1 − cos δ − _i sin δ = 2 (sin_ 2[δ] [)][2][ −] _[i][ sin][ δ][.)]_
+(The underlying idea is to use (with e(x) := exp(2 π i x)) the ansatz e(ω + δ) = e(ω) e(ω) z which leads
+− ·
+to z = 1 − cos δ − i sin δ = 2 (sin 2[δ] [)][2][ −] [i][ sin][ δ][.)]
 
 Do not expect to get all the precision you would get with the repeated call of the sin and cos functions,
 but even for very long FFTs less than 3 bits of precision are lost. When (in C) working with doubles
@@ -1307,10 +1216,7 @@ it might be a good idea to use the type long double with the trig recursion: the
 always be accurate within the double-precision.
 A real-world example from [FXT: dif fht core in fht/fhtdif.cc], the recursion is used if TRIG REC is
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 17
+CHAPTER 1. THE FOURIER TRANSFORM 17
 ```
     [...]
     double tt = M_PI_4/kh;
@@ -1336,233 +1242,205 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 17
 ```
 It may be less apparent, that the use of higher radix FFT algorithms also saves trig-computations. The
 radix-4 FFT algorithms presented in the next sections replace all multiplications with complex factors
-(0, _i) by the obvious simpler operations. Radix-8 algorithms also simplify the special cases where sin(φ)_
-_±_
+(0, i) by the obvious simpler operations. Radix-8 algorithms also simplify the special cases where sin(φ)
+±
 or cos(φ) are �1/2. Apart from the trig-savings higher radix also brings a performance gain by their
-_±_
+±
 
 more unrolled structure. (Less bookkeeping overhead, less loads/stores.)
 
 #### 1.5 Higher radix DIT and DIF algorithms
-
 ##### 1.5.1 More notation
-
 Again some useful notation, again let a be a length-n sequence.
 
-Let a[(][r][%][m][)] denote the subsequence of those elements of a that have subscripts x _r (mod m); e.g. a[(0%2)]_
-_≡_
+Let a[(][r][%][m][)] denote the subsequence of those elements of a that have subscripts x r (mod m); e.g. a[(0%2)]
+≡
 
-is a[(][even][)], a[(3%4)] = {a3, a7, a11, a15, . . . }. The length of a[(][r][%][m][)] is[4] _n/m._
+is a[(][even][)], a[(3%4)] = {a3, a7, a11, a15, . . . }. The length of a[(][r][%][m][)] is[4] n/m.
 
-Let a[(][r/m][)] denote the subsequence of those elements of a that have indices _[r n]m_ _[. . .][ (][r][+1)]m_ _[ n]_ _−_ 1; e.g. a[(1][/][2)]
+Let a[(][r/m][)] denote the subsequence of those elements of a that have indices [r n]m [. . .][ (][r][+1)]m [ n] − 1; e.g. a[(1][/][2)]
 
 is a[(][right][)], a[(2][/][3)] is the last third of a. The length of a[(][r/m][)] is also n/m.
 
 ##### 1.5.2 Decimation in time
-
 First reformulate the radix 2 DIT step (formulas 1.29 and 1.30) in the new notation:
 
+n/2 � �
+[a][(0][/][2)] = a[(0%2)][�] a[(1%2)][�] (1.50)
+F S [0][/][2]F
 
-_n/2_ � �
-[a][(0][/][2)] = _a[(0%2)][�]_ _a[(1%2)][�]_ (1.50)
-_F_ _S_ [0][/][2]F
+n/2 [+][ S] [1][/][2][F] n/2
 
-_n/2_ [+][ S] [1][/][2][F] _n/2_
+n/2 � �
+[a][(1][/][2)] = a[(0%2)][�] a[(1%2)][�] (1.51)
+F S [0][/][2]F
 
-_n/2_ � �
-[a][(1][/][2)] = _a[(0%2)][�]_ _a[(1%2)][�]_ (1.51)
-_F_ _S_ [0][/][2]F
+n/2 n/2
 
-_n/2_ _n/2_
-
-_[−S]_ [1][/][2][F]
+[−S] [1][/][2][F]
 
 (Note that is the identity operator).
-_S_ [0]
+S [0]
 
 The radix 4 step, whose derivation is analogous to the radix 2 step, it just involves more writing and
 does not give additional insights, is
 
 4Throughout this book will m divide n, so the statement is correct.
 
+CHAPTER 1. THE FOURIER TRANSFORM 18
 
------
+Idea 1.3 (radix 4 DIT step) Radix 4 decimation in time step for the FFT:
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 18
+n/4 � � � �
+[a][(0][/][4)] = + a[(0%4)][�] + a[(1%4)][�] + a[(2%4)][�] + a[(3%4)][�] (1.52)
+F S [0][/][4]F S [1][/][4]F S [2][/][4]F S [3][/][4]F
 
-**Idea 1.3 (radix 4 DIT step) Radix 4 decimation in time step for the FFT:**
+n/4 � � � �
+[a][(1][/][4)] = + a[(0%4)][�] + iσ a[(1%4)][�] a[(2%4)][�] iσ a[(3%4)][�] (1.53)
+F S [0][/][4]F S [1][/][4]F −S [2][/][4]F − S [3][/][4]F
 
-_n/4_ � � � �
-[a][(0][/][4)] = + _a[(0%4)][�]_ + _a[(1%4)][�]_ + _a[(2%4)][�]_ + _a[(3%4)][�]_ (1.52)
-_F_ _S_ [0][/][4]F _S_ [1][/][4]F _S_ [2][/][4]F _S_ [3][/][4]F
+n/4 � � � �
+[a][(2][/][4)] = + a[(0%4)][�] a[(1%4)][�] + a[(2%4)][�] a[(3%4)][�] (1.54)
+F S [0][/][4]F − S [1][/][4]F S [2][/][4]F − S [3][/][4]F
 
-_n/4_ � � � �
-[a][(1][/][4)] = + _a[(0%4)][�]_ + iσ _a[(1%4)][�]_ _a[(2%4)][�]_ _iσ_ _a[(3%4)][�]_ (1.53)
-_F_ _S_ [0][/][4]F _S_ [1][/][4]F _−S_ [2][/][4]F _−_ _S_ [3][/][4]F
-
-_n/4_ � � � �
-[a][(2][/][4)] = + _a[(0%4)][�]_ _a[(1%4)][�]_ + _a[(2%4)][�]_ _a[(3%4)][�]_ (1.54)
-_F_ _S_ [0][/][4]F _−_ _S_ [1][/][4]F _S_ [2][/][4]F _−_ _S_ [3][/][4]F
-
-_n/4_ � � � �
-[a][(3][/][4)] = + _a[(0%4)][�]_ _iσ_ _a[(1%4)][�]_ _a[(2%4)][�]_ + iσ _a[(3%4)][�]_ (1.55)
-_F_ _S_ [0][/][4]F _−_ _S_ [1][/][4]F _−S_ [2][/][4]F _S_ [3][/][4]F
+n/4 � � � �
+[a][(3][/][4)] = + a[(0%4)][�] iσ a[(1%4)][�] a[(2%4)][�] + iσ a[(3%4)][�] (1.55)
+F S [0][/][4]F − S [1][/][4]F −S [2][/][4]F S [3][/][4]F
 
 where σ = 1 is the sign in the exponent. In contrast to the radix 2 step, that happens to be identical
-_±_
+±
 for forward and backward transform (with both decimation frequency/time) the sign of the transform
 appears here.
 
 Or, more compactly:
 
-_n/4_ � �
-[a][(][j/][4)] = +e[σ][ 2][ i π][ 0][ j/][4] _a[(0%4)][�]_ + e[σ][ 2][ i π][ 1][ j/][4] _a[(1%4)][�]_ (1.56)
-_F_ _· S_ [0][/][4]F _· S_ [1][/][4]F
+n/4 � �
+[a][(][j/][4)] = +e[σ][ 2][ i π][ 0][ j/][4] a[(0%4)][�] + e[σ][ 2][ i π][ 1][ j/][4] a[(1%4)][�] (1.56)
+F · S [0][/][4]F · S [1][/][4]F
 
 � �
-+e[σ][ 2][ i π][ 2][ j/][4] _a[(2%4)][�]_ + e[σ][ 2][ i π][ 3][ j/][4] _a[(3%4)][�]_
++e[σ][ 2][ i π][ 2][ j/][4] a[(2%4)][�] + e[σ][ 2][ i π][ 3][ j/][4] a[(3%4)][�]
 
-_· S_ [2][/][4]F _· S_ [3][/][4]F
+· S [2][/][4]F · S [3][/][4]F
 
 where j = 0, 1, 2, 3 and n is a multiple of 4.
 
 Still more compactly:
 
-
-_n/4_
+n/4
 [a][(][j/][4)] =
-_F_
-
+F
 
 3
 � �
 
-_e[σ][2][ i π k j/][4]_ _a[(][k][%4)][�]_ _j = 0, 1, 2, 3_ (1.57)
+e[σ][2][ i π k j/][4] a[(][k][%4)][�] j = 0, 1, 2, 3 (1.57)
 
-_· S_ _[σk/][4]F_
-_k=0_
-
+· S [σk/][4]F
+k=0
 
 where the summation symbol denotes elementwise summation of the sequences. (The dot indicates
 multiplication of every element of the rhs. sequence by the lhs. exponential.)
 
 The general radix r DIT step, applicable when n is a multiple of r, is:
 
-**Idea 1.4 (FFT general DIT step) General decimation in time step for the FFT:**
+Idea 1.4 (FFT general DIT step) General decimation in time step for the FFT:
 
-
-_n/r_
+n/r
 [a][(][j/r][)] =
-_F_
-
+F
 
 �r−1 �
 
-_e[σ][ 2][ i π k j/r]_ _a[(][k][%][r][)][�]_ _j = 0, 1, 2, . . ., r_ 1 (1.58)
+e[σ][ 2][ i π k j/r] a[(][k][%][r][)][�] j = 0, 1, 2, . . ., r 1 (1.58)
 
-_· S_ _[σ k/r]F_ _−_
-_k=0_
-
+· S [σ k/r]F −
+k=0
 
 ##### 1.5.3 Decimation in frequency
-
 The radix 2 DIF step (formulas 1.36 and 1.37) was
 
-_n/2_ �
-_F [a][(0%2)]n_ = _F_ _S_ [0][/][2][�]a[(0][/][2)] + a[(1][/][2)][��] (1.59)
+n/2 �
+F [a][(0%2)]n = F S [0][/][2][�]a[(0][/][2)] + a[(1][/][2)][��] (1.59)
 
-_n/2_ �
-_F [a][(1%2)]n_ = _F_ _S_ [1][/][2][�]a[(0][/][2)] _−_ _a[(1][/][2)][��]_ (1.60)
+n/2 �
+F [a][(1%2)]n = F S [1][/][2][�]a[(0][/][2)] − a[(1][/][2)][��] (1.60)
 
 The radix 4 DIF step, applicable for n divisible by 4, is
 
-**Idea 1.5 (radix 4 DIF step) Radix 4 decimation in frequency step for the FFT:**
+Idea 1.5 (radix 4 DIF step) Radix 4 decimation in frequency step for the FFT:
 
-_n/4_ �
-[a][(0%4)] = _a[(0][/][4)]_ + _a[(1][/][4)]_ + a[(2][/][4)] + _a[(3][/][4)][��]_ (1.61)
-_F_ _F_ _S_ [0][/][4][�]
+n/4 �
+[a][(0%4)] = a[(0][/][4)] + a[(1][/][4)] + a[(2][/][4)] + a[(3][/][4)][��] (1.61)
+F F S [0][/][4][�]
 
-_n/4_ �
-[a][(1%4)] = _a[(0][/][4)]_ + i σ a[(1][/][4)] _a[(2][/][4)]_ _i σ a[(3][/][4)][��]_ (1.62)
-_F_ _F_ _S_ [1][/][4][�] _−_ _−_
+n/4 �
+[a][(1%4)] = a[(0][/][4)] + i σ a[(1][/][4)] a[(2][/][4)] i σ a[(3][/][4)][��] (1.62)
+F F S [1][/][4][�] − −
 
-_n/4_ �
-[a][(2%4)] = _a[(0][/][4)]_ _a[(1][/][4)]_ + a[(2][/][4)] _a[(3][/][4)][��]_ (1.63)
-_F_ _F_ _S_ [2][/][4][�] _−_ _−_
+n/4 �
+[a][(2%4)] = a[(0][/][4)] a[(1][/][4)] + a[(2][/][4)] a[(3][/][4)][��] (1.63)
+F F S [2][/][4][�] − −
 
-_n/4_ �
-[a][(3%4)] _a[(0][/][4)]_ _i σ a[(1][/][4)]_ _a[(2][/][4)]_ + i σ a[(3][/][4)][��] (1 64)
-_F_ _F_ _S_ [3][/][4][�]
+n/4 �
+[a][(3%4)] a[(0][/][4)] i σ a[(1][/][4)] a[(2][/][4)] + i σ a[(3][/][4)][��] (1 64)
+F F S [3][/][4][�]
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 19
+CHAPTER 1. THE FOURIER TRANSFORM 19
 
 Or, more compactly:
-
 
 3 �
 �
 
-_e[σ][ 2][ i π k j/][4]_ _a[(][k/][4)]_
+e[σ][ 2][ i π k j/][4] a[(][k/][4)]
 
-_S_ _[σ j/][4]_ _·_
+S [σ j/][4] ·
 
-_k=0_
+k=0
 
-
-_n/4_
+n/4
 [a][(][j][%4)] =
-_F_ _F_
-
+F F
 
 �
 
-
-_j = 0, 1, 2, 3_ (1.65)
-
+j = 0, 1, 2, 3 (1.65)
 
 the sign of the exponent and in the shift operator is the same as in the transform.
 
 The general radix r DIF step is
 
-**Idea 1.6 (FFT general DIF step) General decimation in frequency step for the FFT:**
+Idea 1.6 (FFT general DIF step) General decimation in frequency step for the FFT:
 
-
-_r−1_ �
+r−1 �
 �
 
-_e[σ][ 2][ i π k j/r]_ _a[(][k/r][)]_
+e[σ][ 2][ i π k j/r] a[(][k/r][)]
 
-_S_ _[σ j/r]_ _·_
+S [σ j/r] ·
 
-_k=0_
+k=0
 
-
-_n/r_
+n/r
 [a][(][j][%][r][)] =
-_F_ _F_
-
+F F
 
 �
 
-
-_j = 0, 1, 2, . . ., r_ 1 (1.66)
-_−_
-
+j = 0, 1, 2, . . ., r 1 (1.66)
+−
 
 ##### 1.5.4 Implementation of radix r = p[x] DIF/DIT FFTs
-
 If r = p = 2 (p prime) then the revbin_permute() function has to be replaced by its radix-p version:
-_̸_
+̸
 ```
 radix_permute(). The reordering now swaps elements x with ˜x where ˜x is obtained from x by reversing
 
 ```
 its radix-p expansion (see section 8.2).
 
-**Code 1.7 (radix p[x]** **DIT FFT) Pseudo code for a radix r:=p[x]** _decimation in time FFT:_
+Code 1.7 (radix p[x] DIT FFT) Pseudo code for a radix r:=p[x] decimation in time FFT:
 ```
 procedure fftdit_r(a[], n, is)
 // complex a[0..n-1] input, result
@@ -1605,9 +1483,8 @@ procedure fftdit_r(a[], n, is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 20
+CHAPTER 1. THE FOURIER TRANSFORM 20
 ```
         r_point_fft(u[], is)
         for z:=0 to r-1
@@ -1620,11 +1497,11 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 20
 }
 
 ```
-**[source file: fftditpx.spr]**
+[source file: fftditpx.spr]
 
 Of course the loops that use the variable z have to be unrolled, the (length-p[x]) scratch space u[] has to
 be replaced by explicit variables (e.g. u0, u1, ... ) and the r_point_fft(u[],is) shall be an inlined
-_p[x]-point FFT._
+p[x]-point FFT.
 
 With r = p[x] there is a pitfall: if one uses the radix_permute() procedure instead of a radix-p[x]
 
@@ -1639,8 +1516,8 @@ the case when ldm==1 in the outermost loop[5]. In order not to restrict the poss
 of p[x] but only to powers of p one will supply adapted versions of the ldm==1 -loop: e.g. for a radix-4 DIF
 FFT append a radix 2 step after the main loop if the array size is not a power of 4.
 
-**Code 1.8 (radix 4 DIT FFT) C++ code for a radix 4 DIF FFT on the array f[], the data length n**
-_must be a power of 2, is must be +1 or -1:_
+Code 1.8 (radix 4 DIT FFT) C++ code for a radix 4 DIF FFT on the array f[], the data length n
+must be a power of 2, is must be +1 or -1:
 ```
 static const ulong RX = 4; // == r
 static const ulong LX = 2; // == log(r)/log(p) == log_2(r)
@@ -1675,9 +1552,8 @@ dit4l_fft(Complex *f, ulong ldn, int is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 21
+CHAPTER 1. THE FOURIER TRANSFORM 21
 ```
       double c, s, c2, s2, c3, s3;
       sincos(phi, &s, &c);
@@ -1712,9 +1588,9 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 21
 }
 
 ```
-**[source file: fftdit4.spr]**
+[source file: fftdit4.spr]
 
-**Code 1.9 (radix 4 DIF FFT) Pseudo code for a radix 4 DIF FFT on the array a[], the data length**
+Code 1.9 (radix 4 DIF FFT) Pseudo code for a radix 4 DIF FFT on the array a[], the data length
 ```
 n must be a power of 2, is must be +1 or -1:
 procedure fftdif4(a[],ldn,is)
@@ -1748,9 +1624,8 @@ procedure fftdif4(a[],ldn,is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 22
+CHAPTER 1. THE FOURIER TRANSFORM 22
 ```
         t3 := t3 * e3
         a[r+j] := t0
@@ -1771,14 +1646,14 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 22
 }
 
 ```
-**[source file: fftdif4.spr]**
+[source file: fftdif4.spr]
 
 Note the ‘swapped’ order in which t1, t2 are copied back in the innermost loop, this is what
 ```
 radix_permute(u[], r, p) was supposed to do.
 
 ```
-The multiplication by the imaginary unit (in the statement y := (u1 - u3)*I*is) should of course be
+The multiplication by the imaginary unit (in the statement y := (u1 - u3)Iis) should of course be
 implemented without any multiplication statement: one could unroll it as
 ```
 (dr,di) := u1 - u2 // dr,di = real,imag part of difference
@@ -1808,9 +1683,8 @@ fft/fftdit4.cc] [FXT: dif4 fft in fft/fftdif4.cc]
 The radix_permute() procedure is given in section 8.2 on page 120.
 
 #### 1.6 Split radix Fourier transforms (SRFT)
-
-**Code 1.10 (split radix DIF FFT) Pseudo code for the split radix DIF algorithm, is must be -1 or**
-_+1:_
+Code 1.10 (split radix DIF FFT) Pseudo code for the split radix DIF algorithm, is must be -1 or
++1:
 ```
 procedure fft_splitradix_dif(x[],y[],ldn,is)
 {
@@ -1826,9 +1700,8 @@ procedure fft_splitradix_dif(x[],y[],ldn,is)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 23
+CHAPTER 1. THE FOURIER TRANSFORM 23
 ```
       a := j * e
       cc1 := cos(a)
@@ -1890,20 +1763,16 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 23
 }
 
 ```
-**[source file: splitradixfft.spr]**
+[source file: splitradixfft.spr]
 
 [FXT: split radix fft in fft/fftsplitradix.cc]
 
 [FXT: split radix fft in fft/cfftsplitradix.cc]
 
 #### 1.7 Inverse FFT for free
-
 Suppose you programmed some FFT algorithm just for one value of is, the sign in the exponent. There
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 24
+CHAPTER 1. THE FOURIER TRANSFORM 24
 
 real and imaginary part of the complex sequences to be transformed. If your procedure is something like
 ```
@@ -1929,26 +1798,26 @@ type
 
 ```
 Note the swapped real- and imaginary parts ! The same trick works if your procedure coded for fixed
-`is=` 1.
-_−_
+is= 1.
+−
 
 To see, why this works, we first note that
 
-_F [a + i b]_ = _F [aS] + i σ F [aA] + i F [bS] + σ F [bA]_ (1.67)
-= _F [aS] + i F [bS] + i σ (F [aA] −_ _i F [bA])_ (1.68)
+F [a + i b] = F [aS] + i σ F [aA] + i F [bS] + σ F [bA] (1.67)
+= F [aS] + i F [bS] + i σ (F [aA] − i F [bA]) (1.68)
 
 and the computation with swapped real- and imaginary parts gives
 
-_F [b + i a]_ = _F [bS] + i F [aS] + i σ (F [bA] −_ _i F [aA])_ (1.69)
+F [b + i a] = F [bS] + i F [aS] + i σ (F [bA] − i F [aA]) (1.69)
 
 . . . but these are implicitely swapped at the end of the computation, giving
 
-_F [aS] + i F [bS] −_ _i σ (F [aA] −_ _i F [bA])_ = _F_ _[−][1]_ [a + i b] (1.70)
+F [aS] + i F [bS] − i σ (F [aA] − i F [bA]) = F [−][1] [a + i b] (1.70)
 
 When the type Complex is used then the best way to achieve the inverse transform may be to reverse
 the sequence according to the symmetry of the FT ([FXT: reverse nh in aux/copy.h], reordering by
-_k_ _k[−][1]_ mod n). While not really ‘free’ the additional work shouldn’t matter in most cases.
-_�→_
+k k[−][1] mod n). While not really ‘free’ the additional work shouldn’t matter in most cases.
+�→
 
 With real-to-complex FTs (R2CFT) the trick is to reverse the imaginary part after the transform. Obviously for the complex-to-real FTs (R2CFT) one has to reverse the imaginary part before the transform.
 Note that in the latter two cases the modification does not yield the inverse transform but the one with
@@ -1957,32 +1826,28 @@ before transform, especially if the operation can be fused with other computatio
 or with the revbin-permutation).
 
 #### 1.8 Real valued Fourier transforms
-
 The Fourier transform of a purely real sequence c = F [a] where a ∈ R has[6] a symmetric real part
-( _c¯ =_ _c) and an antisymmetric imaginary part (_ _c¯ =_ _c). Simply using a complex FFT for real_
-_ℜ_ _ℜ_ _ℑ_ _−ℑ_
+( c¯ = c) and an antisymmetric imaginary part ( c¯ = c). Simply using a complex FFT for real
+ℜ ℜ ℑ −ℑ
 input is basically a waste of a factor 2 of memory and CPU cycles. There are several ways out:
 
 sincos wrappers for complex FFTs
 
-_•_
+•
 
 usage of the fast Hartley transform
 
-_•_
+•
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 25
+CHAPTER 1. THE FOURIER TRANSFORM 25
 
 a variant of the matrix Fourier algorithm
 
-_•_
+•
 
 special real (split radix algorithm) FFTs
 
-_•_
+•
 
 All techniques have in common that they store only half of the complex result to avoid the redundancy
 due to the symmetries of a complex FT of purely real input. The result of a real to (half-) complex
@@ -1992,37 +1857,36 @@ real transform (abbreviated C2RFT) must be compatible to the ordering of the R2C
 presented here use the following scheme for the real part of the transformed sequence c in the output
 array a[]:
 
-`a[0]` = _ℜc0_ (1.71)
+a[0] = ℜc0 (1.71)
 
-`a[1]` = _ℜc1_
-`a[2]` = _ℜc2_
-_. . ._
-`a[n/2]` = _ℜcn/2_
+a[1] = ℜc1
+a[2] = ℜc2
+. . .
+a[n/2] = ℜcn/2
 
 For the imaginary part of the result there are two schemes:
 Scheme 1 (‘parallel ordering’) is
 
-`a[n/2 + 1]` = _ℑc1_ (1.72)
-`a[n/2 + 2]` = _ℑc2_
-`a[n/2 + 3]` = _ℑc3_
-_. . ._
-`a[n −` `1]` = _ℑcn/2−1_
+a[n/2 + 1] = ℑc1 (1.72)
+a[n/2 + 2] = ℑc2
+a[n/2 + 3] = ℑc3
+. . .
+a[n − 1] = ℑcn/2−1
 
 Scheme 2 (‘antiparallel ordering’) is
 
-`a[n/2 + 1]` = _ℑcn/2−1_ (1.73)
-`a[n/2 + 2]` = _ℑcn/2−2_
-`a[n/2 + 3]` = _ℑcn/2−3_
-_. . ._
+a[n/2 + 1] = ℑcn/2−1 (1.73)
+a[n/2 + 2] = ℑcn/2−2
+a[n/2 + 3] = ℑcn/2−3
+. . .
 
-`a[n −` `1]` = _ℑc1_
+a[n − 1] = ℑc1
 
 Note the absence of the elements ℑc0 and ℑcn/2 which are zero.
 
 ##### 1.8.1 Real valued FT via wrapper routines
-
 A simple way to use a complex length-n/2 FFT for a real length-n FFT (n even) is to use some postand preprocessing routines. For a real sequence a one feeds the (half length) complex sequence f =
-_a[(][even][)]_ + i a[(][odd][)] into a complex FFT. Some postprocessing is necessary. This is not the most elegant
+a[(][even][)] + i a[(][odd][)] into a complex FFT. Some postprocessing is necessary. This is not the most elegant
 real FFT available, but it is directly usable to turn complex FFTs of any (even) length into a real-valued
 FFT.
 
@@ -2036,9 +1900,8 @@ wrap_real_complex_fft(double *f, ulong ldn, int is/*=+1*/)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 26
+CHAPTER 1. THE FOURIER TRANSFORM 26
 ```
 // f[1] = re[n/2] (nyquist freq, purely real)
 // f[2] = re[1]
@@ -2111,9 +1974,8 @@ wrap_complex_real_fft(double *f, ulong ldn, int is/*=+1*/)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 27
+CHAPTER 1. THE FOURIER TRANSFORM 27
 ```
     ulong i2 = i1 + 1; // im low [3, 5, ..., n/2-1]
     ulong i3 = n - i1; // re hi [n-2, n-4, ..., n/2+2]
@@ -2154,10 +2016,9 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 27
 [FXT: wrap complex real fft in realfft/realfftwrap.cc]
 
 ##### 1.8.2 Real valued split radix Fourier transforms
+Real to complex SRFT
 
-**Real to complex SRFT**
-
-**Code 1.11 (split radix R2CFT) Pseudo code for the split radix R2CFT algorithm**
+Code 1.11 (split radix R2CFT) Pseudo code for the split radix R2CFT algorithm
 ```
 procedure r2cft_splitradix_dit(x[],ldn)
 {
@@ -2184,9 +2045,8 @@ procedure r2cft_splitradix_dit(x[],ldn)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 28
+CHAPTER 1. THE FOURIER TRANSFORM 28
 ```
     n2 := 2*n2
     id := 2*n2
@@ -2261,9 +2121,8 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 28
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 29
+CHAPTER 1. THE FOURIER TRANSFORM 29
 ```
            x[i1] := t1
            {t1, x[i5]} := {x[i5]+t4, x[i5]-t4}
@@ -2280,13 +2139,13 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 29
 }
 
 ```
-**[source file: r2csplitradixfft.spr]**
+[source file: r2csplitradixfft.spr]
 
 [FXT: split radix real complex fft in realfft/realfftsplitradix.cc]
 
-**Complex to real SRFT**
+Complex to real SRFT
 
-**Code 1.12 (split radix C2RFT) Pseudo code for the split radix C2RFT algorithm**
+Code 1.12 (split radix C2RFT) Pseudo code for the split radix C2RFT algorithm
 ```
 procedure c2rft_splitradix_dif(x[],ldn)
 {
@@ -2336,9 +2195,8 @@ procedure c2rft_splitradix_dif(x[],ldn)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 30
+CHAPTER 1. THE FOURIER TRANSFORM 30
 ```
       cc1 := cos(a)
       ss1 := sin(a)
@@ -2399,115 +2257,99 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 30
 }
 
 ```
-**[source file: c2rsplitradixfft.spr]**
+[source file: c2rsplitradixfft.spr]
 
 [FXT: split radix complex real fft in realfft/realfftsplitradix.cc]
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 31
+CHAPTER 1. THE FOURIER TRANSFORM 31
 
 #### 1.9 Multidimensional FTs
-
 ##### 1.9.1 Definition
-
 Let ax,y (x = 0, 1, 2, . . ., C − 1 and y = 0, 1, 2, . . ., R − 1) be a 2-dimensional array of data[7]. Its 2dimensional Fourier transform ck,h is defined by:
 
-_c_ = [a] (1.74)
-_F_
+c = [a] (1.74)
+F
 
-1 _C−1_ _R−1_
+1 C−1 R−1
 
 � �
 
-_ck,h_ := _√_ _ax,y z[x k][+][y h]_ where _z = e[±][ 2][ π i/n],_ _n = R C_ (1.75)
-_n_
+ck,h := √ ax,y z[x k][+][y h] where z = e[±][ 2][ π i/n], n = R C (1.75)
+n
 
-_x=0_ _x=0_
+x=0 x=0
 
 Its inverse is
 
+a = [c] (1.76)
+F [−][1]
 
-_a_ = [c] (1.76)
-_F_ _[−][1]_
-
-1 _C−1_ _R−1_
+1 C−1 R−1
 
 � �
 
-_ax_ = _√_ _ck,h z[−][(][x k][+][y h][)]_ (1.77)
-_n_
+ax = √ ck,h z[−][(][x k][+][y h][)] (1.77)
+n
 
-_k=0_ _h=0_
+k=0 h=0
 
 For a m-dimensional array a⃗x (⃗x = (x1, x2, x3, . . ., xm), xi 0, 1, 2, . . ., Si) the m-dimensional Fourier
-_∈_
+∈
 transform c⃗k ([⃗]k = (k1, k2, k3, . . ., km), ki ∈ 0, 1, 2, . . ., Si) is defined as
 
-
-_S2−1_
+S2−1
 �
 
-_. . ._
+. . .
 
-_x2=0_
+x2=0
 
-
-_Sm−1_
+Sm−1
 �
 
-_a⃗x z[⃗x.⃗k]_ where _z = e[±][ 2][ π i/n],_ _n = S1 S2 . . . Sm_ (1.78)
-_xm=0_
-
+a⃗x z[⃗x.⃗k] where z = e[±][ 2][ π i/n], n = S1 S2 . . . Sm (1.78)
+xm=0
 
 1
-_c⃗k_ := _√_
-_n_
+c⃗k := √
+n
 
 1
 =
-_√_
-_n_
+√
+n
 
-
-_S1−1_
+S1−1
 �
 
-_x1=0_
+x1=0
 
-
-_⃗S_
+⃗S
 �
 
-_a⃗x z[⃗x.⃗k]_ where _⃗S = (S1 −_ 1, S2 − 1, . . ., Sm − 1)[T] (1.79)
-_⃗x=[⃗]0_
-
+a⃗x z[⃗x.⃗k] where ⃗S = (S1 − 1, S2 − 1, . . ., Sm − 1)[T] (1.79)
+⃗x=[⃗]0
 
 The inverse transform is again the one with the minus in the exponent of z.
 
 ##### 1.9.2 The row column algorithm
-
 The equation of the definition of the two dimensional FT (1.74) can be recast as
 
-
 1
-_ck,h_ := _√_
-_n_
+ck,h := √
+n
 
-
-_C−1_ _R−1_
+C−1 R−1
 � �
 
-_z[x k]_ _ax,y z[y h]_ (1.80)
-_x=0_ _x=0_
-
+z[x k] ax,y z[y h] (1.80)
+x=0 x=0
 
 which shows that the 2-dimensional FT can be accomplished by using 1-dimensional FTs to transform
 first the rows and then the columns[8]. This leads us directly to the row column algorithm:
 
-**Code 1.13 (row column FFT) Compute the two dimensional FT of a[][] using the row column**
-_method_
+Code 1.13 (row column FFT) Compute the two dimensional FT of a[][] using the row column
+method
 ```
 procedure rowcol_ft(a[][], R, C)
 {
@@ -2523,10 +2365,7 @@ procedure rowcol_ft(a[][], R, C)
 ```
 7Imagine a R × C matrix of R rows (of length C) and C columns (of length R)
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 32
+CHAPTER 1. THE FOURIER TRANSFORM 32
 ```
     copy a[0,1,...,R-1][c] to t[] // get column
     fft(t[], R, is)
@@ -2535,7 +2374,7 @@ _CHAPTER 1. THE FOURIER TRANSFORM_ 32
 }
 
 ```
-**[source file: rowcolft.spr]**
+[source file: rowcolft.spr]
 
 Here it is assumed that the rows lie in contiguous memory (as in the C language). [FXT: twodim fft in
 ```
@@ -2552,37 +2391,32 @@ C swapped.
 The generalization to higher dimensions is straight forward. [FXT: ndim fft in ndimfft/ndimfft.cc]
 
 #### 1.10 The matrix Fourier algorithm (MFA)
-
 The matrix Fourier algorithm[10] (MFA) works for (composite) data lengths n = R C. Consider the input
-array as a R _C-matrix (R rows, C columns)._
-_×_
+array as a R C-matrix (R rows, C columns).
+×
 
-**Idea 1.7 (matrix Fourier algorithm) The matrix Fourier algorithm (MFA) for the FFT:**
+Idea 1.7 (matrix Fourier algorithm) The matrix Fourier algorithm (MFA) for the FFT:
 
-_1. Apply a (length R) FFT on each column._
+1. Apply a (length R) FFT on each column.
+2. Multiply each matrix element (index r, c) by exp( 2 π i r c/n) (sign is that of the transform).
+±
 
-_2. Multiply each matrix element (index r, c) by exp(_ 2 π i r c/n) (sign is that of the transform).
-_±_
-
-_3. Apply a (length C) FFT on each row._
-
-_4. Transpose the matrix._
+3. Apply a (length C) FFT on each row.
+4. Transpose the matrix.
 
 Note the elegance!
 
 It is trivial to rewrite the MFA as the
 
-**Idea 1.8 (transposed matrix Fourier algorithm) The** _transposed_ _matrix_ _Fourier_ _algorithm_
-_(TMFA) for the FFT:_
+Idea 1.8 (transposed matrix Fourier algorithm) The transposed matrix Fourier algorithm
+(TMFA) for the FFT:
 
-_1. Transpose the matrix._
+1. Transpose the matrix.
+2. Apply a (length C) FFT on each column (transposed row).
+3. Multiply each matrix element (index r, c) by exp( 2 π i r c/n).
+±
 
-_2. Apply a (length C) FFT on each column (transposed row)._
-
-_3. Multiply each matrix element (index r, c) by exp(_ 2 π i r c/n).
-_±_
-
-_4. Apply a (length R) FFT on each row (transposed column)._
+4. Apply a (length R) FFT on each row (transposed column).
 
 TBD: MFA = radix-sqrt(n) DIF/DIT FFT
 
@@ -2590,16 +2424,13 @@ FFT algorithms are usually very memory nonlocal, i.e. the data is accessed in st
 opposed to e.g. in unit strides). In radix 2 (or 2[n]) algorithms one even has skips of powers of 2, which is
 particularly bad on computer systems that use direct mapped cache memory: One piece of cache memory
 is responsible for caching addresses that lie apart by some power of 2. TBD: move cache discussion to
-_appendix With an ‘usual’ FFT algorithm one gets 100% cache misses and therefore a memory performance_
+appendix With an ‘usual’ FFT algorithm one gets 100% cache misses and therefore a memory performance
 that corresponds to the access time of the main memory, which is very long compared to the clock of
 
 9as typical for convolution etc.
 10A A [ ]
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 33
+CHAPTER 1. THE FOURIER TRANSFORM 33
 
 modern CPUs. The matrix Fourier algorithm has a much better memory locality (cf. [34]), because the
 work is done in the short FFTs over the rows and columns.
@@ -2612,9 +2443,9 @@ should be ok. Moreover, one can insert small offsets (a few unused memory words)
 in order to avoid the cache miss problem almost completely. Then one should also program a procedure
 that does a ‘mass production’ variant of the column FFTs, i.e. for doing computation for all rows at once.
 
-It is usually a good idea to use factors of the data length n that are close to _n. Of course one can_
+It is usually a good idea to use factors of the data length n that are close to n. Of course one can
 
-_[√]_
+[√]
 apply the same algorithm for the row (or column) FFTs again: It can be a good idea to split n into 3
 factors (as close to n[1][/][3] as possible) if a length-n[1][/][3] FFT fits completely into the second level cache (or
 even the first level cache) of the computer used. Especially for systems where CPU clock is much higher
@@ -2622,7 +2453,6 @@ than memory clock the performance may increase drastically, a performance factor
 compared to else very good optimized FFTs) can be observed.
 
 #### 1.11 Automatic generation of FFT codes
-
 FFT generators are programs that output FFT routines, usually for fixed (short) lengths. In fact the
 thoughts here a not at all restricted to FFT codes, but FFTs and several unrollable routines like matrix
 multiplications and convolutions are prime candidates for automated generation. Writing such a program
@@ -2662,10 +2492,7 @@ Automatic verification of the generated codes against the original is a mandator
 11If you know how to utilize gcc for that, please let me know.
 12Actually only a small subset of C++.
 
-
------
-
-_CHAPTER 1. THE FOURIER TRANSFORM_ 34
+CHAPTER 1. THE FOURIER TRANSFORM 34
 
 A level of abstraction for the array indices is of great use: When the print statements in the generator
 emit some function of the index instead of its plain value it is easy to generate modified versions of the
@@ -2739,9 +2566,8 @@ inline void fht_dit_core_4(Type *f)
 
 ```
 
------
 
-_CHAPTER 1. THE FOURIER TRANSFORM_ 35
+CHAPTER 1. THE FOURIER TRANSFORM 35
 ```
   sumdiff(f[0], f[1], f0, f1);
   sumdiff(f[2], f[3], f2, f3);
@@ -2808,43 +2634,33 @@ in (some lines deleted plus some editing for readability)
 Note that the assembler code is not always in sync with the corresponding source lines which is especially
 true with higher levels of optimization.
 
-
------
-
 ## Chapter 2
-
 # Convolutions
-
 #### 2.1 Definition and computation via FFT
-
 The cyclic convolution of two sequences a and b is defined as the sequence h with elements hτ as follows:
 
-_h_ = _a ⊛_ _b_ (2.1)
+h = a ⊛ b (2.1)
 
 �
-_hτ_ := _ax by_
+hτ := ax by
 
-_x+y≡τ_ (mod n)
-
+x+y≡τ (mod n)
 
 The last equation may be rewritten as
 
+hτ :=
 
-_hτ_ :=
-
-
-_n−1_
+n−1
 �
 
-_ax bτ_ _−x_ (2.2)
-_x=0_
+ax bτ −x (2.2)
+x=0
 
+where negative indices τ x must be understood as n + τ x, it’s a cyclic convolution.
+− −
 
-where negative indices τ _x must be understood as n + τ_ _x, it’s a cyclic convolution._
-_−_ _−_
-
-**Code 2.1 (cyclic convolution by definition) Compute the cyclic convolution of a[] with b[] using**
-_the definition, result is returned in c[]_
+Code 2.1 (cyclic convolution by definition) Compute the cyclic convolution of a[] with b[] using
+the definition, result is returned in c[]
 ```
 procedure convolution(a[],b[],c[],n)
 {
@@ -2867,59 +2683,53 @@ values of n. The Fourier transform provides us with a more efficient way to comp
 only uses proportional n log(n) operations. First we have to establish the convolution property of the
 Fourier transform:
 
-_F [a ⊛_ _b]_ = _F [a] F [b]_ (2.3)
+F [a ⊛ b] = F [a] F [b] (2.3)
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 37
+CHAPTER 2. CONVOLUTIONS 37
 
 Here is the proof:
 
 �
-_F [a]k F [b]k_ = _ax z[k x][ �]_ _by z[k y]_ (2.4)
+F [a]k F [b]k = ax z[k x][ �] by z[k y] (2.4)
 
-_x_ _y_
-
+x y
 
 Rewriting formula 2.3 as
 
 tells us how to proceed:
 
-
-with _y := τ_ _x_
-_−_
+with y := τ x
+−
 
 �
-= _ax z[k x][ �]_ _bτ_ _−x z[k][ (][τ]_ _[−][x][)]_
+= ax z[k x][ �] bτ −x z[k][ (][τ] [−][x][)]
 
-_x_ _τ_ _−x_
+x τ −x
 
 � �
-= _ax z[k x]bτ_ _−x z[k][ (][τ]_ _[−][x][)]_
+= ax z[k x]bτ −x z[k][ (][τ] [−][x][)]
 
-_x_ _τ_ _−x_
+x τ −x
 
 �
 
 � ��
-= _ax bτ_ _−x_ _z[k τ]_
+= ax bτ −x z[k τ]
 
-_τ_ _x_
+τ x
 
 � �� ��
 
-= _F_ _ax bτ_ _−x_
+= F ax bτ −x
 
-_x_ _k_
+x k
 
-= (F [a ⊛ _b])k_
+= (F [a ⊛ b])k
 
-_a ⊛_ _b_ = _F_ _[−][1]_ [F [a] F [b]] (2.5)
+a ⊛ b = F [−][1] [F [a] F [b]] (2.5)
 
-
-**Code 2.2 (cyclic convolution via FFT) Pseudo code for the cyclic convolution of two complex valued**
-_sequences x[] and y[], result is returned in y[]:_
+Code 2.2 (cyclic convolution via FFT) Pseudo code for the cyclic convolution of two complex valued
+sequences x[] and y[], result is returned in y[]:
 ```
 procedure fft_cyclic_convolution(x[], y[], n)
 {
@@ -2942,7 +2752,7 @@ procedure fft_cyclic_convolution(x[], y[], n)
 }
 
 ```
-**[source file: fftcnvl.spr]**
+[source file: fftcnvl.spr]
 
 It is assumed that the procedure fft() does no normalization. In the normalization loop you precompute
 ```
@@ -2952,105 +2762,93 @@ split radix fft convolution in fft/fftcnvl.cc]
 ```
 Auto (or self) convolution is defined as
 
-_h_ = _a ⊛_ _a_ (2.6)
+h = a ⊛ a (2.6)
 
 �
-_hτ_ := _ax ay_
+hτ := ax ay
 
-_x+y≡τ_ (n)
+x+y≡τ (n)
 
 The corresponding procedure should be obvious. [FXT: fht convolution and fht convolution0 in
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 38
+CHAPTER 2. CONVOLUTIONS 38
 
 In the definition of the cyclic convolution (2.1) one can distinguish between those summands where the
-_x + y ‘wrapped around’ (i.e. x + y = n + τ_ ) and those where simply x + y = τ holds. These are (following
+x + y ‘wrapped around’ (i.e. x + y = n + τ ) and those where simply x + y = τ holds. These are (following
 the notation in [18]) denoted by h[(1)] and h[(0)] respectively. Then
 
-_h_ = _h[(0)]_ + h[(1)] (2.7)
+h = h[(0)] + h[(1)] (2.7)
 
 where
 
 �
-_h[(0)]_ = _ax bτ_ _−x_
+h[(0)] = ax bτ −x
 
-_x≤τ_
+x≤τ
 
 �
-_h[(1)]_ = _ax bn+τ_ _−x_
+h[(1)] = ax bn+τ −x
 
-_x>τ_
+x>τ
 
 There is a simple way to seperate h[(0)] and h[(1)] as the left and right half of a length-2 n sequence. This
 is just what the acyclic (or linear) convolution does: Acyclic convolution of two (length-n) sequences a
 and b can be defined as that length-2 n sequence h which is the cyclic convolution of the zero padded
 sequences A and B:
 
-_A_ := _{a0, a1, a2, . . ., an−1, 0, 0, . . ., 0}_ (2.8)
+A := {a0, a1, a2, . . ., an−1, 0, 0, . . ., 0} (2.8)
 
 Same for B. Then
 
-
-_hτ_ :=
+hτ :=
 
 �
-
 
 2 n−1
 �
 
-_Ax Bτ_ _−x_ _τ = 0, 1, 2, . . ., 2 n −_ 1 (2.9)
-_x=0_
+Ax Bτ −x τ = 0, 1, 2, . . ., 2 n − 1 (2.9)
+x=0
 
-
-_x+y≡τ_ (2n)
-_x,y<2n_
-
+x+y≡τ (2n)
+x,y<2n
 
 � �
-_ax by_ = _ax by +_ _ax by_ (2.10)
+ax by = ax by + ax by (2.10)
 
-0≤x<n _n≤x<2n_
+0≤x<n n≤x<2n
 
-
-where the right sum is zero because ax = 0 for n ≤ _x < 2n. Now_
+where the right sum is zero because ax = 0 for n ≤ x < 2n. Now
 
 � � �
 
-_ax by_ = _ax bτ_ _−x +_ _ax b2n+τ_ _−x =: Rτ + Sτ_ (2.11)
-0≤x<n _x≤τ_ _x>τ_
+ax by = ax bτ −x + ax b2n+τ −x =: Rτ + Sτ (2.11)
+0≤x<n x≤τ x>τ
 
+where the rhs. sums are silently understood as restricted to 0 x < n.
+≤
 
-where the rhs. sums are silently understood as restricted to 0 _x < n._
-_≤_
-
-For 0 ≤ _τ < n the sum Sτ is always zero because b2n+τ_ _−x is zero (n ≤_ 2n + _τ −_ _x < 2n for 0 ≤_ _τ −_ _x < n);_
-the sum Rτ is already equal to h[(0)]τ [. For][ n][ ≤] _[τ <][ 2][n][ the sum][ S]τ_ [is again zero, this time because it]
-extends over nothing (simultaneous conditions x < n and x > τ ≥ _n); Rτ can be identified with h[(1)]τ_ _[′]_
-(0 ≤ _τ_ _[′]_ _< n) by setting τ = n + τ_ _[′]._
+For 0 ≤ τ < n the sum Sτ is always zero because b2n+τ −x is zero (n ≤ 2n + τ − x < 2n for 0 ≤ τ − x < n);
+the sum Rτ is already equal to h[(0)]τ [. For][ n][ ≤] [τ <][ 2][n][ the sum][ S]τ [is again zero, this time because it]
+extends over nothing (simultaneous conditions x < n and x > τ ≥ n); Rτ can be identified with h[(1)]τ [′]
+(0 ≤ τ [′] < n) by setting τ = n + τ [′].
 
 As an illustration consider the convolution of the sequence 1, 1, 1, 1 with itself: its linear self convolution
-_{_ _}_
+{ }
 is 1, 2, 3, 4, 3, 2, 1, 0, its cyclic self convolution is 4, 4, 4, 4, i.e. the right half of the linear convolution
-_{_ _}_ _{_ _}_
+{ } { }
 elementwise added to the left half.
 
 By the way, relation 2.3 is also true for the more general z-transform, but there is no (simple) backtransform, so we cannot turn
 
-_a ⊛_ _b_ = _Z_ _[−][1]_ [Z [a] Z [b]] (2.12)
+a ⊛ b = Z [−][1] [Z [a] Z [b]] (2.12)
 
 (the equivalent of 2.5) into a practical algorithm.
 
 A convenient way to illustrate the cyclic convolution of to sequences is the following semi-symbolical
 table:
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 39
+CHAPTER 2. CONVOLUTIONS 39
 ```
  +-- 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
  |
@@ -3112,9 +2910,8 @@ The equivalent table for a (cyclic) correlation is
 
 ```
 
------
 
-_CHAPTER 2. CONVOLUTIONS_ 40
+CHAPTER 2. CONVOLUTIONS 40
 ```
  0: 0 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
  1: 1 0 15 14 13 12 11 10 9 8 7 6 5 4 3 2
@@ -3159,7 +2956,6 @@ while the acyclic counterpart is:
 Note that bucket 16 does not appear, it is always zero.
 
 #### 2.2 Mass storage convolution using the MFA
-
 The matrix Fourier algorithm is also an ideal candidate for mass storage FFTs, i.e. FFTs for data sets
 that do not fit into physical RAM[1].
 
@@ -3168,34 +2964,30 @@ by the TMFA. (The data is assumed to be in memory as row0, row1, . . ., rowR−1
 is stored in memory in the C language, as opposed to the Fortran language.) For the sake of simplicity
 auto convolution is considered here:
 
-**Idea 2.1 (matrixfft convolution algorithm) The matrix FFT convolution algorithm:**
+Idea 2.1 (matrixfft convolution algorithm) The matrix FFT convolution algorithm:
 
 1The naive idea to simply try such an FFT with the virtual memory mechanism will of course due to the non-locality
 
+CHAPTER 2. CONVOLUTIONS 41
 
------
+1. Apply a (length R) FFT on each column.
+(memory access with C-skips)
 
-_CHAPTER 2. CONVOLUTIONS_ 41
+2. Multiply each matrix element (index r, c) by exp( 2 π i r c/n).
+±
 
-_1. Apply a (length R) FFT on each column._
-_(memory access with C-skips)_
+3. Apply a (length C) FFT on each row.
+(memory access without skips)
 
-_2. Multiply each matrix element (index r, c) by exp(_ 2 π i r c/n).
-_±_
+4. Complex square row (elementwise).
+5. Apply a (length C) FFT on each row (of the transposed matrix).
+(memory access is without skips)
 
-_3. Apply a (length C) FFT on each row._
-_(memory access without skips)_
+6. Multiply each matrix element (index r, c) by exp( 2 π i r c/n).
+∓
 
-_4. Complex square row (elementwise)._
-
-_5. Apply a (length C) FFT on each row (of the transposed matrix)._
-_(memory access is without skips)_
-
-_6. Multiply each matrix element (index r, c) by exp(_ 2 π i r c/n).
-_∓_
-
-_7. Apply a (length R) FFT on each column (of the transposed matrix)._
-_(memory access with C-skips)_
+7. Apply a (length R) FFT on each column (of the transposed matrix).
+(memory access with C-skips)
 
 Note that steps 3, 4 and 5 constitute a length-C convolution.
 
@@ -3211,19 +3003,18 @@ A simple consideration lets one use the above algorithm for mass storage convolu
 of data sets that do not fit into the RAM workspace. An important consideration is the
 
 ##### Minimization of the number of disk seeks
-
 The number of disk seeks has to be kept minimal because these are slow operations which, if occur too
 often, degrade performance unacceptably.
 
-The crucial modification of the use of the MFA is not to choose R and C as close as possible to _n as_
+The crucial modification of the use of the MFA is not to choose R and C as close as possible to n as
 
-_[√]_
+[√]
 usually done. Instead one chooses R minimal, i.e. the row length C corresponds to the biggest data set
 that fits into the RAM memory[2]. We now analyse how the number of seeks depends on the choice of R
 and C: in what follows it is assumed that the data lies in memory as row0, row1, . . ., rowR−1, i.e. the
 way array data is stored in the C language, as opposed to the Fortran language convention. Further let
-_α_ 2 be the number of times the data set exceeds the RAM size.
-_≥_
+α 2 be the number of times the data set exceeds the RAM size.
+≥
 
 In step 1 and 3 of algorithm 2.5 one reads from disk (row by row, involving R seeks) the number of colums
 that just fit into RAM, does the (many, short) column-FFTs[3], writes back (again R seeks) and proceeds
@@ -3235,26 +3026,23 @@ disk, perform the FFT on the rows and write back to disk, leading to a total of 
 Thereby one has a number of 2 α + 4 α R seeks during the whole computation, which is minimized by the
 choice of maximal C. This means that one chooses a shape of the matrix so that the rows are as big as
 possible subject to the constraint that they have to fit into main memory, which in turn means there are
-_R = α rows, leading to an optimal seek count of K = 2 α + 4 α[2]._
+R = α rows, leading to an optimal seek count of K = 2 α + 4 α[2].
 
 If one seek takes 10 milliseconds then one has for α = 16 (probably quite a big FFT) a total of K 10 =
-_·_
+·
 1056 10 milliseconds or approximately 10 seconds. With a RAM workspace of 64 Megabytes[4] the CPU
-_·_
+·
 
 2more precisely: the amount of RAM where no swapping will occur, some programs plus the operating system have to
 be there, too.
 3real-complex FFTs in step 1 and complex-real FFTs in step 3.
 4allowing for 8 million 8 byte floats so the total FFT size is S = 16 · 64 = 1024 MB or 32 million floats
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 42
+CHAPTER 2. CONVOLUTIONS 42
 
 time alone might be in the order of several minutes. The overhead for the (linear) read and write would
 be (throughput of 10MB/sec assumed) 6 1024MB/(10MB/sec) 600sec or approximately 10 minutes.
-_·_ _≈_
+· ≈
 
 With a multithreading OS one may want to produce a ‘double buffer’ variant: choose the row length so
 that it fits twice into the RAM workspace; then let always one (CPU-intensive) thread do the FFTs in
@@ -3264,106 +3052,97 @@ slow hard disk) and some fine tuning this should allow to keep the CPU busy duri
 disk operations.
 
 Using a mass storage convolution as described the calculation of the number 9[9][9] 0.4281247 10[369][,][693][,][100]
-_≈_ _·_
+≈ ·
 
 could be done on a 32 bit machine in 1999. The computation used two files of size 2GigaBytes each and
 took less than eight hours on a system with a AMD K6/2 CPU at 366MHz with 66MHz memory.
 Cf. [hfloat: examples/run1-pow999.txt]
 
 #### 2.3 Weighted Fourier transforms
-
 Let us define a new kind of transform by slightly modifying the definition of the FT (cf. formula 1.1):
 
-_c_ = _Wv [a]_ (2.13)
+c = Wv [a] (2.13)
 
-_n−1_
+n−1
 �
 
-_ck_ := _vx ax z[x k]_ _vx ̸= 0_ _∀x_
+ck := vx ax z[x k] vx ̸= 0 ∀x
 
-_x=0_
+x=0
 
 where z := e[±][ 2][ π i/n]. The sequence c shall be called weighted (discrete) transform of the sequence a with
-the weight (sequence) v. Note the vx that entered: the weighted transform with vx = _√1n_ _x is just the_
-_∀_
+the weight (sequence) v. Note the vx that entered: the weighted transform with vx = √1n x is just the
+∀
 usual Fourier transform. The inverse transform is
 
-_a_ = _Wv[−][1]_ [c] (2.14)
+a = Wv[−][1] [c] (2.14)
 
-1 _n−1_
+1 n−1
 
 �
 
-_ax_ = _ck z[−][x k]_
+ax = ck z[−][x k]
 
-_n vx_
+n vx
 
-_k=0_
+k=0
 
 This can be easily seen:
 
-
-_n−1_
+n−1
 �
 
-_vx ax z[x k]_ _z[−][y k]_
-_x=0_
-
+vx ax z[x k] z[−][y k]
+x=0
 
 1
-_Wv[−][1]_ [Wv [a]]y =
+Wv[−][1] [Wv [a]]y =
 
-_n vy_
+n vy
 
-
-_n−1_
+n−1
 �
 
-_k=0_
+k=0
 
-
-_n−1_ 1
+n−1 1
 �
 
-_vx_ _ax z[x k]_ _z[−][y k]_
+vx ax z[x k] z[−][y k]
 
-_vy_
+vy
 
-_x=0_
-
+x=0
 
 1
 =
-_n_
+n
 
 1
 =
-_n_
+n
 
-= _ay_
+= ay
 
-
-_n−1_
+n−1
 �
 
-_k=0_
+k=0
 
-
-_n−1_ 1
+n−1 1
 �
 
-_vx_ _ax δx,y n_
+vx ax δx,y n
 
-_vy_
+vy
 
-_x=0_
-
+x=0
 
 (cf. section 1.1). That Wv �Wv[−][1] [a]� is also identity is apparent from the definitions.
 
 Given an implemented FFT it is trivial to set up a weighted Fourier transform:
 
-**Code 2.3 (weighted transform) Pseudo code for the discrete weighted Fourier transform**
+Code 2.3 (weighted transform) Pseudo code for the discrete weighted Fourier transform
 ```
 procedure weighted_ft(a[], v[], n, is)
 {
@@ -3375,14 +3154,13 @@ procedure weighted_ft(a[], v[], n, is)
 
 ```
 
------
 
-_CHAPTER 2. CONVOLUTIONS_ 43
+CHAPTER 2. CONVOLUTIONS 43
 
 Inverse weighted transform is also easy:
 
-**Code 2.4 (inverse weighted transform) Pseudo code for the inverse discrete weighted Fourier trans-**
-_form_
+Code 2.4 (inverse weighted transform) Pseudo code for the inverse discrete weighted Fourier trans-
+form
 ```
 procedure inverse_weighted_ft(a[], v[], n, is)
 {
@@ -3401,46 +3179,45 @@ is must be negative wrt. the forward transform.
 
 Introducing a weighted (cyclic) convolution hv by
 
-_hv_ = _a ⊛{v} b_ (2.15)
+hv = a ⊛{v} b (2.15)
 
-= _Wv[−][1]_ [Wv [a] Wv [b]]
+= Wv[−][1] [Wv [a] Wv [b]]
 
 (cf. formula 2.5)
 
-Then for the special case vx = V _[x]_ one has
+Then for the special case vx = V [x] one has
 
-_hv_ = _h[(0)]_ + V _[n]_ _h[(1)]_ (2.16)
+hv = h[(0)] + V [n] h[(1)] (2.16)
 
 (h[(0)] and h[(1)] were defined by formula 2.7). It is not hard to see why: Up to the final division by the
 weight sequence, the weighted convolution is just the cyclic convolution of the two weighted sequences,
 which is for the element with index τ equal to
 
-� (ax V _[x]) (by V_ _[y])_ = � _ax bτ_ _−x V_ _[τ]_ + � _ax bn+τ_ _−x V_ _[n][+][τ]_ (2.17)
+� (ax V [x]) (by V [y]) = � ax bτ −x V [τ] + � ax bn+τ −x V [n][+][τ] (2.17)
 
-_x+y≡τ_ (mod n) _x≤τ_ _x>τ_
+x+y≡τ (mod n) x≤τ x>τ
 
+Final division of this element (by V [τ] ) gives h[(0)] + V [n] h[(1)] as stated.
 
-Final division of this element (by V _[τ]_ ) gives h[(0)] + V _[n]_ _h[(1)]_ as stated.
-
-The cases when V _[n]_ is some root of unity are particularly interesting: For V _[n]_ = _i =_ 1 one gets
-_±_ _±[√]−_
+The cases when V [n] is some root of unity are particularly interesting: For V [n] = i = 1 one gets
+± ±[√]−
 the so called right-angle convolution:
 
-_hv_ = _h[(0)]_ _∓_ _i h[(1)]_ (2.18)
+hv = h[(0)] ∓ i h[(1)] (2.18)
 
 This gives a nice possibility to directly use complex FFTs for the computation of a linear (acycclic)
 convolution of two real sequences: for length-n sequences the elements of the linear convolution with
 indices 0, 1, . . ., n 1 are then found in the real part of the result, the elements n, n +1, . . ., 2 n 1 are the
-_−_ _−_
-imaginary part. Choosing V _[n]_ = 1 leads to the negacyclic convolution (or skew circular convolution):
-_−_
+− −
+imaginary part. Choosing V [n] = 1 leads to the negacyclic convolution (or skew circular convolution):
+−
 
-_hv_ = _h[(0)]_ _−_ _h[(1)]_ (2.19)
+hv = h[(0)] − h[(1)] (2.19)
 
 Cyclic, negacyclic and right-angle convolution can be understood as a polynomial product modulo z[n] 1,
-_−_
-_z[n]_ + 1 and z[n] _i, respectively (cf. [2])._
-_±_
+−
+z[n] + 1 and z[n] i, respectively (cf. [2]).
+±
 
 [FXT: weighted complex auto convolution in weighted/weightedconv.cc]
 
@@ -3450,10 +3227,7 @@ _±_
 
 The semi-symbolic table (cf. table 2.1) for the negacyclic convolution is
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 44
+CHAPTER 2. CONVOLUTIONS 44
 ```
  +-- 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
  |
@@ -3465,49 +3239,43 @@ entry.
 
 With right-angle convolution the minuses have to be replaced by i = 1 which means the wrap-around
 
-_[√]−_
+[√]−
 (i.e. h[(1)]) elements go to the imaginary part. With real input one thereby effectively separates h[(0)] and
-_h[(1)]._
+h[(1)].
 
 Note that once one has routines for both cyclic and negacyclic convolution the parts h[(0)] and h[(1)] can be
 computed as sum and difference, respectively. Thereby all expressions of the form α h[(0)] + β h[(1)] can be
 trivially computed.
 
 #### 2.4 Half cyclic convolution for half the price ?
-
-The computation of h[(0)] from formula 2.7 (without computing h[(1)]) is called _half cyclic convolution._
+The computation of h[(0)] from formula 2.7 (without computing h[(1)]) is called half cyclic convolution.
 Apparently, one asks for less information than one gets from the acyclic convolution. One might hope to
 find an algorithm that computes h[(0)] and uses only half the memory compared to the linear convolution
 or that needs half the work, possibly both. It may be a surprise that no such algorithm seems to be
 known currently[5].
 
 Here is a clumsy attempt to find h[(0)] alone: Use the weighted transform with the weight sequence
-_vx = V_ _[x]_ where V _[n]_ is very small. Then h[(1)] will in the result be multiplied with a small number and
-we hope to make it almost disappear. Indeed, using V _[n]_ = 1000 for the cyclic self convolution of the
+vx = V [x] where V [n] is very small. Then h[(1)] will in the result be multiplied with a small number and
+we hope to make it almost disappear. Indeed, using V [n] = 1000 for the cyclic self convolution of the
 sequence 1, 1, 1, 1 (where for the linear self convolution h[(0)] = 1, 2, 3, 4 and h[(1)] = 3, 2, 1, 0 ) one
-_{_ _}_ _{_ _}_ _{_ _}_
-gets 1.003, 2.002, 3.001, 4.000 . At least for integer sequences one could choose V _[n]_ (more than two times)
-_{_ _}_
+{ } { } { }
+gets 1.003, 2.002, 3.001, 4.000 . At least for integer sequences one could choose V [n] (more than two times)
+{ }
 bigger than biggest possible value in h[(1)] and use rounding to nearest integer to isolate h[(0)]. Alas, even
 for modest sized arrays numerical overflow and underflow gives spurious results. Careful analysis shows
 that this idea leads to an algorithm far worse than simply using linear convolution.
 
 #### 2.5 Convolution using the MFA
-
 With the weighted convolutions in mind we reformulate the matrix (self-) convolution algorithm (idea 2.1):
 
 5If you know one, tell me about it!
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 45
+CHAPTER 2. CONVOLUTIONS 45
 
 1. Apply a FFT on each column.
-
-2. On each row apply the weighted convolution with V _[C]_ = e[2][ π i r/R] = 1[r/R] where R is the total
+2. On each row apply the weighted convolution with V [C] = e[2][ π i r/R] = 1[r/R] where R is the total
 number of rows, r = 0..R 1 the index of the row, C the length of each row (or, equivalently the
-_−_
+−
 total number columns)
 
 3. Apply a FFT on each column (of the transposed matrix).
@@ -3515,99 +3283,86 @@ total number columns)
 First consider
 
 ##### 2.5.1 The case R = 2
-
 The cyclic auto convolution of the sequence x can be obtained by two half length convolutions (one cyclic,
-one negacyclic) of the sequences[6] _s := x[(0][/][2)]_ + x[(1][/][2)] and d := x[(0][/][2)] _x[(1][/][2)]_ using the formula
-_−_
+one negacyclic) of the sequences[6] s := x[(0][/][2)] + x[(1][/][2)] and d := x[(0][/][2)] x[(1][/][2)] using the formula
+−
 
 1
-_x ⊛_ _x_ = _s ⊛_ _s −_ _d ⊛−_ _d}_ (2.20)
+x ⊛ x = s ⊛ s − d ⊛− d} (2.20)
 2
 
-_[{][s][ ⊛]_ _[s][ +][ d][ ⊛][−]_ _[d,]_
+[{][s][ ⊛] [s][ +][ d][ ⊛][−] [d,]
 
 The equivalent formula for the cyclic convolution of two sequences x and y is
 
-
 where
 
-
 1
-_x ⊛_ _y_ = 2 _sx ⊛_ _sy −_ _dx ⊛−_ _dy}_ (2.21)
+x ⊛ y = 2 sx ⊛ sy − dx ⊛− dy} (2.21)
 
-_[{][s][x][ ⊛]_ _[s][y][ +][ d][x][ ⊛][−]_ _[d][y][,]_
+[{][s][x][ ⊛] [s][y][ +][ d][x][ ⊛][−] [d][y][,]
 
-_sx_ := _x[(0][/][2)]_ + x[(1][/][2)]
+sx := x[(0][/][2)] + x[(1][/][2)]
 
+dx := x[(0][/][2)] − x[(1][/][2)]
 
-_dx_ := _x[(0][/][2)]_ _−_ _x[(1][/][2)]_
+sy := y[(0][/][2)] + y[(1][/][2)]
 
-_sy_ := _y[(0][/][2)]_ + y[(1][/][2)]
-
-_dy_ := _y[(0][/][2)]_ _−_ _y[(1][/][2)]_
+dy := y[(0][/][2)] − y[(1][/][2)]
 
 For the acyclic (or linear) convolution of sequences one can use the cyclic convolution of the zero padded
 sequences zx := {x0, x1, . . ., nn−1, 0, 0, . . ., 0} (i.e. x with n zeros appended). Using formula 2.20 one gets
 for the two sequences x and y (with sx = dx = x, sy = dy = y):
 
 1
-_x ⊛ac y_ = _zx ⊛_ _zy_ = _x ⊛_ _y −_ _x ⊛−_ _y}_ (2.22)
+x ⊛ac y = zx ⊛ zy = x ⊛ y − x ⊛− y} (2.22)
 2
 
-_[{][x][ ⊛]_ _[y][ +][ x][ ⊛][−]_ _[y,]_
+[{][x][ ⊛] [y][ +][ x][ ⊛][−] [y,]
 
 And for the acyclic auto convolution:
 
 1
-_x ⊛ac x_ = _z ⊛_ _z_ = _x ⊛_ _x −_ _x ⊛−_ _x}_ (2.23)
+x ⊛ac x = z ⊛ z = x ⊛ x − x ⊛− x} (2.23)
 2
 
-_[{][x][ ⊛]_ _[x][ +][ x][ ⊛][−]_ _[x,]_
+[{][x][ ⊛] [x][ +][ x][ ⊛][−] [x,]
 
 ##### 2.5.2 The case R = 3
-
-
-_√_
+√
 
 Let ω = 2[1] [(1 +]
 
-
 3) and define
 
+A := x[(0][/][3)] + x[(1][/][3)] + x[(2][/][3)]
 
-_A_ := _x[(0][/][3)]_ + x[(1][/][3)] + x[(2][/][3)]
+B := x[(0][/][3)] + ω x[(1][/][3)] + ω[2] x[(2][/][3)]
 
-_B_ := _x[(0][/][3)]_ + ω x[(1][/][3)] + ω[2] _x[(2][/][3)]_
-
-_C_ := _x[(0][/][3)]_ + ω[2] _x[(1][/][3)]_ + ω x[(2][/][3)]
-
+C := x[(0][/][3)] + ω[2] x[(1][/][3)] + ω x[(2][/][3)]
 
 Then, if h := x ⊛ac x, there is
 
-_x[(0][/][3)]_ = _A ⊛_ _A + B ⊛{ω} B + C ⊛{ω2} C_ (2.24)
+x[(0][/][3)] = A ⊛ A + B ⊛{ω} B + C ⊛{ω2} C (2.24)
 
-_x[(1][/][3)]_ = _A ⊛_ _A + ω[2]_ (B ⊛{ω} B) + ω (C ⊛{ω2} C)
+x[(1][/][3)] = A ⊛ A + ω[2] (B ⊛{ω} B) + ω (C ⊛{ω2} C)
 
-_x[(2][/][3)]_ = _A ⊛_ _A + ω (B ⊛{ω} B) + ω[2]_ (C ⊛{ω2} C)
+x[(2][/][3)] = A ⊛ A + ω (B ⊛{ω} B) + ω[2] (C ⊛{ω2} C)
 
 For real valued data C is the complex conjugate (cc.) of B and (with ω[2] = cc.ω) B ⊛{ω} B is the cc. of
-_C ⊛{ω2}_ _C and therefore every B_ ⊛{} _B-term is the cc. of the C ⊛{}_ _C-term in the same line. Is there a nice_
+C ⊛{ω2} C and therefore every B ⊛{} B-term is the cc. of the C ⊛{} C-term in the same line. Is there a nice
 and general scheme for real valued convolutions based on the MFA? Read on for the positive answer.
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 46
+CHAPTER 2. CONVOLUTIONS 46
 
 #### 2.6 Convolution of real valued data using the MFA
-
 For row 0 (which is real after the column FFTs) one needs to compute the (usual) cyclic convolution; for
 row R/2 (also real after the column FFTs) a negacyclic convolution is needed[7], the code for that task is
 given on page 62.
 
 All other weighted convolutions involve complex computations, but it is easy to see how to reduce the
-work by 50 percent: As the result must be real the data in row number R _r must, because of the_
-_−_
+work by 50 percent: As the result must be real the data in row number R r must, because of the
+−
 symmetries of the real and imaginary part of the (inverse) Fourier transform of real data, be the complex
 conjugate of the data in row r. Therefore one can use real FFTs (R2CFTs) for all column-transforms for
 step 1 and half-complex to real FFTs (C2RFTs) for step 3.
@@ -3615,14 +3370,14 @@ step 1 and half-complex to real FFTs (C2RFTs) for step 3.
 Let the computational cost of a cyclic (real) convolution be q, then
 
 For R even one must perform 1 cyclic (row 0), 1 negacyclic (row R/2) and R/2 2 complex (weighted)
-_−_
+−
 convolutions (rows 1, 2, . . ., R/2 1)
-_−_
+−
 
 For R odd one must perform 1 cyclic (row 0) and (R 1)/2 complex (weighted) convolutions (rows
-_−_
+−
 1, 2, . . ., (R 1)/2)
-_−_
+−
 
 Now assume, slightly simplifying, that the cyclic and the negacyclic real convolution involve the same
 number of computations and that the cost of a weighted complex convolution is twice as high. Then in
@@ -3633,7 +3388,6 @@ For acyclic convolution one may want to use the right angle convolution (and com
 passes).
 
 #### 2.7 Convolution without transposition using the MFA
-
 Section 8.4 explained the connection between revbin-permutation and transposition. Equipped with that
 knowledge an algorithm for convolution using the MFA that uses revbin_permute instead of transpose
 is almost straight forward:
@@ -3662,10 +3416,7 @@ DIT FFTs on revbin_permuted rows (in revbin_permuted sequence), i.e. unrevbin_pe
 ```
 7For R odd there is no such row and no negacyclic convolution is needed
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 47
+CHAPTER 2. CONVOLUTIONS 47
 ```
  3: 3 1003 2003 3003 4003 5003 6003 7003
 FULL REVBIN_PERMUTE for transposition:
@@ -3701,83 +3452,68 @@ FULL REVBIN_PERMUTE for transposition:
 
 ```
 As shown works for sizes that are a power of two, generalizes for sizes a power of some prime. TBD: add
-_text_
+text
 
 #### 2.8 The z-transform (ZT)
-
 In this section we will learn a technique to compute the FT by a (linear) convolution. In fact, the
 transform computed is the z-transform, a more general transform that in a special case is identical to the
 FT.
 
 ##### 2.8.1 Definition of the ZT
-
 The z-transform (ZT) Z [a] = ˆa of a (length n) sequence a with elements ax is defined as
 
+aˆk :=
 
-_aˆk_ :=
-
-
-_n−1_
+n−1
 �
 
-_ax z[k x]_ (2.25)
-_x=0_
-
+ax z[k x] (2.25)
+x=0
 
 h f l f h l
 
-
------
-
-_CHAPTER 2. CONVOLUTIONS_ 48
+CHAPTER 2. CONVOLUTIONS 48
 
 (formula 2.3): Convolution in original space corresponds to ordinary (elementwise) multiplication in
-_z-space. (See [10] and [11].)_
+z-space. (See [10] and [11].)
 
 Note that the special case z = e[±][2][ π i/n] is the discrete Fourier transform.
 
 ##### 2.8.2 Computation of the ZT via convolution
-
 In the definition of the (discrete) z-transform we rewrite[8] the product x k as
 
 1
-_x k_ = �x[2] + k[2] (k _x)[2][�]_ (2.26)
-_−_ _−_
+x k = �x[2] + k[2] (k x)[2][�] (2.26)
+− −
 2
 
-
 ˆ
-_fk =_
+fk =
 
 This leads to the following
 
-
-_n−1_ _n−1_
+n−1 n−1
 � �
 
-_fx z[x k]_ = _z[k][2][/][2]_
-_x=0_ _x=0_
-
+fx z[x k] = z[k][2][/][2]
+x=0 x=0
 
 �
-_fx z[x][2][/][2][�]_ _z[−][(][k][−][x][)][2][/][2]_ (2.27)
+fx z[x][2][/][2][�] z[−][(][k][−][x][)][2][/][2] (2.27)
 
+Idea 2.2 (chirp z-transform) Algorithm for the chirp z-transform:
 
-**Idea 2.2 (chirp z-transform) Algorithm for the chirp z-transform:**
+1. Multiply f elementwise with z[x][2][/][2].
+2. Convolve (acyclically) the resulting sequence with the sequence z[−][x][2][/][2], zero padding of the sequences
+is required here.
 
-_1. Multiply f elementwise with z[x][2][/][2]._
+3. Multiply elementwise with the sequence z[k][2][/][2].
 
-_2. Convolve (acyclically) the resulting sequence with the sequence z[−][x][2][/][2], zero padding of the sequences_
-_is required here._
-
-_3. Multiply elementwise with the sequence z[k][2][/][2]._
-
-The above algorithm constitutes a ‘fast’ ( _n log(n)) algorithm for the ZT because fast convolution is_
-_∼_
+The above algorithm constitutes a ‘fast’ ( n log(n)) algorithm for the ZT because fast convolution is
+∼
 possible via FFT.
 
 ##### 2.8.3 Arbitrary length FFT by ZT
-
 We first note that the length n of the input sequence a for the fast z-transform is not limited to highly
 composite values (especially n prime is allowed): For values of n where a FFT is not feasible pad the
 sequence with zeros up to a length L with L >= 2 n and a length L FFT becomes feasible (e.g. L is a
@@ -3789,7 +3525,7 @@ one also has an (arbitrary length) FFT algorithm
 The transform takes a few times more than an optimal transform (by direct FFT) would take. The worst
 case (if only FFTs for n a power of 2 are available) is n = 2[p] + 1: One must perform 3 FFTs of length
 2[p][+2] 4 n for the computation of the convolution. So the total work amounts to about 12 times the
-_≈_
+≈
 work a FFT of length n = 2[p] would cost. It is of course possible to lower this ‘worst case factor’ to 6 by
 using highly composite L slightly greater than 2 n.
 
@@ -3798,80 +3534,68 @@ using highly composite L slightly greater than 2 n.
 TBD: show shortcuts for n even/odd
 
 ##### 2.8.4 Fractional Fourier transform by ZT
-
 The z-transform with z = e[α][ 2][ π i/n] and α = 1 is called the fractional Fourier transform (FRFT). Uses of
-_̸_
+̸
 the FRFT are e.g. the computation of the DFT for data sets that have only few nonzero elements and the
 detection of frequencies that are not integer multiples of the lowest frequency of the DFT. A thorough
 discussion can be found in [35].
 
 [FXT: fft fract in chirp/fftfract.cc]
 
-
------
-
 ## Chapter 3
-
 # The Hartley transform (HT)
-
 #### 3.1 Definition of the HT
-
 The Hartley transform (HT) is defined like the Fourier transform with ‘cos + sin’ instead of ‘cos +i sin’.
-_·_
+·
 The (discrete) Hartley transform of a is defined as
 
-_c_ = [a] (3.1)
-_H_
+c = [a] (3.1)
+H
 
-1 _n−1_ � �
+1 n−1 � �
 
 �
 
-_ck_ := _√_ _ax_ cos [2][ π k x] + sin [2][ π k x] (3.2)
-_n_ _n_ _n_
+ck := √ ax cos [2][ π k x] + sin [2][ π k x] (3.2)
+n n n
 
-_x=0_
+x=0
 
 It has the obvious property that real input produces real output,
 
-_H [a]_ _∈_ R for _a ∈_ R (3.3)
+H [a] ∈ R for a ∈ R (3.3)
 
 It also is its own inverse:
 
-[ [a]] = _a_ (3.4)
-_H_ _H_
+[ [a]] = a (3.4)
+H H
 
 The symmetries of the HT are simply:
 
-_H [aS]_ = _H [aS] = H [aS]_ (3.5)
-_H [aA]_ = _H [aA] = −H [aA]_ (3.6)
+H [aS] = H [aS] = H [aS] (3.5)
+H [aA] = H [aA] = −H [aA] (3.6)
 
 i.e. symmetry is, like for the FT, conserved.
 
 #### 3.2 radix 2 FHT algorithms
-
 ##### 3.2.1 Decimation in time (DIT) FHT
-
 For a sequence a of length n let X [1][/][2]a denote the sequence with elements ax cos π x/n + ax sin π x/n
 (this is the ‘shift operator’ for the Hartley transform).
 
-**Idea 3.1 (FHT radix 2 DIT step) Radix 2 decimation in time step for the FHT:**
+Idea 3.1 (FHT radix 2 DIT step) Radix 2 decimation in time step for the FHT:
 
-_n/2_ � �
-[a][(][left][)] = _a[(][even][)][�]_ + [1][/][2] _a[(][odd][)][�]_ (3.7)
-_H_ _H_ _X_ _H_
+n/2 � �
+[a][(][left][)] = a[(][even][)][�] + [1][/][2] a[(][odd][)][�] (3.7)
+H H X H
 
-_n/2_ � �
-[a][(][right][)] _a[(][even][)][�]_ [1][/][2] _a[(][odd][)][�]_ (3 8)
-_H_ _H_ _X_ _H_
+n/2 � �
+[a][(][right][)] a[(][even][)][�] [1][/][2] a[(][odd][)][�] (3 8)
+H H X H
 
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 50
 
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 50
-
-**Code 3.1 (recursive radix 2 DIT FHT) Pseudo code for a recursive procedure of the (radix 2) DIT**
-_FHT algorithm:_
+Code 3.1 (recursive radix 2 DIT FHT) Pseudo code for a recursive procedure of the (radix 2) DIT
+FHT algorithm:
 ```
 procedure rec_fht_dit2(a[], n, x[])
 // real a[0..n-1] input
@@ -3901,14 +3625,14 @@ procedure rec_fht_dit2(a[], n, x[])
 }
 
 ```
-**[source file: recfhtdit2.spr]**
+[source file: recfhtdit2.spr]
 
 [FXT: recursive dit2 fht in slow/recfht2.cc]
 
 The procedure hartley_shift replaces element ck of the input sequence c by ck cos(π k/n) +
-_cn−k sin(π k/n). Here is the pseudo code:_
+cn−k sin(π k/n). Here is the pseudo code:
 
-**Code 3.2 (Hartley shift) procedure hartley_shift_05(c[], n)**
+Code 3.2 (Hartley shift) procedure hartley_shift_05(c[], n)
 ```
 // real c[0..n-1] input, result
 {
@@ -3924,12 +3648,12 @@ _cn−k sin(π k/n). Here is the pseudo code:_
 }
 
 ```
-**[source file: hartleyshift.spr]**
+[source file: hartleyshift.spr]
 
 [FXT: hartley shift 05 in fht/hartleyshift.cc]
 
-**Code 3.3 (radix 2 DIT FHT, localized) Pseudo code for a non-recursive procedure of the (radix 2)**
-_DIT FHT algorithm:_
+Code 3.3 (radix 2 DIT FHT, localized) Pseudo code for a non-recursive procedure of the (radix 2)
+DIT FHT algorithm:
 ```
 procedure fht_dit2(a[], ldn)
 // real a[0..n-1] input,result
@@ -3944,9 +3668,8 @@ procedure fht_dit2(a[], ldn)
 
 ```
 
------
 
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 51
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 51
 ```
     for r:=0 to n-m step m
     {
@@ -3973,7 +3696,7 @@ _CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 51
 }
 
 ```
-**[source file: fhtdit2.spr]**
+[source file: fhtdit2.spr]
 
 The derivation of the ‘usual’ DIT2 FHT algorithm starts by fusing the shift with the sum/diff step:
 ```
@@ -4018,9 +3741,8 @@ void dit2_fht_localized(double *f, ulong ldn)
 
 ```
 
------
 
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 52
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 52
 ```
       }
     }
@@ -4083,24 +3805,20 @@ void dit2_fht(double *f, ulong ldn)
 [FXT: dit2 fht in fht/fhtdit2.cc]
 
 ##### 3.2.2 Decimation in frequency (DIF) FHT
+Idea 3.2 (FHT radix 2 DIF step) Radix 2 decimation in frequency step for the FHT:
 
-**Idea 3.2 (FHT radix 2 DIF step) Radix 2 decimation in frequency step for the FHT:**
+n/2 �
+[a][(][even][)] = a[(][left][)] + a[(][right][)][�] (3.9)
+H H
 
-_n/2_ �
-[a][(][even][)] = _a[(][left][)]_ + a[(][right][)][�] (3.9)
-_H_ _H_
+n/2 �
+[a][(][odd][)] [1][/][2][ �]a[(][left][)] a[(][right][)][��] (3 10)
+H H X
 
-_n/2_ �
-[a][(][odd][)] [1][/][2][ �]a[(][left][)] _a[(][right][)][��]_ (3 10)
-_H_ _H_ _X_
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 53
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 53
-
-**Code 3.4 (recursive radix 2 DIF FHT) Pseudo code for a recursive procedure of the (radix 2) DIF**
-_FHT algorithm:_
+Code 3.4 (recursive radix 2 DIF FHT) Pseudo code for a recursive procedure of the (radix 2) DIF
+FHT algorithm:
 ```
 procedure rec_fht_dif2(a[], n, x[])
 // real a[0..n-1] input
@@ -4136,12 +3854,12 @@ procedure rec_fht_dif2(a[], n, x[])
 }
 
 ```
-**[source file: recfhtdif2.spr]**
+[source file: recfhtdif2.spr]
 
 [FXT: recursive dif2 fht in slow/recfht2.cc]
 
-**Code 3.5 (radix 2 DIF FHT, localized) Pseudo code for a non-recursive procedure of the (radix 2)**
-_DIF FHT algorithm:_
+Code 3.5 (radix 2 DIF FHT, localized) Pseudo code for a non-recursive procedure of the (radix 2)
+DIF FHT algorithm:
 ```
 procedure fht_dif2(a[], ldn)
 // real a[0..n-1] input,result
@@ -4169,9 +3887,8 @@ procedure fht_dif2(a[], ldn)
 
 ```
 
------
 
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 54
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 54
 ```
         s := sin(j*PI/mh)
         {u, v} := {u*c+v*s, u*s-v*c}
@@ -4184,7 +3901,7 @@ _CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 54
 }
 
 ```
-**[source file: fhtdif2.spr]**
+[source file: fhtdif2.spr]
 
 [FXT: dif2 fht localized in fht/fhtdif2.cc]
 The ‘usual’ DIF2 FHT algorithm then is
@@ -4240,71 +3957,61 @@ void dif2_fht(double *f, ulong ldn)
 ```
 [FXT: dif2 fht in fht/fhtdif2.cc]
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 55
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 55
 
 #### 3.3 Complex FT by HT
-
 The relations between the HT and the FT can be read off directly from their definitions and their
 symmetry relations. Let σ be the sign of the exponent in the FT, then the HT of a complex sequence
-_d ∈_ C is:
-
+d ∈ C is:
 
 1
 [d] =
-_F_
+F
 2
-
 
 � � ��
 [d] + [d] + σ i [d] [d] (3.11)
-_H_ _H_ _H_ _−H_
-
+H H H −H
 
 Written out for the real and imaginary part d = a + i b (a, b ∈ R):
 
-
 1
 [a + i b] =
-_ℜF_
+ℜF
 2
 
 1
 [a + i b] =
-_ℑF_
+ℑF
 2
-
 
 � � ��
-[a] + [a] _σ_ [b] [b] (3.12)
-_H_ _H_ _−_ _H_ _−H_
+[a] + [a] σ [b] [b] (3.12)
+H H − H −H
 
 � � ��
 [b] + [b] + σ [a] [a] (3.13)
-_H_ _H_ _H_ _−H_
-
+H H H −H
 
 Alternatively, one can recast the relations (using the symmetry relations 3.5 and 3.6) as
 
 1
 [a + i b] = (3.14)
-_ℜF_
+ℜF
 2
 
-_[H][ [][a][S][ −]_ _[σ b][A][]]_
+[H][ [][a][S][ −] [σ b][A][]]
 
 1
 [a + i b] = (3.15)
-_ℑF_
+ℑF
 2
 
-_[H][ [][b][S][ +][ σ a][A][]]_
+[H][ [][b][S][ +][ σ a][A][]]
 
 Both formulations lead to the very same
 
-**Code 3.6 (complex FT by HT conversion)**
+Code 3.6 (complex FT by HT conversion)
 ```
 fht_fft_conversion(a[],b[],n,is)
 // preprocessing to use two length-n FHTs
@@ -4332,19 +4039,16 @@ fht_fft_conversion(a[],b[],n,is)
 }
 
 ```
-**[source file: fhtfftconversion.spr]**
+[source file: fhtfftconversion.spr]
 
 [FXT: fht fft conversion in fht/fhtfft.cc] [FXT: fht fft conversion in fht/fhtcfft.cc]
 
 Now we have two options to compute a complex FT by two HTs:
 
-**Code 3.7 (complex FT by HT, version 1) Pseudo code for the complex Fourier transform that uses**
-_the Hartley transform, is must be -1 or +1:_
+Code 3.7 (complex FT by HT, version 1) Pseudo code for the complex Fourier transform that uses
+the Hartley transform, is must be -1 or +1:
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 56
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 56
 ```
 // real a[0..n-1] input,result (real part)
 // real b[0..n-1] input,result (imaginary part)
@@ -4357,8 +4061,8 @@ _CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 56
 ```
 and
 
-**Code 3.8 (complex FT by HT, version 2) Pseudo code for the complex Fourier transform that uses**
-_the Hartley transform, is must be -1 or +1:_
+Code 3.8 (complex FT by HT, version 2) Pseudo code for the complex Fourier transform that uses
+the Hartley transform, is must be -1 or +1:
 ```
 fft_by_fht2(a[],b[],n,is)
 // real a[0..n-1] input,result (real part)
@@ -4379,7 +4083,6 @@ interleaving the most nonlocal memory accesses with several arithmetic operation
 [FXT: fht fft in fht/fhtcfft.cc]
 
 #### 3.4 Complex FT by complex HT and vice versa
-
 A complex valued HT is simply two HTs (one of the real, one of the imag part). So we can use both of
 3.7 or 3.8 and there is nothing new. Really? If one writes a type complex version of both the conversion
 and the FHT the routine 3.7 will look like
@@ -4408,20 +4111,17 @@ keeping and trig-computation overhead of a length-n/2 FHT.
 [FXT: fht fft in fht/fhtcfft.cc]
 
 Vice versa: Let T be the operator corresponding to the fht_fft_conversion, T is its own inverse:
-_T = T_ _[−][1], or, equivalently T · T = 1. We have seen that_
+T = T [−][1], or, equivalently T · T = 1. We have seen that
 
-= _T_ and = T (3.16)
-_F_ _H ·_ _F_ _· H_
+= T and = T (3.16)
+F H · F · H
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 57
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 57
 
 Therefore trivially
 
-= T and = _T_ (3.17)
-_H_ _· F_ _H_ _F ·_
+= T and = T (3.17)
+H · F H F ·
 
 Hence we have either
 ```
@@ -4436,23 +4136,22 @@ fht_by_fft(c[], n, is)
 or the same thing with swapped lines. Of course the same ideas also work for separate real- and imaginaryparts.
 
 #### 3.5 Real FT by HT and vice versa
-
 To express the real and imaginary part of a Fourier transform of a purely real sequence a ∈ R by its
 Hartley transform use relations 3.12 and 3.13 and set b = 0:
 
 1
 [a] = (3.18)
-_ℜF_
+ℜF
 2 [(][H][ [][a][] +][ H][ [][a][])]
 
 1
 [a] = (3.19)
-_ℑF_
+ℑF
 2 [(][H][ [][a][]][ −H][ [][a][])]
 
 The pseudo code is straight forward:
 
-**Code 3.9 (real to complex FFT via FHT)**
+Code 3.9 (real to complex FFT via FHT)
 ```
 procedure real_complex_fft_by_fht(a[], n)
 // real a[0..n-1] input,result
@@ -4471,26 +4170,23 @@ procedure real_complex_fft_by_fht(a[], n)
 ```
 At the end of this procedure the ordering of the output data c ∈ C is
 
-`a[0]` = _ℜc0_ (3.20)
-`a[1]` = _ℜc1_
-`a[2]` = _ℜc2_
-_. . ._
+a[0] = ℜc0 (3.20)
+a[1] = ℜc1
+a[2] = ℜc2
+. . .
 
-`a[n/2]` = _ℜcn/2_
-`a[n/2 + 1]` = _ℑcn/2−1_
-`a[n/2 + 2]` = _ℑcn/2−2_
-`a[n/2 + 3]` = _ℑcn/2−3_
-_. . ._
-`a[n −` `1]` = _ℑc1_
+a[n/2] = ℜcn/2
+a[n/2 + 1] = ℑcn/2−1
+a[n/2 + 2] = ℑcn/2−2
+a[n/2 + 3] = ℑcn/2−3
+. . .
+a[n − 1] = ℑc1
 
 [FXT: fht real complex fft in realfft/realfftbyfht.cc]
 
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 58
 
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 58
-
-**Code 3.10 (complex to real FFT via FHT)**
+Code 3.10 (complex to real FFT via FHT)
 ```
 procedure complex_real_fft_by_fht(a[], n)
 // real a[0..n-1] input,result
@@ -4514,26 +4210,24 @@ Vice versa: same line of thought as for complex versions. Let Trc be the operato
 complex_real_fft_by_fht. That is
 
 ```
-_Fcr = H · Tcr_ and _Frc = Trc · H_ (3.21)
+Fcr = H · Tcr and Frc = Trc · H (3.21)
 
 It should be no surprise that Trc · Tcr = 1, or, equivalently Trc = Tcr[−][1] and Tcr = Trc[−][1][. Therefore]
 
-_H = Tcr · Frc_ and _H = Fcr · Trc_ (3.22)
+H = Tcr · Frc and H = Fcr · Trc (3.22)
 
 The corresponding code should be obvious. Watchout for real/complex FFTs that use a different ordering
 than 3.20.
 
 #### 3.6 Discrete cosine transform (DCT) by HT
-
 The discrete cosine transform wrt. the basis
 
-_u(k)_ = _ν(k)_ cos _[π k][ (][i][ + 1][/][2)]_ (3.23)
-_·_
+u(k) = ν(k) cos [π k][ (][i][ + 1][/][2)] (3.23)
+·
 
-_n_
+n
 
-
-_√_
+√
 (where ν(k) = 1 for k = 0, ν(k) = 2 else) can be computed from the FHT using an auxiliary routine
 
 named cos_rot.TBD: give cosrot’s action mathematically
@@ -4558,12 +4252,9 @@ procedure cos_rot(x[], y[], n)
 }
 
 ```
-**[source file: cosrot.spr] which is its own inverse. Then**
+[source file: cosrot.spr] which is its own inverse. Then
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 59
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 59
 ```
 procedure dcth(x[], ldn)
 // real x[0..n-1] input,result
@@ -4596,7 +4287,7 @@ procedure unzip_rev(a[], b[], n)
 
 The inverse routine is
 
-**Code 3.12 (IDCT via FHT) Pseudo code for the computation of the IDCT via FHT:**
+Code 3.12 (IDCT via FHT) Pseudo code for the computation of the IDCT via FHT:
 ```
 procedure idcth(x[], ldn)
 // real x[0..n-1] input,result
@@ -4637,15 +4328,11 @@ Cf. [16], [17].
 TBD: add second dct/fht version
 
 #### 3.7 Discrete sine transform (DST) by DCT
+TBD d fi iti d t id t
 
-TBD d fi iti _d t id t_
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 60
 
-
------
-
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 60
-
-**Code 3.13 (DST via DCT) Pseudo code for the computation of the DST via DCT:**
+Code 3.13 (DST via DCT) Pseudo code for the computation of the DST via DCT:
 ```
 procedure dst(x[],ldn)
 // real x[0..n-1] input,result
@@ -4666,8 +4353,8 @@ procedure dst(x[],ldn)
 ```
 [FXT: dsth in dctdst/dsth.cc]
 
-**Code 3.14 (IDST via IDCT) Pseudo code for the computation of the inverse sine transform (IDST)**
-_using the inverse cosine transform (IDCT):_
+Code 3.14 (IDST via IDCT) Pseudo code for the computation of the inverse sine transform (IDST)
+using the inverse cosine transform (IDCT):
 ```
 procedure idst(x[],ldn)
 // real x[0..n-1] input,result
@@ -4689,38 +4376,33 @@ procedure idst(x[],ldn)
 [FXT: idsth in dctdst/dsth.cc]
 
 #### 3.8 Convolution via FHT
-
 The convolution property of the HT is
 
-
 1
-_H [a ⊛_ _b]_ =
+H [a ⊛ b] =
 2
 
 or, written elementwise:
 
-
 � �
 [a] [b] [a] [b] + [a] [b] + [a] [b] (3.24)
-_H_ _H_ _−H_ _H_ _H_ _H_ _H_ _H_
-
-
-1
-_H [a ⊛_ _b]k_ = 2 �ck dk − _ck dk + ck dk + ck dk�_
+H H −H H H H H H
 
 1
-= 2 �ck (dk + dk) + ck (dk − _dk)�_ where _c = H [a],_ _d = H [b]_ (3.25)
+H [a ⊛ b]k = 2 �ck dk − ck dk + ck dk + ck dk�
 
-**Code 3.15 (cyclic convolution via FHT) Pseudo code for the cyclic convolution of two real valued**
-_sequences x[] and y[], n must be even, result is found in y[]:_
+1
+= 2 �ck (dk + dk) + ck (dk − dk)� where c = H [a], d = H [b] (3.25)
+
+Code 3.15 (cyclic convolution via FHT) Pseudo code for the cyclic convolution of two real valued
+sequences x[] and y[], n must be even, result is found in y[]:
 ```
 procedure fht cyclic convolution(x[] y[] n)
 
 ```
 
------
 
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 61
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 61
 ```
 // real y[0..n-1] result
 {
@@ -4751,7 +4433,7 @@ _CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 61
 }
 
 ```
-**[source file: fhtcnvl.spr]**
+[source file: fhtcnvl.spr]
 
 It is assumed that the procedure fht() does no normalization. Cf. [FXT: fht convolution in
 ```
@@ -4761,13 +4443,13 @@ fht/fhtcnvl.cc]
 Equation 3.25 (slightly optimized) for the auto convolution is
 
 1
-_H [a ⊛_ _a]k_ =
-2 [(][c][k][ (][c][k][ +][ c][k][) +][ c][k][ (][c][k][ −] _[c][k][))]_
+H [a ⊛ a]k =
+2 [(][c][k][ (][c][k][ +][ c][k][) +][ c][k][ (][c][k][ −] [c][k][))]
 
-= _ck ck + 2[1]_ �c[2]k _[−]_ _[c][k]2[�]_ where _c = H [a]_ (3.26)
+= ck ck + 2[1] �c[2]k [−] [c][k]2[�] where c = H [a] (3.26)
 
-**Code 3.16 (cyclic auto convolution via FHT) Pseudo code for an auto convolution that uses a fast**
-_Hartley transform, n must be even:_
+Code 3.16 (cyclic auto convolution via FHT) Pseudo code for an auto convolution that uses a fast
+Hartley transform, n must be even:
 ```
 procedure cyclic_self_convolution(x[], n)
 // real x[0..n-1] input, result
@@ -4793,9 +4475,8 @@ procedure cyclic_self_convolution(x[], n)
 
 ```
 
------
 
-_CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 62
+CHAPTER 3. THE HARTLEY TRANSFORM (HT) 62
 ```
   // normalise:
   for i:=0 to n-1
@@ -4805,7 +4486,7 @@ _CHAPTER 3. THE HARTLEY TRANSFORM (HT)_ 62
 }
 
 ```
-**[source file: fhtcnvla.spr]**
+[source file: fhtcnvla.spr]
 
 For odd n replace the line
 ```
@@ -4825,9 +4506,8 @@ and omit the line
 in both procedures above. Cf. [FXT: fht auto convolution in fht/fhtcnvla.cc]
 
 #### 3.9 Negacyclic convolution via FHT
-
-**Code 3.17 (negacyclic auto convolution via FHT) Code for the computation of the negacyclic**
-_(auto-) convolution:_
+Code 3.17 (negacyclic auto convolution via FHT) Code for the computation of the negacyclic
+(auto-) convolution:
 ```
 procedure negacyclic_self_convolution(x[], n)
 // real x[0..n-1] input, result
@@ -4853,7 +4533,7 @@ procedure negacyclic_self_convolution(x[], n)
 }
 
 ```
-**[source file: fhtnegacycliccnvla.spr]**
+[source file: fhtnegacycliccnvla.spr]
 
 (The code for hartley_shift() was given on page 50.)
 
@@ -4868,29 +4548,24 @@ FHT.
 
 The FHT-based negacyclic convolution turns out to be extremely useful for the computation of weighted
 
-
------
-
 ## Chapter 4
-
 # Numbertheoretic transforms (NTTs)
-
 How to make a numbertheoretic transform out of your FFT:
 ‘Replace exp( 2 π i/n) by a primitive n-th root of unity, done.’
-_±_
+±
 
 We want to do FFTs in Z/mZ (the ring of integers modulo some integer m) instead of C, the (field of
 the) complex numbers. These FFTs are called numbertheoretic transforms (NTTs), mod m FFTs or (if
-_m is a prime) prime modulus transforms._
+m is a prime) prime modulus transforms.
 
 There is a restriction for the choice of m: For a length n FFT we need a primitive n-th root of unity. A
-number r is called an n-th root of unity if r[n] = 1. It is called a primitive n-th root if r[k] = 1 _k < n._
-_̸_ _∀_
+number r is called an n-th root of unity if r[n] = 1. It is called a primitive n-th root if r[k] = 1 k < n.
+̸ ∀
 
 In C matters are simple: e[±][ 2][ π i/n] is a primitive n-th root of unity for arbitrary n. e[2][ π i/][21] is a 21-th root
 of unity. r = e[2][ π i/][3] is also 21-th root of unity but not a primitive root, because r[3] = 1. A primitive n-th
 root of 1 in Z/mZ is also called an element of order n. The ‘cyclic’ property of the elements r of order
-_n lies in the heart of all FFT algorithms: r[n][+][k]_ = r[k].
+n lies in the heart of all FFT algorithms: r[n][+][k] = r[k].
 
 In Z/mZ things are not that simple since primitive roots of unity do not exist for arbitrary n, they exist
 for some maximal order R only. Roots of unity of an order different from R are available only for the
@@ -4898,54 +4573,46 @@ divisors di of R: r[R/d][i] is a di-th root of unity because (r[R/d][i] )[d][i] 
 
 Therefore n must divide R, the first condition for NTTs:
 
-
-
-_[√]n_
-_n_ _R_
-_\_ _⇐⇒_ _∃_
-
+[√]n
+n R
+\ ⇐⇒ ∃
 
 1 (4.1)
-
 
 The operations needed in FFTs are addition, subtraction and multiplication. Division is not needed,
 except for division by n for the final normalization after transform and backtransform. Division by n is
 multiplication by the inverse of n. Hence n must be invertible in Z/mZ: n must be coprime[1] to m, the
 second condition for NTTs:
 
-_n ⊥_ _m_ _⇐⇒_ _∃_ _n[−][1]_ in Z/mZ (4.2)
+n ⊥ m ⇐⇒ ∃ n[−][1] in Z/mZ (4.2)
 
 Cf. [1], [3], [14] or [2] and books on number theory.
 
 #### 4.1 Prime modulus: Z/pZ = Fp
-
 If the modulus is a prime p then Z/pZ is the field Fp: All elements except 0 have inverses and ‘division is
 possible’ in Z/pZ. Thereby the second condition is trivially fulfilled for all FFT lengthes n < p: a prime
-_p is coprime to all integers n < p._
+p is coprime to all integers n < p.
 
 1 ( )
 
-
------
-
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 64
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 64
 
 Roots of unity are available for the maximal order R = p 1 and its divisors: Therefore the first condition
-_−_
+−
 on n for a length-n mod p FFT being possible is that n divides p 1. This restricts the choice for p to
-_−_
+−
 primes of the form p = v n + 1: For length-n = 2[k] FFTs one will use primes like p = 3 5 2[27] + 1 (31
-_·_ _·_
+· ·
 bits), p = 13 2[28] + 1 (32 bits), p = 3 29 2[56] + 1 (63 bits) or p = 27 2[59] + 1 (64 bits)[2]. The elements
-_·_ _·_ _·_ _·_
+· · · ·
 of maximal order in Z/pZ are called primitive elements, generators or primitive roots modulo p. If r is a
-generator, then every element in Fp different from 0 is equal to some power r[e] (1 ≤ _e < p) of r and its_
+generator, then every element in Fp different from 0 is equal to some power r[e] (1 ≤ e < p) of r and its
 order is R/e. To test whether r is a primitive n-th root of unity in Fp one does not need to check r[k] = 1̸
 for all k < n. It suffices to do the check for exponents k that are prime factors of n. This is because the
 order of any element divides the maximal order. To find a primitive root in Fp proceed as indicated by
 the following pseudo code:
 
-**Code 4.1 (Primitive root modulo p) Return a primitive root in Fp**
+Code 4.1 (Primitive root modulo p) Return a primitive root in Fp
 ```
 function primroot(p)
 {
@@ -4966,7 +4633,7 @@ function primroot(p)
 ```
 An element of order n is returned by this function:
 
-**Code 4.2 (Find element of order n) Return an element of order n in Fp:**
+Code 4.2 (Find element of order n) Return an element of order n in Fp:
 ```
 function element_of_order(n,p)
 {
@@ -4982,26 +4649,23 @@ function element_of_order(n,p)
 ```
 In what follows we will need the function ϕ(), the so-called ‘totient’ function. ϕ(m) counts the number
 of integers prime to and less than m. For m = p prime ϕ(p) = p 1. For m composite ϕ(m) is always
-_−_
+−
 less than m 1. For m = p[k] a prime power
-_−_
+−
 
-_ϕ(p[k])_ = _p[k]_ _p[k][−][1]_ (4.3)
-_−_
+ϕ(p[k]) = p[k] p[k][−][1] (4.3)
+−
 
 e.g. ϕ(2[k]) = 2[k][−][1]. ϕ(1) = 1. For coprime p1, p2 (p1, p2 not necessarily primes) ϕ(p1 p2) = ϕ(p1) ϕ(p2),
-_ϕ() is a so-called multiplicative function._
+ϕ() is a so-called multiplicative function.
 
 For the computation of ϕ(m) for m a prime power one can use this simple piece of code
 
-**Code 4.3 (Compute phi(m) for m a prime power) Return ϕ(p[x])**
+Code 4.3 (Compute phi(m) for m a prime power) Return ϕ(p[x])
 
 2Primes of that form are not ‘exceptional’, cf. Lipson [3]
 
-
------
-
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 65
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 65
 ```
 function phi_pp(p,x)
 {
@@ -5012,7 +4676,7 @@ function phi_pp(p,x)
 ```
 Pseudo code to compute ϕ(m) for general m:
 
-**Code 4.4 (Compute phi(m)) Return ϕ(m)**
+Code 4.4 (Compute phi(m)) Return ϕ(m)
 ```
 function phi(m)
 {
@@ -5027,48 +4691,44 @@ function phi(m)
 ```
 Further we need the notion of Z/mZ[∗], the ring of units in Z/mZ. Z/mZ[∗] contains all invertible elements
 (‘units’) of Z/mZ, i.e. those which are coprime to m. Evidently the total number of units is given by
-_ϕ(m):_
+ϕ(m):
 
-_|Z/mZ[∗]|_ = _ϕ(m)_ (4.4)
+|Z/mZ[∗]| = ϕ(m) (4.4)
 
-If m factorizes as m = 2[k][0] _· p[k]1[1]_ _[·][ . . .][ ·][ p]q[k][q]_ then
+If m factorizes as m = 2[k][0] · p[k]1[1] [·][ . . .][ ·][ p]q[k][q] then
 
-_|Z/mZ[∗]|_ = _ϕ(2[k][0]) · ϕ(p[k]1[1]_ [)][ ·][ . . .][ ·][ ϕ][(][p]q[k][q] [)] (4.5)
+|Z/mZ[∗]| = ϕ(2[k][0]) · ϕ(p[k]1[1] [)][ ·][ . . .][ ·][ ϕ][(][p]q[k][q] [)] (4.5)
 
 It turns out that the maximal order R of an element can be equal to or less than |Z/mZ[∗]|, the ring
 Z/mZ[∗] is then called cyclic or noncyclic, respectively. For m a power of an odd prime p the maximal
 order R in Z/mZ[∗] (and also in Z/mZ) is
 
-_R(p[k])_ = _ϕ(p[k])_ (4.6)
+R(p[k]) = ϕ(p[k]) (4.6)
 
 while for m a power of two a tiny irregularity enters:
-
 
 1 for k = 1
 2 for k = 2 (4.7)
 2[k][−][2] for k 3
-_≥_
+≥
 
-
-_R(2[k])_ =
-
+R(2[k]) =
 
 
 
 
 
 
-
 i.e. for powers of two greater than 4 the maximal order deviates from ϕ(2[k]) = 2[k][−][1] by a factor of 2. For
-the general modulus m = 2[k][0] _· p[k]1[1]_ _[·][ . . .][ ·][ p]q[k][q]_ the maximal order is
+the general modulus m = 2[k][0] · p[k]1[1] [·][ . . .][ ·][ p]q[k][q] the maximal order is
 
-_R(m)_ = lcm(R(2[k][0]), R(p[k]1[1] [)][, . . ., R][(][p]q[k][q] [))] (4.8)
+R(m) = lcm(R(2[k][0]), R(p[k]1[1] [)][, . . ., R][(][p]q[k][q] [))] (4.8)
 
 where lcm() denotes the least common multiple.
 
 Pseudo code to compute R(m):
 
-**Code 4.5 (Maximal order modulo m) Return R(m), the maximal order in Z/mZ**
+Code 4.5 (Maximal order modulo m) Return R(m), the maximal order in Z/mZ
 ```
 function maxorder(m)
 {
@@ -5084,23 +4744,22 @@ function maxorder(m)
 
 ```
 
------
 
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 66
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 66
 
 Now we can see for which m the ring Z/mZ[∗] will be cyclic:
 
-Z/mZ[∗] cyclic for _m = 2, 4, p[k], 2 · p[k]_ (4.9)
+Z/mZ[∗] cyclic for m = 2, 4, p[k], 2 · p[k] (4.9)
 
 where p is an odd prime. If m contains two different odd primes pa, pb then R(m) =
 lcm(. . ., ϕ(pa), ϕ(pb), . . . ) is at least by a factor of two smaller than ϕ(m) = . . . · ϕ(pa) · ϕ(pb) · . . .
 because both ϕ(pa) and ϕ(pb) are even, so Z/mZ[∗] can’t be cyclic in that case. The same argument holds
-for m = 2[k][0] _· p[k]_ if k0 > 1. For m = 2[k] Z/mZ[∗] is cyclic only for k = 1 and k = 2 because of the above
+for m = 2[k][0] · p[k] if k0 > 1. For m = 2[k] Z/mZ[∗] is cyclic only for k = 1 and k = 2 because of the above
 mentioned irregularity of R(2[k]).
 
 Pseudo code (following [14]) for a function that returns the order of some element x in Z/mZ:
 
-**Code 4.6 (Order of an element in Z/mZ) Return the order of an element x in Z/mZ**
+Code 4.6 (Order of an element in Z/mZ) Return the order of an element x in Z/mZ
 ```
 function order(x,m)
 {
@@ -5126,7 +4785,7 @@ function order(x,m)
 ```
 Pseudo code for a function that returns some element x in Z/mZ of maximal order:
 
-**Code 4.7 (Element of maximal order in Z/mZ) Return an element that has maximal order in**
+Code 4.7 (Element of maximal order in Z/mZ) Return an element that has maximal order in
 Z/mZ
 ```
 function maxorder_element(m)
@@ -5144,7 +4803,7 @@ For prime m the function returns a primitive root. It is a good idea to have a t
 (which will also be useful in the factorization routine) and restrict the search to small primes and only if
 the modulus is greater than the largest prime of the table proceed with a loop as above:
 
-**Code 4.8 (Element of maximal order in Z/mZ) Return an element that has maximal order in**
+Code 4.8 (Element of maximal order in Z/mZ) Return an element that has maximal order in
 Z/mZ, use a precomputed table of primes
 ```
 function maxorder_element(m,pt[],np)
@@ -5157,9 +4816,8 @@ function maxorder_element(m,pt[],np)
 
 ```
 
------
 
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 67
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 67
 ```
   }
   // hardly ever reached
@@ -5173,13 +4831,12 @@ _CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 67
 ```
 [FXT: maxorder element mod in mod/maxorder.cc]
 
-There is no problem if the prime table contains primes _m: The first loop will finish before order() is_
-_≥_
-called with an element _m, because before that can happen, the element of maximal order is found._
-_≥_
+There is no problem if the prime table contains primes m: The first loop will finish before order() is
+≥
+called with an element m, because before that can happen, the element of maximal order is found.
+≥
 
 #### 4.3 Pseudocode for NTTs
-
 To implement mod m FFTs one basically must supply a mod m class[3] and replace e[±][ 2][ π i/n] by an n-th
 root of unity in Z/mZ in the code. [FXT: class mod in mod/mod.h]
 
@@ -5187,8 +4844,8 @@ For the backtransform one uses the (mod m) inverse ¯r of r (an element of order
 the forward transform. To check whether ¯r exists one tests whether gcd(r, m) = 1. To compute the
 inverse modulo m one can use the relation ¯r = r[ϕ][(][p][)][−][1] (mod m). Alternatively one may use the extended
 Euclidean algorithm, which for two integers a and b finds d = gcd(a, b) and u, v so that a u + b v = d.
-Feeding a = r, b = m into the algorithm gives u as the inverse: r u + m v _r u_ 1 (mod m).
-_≡_ _≡_
+Feeding a = r, b = m into the algorithm gives u as the inverse: r u + m v r u 1 (mod m).
+≡ ≡
 
 While the notion of the Fourier transform as a ‘decomposition into frequencies’ seems to be meaningless
 for NTTs the algorithms are denoted with ‘decimation in time/frequency’ in analogy to those in the
@@ -5199,9 +4856,8 @@ complex FFTs). Using the analogue of trigonometric recursion (in its most naive 
 the computation of roots of unity is expensive.
 
 ##### 4.3.1 Radix 2 DIT NTT
-
-**Code 4.9 (radix 2 DIT NTT) Pseudo code for the radix 2 decimation in time mod fft (to be called**
-_with ldn=log2(n)):_
+Code 4.9 (radix 2 DIT NTT) Pseudo code for the radix 2 decimation in time mod fft (to be called
+with ldn=log2(n)):
 ```
 procedure mod_fft_dit2(f[], ldn, is)
 // mod_type f[0..2**ldn-1]
@@ -5227,9 +4883,8 @@ procedure mod_fft_dit2(f[], ldn, is)
 
 ```
 
------
 
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 68
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 68
 ```
         f[t1] := u+v
         f[t2] := u-v
@@ -5240,7 +4895,7 @@ _CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 68
 }
 
 ```
-**[source file: nttdit2.spr]**
+[source file: nttdit2.spr]
 
 Like in 1.3.2 it is a good idea to extract the ldm==1 stage of the outermost loop:
 Replace
@@ -5261,7 +4916,7 @@ by
 ##### 4.3.2 Radix 2 DIF NTT
 
 ```
-**Code 4.10 (radix 2 DIF NTT) Pseudo code for the radix 2 decimation in frequency mod fft:**
+Code 4.10 (radix 2 DIF NTT) Pseudo code for the radix 2 decimation in frequency mod fft:
 ```
 procedure mod_fft_dif2(f[], ldn, is)
 // mod_type f[0..2**ldn-1]
@@ -5293,7 +4948,7 @@ procedure mod_fft_dif2(f[], ldn, is)
 }
 
 ```
-**[source file: nttdif2.spr]**
+[source file: nttdif2.spr]
 
 As in section 1.3.3 extract the ldm==1 stage of the outermost loop:
 Replace the line
@@ -5302,9 +4957,8 @@ Replace the line
 
 ```
 
------
 
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 69
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 69
 ```
   for ldm:=ldn to 2 step -1
 
@@ -5320,12 +4974,11 @@ and insert
 before the call of revbin_permute(f[],n).
 
 #### 4.4 Convolution with NTTs
-
 The NTTs are natural candidates for (exact) integer convolutions, as used e.g. in (high precision) multiplications. One must keep in mind that ‘everything is mod p’, the largest value that can be represented
 is p 1. As an example consider the multiplication of n-digit radix R numbers[4]. The largest possible
-_−_
+−
 value in the convolution is the ‘central’ one, it can be as large as M = n (R 1)[2] (which will occur if
-_−_
+−
 both numbers consist of ‘nines’ only[5]).
 
 One has to choose p > M to get rid of this problem. If p does not fit into a single machine word
@@ -5334,21 +4987,20 @@ distinct primes that are all just below machine word size and use the Chinese Re
 afterwards.
 
 If using length-n FFTs for convolution there must be an inverse element for n. This imposes the condition
-gcd(n, modulus) = 1, i.e. the modulus must be prime to n. Usually[6] _modulus must be an odd number._
+gcd(n, modulus) = 1, i.e. the modulus must be prime to n. Usually[6] modulus must be an odd number.
 
 Integer convolution: Split input mod m1, m2, do 2 FFT convolutions, combine with CRT.
 
 #### 4.5 The Chinese Remainder Theorem (CRT)
-
 The Chinese remainder theorem (CRT):
 
 Let m1, m2, . . ., mf be pairwise relatively[7] prime (i.e. gcd(mi, mj) = 1, ∀i ̸= j)
-If x ≡ _xi (mod mi) i = 1, 2, . . ., f then x is unique modulo the product m1 · m2 · . . . · mf_ .
+If x ≡ xi (mod mi) i = 1, 2, . . ., f then x is unique modulo the product m1 · m2 · . . . · mf .
 
 For only two moduli m1, m2 compute x as follows[8]:
 
-**Code 4.11 (CRT for two moduli) pseudo code to find unique x (mod m1 m2) with x ≡** _x1 (mod m1)_
-_x ≡_ _x2 (mod m2):_
+Code 4.11 (CRT for two moduli) pseudo code to find unique x (mod m1 m2) with x ≡ x1 (mod m1)
+x ≡ x2 (mod m2):
 ```
 function crt2(x1,m1,x2,m2)
 {
@@ -5362,17 +5014,14 @@ For repeated CRT calculations with the same moduli one will use precomputed c.
 
 For more more than two moduli use the above algorithm repeatedly.
 
-**Code 4.12 (CRT) Code to perform the CRT for several moduli:**
+Code 4.12 (CRT) Code to perform the CRT for several moduli:
 
 4Multiplication is a convolution of the digits followed by the ‘carry’ operations.
 5A radix R ‘nine’ is R − 1, nine in radix 10 is 9.
 6for length-2k FFTs
 7note that it is not assumed that any of the mi is prime
 
-
------
-
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 70
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 70
 ```
 function crt(x[],m[],f)
 {
@@ -5397,7 +5046,6 @@ to the functions above.
 
 Define
 
-
 and
 
 then for
@@ -5406,115 +5054,101 @@ one has
 
 and so
 
-
 �
-_Ti_ := _mk_ (4.10)
+Ti := mk (4.10)
 
-_k!=i_
+k!=i
 
-_ηi_ := _Ti[−][1]_ mod mi (4.11)
+ηi := Ti[−][1] mod mi (4.11)
 
-_Xi_ := _xi ηi Ti_ (4.12)
+Xi := xi ηi Ti (4.12)
 
-_Xi_ mod mj = � _x0_ _i_ elsefor _j = i_ (4.13)
-
+Xi mod mj = � x0 i elsefor j = i (4.13)
 
 �
 
-_Xk_ = _xi_ mod mi (4.14)
+Xk = xi mod mi (4.14)
 
-_k_
+k
 
 For the special case of two moduli m1, m2 one has
 
-_T1_ = _m2_ (4.15)
+T1 = m2 (4.15)
 
-_T2_ = _m1_ (4.16)
-_η1_ = _m[−]2_ [1] mod m1 (4.17)
-_η2_ = _m[−]1_ [1] mod m2 (4.18)
+T2 = m1 (4.16)
+η1 = m[−]2 [1] mod m1 (4.17)
+η2 = m[−]1 [1] mod m2 (4.18)
 
 which are related by[9]
 
-_η1 m2 + η2 m1_ = 1 (4.19)
+η1 m2 + η2 m1 = 1 (4.19)
 
 �
 
-_Xk_ = _x1 η1 T1 + x2 η2 T2_ (4.20)
-_k_
+Xk = x1 η1 T1 + x2 η2 T2 (4.20)
+k
 
-= _x1 η1 m2 + x2 η2 m1_ (4.21)
-= _x1 (1 −_ _η2 m1) + x2 η2 m1_ (4.22)
-= _x1 + (x2 −_ _x1) (m[−]1_ [1] mod m2) m1 (4.23)
+= x1 η1 m2 + x2 η2 m1 (4.21)
+= x1 (1 − η2 m1) + x2 η2 m1 (4.22)
+= x1 + (x2 − x1) (m[−]1 [1] mod m2) m1 (4.23)
 
 as given in the code. The operation count of the CRT implementation as given above is significantly
 better than that of a straight forward implementation.
 
-
------
-
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 71
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 71
 
 #### 4.6 A modular multiplication technique
-
 When implementing a mod class on a 32 bit machine the following trick can be useful: It allows easy
-multiplication of two integers a, b modulo m even if the product a _b does not fit into a machine integer_
-_·_
+multiplication of two integers a, b modulo m even if the product a b does not fit into a machine integer
+·
 (that is assumed to have some maximal value z 1, z = 2[k]).
-_−_
+−
 
-Let ⟨x⟩y denote x modulo y, ⌊x⌋ denote the integer part of x. For 0 ≤ _a, b < m:_
+Let ⟨x⟩y denote x modulo y, ⌊x⌋ denote the integer part of x. For 0 ≤ a, b < m:
 
+� a b
+·
+a b =
+·
 
-� _a_ _b_
-_·_
-_a_ _b_ =
-_·_
-
-_m_
+m
 
 rearranging and taking both sides modulo z > m:
 
-
 �
 
-_· m + ⟨a · b⟩m_ (4.24)
+· m + ⟨a · b⟩m (4.24)
 
+� � a b
+·
+a b
+· −
 
-� � _a_ _b_
-_·_
-_a_ _b_
-_·_ _−_
-
-_m_
+m
 
 where the rhs. equals ⟨a · b⟩m because m < z.
 
-
 � �
 
-_· m_ = _⟨⟨a · b⟩m⟩z_ (4.25)
+· m = ⟨⟨a · b⟩m⟩z (4.25)
 
-_z_
-
+z
 
 �
 
 (4.26)
-_z_
+z
 
-
-� �� _a_ _b_
-_·_
-_⟨a · b⟩m_ = _⟨a · b⟩z −_ _m_
-
+� �� a b
+·
+⟨a · b⟩m = ⟨a · b⟩z − m
 
 � �
-_m_
+m
 
-_·_
+·
 
-_z_
-
+z
 
 the expression on the rhs. can be translated into a few lines fo C-code. The code given here assumes that
 one has 64 bit integer types int64 (signed) and uint64 (unsigned) and a floating point type with 64 bit
@@ -5535,18 +5169,18 @@ uint64 mul_mod(uint64 a, uint64 b, uint64 m)
 }
 
 ```
-It uses the fact that integer multiplication computes the least significant bits of the result ⟨a _·_ _b⟩z whereas_
+It uses the fact that integer multiplication computes the least significant bits of the result ⟨a · b⟩z whereas
 float multiplication computes the most significant bits of the result. The above routine works if 0 <=
-_a, b < m < 2[63]_ = _[z]2_ [. The normalization isn’t necessary if][ m <][ 2][62][ =][ z]4 [.]
+a, b < m < 2[63] = [z]2 [. The normalization isn’t necessary if][ m <][ 2][62][ =][ z]4 [.]
 
 When working with a fixed modulus the division by p may be replaced by a multiplication with the
 inverse modulus, that only needs to be computed once:
 
-Precompute: `float64 i = (float64)1/m;`
+Precompute: float64 i = (float64)1/m;
 
-and replace the line `uint64 y = (uint64)((float64)a*(float64)b/m+(float64)1/2);`
+and replace the line uint64 y = (uint64)((float64)a*(float64)b/m+(float64)1/2);
 
-by `uint64 y = (uint64)((float64)a*(float64)b*i+(float64)1/2);`
+by uint64 y = (uint64)((float64)a(float64)bi+(float64)1/2);
 
 so any division inside the routine avoided. But beware, the routine then cannot be used for m >= 2[62]:
 it very rarely fails for moduli of more than 62 bits. This is due to the additional error when inverting
@@ -5556,58 +5190,48 @@ This trick is ascribed to Peter Montgomery.
 
 TBD: montgomery mult.
 
-
------
-
-_CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS)_ 72
+CHAPTER 4. NUMBERTHEORETIC TRANSFORMS (NTTS) 72
 
 #### 4.7 Numbertheoretic Hartley transform
-
 Let r be an element of order n, i.e. r[n] = 1 (but there is no k < n so that r[k] = 1) we like to identify r
 with exp(2 i π/n).
 
 Then one can set
 
-_r[2]_ + 1
+r[2] + 1
 
 cos [2][ π] (4.27)
 
-_≡_
-_n_ 2 r
+≡
+n 2 r
 
-_r[2]_ 1
-_−_
+r[2] 1
+−
 
-_i sin [2][ π]_ (4.28)
+i sin [2][ π] (4.28)
 
-_≡_
-_n_ 2 r
-
+≡
+n 2 r
 
 For This choice of sin and cos the relations exp() = cos() + i sin() and sin()[2] + cos()[2] = 1 should hold.
-The first check is trivial: _[x]2[2] x[+1]_ [+][ x]2[2] x[−][1] = x. The second is also easy if we allow to write i for some element
+The first check is trivial: [x]2[2] x[+1] [+][ x]2[2] x[−][1] = x. The second is also easy if we allow to write i for some element
 
-that is the square root of −1: ( _[x]2[2] x[+1]_ [)][2][ +(][ x]2[2] x i[−][1] [)][2][ =][ (][x][2][+1)][1]4[−] x[2][(][x][2][−][1)][2] = 1. Ok, but what is i in the modular
+that is the square root of −1: ( [x]2[2] x[+1] [)][2][ +(][ x]2[2] x i[−][1] [)][2][ =][ (][x][2][+1)][1]4[−] x[2][(][x][2][−][1)][2] = 1. Ok, but what is i in the modular
 
 ring? Simply r[n/][4], then we have i[2] = 1 and i[4] = 1 as we are used to. This is only true in cyclic rings.
-_−_
+−
 
 TBD: give a nice mod fht
 
-
------
-
 ## Chapter 5
-
 # Walsh transforms
-
 How to make a Walsh transform out of your FFT:
 ‘Replace exp(something) by 1, done.’
 
 Very simple, so we are ready for
 
-**Code 5.1 (radix 2 DIT Walsh transform, first trial) Pseudo code for a radix 2 decimation in time**
-_Walsh transform: (has a flaw)_
+Code 5.1 (radix 2 DIT Walsh transform, first trial) Pseudo code for a radix 2 decimation in time
+Walsh transform: (has a flaw)
 ```
 procedure walsh_wak_dit2(a[], ldn)
 {
@@ -5632,7 +5256,7 @@ procedure walsh_wak_dit2(a[], ldn)
 }
 
 ```
-**[source file: walshwakdit2.spr]**
+[source file: walshwakdit2.spr]
 
 The transform involves proportional n log2(n) additions (and subtractions) and no multiplication at all.
 Note the absence of any permute(a[],n) function call. The transform is its own inverse, so there is
@@ -5640,8 +5264,8 @@ nothing like the is in the FFT procedures here. Let’s make a slight improvemen
 the code 1.4 and threw away all trig computations.But the swapping of the inner loops, that caused the
 nonlocality of the memory access is now of no advantage, so we try this piece of
 
-**Code 5.2 (radix 2 DIT Walsh transform) Pseudo code for a radix 2 decimation in time Walsh**
-_transform:_
+Code 5.2 (radix 2 DIT Walsh transform) Pseudo code for a radix 2 decimation in time Walsh
+transform:
 ```
 procedure walsh_wak_dit2(a[],ldn)
 {
@@ -5651,9 +5275,8 @@ procedure walsh_wak_dit2(a[],ldn)
 
 ```
 
------
 
-_CHAPTER 5. WALSH TRANSFORMS_ 74
+CHAPTER 5. WALSH TRANSFORMS 74
 ```
     mh := m/2
     for r := 0 to n-1 step m
@@ -5674,7 +5297,7 @@ _CHAPTER 5. WALSH TRANSFORMS_ 74
 }
 
 ```
-**[source file: walshwakdit2localized.spr]**
+[source file: walshwakdit2localized.spr]
 
 Which performance impact can this innocent change in the code have? For large n it gave a speedup by
 a factor of more than three when run on a computer with a main memory clock of 66 Megahertz and a
@@ -5682,8 +5305,8 @@ a factor of more than three when run on a computer with a main memory clock of 6
 
 The equivalent code for the decimation in frequency algorithm looks like this:
 
-**Code 5.3 (radix 2 DIF Walsh transform) Pseudo code for a radix 2 decimation in frequency Walsh**
-_transform:_
+Code 5.3 (radix 2 DIF Walsh transform) Pseudo code for a radix 2 decimation in frequency Walsh
+transform:
 ```
 procedure walsh_wak_dif2(a[], ldn)
 {
@@ -5710,7 +5333,7 @@ procedure walsh_wak_dif2(a[], ldn)
 }
 
 ```
-**[source file: walshwakdif2localized.spr]**
+[source file: walshwakdif2localized.spr]
 
 The basis functions look like this (for n = 16):
 
@@ -5720,7 +5343,7 @@ A term analogue to the frequency of the Fourier basis functions is the so called
 functions, the number of the changes of sign of the individual functions. If one wants the basis functions
 ordered with respect to sequency one can use a procedure like this:
 
-**Code 5.4 (sequency ordered Walsh transform (wal))**
+Code 5.4 (sequency ordered Walsh transform (wal))
 ```
 procedure walsh_wal_dif2(a[],n)
 {
@@ -5730,11 +5353,10 @@ procedure walsh_wal_dif2(a[],n)
 
 ```
 
------
 
-_CHAPTER 5. WALSH TRANSFORMS_ 75
+CHAPTER 5. WALSH TRANSFORMS 75
 
-`permute(a[],n) is what it used to be (cf. section 8.1).` The procedure gray_permute(a[],n) that
+permute(a[],n) is what it used to be (cf. section 8.1). The procedure gray_permute(a[],n) that
 reorders data element with index m by the element with index gray_code(m) is shown in section 8.5.
 
 The Walsh transform of integer input is integral, cf. section 6.2.
@@ -5806,9 +5428,8 @@ The relation between walsh wak() and walsh gray() is that
 
 ```
 
------
 
-_CHAPTER 5. WALSH TRANSFORMS_ 76
+CHAPTER 5. WALSH TRANSFORMS 76
 
 is equivalent to the call walsh wak(f, ldn). The third line is a necessary fixup for certain elements that
 have the wrong sign if uncorrected. grs negative q() is described in section 7.11.
@@ -5822,12 +5443,9 @@ Btw. walsh wal(f, ldn) is equivalent to
 The same idea can be used with the Fast Fourier Transform. However, the advantage of the improved
 access pattern is usually more than compensated by the increased number of sin/cos-computations (the
 twiddle factors appear reordered so n log n instead of n computations are necessary) cf. [FXT: file
-_·_
+·
 
-
------
-
-_CHAPTER 5. WALSH TRANSFORMS_ 77
+CHAPTER 5. WALSH TRANSFORMS 77
 ```
 fft/gfft.cc].
 
@@ -5887,13 +5505,11 @@ WAL (Walsh-Kaczmarz basis) Walsh-Hartley basis
 
 ```
 
------
 
-_CHAPTER 5. WALSH TRANSFORMS_ 78
+CHAPTER 5. WALSH TRANSFORMS 78
 
 #### 5.2 Dyadic convolution
-
-_Walsh’s convolution has xor where the usual one has plus_
+Walsh’s convolution has xor where the usual one has plus
 Using
 ```
 template <typename Type>
@@ -5908,12 +5524,12 @@ void dyadic_convolution(Type * restrict f, Type * restrict g, ulong ldn)
 ```
 one gets the so called dyadic convolution defined by
 
-_h_ = _a ⊛⊕_ _b_ (5.1)
+h = a ⊛⊕ b (5.1)
 
 �
-_hτ_ := _ax by_
+hτ := ax by
 
-_x⊕y=τ_
+x⊕y=τ
 
 The table equivalent to 2.1 is
 ```
@@ -5954,10 +5570,7 @@ void dyadic_convolution(Type * restrict f, Type * restrict g, ulong ldn)
 ```
 The observed speedup for large arrays is about 3/4:
 
-
------
-
-_CHAPTER 5. WALSH TRANSFORMS_ 79
+CHAPTER 5. WALSH TRANSFORMS 79
 ```
           reverse(f,n2); dt=0.0418339 rel= 1
       dif2_walsh_wak(f,ldn); dt=0.505863 rel= 12.0922
@@ -6017,10 +5630,7 @@ It may be interesting to note that the table for matrix multiplication (4x4 matr
 ```
 But when the problem is made symmetric, i.e. the second matrix is indexed in transposed order, we get:
 
-
------
-
-_CHAPTER 5. WALSH TRANSFORMS_ 80
+CHAPTER 5. WALSH TRANSFORMS 80
 ```
  |
  0: 0 . . . 4 . . . 8 . . . 12 . . .
@@ -6042,11 +5652,10 @@ _CHAPTER 5. WALSH TRANSFORMS_ 80
 
 ```
 Thereby dyadic convolution can be used to compute matrix products. The ‘unpolished’ algorithm is
-_n[3]_ log n as with the FT (-based correlation).
-_∼_ _·_
+n[3] log n as with the FT (-based correlation).
+∼ ·
 
 #### 5.3 The slant transform
-
 The slant transform (SLT) can be implemented using a Walsh Transform and just a little pre/postprocessing:
 ```
 void slant(double *f, ulong ldn)
@@ -6073,7 +5682,7 @@ void slant(double *f, ulong ldn)
 
 ```
 The ldm-loop executes ldn 1 times, the inner loop is executed is n/2 1 times. That is, apart from
-_−_ _−_
+− −
 the Walsh transform only an amount of work linear with the array size has to be done. [FXT: slant in
 ```
 walsh/slant.cc]
@@ -6091,9 +5700,8 @@ void inverse_slant(double *f, ulong ldn)
 
 ```
 
------
 
-_CHAPTER 5. WALSH TRANSFORMS_ 81
+CHAPTER 5. WALSH TRANSFORMS 81
 ```
     double N = m*2, N2 = N*N;
     double a = sqrt(3.0*N2/(4.0*N2-1.0));
@@ -6141,11 +5749,7 @@ void inverse_slant_seq(double *f, ulong ldn)
 ```
 TBD: slant basis funcs
 
-
------
-
 ## Chapter 6
-
 # The Haar transform
 ```
  0: [+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +]
@@ -6197,9 +5801,8 @@ void haar(double *f, ulong ldn, double *ws/*=0*/)
 
 ```
 
------
 
-_CHAPTER 6. THE HAAR TRANSFORM_ 83
+CHAPTER 6. THE HAAR TRANSFORM 83
 ```
   {
     v *= s2;
@@ -6219,8 +5822,8 @@ _CHAPTER 6. THE HAAR TRANSFORM_ 83
 
 ```
 The above routine uses a temporary workspace that can be supplied by the caller. The computational
-cost is only _n. [FXT: haar in haar/haar.cc]_
-_∼_
+cost is only n. [FXT: haar in haar/haar.cc]
+∼
 Code for the inverse Haar transform:
 ```
 void inverse_haar(double *f, ulong ldn, double *ws/*=0*/)
@@ -6256,7 +5859,6 @@ reordering of the basis functions, however, allows for to an in place algorithm.
 Versions of the Haar transform without normalization are given in [FXT: file haar/haarnn.h].
 
 #### 6.1 Inplace Haar transform
-
 Code for the in place version of the Haar transform:
 ```
 void inplace_haar(double *f, ulong ldn)
@@ -6270,9 +5872,8 @@ void inplace_haar(double *f, ulong ldn)
 
 ```
 
------
 
-_CHAPTER 6. THE HAAR TRANSFORM_ 84
+CHAPTER 6. THE HAAR TRANSFORM 84
 ```
  0: [+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +]
  1: [+ - ]
@@ -6343,9 +5944,8 @@ void inverse_inplace_haar(double *f, ulong ldn)
 
 ```
 
------
 
-_CHAPTER 6. THE HAAR TRANSFORM_ 85
+CHAPTER 6. THE HAAR TRANSFORM 85
 ```
  0: [+ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +]
  1: [+ + + + + + + + + + + + + + + + - - - - - - - - - - - - - - - -]
@@ -6392,12 +5992,11 @@ that basis functions that are identical up to a shift appear consecutively.
 The in place Haar transform Hi is related to the ‘usual’ Haar transform H by a permutation PH via the
 relations
 
-_H_ = _PH · Hi_ (6.1)
+H = PH · Hi (6.1)
 
-_H_ _[−][1]_ = _Hi[−][1]_ _· PH[−][1]_ (6.2)
+H [−][1] = Hi[−][1] · PH[−][1] (6.2)
 
-
-_PH can be programmed as_
+PH can be programmed as
 ```
 template <typename Type>
 void haar_permute(Type *f, ulong ldn)
@@ -6418,9 +6017,8 @@ void inverse haar permute(Type *f ulong ldn)
 
 ```
 
------
 
-_CHAPTER 6. THE HAAR TRANSFORM_ 86
+CHAPTER 6. THE HAAR TRANSFORM 86
 ```
   for (ulong ldm=1; ldm<=ldn-1; ++ldm)
   {
@@ -6451,7 +6049,7 @@ haar/haarnninplace.h].
 #### 6.2 Integer to integer Haar transform
 
 ```
-**Code 6.1 (integer to integer Haar transform)**
+Code 6.1 (integer to integer Haar transform)
 ```
 procedure int_haar(f[], ldn)
 // real f[0..2**ldn-1] // input, result
@@ -6478,11 +6076,11 @@ procedure int_haar(f[], ldn)
 }
 
 ```
-**[source file: inthaar.spr]**
+[source file: inthaar.spr]
 
 Omit floor() with integer types.
 
-**Code 6.2 (inverse integer to integer Haar transform)**
+Code 6.2 (inverse integer to integer Haar transform)
 ```
 procedure inverse_int_haar(f[], ldn)
 // real f[0..2**ldn-1] // input, result
@@ -6491,9 +6089,8 @@ procedure inverse_int_haar(f[], ldn)
 
 ```
 
------
 
-_CHAPTER 6. THE HAAR TRANSFORM_ 87
+CHAPTER 6. THE HAAR TRANSFORM 87
 ```
   real g[0..n-1] // workspace
   for m:=2 to n mul_step 2
@@ -6516,15 +6113,10 @@ _CHAPTER 6. THE HAAR TRANSFORM_ 87
 }
 
 ```
-**[source file: inverseinthaar.spr]**
-
-
------
+[source file: inverseinthaar.spr]
 
 ## Chapter 7
-
 # Some bit wizardry
-
 In this chapter low-level functions are presented that operate on the bits of a given input word. It is often
 not obvious what these are good for and I do not attempt much to motivate why particular functions
 are here. However, if you happen to have a use for a given routine you will love that it is there: The
@@ -6542,7 +6134,6 @@ be understood also by readers that only know the assembler-mnomics of other CPUs
 generated from C-code using gcc’s feature described on page 34.
 
 #### 7.1 Trivia
-
 With twos complement arithmetic (that is: on likely every computer you’ll ever touch) division and
 multiplication by powers of two is right and left shift, respectively. This is true for unsigned types and
 for multiplication (left shift) with signed types. Division with signed types rounds toward zero, as one
@@ -6572,10 +6163,7 @@ For unsigned types the shift would suffice. One more reason to use unsigned type
 There are two types of right shifts: a so called logical and an arithmetical shift. The logical version (shrl
 in the above fragment) always fills the higher bits with zeros, corresponding to division[1] of unsigned
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 89
+CHAPTER 7. SOME BIT WIZARDRY 89
 
 types. The arithmetical shift (sarl in the above fragment) fills in ones or zeros, according to the most
 significant bit of the original word. C uses the arithmetical or logical shift according to the operand
@@ -6645,10 +6233,7 @@ The following functions are taken from [FXT: file auxbit/bitlow.h].
 The underlying idea is that addition/subtraction of 1 always changes a burst of bits at the lower end of
 the word.
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 90
+CHAPTER 7. SOME BIT WIZARDRY 90
 ```
 static inline ulong lowest_bit(ulong x)
 // return word where only the lowest set bit in x is set
@@ -6728,9 +6313,8 @@ static inline ulong lowest_block(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 91
+CHAPTER 7. SOME BIT WIZARDRY 91
 
 Extracting the index of the lowest bit is easy when the corresponding assembler instruction is used:
 ```
@@ -6800,10 +6384,7 @@ with the lower end of the word. With a bit-reverse CPU-instruction available lif
 easier. However, almost no CPU seems to have it.
 Isolation of the highest set bit is achieved via the bitscan instruction when it is available
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 92
+CHAPTER 7. SOME BIT WIZARDRY 92
 ```
 static inline ulong asm_bsr(ulong x)
 // Bit Scan Reverse
@@ -6883,9 +6464,8 @@ static inline ulong highest_bit_idx(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 93
+CHAPTER 7. SOME BIT WIZARDRY 93
 ```
   if ( x & (~0UL<<32) ) { x >>= 32; r += 32; }
 #endif
@@ -6965,9 +6545,8 @@ Demonstration of selected functions with two different input words:
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 94
+CHAPTER 7. SOME BIT WIZARDRY 94
 ```
 ................1111....11111111 = set_lowest_zero
 ................................ = high_bits
@@ -7041,10 +6620,7 @@ static inline int one_bit_q(ulong x)
 Occasionally useful in FFT based computations (where the length of the available FFTs is often restricted
 to powers of two) are
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 95
+CHAPTER 7. SOME BIT WIZARDRY 95
 ```
 static inline ulong next_pow_of_2(ulong x)
 // return x if x=2**k
@@ -7122,9 +6698,8 @@ to the second variant above):
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 96
+CHAPTER 7. SOME BIT WIZARDRY 96
 
 When the word is known to have only a few bits set the following sparse count variant may be advantegous
 ```
@@ -7193,13 +6768,9 @@ static inline ulong bit_count_01(ulong x)
 avoids all branches and may prove to be useful on a planet with pink air.
 
 #### 7.6 Swapping bits/blocks of a word
-
 Functions in this section are from [FXT: file auxbit/bitswap.h]
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 97
+CHAPTER 7. SOME BIT WIZARDRY 97
 ```
 static inline ulong bit_swap_1(ulong x)
 // return x with neighbour bits swapped
@@ -7276,12 +6847,10 @@ static inline void bit_swap(ulong &x, ulong k1, ulong k2)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 98
+CHAPTER 7. SOME BIT WIZARDRY 98
 
 #### 7.7 Reversing the bits of a word
-
 . . . when there is no corresponding CPU instruction can be achieved via the functions just described, cf.
 
 [FXT: file auxbit/revbin.h]
@@ -7348,12 +6917,10 @@ static inline ulong revbin_update(ulong r, ulong ldn)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 99
+CHAPTER 7. SOME BIT WIZARDRY 99
 
 #### 7.8 Generating bit combinations
-
 The following functions are taken from [FXT: file auxbit/bitcombination.h].
 The ideas above can be used for the generation of bit combinations in colex order:
 ```
@@ -7426,9 +6993,8 @@ static inline ulong next_lex_comb(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 100
+CHAPTER 7. SOME BIT WIZARDRY 100
 ```
 //
 {
@@ -7507,13 +7073,9 @@ A variant of the presented (colex-) algorithm appears in hakmem [37]. The varian
 division of the hakmem-version and is given at http://www.caam.rice.edu/~dougm/ by Doug Moore and
 Glenn Rhoads http://remus.rutgers.edu/~rhoads/ (cited in the code is ”Constructive Combinatorics”
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 101
+CHAPTER 7. SOME BIT WIZARDRY 101
 
 #### 7.9 Generating bit subsets
-
 The sparse counting idea shown on page 96 is used in
 ```
 class bit_subset
@@ -7548,7 +7110,6 @@ which can be found in [FXT: file auxbit/bitsubset.h]
 TBD: sparse count in Gray-code order
 
 #### 7.10 Bit set lookup
-
 There is a nice trick to determine whether some input is contained in a tiny set, e.g. lets determine
 whether x is a tiny prime
 ```
@@ -7584,9 +7145,8 @@ extern const ulong tiny_factors_tab[] =
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 102
+CHAPTER 7. SOME BIT WIZARDRY 102
 ```
          0x82, // x = 7: 1 7 ( bits: 1.....1.)
          0x116, // x = 8: 1 2 4 8
@@ -7663,10 +7223,7 @@ while the best way to do it is
 Related to the inverse Gray code is the parity of a word (that is: bitcount modulo two). The inverse
 Gray code of a word contains at each bit position the parity of all bits of the input left from it (incl.
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 103
+CHAPTER 7. SOME BIT WIZARDRY 103
 ```
 static inline ulong parity(ulong x)
 // return 1 if the number of set bits is even, else 0
@@ -7742,10 +7299,7 @@ static inline ulong byte_parity(ulong x)
 ```
 The Gray-code related functions can be found in [FXT: file auxbit/graycode.h].
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 104
+CHAPTER 7. SOME BIT WIZARDRY 104
 ```
 static inline ulong green_code(ulong x)
 // Return the green-code of x
@@ -7817,9 +7371,8 @@ static inline ulong igc_next_minchange_comb(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 105
+CHAPTER 7. SOME BIT WIZARDRY 105
 ```
 {
   ulong g = green_code(x);
@@ -7878,7 +7431,7 @@ static inline ulong next_minchange_comb(ulong x, ulong last)
 ```
 Each combination is different from the preceding one in exactly two positions. The same run of bitcombinations could be obtained by going through the Gray codes and omitting all words where the bitcount
 is = k. The algorithm shown here, however, is much more efficient.
-_̸_
+̸
 For reasons of efficiency one may prefer code as
 ```
   ulong last = igc_last_comb(k, n);
@@ -7894,9 +7447,8 @@ For reasons of efficiency one may prefer code as
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 106
+CHAPTER 7. SOME BIT WIZARDRY 106
 
 As Doug Moore explains [priv.comm.], the algorithm in igc next minchange comb uses the fact that the
 difference of two (inverse gray codes of) successive combinations is always a power of two. Using this
@@ -7971,9 +7523,8 @@ static inline ulong bit_rotate_left(ulong x, ulong r)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 107
+CHAPTER 7. SOME BIT WIZARDRY 107
 ```
 // return word rotated r bits
 // to the left (i.e. toward the most significant bit)
@@ -8052,9 +7603,8 @@ static inline ulong cyclic_match(ulong x, ulong y)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 108
+CHAPTER 7. SOME BIT WIZARDRY 108
 ```
   while ( ++r < BITS_PER_LONG );
   return ~0UL;
@@ -8081,7 +7631,6 @@ static inline ulong cyclic_min(ulong x)
 can be found in [FXT: file auxbit/bitcyclic.h]
 
 #### 7.14 Bitwise zip
-
 The bitwise zip operation, when straight forward implemented, is
 ```
 ulong bit_zip(ulong a, ulong b)
@@ -8133,9 +7682,8 @@ static inline ulong bit_zip(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 109
+CHAPTER 7. SOME BIT WIZARDRY 109
 
 and
 ```
@@ -8181,7 +7729,6 @@ static inline ulong Butterfly4(ulong x)
 looks much nicer, but seems to use one more register (4 instead of 3) when compiled.
 
 #### 7.15 Bit sequency
-
 Some doubtful functions of questionable usefulness can be found in [FXT: file auxbit/bitsequency.h]:
 ```
 static inline ulong bit_sequency(ulong x)
@@ -8205,9 +7752,8 @@ static inline ulong last_sequency(ulong k)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 110
+CHAPTER 7. SOME BIT WIZARDRY 110
 ```
 static inline ulong next_sequency(ulong x)
 // return smallest integer with highest bit at greater or equal
@@ -8283,9 +7829,8 @@ static inline ulong single_values(ulong x)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 111
+CHAPTER 7. SOME BIT WIZARDRY 111
 
 or
 ```
@@ -8362,9 +7907,8 @@ static inline void upos sort2(ulong &a ulong &b)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 112
+CHAPTER 7. SOME BIT WIZARDRY 112
 ```
 // Both a and b must not have the most significant bit set
 {
@@ -8399,7 +7943,7 @@ static inline ulong contains_zero_byte(ulong x)
 
 ```
 from [FXT: file auxbit/zerobyte.h] may only be a gain for 128 bit words (cf. [FXT: long strlen and
-_≥_
+≥
 ```
 long memchr in aux/bytescan.cc]), however, the underlying idea is nice enough to be documented here.
 
@@ -8437,9 +7981,8 @@ static inline ulong asm_bts(ulong *f, ulong i)
 
 ```
 
------
 
-_CHAPTER 7. SOME BIT WIZARDRY_ 113
+CHAPTER 7. SOME BIT WIZARDRY 113
 ```
      : "=r" (ret)
      : "m" (*f), "r" (i) );
@@ -8459,7 +8002,6 @@ are used, performance is still good with these (the compiler of course replaces 
 bit-and with BITS_PER_LONG-1 and the ‘/’ by a right shift by log2(BITS_PER_LONG) bits).
 
 #### 7.18 Manipulation of colors
-
 In the following it is assumed that the type uint (unsigned integer) contains at least 32 bit. In this
 section This data type is exclusively used as a container for three color channels that are assumed to be
 8 bit each and lie at the lower end of the word. The functions do not depend on how the channels are
@@ -8511,10 +8053,7 @@ static inline uint color_mix_50(uint c1, uint c2)
 ```
 4The software rendering program that uses these functions operates at a not too small fraction of memory bandwidth
 
-
------
-
-_CHAPTER 7. SOME BIT WIZARDRY_ 114
+CHAPTER 7. SOME BIT WIZARDRY 114
 ```
 //
 // shortcut for the special case (50% tranparency)
@@ -8595,14 +8134,10 @@ static inline uint perfect_color_sum(uint c1, uint c2)
 
 ```
 
------
 
 ## Chapter 8
-
 # Permutations
-
 #### 8.1 The revbin permutation
-
 The procedure revbin_permute(a[], n) used in the DIF and DIT FFT algorithms rearranges the array
 ```
 a[] in a way that each element ax is swapped with ax˜, where ˜x is obtained from x by reversing its binary
@@ -8612,7 +8147,6 @@ digits. For example if n = 256 and x = 4310 = 001010112 then ˜x = 110101002 = 2
 depends on both x and on n.
 
 ##### 8.1.1 A naive version
-
 A first implementation might look like
 ```
 procedure revbin_permute(a[], n)
@@ -8647,20 +8181,16 @@ function revbin(x, n)
 ```
 This version of the revbin_permute-routine is pretty inefficient (even if revbin() is inlined and ldn is
 only computed once). Each execution of revbin() costs proportional ldn operations, giving a total of
-proportional _[n]_
+proportional [n]
 
 2 [log][2][(][n][) operations (neglecting the swaps for the moment). One can do better by solving]
 a slightly different problem.
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 116
+CHAPTER 8. PERMUTATIONS 116
 
 ##### 8.1.2 A fast version
-
-The key idea is to update the value ˜x from the value _x[�] −_ 1. As x is one added to x _−_ 1, ˜x is one ‘reversed’
-added to _x[�] −_ 1. If one finds a routine for that ‘reversed add’ update much of the computation can be
+The key idea is to update the value ˜x from the value x[�] − 1. As x is one added to x − 1, ˜x is one ‘reversed’
+added to x[�] − 1. If one finds a routine for that ‘reversed add’ update much of the computation can be
 saved.
 A routine to update r, that must be the same as the the result of revbin(x-1, n) to what would be the
 result of revbin(x, n)
@@ -8710,25 +8240,20 @@ number of operations done by revbin_update() is therefore proportional to n ( 2[
 
 improved from proportional n log(n) to proportional n.
 
-
 ##### 8.1.3 How many swaps?
-
-How many swap()-statements will be executed in total for different n? About n _n, as there are only_
-_−_ _[√]_
+How many swap()-statements will be executed in total for different n? About n n, as there are only
+− [√]
 few numbers with symmetric bit patterns: for even log2(n) =: 2 b the left half of the bit pattern must be
-_√_
+√
 the reversed of the right half. There are 2[b] = 2[2][b] such numbers. For odd log2(n) =: 2 b + 1 there are
 
 twice as much symmetric patterns: the bit in the middle does not matter and can be 0 or 1.
 
 1corresponding to the change in only the rightmost bit if one is added to an even number
 
+CHAPTER 8. PERMUTATIONS 117
 
------
-
-_CHAPTER 8. PERMUTATIONS_ 117
-
-_n_ 2 # swaps # symm. pairs
+n 2 # swaps # symm. pairs
 
 2 0 2
 
@@ -8745,22 +8270,21 @@ _n_ 2 # swaps # symm. pairs
 2[10] 992 32
 
 2[20] 0.999 2[20] 2[10]
-_·_
+·
 
-_√_
-_n_ _n_ _n_
-_∞_ _−_ _[√]_
+√
+n n n
+∞ − [√]
 
 Summarizing: almost all ‘revbin-pairs’ will be swapped by revbin_permute().
 
 ##### 8.1.4 A still faster version
-
 The following table lists indices versus their revbin-counterpart. The subscript 2 indicates printing in
-base 2, ∆:= _x_ _x_ 1 and an ‘y’ in the last column marks index pairs where revbin_permute() will
+base 2, ∆:= x x 1 and an ‘y’ in the last column marks index pairs where revbin_permute() will
 � − [�] −
 swap elements.
 
-_x_ _x2_ _x˜2_ _x˜_ ∆ _x > x˜_ ?
+x x2 x˜2 x˜ ∆ x > x˜ ?
 
 0 00000 00000 0 -31
 
@@ -8826,11 +8350,11 @@ _x_ _x2_ _x˜2_ _x˜_ ∆ _x > x˜_ ?
 
 31 11111 11111 31 16
 
-Observation one: ∆= _[n]_
+Observation one: ∆= [n]
 
 2 [for all odd][ x][.]
 
-Observation two: if for even x < _[n]2_ [there is a swap (for the pair][ x][, ˜][x][) then there is also a swap for the]
+Observation two: if for even x < [n]2 [there is a swap (for the pair][ x][, ˜][x][) then there is also a swap for the]
 
 |n|2 # swaps # symm. pairs|
 |---|---|
@@ -8840,10 +8364,7 @@ Observation two: if for even x < _[n]2_ [there is a swap (for the pair][ x][, ˜
 |---|---|---|---|
 |0 00000 1 00001 2 00010 3 00011 4 00100 5 00101 6 00110 7 00111 8 01000 9 01001 10 01010 11 01011 12 01100 13 01101 14 01110 15 01111 16 10000 17 10001 18 10010 19 10011 20 10100 21 10101 22 10110 23 10111 24 11000 25 11001 26 11010 27 11011 28 11100 29 11101 30 11110 31 11111|00000 0 10000 16 01000 8 11000 24 00100 4 10100 20 01100 12 11100 28 00010 2 10010 18 01010 10 11010 26 00110 6 10110 22 01110 14 11110 30 00001 1 10001 17 01001 9 11001 25 00101 5 10101 21 01101 13 11101 29 00011 3 10011 19 01011 11 11011 27 00111 7 10111 23 01111 15 11111 31|-31 16 -8 16 -20 16 -8 16 -26 16 -8 16 -20 16 -8 16 -29 16 -8 16 -20 16 -8 16 -26 16 -8 16 -20 16 -8 16|y y y y y y y y y y y y|
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 118
+CHAPTER 8. PERMUTATIONS 118
 
 are independent.
 There should be no difficulties to cast these observations into a routine to put data into revbin order:
@@ -8872,7 +8393,7 @@ procedure revbin_permute(a[], n)
 }
 
 ```
-**[source file: revbinpermute.spr]**
+[source file: revbinpermute.spr]
 The revbin_update() would be in C, inlined and the first stage of the loop extracted
 ```
     r^=nh; for (unsigned m=(nh>>1); !((r^=m)&m); m>>=1) {}
@@ -8902,7 +8423,7 @@ procedure revbin_permute0(a[], n)
 }
 
 ```
-**[source file: revbinpermute0.spr]**
+[source file: revbinpermute0.spr]
 
 One could carry the scheme that lead to the ‘faster’ revbin permute procedures further, e.g. using 3
 hardcoded constants ∆1, ∆2, ∆3 depending on whether x mod 4 = 1, 2, 3 only calling revbin_update()
@@ -8918,13 +8439,9 @@ of two, leading to one hundred percent cache miss for the typical computer. Even
 case the cache miss rate will be increased. Do expect to hardly ever win anything noticable but in most
 cases to lose big. Think about it, whisper “direct mapped cache” and forget it.
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 119
+CHAPTER 8. PERMUTATIONS 119
 
 ##### 8.1.5 The real world version
-
 Finally we remark that the revbin_update can be optimized by usage of a small (length BITS_PER_LONG)
 table containing the reflected bursts of ones that change on the lower end with incrementing. A routine
 that utilizes this idea, optionally uses the CPU-bitscan instruction(cf. section 7.2) and further allows to
@@ -8996,9 +8513,8 @@ void revbin_permute(Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 120
+CHAPTER 8. PERMUTATIONS 120
 ```
       idx_swap(f, n1^k, n1^r); // >nh, <nh 01
 #endif // ( RBP_SYMM >= 4 )
@@ -9047,7 +8563,7 @@ _CHAPTER 8. PERMUTATIONS_ 120
 ```
 . . . not the most readable piece of code but a nice example for a real-world optimized routine.
 
-This is [FXT: `revbin permute` in `perm/revbinpermute.h],` see [FXT: `revbin permute0` in
+This is [FXT: revbin permute in perm/revbinpermute.h], see [FXT: revbin permute0 in
 ```
 perm/revbinpermute0.h] for the respective version for zero padded data.
 
@@ -9072,9 +8588,8 @@ void radix_permute(Type *f, ulong n, ulong r)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 121
+CHAPTER 8. PERMUTATIONS 121
 ```
 // must have:
 // n == p**x for some x>=1
@@ -9113,46 +8628,42 @@ _CHAPTER 8. PERMUTATIONS_ 121
 TBD: mixed-radix permute
 
 #### 8.3 Inplace matrix transposition
-
 To transpose a nr × nc- matrix first identify the position i of then entry in row r and column c:
 
-_i_ = _r · nc + c_ (8.1)
+i = r · nc + c (8.1)
 
-After the transposition the element will be at position i[′] in the transposed n[′]r _c[- matrix]_
+After the transposition the element will be at position i[′] in the transposed n[′]r c[- matrix]
 
-_[×][ n][′]_
+[×][ n][′]
 
-_i[′]_ = _r[′]_ _· n[′]c_ [+][ c][′] (8.2)
+i[′] = r[′] · n[′]c [+][ c][′] (8.2)
 (8.3)
 
 Obviously, r[′] = c, c[′] = r, n[′]r [=][ n][c] [and][ n][′]c [=][ n][r][, so:]
 
-_i[′]_ = _c · nr + r_ (8.4)
+i[′] = c · nr + r (8.4)
 
 Multiply the last equation by nc
 
-_i[′]_ _· nc_ = _c · nr · nc + r · nc_ (8.5)
+i[′] · nc = c · nr · nc + r · nc (8.5)
 
-With n := nr · nc and r · nc = i − _c we get_
+With n := nr · nc and r · nc = i − c we get
 
-_i[′]_ _· nc_ = _c · n + i −_ _c_ (8.6)
-_i_ = _i[′]_ _· nc + c · (n −_ 1) (8.7)
+i[′] · nc = c · n + i − c (8.6)
+i = i[′] · nc + c · (n − 1) (8.7)
 
 Take the equation modulo n 1 to get[3]
-_−_
+−
 
-_i_ _≡_ _i[′]_ _· nc_ mod (n − 1) (8.8)
+i ≡ i[′] · nc mod (n − 1) (8.8)
 
+CHAPTER 8. PERMUTATIONS 122
 
------
+That is, the transposition moves the element i = i[′] · nc to position i[′]. Multiply by nr to get the inverse:
 
-_CHAPTER 8. PERMUTATIONS_ 122
-
-That is, the transposition moves the element i = i[′] _· nc to position i[′]. Multiply by nr to get the inverse:_
-
-_i · nr_ _≡_ _i[′]_ _· nc · nr_ (8.9)
-_i · nr_ _≡_ _i[′]_ _· (n −_ 1 + 1) (8.10)
-_i · nr_ _≡_ _i[′]_ (8.11)
+i · nr ≡ i[′] · nc · nr (8.9)
+i · nr ≡ i[′] · (n − 1 + 1) (8.10)
+i · nr ≡ i[′] (8.11)
 
 That is, element i will be moved to i[′] = i · nr mod (n − 1).
 
@@ -9170,9 +8681,7 @@ cyclic shifts. Thus any overflow can be avoided and the computation is also sign
 TBD: constant modulus by mult.
 
 #### 8.4 Revbin permutation vs. transposition
-
 ##### 8.4.1 Rotate and reverse
-
 How would you rotate an (length-n) array by s positions (left or right), without using any[4] scratch space.
 If you do not know the solution then try to find it before reading on.
 The nice little trick is to use reverse three times as in the following:
@@ -9215,13 +8724,10 @@ void rotate_right(Type *f, ulong n, ulong s)
 ```
 [FXT: rotate left and rotate right in perm/rotate.h]
 
+CHAPTER 8. PERMUTATIONS 123
 
------
-
-_CHAPTER 8. PERMUTATIONS_ 123
-
-What this has to do with our subject? When transposing an nr _nc matrix whose size is a power of two_
-_×_
+What this has to do with our subject? When transposing an nr nc matrix whose size is a power of two
+×
 (thereby both nr and nc are also powers of two) the above mentioned rotation is done with the indices
 (written in base two) of the elements. We know how to do a permutation that reverses the complete
 indices and reversing a few bits at the least significant end is not any harder:
@@ -9291,9 +8797,8 @@ void unzip(Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 124
+CHAPTER 8. PERMUTATIONS 124
 ```
 // put part of data with even indices
 // sorted into the lower half,
@@ -9324,26 +8829,25 @@ void unzip(double *f, long n)
 
 While the above mentioned technique is usually not a gain for doing a transposition it may be used
 to speed up the revbin_permute itself. Let us operatorize the idea to see how. Let R be the
-revbin-permutation revbin_permute, T (nr, nc) the transposition of the nr _nc matrix and R(nc) the_
-_×_
+revbin-permutation revbin_permute, T (nr, nc) the transposition of the nr nc matrix and R(nc) the
+×
 ```
 revbin_permute_rows. Then
 
 ```
-_T_ (nr, nc) = _R(nr) · R · R(nc)_ (8.12)
+T (nr, nc) = R(nr) · R · R(nc) (8.12)
 
 The R-operators are their own inverses while T is in general not self inverse[6].
 
-_R_ = _R(nr) · T_ (nr, nc) · R(nc) (8.13)
+R = R(nr) · T (nr, nc) · R(nc) (8.13)
 
-There is a degree of freedom in this formula: for fixed n = nr _nc one can choose one of nr and nc (only_
-_×_
+There is a degree of freedom in this formula: for fixed n = nr nc one can choose one of nr and nc (only
+×
 their product is given).
 
 TBD: revbin-permute by transposition
 
 #### 8.5 The Gray code permutation
-
 The Gray code permutation reorders (length-2[n]) arrays according to the Gray code
 ```
 static inline ulong gray_code(ulong x)
@@ -9365,9 +8869,8 @@ inline void gray_permute(const Type *f, Type * restrict g, ulong n)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 125
+CHAPTER 8. PERMUTATIONS 125
 
 Its inverse is
 ```
@@ -9381,7 +8884,7 @@ inline void inverse_gray_permute(const Type *f, Type * restrict g, ulong n)
 }
 
 ```
-It also uses calls to `gray_code()` because they are cheaper than the computation of
+It also uses calls to gray_code() because they are cheaper than the computation of
 ```
 inverse_gray_code(), cf. 7.11.
 
@@ -9443,10 +8946,7 @@ void inverse_gray_permute(Type *f, ulong n)
 ```
 7To both my delight and shock I noticed that the underlying ideas of this routine appeared in Knuths online pre-fascicle
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 126
+CHAPTER 8. PERMUTATIONS 126
 ```
     z <<= 1;
     v <<= 1;
@@ -9517,21 +9017,16 @@ This is pretty amazing for such a nontrivial permutation.
 The described permutation can be used to significantly speed up fast transforms of lengths a power of
 two, notably the Walsh transform, see chapter 5.
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 127
+CHAPTER 8. PERMUTATIONS 127
 
 #### 8.6 General permutations
-
 So far we treated special permutations that occured as part of other algorithms. It is instructive to study
 permutations in general with the operations (as composition and inverse) on them.
 
 ##### 8.6.1 Basic definitions
-
 A straight forward way to describe a permutation is to consider the array of indices that for the original
 (unpermuted) data would be the length-n canonical sequence 0, 1, 2, . . ., n 1. The mentioned trivial
-_−_
+−
 sequence describes the ‘do-nothing’ permutation or identity (wrt. composition of permutations). The
 concept is best described by the routine that applies a given permutation x on an array of data f : after
 the routine has finished the array g will contain the elements of f reordered according to x
@@ -9547,9 +9042,9 @@ void apply(const ulong *x, const Type *f, Type * restrict g, ulong n)
 ```
 [FXT: apply in perm/permapply.h] An example using strings (arrays of characters): The permutation
 described by x = 7, 6, 3, 2, 5, 1, 0, 4 and the input data
-_{_ _}_
-_f ="ABadCafe" would produce_
-_g ="efdaaBAC"_
+{ }
+f ="ABadCafe" would produce
+g ="efdaaBAC"
 
 All routines in this and the following section are declared in [FXT: file perm/permutation.h]
 Trivially
@@ -9591,10 +9086,7 @@ To check whether a given array really describes a valid permutation one has to v
 appears exactly once. The bitarray class described in 7.17 allows us to do the job without modification
 of the input (like e.g. sorting):
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 128
+CHAPTER 8. PERMUTATIONS 128
 ```
 int is_valid_permutation(const ulong *f, ulong n, bitarray *bp/*=0*/)
 // check whether all values 0...n-1 appear exactly once
@@ -9619,8 +9111,8 @@ int is_valid_permutation(const ulong *f, ulong n, bitarray *bp/*=0*/)
 ```
 One can apply arbitrary many permutations to an array, one by one. The resulting permutation is called
 the composition of the applied permutations. As an example, the check whether some permutation g is
-equal to f applied twice, or f _f_, or f squared use:
-_·_
+equal to f applied twice, or f f, or f squared use:
+·
 ```
 int is_square(const ulong *f, const ulong *g, ulong n)
 // whether f * f == g as a permutation
@@ -9630,10 +9122,10 @@ int is_square(const ulong *f, const ulong *g, ulong n)
 }
 
 ```
-A permutation f is said to be the inverse of another permutation g if it undoes its effect, that is f _g = id_
-_·_
-(likewise g _f = id):_
-_·_
+A permutation f is said to be the inverse of another permutation g if it undoes its effect, that is f g = id
+·
+(likewise g f = id):
+·
 ```
 int is_inverse(const ulong *f, const ulong *g, ulong n)
 // check whether f[] is inverse of g[]
@@ -9665,15 +9157,12 @@ void make_inverse(const ulong *f, ulong * restrict g, ulong n)
 ```
 However, if one wants to do the operation inplace a little bit of thought is required. The idea underlying
 all subsequent routines working inplace is that every permutation entirely consists of disjoint cycles. A
-_cycle (of a permutation) is a subset of the indices that is rotated (by one) by the permutation. The term_
-_disjoint means that the cycles do not ‘cross’ each other. While this observation is pretty trivial it allows_
+cycle (of a permutation) is a subset of the indices that is rotated (by one) by the permutation. The term
+disjoint means that the cycles do not ‘cross’ each other. While this observation is pretty trivial it allows
 us to do many operations by following the cycles of the permutation, one by one, and doing the necessary
 operation on each of them. As an example consider the following permutation of an array originally
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 129
+CHAPTER 8. PERMUTATIONS 129
 ```
 0, 1, 3, 2, 7, 6, 4, 5, 15, 14, 12, 13, 8, 9, 11, 10
 
@@ -9749,9 +9238,8 @@ ulong print_cycles(const ulong *f, ulong n, bitarray *bp=0)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 130
+CHAPTER 8. PERMUTATIONS 130
 ```
       g = f[g];
     }
@@ -9825,9 +9313,8 @@ void make_square(ulong *f, ulong n, bitarray *bp/*=0*/)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 131
+CHAPTER 8. PERMUTATIONS 131
 ```
   }
   if ( 0==bp ) delete tp;
@@ -9899,9 +9386,8 @@ void apply inverse(const ulong *x const Type *f Type * restrict g ulong n)
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 132
+CHAPTER 8. PERMUTATIONS 132
 ```
 // i.e. g[x[k]] <-- f[k] \forall k
 {
@@ -9944,7 +9430,6 @@ Finally let us remark that an analogue of the binary powering algorithm exists w
 permutations. [FXT: power in perm/permutation.cc]
 
 #### 8.7 Generating all Permutations
-
 In this section a few algorithms for the generation of all permutations are presented. These are typically
 useful in situations where an exhausive search over all permutations is needed. At the time of writing
 the pre-fascicles of Knuths The Art of Computer Programming Volume 4 are available. Therefore (1) the
@@ -9955,7 +9440,6 @@ the following (sub-)sections.
 TBD: perm-visit cf. [FXT: file perm/permvisit.h]
 
 ##### 8.7.1 Lexicographic order
-
 When generated in lexicographic order the permutations appear as if (read as numbers and) sorted
 numerically:
 ```
@@ -9967,9 +9451,8 @@ numerically:
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 133
+CHAPTER 8. PERMUTATIONS 133
 ```
  # 7: 1 0 3 2 +
  # 8: 1 2 0 3 +
@@ -10040,9 +9523,8 @@ ulong perm_lex::next()
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 134
+CHAPTER 8. PERMUTATIONS 134
 ```
   return idx;
 }
@@ -10069,7 +9551,6 @@ Using the above is no black magic:
 cf. [FXT: file demo/permlex-demo.cc]
 
 ##### 8.7.2 Minimal-change order
-
 When generated in minimal-change order[9] the permutations in a way that between each consecutive two
 exactly two elements are swapped:
 ```
@@ -10118,9 +9599,8 @@ public:
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 135
+CHAPTER 8. PERMUTATIONS 135
 ```
   perm_minchange(ulong nn);
   ~perm_minchange();
@@ -10195,9 +9675,8 @@ Usage of the class is straighforward:
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 136
+CHAPTER 8. PERMUTATIONS 136
 ```
   {
     // do something, e.g. just print the permutation:
@@ -10256,7 +9735,6 @@ void perm_trotter::make_next()
 The corresponding class perm_trotter, however, does not produce the inverse permutations.
 
 ##### 8.7.3 Derangement order
-
 The following enumeration of permutations is characterized by the fact that two successive permutations
 have no element at the same position:
 ```
@@ -10275,9 +9753,8 @@ have no element at the same position:
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 137
+CHAPTER 8. PERMUTATIONS 137
 ```
  # 13: 3 2 1 0
  # 14: 1 0 3 2
@@ -10293,8 +9770,8 @@ _CHAPTER 8. PERMUTATIONS_ 137
 
 ```
 There is no such sequence for n = 3.
-The utility class, that implements the underlying algorithm is [FXT: `class perm derange`
-in `perm/permderange.h].` The central piece of code is [FXT: `perm derange::make next` in
+The utility class, that implements the underlying algorithm is [FXT: class perm derange
+in perm/permderange.h]. The central piece of code is [FXT: perm derange::make next in
 ```
 perm/permderange.cc]:
 void perm_derange::make_next()
@@ -10346,7 +9823,6 @@ The above listing can be generated via
 [FXT: file demo/permderange-demo.cc]
 
 ##### 8.7.4 Star-transposition order
-
 Knuth [fasc2B p.19] gives an algorithm that generates the permutations ordered in a way that each two
 successive entries in the list differ by a swap of element zero with some other element (star transposition):
 ```
@@ -10354,9 +9830,8 @@ successive entries in the list differ by a swap of element zero with some other 
 
 ```
 
------
 
-_CHAPTER 8. PERMUTATIONS_ 138
+CHAPTER 8. PERMUTATIONS 138
 ```
  # 2: 2 0 1 3 swap: (0, 2)
  # 3: 0 2 1 3 swap: (0, 1)
@@ -10404,7 +9879,6 @@ The above listing can be obtained with
 [FXT: file demo/permstar-demo.cc]
 
 ##### 8.7.5 Yet another order
-
 ... to enumerate all permutations of n elements was given in [32]:
 ```
  # 0: 0 1 2 3
@@ -10435,13 +9909,10 @@ The above listing can be obtained with
 ```
 The underlying idea is to find all possible pathes that visit all nodes of a totally connected graph: start
 
-
------
-
-_CHAPTER 8. PERMUTATIONS_ 139
+CHAPTER 8. PERMUTATIONS 139
 
 as not yet visited ( 1) or to contain at which point in the path (0 for starting point . . . n 1 for end
-_−_ _−_
+− −
 point) it was visited. A recursive implementation looks like
 ```
 int n;
@@ -10489,20 +9960,16 @@ The above list can be created via
 
 ```
 
------
 
 ## Chapter 9
-
 # Sorting and searching
-
 TBD: chapter outline
 
 TBD: counting sort, radix sort, merge sort
 
 #### 9.1 Sorting
-
-There are a few straight forward algorithms for sorting that scale with _n[2]_ (where n is the size of the
-_∼_
+There are a few straight forward algorithms for sorting that scale with n[2] (where n is the size of the
+∼
 array to be sorted).
 Here we use selection sort whose idea is to find the minimum of the array, swap it with the first element
 and repeat for all elements but the first:
@@ -10542,17 +10009,14 @@ int is_sorted(const Type *f, ulong n)
 }
 
 ```
-While the quicksort-algorithm presented below scales _n log(n) (in the average case) it does not just_
-_∼_
+While the quicksort-algorithm presented below scales n log(n) (in the average case) it does not just
+∼
 
-
------
-
-_CHAPTER 9. SORTING AND SEARCHING_ 141
+CHAPTER 9. SORTING AND SEARCHING 141
 
 the fastest method because of its minimal bookkeeping overhead and (2) therefore it is used inside the
 quicksort for lengths below some threshold.
-The main ingredient of quicksort is to partition the array: The corresponding routine reorders some elements where needed and returns some partition index k so that max(f0, . . ., fk−1) ≤ _min(fk, . . ., fn−1):_
+The main ingredient of quicksort is to partition the array: The corresponding routine reorders some elements where needed and returns some partition index k so that max(f0, . . ., fk−1) ≤ min(fk, . . ., fn−1):
 ```
 template <typename Type>
 ulong partition(Type *f, ulong n)
@@ -10620,9 +10084,8 @@ void quick_sort(Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 142
+CHAPTER 9. SORTING AND SEARCHING 142
 ```
     n = ln;
   }
@@ -10641,10 +10104,9 @@ _CHAPTER 9. SORTING AND SEARCHING_ 142
 TBD: worst case and how to avoid it
 
 #### 9.2 Searching
-
 The reason why some data was sorted may be that a fast search has to be performed repeatedly. The
 following bsearch is log(n) and works by the obvious subdivision of the data:
-_∼_
+∼
 ```
 template <typename Type>
 ulong bsearch(const Type *f, ulong n, Type v)
@@ -10699,10 +10161,7 @@ ulong bsearch_approx(const Type *f, ulong n, Type v, Type da)
 ```
 When the values to be searched will semselves appear in monotone order you can reduce the total time
 
-
------
-
-_CHAPTER 9. SORTING AND SEARCHING_ 143
+CHAPTER 9. SORTING AND SEARCHING 143
 ```
 template <typename Type>
 inline long search_down(const Type *f, Type v, ulong &i)
@@ -10722,9 +10181,8 @@ inline long search_down(const Type *f, Type v, ulong &i)
 [FXT: file sort/search.h]
 
 #### 9.3 Index sorting
-
-While the ‘plain’ sorting reorders an array f so that, after it has finished, fk _fk+1 the following routines_
-_≤_
+While the ‘plain’ sorting reorders an array f so that, after it has finished, fk fk+1 the following routines
+≤
 sort an array of indices without modifying the actual data:
 ```
 template <typename Type>
@@ -10774,9 +10232,8 @@ ulong idx_partition(const Type *f, ulong n, ulong *x)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 144
+CHAPTER 9. SORTING AND SEARCHING 144
 ```
 {
   swap( x[0], x[n/2]);
@@ -10849,9 +10306,8 @@ void ptr_selection_sort(const Type *f, ulong n, Type **x)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 145
+CHAPTER 9. SORTING AND SEARCHING 145
 ```
     ulong m = i; // position-ptr of minimum
     ulong j = n;
@@ -10888,7 +10344,7 @@ types can be sorted with respect to some key contained. Citing the manual page f
 Note that the numerous calls to cmp do have a negative impact on the performance. And then with C++
 you can provide a comparision ‘function’ for compound data by overloading the operators <, <, <= and >=
 and use the plain version. Back in performance land. Isn’t C++ nice? TBD: add a compile-time inlined
-_version?_
+version?
 As a prototypical example here the version of selection sort:
 ```
 template <typename Type>
@@ -10920,19 +10376,17 @@ void quick_sort(Type *f, ulong n, int (*cmp)(const Type &, const Type &))
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 146
+CHAPTER 9. SORTING AND SEARCHING 146
 
 ##### Sorting complex numbers
-
 You want to sort complex numbers? Fine for me, but don’t tell your local mathematician. To see the
-mathematical problem we ask whether i is smaller or greater than zero. Assume i > 0: follows i _i > 0_
-_·_
-(we multiplied with a positive value) which is 1 > 0 and that is false. So, is i < 0? Then i _i > 0_
-_−_ _·_
+mathematical problem we ask whether i is smaller or greater than zero. Assume i > 0: follows i i > 0
+·
+(we multiplied with a positive value) which is 1 > 0 and that is false. So, is i < 0? Then i i > 0
+− ·
 (multiplication with a negative value, as assumed). So 1 > 0, oops! The lesson is that there is no way
-_−_
+−
 to impose an arrangement on the complex numbers that would justify the usage of the symbols < and >
 in the mathematical sense.
 
@@ -10972,7 +10426,6 @@ void complex_sort(Complex *f, ulong n)
 can indeed be the practical tool you had in mind.
 
 #### 9.6 Unique
-
 This section presents a few utility functions that revolve around whether values in a (sorted) array are
 repeated or unique.
 Testing whether all values are unique:
@@ -10994,9 +10447,8 @@ int test_unique(const Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 147
+CHAPTER 9. SORTING AND SEARCHING 147
 ```
   return 0;
 }
@@ -11005,11 +10457,11 @@ _CHAPTER 9. SORTING AND SEARCHING_ 147
 The same thing, but for inexact types (floats): the maximal (absolute) difference within which two
 contiguous elements will still be considered equal can be provided as additional parameter. One subtle
 point is that the values can slowly ‘drift away’ unnoticed by this implementation: Consider a long array
-where each difference computed has the same sign and is just smaller than da, say it is d = 0.6 `da. The`
+where each difference computed has the same sign and is just smaller than da, say it is d = 0.6 da. The
 
-_·_
-difference of the first and last value then is 0.6 (n 1) _d which is greater than da for n_ 3.
-_·_ _−_ _·_ _≥_
+·
+difference of the first and last value then is 0.6 (n 1) d which is greater than da for n 3.
+· − · ≥
 ```
 template <typename Type>
 int test_unique_approx(const Type *f, ulong n, Type da)
@@ -11076,9 +10528,8 @@ Unique’d array:
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 148
+CHAPTER 9. SORTING AND SEARCHING 148
 ```
   1: 0.4000000000
   2: 0.5300000000
@@ -11150,9 +10601,8 @@ int is_monotone(const Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 149
+CHAPTER 9. SORTING AND SEARCHING 149
 ```
   }
   if ( k==n ) return +1; // constant is considered ascending here
@@ -11225,9 +10675,8 @@ long is_convex(Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 150
+CHAPTER 9. SORTING AND SEARCHING 150
 ```
   {
     if ( f[k] != f[k-1] ) break;
@@ -11300,9 +10749,8 @@ long is_strictly_convex(Type *f, ulong n)
 
 ```
 
------
 
-_CHAPTER 9. SORTING AND SEARCHING_ 151
+CHAPTER 9. SORTING AND SEARCHING 151
 ```
   {
     // scan for ascending pair:
@@ -11321,13 +10769,8 @@ _CHAPTER 9. SORTING AND SEARCHING_ 151
 
 The tests given are mostly useful as assertions used inside more complex algorithms.
 
-
------
-
 ## Chapter 10
-
 # Selected combinatorical algorithms
-
 This chapter presents selected combinatorical algorithms. The generation of combinations, subsets, partitions, and pairings of parentheses (as example for the use of ‘funcemu’) are treated here. Permutations
 are treated in a seperate chapter because of the not so combinatorical viewpoint taken with most of the
 material (especially the specific examples like the revbin-permutation) there.
@@ -11335,7 +10778,6 @@ material (especially the specific examples like the revbin-permutation) there.
 TBD: debruijn sequences via primitive polys possibly using bitengine
 
 #### 10.1 Offline functions: funcemu
-
 Sometimes it is possible to find recursive algorithm for solving some problem that is not easily solved
 iteratively. However the recursive implementations might produce the results in midst of its calling graph.
 When a utility class providing a the results one by one with some next call is required there is an apparent
@@ -11373,10 +10815,7 @@ void paren(long i, long s)
 ```
 1True for the majority of the programming languages.
 
-
------
-
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 153
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 153
 ```
 }
 
@@ -11449,9 +10888,8 @@ public:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 154
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 154
 ```
   void poke(Type x, Type y)
   { d_[dp_-1] = y; d_[dp_-2] = x; }
@@ -11527,9 +10965,8 @@ paren::paren(int nn)
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 155
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 155
 ```
   n = (nn>0 ? nn : 1);
   x = new int[n];
@@ -11570,7 +11007,6 @@ The presented mechanism is also useful for unmaintainable code insanely cluttere
 Further, investigating the contents of the data stack can be of help in the search of a iterative solution.
 
 #### 10.2 Combinations in lexicographic order
-
 The combinations of three elements out of six in lexicographic order are
 ```
   [ 0 1 2 ] ...111 # 0
@@ -11602,9 +11038,8 @@ class comb lex
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 156
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 156
 ```
 public:
   ulong n_;
@@ -11673,9 +11108,8 @@ The listing at the beginning of this section can then be produced by a simple fr
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 157
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 157
 ```
     ++ct;
   }
@@ -11685,7 +11119,6 @@ _CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 157
 Cf. [FXT: file demo/comblex-demo.cc].
 
 #### 10.3 Combinations in co-lexicographic order
-
 The combinations of three elements out of six in co-lexicographic order are
 ```
   [ 0 1 2 ] ...111 # 0
@@ -11748,9 +11181,8 @@ public:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 158
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 158
 ```
       ++j;
     }
@@ -11780,7 +11212,6 @@ For the connection between lex-order and colex-order see section 7.8
 Usage is completely analogue to that of the class comb lex, cf. [FXT: file demo/combcolex-demo.cc].
 
 #### 10.4 Combinations in minimal-change order
-
 The combinations of three elements out of six in minimal-change order are
 ```
   ...111 [ 0 1 2 ] swap: (0, 0) # 0
@@ -11819,9 +11250,8 @@ public:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 159
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 159
 ```
   ulong sw1_, sw2_;
   ulong *x_;
@@ -11893,9 +11323,8 @@ public:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 160
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 160
 ```
     bits_ = tbits;
     ulong xi = 0, bi = 0;
@@ -11934,17 +11363,16 @@ The listing at the beginning of this section can be generated via code like:
 cf. [FXT: file demo/combminchange-demo.cc].
 
 #### 10.5 Combinations in alternative minimal-change order
-
 There is more than one minimal-change order. Consider the sequence of bitsets generated in section 7.12:
 alternative orderings that have the minimal-change property are e.g. described by 1) the sequence with
 each word reversed or, more general 2) every permutation of the bits 3) the sequence with its bits negated
 4) cyclical rotations of (1) . . . (3)
 
-Here we use the negated and bit-reversed sequence for � _n−k_ � in order to generate the combinations
-_n_
+Here we use the negated and bit-reversed sequence for � n−k � in order to generate the combinations
+n
 
-corresponding to � _k_ �:
-_n_
+corresponding to � k �:
+n
 ```
  n = 6 k = 3:
   ...111 [ 0 1 2 ] swap: (3, 0) # 0
@@ -11969,9 +11397,8 @@ _n_
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 161
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 161
 
 The interesting feature is that the last combination is identical to the first shifted left by one. This makes
 it easy to generate the subsets of a set with n elements in monotonic minchange order by concatenating
@@ -12044,9 +11471,8 @@ protected:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 162
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 162
 ```
   ulong k; // index of last element in subset
   // number of elements in subset == k+1
@@ -12117,10 +11543,7 @@ public:
 [FXT: class subset lex in comb/subsetlex.h]
 One can generate the list at the beginning of this sections by a code fragment like:
 
-
------
-
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 163
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 163
 ```
   ulong n = 5;
   subset_lex sl(n);
@@ -12141,7 +11564,6 @@ _CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 163
 cf. [FXT: file demo/subsetlex-demo.cc]
 
 #### 10.7 Subsets in minimal-change order
-
 The subsets of a set with 5 elements in minimal-change order:
 ```
  1: 1.... chg @ 0 num=1 set={0}
@@ -12193,9 +11615,8 @@ protected:
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 164
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 164
 ```
 public:
   subset_minchange(ulong nn)
@@ -12264,13 +11685,9 @@ protected:
 ```
 Cf. [FXT: file demo/subsetminchange-demo.cc]
 
-
------
-
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 165
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 165
 
 #### 10.8 Subsets ordered by number of elements
-
 Sometimes it is useful to generate all subsets ordered with respect to the number of elements, that is
 starting with the 1-element subsets, continuing with 2-element subsets and so on until the full set is
 reached. For that purpose one needs to generate the combinations of 1 form n, 2 from n and so on.
@@ -12311,7 +11728,7 @@ for combinations one wants to use. Here we use the colex-order for the combinati
 32: ..... #=0 set={}
 
 ```
-The class implementing the obvious algorithm is [FXT: `class subset monotone` in
+The class implementing the obvious algorithm is [FXT: class subset monotone in
 ```
 comb/subsetmonotone.h]. The above list can be generated via
   ulong n = 5;
@@ -12338,13 +11755,9 @@ cf. [FXT: file demo/subsetmonotone-demo.cc]
 Replacing the colex-comb engine by alt-minchange-comb engine(s) (as described in section 10.5) gives
 the additional feature of minimal changes between the subsets.
 
-
------
-
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 166
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 166
 
 #### 10.9 Subsets ordered with shift register sequences
-
 A curious sequence of all subsets of a given set can be generated using a binary de Bruijn (or shift
 register) sequence, that is a cyclical sequence of zeros and ones that contains each n-bit word once. In
 the following example (where n = 5) the empty places of the subsets are included to make the nice
@@ -12411,12 +11824,10 @@ The list above was created via
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 167
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 167
 
 #### 10.10 Partitions
-
 An integer x is the sum of the positive integers less or equal to itself in various ways (x = 4 in this
 example):
 ```
@@ -12429,7 +11840,7 @@ example):
 ```
 The left hand side expressions are called the partitions of the number x. We want to attack a slightly
 more general problem and find all partitions of a number x with respect to a set V = {v0, v1, . . ., vn−1},
-that is all decompositions of the form x = [�]k[n]=0[−][1] _[c][k][ ·][ v][k][.]_
+that is all decompositions of the form x = [�]k[n]=0[−][1] [c][k][ ·][ v][k][.]
 
 The utility class is
 ```
@@ -12471,10 +11882,10 @@ public:
 
 ```
 [FXT: class partition in comb/partition.h]
-The algorithm to count the partitions is to assign to the first bucket a multiple c0 · p0 ≤ _x of the first_
-set element p0. If c0 _p0 = x we already found a partition, else if c0_ _p0 < x solve the problem for_
-_·_ _·_
-_x[′]_ := x − _c0 · p0 and V_ _[′]_ := {v1, v2, . . ., vn−1}.
+The algorithm to count the partitions is to assign to the first bucket a multiple c0 · p0 ≤ x of the first
+set element p0. If c0 p0 = x we already found a partition, else if c0 p0 < x solve the problem for
+· ·
+x[′] := x − c0 · p0 and V [′] := {v1, v2, . . ., vn−1}.
 ```
 ulong
 partition::count(ulong x)
@@ -12486,9 +11897,8 @@ partition::count(ulong x)
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 168
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 168
 ```
 ulong
 partition::count_func(ulong i)
@@ -12563,9 +11973,8 @@ partition::next_func(ulong i)
 
 ```
 
------
 
-_CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS_ 169
+CHAPTER 10. SELECTED COMBINATORICAL ALGORITHMS 169
 ```
   if ( 0==r_[i] ) // valid partition found
   {
@@ -12586,15 +11995,9 @@ The routines can easily adapted to the generation of partitions satisfying certa
 
 Cf. [FXT: file demo/partition-demo.cc]
 
-
------
-
 ## Chapter 11
-
 # Arithmetical algorithms
-
 #### 11.1 Asymptotics of algorithms
-
 An important feature of an algorithm is the number of operations that must be performed for the
 completion of a task of a certain size N . The quantity N should be some reasonable quantity that grows
 strictly with the size of the task. For high precision computations one will take the length of the numbers
@@ -12609,159 +12012,143 @@ Examples:
 
 Addition of an N -digit number needs proportional N operations (here: machine word addition plus
 
-_•_
+•
 some carry operation).
 
-Ordinary multiplication needs _N_ [2] operations.
+Ordinary multiplication needs N [2] operations.
 
-_•_ _∼_
+• ∼
 
-The Fast Fourier Transform (FFT) needs _N log(N_ ) operations (a straight forward implementa
-_•_ _∼_
-tion of the Fourier Transform, i.e. computing N sums each of length N would be _N_ [2]).
-_∼_
+The Fast Fourier Transform (FFT) needs N log(N ) operations (a straight forward implementa
+• ∼
+tion of the Fourier Transform, i.e. computing N sums each of length N would be N [2]).
+∼
 
-Matrix multiplication (by the obvious algorithm) is _N_ [3] (N [2] sums each of N products).
+Matrix multiplication (by the obvious algorithm) is N [3] (N [2] sums each of N products).
 
-_•_ _∼_
+• ∼
 
 The algorithm with the ‘best’ asymptotics wins for some, possibly huge, N . For smaller N another
 algorithm will be superior. For the exact break-even point the constants omitted elsewhere are of course
 important.
 
-Example: Let the algorithm mult1 take 1.0 _·_ _N_ [2] operations, mult2 take 8.0 _·_ _N log2(N_ ) operations. Then,
+Example: Let the algorithm mult1 take 1.0 · N [2] operations, mult2 take 8.0 · N log2(N ) operations. Then,
 for N < 64 mult1 is faster and for N > 64 mult2 is faster. Completely different algorithms may be
 optimal for the same task at different problem sizes.
 
 #### 11.2 Multiplication of large numbers
-
-Ordinary multiplication is _N_ [2]. Computing the product of two million-digit numbers would require
-_∼_
+Ordinary multiplication is N [2]. Computing the product of two million-digit numbers would require
+∼
 10[12] operations, taking about 1 day on a machine that does 10 million operations per second. But
-_≈_
+≈
 there are better ways . . .
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 171
+CHAPTER 11. ARITHMETICAL ALGORITHMS 171
 
 ##### 11.2.1 The Karatsuba algorithm
-
 Split the numbers U and V (assumed to have approximately the same length/precision) in two pieces
 
-_U_ = _U0 + U1B_ (11.1)
-_V_ = _V0 + V1B_
+U = U0 + U1B (11.1)
+V = V0 + V1B
 
 Where B is a power of the radix[1] (or base) close to the half length of U and V .
 
 Instead of the straight forward multiplication that needs 4 multiplications with half precision for one
 multiplication with full precision
 
-_UV_ = _U0V0 + B(U0V1 + V0U1) + B[2]U1V1_ (11.2)
+UV = U0V0 + B(U0V1 + V0U1) + B[2]U1V1 (11.2)
 
 use the relation
 
-_UV_ = (1 + B)U0V0 + B(U1 _U0)(V0_ _V1) + (B + B[2])U1V1_ (11.3)
-_−_ _−_
+UV = (1 + B)U0V0 + B(U1 U0)(V0 V1) + (B + B[2])U1V1 (11.3)
+− −
 
 which needs 3 multiplications with half precision for one multiplication with full precision.
 
 Apply the scheme recursively until the numbers to multiply are of machine size. The asymptotics of the
-algorithm is _N_ [log][2][(3)] _N_ [1][.][585].
-_∼_ _≈_
+algorithm is N [log][2][(3)] N [1][.][585].
+∼ ≈
 
 For squaring use
 
-_U_ [2] = (1 + B)U0[2] _[−]_ _[B][(][U][1]_ _[−]_ _[U][0][)][2][ + (][B][ +][ B][2][)][U]1[ 2]_ (11.4)
+U [2] = (1 + B)U0[2] [−] [B][(][U][1] [−] [U][0][)][2][ + (][B][ +][ B][2][)][U]1[ 2] (11.4)
 
 or
 
-_U_ [2] = (1 − _B)U0[2]_ [+][ B][(][U][1] [+][ U][0][)][2][ + (][−][B][ +][ B][2][)][U]1[ 2] (11.5)
+U [2] = (1 − B)U0[2] [+][ B][(][U][1] [+][ U][0][)][2][ + (][−][B][ +][ B][2][)][U]1[ 2] (11.5)
 
 One can extend the above idea by splitting U and V into more than two pieces each, the resulting
 algorithm is called Toom Cook algorithm.
 
 Computing the product of two million-digit numbers would require (10[6])[1][.][585] 3200 10[6] operations,
-_≈_ _≈_ _·_
+≈ ≈ ·
 taking about 5 minutes on the 10 Mips machine.
 
 See [8], chapter 4.3.3 (‘How fast can we multiply?’).
 
 ##### 11.2.2 Fast multiplication via FFT
-
 Multiplication of two numbers is essentially a convolution of the sequences of their digits. The (linear)
 convolution of the two sequences ak, bk, k = 0 . . . N − 1 is defined as the sequence c where
 
-
-_ck_ :=
+ck :=
 
 A number written in radix r as
 
-
-_N_ _−1_
+N −1
 �
 
-_aibj_ _k = 0 . . . 2N −_ 2 (11.6)
-_i,j=0; i+j=k_
+aibj k = 0 . . . 2N − 2 (11.6)
+i,j=0; i+j=k
 
-
-_aP_ _aP −1_ _. . ._ _a2_ _a1_ _a0_ _._ _a−1_ _a−2_ _. . ._ _a−p+1_ _a−p_ (11.7)
+aP aP −1 . . . a2 a1 a0 . a−1 a−2 . . . a−p+1 a−p (11.7)
 
 denotes a quantity of
 
-_P_
+P
 �
 
-_ai · r[i]_ = _aP · r[P]_ + aP −1 · r[P][ −][1] + · · · + a−p · r[−][p]. (11.8)
-_i=−p_
+ai · r[i] = aP · r[P] + aP −1 · r[P][ −][1] + · · · + a−p · r[−][p]. (11.8)
+i=−p
 
 1For decimal numbers the radix is 10
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 172
+CHAPTER 11. ARITHMETICAL ALGORITHMS 172
 
 That means, the digits can be considered as coefficients of a polynom in r. For example, with decimal
 numbers one has r = 10 and 123.4 = 1 10[2] + 2 10[1] + 3 10[0] + 4 10[−][1]. The product of two numbers is
-_·_ _·_ _·_ _·_
+· · · ·
 almost the polynomial product
 
-
-2N _−2_
+2N −2
 �
 
-_ckr[k]_ :=
+ckr[k] :=
 
-_k=0_
+k=0
 
-
-_N_ _−1_
+N −1
 �
 
-_air[i]_ _·_
-_i=0_
+air[i] ·
+i=0
 
-
-_N_ _−1_
+N −1
 �
 
-_bjr[j]_ (11.9)
-_j=0_
-
+bjr[j] (11.9)
+j=0
 
 The ck are found by comparing coefficients. One easily checks that the ck must satisfy the convolution
 equation 11.6.
 
 As the ck can be greater than ‘nine’ (that is, r − 1), the result has to be ‘fixed’ using carry operations:
-Go from right to left, replace ck by ck%r and add (ck _ck%r)/r to its left neighbour._
-_−_
+Go from right to left, replace ck by ck%r and add (ck ck%r)/r to its left neighbour.
+−
 
 An example: usually one would multiply the numbers 82 and 34 as follows:
 
 82 34
-_×_
+×
 
 3 32 8
 2 24 6
@@ -12770,9 +12157,8 @@ _×_
 
 We just said that the carries can be delayed to the end of the computation:
 
-
 82 34
-_×_
+×
 
 32 8
 24 6
@@ -12783,9 +12169,8 @@ _×_
 
 . . . which is really polynomial multiplication (which in turn is a convolution of the coefficients):
 
-
 (8 x + 2) (3 x + 4)
-_×_
+×
 
 32 x 8
 24 x[2] 6 x
@@ -12794,67 +12179,63 @@ _×_
 
 Convolution can be done efficiently using the Fast Fourier Transform (FFT): Convolution is a simple
 (elementwise array) multiplication in Fourier space. The FFT itself takes N log N operations. Instead
-_·_
-of the direct convolution ( _N_ [2]) one proceeds like this:
-_∼_
+·
+of the direct convolution ( N [2]) one proceeds like this:
+∼
 
 compute the FFTs of multiplicand and multiplicator
 
-_•_
+•
 
 multiply the transformed sequences elementwise
 
-_•_
+•
 
 compute inverse transform of the product
 
-_•_
+•
 
 To understand why this actually works note that (1) the multiplication of two polynoms can be achieved
 by the (more complicated) scheme:
 
 evaluate both polynoms at sufficiently many[2] points
 
-_•_
+•
 
 pointwise multiply the found values
 
-_•_
+•
 
 find the polynom corresponding to those (product-)values
 
-_•_
+•
 
 2At least one more point than the degree of the product polynom c: deg c = deg a + deg b
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 173
+CHAPTER 11. ARITHMETICAL ALGORITHMS 173
 
 and (2) that the FFT is an algorithm for the parallel evaluation of a given polynom at many points,
-_namely the roots of unity. (3) the inverse FFT is an algorithm to find (the coefficients of) a polynom_
+namely the roots of unity. (3) the inverse FFT is an algorithm to find (the coefficients of) a polynom
 whose values are given at the roots of unity.
 
 You might be surprised if you always thought of the FFT as an algorithm for the ‘decomposition into
 frequencies’. There is no problem with either of these notions.
 
-Relaunching our example we use the fourth roots of unity 1 and _i:_
-_±_ _±_
+Relaunching our example we use the fourth roots of unity 1 and i:
+± ±
 
-_a = (8 x + 2)_ _b = (3 x + 4)_ _c = a b_
-_×_
+a = (8 x + 2) b = (3 x + 4) c = a b
+×
 
 +1 +10 +7 +70
 +i +8i + 2 +3i + 4 +38i 16
-_−_
+−
 1 6 +1 6
-_−_ _−_ _−_
-_i_ 8i + 2 3i + 4 38i 16
-_−_ _−_ _−_ _−_ _−_
+− − −
+i 8i + 2 3i + 4 38i 16
+− − − − −
 
-_c = (24 x[2]_ + 38 x + 8)
-
+c = (24 x[2] + 38 x + 8)
 
 This table has to be read like this: first the given polynoms a and b are evaluated at the points given in
 the left column, thereby the columns below a and b are filled. Then the values are multiplied to fill the
@@ -12862,33 +12243,32 @@ column below c, giving the values of c at the points. Finally, the actual polyno
 values, resulting in the lower right entry. You may find it instructive to verify that a 4-point FFT really
 evaluates a, b by transforming the sequences 0, 0, 8, 2 and 0, 0, 3, 4 by hand. The backward transform
 of 70, 38i 16, 6, 38i 16 should produce the final result given for c.
-_−_ _−_ _−_ _−_
+− − − −
 
-The operation count is dominated by that of the FFTs (the elementwise multiplication is of course _N_ ),
-_∼_
-so the whole fast convolution algorithm takes _N_ log N operations. The following carry operation is
-_∼_ _·_
-also _N and can therefore be neglected when counting operations._
-_∼_
+The operation count is dominated by that of the FFTs (the elementwise multiplication is of course N ),
+∼
+so the whole fast convolution algorithm takes N log N operations. The following carry operation is
+∼ ·
+also N and can therefore be neglected when counting operations.
+∼
 
-Multiplying our million-digit numbers will now take only 10[6] log2(10[6]) ≈ 10[6] _· 20 operations, taking_
+Multiplying our million-digit numbers will now take only 10[6] log2(10[6]) ≈ 10[6] · 20 operations, taking
 approximately 2 seconds on a 10 Mips machine.
 
 Strictly speaking N log N is not really the truth: it has to be N log N log log N . This is because
-_·_ _·_ _·_
+· · ·
 the sums in the convolutions have to be represented as exact integers. The biggest term C that can
 possibly occur is approximately NR[2] for a number with N digits (see next section). Therefore, working
 with some fixed radix R one has to do FFTs with log N bits precision, leading to an operation count of
-_N_ log N log N . The slightly better N log N log log N is obtained by recursive use of FFT multiplies.
-_·_ _·_ _·_ _·_
+N log N log N . The slightly better N log N log log N is obtained by recursive use of FFT multiplies.
+· · · ·
 For realistic applications (where the sums in the convolution all fit into the machine type floating point
 numbers) it is safe to think of FFT multiplication being proportional N log N .
-_·_
+·
 
 See [28].
 
 ##### 11.2.3 Radix/precision considerations with FFT multiplication
-
 This section describes the dependencies between the radix of the number and the achievable precision
 when using FFT multiplication. In what follows it is assumed that the ‘superdigits’, called LIMBs occupy
 a 16 bit word in memory. Thereby the radix of the numbers can be in the range 2 . . . 65536(= 2[16]).
@@ -12899,26 +12279,23 @@ value. The highest possible value for a ck will appear in the middle of the prod
 and multiplicator consist of ‘nines’ (that is R − 1) only. It must not jump to cm ± 1 due to numerical
 errors. For radix R and a precision of N LIMBs Let the maximal possible value be C, then
 
-_C_ = _N (R_ 1)[2] (11.10)
-_−_
+C = N (R 1)[2] (11.10)
+−
 
 The number of bits to represent C exactly is the integer greater or equal to
 
-l (N (R 1)[2]) l _N_ 2 l (R 1) (11 11)
+l (N (R 1)[2]) l N 2 l (R 1) (11 11)
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 174
+CHAPTER 11. ARITHMETICAL ALGORITHMS 174
 
 Due to numerical errors there must be a few more bits for safety. If computations are made using doubles
 one typically has a mantissa of 53 bits[3] then we need to have
 
-_M_ _≥_ log2 N + 2 log2(R − 1) + S (11.12)
+M ≥ log2 N + 2 log2(R − 1) + S (11.12)
 
 where M :=mantissabits and S :=safetybits. Using log2(R − 1) < log2(R):
 
-_Nmax(R)_ = 2[M] _[−][S][−][2 log][2][(][R][)]_ (11.13)
+Nmax(R) = 2[M] [−][S][−][2 log][2][(][R][)] (11.13)
 
 Suppose we have M = 53 mantissabits and require S = 3 safetybits. With base 2 numbers one could
 use radix R = 2[16] for precisions up to a length of Nmax = 2[53][−][3][−][2][·][16] = 256k LIMBs. Corresponding are
@@ -12971,26 +12348,24 @@ Summarizing:
 
 For decimal digits and precisions up to 11 million LIMBs use radix 10,000. (corresponding to more
 
-_•_
+•
 about 44 million decimal digits), for even greater precisions choose radix 1,000.
 
 For hexadecimal digits and precisions up to 256,000 LIMBs use radix 65,536 (corresponding to more
 
-_•_
+•
 than 1 million hexadecimal digits), for even greater precisions choose radix 4,096.
 
 #### 11.3 Division, square root and cube root
-
 ##### 11.3.1 Division
-
 The ordinary division algorithm is useless for numbers of extreme precision. Instead one replaces the
-division _[a]_
+division [a]
 
-_b_ [by the multiplication of][ a][ with the inverse of][ b][. The inverse of][ b][ =][ 1]b [is computed by finding]
+b [by the multiplication of][ a][ with the inverse of][ b][. The inverse of][ b][ =][ 1]b [is computed by finding]
 
 a starting approximation x0 ≈ [1]b [and then iterating]
 
-_xk+1_ = _xk + xk(1 −_ _b xk)_ (11.14)
+xk+1 = xk + xk(1 − b xk) (11.14)
 
 |Radix R|max # LIMBs|max # hex digits|max # bits|
 |---|---|---|---|
@@ -13002,124 +12377,111 @@ _xk+1_ = _xk + xk(1 −_ _b xk)_ (11.14)
 |102 103 104|110 G 1100 M 11 M|220 G 3300 M 44 M|730 G 11 G 146 M|
 |105 106 107|110 k 1 k 11|550 k 6, 597 77|1826 k 22 k 255|
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 175
+CHAPTER 11. ARITHMETICAL ALGORITHMS 175
 
 until the desired precision is reached. The convergence is quadratical (2nd order), which means that the
 number of correct digits is doubled with each step: if xk = [1]b [(1 +][ ϵ][) then]
 
 1
-_xk+1_ = (11.15)
-_b_ [(1 +][ ϵ][) + 1]b [(1 +][ ϵ][)(1][ −] _[b]_ [1]b [(1 +][ ϵ][))]
+xk+1 = (11.15)
+b [(1 +][ ϵ][) + 1]b [(1 +][ ϵ][)(1][ −] [b] [1]b [(1 +][ ϵ][))]
 
 1
-= _b_ [(1][ −] _[ϵ][2][)]_ (11.16)
+= b [(1][ −] [ϵ][2][)] (11.16)
 
 Moreover, each step needs only computations with twice the number of digits that were correct at its
 beginning. Still better: the multiplication xk(. . . ) needs only to be done with half precision as it computes
 the ‘correcting’ digits (which alter only the less significant half of the digits). Thus, at each step we have
 1.5 multiplications of the ‘current’ precision. The total work[4] amounts to
 
-
 1.5
-_·_
+·
 
-
-_N_
+N
 �
 
-_n=0_
-
+n=0
 
 1
 
 2[n]
-
 
 which is less than 3 full precision multiplications. Together with the final multiplication a division costs
 as much as 4 multiplications. Another nice feature of the algorithm is that it is self-correcting. The
 following numerical example shows the first two steps of the computation[5] of an inverse starting from a
 two-digit initial approximation:
 
-_b_ := 3.1415926 (11.17)
+b := 3.1415926 (11.17)
 
-_x0_ = 0.31 initial 2 digit approximation for 1/b (11.18)
+x0 = 0.31 initial 2 digit approximation for 1/b (11.18)
 
-_b · x0_ = 3.141 · 0.3100 = 0.9737 (11.19)
+b · x0 = 3.141 · 0.3100 = 0.9737 (11.19)
 
-_y0_ := 1.000 − _b · x0 = 0.02629_ (11.20)
+y0 := 1.000 − b · x0 = 0.02629 (11.20)
 
-_x0 · y0_ = 0.3100 · 0.02629 = 0.0081(49) (11.21)
+x0 · y0 = 0.3100 · 0.02629 = 0.0081(49) (11.21)
 
-_x1_ := _x0 + x0 · y0 = 0.3100 + 0.0081 = 0.3181_ (11.22)
+x1 := x0 + x0 · y0 = 0.3100 + 0.0081 = 0.3181 (11.22)
 
-_b · x1_ = 3.1415926 · 0.31810000 = 0.9993406 (11.23)
+b · x1 = 3.1415926 · 0.31810000 = 0.9993406 (11.23)
 
-_y1_ := 1.0000000 − _b · x0 = 0.0006594_ (11.24)
+y1 := 1.0000000 − b · x0 = 0.0006594 (11.24)
 
-_x1 · y1_ = 0.31810000 · 0.0006594 = 0.0002097(5500) (11.25)
+x1 · y1 = 0.31810000 · 0.0006594 = 0.0002097(5500) (11.25)
 
-_x2_ := _x1 + x1 · y1 = 0.31810000 + 0.0002097 = 0.31830975_ (11.26)
+x2 := x1 + x1 · y1 = 0.31810000 + 0.0002097 = 0.31830975 (11.26)
 
 ##### 11.3.2 Square root extraction
+Computing square roots is quite similar to division: first compute √1
 
-Computing square roots is quite similar to division: first compute _√1_
+d [then a final multiply with][ d][ gives]
+√d. Find a starting approximation x0 √1
 
-_d_ [then a final multiply with][ d][ gives]
-_√d. Find a starting approximation x0_ _√1_
+≈ b [then iterate]
 
-_≈_ _b_ [then iterate]
-
-(1 − _d x[2]k[)]_
-_xk+1_ = _xk + xk_ (11.27)
+(1 − d x[2]k[)]
+xk+1 = xk + xk (11.27)
 
 2
 
-
 until the desired precision is reached. Convergence is again 2nd order. Similar considerations as above
 (with squaring considered as expensive as multiplication[6]) give an operation count of 4 multiplications
-for _√1_ _√d._
+for √1 √d.
 
-_d_ [or 5 for]
+d [or 5 for]
 
 Note that this algorithm is considerably better than the one where xk+1 := [1]2 [(][x][k] [+][ d]xk [) is used as iteration,]
 
 because no long divisions are involved.
 
-4 The asymptotics of the multiplication is set to ∼ _N (instead of N log(N_ )) for the estimates made here, this gives a
+4 The asymptotics of the multiplication is set to ∼ N (instead of N log(N )) for the estimates made here, this gives a
 realistic picture for large N .
 5using a second order iteration
 
+CHAPTER 11. ARITHMETICAL ALGORITHMS 176
 
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 176
-
-**An improved version**
+An improved version
 
 Actually, the ‘simple’ version of the square root iteration can be used for practical purposes when rewritten
-_√_ _√_
-as a coupled iteration for both _d and its inverse. Using for_ _d the iteration_
+√ √
+as a coupled iteration for both d and its inverse. Using for d the iteration
 
-_xk+1_ = _xk −_ [(][x]2k[2] x[−]k[d][)] (11.28)
+xk+1 = xk − [(][x]2k[2] x[−]k[d][)] (11.28)
 
-= _xk −_ _vk+1_ (x[2]k 2[−] _[d][)]_ where _v ≈_ 1/x (11.29)
+= xk − vk+1 (x[2]k 2[−] [d][)] where v ≈ 1/x (11.29)
 
-_√_
-and for the auxiliary v 1/ _d the iteration_
-_≈_
+√
+and for the auxiliary v 1/ d the iteration
+≈
 
-_vk+1 = vk + vk (1 −_ _xk vk)_ (11.30)
-
+vk+1 = vk + vk (1 − xk vk) (11.30)
 
 where one starts with approximations
 
-_√_
-_x0_ _≈_ _d_ (11.31)
+√
+x0 ≈ d (11.31)
 
-_v0_ _≈_ 1/x0 (11.32)
+v0 ≈ 1/x0 (11.32)
 
 and the v-iteration step precedes that for x. When carefully implemented this method turns out to be
 significantly more efficient than the preceding version. [hfloat: src/hf/itsqrt.cc]
@@ -13127,470 +12489,409 @@ significantly more efficient than the preceding version. [hfloat: src/hf/itsqrt.
 TBD: details & analysis TBD: last step versions for sqrt and inv
 
 ##### 11.3.3 Cube root extraction
-
 Use d[1][/][3] = d (d[2])[−][1][/][3], i.e. compute the inverse third root of d[2] using the iteration
 
-
-(1 − _d[2]_ _x[3]k[)]_
-_xk+1_ = _xk + xk_ (11.33)
+(1 − d[2] x[3]k[)]
+xk+1 = xk + xk (11.33)
 
 3
 
 finally multiply with d.
 
 #### 11.4 Square root extraction for rationals
+For rational x = [p]q [the well known iteration for the square root is]
 
+x[2] + d
+Φ2(x) = 2 x = [p][2][ +]2 p q[ d q][2] (11.34)
 
-For rational x = _[p]q_ [the well known iteration for the square root is]
-
-_x[2]_ + d
-Φ2(x) = 2 x = _[p][2][ +]2 p q[ d q][2]_ (11.34)
-
-
-_√_
-A general formula for an k-th order (k 2) iteration toward _d is_
-_≥_
-
+√
+A general formula for an k-th order (k 2) iteration toward d is
+≥
 
 �k
-_d_
+d
 
-_√_
-_k_ [=]
+√
+k [=]
 �
-_d_
-
+d
 
 �k
-_d_
+d
 
 (11.35)
 �k
-_d_
+d
 
+�k � √
+d + x
+−
 
-�k � _√_
-_d_ + _x_
-_−_
+�k � √
+d x
+− −
 
-�k � _√_
-_d_ _x_
-_−_ _−_
+�k � √
+d + p q
+−
 
+�k � √
+d p q
+− −
 
-�k � _√_
-_d_ + _p_ _q_
-_−_
-
-�k � _√_
-_d_ _p_ _q_
-_−_ _−_
-
-
-_√_
+√
 Φk(x) =
 
 Obviously, we have:
 
+d
 
-_d_
+� √
+x +
 
+� √
+x +
 
-� _√_
-_x +_
+d
 
-� _√_
-_x +_
+� √
+p + q
 
+� √
+p + q
 
-_d_
-
-
-� _√_
-_p + q_
-
-� _√_
-_p + q_
-
-
-_√_
+√
 All
-
 
 Φm(Φn(x)) = Φmn(x) (11.36)
 
-_d vanish when expanded, e.g. the third and fifth order versions are_
+d vanish when expanded, e.g. the third and fifth order versions are
 
-_p[2]_ + 3d q[2]
+p[2] + 3d q[2]
 
-Φ3(x) = _x [x]3x[2][ + 3][2]_ + d[d] [=][ p]q 3p[2] + d q[2] (11.37)
+Φ3(x) = x [x]3x[2][ + 3][2] + d[d] [=][ p]q 3p[2] + d q[2] (11.37)
 
-_x[4]_ + 10dx[2] + 5d[2]
+x[4] + 10dx[2] + 5d[2]
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 177
+CHAPTER 11. ARITHMETICAL ALGORITHMS 177
 
 There is a nice expression for the error behavior of the k-th order iteration:
 
+d [1 +][ e][k] (11.39)
+·
 
-_d_ [1 +][ e][k] (11.39)
-_·_
+1 e[k]
+−
 
-1 _e[k]_
-_−_
-
-
-_√_
+√
 Φk(
 
+d [1 +][ e] = √
+·
 
-_d_ [1 +][ e] = _√_
-_·_
-
-1 _e_ [)]
-_−_
-
+1 e [)]
+−
 
 An equivalent form of 11.35 comes from the theory of continued fractions:
 
-
-_√_
+√
 Φk(x) =
 
-
 �
-_d cot_ _k arccot_ _√[x]_
+d cot k arccot √[x]
 
-_d_
-
+d
 
 �
 (11.40)
 
-
-The iterations can also be obtained using Pad´e-approximants. Let P[i,j](z) be the Pad´e-expansion of _[√]z_
-around z = 1 of order [i, j]. An iteration of order i + j + 1 is given by x P[i,j]( _x[d][2][ ). For][ i][ =][ j][ one gets]_
+The iterations can also be obtained using Pad´e-approximants. Let P[i,j](z) be the Pad´e-expansion of [√]z
+around z = 1 of order [i, j]. An iteration of order i + j + 1 is given by x P[i,j]( x[d][2][ ). For][ i][ =][ j][ one gets]
 
 the iterations of odd orders, for i = j + 1 the even orders are obtained. Different combinations of i and
-_j result in alternative iterations:_
+j result in alternative iterations:
 
-[i, j] _�→_ _x P[i,j](_ _[d]_ (11.41)
+[i, j] �→ x P[i,j]( [d] (11.41)
 
-_x[2][ )]_
+x[2][ )]
 
-_x[2]_ + d
+x[2] + d
 
 [1, 0] (11.42)
-_�→_
+�→
 
 2x
 
 2x[3]
 
 [0, 1] (11.43)
-_�→_
+�→
 
-3x[2] _d_
-_−_
+3x[2] d
+−
 
-[1, 1] _x [x][2][ + 3][d]_ (11.44)
-_�→_
+[1, 1] x [x][2][ + 3][d] (11.44)
+�→
 
 3x[2] + d
 
 3x[4] + 6dx[2] 3d[2]
-_−_
+−
 
 [2, 0] (11.45)
-_�→_
+�→
 
 8x[3]
 
 8x[5]
 
 [0, 2] (11.46)
-_�→_
+�→
 
 15x[4] 10dx[2] + 3d[2]
-_−_
+−
 
+Still other forms are obtained by using [d]
 
-Still other forms are obtained by using _[d]_
+x [P][[][i,j][]][(][ x]d[2] [):]
 
-_x_ _[P][[][i,j][]][(][ x]d[2]_ [):]
-
-_d_
+d
 
 [i, j] (11.47)
-_�→_
-_x [P][[][i,j][]][(]_ _[x]d[2]_ [)]
+�→
+x [P][[][i,j][]][(] [x]d[2] [)]
 
-_x[2]_ + d
+x[2] + d
 
 [1, 0] (11.48)
-_�→_
+�→
 
 2x
 
 2d[2]
 
 [0, 1] (11.49)
-_�→_
+�→
 
-3dx _x[3]_
-_−_
+3dx x[3]
+−
 
-_d (d + 3x[3])_
+d (d + 3x[3])
 
 [1, 1] (11.50)
-_�→_
-_x (3d + x[2])_
+�→
+x (3d + x[2])
 
-_x[4]_ + 6dx[2] + 3d[2]
-_−_
+x[4] + 6dx[2] + 3d[2]
+−
 
 [2, 0] (11.51)
-_�→_
+�→
 
 8xd
 
 8d[3]
 
 [0, 2] (11.52)
-_�→_
+�→
 
 3x[4] 10dx[2] + 15d[2]
-_−_
+−
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 178
+CHAPTER 11. ARITHMETICAL ALGORITHMS 178
 
 Using the expansion of 1/[√]x and x P[i,j](x[2]d) we get:
 
-[i, j] _�→_ _x P[i,j](x[2]d)_ (11.53)
+[i, j] �→ x P[i,j](x[2]d) (11.53)
 
-_x (3_ _d x[2])_
-_−_
+x (3 d x[2])
+−
 
 [1, 0] (11.54)
-_�→_
+�→
 
 2
 
 2x
 
 [0, 1] (11.55)
-_�→_
+�→
 
-_dx[2]_ 1
-_−_
+dx[2] 1
+−
 
-[1, 1] _x [dx][2][ + 3]_ (11.56)
-_�→_
+[1, 1] x [dx][2][ + 3] (11.56)
+�→
 
 3dx[2] + 1
 
-_x (3d[2]x[4]_ 10dx + 15)
-_−_
+x (3d[2]x[4] 10dx + 15)
+−
 
 [2, 0] (11.57)
-_�→_
+�→
 
 8
 
 8x
 
 [0, 2] (11.58)
-_�→_
+�→
 
-_d[2]x[4]_ + 6dx[2] + 3
-_−_
+d[2]x[4] + 6dx[2] + 3
+−
 
-**Extraction of higher roots for rationals**
+Extraction of higher roots for rationals
 
+The Pad´e idea can be adapted for higher roots: use the expansion of [√]a z around z = 1 then x P[i,j]( dx[a][ )]
 
-The Pad´e idea can be adapted for higher roots: use the expansion of _[√]a_ _z around z = 1 then x P[i,j]( dx[a][ )]_
+[√]a
+produces an order i + j + 1 iteration for z. A second order iteration is given by
 
-_[√]a_
-produces an order i + j + 1 iteration for _z. A second order iteration is given by_
+Φ2(x) = x + [d][ −] [x][a] = [1]
 
+a x[a][−][1][ = (][a][ −]a x[1)][a][ x][−][a][1][ +][ d] a
 
-Φ2(x) = _x +_ _[d][ −]_ _[x][a]_ = [1]
-
-_a x[a][−][1][ = (][a][ −]a x[1)][a][ x][−][a][1][ +][ d]_ _a_
-
-
-� _d_
+� d
 (a 1) x +
-_−_
+−
 
-_x[a][−][1]_
-
+x[a][−][1]
 
 �
 (11.59)
 
-
-
-_[√]a_
+[√]a
 A third order iteration for
 
+d is
 
-_d is_
+Φ3(x) = x · [α x][a][ +][ β d] (11.60)
 
+β x[a] + α d [=][ p]q β p[a] + α q[a]d
 
-Φ3(x) = _x ·_ _[α x][a][ +][ β d]_ (11.60)
-
-_β x[a]_ + α d [=][ p]q _β p[a]_ + α q[a]d
-
-_[·][ α p][a][ +][ β q][a][d]_
+[·][ α p][a][ +][ β q][a][d]
 
 where α = a 1, β = a + 1 for a even, α = (a 1)/2, β = (a + 1)/2 for a odd.
-_−_ _−_
+− −
 
-With 1/ _[√][a]_ _x and x P[i,j](x[a]d) division-free iterations for the inverse a-th root of d are obtained, see_
+With 1/ [√][a] x and x P[i,j](x[a]d) division-free iterations for the inverse a-th root of d are obtained, see
 section 11.5. If you suspect a general principle behind the Pad´e idea, yes there is one: read on until
 section 11.8.4.
 
-
 #### 11.5 A general procedure for the inverse n-th root
-
 There is a nice general formula that allows to build iterations with arbitrary order of convergence for
-_d[−][1][/a]_ that involve no long division.
+d[−][1][/a] that involve no long division.
 
 One uses the identity
 
-_d[−][1][/a]_ = _x (1_ (1 _x[a]_ _d))[−][1][/a]_ (11.61)
-_−_ _−_
-= _x (1_ _y)[−][1][/a]_ where _y := (1_ _x[a]_ _d)_ (11.62)
-_−_ _−_
+d[−][1][/a] = x (1 (1 x[a] d))[−][1][/a] (11.61)
+− −
+= x (1 y)[−][1][/a] where y := (1 x[a] d) (11.62)
+− −
 
 Taylor expansion gives
 
+d[−][1][/a] = x
 
-_d[−][1][/a]_ = _x_
+∞
+� k¯ k
 
+(1/a) y (11.63)
 
-_∞_
-� _k¯_ _k_
-
-(1/a) _y_ (11.63)
-
-_k=0_
-
+k=0
 
 where z[k][¯] := z(z + 1)(z + 2) . . . (z + k 1). Written out:
-_−_
+−
 
 �
-_d[−][1][/a]_ = _x_ 1 + _a[y]_ [+ (1 +]2 a[ a][2][)][ y][2] + [(1 +][ a][)(1 + 2]6 a[3] _[a][)][ y][3]_ + (11.64)
-
+d[−][1][/a] = x 1 + a[y] [+ (1 +]2 a[ a][2][)][ y][2] + [(1 +][ a][)(1 + 2]6 a[3] [a][)][ y][3] + (11.64)
 
 �
-
 
 + [(1 +][ a][)(1 + 2][a][)(1 + 3][a][)][ y][4]
 
-
 �n−1
-_k=1_ [(1 +][ k a][)] _n_
-+ + _y_ +
-_· · ·_
+k=1 [(1 +][ k a][)] n
++ + y +
+· · ·
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 179
+CHAPTER 11. ARITHMETICAL ALGORITHMS 179
 
 A n-th order iteration for d[−][1][/a] is obtained by truncating the above series after the (n 1)-th term,
-_−_
+−
 
+Φn(a, x) := x
 
-Φn(a, x) := _x_
+n−1
+� k¯ k
 
+(1/a) y (11.65)
 
-_n−1_
-� _k¯_ _k_
-
-(1/a) _y_ (11.65)
-
-_k=0_
-
+k=0
 
 e.g. second order:
 
 Convergence is n-th order:
 
+xk+1 = Φn(a, xk) (11.66)
 
-_xk+1_ = Φn(a, xk) (11.66)
+Φ2(a, x) := x + x [(1][ −] [dx][a][)] (11.67)
 
-Φ2(a, x) := _x + x_ [(1][ −] _[dx][a][)]_ (11.67)
-
-_a_
+a
 
 Φn(d[−][1][/a](1 + ϵ)) = d[−][1][/a](1 + ϵ[n] + O(ϵ[n][+1])) (11.68)
 
-
-**Example 1: a = 1 (computation of the inverse of d):**
+Example 1: a = 1 (computation of the inverse of d):
 
 1 1
-= _x_ (11.69)
-_d_ 1 _y_
+= x (11.69)
+d 1 y
 
-_−_
+−
 
-Φ(1, x) = _x_ �1 + y + y[2] + y[3] + y[4] + . . . � (11.70)
-
+Φ(1, x) = x �1 + y + y[2] + y[3] + y[4] + . . . � (11.70)
 
 Φ2(1, x) = x (1 + y) was described in the last section.
 
 Convergence:
 
-
 Composition:
-
 
 1
 
-Φk(1, [1] = �1 − _ϵ[k][�]_ (11.71)
+Φk(1, [1] = �1 − ϵ[k][�] (11.71)
 
-_d_ [(1 +][ ϵ][))] _d_
+d [(1 +][ ϵ][))] d
 
 Φn m = Φn(Φm) (11.72)
 
-
 There are simple closed forms for this iteration
 
-1 _y[k]_
-_−_
-Φk = _d_ = x [1]1[ −] _[y]y[k]_ (11.73)
+1 y[k]
+−
+Φk = d = x [1]1[ −] [y]y[k] (11.73)
 
-_−_
+−
 
-Φk = _x (1 + y) (1 + y[2]) (1 + y[4]) (1 + y[8]) . . ._ (11.74)
+Φk = x (1 + y) (1 + y[2]) (1 + y[4]) (1 + y[8]) . . . (11.74)
 
-
-**Example 2: a = 2 (computation of the inverse square root of d):**
+Example 2: a = 2 (computation of the inverse square root of d):
 
 1 1
-_√_ = _x_ _√_ (11.75)
+√ = x √ (11.75)
 
-_d_ 1 − _y_
+d 1 − y
 
  � 2k � 
 
-_k_ _y[k]_
+k y[k]
 
-= _x_ 1 + _[y]_ + [5][ y][3] + . . . (11.76)
+= x 1 + [y] + [5][ y][3] + . . . (11.76)
 
  
 
 2 [+ 3][ y]8 [2] 16 [+ 35]128 [ y][4] [+][ · · ·][ +] 4[k]
-
 
 Φ2(2, x) = x (1 + y/2) was described in the last section.
 
@@ -13599,379 +12900,324 @@ certain limit a third order correction is used to assure maximum precision at th
 
 Composition is not as trivial as for the inverse, e.g.:
 
-Φ4 − Φ2(Φ2) = _−_ 16[1] _[x][ (][y][)][4]_ (11.77)
-
+Φ4 − Φ2(Φ2) = − 16[1] [x][ (][y][)][4] (11.77)
 
 In general, one has
 
+CHAPTER 11. ARITHMETICAL ALGORITHMS 180
 
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 180
-
-where P is a polynom in y = 1 − _d x[2]. Also, in general Φn(Φm) ̸= Φm(Φn) for n ̸= m, e.g.:_
+where P is a polynom in y = 1 − d x[2]. Also, in general Φn(Φm) ̸= Φm(Φn) for n ̸= m, e.g.:
 
 15 15
 Φ3(Φ2) − Φ2(Φ3) = (11.79)
 
-1024 _[x][ (][x][2][d][)][ y][6][ =]_ 1024 _[x][ (1][ −]_ _[y][)][ y][6]_
+1024 [x][ (][x][2][d][)][ y][6][ =] 1024 [x][ (1][ −] [y][)][ y][6]
 
-
-_√_
+√
 Product forms for compositions of the second-order iteration for 1/
 
-
-_d:_
-
+d:
 
 � �
-Φ2(x) = _x_ 1 + [1] where _y = 1 −_ _d x[2]_ (11.80)
+Φ2(x) = x 1 + [1] where y = 1 − d x[2] (11.80)
 
-2 _[y]_
+2 [y]
 
 � �� �
-Φ2(Φ2(x)) = _x_ 1 + 2[1] _[y]_ 1 + [1]8 _[y][2][ (3 +][ y][)]_ (11.81)
-
+Φ2(Φ2(x)) = x 1 + 2[1] [y] 1 + [1]8 [y][2][ (3 +][ y][)] (11.81)
 
 � �
-= Φ2(x) 1 + [1]8 _[y][2][ (3 +][ y][)]_ (11.82)
+= Φ2(x) 1 + [1]8 [y][2][ (3 +][ y][)] (11.82)
 
 � 1
-Φ2(Φ2(Φ2(x))) = Φ2(Φ2(x)) 1 + 512 _[y][4][ (3 +][ y][)][2][ �]12 + y[2]_ (3 + y)�[�] (11.83)
-
+Φ2(Φ2(Φ2(x))) = Φ2(Φ2(x)) 1 + 512 [y][4][ (3 +][ y][)][2][ �]12 + y[2] (3 + y)�[�] (11.83)
 
 #### 11.6 Re-orthogonalization of matrices
-
 A task from graphics applications: a rotation matrix A that deviates from being orthogonal[7] shall be
 tranformed to the closest orthogonal matrix E. It is well known that
 
-_E_ = _A (A[T]_ _A)[−]_ 2[1] (11.84)
+E = A (A[T] A)[−] 2[1] (11.84)
 
 With the division-free iteration for the inverse square root
 
 � 2 3 �
-Φ(x) = _x_ 1 + [1] + 5 + . . . (11.85)
+Φ(x) = x 1 + [1] + 5 + . . . (11.85)
 
-2 [(1][ −] _[dx][2][) + 3]8 [(1][ −]_ _[dx][2][)]_ 16 [(1][ −] _[dx][2][)]_
+2 [(1][ −] [dx][2][) + 3]8 [(1][ −] [dx][2][)] 16 [(1][ −] [dx][2][)]
 
-
-at hand the given task is pretty easy: As A[T] _A is close to unity (the identity matrix) we can use the_
-(second order) iteration with d = A[T] _A and x = 1_
-
+at hand the given task is pretty easy: As A[T] A is close to unity (the identity matrix) we can use the
+(second order) iteration with d = A[T] A and x = 1
 
 �
 
-(A[T] _A)[−]_ [1]2 1 + [1][ −] _[A][T][ A]_
+(A[T] A)[−] [1]2 1 + [1][ −] [A][T][ A]
 
-_≈_
+≈
 
 2
 
 and multiply by A to get a ‘closer-to-orthogonal’ matrix A+:
 
-
 �
 (11.86)
 
+�
+A+ = A 1 + [1][ −] 2[A][T][ A]
 
 �
-_A+_ = _A_ 1 + [1][ −] 2[A][T][ A]
-
-
-�
-_E_ (11.87)
-_≈_
-
+E (11.87)
+≈
 
 The step can be repeated with A+ (or higher orders can be used) if necessary. Note the identical equation
 would be obtained when trying to compute the inverse square root of 1:
 
-
 �
-_x+_ = _x_ 1 + [1][ −]2 _[x][2]_
-
+x+ = x 1 + [1][ −]2 [x][2]
 
 �
 1 (11.88)
-_→_
-
+→
 
 It is instructive to write things down in the SVD[8]-representation
 
-_A_ = _U Ω_ _V_ _[T]_ (11.89)
+A = U Ω V [T] (11.89)
 
 where U and V are orthogonal and Ωis a diagonal matrix with non-negative entries. The SVD is the
 unique decomposition of the action of the matrix as: rotation – elementwise stretching – rotation. Note
 that
 
-_A[T]_ _A_ = �V ΩU _[T][ ��]U_ ΩV _[T][ �]_ = V Ω[2]V _[T]_ (11.90)
+A[T] A = �V ΩU [T][ ��]U ΩV [T][ �] = V Ω[2]V [T] (11.90)
 
 7typically due to cumulative errors from multiplications with many incremental rotations
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 181
+CHAPTER 11. ARITHMETICAL ALGORITHMS 181
 
 and (powers nicely go to the Ω, even with negative exponents)
 
-(A[T] _A)[−]_ 2[1] = _V Ω[−][1]V_ _[T]_ (11.91)
-
+(A[T] A)[−] 2[1] = V Ω[−][1]V [T] (11.91)
 
 Now we have
 
-_A (A[T]_ _A)[−]_ [1]2 = �U ΩV _[T][ ��]V Ω[−][1]V_ _[T][ �]_ = U V (11.92)
+A (A[T] A)[−] [1]2 = �U ΩV [T][ ��]V Ω[−][1]V [T][ �] = U V (11.92)
 
 that is, the ‘stretching part’ was removed.
 
 While we are at it: Define a matrix A[+] as
 
-_A[+]_ := (AA[T] )[−][1]A[T] = �V Ω[−][2]V _[T][ ��]V ΩU_ _[T][ �]_ = V Ω[−][1]U _[T]_ (11.93)
+A[+] := (AA[T] )[−][1]A[T] = �V Ω[−][2]V [T][ ��]V ΩU [T][ �] = V Ω[−][1]U [T] (11.93)
 
 This looks suspiciously like the inverse of A. In fact, this is the pseudoinverse of A:
 
-_A[+]_ _A_ = �V Ω[−][1] _U_ _[T][ ��]U Ω_ _V_ _[T][ �]_ = 1 but wait (11.94)
+A[+] A = �V Ω[−][1] U [T][ ��]U Ω V [T][ �] = 1 but wait (11.94)
 
-_A[+]_ has the nice property to exist even if A[−][1] does not. If A[−][1] exists, it is identical to A[+]. If not,
-_A[+]_ _A_ = 1 but A[+] will give the best possible (in a least-square sense) solution x[+] = A[+]b of the equation
-_̸_
-_A x = b (see [15], p.770ff). To find (AA[T]_ )[−][1] use the iteration for the inverse:
+A[+] has the nice property to exist even if A[−][1] does not. If A[−][1] exists, it is identical to A[+]. If not,
+A[+] A = 1 but A[+] will give the best possible (in a least-square sense) solution x[+] = A[+]b of the equation
+̸
+A x = b (see [15], p.770ff). To find (AA[T] )[−][1] use the iteration for the inverse:
 
-Φ(x) = x �1 + (1 _dx) + (1_ _dx)[2]_ + . . . � (11.95)
-_−_ _−_
+Φ(x) = x �1 + (1 dx) + (1 dx)[2] + . . . � (11.95)
+− −
 
 2
-with d = A A[T] and the start value x0 = 2 − _n (A A[T]_ )/ ||A A[T] _||_ where n is the dimension of A.
+with d = A A[T] and the start value x0 = 2 − n (A A[T] )/ ||A A[T] || where n is the dimension of A.
 
 #### 11.7 n-th root by Goldschmidt’s algorithm
-
 TBD: show derivation (as root of 1) TBD: give numerical example TBD: parallel feature
 
 The so-called Goldschmidt algorithm to approximate the a-th root of d can be stated as follows:
 
 set
 
-_x0 := d_ _E0 := d[a][−][1]_ (11.96)
+x0 := d E0 := d[a][−][1] (11.96)
 
 then iterate:
 
-
 until x close enough to
 
+rk := 1 + [1][ −] [E][k] → 1 (11.97)
 
-_rk_ := 1 + [1][ −] _[E][k]_ _→_ 1 (11.97)
+a
 
-_a_
+xk+1 := xk · rk (11.98)
 
-_xk+1_ := _xk · rk_ (11.98)
-
-_Ek+1_ := _Ek · rk[a]_ _→_ 1 (11.99)
+Ek+1 := Ek · rk[a] → 1 (11.99)
 
 1
-_x∞_ = _d_ _a ._ (11.100)
-
+x∞ = d a . (11.100)
 
 The invariant quantity is [(][x][k][·][r][)][a]
 
 (Ek·r[a]) [. Clearly]
 
-_x[a]k+1_ = (xk · r)[a] _k_ (11.101)
+x[a]k+1 = (xk · r)[a] k (11.101)
 
-_Ek+1_ (Ek · r[a]) [=][ x]E[a]k
+Ek+1 (Ek · r[a]) [=][ x]E[a]k
 
+0 d[a]
+With [x][a]
 
-0 _d[a]_
-With _[x][a]_
-
-_E0_ [=] _d[a][−][1][ =][ d][ and][ E][∞]_ [= 1, therefore][ x][a]∞ [=][ d][. Convergence is quadratic.]
+E0 [=] d[a][−][1][ =][ d][ and][ E][∞] [= 1, therefore][ x][a]∞ [=][ d][. Convergence is quadratic.]
 
 A variant for inverse roots is as follows:
 
 set
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 182
+CHAPTER 11. ARITHMETICAL ALGORITHMS 182
 
 then iterate as in formulas 11.97..11.99
 
 For a = 1 we get:
 
-
 1
 =
-_d_
+d
 
-
-_∞_
+∞
 �
 
-(2 − _Ek)_ (11.103)
-_k=0_
+(2 − Ek) (11.103)
+k=0
 
 (11.104)
 
-
-where Ek+1 := Ek (2 − _Ek)._
+where Ek+1 := Ek (2 − Ek).
 
 For a = 2 we get a iteration for the inverse square root:
 
-
-3 − _Ek_
+3 − Ek
 
 (11.105)
 2
 
 (11.106)
 
-
 1
 
 =
 
-_√_
+√
 
-_d_
+d
 
-
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 where Ek+1 := Ek ( [3][−]2[E][k] )[2]. Cf. [39].
 
 Higher order iterations are obtained by appending higher terms to the expression �1 + [1][−][E][k] � in the
 
-_a_
-definitions of rk+1 as suggested by equation 11.64 (and the identification y = 1 − _E):_
-
+a
+definitions of rk+1 as suggested by equation 11.64 (and the identification y = 1 − E):
 
 �
-1 + [1][ −] _[E][k]_ + (11.107)
+1 + [1][ −] [E][k] + (11.107)
 
-_a_
+a
 
-
-(1 + a) (1 − _Ek)[2]_
+(1 + a) (1 − Ek)[2]
 
 [third order:] +
 
 2 a[2]
 
-(1 + a) (2 + a) (1 − _Ek)[3]_
+(1 + a) (2 + a) (1 − Ek)[3]
 
 [fourth order:] +
 
 6 a[3]
-+ _. . ._ +
++ . . . +
 
-(1 + a) (1 + 2w) . . . (1 + n a) (1 − _Ek)[n]_
+(1 + a) (1 + 2w) . . . (1 + n a) (1 − Ek)[n]
 
 [(n + 1)-th order:] +
 
-_n! a[n]_
+n! a[n]
 
 For those fond of products:
 
-
 �
-
 
 � �
-1 + q[1]k where _q0 =_ _[d]d[ + 1] −_ 1 _[,]_ _qk+1 = 2qk[2]_ _[−]_ [1] (11.108)
+1 + q[1]k where q0 = [d]d[ + 1] − 1 [,] qk+1 = 2qk[2] [−] [1] (11.108)
 
+√
 
-_√_
+d =
 
-_d_ =
-
-
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 and d > 0, d = 1 (convergence is quadratic) and
-_̸_
-
+̸
 
 �
-where _h0 =_ _[d][ + 3]_ _hk+1 = (hk + 2)[2]_ (hk + 1) + 1 (11.109)
+where h0 = [d][ + 3] hk+1 = (hk + 2)[2] (hk + 1) + 1 (11.109)
 
-_d_ 1 _[,]_
-_−_
-
+d 1 [,]
+−
 
 �
 1 + [2]
 
-_hk_
+hk
 
+√
 
-_√_
+d =
 
-
-_d_ =
-
-
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 (convergence is cubic). These are given in [40], the first is ascribed to Friedrich Engel. The paper gives
-_hk+1 =_ _d4−d1_ �ki=0 _[h]i[2]_ _[−]_ [3.]
+hk+1 = d4−d1 �ki=0 [h]i[2] [−] [3.]
 
 #### 11.8 Iterations for the inversion of a function
-
-In this section we will look at general forms of iterations for zeros[9] _x = r of a function f_ (x). Iterations
+In this section we will look at general forms of iterations for zeros[9] x = r of a function f (x). Iterations
 are themselves functions Φ(x) that, when ‘used’ as
 
-_xk+1_ = Φ(xk) (11.110)
+xk+1 = Φ(xk) (11.110)
 
 will make x converge towards x∞ = r if x0 was chosen not too far away from r.
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 183
+CHAPTER 11. ARITHMETICAL ALGORITHMS 183
 
 The functions Φ(x) must be constructed so that they have an attracting fixed point where f (x) has a
-zero: Φ(r) = r (fixed point) and Φ[′](r) _< 1 (attracting)._
-_|_ _|_
+zero: Φ(r) = r (fixed point) and Φ[′](r) < 1 (attracting).
+| |
 
-The order of convergence (or simply order ) of a given iteration can be defined as follows: let x = r (1+ _e)_
+The order of convergence (or simply order ) of a given iteration can be defined as follows: let x = r (1+ e)
 
-_·_
-with _e_ 1 and Φ(x) = r (1+αe[n] +O(e[n][+1]), then the iteration Φ is called linear (or first order) if n = 1
-_|_ _| ≪_ _·_
-(and _α_ _< 1) and super-linear if n > 1. Iterations of second order (n = 2) are often called quadratically-,_
-_|_ _|_
+·
+with e 1 and Φ(x) = r (1+αe[n] +O(e[n][+1]), then the iteration Φ is called linear (or first order) if n = 1
+| | ≪ ·
+(and α < 1) and super-linear if n > 1. Iterations of second order (n = 2) are often called quadratically-,
+| |
 those of third order cubically convergent. A linear iteration improves the result by (roughly) adding a
 constant amount of correct digits with every step, a super-linear iteration if order n will multiply the
 number of correct digits by n.
 
 For n 2 the function Φ has a super-attracting fixed point at r: Φ[′](r) = 0. Moreover, an iteration of
-_≥_
+≥
 order n 2 has
-_≥_
+≥
 
-Φ[′](r) = 0, Φ[′′](r) = 0, _. . .,_ Φ[(][n][−][1)](r) = 0 (11.111)
+Φ[′](r) = 0, Φ[′′](r) = 0, . . ., Φ[(][n][−][1)](r) = 0 (11.111)
 
 There seems to be no standard term for this in terms of fixed points, attracting of order n might be
 appropriate.
 
-To any iteration of order n for a function f one can add a term f (xk)[n][+1] _· ϕ(x) (where ϕ is an arbitrary_
+To any iteration of order n for a function f one can add a term f (xk)[n][+1] · ϕ(x) (where ϕ is an arbitrary
 function that is analytic in a neighborhood of the root) without changing the order of convergence. It is
 assumed to be zero in what follows.
 
-Any two iterations of (the same) order n differ in a term (x _r)[n]_ _ν(x) where ν(x) is a function that is_
-_−_
+Any two iterations of (the same) order n differ in a term (x r)[n] ν(x) where ν(x) is a function that is
+−
 finite at r (cf. [7], p. 174, ex.3).
 
 Two general expressions, Householder’s formula and Schr¨oder’s formula, can be found in the literature.
@@ -13981,86 +13227,72 @@ simple construction that contains both of them as special cases is given.
 TBD: p-adic iterations
 
 ##### 11.8.1 Householder’s formula
-
 Let n 2, then
-_≥_
+≥
 
+Φn(xk) := xk + (n − 1)
 
-Φn(xk) := _xk + (n −_ 1)
+� g(xk) �(n−2)
 
-
-� _g(xk)_ �(n−2)
-
-� _fg((xxkk))_ �(n−1) [+][ f] [(][x]k[)][n][+1][ ϕ][(][x][)] (11.112)
-_f_ (xk)
-
+� fg((xxkk)) �(n−1) [+][ f] [(][x]k[)][n][+1][ ϕ][(][x][)] (11.112)
+f (xk)
 
 gives a n th order iteration for a (simple) root r of f . g(x) must be a function that is analytic near the
-_−_
+−
 root and is set to 1 in what follows (cf. [7] p.169).
 
 For n = 2 we get Newtons formula:
 
-Φ2(x) = _x −_ _[f]_ (11.113)
+Φ2(x) = x − [f] (11.113)
 
-_f_ _[′]_
-
+f [′]
 
 For n = 3 we get Halleys formula:
 
-_n = 4 and n = 5 result in:_
+n = 4 and n = 5 result in:
 
+2ff [′]
+Φ3(x) = x − (11.114)
 
-2ff _[′]_
-Φ3(x) = _x −_ (11.114)
+2f [′][2] − ff [′′]
 
-2f _[′][2]_ _−_ _ff_ _[′′]_
+3f (ff [′′] − 2f [′][2])
+Φ4(x) = x − (11.115)
 
-
-3f (ff _[′′]_ _−_ 2f _[′][2])_
-Φ4(x) = _x −_ (11.115)
-
-6ff _[′]f_ _[′′]_ _−_ 6f _[′][3]_ _−_ _ff_ _[′′′]_
+6ff [′]f [′′] − 6f [′][3] − ff [′′′]
 
 �
-4f 6f _[′][3]_ _−_ 6ff _[′]f_ _[′′]_ + f [2]f _[′′′][�]_
-Φ (x) _x +_ (11 116)
+4f 6f [′][3] − 6ff [′]f [′′] + f [2]f [′′′][�]
+Φ (x) x + (11 116)
 
+CHAPTER 11. ARITHMETICAL ALGORITHMS 184
 
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 184
-
-Second order 11.112 with f (x) := _x1[a][ −]_ _[d][ gives formula 11.67, but for higher orders one gets iterations]_
+Second order 11.112 with f (x) := x1[a][ −] [d][ gives formula 11.67, but for higher orders one gets iterations]
 
 that require long divisions.
 
 Kalantari and Gerlach [41] give the iteration
 
+Bm(x) = x − f (x) [D][m][−][2][(][x][)] (11.117)
 
-_Bm(x) = x −_ _f_ (x) _[D][m][−][2][(][x][)]_ (11.117)
-
-_Dm−1(x)_
-
+Dm−1(x)
 
 where m 2 and
-_≥_
+≥
 
+f [′](x) f [′′]2!(x) . . . f [(]([m]m[−]−[1)]1)!(x) f [(][m]m[)]!(x)
 
-_f_ _[′](x)_ _f_ _[′′]2!(x)_ _. . ._ _f_ [(]([m]m[−]−[1)]1)!(x) _f_ [(][m]m[)]!(x)
+f [(][m][−][1)](x)
+f (x) f [′](x) ... ... (m−1)!
 
-_f_ [(][m][−][1)](x)
-_f_ (x) _f_ _[′](x)_ ... ... (m−1)!
+0 f (x) ... ... ...
 
-0 _f_ (x) ... ... ...
-
-_f_ _[′′](x)_
+f [′′](x)
 ... ... ... ...
 
 2!
 
-0 0 ... _f_ (x) _f_ _[′](x)_
-
+0 0 ... f (x) f [′](x)
 
 
 
@@ -14075,9 +13307,7 @@ _f_ _[′′](x)_
 
 
 
-
-_Dm(x)_ = det
-
+Dm(x) = det
 
 
 
@@ -14092,95 +13322,81 @@ _Dm(x)_ = det
 
 
 
-
 (11.118)
-
 
 (and D0 = 1). The iteration turns out to be identical to the one of Householder. A recursive definition
 for Dm(x) is given by
 
+Dm(x) =
 
-_Dm(x) =_
-
-
-_m_
+m
 �
 
-(−1)[i][−][1]f (x)[i][−][1][ f][ (][i][)][(][x][)] _Dm−i(x)_ (11.119)
+(−1)[i][−][1]f (x)[i][−][1][ f][ (][i][)][(][x][)] Dm−i(x) (11.119)
 
-_i!_
+i!
 
-_i=1_
+i=1
 
-
-Similar, the well-known derivation of Halley’s formula by applying Newton’s formula to f/[√]f _[′]_ can be
+Similar, the well-known derivation of Halley’s formula by applying Newton’s formula to f/[√]f [′] can be
 generalized to produce m-order iterations as follows: Let F1(x) = f (x) and for m ≥ 2 let
 
-_Fm(x)_ = _Fm−1(x)_ (11.120)
+Fm(x) = Fm−1(x) (11.120)
 
-_Fm[′]_ _−1[(][x][)][1][/m]_
+Fm[′] −1[(][x][)][1][/m]
 
-_Gm(x)_ = _x −_ _[F][m][−][1][(][x][)]_ (11.121)
+Gm(x) = x − [F][m][−][1][(][x][)] (11.121)
 
-_Fm[′]_ _−1[(][x][)]_
+Fm[′] −1[(][x][)]
 
 Then Gm(x) = Dm(x) as shown in [41].
 
 ##### 11.8.2 Schr¨oder’s formula
-
 Let n 2, and ϕ be an arbitrary (analytic near the root) function that is set to zero in what follows,
-_≥_
+≥
 then the expression
-
 
 Φn(xk) :=
 
-
-_n_
+n
 �
 
 ( 1)[t][ f] [(][x][k][)][t]
-_−_
+−
 
-_t!_
+t!
 
-_t=0_
-
+t=0
 
 � 1 �t−1 1
 
 (11.122)
 
-_f_ _[′](xk)_ _[∂]_ _f_ _[′](xk) [+][ f]_ [(][x][k][)][n][+1][ ϕ][(][x][)]
-
+f [′](xk) [∂] f [′](xk) [+][ f] [(][x][k][)][n][+1][ ϕ][(][x][)]
 
 gives a n th order iteration for a (simple) root r of f (cf. [6] p.13). This is, explicitly,
-_−_
+−
 
-_f_ _f_ [2] _f_ [3]
-Φn = _x_ _−_ _−_ _−_ �3f _[′′][2]_ _−_ _f_ _[′]f_ _[′′′][�]_ (11.123)
+f f [2] f [3]
+Φn = x − − − �3f [′′][2] − f [′]f [′′′][�] (11.123)
 
-1! f _[′]_ 2! f _[′][3][ ·][ f][ ′′]_ 3! f _[′][5][ ·]_
+1! f [′] 2! f [′][3][ ·][ f][ ′′] 3! f [′][5][ ·]
 
-_−_ _[f][ 4]_ �15f _[′′][3]_ _−_ 10f _[′]f_ _[′′]f_ _[′′′]_ + f _[′][2]f_ _[′′′′][�]_
+− [f][ 4] �15f [′′][3] − 10f [′]f [′′]f [′′′] + f [′][2]f [′′′′][�]
 
-4! f _[′][7][ ·]_
+4! f [′][7][ ·]
 
-_−_ _[f][ 5]_ �105f _[′′][4]_ _−_ 105f _[′]f_ _[′′][2]f_ _[′′′]_ + 10f _[′][2]f_ _[′′′][2]_ + 15f _[′][2]f_ _[′′]f_ _[′′′′]_ _−_ _f_ _[′][3]f_ _[′′′′′][�]_ _−_ _. . ._
+− [f][ 5] �105f [′′][4] − 105f [′]f [′′][2]f [′′′] + 10f [′][2]f [′′′][2] + 15f [′][2]f [′′]f [′′′′] − f [′][3]f [′′′′′][�] − . . .
 
-5! f _[′][9][ ·]_
-
+5! f [′][9][ ·]
 
 The second order iteration is the same as the corresponding iteration from 11.112 while all higher order
 iterations are different. The third order iteration obtained upon truncation after the third term on the
 right hand side, written as
 
-Φ _f_ [�]1 _ff_ _[′′][ �]_ (11 124)
+Φ f [�]1 ff [′′][ �] (11 124)
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 185
+CHAPTER 11. ARITHMETICAL ALGORITHMS 185
 
 is sometimes referred to as ‘Householder’s method’.
 
@@ -14188,322 +13404,287 @@ Cite from [6], (p.16, translation has a typo in the first formula):
 
 If we denote the general term by
 
-_χa_ (11.125)
+χa (11.125)
 
-_−_ _[f][ a]_
+− [f][ a]
 
-_a!_ _f_ _[′][2][a][−][1]_
-
+a! f [′][2][a][−][1]
 
 the numbers χa can be easily computed by the recurrence
 
-_χa+1_ = (2a − 1)f _[′′]χa −_ _f_ _[′]∂χa_ (11.126)
+χa+1 = (2a − 1)f [′′]χa − f [′]∂χa (11.126)
 
 .
 
-Formula 11.122 with f (x) := 1/x[a] _d gives the ‘divisionfree’ iteration 11.65 for arbitrary order._
-_−_
+Formula 11.122 with f (x) := 1/x[a] d gives the ‘divisionfree’ iteration 11.65 for arbitrary order.
+−
 
-For f (x) := log(x) _d one gets the iteration 11.9.3._
-_−_
+For f (x) := log(x) d one gets the iteration 11.9.3.
+−
 
-For f (x) := x[2] _d one gets_
-_−_
+For f (x) := x[2] d one gets
+−
 
-
-�x[2] _d�2_
-_−_
+�x[2] d�2
+−
 
 +
 8x[3]
 
-
-�x[2] _d�3_ �x[2] _d�4_
-_−_ _−_
+�x[2] d�3 �x[2] d�4
+− −
 
 + [5] + . . .
 16x[5] 128x[7]
 
-
 �
 
-
-Φ(x) = _x_
-_−_
-
+Φ(x) = x
+−
 
 �
-_x[2]_ _d_
-_−_
+x[2] d
+−
 
 +
 2x
 
-
 (11.127)
 
-
 � 2 5 �
-= _x_ _y + [1]_ where _y :=_ _[x][2][ −]_ _[d]_ (11.128)
-_−_
+= x y + [1] where y := [x][2][ −] [d] (11.128)
+−
 
 2x (2x)[2][ ·][ y][3][ +] (2x)[3][ ·][ y][4][ +][ . . .] 2x
 
-_[·][ y][2][ +]_
+[·][ y][2][ +]
 
-= _x_ 2x �Y + Y [2] + 2 Y [3] + 5 Y [4] + 14 Y [5] + 42 Y [6] + . . . � where _Y :=_ _[x][2][ −]_ _[d]_ (11.129)
-_−_ _·_
+= x 2x �Y + Y [2] + 2 Y [3] + 5 Y [4] + 14 Y [5] + 42 Y [6] + . . . � where Y := [x][2][ −] [d] (11.129)
+− ·
 
 (2x)[2]
 
 The connection between Householder’s and Schr¨oder’s iterations is that the Taylor series of the k-th order
 Householder iteration around f = 0 up to order k 1 gives the k-th order Schr¨oder iteration.
-_−_
+−
 
 ##### 11.8.3 Dealing with multiple roots
-
 The iterations given so far will not converge at the stated order if f has a multiple root at r. As an example
-consider the (for simple roots second order) iteration Φ(x) = x − _f/f_ _[′]_ for f (x) = (x[2] _−_ _d)[p], p ∈_ N, p ≥ 2:
+consider the (for simple roots second order) iteration Φ(x) = x − f/f [′] for f (x) = (x[2] − d)[p], p ∈ N, p ≥ 2:
 
-_√_ _√_
+√ √
 
-Φ?(x) = x − _[x]p[2]2[−]x[d]_ [. Its convergence is only linear: Φ(] _d(1 + e)) =_ _d(1 +_ _[p][−]p_ [1] _[e][ +][ O][(][e][2][))]_
-
+Φ?(x) = x − [x]p[2]2[−]x[d] [. Its convergence is only linear: Φ(] d(1 + e)) = d(1 + [p][−]p [1] [e][ +][ O][(][e][2][))]
 
 Householder ([7] p.161 ex.6) gives
 
+Φ2(x) = x − p · [f] (11.130)
 
-Φ2(x) = x − _p ·_ _[f]_ (11.130)
-
-_f_ _[′]_
+f [′]
 
 as a second order iteration for functions f known a priori to have roots of multiplicity p.
 
-A general approach is to use the general[10] expressions with F := f/f _[′]_ instead of f . Both F and f have
+A general approach is to use the general[10] expressions with F := f/f [′] instead of f . Both F and f have
 the same set of roots, but the multiple roots of f are simple roots of F . To illustrate this let f have a
-root of multiplicity p at r: f (x) = (x _r)[p]_ _h(x) with h(r)_ = 0. Then
-_−_ _̸_
-
+root of multiplicity p at r: f (x) = (x r)[p] h(x) with h(r) = 0. Then
+− ̸
 
 and
 
-
-_f_ _[′](x)_ = _p (x −_ _r)[p][−][1]_ _h(x) + (x −_ _r)[p]_ _h[′](x)_ (11.131)
+f [′](x) = p (x − r)[p][−][1] h(x) + (x − r)[p] h[′](x) (11.131)
 
 �
-= (x _r)[p][−][1][ �]p h(x) + (x_ _r) h[′](x)_ (11.132)
-_−_ _−_
+= (x r)[p][−][1][ �]p h(x) + (x r) h[′](x) (11.132)
+− −
 
-_h(x)_
-_F_ (x) = f (x)/f _[′](x)_ = (x − _r)_ (11.133)
+h(x)
+F (x) = f (x)/f [′](x) = (x − r) (11.133)
 
-_p h(x) + (x_ _r) h[′](x)_
-_−_
+p h(x) + (x r) h[′](x)
+−
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 186
+CHAPTER 11. ARITHMETICAL ALGORITHMS 186
 
 The fraction on the right hand side does not vanish at the root r.
 
 With Householder’s formula (11.112) we get (iterations for F denoted by Φ[%]k [):]
 
-Φ2(x) = _x −_ _[f]_ (11.134)
+Φ2(x) = x − [f] (11.134)
 
-_f_ _[′]_
+f [′]
 
-_ff_ _[′]_
-Φ[%]2 [(][x][)] = _x −_ (11.135)
+ff [′]
+Φ[%]2 [(][x][)] = x − (11.135)
 
-_f_ _[′][2]_ _−_ _ff_ _[′′]_
+f [′][2] − ff [′′]
 
-2ff _[′]_
-Φ3(x) = _x −_ (11.136)
+2ff [′]
+Φ3(x) = x − (11.136)
 
-2f _[′][2]_ _−_ _ff_ _[′′]_
+2f [′][2] − ff [′′]
 
-2f [2]f _[′′]_ _−_ 2ff _[′][2]_
-Φ[%]3 [(][x][)] = _x +_ (11.137)
+2f [2]f [′′] − 2ff [′][2]
+Φ[%]3 [(][x][)] = x + (11.137)
 
-2f _[′][3]_ _−_ 3ff _[′]f_ _[′′]_ + f [2]f _[′′′]_
+2f [′][3] − 3ff [′]f [′′] + f [2]f [′′′]
 
-3f [2]f _[′′]_ _−_ 6ff _[′][2]_
-Φ4(x) = _x +_ 6f _[′][3]_ _−_ 6ff _[′]f_ _[′′]_ + f [2]f _[′′′]_ (11.138)
+3f [2]f [′′] − 6ff [′][2]
+Φ4(x) = x + 6f [′][3] − 6ff [′]f [′′] + f [2]f [′′′] (11.138)
 
-6ff _[′][3]_ + 3f [3]f _[′′′]_ _−_ 9f [2]f _[′]f_ _[′′]_
-Φ[%]4 [(][x][)] = _x +_ (11.139)
+6ff [′][3] + 3f [3]f [′′′] − 9f [2]f [′]f [′′]
+Φ[%]4 [(][x][)] = x + (11.139)
 
-_f_ [3]f _[′′′′]_ _−_ 6f _[′][4]_ + 12ff _[′][2]f_ _[′′]_ _−_ 4f [2]f _[′]f_ _[′′′]_ _−_ 3f [2]f _[′′][2]_
+f [3]f [′′′′] − 6f [′][4] + 12ff [′][2]f [′′] − 4f [2]f [′]f [′′′] − 3f [2]f [′′][2]
 
-24ff _[′][3]_ + 4f [3]f _[′′′]_ _−_ 24f [2]f _[′]f_ _[′′]_
-Φ5(x) = _x +_ _f_ [3]f _[′′′′]_ _−_ 24f _[′][4]_ + 36ff _[′][2]f_ _[′′]_ _−_ 8f [2]f _[′]f_ _[′′′]_ _−_ 6f [2]f _[′′][2]_ (11.140)
-
+24ff [′][3] + 4f [3]f [′′′] − 24f [2]f [′]f [′′]
+Φ5(x) = x + f [3]f [′′′′] − 24f [′][4] + 36ff [′][2]f [′′] − 8f [2]f [′]f [′′′] − 6f [2]f [′′][2] (11.140)
 
 The terms in the numerators and denominators of Φ[%]k [and Φ][k][+1][ are identical up to the integral constants.]
 
-Schr¨oder’s formula (11.122), when inserting f/f _[′], becomes:_
+Schr¨oder’s formula (11.122), when inserting f/f [′], becomes:
 
-_ff_ _[′]_ _ff_ _[′]f_ _[′′′]_ _−_ 2ff _[′′][2]_ + f _[′][2]f_ _[′′][�]_
-Φ[%](x) = _x +_ (11.141)
+ff [′] ff [′]f [′′′] − 2ff [′′][2] + f [′][2]f [′′][�]
+Φ[%](x) = x + (11.141)
 
-_−_
+−
 
-(ff _[′′]_ _−_ _f_ _[′][2])_ _[−]_ _[f][ 2][f][ ′][ �]_ 2 (ff _[′′]_ _−_ _f_ _[′][2])[3]_
+(ff [′′] − f [′][2]) [−] [f][ 2][f][ ′][ �] 2 (ff [′′] − f [′][2])[3]
 
-2ff _[′][3]f_ _[′′]f_ _[′′′]_ _± . . . −_ 3f [2]f _[′][2]f_ _[′′′][2][�]_ 3f _[′][8]f_ _[′′′′]_ _± . . . −_ 36f [3]f _[′][2]f_ _[′′][2]f_ _[′′′][2][�]_
-_−_ _[f][ 3][f][ ′][ �]_ _−_ _[f][ 4][f][ ′][ �]_ _−_
+2ff [′][3]f [′′]f [′′′] ± . . . − 3f [2]f [′][2]f [′′′][2][�] 3f [′][8]f [′′′′] ± . . . − 36f [3]f [′][2]f [′′][2]f [′′′][2][�]
+− [f][ 3][f][ ′][ �] − [f][ 4][f][ ′][ �] −
 
-6 (ff _[′′]_ _−_ _f_ _[′][2])[5]_ 24 (ff _[′′]_ _−_ _f_ _[′][2])[7]_
+6 (ff [′′] − f [′][2])[5] 24 (ff [′′] − f [′][2])[7]
 
-_f_ _[k]f_ _[′]_ (. . .)
-_. . ._
-_−_ _−_
+f [k]f [′] (. . .)
+. . .
+− −
 
-_k! (ff_ _[′′]_ _−_ _f_ _[′][2])[2][k][−][1]_
-
+k! (ff [′′] − f [′][2])[2][k][−][1]
 
 Checking convergence with the above example:
-– the iteration is: Φ[%]2 [(][x][) =][ x][ +][ x][(][d][ −] _[x][2][)][/][(][d][ +][ x][2][),]_
-_√_ _√_
-– convergence is second order (independent of p): Φ[%]2 [(] _d(1 + ϵ)) =_ _d(1 −_ _ϵ[2]/2 + O(ϵ[3])). Ok._
+– the iteration is: Φ[%]2 [(][x][) =][ x][ +][ x][(][d][ −] [x][2][)][/][(][d][ +][ x][2][),]
+√ √
+– convergence is second order (independent of p): Φ[%]2 [(] d(1 + ϵ)) = d(1 − ϵ[2]/2 + O(ϵ[3])). Ok.
 
-_√_
-Using the Schr¨oder’s 3rd order formula for f/f _[′]_ with f as above we get a nice 4th order iteration for
+√
+Using the Schr¨oder’s 3rd order formula for f/f [′] with f as above we get a nice 4th order iteration for
 
+d:
 
-_d:_
+Φ[%]3 [(][x][)] = x + x [d][ −] [x][2] (11.142)
 
-
-Φ[%]3 [(][x][)] = _x + x [d][ −]_ _[x][2]_ (11.142)
-
-_d + x[2][ +][ x d][ (](d[d] +[ −] x[x][2][2])[)][3][2]_
+d + x[2][ +][ x d][ (](d[d] +[ −] x[x][2][2])[)][3][2]
 
 ##### 11.8.4 A general scheme
-
 Starting point is the Taylor series of a function f around x0:
 
-
-_∞_ 1
+∞ 1
 �
 
-_f_ (x) = (11.143)
+f (x) = (11.143)
 
-_k!_ _[f][ (][k][)][(][x][0][) (][x][ −]_ _[x][0][)][k]_
+k! [f][ (][k][)][(][x][0][) (][x][ −] [x][0][)][k]
 
-_k=0_
+k=0
 
-= _f_ (x0) + f _[′](x0) (x −_ _x0) + [1]_ (11.144)
+= f (x0) + f [′](x0) (x − x0) + [1] (11.144)
 
-2 _[f][ ′′][(][x][0][) (][x][ −]_ _[x][0][)][2][ + 1]6_ _[f][ ′′′][(][x][0][) (][x][ −]_ _[x][0][)][3][ +][ . . .]_
+2 [f][ ′′][(][x][0][) (][x][ −] [x][0][)][2][ + 1]6 [f][ ′′′][(][x][0][) (][x][ −] [x][0][)][3][ +][ . . .]
 
-Now let f (x0) = y0 and r be the zero (f (0) = r). We then happily expand the inverse g = f _[−][1]_ around y0
-
+Now let f (x0) = y0 and r be the zero (f (0) = r). We then happily expand the inverse g = f [−][1] around y0
 
 1
 
 (11.145)
-_k!_ _[g][(][k][)][(][y][0][) (0][ −]_ _[y][0][)][k]_
+k! [g][(][k][)][(][y][0][) (0][ −] [y][0][)][k]
 
 1 2 1 3
 
+g(0) =
 
-_g(0)_ =
-
-
-_∞_
+∞
 �
 
-_k=0_
+k=0
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 187
+CHAPTER 11. ARITHMETICAL ALGORITHMS 187
 
 Using x0 = g(y0) and r = g(0) we get
 
-_r_ = _x0 −_ _g[′](y0) f_ (x0) + 2[1] _[g][′′][(][y][0][)][ f]_ [(][x][0][)][2][ −] [1]6 _[g][′′′][(][y][0][)][ f]_ [(][x][0][)][3][ +][ . . .] (11.147)
-
+r = x0 − g[′](y0) f (x0) + 2[1] [g][′′][(][y][0][)][ f] [(][x][0][)][2][ −] [1]6 [g][′′′][(][y][0][)][ f] [(][x][0][)][3][ +][ . . .] (11.147)
 
 Remains to express the derivatives of the inverse g in terms of (derivatives of) f . Not a difficult task,
 note that
 
-_f_ _g = id_ that is: _f_ (g(x)) = x (11.148)
-_◦_
+f g = id that is: f (g(x)) = x (11.148)
+◦
 
-and derive (chain rule) to get g[′](f (x)) f _[′](x) = 1, so g[′](y) =_ _f_ _[′]1(x)_ [. Derive][ f] [(][g][(][x][))][ −] _[x][ multiple times and]_
+and derive (chain rule) to get g[′](f (x)) f [′](x) = 1, so g[′](y) = f [′]1(x) [. Derive][ f] [(][g][(][x][))][ −] [x][ multiple times and]
 
 set the expressions to zero (arguments y of g and x of f are omitted for readability):
 
-1 = _f_ _[′]g[′]_ (11.149)
+1 = f [′]g[′] (11.149)
 
-0 = _g[′]f_ _[′′]_ + f _[′][2]g[′′]_ (11.150)
+0 = g[′]f [′′] + f [′][2]g[′′] (11.150)
 
-0 = _g[′]f_ _[′′′]_ + 3f _[′]f_ _[′′]g[′′]_ + f _[′][3]g[′′′]_ (11.151)
+0 = g[′]f [′′′] + 3f [′]f [′′]g[′′] + f [′][3]g[′′′] (11.151)
 
-0 = _g[′]f_ _[′′′′]_ + 4f _[′]g[′′]f_ _[′′′]_ + 3f _[′′][2]g[′′]_ + 6f _[′][2]f_ _[′′]g[′′′]_ + f _[′][4]g[′′′′]_ (11.152)
+0 = g[′]f [′′′′] + 4f [′]g[′′]f [′′′] + 3f [′′][2]g[′′] + 6f [′][2]f [′′]g[′′′] + f [′][4]g[′′′′] (11.152)
 
 This system of linear equations in the derivatives of g is trivially solved because it is already triangular.
 We obtain:
 
 1
-_g[′]_ = (11.153)
+g[′] = (11.153)
 
-_f_ _[′]_
+f [′]
 
+g[′′] = − [f][ ′′] (11.154)
 
-_g[′′]_ = _−_ _[f][ ′′]_ (11.154)
-
-_f_ _[′][3]_
-
-1 �
-_g[′′′]_ = 3f _[′′][2]_ _−_ _f_ _[′]f_ _[′′′][�]_ (11.155)
-
-_f_ _[′][5]_
+f [′][3]
 
 1 �
-_g[′′′′]_ = 10f _[′]f_ _[′′]f_ _[′′′]_ _−_ 15f _[′′][3]_ _−_ _f_ _[′][2]f_ _[′′′′][�]_ (11.156)
+g[′′′] = 3f [′′][2] − f [′]f [′′′][�] (11.155)
 
-_f_ _[′][7]_
+f [′][5]
 
 1 �
-_g[′′′′′]_ = 105f _[′′][4]_ _−_ _f_ _[′][3]f_ _[′′′′′]_ _−_ 105f _[′]f_ _[′′][2]f_ _[′′′]_ + 15f _[′][2]f_ _[′′]f_ _[′′′′]_ + 10f _[′][2]f_ _[′′′][2][�]_ (11.157)
+g[′′′′] = 10f [′]f [′′]f [′′′] − 15f [′′][3] − f [′][2]f [′′′′][�] (11.156)
 
-_f_ _[′][9]_
+f [′][7]
+
+1 �
+g[′′′′′] = 105f [′′][4] − f [′][3]f [′′′′′] − 105f [′]f [′′][2]f [′′′] + 15f [′][2]f [′′]f [′′′′] + 10f [′][2]f [′′′][2][�] (11.157)
+
+f [′][9]
 
 Thereby equation 11.147 can be written as (omitting arguments x of f everywhere)
 
-
 �
-_f_ [2]
-_−_ [1]
+f [2]
+− [1]
 
 6
 
-
 � 1 �
 
-3f _[′′][2]_ _−_ _f_ _[′]f_ _[′′′][��]_ _f_ [3] + . . . (11.158)
-_f_ _[′][5]_
+3f [′′][2] − f [′]f [′′′][��] f [3] + . . . (11.158)
+f [′][5]
 
+r = x
+− [1]
 
-_r_ = _x_
-_−_ [1]
-
-_f_ _[′][ f][ + 1]2_
-
+f [′][ f][ + 1]2
 
 �
-_−_ _[f][ ′′]_
+− [f][ ′′]
 
-_f_ _[′][3]_
+f [′][3]
 
+f f [2] f [3]
+= x − �3f [′′][2] − f [′]f [′′′][�] − . . . (11.159)
 
-_f_ _f_ [2] _f_ [3]
-= _x −_ �3f _[′′][2]_ _−_ _f_ _[′]f_ _[′′′][�]_ _−_ _. . ._ (11.159)
-
-1! f _[′][ −]_ 2! f _[′][3][ ·][ f][ ′′][ −]_ 3! f _[′][5][ ·]_
+1! f [′][ −] 2! f [′][3][ ·][ f][ ′′][ −] 3! f [′][5][ ·]
 
 which is Schr¨oder’s iteration (equation 11.123).
 
@@ -14511,424 +13692,364 @@ Taking the [i, i]-th or [i + 1, i]-th Pad´e approximant (in f ) gives the House
 odd orders, respectively.
 
 More iterations can be found using other [i, j] pairs. Already for the second order (where the well known
-general formula, corresponding to [1, 0] is x − _f[f][′][ ) there is one alternative, namely [0][,][ 1] which is]_
+general formula, corresponding to [1, 0] is x − f[f][′][ ) there is one alternative, namely [0][,][ 1] which is]
 
+x f x f f [′] � f
+Φ2(x) = x − 1 +
 
-_x f_ _x f_ _f_ _[′]_ � _f_
-Φ2(x) = _x −_ 1 +
-
-_f + x f_ _[′][ =][ x][ −]_ (x f )[′][ =][ x][2] _f + x f_ _[′][ =][ x]_ _x f_ _[′]_
+f + x f [′][ =][ x][ −] (x f )[′][ =][ x][2] f + x f [′][ =][ x] x f [′]
 
 For the third order there is also one ‘non-standard’ iteration: [0, 2]
-
 
 �−1
 (11.160)
 
-
-2x[3]f _[′][3]_
+2x[3]f [′][3]
 Φ3(x) = (11.161)
 
-2f [2]f _[′]_ + 2fxf _[′][2]_ + f [2]xf _[′′]_ + 2x[2]f _[′][3]_
+2f [2]f [′] + 2fxf [′][2] + f [2]xf [′′] + 2x[2]f [′][3]
 
 For order n there are n possible Pad´e approximants, two of which are the Householder and Schr¨oder
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 188
+CHAPTER 11. ARITHMETICAL ALGORITHMS 188
 
 described. The iterations of order n are fractions with numerator and denominator consisting only of
-terms that are products of integral constants and x, f, f _[′], f_ _[′′], . . ., f_ [(][n][−][1)]. There are obviously other forms
+terms that are products of integral constants and x, f, f [′], f [′′], . . ., f [(][n][−][1)]. There are obviously other forms
 of iterations, e.g. the third order iteration
 
-
 �
 
-1 2 _[f f][ ′′]_
-_−_
+1 2 [f f][ ′′]
+−
 
-_f_ _[′][2]_
-
+f [′][2]
 
 �
-
 
 �
 
 1
-_±_
+±
 
+Φ3(x) = x − [1]
 
-Φ3(x) = _x −_ [1]
-
-_f_ _[′′]_
-
+f [′′]
 
 � � �
-_f_ _[′]_ _±_ _f_ _[′][2]_ _−_ 2ff _[′′]_ = x − _[f][ ′]_
+f [′] ± f [′][2] − 2ff [′′] = x − [f][ ′]
 
-_f_ _[′′]_
-
+f [′′]
 
 (11.162)
 
-
 that stems from directly solving the truncated Taylor expansion of f (r) = 0 =: Φ around x
 
-_f_ (r) = _f_ (x) + f _[′](x) (r −_ _x) + [1]_ (11.163)
+f (r) = f (x) + f [′](x) (r − x) + [1] (11.163)
 
-2 _[f][ ′′][(][x][) (][r][ −]_ _[x][)][2]_
+2 [f][ ′′][(][x][) (][r][ −] [x][)][2]
 
-(For f (x) = ax[2] + _bx_ + _c it gives the two solutions of the quadratic equation f_ (x) = 0; for other functions
+(For f (x) = ax[2] + bx + c it gives the two solutions of the quadratic equation f (x) = 0; for other functions
 one gets an iterated square root expression for the roots.)
 
 Alternative rational forms can also be obtained in a way that generalizes the the method used for multiple
-roots: if we emphasize the so far notationally omitted dedendency from the function f as Φ _f_ . The
-_{_ _}_
-iteration Φ _f_ has fixed points where f has a root r, so x Φ _f_ (x) again has a root at r. Hence we can
-_{_ _}_ _−_ _{_ _}_
-build more iterations that will converge to those roots as Φ _x_ Φ _f_ (x). For dealing with multiple
-_{_ _−_ _{_ _}}_
+roots: if we emphasize the so far notationally omitted dedendency from the function f as Φ f . The
+{ }
+iteration Φ f has fixed points where f has a root r, so x Φ f (x) again has a root at r. Hence we can
+{ } − { }
+build more iterations that will converge to those roots as Φ x Φ f (x). For dealing with multiple
+{ − { }}
 � �
-roots we used Φ {x − Φ {f _}2}k = Φ {f/f_ _[′]}. An iteration Φ_ _x −_ Φ {f _}j_
+roots we used Φ {x − Φ {f }2}k = Φ {f/f [′]}. An iteration Φ x − Φ {f }j
 
-_k_ [can only be expected to have]
+k [can only be expected to have]
 a kth order convergence.
 
 Similarly, one can derive alternative iterations of given order by using functions that have roots where f
 has them[11]. For example
 
 1
-_g(x)_ := 1 − where _α ∈_ C, α ̸= 0 (11.164)
+g(x) := 1 − where α ∈ C, α ̸= 0 (11.164)
 
-1 _αf_ (x)
-_−_
+1 αf (x)
+−
 
 leads to the second order iteration
 
-Φ {g}2 = _x −_ _[f]_ [(][x][)(1 +][ αf] [(][x][))] (11.165)
+Φ {g}2 = x − [f] [(][x][)(1 +][ αf] [(][x][))] (11.165)
 
-_f_ _[′](x)_
+f [′](x)
 
 Using g := xf (x) leads to the alternative second order iteration.
 
 Moreover, one could use a function g and its inverse ¯g := g[−][1] and the corresponding iteration for f (g(x))
 and finally apply g to get the root: (Let r[′] be the zero of f (g(x)): f (g(r[′])) = 0 if g(r[′]) = r. r[′] is what
-we get from Φ _f_ _g_ .) A simple example is g(x) = ¯g(x) = 1/x, with f = x[a] _d and Schr¨oder’s formula_
-_{_ _◦_ _}_ _−_
+we get from Φ f g .) A simple example is g(x) = ¯g(x) = 1/x, with f = x[a] d and Schr¨oder’s formula
+{ ◦ } −
 one gets the divisionless iterations for the (inverse) a-th root of d. g subject to reasonable conditions: it
 must be invertible near the root r of f .
 
 ##### 11.8.5 Improvements by the delta squared process
-
 Given a sequence of partial sums xk the so called delta squared process computes a new sequence x[∗]k [of]
 extrapolated sums:
 
-_x[∗]k_ = _xk+2 −_ _xk(+2xk+2 −2 xkx+1k+1 +)[2] xk_ (11.166)
+x[∗]k = xk+2 − xk(+2xk+2 −2 xkx+1k+1 +)[2] xk (11.166)
 
-_−_
+−
 
 The method is due to Aitken. The name delta squared is due to the fact that the formula can be written
 symbolically as
 
-
-_x[∗]_ = x (11.167)
-_−_ [(∆][x][)][2]
+x[∗] = x (11.167)
+− [(∆][x][)][2]
 
 (∆[2]x)
 
-
 where ∆is the difference operator.
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 189
+CHAPTER 11. ARITHMETICAL ALGORITHMS 189
 
 Note that the mathematically equivalent form
 
-_x[∗]k_ = _xkx+2k xk+22 x −k+1xk[2] ++1 xk_ (11.168)
+x[∗]k = xkx+2k xk+22 x −k+1xk[2] ++1 xk (11.168)
 
-_−_
+−
 
 sometimes given should be avoided with numerical computations due to possible cancellation.
 
-If xk = [�]i[k]=0 _[a][i][ and the ratio of consecutive summands][ a][i][ is approximately constant (that is,][ a][ is close to]_
+If xk = [�]i[k]=0 [a][i][ and the ratio of consecutive summands][ a][i][ is approximately constant (that is,][ a][ is close to]
 a geometric series) then x[∗] converges significantly faster to x∞ than x. Let us partly rewrite the formula
-using xk − _xk−1 = ak:_
+using xk − xk−1 = ak:
 
-_x[∗]k_ = _xk+2 −_ _ak+2(ak −+2a)k[2]+1_ (11.169)
+x[∗]k = xk+2 − ak+2(ak −+2a)k[2]+1 (11.169)
 
 Then for a geometric series with ak+1/ak = q
 
 (ak+2)[2] �a0 q[k][+2][�][2]
-_x[∗]k_ = _xk+2 −_ _ak+2 −_ _ak+1_ = xk+2 − _a0 (q[k][+2]_ _−_ _q[k][+1])_ (11.170)
+x[∗]k = xk+2 − ak+2 − ak+1 = xk+2 − a0 (q[k][+2] − q[k][+1]) (11.170)
 
-= _a0_ 1 − _q[k][+3]_ + a0 q[k][+2] _·_ _q[k][+2]_ = _a0_ �1 − _q[k][+3]_ + q[k][+3][�] (11.171)
+= a0 1 − q[k][+3] + a0 q[k][+2] · q[k][+2] = a0 �1 − q[k][+3] + q[k][+3][�] (11.171)
 
-1 _q_ _q[k][+1]_ _q[k][+2]_ 1 _q_
-_−_ _−_ _−_
+1 q q[k][+1] q[k][+2] 1 q
+− − −
 
-= _a0_ (11.172)
+= a0 (11.172)
 
-1 _q_
-_−_
-
+1 q
+−
 
 which is the exact sum.
 
 Why do we meet the delta squared here? Consider the sequence
 
-_x0,_ _x1 = Φ(x0),_ _x2 = Φ(x1) = Φ(Φ(x0)),_ _. . ._ (11.173)
+x0, x1 = Φ(x0), x2 = Φ(x1) = Φ(Φ(x0)), . . . (11.173)
 
 of better and better approximations to some root r of a function f . Think of the xk as partial sums of a
 series whose sum is the root r. Apply the idea to define an improved iteration Φ[∗] from a given Φ:
 
 (Φ(Φ(x)) Φ(x))[2]
-_−_
+−
 Φ[∗](x) = Φ(Φ(x)) (11.174)
-_−_
+−
 
 Φ(Φ(x)) 2 Φ(x) + x
-_−_
-
+−
 
 The good news is that Φ will give quadratic convergence even if Φ only gives linear convergence. As
-_∗_
-_√_
-an example let us take f (x) = (x[2] _d)[2], forget that its root_ _d is a double root, happily define Φ(x) =_
-_−_
+∗
+√
+an example let us take f (x) = (x[2] d)[2], forget that its root d is a double root, happily define Φ(x) =
+−
 
-_x −_ _f_ (x)/f _[′](x) = x −_ (x[2] _−_ _d)/(4x). Convergence is only linear:_
+x − f (x)/f [′](x) = x − (x[2] − d)/(4x). Convergence is only linear:
 
-
-_√_
+√
 Φ(
 
-
-_√_
-_d_ (1 + e)) =
-_·_
-
+√
+d (1 + e)) =
+·
 
 � �
-_d_ 1 + _[e]_ (11.175)
-_·_
+d 1 + [e] (11.175)
+·
 
 2 [+][ e]4 [2] [+][ O][(][e][3][)]
 
-
 Then try
 
-
-_d (7 x[2]_ + d)
+d (7 x[2] + d)
 Φ[∗](x) = (11.176)
 
-_x (3 x[2]_ + 5 d)
+x (3 x[2] + 5 d)
 
 and find that it offers quadratic convergence
 
-
-_√_
+√
 Φ(
 
-
-_√_
-_d_ (1 + e)) =
-_·_
-
+√
+d (1 + e)) =
+·
 
 � �
-_d_ 1 (11.177)
-_·_ _−_ _[e][2]_
+d 1 (11.177)
+· − [e][2]
 
 4 [+][ e]16 [3] [+][ O][(][e][4][)]
 
-
 In general, if Φ has convergence of order n then Φ[∗] will be of order 2n 1. (See [7]).
-_−_
+−
 
 #### 11.9 Trancendental functions & the AGM
-
 ##### 11.9.1 The AGM
-
 The AGM (arithmetic geometric mean) plays a central role in the high precision computation of logarithms
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 190
+CHAPTER 11. ARITHMETICAL ALGORITHMS 190
 
 The AGM (a, b) is defined as the limit of the iteration AGM iteration, cf.11.178 :
 
-_ak + bk_
-_ak+1_ = 2 (11.178)
+ak + bk
+ak+1 = 2 (11.178)
 
 �
-_bk+1_ = _ak bk_ (11.179)
+bk+1 = ak bk (11.179)
 
 starting with a0 = a and b0 = b. Both of the values converge quadratically to a common limit. The
 related quantity ck (used in many AGM based computations) is defined as
 
-_c[2]k_ = _a[2]k_ _[−]_ _[b]k[2]_ (11.180)
-= (ak−1 − _ak)[2]_ (11.181)
+c[2]k = a[2]k [−] [b]k[2] (11.180)
+= (ak−1 − ak)[2] (11.181)
 
 One further defines (cf. [5] p.221)
 
-
 �−1
 
+E(k)
+R[′](k) :=
 
-_E(k)_
-_R[′](k)_ :=
-
-_K(k) [=]_
-
+K(k) [=]
 
 �
 
-
 1
-_−_
+−
 
-
-_∞_
+∞
 �
 
 2[n][−][1]c[2]n
-_n=0_
-
+n=0
 
 (11.182)
 
+where c[2]n [:=][ a]n[2] n [corresponding to][ AGM] [(1][, k][).]
 
-where c[2]n [:=][ a]n[2] _n_ [corresponding to][ AGM] [(1][, k][).]
-
-_[−]_ _[b][2]_
+[−] [b][2]
 
 An alternative way for the computation for the AGM iteration is
 
-_ck+1_ = _ak −2_ _bk_ (11.183)
+ck+1 = ak −2 bk (11.183)
 
-_ak + bk_
-_ak+1_ = 2 (11.184)
+ak + bk
+ak+1 = 2 (11.184)
 
 �
-_bk+1_ = _a[2]k+1_ _[−]_ _[c]k[2]+1_ (11.185)
-
+bk+1 = a[2]k+1 [−] [c]k[2]+1 (11.185)
 
 Sch¨onhage gives the most economic variant of the AGM, which, apart from the square root, only needs
 one squaring per step:
 
-_A0_ = _a[2]0_ (11.186)
-_B0_ = _b[2]0_ (11.187)
-_t0_ = 1 − (A0 − _B0)_ (11.188)
+A0 = a[2]0 (11.186)
+B0 = b[2]0 (11.187)
+t0 = 1 − (A0 − B0) (11.188)
 
-_Ak + Bk_
-_Sk_ = 4 (11.189)
+Ak + Bk
+Sk = 4 (11.189)
 
 �
-_bk_ = _Bk_ square root computation (11.190)
+bk = Bk square root computation (11.190)
 
+ak + bk
+ak+1 = 2 (11.191)
 
-_ak + bk_
-_ak+1_ = 2 (11.191)
+Ak+1 = a[2]k+1 squaring (11.192)
 
-_Ak+1_ = _a[2]k+1_ squaring (11.192)
-
-� _√Ak + √Bk_ �2 _√Ak Bk_
-= = _[A][k][ +][ B][k]_ + (11.193)
+� √Ak + √Bk �2 √Ak Bk
+= = [A][k][ +][ B][k] + (11.193)
 
 2 4 2
 
-_Bk+1_ = 2 (Ak+1 − _SK)_ = b[2]k+1 (11.194)
-_c[2]k+1_ = _Ak+1 −_ _Bk+1_ (11.195)
+Bk+1 = 2 (Ak+1 − SK) = b[2]k+1 (11.194)
+c[2]k+1 = Ak+1 − Bk+1 (11.195)
 
-_tk+1_ = _tk −_ 2[k][+1] _c[2]k+1_ (11.196)
+tk+1 = tk − 2[k][+1] c[2]k+1 (11.196)
 
 Starting with a0 = A0 = 1, B0 = 1/2 one has π ≈ (2 a[2]n[)][/t][n][.]
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 191
+CHAPTER 11. ARITHMETICAL ALGORITHMS 191
 
 Combining two steps of the AGM iteration leads to the 4th order AGM iteration:
 
-_√_
-_α0_ = _a0_ (11.197)
+√
+α0 = a0 (11.197)
 
 �
-_β0_ = _b0_ (11.198)
+β0 = b0 (11.198)
 
+αk + βk
+αk+1 = 2 (11.199)
 
-_αk + βk_
-_αk+1_ = 2 (11.199)
+� αk βk (αk2 [+][ β]k[2][)] �1/4
+βk+1 = 2 (11.200)
 
-� _αk βk (αk2_ [+][ β]k[2][)] �1/4
-_βk+1_ = 2 (11.200)
+γk[4] = αk[4] [−] [β]k[4] = c[2]k/2 (11.201)
 
-_γk[4]_ = _αk[4]_ _[−]_ _[β]k[4]_ = c[2]k/2 (11.201)
-
-(Note that αk = _[√]a2k and βk =_ _[√]b2k.) and_
-
+(Note that αk = [√]a2k and βk = [√]b2k.) and
 
 (11.202)
 
-
 �
-
 
 2[��][−][1]
 �
 
-
-_R[′](k)_ =
-
+R[′](k) =
 
 1
-_−_
+−
 
+�∞ � � αn2 [+][ β]n[2]
 
-�∞ � � _αn2_ [+][ β]n[2]
+4[n] αn[4] [−] 2
+n=0
 
-4[n] _αn[4]_ _[−]_ 2
-_n=0_
-
-
-_√_
+√
 corresponding to AGM 4(1,
 
-
-_k) (cf. [5] p.17)._
-
+k) (cf. [5] p.17).
 
 An alternative formulation of the 4th order AGM iteration is:
 
-_γk+1_ = _αk −2_ _βk_ (11.203)
+γk+1 = αk −2 βk (11.203)
 
-_αk + βk_
-_αk+1_ = 2 (11.204)
+αk + βk
+αk+1 = 2 (11.204)
 
-_βk+1_ = �αk[4]+1 _[−]_ _[γ]k[4]+1�1/4_ (11.205)
+βk+1 = �αk[4]+1 [−] [γ]k[4]+1�1/4 (11.205)
 
-_c[2]k/2_ [+ 2][ c]k/[2] 2+1 = _αk[4]−1_ _[−]_ �αk[2] _[−]_ _[γ]k[2]�2_ (11.206)
-
+c[2]k/2 [+ 2][ c]k/[2] 2+1 = αk[4]−1 [−] �αk[2] [−] [γ]k[2]�2 (11.206)
 
 ##### 11.9.2 log
-
 The (natural) logarithm can be computed using the following relation (cf. [5] p.221)
 
-��log(x) − _R′(10−n) + R′(10−n x)��_ _≤_ _n_ (11.207)
+��log(x) − R′(10−n) + R′(10−n x)�� ≤ n (11.207)
 
 10[2(][n][−][1)]
 
-log(x) _R[′](10[−][n])_ _R[′](10[−][n]_ _x)_ (11.208)
-_≈_ _−_
+log(x) R[′](10[−][n]) R[′](10[−][n] x) (11.208)
+≈ −
 
-
-that holds for n ≥ 3 and x ∈] [1]2 _[,][ 1[. Note that the first term on the rhs. is constant and might be stored]_
+that holds for n ≥ 3 and x ∈] [1]2 [,][ 1[. Note that the first term on the rhs. is constant and might be stored]
 
 for subsequent log-computations. See also section 11.10.
 
@@ -14936,99 +14057,87 @@ for subsequent log-computations. See also section 11.10.
 
 If one has some efficient algorithm for exp() one can compute log() from exp() using
 
+y := 1 d e[−][x] (11.209)
+−
+log(d) = x + log(1 y) (11.210)
+−
 
-_y_ := 1 _d e[−][x]_ (11.209)
-_−_
-log(d) = _x + log(1_ _y)_ (11.210)
-_−_
-
-= _x + log_ �1 (1 _d e[−][x])�_ = x + log (e[−][x]d) = x + ( _x + log(d))_ (11.211)
-_−_ _−_ _−_
-
+= x + log �1 (1 d e[−][x])� = x + log (e[−][x]d) = x + ( x + log(d)) (11.211)
+− − −
 
 Then
 
-
 � �
-log(d) = _x + log (1_ _y) = x_ _y +_ _[y][2]_ (11.212)
-_−_ _−_
+log(d) = x + log (1 y) = x y + [y][2] (11.212)
+− −
 
 2 [+][ y]3 [3] [+][ . . .]
 
 Truncation of the series after the n-th power of y gives an iteration of order n + 1:
 
-� _y[2]_ _y[3]_ _y[n][−][1][ �]_
+� y[2] y[3] y[n][−][1][ �]
 Φ ( ) (11 213)
 
+CHAPTER 11. ARITHMETICAL ALGORITHMS 192
 
------
+Pad´e series P[i,j](z) of log (1 − z) at z = 0 produce (order i + j + 2) iterations. For i = j we get
 
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 192
+[i, j] �→ x + P[i,j](z = 1 − d e[−][x]) (11.214)
 
-Pad´e series P[i,j](z) of log (1 − _z) at z = 0 produce (order i + j + 2) iterations. For i = j we get_
+[0, 0] x z (11.215)
+�→ −
 
-[i, j] _�→_ _x + P[i,j](z = 1 −_ _d e[−][x])_ (11.214)
-
-[0, 0] _x_ _z_ (11.215)
-_�→_ _−_
-
-[1, 1] _x_ _z_ [6][ −] _[z]_ (11.216)
-_�→_ _−_ _·_
+[1, 1] x z [6][ −] [z] (11.216)
+�→ − ·
 
 6 4z
-_−_
+−
 
-[2, 2] _x_ _z_ [30][ −] [21][z][ +][ z][2] (11.217)
-_�→_ _−_ _·_
+[2, 2] x z [30][ −] [21][z][ +][ z][2] (11.217)
+�→ − ·
 
 30 36z + 9z[2]
-_−_
+−
 
 3780 6510z + 3360z[2] 505z[3] + 6z[4]
-_−_ _−_
+− −
 
-[4, 4] _x_ _z_ (11.218)
-_�→_ _−_ _·_
+[4, 4] x z (11.218)
+�→ − ·
 
 3780 8400z + 6300z[2] 1800z[3] + 150z[4]
-_−_ _−_
-
+− −
 
 Compared to the power series based iteration one needs one additional long division but saves half of the
 exponentiations. This can be a substancial saving for high order iterations.
 
 ##### 11.9.3 exp
-
 The exponential function can be computed using the iteration that is obtained as follows:
 
-exp(d) = _x exp (d_ log(x)) (11.219)
-_−_
+exp(d) = x exp (d log(x)) (11.219)
+−
 
-= _x exp(y)_ where _y := d_ log(x) (11.220)
-_−_
+= x exp(y) where y := d log(x) (11.220)
+−
 
 � �
-= _x_ 1 + y + _[y][2]_ (11.221)
+= x 1 + y + [y][2] (11.221)
 
 2 [+][ y]3! [3] [+][ . . .]
 
-
 The corresponding n-th oder iteration is
 
-_xk+1_ = Φn(xk) := xk
+xk+1 = Φn(xk) := xk
 
-
-� _y[n][−][1]_
-1 + y + _[y][2]_
+� y[n][−][1]
+1 + y + [y][2]
 
 2 [+][ y]3! [3] [+][ . . .] (n 1)!
 
-_−_
-
+−
 
 �
 (11.222)
-
 
 As the computation of logarithms is expensive one should use a higher (e.g. 8th) order iteration.
 
@@ -15036,343 +14145,291 @@ As the computation of logarithms is expensive one should use a higher (e.g. 8th)
 
 Pad´e series P[i,j](z) of exp (z) at z = 0 produce (order i + j + 1) iterations. For i = j we get
 
-[i, j] _�→_ _x P[i,j](z = d −_ log x) (11.223)
+[i, j] �→ x P[i,j](z = d − log x) (11.223)
 
-[1, 1] _x_ _[z][ + 2]_ (11.224)
-_�→_ _·_
+[1, 1] x [z][ + 2] (11.224)
+�→ ·
 
-_z_ 2
-_−_
+z 2
+−
 
-[2, 2] _x_ [12 + 6][z][ +][ z][2] (11.225)
-_�→_ _·_
+[2, 2] x [12 + 6][z][ +][ z][2] (11.225)
+�→ ·
 
 12 6z + z[2]
-_−_
+−
 
-[4, 4] _x_ [1680 + 840][z][ + 180][z][2][ + 20][z][3][ +][ z][4] (11.226)
-_�→_ _·_
+[4, 4] x [1680 + 840][z][ + 180][z][2][ + 20][z][3][ +][ z][4] (11.226)
+�→ ·
 
 1680 840z + 180z[2] 20z[3] + z[4]
-_−_ _−_
+− −
 
 The [i, j]-th Pad´e approximant of exp(z) is
 
+�
 
 �
 
+P[i,j](z) =
 
+� i
 �
 
+k=0
 
-_P[i,j](z)_ =
+� i�
+k
 
+�i+j� [z]k[k]!
+k
 
-� _i_
+/
+
+� j
 �
 
-_k=0_
-
-
-� _i�_
-_k_
-
-�i+j� _[z]k[k]!_
-_k_
-
-
-_/_
-
-
-� _j_
-�
-
-_k=0_
-
+k=0
 
 �j�
-_k_
+k
 
 �i+j� [(][−]k[z]![)][k]
-_k_
-
+k
 
 (11.227)
 
-
 The numerator for i = j (multiplied by (2i)!/i! in order to avoid rational coefficients) is
-
 
 (2i)!
 =
 
-_·_
-_i!_
+·
+i!
 
-
-_i_
+i
 �
 
-_k=0_
+k=0
 
+� i�
+k (11.228)
 
-� _i�_
-_k_ (11.228)
+�2 i� [z]k[k]!
+k
 
-�2 i� _[z]k[k]!_
-_k_
-
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 193
+CHAPTER 11. ARITHMETICAL ALGORITHMS 193
 
 ##### 11.9.4 sin, cos, tan
-
 For arcsin, arccos and arctan use the complex analogue of the AGM. For sin, cos and tan use the exp
 iteration above think complex.
 
 ##### 11.9.5 Elliptic K
-
 The function K can be defined as
 
-
-� _π/2_
-_K(k)_ =
+� π/2
+K(k) =
 
 0
 
-
-_d Θ_ � 1
+d Θ � 1
 
 =
 
 �
 
-1 _k[2]_ sin[2] Θ 0
-_−_
+1 k[2] sin[2] Θ 0
+−
 
-
-_d t_
+d t
 
 (11.229)
 
-�(1 _t[2]) (1_ _k[2]t[2])_
+�(1 t[2]) (1 k[2]t[2])
 
-_−_ _−_
-
+− −
 
 One has
 
-
-_π_
-_K(k)_ =
+π
+K(k) =
 
 2 [2][F][1]
-
 
 � 1 �
 
 (11.230)
 
-2 _[,][ 1]2 [; 1;][ k][2]_
-
+2 [,][ 1]2 [; 1;][ k][2]
 
 � (2 i 1)!!
-_−_
+−
 
-2[i] _i!_
-
+2[i] i!
 
 �2
-_k[2][i]_ (11.231)
+k[2][i] (11.231)
 
+π �∞ � (2 i − 1)!! �2
+= k[2][i] (11.231)
 
-_π_ �∞ � (2 i − 1)!! �2
-= _k[2][i]_ (11.231)
+2 2[i] i!
 
-2 2[i] _i!_
+i=0
 
-_i=0_
-
-_π_
-_K(0)_ = (11.232)
+π
+K(0) = (11.232)
 
 2
 
-
 and the computational interesting form
 
-_π_ _π_
-_K(k)_ = (11.233)
+π π
+K(k) = (11.233)
 
-2 AGM (1, k[′]) [=] 2 AGM (1, 1 _k[2])_
+2 AGM (1, k[′]) [=] 2 AGM (1, 1 k[2])
 
-_−_
+−
 
+One defines k[′] = 1 − k[2] and K [′] as
 
-One defines k[′] = 1 − _k[2]_ and K _[′]_ as
-
-_π_
-_K_ _[′](k)_ := _K(k[′]) = K(1_ _k[2]) =_ (11.234)
-_−_
+π
+K [′](k) := K(k[′]) = K(1 k[2]) = (11.234)
+−
 
 2 AGM (1, k)
 
 [hfloat: src/tz/elliptick.cc]
 
-Product forms for K and K _[′]_ that are also candidates for fast computations are
+Product forms for K and K [′] that are also candidates for fast computations are
 
+π
+K [′](k0) = 2
 
-_π_
-_K_ _[′](k0)_ = 2
+π
+K(k0) = 2
 
-_π_
-_K(k0)_ = 2
-
-
-_∞_ 2 _∞_
+∞ 2 ∞
 � �
 
-1 + kn = _[π]2_ 1 + kn[′] (11.235)
+1 + kn = [π]2 1 + kn[′] (11.235)
 
-_n=0_ _n=0_
+n=0 n=0
 
-where _kn+1 := [2][ √][k][n]_ _,_ 0 < k0 1
+where kn+1 := [2][ √][k][n] , 0 < k0 1
 
-1 + kn _≤_
+1 + kn ≤
 
-
-_∞_ 2 _∞_
+∞ 2 ∞
 � �
 
-_n=0_ 1 + kn[′] = _[π]2_ _n=0_ 1 + kn (11.236)
+n=0 1 + kn[′] = [π]2 n=0 1 + kn (11.236)
 
-_n_ �1 − _kn[2]_
-where _kn+1 := [1][ −]_ _[k][′]_ = [1][ −] _,_ 0 < k0 1
+n �1 − kn[2]
+where kn+1 := [1][ −] [k][′] = [1][ −] , 0 < k0 1
 
-1 + kn[′] 1 + �1 − _kn[2]_ _≤_
-
+1 + kn[′] 1 + �1 − kn[2] ≤
 
 With an efficient algorithm for K the logarithm can be computed using
 
-_K_ _′(k)_ log (4 4k[2] (8 + log k ) where 0 < k 1 (11.237)
-_−_ _≤_ _|_ _|_ _≤_
-���� _k_ [)]����
+K ′(k) log (4 4k[2] (8 + log k ) where 0 < k 1 (11.237)
+− ≤ | | ≤
+���� k [)]����
 
 ##### 11.9.6 Elliptic E
-
 The function E can be defined as
 
-
-� _π/2_ � 1 _[√]_
+� π/2 � 1 [√]
 �
-_E(k)_ 1 _k[2]_ i [2] Θ d Θ
+E(k) 1 k[2] i [2] Θ d Θ
 
+1 k[2]t[2]
+−
 
-1 _k[2]t[2]_
-_−_
+d t (11 238)
 
-
-_d t_ (11 238)
-
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 194
+CHAPTER 11. ARITHMETICAL ALGORITHMS 194
 
 One has
 
-
-_π_
-_E(k)_ =
+π
+E(k) =
 
 2 [2][F][1]
-
 
 � �
 
 (11.239)
 
-_−_ [1]
+− [1]
 
-2 _[,][ 1]2 [; 1;][ k][2]_
-
+2 [,][ 1]2 [; 1;][ k][2]
 
 �
 
 1
-_−_
-
+−
 
 �
 
-
-_π_ � �∞ � (2 i − 1)!! �2 _k[2][i]_ �
+π � �∞ � (2 i − 1)!! �2 k[2][i] �
 = 1 (11.240)
 
-_−_
+−
 
-2 2[i] _i!_ 2i 1
+2 2[i] i! 2i 1
 
-_i=0_ _−_
+i=0 −
 
-_π_
-_E(0)_ = _E(1) = 1_ (11.241)
+π
+E(0) = E(1) = 1 (11.241)
 
 2
-
 
 The key to fast computations is
 
-_π_
-_E(k)_ = _R[′](k) K(k) =_ (11.242)
+π
+E(k) = R[′](k) K(k) = (11.242)
 
-2 AGM (1, 1 − _k[2]) · (1 −_ [�]n[∞]=0 [2][n][−][1][c]n[2] [)]
+2 AGM (1, 1 − k[2]) · (1 − [�]n[∞]=0 [2][n][−][1][c]n[2] [)]
 
-Similar as for K _[′]_ one defines
+Similar as for K [′] one defines
 
-_E[′](k)_ := _E(k[′]) = E(1_ _k[2])_ (11.243)
-_−_
+E[′](k) := E(k[′]) = E(1 k[2]) (11.243)
+−
 
 Legendre’s relation between K and E is (arguments k omitted for readability):
 
-
-_π_
-_E K_ _[′]_ + E[′] _K −_ _K K_ _[′]_ = (11.244)
+π
+E K [′] + E[′] K − K K [′] = (11.244)
 
 2
 
-For k = _√1_
+For k = √1
 
-2 [=:][ s][ we have][ k][ =][ k][′][, thereby][ K][ =][ K] _[′][ and][ E][ =][ E][′][, so]_
-
+2 [=:][ s][ we have][ k][ =][ k][′][, thereby][ K][ =][ K] [′][ and][ E][ =][ E][′][, so]
 
 �
 = [1] (11.245)
 
 2 π
 
+K(s)
 
-_K(s)_
-
-_π_
-
+π
 
 � 2 E(s)
 
-_−_ _[K][(][s][)]_
-_π_ _π_
+− [K][(][s][)]
+π π
 
+As formulas 11.233 and 11.242 provide a fast AGM based computation of [K]
 
-As formulas 11.233 and 11.242 provide a fast AGM based computation of _[K]_
-
-_π_ [and][ E]π [the above formula]
+π [and][ E]π [the above formula]
 
 can be used to compute π (cf. [5]).
 
 #### 11.10 Computation of π/ log(q)
-
 For the computation of the natural logarithm one can use the relation
 
 log(m r[x]) = log(m) + x log(r) (11.246)
@@ -15383,101 +14440,82 @@ There is a nice way to compute the value of log(r) if the value of π has been p
 
 [5] p.225)
 
-
-_π_ _π_
+π π
 
 = (11.247)
-_−_
+−
 log(1/q) log(q) [=][ AGM] [(][θ][3][(][q][)][2][, θ][2][(][q][)][2][)]
-
 
 Where
 
+θ3(q) :=
 
-_θ3(q)_ :=
-
-
-_∞_
+∞
 �
 
-_q[n][2]_ (11.248)
-_n=−∞_
+q[n][2] (11.248)
+n=−∞
 
-
-_θ2(q)_ = 0 + 2
+θ2(q) = 0 + 2
 
 Computing θ3(q) is easy when q = 1/r:
 
-
-_∞_
+∞
 �
 
-_q[(][n][+1][/][2)][2]_ (11.249)
+q[(][n][+1][/][2)][2] (11.249)
 
-_n=0_
+n=0
 
-
-_∞_
+∞
 �
-_q[n][2]_ ) 1 (11 250)
+q[n][2] ) 1 (11 250)
 
+θ3(q) = 1 + 2
 
-_θ3(q)_ = 1 + 2
-
-
-_∞_
+∞
 �
-_q[n][2]_ = 2 (1 +
+q[n][2] = 2 (1 +
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 195
+CHAPTER 11. ARITHMETICAL ALGORITHMS 195
 
 However, the computation of θ2(q) suggests to choose q = 1/r[4] =: b[4]:
 
-
-_∞_
+∞
 �
 
-_b[4][n][2][+4][n][+1]_ where _q = b[4]_ (11.251)
+b[4][n][2][+4][n][+1] where q = b[4] (11.251)
 
-_n=0_
+n=0
 
-_∞_
+∞
 �
 
-_q[n][2][+][n])_ (11.252)
+q[n][2][+][n]) (11.252)
 
-_n=1_
+n=1
 
+θ2(q) = 0 + 2
 
-_θ2(q)_ = 0 + 2
-
-
-_∞_
+∞
 �
 
-_q[(][n][+1][/][2)][2]_ = 2
+q[(][n][+1][/][2)][2] = 2
 
-_n=0_
-
+n=0
 
 = 2 b
 
 [hfloat: src/tz/pilogq.cc]
 
-
-_∞_
+∞
 �
 
-_q[n][2][+][n]_ = 2 b (1 +
+q[n][2][+][n] = 2 b (1 +
 
-_n=0_
-
+n=0
 
 #### 11.11 Iterations for high precison computations of π
-
 In this section various iterations for computing π with at least second order convergence are given.
 
 The number of full precision multiplications (FPM) are an indication of the efficiency of the algorithm.
@@ -15486,341 +14524,314 @@ digits[12] is indicated like this: #FPM=123.4.
 
 AGM as in [hfloat: src/pi/piagm.cc], #FPM=98.4 (#FPM=149.3 for the quartic variant):
 
-_a0_ = 1 (11.253)
+a0 = 1 (11.253)
 
 1
-_b0_ = _√_ (11.254)
+b0 = √ (11.254)
 
 2
 
-_pn_ = 2 a[2]n+1 _→_ _π_ (11.255)
+pn = 2 a[2]n+1 → π (11.255)
 
 1 − [�]k[n]=0 [2][k][ c]k[2]
 
-_π[2]_ 2[n][+4] _e[−][π][ 2][n][+1]_
-_π −_ _pn_ = (11.256)
+π[2] 2[n][+4] e[−][π][ 2][n][+1]
+π − pn = (11.256)
 
-_AGM_ [2](a0, b0)
-
+AGM [2](a0, b0)
 
 A fourth order version uses 11.197, cf. also [hfloat: src/pi/piagm.cc].
 
 AGM variant as in [hfloat: src/pi/piagm3.cc], #FPM=99.5 (#FPM=155.3 for the quartic variant):
 
-_a0_ = 1 (11.257)
+a0 = 1 (11.257)
 
-_√_ _√_
+√ √
 
 6 + 2
 
-_b0_ = 4 (11.258)
+b0 = 4 (11.258)
 
-_pn_ = _√_ 2 a[2]n+1 _→_ _π_ (11.259)
+pn = √ 2 a[2]n+1 → π (11.259)
 
 3 (1 − [�]k[n]=0 [2][k][ c]k[2][)][ −] [1]
 
-_√3 π[2]_ 2[n][+4] _e[−]√3 π 2[n][+1]_
+√3 π[2] 2[n][+4] e[−]√3 π 2[n][+1]
 
-_π −_ _pn_ _<_ (11.260)
+π − pn < (11.260)
 
-_AGM_ [2](a0, b0)
-
+AGM [2](a0, b0)
 
 AGM variant as in [hfloat: src/pi/piagm3.cc], #FPM=108.2 (#FPM=169.5 for the quartic variant):
 
-_a0_ = 1 (11.261)
+a0 = 1 (11.261)
 
-_√_ _√_
+√ √
 
 6 2
-_−_
+−
 
-_b0_ = 4 (11.262)
+b0 = 4 (11.262)
 
-_pn_ = _√_ 6 a[2]n+1 _→_ _π_ (11.263)
+pn = √ 6 a[2]n+1 → π (11.263)
 
 3 (1 − [�]k[n]=0 [2][k][ c]k[2][) + 1]
 
-_√1_ _√3_ _[π][ 2][n][+1]_
+√1 √3 [π][ 2][n][+1]
 
-3 _[π][2][ 2][n][+4][ e][−]_ [1]
+3 [π][2][ 2][n][+4][ e][−] [1]
 
-_π −_ _pn_ _<_ (11.264)
+π − pn < (11.264)
 
-_AGM_ (a0, b0)[2]
+AGM (a0, b0)[2]
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 196
+CHAPTER 11. ARITHMETICAL ALGORITHMS 196
 
 Borwein’s quartic (fourth order) iteration, variant r = 4 as in [hfloat: src/pi/pi4th.cc], #FPM=170.5:
 
-_√_
-_y0_ = 2 − 1 (11.265)
+√
+y0 = 2 − 1 (11.265)
 
-_√_
-_a0_ = 6 − 4 2 (11.266)
+√
+a0 = 6 − 4 2 (11.266)
 
-1 − (1 − _yk[4][)][1][/][4]_
-_yk+1_ = _→_ 0 + (11.267)
+1 − (1 − yk[4][)][1][/][4]
+yk+1 = → 0 + (11.267)
 
-1 + (1 − _yk[4][)][1][/][4]_
+1 + (1 − yk[4][)][1][/][4]
 
-(1 − _yk[4][)][−][1][/][4][ −]_ [1]
+(1 − yk[4][)][−][1][/][4][ −] [1]
 = (11.268)
 
-(1 − _yk[4][)][−][1][/][4][ + 1]_
+(1 − yk[4][)][−][1][/][4][ + 1]
 
-_ak+1_ = _ak (1 + yk+1)[4]_ _−_ 2[2][k][+3] _yk+1 (1 + yk+1 + yk[2]+1[)]_ _→_ [1] (11.269)
+ak+1 = ak (1 + yk+1)[4] − 2[2][k][+3] yk+1 (1 + yk+1 + yk[2]+1[)] → [1] (11.269)
 
-_π_
+π
 
-= _ak ((1 + yk+1)[2])[2]_ _−_ 2[2][k][+3] _yk+1 ((1 + yk+1)[2]_ _−_ _yk+1)_ (11.270)
+= ak ((1 + yk+1)[2])[2] − 2[2][k][+3] yk+1 ((1 + yk+1)[2] − yk+1) (11.270)
 
-0 _<_ _ak −_ _π[−][1]_ _≤_ 16 · 4[n] 2 e[−][4][n][ 2][ π] (11.271)
-
+0 < ak − π[−][1] ≤ 16 · 4[n] 2 e[−][4][n][ 2][ π] (11.271)
 
 Identities 11.268 and 11.270 show how to save operations.
 
 Borwein’s quartic (fourth order) iteration, variant r = 16 as in [hfloat: src/pi/pi4th.cc], #FPM=164.4:
 
 1 2[−][1][/][4]
-_−_
-_y0_ = 1 + 2[−][1][/][4] (11.272)
+−
+y0 = 1 + 2[−][1][/][4] (11.272)
 
-_√_
+√
 8/ 2 2
 
-_−_
+−
 
-_a0_ = (2[−][1][/][4] + 1)[4] (11.273)
+a0 = (2[−][1][/][4] + 1)[4] (11.273)
 
+(1 − yk[4][)][−][1][/][4][ −] [1]
+yk+1 = → 0 + (11.274)
 
-(1 − _yk[4][)][−][1][/][4][ −]_ [1]
-_yk+1_ = _→_ 0 + (11.274)
+(1 − yk[4][)][−][1][/][4][ + 1]
 
-(1 − _yk[4][)][−][1][/][4][ + 1]_
+ak+1 = ak (1 + yk+1)[4] − 2[2][k][+4] yk+1 (1 + yk+1 + yk[2]+1[)] → [1] (11.275)
 
-_ak+1_ = _ak (1 + yk+1)[4]_ _−_ 2[2][k][+4] _yk+1 (1 + yk+1 + yk[2]+1[)]_ _→_ [1] (11.275)
+π
 
-_π_
-
-0 _<_ _ak −_ _π[−][1]_ _≤_ 16 · 4[n] 4 e[−][4][n][ 4][ π] (11.276)
+0 < ak − π[−][1] ≤ 16 · 4[n] 4 e[−][4][n][ 4][ π] (11.276)
 
 Same operation count as before, but this variant gives approximately twice as much precision after the
 same number of steps.
 
 The general form of the quartic iterations (11.265 and 11.272) is
 
-
 �
-_y0_ =
+y0 =
 
+λ[∗](r) (11.277)
 
-_λ[∗](r)_ (11.277)
+a0 = α(r) (11.278)
 
+(1 − yk[4][)][−][1][/][4][ −] [1]
+yk+1 = → 0 + (11.279)
 
-_a0_ = _α(r)_ (11.278)
+(1 − yk[4][)][−][1][/][4][ + 1]
 
-(1 − _yk[4][)][−][1][/][4][ −]_ [1]
-_yk+1_ = _→_ 0 + (11.279)
+ak+1 = ak (1 + yk+1)[4] − 2[2][k][+2][ √]r yk (1 + yk+1 + yk[2]+1[)] → [1] (11.280)
 
-(1 − _yk[4][)][−][1][/][4][ + 1]_
+π
 
-_ak+1_ = _ak (1 + yk+1)[4]_ _−_ 2[2][k][+2][ √]r yk (1 + yk+1 + yk[2]+1[)] _→_ [1] (11.280)
-
-_π_
-
-0 _<_ _ak −_ _π[−][1]_ _≤_ 16 · 4[n][ √]r e[−][4][n][ √][r π] (11.281)
-
+0 < ak − π[−][1] ≤ 16 · 4[n][ √]r e[−][4][n][ √][r π] (11.281)
 
 Cf. [5], p.170f.
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 197
+CHAPTER 11. ARITHMETICAL ALGORITHMS 197
 
 Derived AGM iteration (second order) as in [hfloat: src/pi/pideriv.cc], #FPM=276.2:
 
-_√_
-_x0_ = 2 (11.282)
+√
+x0 = 2 (11.282)
 
-_√_
-_p0_ = 2 + 2 (11.283)
+√
+p0 = 2 + 2 (11.283)
 
-_y1_ = 2[1][/][4] (11.284)
+y1 = 2[1][/][4] (11.284)
 
 1 � 1 �
 
-_√_
+√
 
-_xk+1_ = 2 _xk +_ _√xk_ (k ≥ 0) _→_ 1 + (11.285)
+xk+1 = 2 xk + √xk (k ≥ 0) → 1 + (11.285)
 
-_yk_ _[√]xk +_ _√1xk_
-_yk+1_ = (k ≥ 1) _→_ 1 + (11.286)
+yk [√]xk + √1xk
+yk+1 = (k ≥ 1) → 1 + (11.286)
 
-_yk + 1_
+yk + 1
 
-_xk + 1_
-_pk+1_ = _pk_ (k ≥ 1) _→_ _π +_ (11.287)
-_yk + 1_
+xk + 1
+pk+1 = pk (k ≥ 1) → π + (11.287)
+yk + 1
 
-_pk −_ _π_ = 10[−][2][k][+1] (11.288)
+pk − π = 10[−][2][k][+1] (11.288)
 
 Cubic AGM from [25], as in [hfloat: src/pi/picubagm.cc], #FPM=182.7:
 
-_a0_ = 1 (11.289)
+a0 = 1 (11.289)
 
-_√_
+√
 
 3 1
-_−_
+−
 
-_b0_ = 2 (11.290)
+b0 = 2 (11.290)
 
-_an + 2 bn_
-_an+1_ = 3 (11.291)
+an + 2 bn
+an+1 = 3 (11.291)
 
 �
-3 _bn (a[2]n + an bn + b[2]n)_
-_bn+1_ = 3 (11.292)
+3 bn (a[2]n + an bn + b[2]n)
+bn+1 = 3 (11.292)
 
-_pn_ = 1 − [�]k[n]=0 [3]3[k] a[ (][2]n[a]k[2] _k+1[)]_ (11.293)
+pn = 1 − [�]k[n]=0 [3]3[k] a[ (][2]n[a]k[2] k+1[)] (11.293)
 
-_[−]_ _[a][2]_
-
+[−] [a][2]
 
 Second order iteration, as in [hfloat: src/pi/pi2nd.cc], #FPM=255.7:
 
 1
-_y0_ = _√_ (11.294)
+y0 = √ (11.294)
 
 2
 
 1
-_a0_ = 2 (11.295)
+a0 = 2 (11.295)
 
-1 − (1 − _yk[2][)][1][/][2]_
-_yk+1_ = _→_ 0 + (11.296)
+1 − (1 − yk[2][)][1][/][2]
+yk+1 = → 0 + (11.296)
 
-1 + (1 − _yk[2][)][1][/][2]_
+1 + (1 − yk[2][)][1][/][2]
 
-(1 − _yk[2][)][−][1][/][2][ −]_ [1]
+(1 − yk[2][)][−][1][/][2][ −] [1]
 = (11.297)
 
-(1 − _yk[2][)][−][1][/][2][ + 1]_
+(1 − yk[2][)][−][1][/][2][ + 1]
 
-_ak+1_ = _ak (1 + yk+1)[2]_ _−_ 2[k][+1] _yk+1_ _→_ [1] (11.298)
+ak+1 = ak (1 + yk+1)[2] − 2[k][+1] yk+1 → [1] (11.298)
 
-_π_
+π
 
-_ak −_ _π[−][1]_ _≤_ 16 · 2[k][+1] _e[−][2][k][+1][ π]_ (11.299)
-
+ak − π[−][1] ≤ 16 · 2[k][+1] e[−][2][k][+1][ π] (11.299)
 
 11.297 shows how to save 1 multiplication per step (cf. section 11.3).
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 198
+CHAPTER 11. ARITHMETICAL ALGORITHMS 198
 
 Quintic (5th order) iteration from the article [22], as in [hfloat: src/pi/pi5th.cc], #FPM=353.2:
 
-_√_
-_s0_ = 5( 5 − 2) (11.300)
+√
+s0 = 5( 5 − 2) (11.300)
 
 1
-_a0_ = 2 (11.301)
+a0 = 2 (11.301)
 
 25
-_sn+1_ = _→_ 1 (11.302)
+sn+1 = → 1 (11.302)
 
-_sn(z + x/z + 1)[2]_
+sn(z + x/z + 1)[2]
 
 5
 where x = 1 4 (11.303)
 
-_−_ _→_
-_sn_
+− →
+sn
 
 and y = (x 1)[2] + 7 16 (11.304)
-_−_ _→_
+− →
 
-� _x_ � � ��1/5
-and z = _y +_ _y[2]_ 4x[3] 2 (11.305)
+� x � � ��1/5
+and z = y + y[2] 4x[3] 2 (11.305)
 
-_−_ _→_
+− →
 
 2
 
-_an+1_ = _s[2]n[a][n]_ _[−]_ [5][n] � _s2n_ 2[−] [5] + �sn (s[2]n − 2sn + 5)� _→_ _π[1]_ (11.306)
+an+1 = s[2]n[a][n] [−] [5][n] � s2n 2[−] [5] + �sn (s[2]n − 2sn + 5)� → π[1] (11.306)
 
-
-_an −_ _π[1]_ _<_ 16 · 5[n] _e[−][π][ 5][n]_ (11.307)
-
+an − π[1] < 16 · 5[n] e[−][π][ 5][n] (11.307)
 
 Cubic (third order) iteration from [23], as in [hfloat: src/pi/pi3rd.cc], #FPM=200.3:
 
 1
-_a0_ = 3 (11.308)
+a0 = 3 (11.308)
 
-_√_
+√
 
 3 1
-_−_
+−
 
-_s0_ = 2 (11.309)
+s0 = 2 (11.309)
 
 3
-_rk+1_ = 1 + 2 (1 − _s[3]k[)][1][/][3]_ (11.310)
+rk+1 = 1 + 2 (1 − s[3]k[)][1][/][3] (11.310)
 
-_sk+1_ = _rk+12 −_ 1 (11.311)
+sk+1 = rk+12 − 1 (11.311)
 
-_ak+1_ = _rk[2]+1_ _[a][k]_ _[−]_ [3][k][ (][r]k[2]+1 _[−]_ [1)] _→_ _π[1]_ (11.312)
-
+ak+1 = rk[2]+1 [a][k] [−] [3][k][ (][r]k[2]+1 [−] [1)] → π[1] (11.312)
 
 Nonic (9th order) iteration from [23], as in [hfloat: src/pi/pi9th.cc], #FPM=273.7:
 
 1
-_a0_ = 3 (11.313)
+a0 = 3 (11.313)
 
-_√_
+√
 
 3 1
-_−_
+−
 
-_r0_ = 2 (11.314)
+r0 = 2 (11.314)
 
-_s0_ = (1 − _r0[3][)][1][/][3]_ (11.315)
+s0 = (1 − r0[3][)][1][/][3] (11.315)
 
-_t_ = 1 + 2 rk (11.316)
+t = 1 + 2 rk (11.316)
 
+u = �9 rk (1 + rk + rk[2][)]�1/3 (11.317)
 
-_u_ = �9 rk (1 + rk + rk[2][)]�1/3 (11.317)
-
-_v_ = _t[2]_ + t u + u[2] (11.318)
+v = t[2] + t u + u[2] (11.318)
 
 27 (1 + sk + s[2]k[)]
-_m_ = (11.319)
+m = (11.319)
 
-_v_
+v
 
-_ak+1_ = _m ak + 3[2][ k][−][1]_ (1 − _m)_ _→_ [1] (11.320)
+ak+1 = m ak + 3[2][ k][−][1] (1 − m) → [1] (11.320)
 
-_π_
+π
 
-(1 − _rk)[3]_
-_sk+1_ = (t + 2 u) v (11.321)
+(1 − rk)[3]
+sk+1 = (t + 2 u) v (11.321)
 
+rk+1 = (1 − s[3]k[)][1][/][3] (11.322)
 
-_rk+1_ = (1 − _s[3]k[)][1][/][3]_ (11.322)
-
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 199
+CHAPTER 11. ARITHMETICAL ALGORITHMS 199
 ```
    #FPM - algorithm name in hfloat
  78.424 - pi_agm_sch()
@@ -15847,88 +14858,81 @@ TBD: slow quartic, slow quart.AGM
 TBD: other quant: num of variables
 
 ##### More iterations for π
-
 These are not (yet) implemented in hfloat.
 
 A third order algorithm from [24]:
 
-_v0_ = 2[−][1][/][8] (11.323)
+v0 = 2[−][1][/][8] (11.323)
 
-_v1_ = 2[−][7][/][8][ �](1 − 3[1][/][2]) 2[−][1][/][2] + 3[1][/][4][�] (11.324)
+v1 = 2[−][7][/][8][ �](1 − 3[1][/][2]) 2[−][1][/][2] + 3[1][/][4][�] (11.324)
 
-_w0_ = 1 (11.325)
+w0 = 1 (11.325)
 
-_α0_ = 1 (11.326)
+α0 = 1 (11.326)
 
-_β0_ = 0 (11.327)
+β0 = 0 (11.327)
 
-_vn+1_ = _vn[3]_ _[−]_ �vn[6] [+] �4vn[2] [(1][ −] _[v]n[8]_ [)]�1/3[�][1][/][2] + vn−1 (11.328)
+vn+1 = vn[3] [−] �vn[6] [+] �4vn[2] [(1][ −] [v]n[8] [)]�1/3[�][1][/][2] + vn−1 (11.328)
 
-_wn+1_ = 22vvnn[3][3]+1[+][ v][n][+1] ��33vvnn[2][2]+1+1[v][v]nn[2][2] _[−]_ [1]�� _wn_ (11.329)
+wn+1 = 22vvnn[3][3]+1[+][ v][n][+1] ��33vvnn[2][2]+1+1[v][v]nn[2][2] [−] [1]�� wn (11.329)
 
-_[−]_ _[v][n]_ _[−]_ [1]
+[−] [v][n] [−] [1]
 
-_αn+1_ = � 2vn3+1 + 1� _αn_ (11.330)
+αn+1 = � 2vn3+1 + 1� αn (11.330)
 
-_vn_
+vn
 
-� 2vn3+1 � _n+1[α][n]_
-_βn+1_ = + 1 _βn + (6wn+1vn_ 2vn+1wn) _[v][2]_ (11.331)
+� 2vn3+1 � n+1[α][n]
+βn+1 = + 1 βn + (6wn+1vn 2vn+1wn) [v][2] (11.331)
 
-_vn_ _−_ _vn[2]_
-
+vn − vn[2]
 
 8 2[1][/][8]
-_·_
-_πn_ = _→_ _π_ (11.332)
+·
+πn = → π (11.332)
 
-_αn βn_
+αn βn
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 200
+CHAPTER 11. ARITHMETICAL ALGORITHMS 200
 
 A second order algorithm from [26]:
 
-_α0_ = 1/3 (11.333)
+α0 = 1/3 (11.333)
 
-_m0_ = 2 (11.334)
+m0 = 2 (11.334)
 
 4
-_mn+1_ = 1 + �(4 − _mn) (2 + mn)_ (11.335)
+mn+1 = 1 + �(4 − mn) (2 + mn) (11.335)
 
-_αn+1_ = _mn αn + [2][n]_ _→_ [1] (11.336)
+αn+1 = mn αn + [2][n] → [1] (11.336)
 
-3 [(1][ −] _[m][n][)]_ _π_
+3 [(1][ −] [m][n][)] π
 
 Another second order algorithm from [26]:
 
-_α0_ = 1/3 (11.337)
-_s1_ = 1/3 (11.338)
+α0 = 1/3 (11.337)
+s1 = 1/3 (11.338)
 (sn)[2] + (s[∗]n[)][2] = 1 (11.339)
 
 (1 + 3 sn+1) (1 + 3 s[∗]n[)] = 4 (11.340)
 
-_αn+1_ = (1 + 3 sn+1)αn − 2[n] _sn+1_ _→_ _π[1]_ (11.341)
+αn+1 = (1 + 3 sn+1)αn − 2[n] sn+1 → π[1] (11.341)
 
 A fourth order algorithm from [26]:
 
+α0 = 1/3 (11.342)
 
-_α0_ = 1/3 (11.342)
-
-_√_
-_s1_ = 2 − 1 (11.343)
+√
+s1 = 2 − 1 (11.343)
 
 (sn)[4] + (s[∗]n[)][4] = 1 (11.344)
 (1 + 3 sn+1) (1 + 3 s[∗]n[)] = 2 (11.345)
 
-_αn+1_ = (1 + sn+1)[4]αn + [4][n][+1] (1 − (1 + sn+1)[4]) _→_ [1] (11.346)
+αn+1 = (1 + sn+1)[4]αn + [4][n][+1] (1 − (1 + sn+1)[4]) → [1] (11.346)
 
-3 _π_
+3 π
 
 #### 11.12 The binary splitting algorithm for rational series
-
 The straight forward computation of a series for which each term adds a constant amount of precision[13]
 
 to a precision of N digits involves the summation of proportional N terms. To get N bits of precision one
@@ -15936,129 +14940,113 @@ has to add proportional N terms of the sum, each term involves one (length-N ) s
 addition). Therefore the total work is proportional N [2], which makes it impossible to compute billions of
 digits from linearly convergent series even if they are as ‘good’ as Chudnovsky’s famous series for π:
 
-
 �
 (11.347)
 
-
 � 13591409 �� (6k)! ( 1)[k]
 
-_−_
+−
 
 545140134 [+][ k] (k!)[3] (3k)! 640320[3][k]
-
 
 1 6541681608
 
 =
-_π_ _√6403203_
+π √6403203
 
-
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 12
 =
 
-_√_ 3
+√ 3
 
 640320
-
 
 �∞ (6k)! 13591409 + k 545140134
 
 ( 1)[k] (11.348)
-_−_
+−
 
 (k!)[3] (3k)! (640320)[3][k]
 
-_k=0_
+k=0
 
-
-Here is an alternative way to evaluate a sum [�]k[N]=0[−][1] _[a][k][ of rational summands: One looks at the ratios][ r][k]_
+Here is an alternative way to evaluate a sum [�]k[N]=0[−][1] [a][k][ of rational summands: One looks at the ratios][ r][k]
 of consecutive terms:
 
-_rk_ := _ak_ (11.349)
+rk := ak (11.349)
 
-_ak−1_
+ak−1
 
 (set a−1 := 1 to avoid a special case for k = 0)
 
 That is
 
-_N_ _−1_
+N −1
 �
 
-_ak_ =: _r0 (1 + r1 (1 + r2 (1 + r3 (1 + . . . (1 + rN_ _−1) . . . ))))_ (11.350)
-_k=0_
+ak =: r0 (1 + r1 (1 + r2 (1 + r3 (1 + . . . (1 + rN −1) . . . )))) (11.350)
+k=0
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 201
+CHAPTER 11. ARITHMETICAL ALGORITHMS 201
 
 Now define
 
-_rm,n_ := _rm (1 + rm+1 (. . . (1 + rn) . . . ))_ where _m < n_ (11.351)
-_rm,m_ := _rm_ (11.352)
+rm,n := rm (1 + rm+1 (. . . (1 + rn) . . . )) where m < n (11.351)
+rm,m := rm (11.352)
 
 then
 
-
 1
-_rm,n_ =
+rm,n =
 
-_am−1_
+am−1
 
-
-_n_
+n
 �
 
-_ak_ (11.353)
+ak (11.353)
 
-_k=m_
-
+k=m
 
 and especially
 
 With
 
+r0,n =
 
-_r0,n_ =
-
-
-_n_
+n
 �
 
-_ak_ (11.354)
+ak (11.354)
 
-_k=0_
+k=0
 
+rm,n = rm + rm rm+1 + rm rm+1 rm+2 + . . . (11.355)
+· · ·
 
-_rm,n_ = _rm + rm_ _rm+1 + rm_ _rm+1_ _rm+2 + . . ._ (11.355)
-_·_ _·_ _·_
+· · · + rm · · · · · rx + rm · · · · · rx · [rx+1 + · · · + rx+1 · · · · · rn]
 
-_· · · + rm · · · · · rx + rm · · · · · rx · [rx+1 + · · · + rx+1 · · · · · rn]_
-
-_x_
+x
 �
 
-= _rm,x +_ _rk_ _rx+1,n_ (11.356)
+= rm,x + rk rx+1,n (11.356)
 
-_·_
-_k=m_
+·
+k=m
 
 The product telescopes, one gets
 
-_rm,n_ = _rm,x +_ _ax_ _· rx+1,n_ (11.357)
+rm,n = rm,x + ax · rx+1,n (11.357)
 
-_am−1_
+am−1
 
-(where m _x < n)._
-_≤_
+(where m x < n).
+≤
 
 Now we can formulate the binary splitting algorithm by giving a binsplit function r:
 ```
@@ -16089,39 +15077,36 @@ function a(int k)
 }
 
 ```
-Calling r(a,0,N) returns [�]k[N]=0 _[a][k][.]_
+Calling r(a,0,N) returns [�]k[N]=0 [a][k][.]
 
 In case the programming language used does not provide rational numbers one needs to rewrite formula
-11.357 in separate parts for denominator and numerator. With ai = _[p]qi[i]_ [,][ p][−][1][ =][ q][−][1][ = 1 and][ r][m,n][ =:][ U]Vm,n[m,n]
+11.357 in separate parts for denominator and numerator. With ai = [p]qi[i] [,][ p][−][1][ =][ q][−][1][ = 1 and][ r][m,n][ =:][ U]Vm,n[m,n]
 
 one gets
 
-_Um,n_ = _pm−1 qx Um,x Vx+1,n + px qm−1 Ux+1,n Vm,x_ (11.358)
+Um,n = pm−1 qx Um,x Vx+1,n + px qm−1 Ux+1,n Vm,x (11.358)
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 202
+CHAPTER 11. ARITHMETICAL ALGORITHMS 202
 
 The reason why binary splitting is better than the straight forward way is that the involved work is only
-_O((log N_ )[2] _M_ (N )), where M (N ) is the complexity of one N -bit multiplication (see [21]). This means
+O((log N )[2] M (N )), where M (N ) is the complexity of one N -bit multiplication (see [21]). This means
 that sums of linear but sufficient convergence are again candidates for high precision computations.
 
-In addition, the ratio r0,N _−1 (i.e. the sum of the first N terms) can be reused if one wants to evaluate_
+In addition, the ratio r0,N −1 (i.e. the sum of the first N terms) can be reused if one wants to evaluate
 the sum to a higher precision than before. To get twice the precision use
 
-_r0,2 N_ _−1_ = _r0,N_ _−1 + aN_ _−1 · rN,2 N_ _−1_ (11.360)
+r0,2 N −1 = r0,N −1 + aN −1 · rN,2 N −1 (11.360)
 
 (this is formula 11.357 with m = 0, x = N 1, n = 2N 1). With explicit rational arithmetic:
-_−_ _−_
+− −
 
-_U0,2N_ _−1_ = _qN_ _−1 U0,N_ _−1 VN,2N_ _−1 + pN_ _−1 UN,2N_ _−1 V0,N_ _−1_ (11.361)
-_V0,2N_ _−1_ = _qN_ _−1 V0,N_ _−1 VN,2N_ _−1_ (11.362)
+U0,2N −1 = qN −1 U0,N −1 VN,2N −1 + pN −1 UN,2N −1 V0,N −1 (11.361)
+V0,2N −1 = qN −1 V0,N −1 VN,2N −1 (11.362)
 
-Thereby with the appearence of some new computer that can multiply two length 2 _N numbers[14]_ one only
+Thereby with the appearence of some new computer that can multiply two length 2 N numbers[14] one only
 
-_·_
-needs to combine the two ratios r0,N _−1 and rN,2N_ _−1 that had been precomputed by the last generation_
+·
+needs to combine the two ratios r0,N −1 and rN,2N −1 that had been precomputed by the last generation
 of computers. This costs only a few fullsize multiplications on your new and expensive supercomputer
 (instead of several hundreds for the iterative schemes), which means that one can improve on prior
 computations at low cost.
@@ -16132,37 +15117,30 @@ needed which costs not more than 4 multiplications (cf. section 11.3).
 Note that this algorithm can trivially be extended (or rather simplified) to infinite products, e.g. matrix
 products as Bellard’s
 
-
-� 0 _π + 6_
+� 0 π + 6
 =
 0 1
-
 
 �
 (11.363)
 
-
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 � 27 (2 (kk−+2[1][2]3[) (][) (][k][k][+2)][+][ 4]3 [)] 10
 
 0 1
 
-
 �
-
 
 Cf. [21] and [27].
 
 #### 11.13 The magic sumalt algorithm
-
 The following algorithm is due to Cohen, Villegas and Zagier, see [29].
 
-Pseudo code to compute an estimate of [�]k[∞]=0 _[x][k][ using the first][ n][ summands. The][ x][k][ summands are]_
+Pseudo code to compute an estimate of [�]k[∞]=0 [x][k][ using the first][ n][ summands. The][ x][k][ summands are]
 expected in x[0,1, ...,n-1].
 ```
 function sumalt(x[], n)
@@ -16183,62 +15161,52 @@ function sumalt(x[], n)
 
 ```
 
-_√_
+√
 With alternating sums the accuracy of the estimate will be (3 +
 
-
 8)[−][n] 5.82[−][n].
-_≈_
-
+≈
 
 As an example let us explicitely write down the estimate for the 4 arctan(1) using the first 8 terms
-_·_
-
+·
 
 � 1
-_π_ 4
-_≈_ _·_
+π 4
+≈ ·
 
 1 3 [+ 1]5 7 [+ 1]9 11 [+ 1]13 15
 
-_[−]_ [1] _[−]_ [1] _[−]_ [1] _[−]_ [1]
-
+[−] [1] [−] [1] [−] [1] [−] [1]
 
 �
 = 3.017 . . . (11.364)
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 203
+CHAPTER 11. ARITHMETICAL ALGORITHMS 203
 
 The sumalt-massaged estimate is
 
 � 665856
-_π_ 4 + [663040] + (11.365)
-_≈_ _·_ _−_ [665728] _−_ [641536]
+π 4 + [663040] + (11.365)
+≈ · − [665728] − [641536]
 
 1 3 5 7
 
-
 + [557056] + [163840]
 
-_−_ [376832] _−_ [32768]
+− [376832] − [32768]
 9 11 13 15
 
-
 �
-_/665857_
-
+/665857
 
 = 4 3365266048/4284789795 = 3.141592665 . . .
-_·_
+·
 
 it already gives 7 correct digits of π. Note that all the values ck and bk occuring in the computation are
 integers. In fact, the bk in the computation with n terms are the coefficients of the 2n-th Chebychev
 polynom with alternating signs.
 
-_√_
+√
 An alternative calculation avoids the computation of (3 + 8)[n]:
 ```
 function sumalt(x[], n)
@@ -16258,61 +15226,56 @@ function sumalt(x[], n)
 ```
 Even slowly converging series like
 
-
-_π_ = 4
-_·_
-
+π = 4
+·
 
 1[k]
-_−_
+−
 
 = 4 arctan(1) (11.366)
-_·_
+·
 2 k + 1
 
 1[k]
-_−_
+−
 
 = 0.9159655941772190 . . . (11.367)
 (2 k + 1)[2]
 
 1[k]
-_−_
+−
 
 = 0.6931471805599453 . . . (11.368)
-_k + 1_
+k + 1
 
-
-_C_ =
+C =
 
 log(2) =
 
-
-_∞_
+∞
 �
 
-_k=0_
+k=0
 
-_∞_
+∞
 �
 
-_k=0_
+k=0
 
-_∞_
+∞
 �
 
-_k=0_
-
+k=0
 
 can be used to compute estimates that are correct up to thousands of digits. The algorithm scales like N [2]
 
 if the series terms in x[] are small rational values and like N [3] log(N ) if they are full precision (rational
 
-_·_
+·
 or float) values.
 
-To compute an estimate of [�]k[∞]=0 _[x][k][ using the first][ n][ partial sums use the following pseudo code (the]_
-partial sums pk = [�]j[k]=0 _[x][j][ are expected in][ p[0,1,...,n-1]][):]_
+To compute an estimate of [�]k[∞]=0 [x][k][ using the first][ n][ partial sums use the following pseudo code (the]
+partial sums pk = [�]j[k]=0 [x][j][ are expected in][ p[0,1,...,n-1]][):]
 ```
 function sumalt_partial(p[], n)
 {
@@ -16332,10 +15295,7 @@ function sumalt_partial(p[], n)
 ```
 The alternative scheme is:
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 204
+CHAPTER 11. ARITHMETICAL ALGORITHMS 204
 ```
 {
   b := 2**(2*n-1)
@@ -16353,28 +15313,23 @@ _CHAPTER 11. ARITHMETICAL ALGORITHMS_ 204
 [hfloat: src/hf/sumalt.cc]
 
 #### 11.14 Continued fractions
-
 Set
 
+x = b0 + b1 + b2 + ba31 +a2 a3 a4
 
-_x_ = _b0 +_ _b1 +_ _b2 +_ _ba31 +a2_ _a3_ _a4_
-
-_b4 + . . ._
-
+b4 + . . .
 
 (11.369)
 
-
-For k > 0 let _[p]qk[k]_ [be the value of the above fraction if][ a][k][+1][ is set to zero (set][ p]q−[−]1[1] [:=][ 1]0 [and][ p]q0[0] [:=][ b]1[0] [).]
+For k > 0 let [p]qk[k] [be the value of the above fraction if][ a][k][+1][ is set to zero (set][ p]q−[−]1[1] [:=][ 1]0 [and][ p]q0[0] [:=][ b]1[0] [).]
 
 Then
 
-
-_pk_ = _bk pk−1 + ak pk−2_ (11.370)
-_qk_ = _bk qk−1 + ak qk−2_ (11.371)
+pk = bk pk−1 + ak pk−2 (11.370)
+qk = bk qk−1 + ak qk−2 (11.371)
 
 (Simple continued fractions are those with ak = 1 ∀k).
-Pseudo code for a procedure that computes the pk, qk _k = −1 . . . n of a continued fraction :_
+Pseudo code for a procedure that computes the pk, qk k = −1 . . . n of a continued fraction :
 ```
 procedure ratios_from_contfrac(a[0..n], b[0..n], n, p[-1..n], q[-1..n])
 {
@@ -16407,10 +15362,7 @@ procedure continued_fraction(x, n, cf[0..n-1])
 Pseudo code for a function that computes the numerical value of a number x from (the leading n terms
 of) its simple continued fraction representation:
 
-
------
-
-_CHAPTER 11. ARITHMETICAL ALGORITHMS_ 205
+CHAPTER 11. ARITHMETICAL ALGORITHMS 205
 ```
 function number_from_contfrac(cf[0..n-1], n)
 {
@@ -16425,35 +15377,27 @@ function number_from_contfrac(cf[0..n-1], n)
 ```
 (cf. [30], [31], [10], [11]).
 
-
------
-
 ## Appendix A
-
 # Summary of definitions of FTs
+The continuous Fourier transform
 
-**The continuous Fourier transform**
-
-The (continuous) Fourier transform (FT) of a function f : C[n] _→_ C[n], _⃗x �→_ _f_ (⃗x) is defined by
-
+The (continuous) Fourier transform (FT) of a function f : C[n] → C[n], ⃗x �→ f (⃗x) is defined by
 
 1
-_F_ (⃗ω) := �√2 π�n
-
+F (⃗ω) := �√2 π�n
 
 �
 
 (A.1)
 C[n][ f] [(][⃗x][)][ e][σ i ⃗x ⃗ω][d][n][x]
 
-
 where σ = 1. The FT is is a unitary transform.
-_±_
+±
 
 Its inverse (‘backtransform’) is
 
 1
-_f_ (⃗x) = _√_ _n_
+f (⃗x) = √ n
 
 2 π
 
@@ -16462,169 +15406,143 @@ i.e. the complex conjugate transform.
 For the 1-dimensional case one has
 
 1
-_F_ (ω) = _√_
+F (ω) = √
 
 2 π
 
 1
-_f_ (x) = _√_
+f (x) = √
 
 2 π
 
+� +∞
+
+f (x)e[σ x ω]dx (A.3)
+−∞
 
 � +∞
 
-_f_ (x)e[σ x ω]dx (A.3)
-_−∞_
-
-� +∞
-
-_F_ (ω) e[−][σ x ω]dω (A.4)
-_−∞_
-
+F (ω) e[−][σ x ω]dω (A.4)
+−∞
 
 �
 
 (A.2)
 C[n][ F] [(][⃗ω][)][ e][−][σ ⃗x ⃗ω][d][n][ω]
 
-
 The ‘frequency’-form is
 
+� +∞
+fˆ(ν) = f (x)e[σ][ 2][ π i x ν]dx (A.5)
+
+−∞
 
 � +∞
-_fˆ(ν)_ = _f_ (x)e[σ][ 2][ π i x ν]dx (A.5)
+f (x) = fˆ(ν) e[−][σ][ 2][ π i x ν]dν (A.6)
 
-_−∞_
+−∞
 
-� +∞
-_f_ (x) = _fˆ(ν) e[−][σ][ 2][ π i x ν]dν_ (A.6)
+The semi-continuous Fourier transform
 
-_−∞_
-
-**The semi-continuous Fourier transform**
-
-For periodic functions defined on a interval L ∈ R, f : L → R, _x �→_ _f_ (x) one has the semi-continuous
-_Fourier transform:_
-
+For periodic functions defined on a interval L ∈ R, f : L → R, x �→ f (x) one has the semi-continuous
+Fourier transform:
 
 1
-_ck_ := _√_
+ck := √
 
-_L_
-
+L
 
 �
 
-_f_ (x) e[σ][ 2][ π i k x/L]dx (A.7)
-_L_
-
+f (x) e[σ][ 2][ π i k x/L]dx (A.7)
+L
 
 Then
 
-
 1
 
+k=+�∞ � f (x) if f continuous at x
+ck e[−][σ][ 2][ π i k x/L] = f ( +0)+f ( 0) (A 8)
 
-_k=+�∞_ � _f_ (x) if f continuous at x
-_ck e[−][σ][ 2][ π i k x/L]_ = _f_ ( +0)+f ( 0) (A 8)
-
-
------
-
-_APPENDIX A. SUMMARY OF DEFINITIONS OF FTS_ 207
+APPENDIX A. SUMMARY OF DEFINITIONS OF FTS 207
 
 Another (equivalent) form is given by
 
+1
+ak := √
+
+L
 
 1
-_ak_ := _√_
+bk := √
 
-_L_
-
-1
-_bk_ := _√_
-
-_L_
+L
 
 1
-_f_ (x) = _√_
+f (x) = √
 
-_L_
-
+L
 
 �
 
-_f_ (x) cos [2][ π k x] _dx,_ _k = 0, 1, 2, . . ._ (A.9)
-_L_ _L_
+f (x) cos [2][ π k x] dx, k = 0, 1, 2, . . . (A.9)
+L L
 
 �
 
-_f_ (x) sin [2][ π k x] _dx,_ _k = 1, 2, . . ._ (A.10)
-_L_ _L_
+f (x) sin [2][ π k x] dx, k = 1, 2, . . . (A.10)
+L L
 
-� _a0_ �∞ � �[�]
+� a0 �∞ � �[�]
 
-_ak cos [2][ π k x]_ + bk sin [2][ π k x] (A.11)
+ak cos [2][ π k x] + bk sin [2][ π k x] (A.11)
 
-2 [+] _L_ _L_
+2 [+] L L
 
-_k=1_
-
+k=1
 
 with
 
-_ck_ =
+ck =
 
-**The discrete Fourier transform**
-
+The discrete Fourier transform
 
 
 
 
 
 
+a20 (k = 0)
 
-_a20_ (k = 0)
-
-12 [(][a][k][ −] _[ib][k][)]_ (k > 0) (A.12)
+12 [(][a][k][ −] [ib][k][)] (k > 0) (A.12)
 12 [(][a][k][ +][ ib][k][)] (k < 0)
-
 
 The discrete Fourier transform (DFT) of a sequence f of length n with elements fx is defined by
 
-
-_n−1_
+n−1
 �
 
-_fx e[σ][ 2][ π i x k/n]_ (A.13)
-_x=0_
+fx e[σ][ 2][ π i x k/n] (A.13)
+x=0
 
-_n−1_
+n−1
 �
 
-_ck e[σ][ 2][ π i x k/n]_ (A.14)
-_k=0_
-
+ck e[σ][ 2][ π i x k/n] (A.14)
+k=0
 
 Backtransform is
 
+1
+ck := √
+n
 
 1
-_ck_ := _√_
-_n_
-
-1
-_fx_ = _√_
-_n_
-
-
------
+fx = √
+n
 
 ## Appendix B
-
 # The pseudo language Sprache
-
 Many algorithms in this book are given in a pseudo language called Sprache. Sprache is meant to be
 immediately understandable for everyone who ever had contact with programming languages like C,
 FORTRAN, pascal or algol. Sprache is hopefully self explanatory. The intention of using Sprache instead
@@ -16673,9 +15591,8 @@ procedure increment_copy(f[],g[],n)
 
 ```
 
------
 
-_APPENDIX B. THE PSEUDO LANGUAGE SPRACHE_ 209
+APPENDIX B. THE PSEUDO LANGUAGE SPRACHE 209
 ```
 // for loop with stepsize:
 for i:=0 to n step 2 // i:=0,2,4,6,...
@@ -16735,7 +15652,7 @@ Arithmetical operators: +, -, *, /, % and ** for powering. Arithmetical function
 gcd(), lcm(), ...
 
 ```
-Mathematical functions: `sqr(), sqrt(), pow(), exp(), log(), sin(), cos(), tan(), asin(),`
+Mathematical functions: sqr(), sqrt(), pow(), exp(), log(), sin(), cos(), tan(), asin(),
 ```
 acos(), atan(), ...
 
@@ -16751,14 +15668,11 @@ A well known constant: PI = 3.14159265 . . .
 
 The complex square root of minus one in the upper half plane: I = 1
 
-_[√]−_
+[√]−
 
 Boolean values TRUE and FALSE
 
-
------
-
-_APPENDIX B. THE PSEUDO LANGUAGE SPRACHE_ 210
+APPENDIX B. THE PSEUDO LANGUAGE SPRACHE 210
 ```
 // copying arrays of same length:
 copy a[] to b[]
@@ -16771,123 +15685,112 @@ copy a[0,2,4,...,n-1] to b[0,1,2,...,n/2-1]
 Modular arithmetic: x := a * b mod m shall do what it says, i := a**(-1) mod m shall set i to the
 modular inverse of a.
 
-
------
-
 ## Appendix C
-
 # Optimisation considerations for fast transforms
-
 Reduce operations: use higher radix, at least radix 4 (with high radix algorithms note that the intel
 
-_•_
+•
 x86-architecture is severely register impaired)
 
 Mass storage FFTs: use MFA as described
 
-_•_
+•
 
 Trig recursion: loss of precision (not with mod FFTs), use stable versions, use table for initial values
 
-_•_
+•
 of recursion.
 
 Trig table: only for small lengths, else cache problem.
 
-_•_
+•
 
 Fused routines: combine first/last (few) step(s) in transforms with squar
-_•_
+•
 ing/normalization/revbin/transposition etc. e.g. revbin-squaring in convol,
 
 Use explicit last/first step with radix as high a possible
 
-_•_
+•
 
 Write special versions for zero padded data (e.g. for convolutions), also write a special version of
 
-_•_
+•
 revbin permute for zero padded data
 
 Integer stuff (e.g. exact convolutions): consider NTTs but be prepared for work & disappointments
 
-_•_
+•
 
 Image processing & effects: also check Walsh transform etc.
 
-_•_
+•
 
 Direct mapped cache: Avoid stride-2[n] access (e.g. use gray-ffts, gray-walsh); try to achieve unit
 
-_•_
+•
 stride data access. Use the general prime factor algorithm. Improve memory locality (e.g. use the
 matrix Fourier algorithm (MFA))
 
 Vectorization: SIMD versions often boost performance
 
-_•_
+•
 
 For correlations/convolutions save two revbin permute (or transpose) operations by combining DIF
 
-_•_
+•
 and DIT algorithms.
 
 Real-valued transforms & convolution: use hartley transform (also for computation of spectrum).
 
-_•_
+•
 Even use complex FHT for forward step in real convolution.
 
 Reducing multiplications: Winograd FFT, mainly of theoretical interest (today the speed of multi
-_•_
+•
 plication is almost that of addition, often mults go parallel to adds)
 
 Only general rule for big sizes: better algorithms win.
 
-_•_
+•
 
 Do NOT blindly believe that some code is fast without profiling. Statements that some code is
 
-_•_
+•
 ”the fastest” are always bogus.
 
-
------
-
 ## Appendix D
-
 # Properties of the ZT
-
-_Notation not in sync with the rest therefore moved to appendix. The point of view taken here is that of_
-_recurrences and their generating functions._
+Notation not in sync with the rest therefore moved to appendix. The point of view taken here is that of
+recurrences and their generating functions.
 
 In the following let F (z) := Z{fn} and G(z) := Z{gn} be the z-transforms of the recurrences fn and gn
 respectively.
 
 linearity
 
-_•_
+•
 
-_Z{α fn + β gn} = α Z{fn} + β Z{gn}_ (D.1)
+Z{α fn + β gn} = α Z{fn} + β Z{gn} (D.1)
 
 convolution
 
-_•_
+•
 
-_n_
+n
 �
 
-_Z{_ _fk gn−k} = Z{fn} Z{gn}_ (D.2)
+Z{ fk gn−k} = Z{fn} Z{gn} (D.2)
 
-_k=0_
-
+k=0
 
 summation
 
-_•_
+•
 
 difference
 
-_•_
+•
 
 where
 
@@ -16895,173 +15798,149 @@ e.g. first difference:
 
 second difference:
 
+∆[0] fn := fn, ∆[k] fn := ∆[k][−][1] fn+1 ∆[k][−][1] fn
+−
+e.g. ∆[1] fn = fn+1 − fn
 
-∆[0] _fn_ := _fn,_ ∆[k] _fn := ∆[k][−][1]_ _fn+1_ ∆[k][−][1] _fn_
-_−_
-e.g. ∆[1] _fn_ = _fn+1 −_ _fn_
+Z{∆fn} = (1 − z) Z{fn} − z f0 (D.5)
 
-_Z{∆fn}_ = (1 − _z) Z{fn} −_ _z f0_ (D.5)
+Z{∆[2]fn} = (1 − z)[2] Z{fn} − z f1 + z[2] f0 (D.6)
 
-_Z{∆[2]fn} = (1 −_ _z)[2]_ _Z{fn} −_ _z f1 + z[2]_ _f0_ (D.6)
-
-
-_n_
+n
 �
 
-_Z{_ _fk} =_ _[Z][{][f][n][}]_ (D.3)
+Z{ fk} = [Z][{][f][n][}] (D.3)
 
-1 _z_
+1 z
 
-_k=0_ _−_
+k=0 −
 
+Z{∆[k]fn} = (1 − z)[k] Z{fn} − z
 
-_Z{∆[k]fn}_ = (1 − _z)[k]_ _Z{fn} −_ _z_
-
-
-_k−1_
+k−1
 �
 
-(1 − _z)[k][−][i][−][1]_ ∆[i] _f0_ (D.4)
-_i=0_
+(1 − z)[k][−][i][−][1] ∆[i] f0 (D.4)
+i=0
 
-
------
-
-_APPENDIX D. PROPERTIES OF THE ZT_ 213
+APPENDIX D. PROPERTIES OF THE ZT 213
 
 index shifting
 
-_•_
+•
 
-_Z{fn−k}_ = _z[k]_ _Z{fn}_ (D.7)
+Z{fn−k} = z[k] Z{fn} (D.7)
 
-� _k−1_ �
+� k−1 �
 
 �
 
-_Z{fn+k}_ = _z[−][k]_ _Z{fn} −_ _fi z[i]_ = (D.8)
+Z{fn+k} = z[−][k] Z{fn} − fi z[i] = (D.8)
 
-_i=0_
+i=0
 
-= _z[−][k][ �]F_ (z) − _f0 −_ _f1 z −_ _f2 z[2]_ _−_ _f3 z[3]_ _−· · · −_ _fk−1 z[k][−][1][�]_
-
+= z[−][k][ �]F (z) − f0 − f1 z − f2 z[2] − f3 z[3] −· · · − fk−1 z[k][−][1][�]
 
 similarity
 
-_•_
+•
 
 multiplication
 
-_•_
+•
 
 division
 
-_•_
+•
 
 index transformation
 
-_•_
+•
 
+� z
+Z{λ[n] fn} = F
 
-� _z_
-_Z{λ[n]_ _fn} = F_
-
-_λ_
-
+λ
 
 �
-_λ ∈_ C, λ ̸= 0 (D.9)
+λ ∈ C, λ ̸= 0 (D.9)
 
+Z{n fn} = z [d] (D.10)
 
-_Z{n fn} = z [d]_ (D.10)
+d z [F] [(][z][)]
 
-_d z [F]_ [(][z][)]
+� ∞
 
+Z
+{ [f][n]
 
-� _∞_
+n [}][ =] z
 
-_Z_
-_{_ _[f][n]_
+F (ξ)
 
-_n_ _[}][ =]_ _z_
+d ξ (D.11)
+ξ
 
+� z
 
-_F_ (ξ)
+Z [f][n] F (ξ) d ξ (D.12)
+{
 
-_d ξ_ (D.11)
-_ξ_
+n + 1 [}][ =] 0
 
+for i fixed let gm0≤m<∞ := fn (m = n i), 0 (else)
 
-� _z_
-
-_Z_ _[f][n]_ _F_ (ξ) d ξ (D.12)
-_{_
-
-_n + 1_ _[}][ =]_ 0
-
-
-for i fixed let _gm0≤m<∞_ := fn (m = n i), 0 (else)
-
-then _Z{gn} = F_ (z[i]) (D.13)
-
-
------
+then Z{gn} = F (z[i]) (D.13)
 
 ## Appendix E
-
 # Eigenvectors of the Fourier transform
-
 For aS := a + a, the symmetric part of a sequence a:
 
-_F [F [aS]]_ = _aS_ (E.1)
+F [F [aS]] = aS (E.1)
 
 Now let u+ := aS + F [aS] and u− := aS −F [aS] then
 
-_F [u+]_ = _F [aS] + aS = aS + F [aS] = +1 · u+_ (E.2)
-_F [u−]_ = _F [aS] −_ _aS = −(aS −F [aS]) = −1 · u−_ (E.3)
+F [u+] = F [aS] + aS = aS + F [aS] = +1 · u+ (E.2)
+F [u−] = F [aS] − aS = −(aS −F [aS]) = −1 · u− (E.3)
 
-_u+ and u−_ are symmetric.
+u+ and u− are symmetric.
 
-For aA := a − _a, the antisymmetric part of a we have_
+For aA := a − a, the antisymmetric part of a we have
 
-_F [F [aA]]_ = _−aA_ (E.4)
+F [F [aA]] = −aA (E.4)
 
-Therefore with v+ := aA + i F [aA] and v− := aA − _i F [aA]:_
+Therefore with v+ := aA + i F [aA] and v− := aA − i F [aA]:
 
-_F [v+]_ = _F [aA] −_ _i aA = −i (aA + i F [aA]) = −i · v+_ (E.5)
-_F [v−]_ = _F [aA] + i aA = +i (aA −_ _i F [aA]) = +i · v−_ (E.6)
+F [v+] = F [aA] − i aA = −i (aA + i F [aA]) = −i · v+ (E.5)
+F [v−] = F [aA] + i aA = +i (aA − i F [aA]) = +i · v− (E.6)
 
-_v+ and v−_ are antisymmetric.
+v+ and v− are antisymmetric.
 
-_u+, u−, v+ and v−_ are eigenvectors of the FT, with eigenvalues +1, −1, −i and +i respectively. The
+u+, u−, v+ and v− are eigenvectors of the FT, with eigenvalues +1, −1, −i and +i respectively. The
 eigenvectors are pairwise perpendicular.
 
 Using
 
 1
-_a_ = (E.7)
+a = (E.7)
 2 [(][u][+][ +][ u][−] [+][ v][+][ +][ v][−][)]
 
 we can, for a given sequence, find a transform that is the ‘square root’ of the FT: Simply compute u+,
-_u−, v+, v−. Then for λ ∈_ R one can define a transform F _[λ]_ [a] as
+u−, v+, v−. Then for λ ∈ R one can define a transform F [λ] [a] as
 
 1
-_F_ _[λ]_ [a] = �(+1)[λ] _u+ + (−1)[λ]_ _u−_ + (−i)[λ] _v+ + (+i)[λ]_ _v−�_ (E.8)
+F [λ] [a] = �(+1)[λ] u+ + (−1)[λ] u− + (−i)[λ] v+ + (+i)[λ] v−� (E.8)
 2
 
 [a] is the identity, [a] is the (usual) FT, [a] (which is not unique) is a transform so that
-_F_ [0] _F_ [1] _F_ [1][/][2]
+F [0] F [1] F [1][/][2]
 
 [a]� = [a], that is, a ‘quare root’ of the FT.
-_F_ [1][/][2][ �]F [1][/][2] _F_
+F [1][/][2][ �]F [1][/][2] F
 
 The eigenvectors of the Hartley Transform are u+ := a + H [a] (with eigenvalue +1) and u+ := a −H [a]
 
-
------
-
 # Bibliography
-
 [1] H.S.Wilf: Algorithms and Complexity, internet edition, 1994,
 online at ftp://ftp.cis.upenn.edu/pub/wilf/AlgComp.ps.Z
 
@@ -17107,9 +15986,7 @@ Springer Verlag 1992
 
 [16] H.Malvar: Fast computation of the discrete cosine transform through fast Hartley transform, Elec
 
------
-
-_BIBLIOGRAPHY_ 216
+BIBLIOGRAPHY 216
 
 [17] H.Malvar: Fast Computation of the discrete cosine transform and the discrete Hartley transform,
 IEEE Trans. on Acoustics, Speech and Signal Processing, ASSP-35 pp.1484-1485, 1987
@@ -17170,10 +16047,7 @@ online at ftp://ftp.netcom.com/pub/hb/hbaker/hakmem/hakmem.html/#contents
 
 [38] Advanced Micro Devices (AMD) Inc.: AMD Athlon Processor, x86 code optimization guide
 
-
------
-
-_BIBLIOGRAPHY_ 217
+BIBLIOGRAPHY 217
 
 [39] P.Soderquist, M.Leeser: An Area/Performance Comparison of Subtractive and Multiplicative Divide/Square Root Implementations, Cornell School of Electrical Engineering
 online at http://orac.ee.cornell.edu:80/unit1/pgs/#papers
@@ -17184,11 +16058,7 @@ Intelligencer, 1998
 [41] Bahman Kalantari, J¨urgen Gerlach: Newton’s Method and Generation of a Determinantal Family
 of Iteration Functions. ???, 1998
 
-
------
-
 # Index
-
 acyclic convolution, 34
 AGM
 4-th order variant, 187
@@ -17241,7 +16111,6 @@ direct mapped cache, 28
 discrete Fourier transform
 d fi iti 4
 
-
 division, 170
 
 using multiplication only, 170
@@ -17272,7 +16141,7 @@ Fourier shift, 8
 Fourier transform
 definition, 4
 
-_, Fp, prime modulus, 59_
+, Fp, prime modulus, 59
 FT
 definition, 4
 
@@ -17294,10 +16163,7 @@ iteration for, 175
 inverse root extraction, 174
 inverse sine transform (IDST), 56
 
-
------
-
-_INDEX_ 219
+INDEX 219
 
 iteration for, 171
 
@@ -17351,9 +16217,5 @@ Walsh transform, sequency ordered (wal), 70
 weighted convolution, 39
 
 zip rev, 55
-_, Z/mZ, composite modulus, 60_
-_, Z/pZ, prime modulus, 59_
-
-
------
-
+, Z/mZ, composite modulus, 60
+, Z/pZ, prime modulus, 59

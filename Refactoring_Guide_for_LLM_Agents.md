@@ -1,11 +1,7 @@
 # Refactoring Guide for LLM Agents
-
 > A comprehensive guide for LLM agents to understand and apply refactoring techniques, based on Martin Fowler's "Refactoring: Improving the Design of Existing Code"
 
----
-
 ## Table of Contents
-
 1. [What is Refactoring?](#1-what-is-refactoring)
 2. [Core Principles](#2-core-principles)
 3. [Code Smells - When to Refactor](#3-code-smells---when-to-refactor)
@@ -14,51 +10,39 @@
 6. [Agent-Specific Guidelines](#6-agent-specific-guidelines)
 7. [Quick Reference](#7-quick-reference)
 
----
-
 ## 1. What is Refactoring?
-
 ### Definition
+Refactoring (noun): A change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior.
 
-**Refactoring (noun):** A change made to the internal structure of software to make it easier to understand and cheaper to modify **without changing its observable behavior**.
-
-**Refactor (verb):** To restructure software by applying a series of refactorings without changing its observable behavior.
+Refactor (verb): To restructure software by applying a series of refactorings without changing its observable behavior.
 
 ### Key Principles
-
-1. **Behavior Preservation** - The software must function identically before and after refactoring
-2. **Small Steps** - Make tiny changes, test frequently
-3. **Two Hats Metaphor** - Alternate between "adding features" and "refactoring" - never do both at once
+1. Behavior Preservation - The software must function identically before and after refactoring
+2. Small Steps - Make tiny changes, test frequently
+3. Two Hats Metaphor - Alternate between "adding features" and "refactoring" - never do both at once
 
 ### Why Refactor?
-
 | Benefit | Description |
 |---------|-------------|
-| **Improves Design** | Prevents code decay, eliminates duplication |
-| **Easier to Understand** | Makes code communicate its purpose |
-| **Helps Find Bugs** | Clarifying code reveals hidden issues |
-| **Faster Development** | Good design enables rapid feature addition |
-
----
+| Improves Design | Prevents code decay, eliminates duplication |
+| Easier to Understand | Makes code communicate its purpose |
+| Helps Find Bugs | Clarifying code reveals hidden issues |
+| Faster Development | Good design enables rapid feature addition |
 
 ## 2. Core Principles
-
 ### The Rhythm of Refactoring
-
 ```
 Test -> Small Change -> Test -> Small Change -> Test -> Small Change
 ```
 
-**CRITICAL:** Never skip testing between changes. This rhythm allows refactoring to move quickly and safely.
+CRITICAL: Never skip testing between changes. This rhythm allows refactoring to move quickly and safely.
 
 ### The Rule of Three
-
 > "The first time you do something, you just do it. The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway. The third time you do something similar, you refactor."
 
-**Three strikes and you refactor.**
+Three strikes and you refactor.
 
 ### When to Refactor
-
 | Situation | Action |
 |-----------|--------|
 | Adding a feature | Refactor first if design doesn't support the change easily |
@@ -67,24 +51,18 @@ Test -> Small Change -> Test -> Small Change -> Test -> Small Change
 | Understanding code | Refactor to clarify what unfamiliar code does |
 
 ### When NOT to Refactor
-
 - When code doesn't work at all (rewrite instead)
 - Very close to a deadline (technical debt)
 - When you should be rewriting from scratch
 
 ### Technical Debt Metaphor
-
 Unfinished refactoring = debt. You pay interest through the extra cost of maintenance. Manage your debt by paying it off through refactoring.
 
----
-
 ## 3. Code Smells - When to Refactor
-
 Code smells are indicators that suggest refactoring opportunities. Learn to recognize these patterns.
 
 ### 3.1 Duplicated Code
-
-**The #1 smell.** Same code structure in multiple places.
+The #1 smell. Same code structure in multiple places.
 
 | Location | Refactoring |
 |----------|-------------|
@@ -93,149 +71,133 @@ Code smells are indicators that suggest refactoring opportunities. Learn to reco
 | Unrelated classes | Extract Class |
 
 ### 3.2 Long Method
-
 Short methods are better. Extract when you feel the need to comment.
 
-**Signals:**
+Signals:
 - Need to comment what a block does
 - Lots of parameters and temp variables
 - Complex conditional logic
 - Loops with bodies
 
-**Refactorings:**
+Refactorings:
 - Extract Method (99% of cases)
 - Replace Temp with Query
 - Replace Method with Method Object
 - Decompose Conditional
 
 ### 3.3 Large Class
-
 Too many instance variables = duplicated code incoming.
 
-**Refactorings:**
+Refactorings:
 - Extract Class
 - Extract Subclass
 - Extract Interface
 
 ### 3.4 Long Parameter List
-
 Objects reduce the need for long parameter lists.
 
-**Refactorings:**
+Refactorings:
 - Replace Parameter with Method
 - Preserve Whole Object
 - Introduce Parameter Object
 
 ### 3.5 Divergent Change
-
 One class changed in different ways for different reasons.
 
-**Example:** "I change these 3 methods for database changes, these 4 for new financial instruments"
+Example: "I change these 3 methods for database changes, these 4 for new financial instruments"
 
-**Refactoring:** Extract Class - separate the concerns
+Refactoring: Extract Class - separate the concerns
 
 ### 3.6 Shotgun Surgery
-
 One change requires editing many classes.
 
-**Refactorings:**
+Refactorings:
 - Move Method
 - Move Field
 - Inline Class
 
 ### 3.7 Feature Envy
-
 A method uses more features of another class than its own.
 
-**Refactorings:**
+Refactorings:
 - Move Method
 - Extract Method + Move Method
 
 ### 3.8 Data Clumps
-
 Same data items appearing together repeatedly.
 
-**Refactorings:**
+Refactorings:
 - Extract Class
 - Introduce Parameter Object
 - Preserve Whole Object
 
 ### 3.9 Primitive Obsession
-
 Using primitives instead of small objects for simple tasks.
 
-**Refactorings:**
+Refactorings:
 - Replace Data Value with Object
 - Replace Type Code with Class
 - Replace Type Code with Subclasses
 - Replace Type Code with State/Strategy
 
 ### 3.10 Switch Statements
-
 Switch statements often indicate need for polymorphism.
 
-**Refactorings:**
+Refactorings:
 - Replace Type Code with Subclasses
 - Replace Type Code with State/Strategy
 - Replace Conditional with Polymorphism
 - Replace Parameter with Explicit Methods
 
 ### 3.11 Parallel Inheritance Hierarchies
-
 Creating a subclass in one hierarchy requires creating one in another.
 
-**Refactorings:**
+Refactorings:
 - Move Method
 - Move Field
 
 ### 3.12 Lazy Class
-
 A class not doing enough to justify its existence.
 
-**Refactorings:**
+Refactorings:
 - Collapse Hierarchy
 - Inline Class
 
 ### 3.13 Speculative Generality
-
 "We might need this someday" hooks that aren't used.
 
-**Refactorings:**
+Refactorings:
 - Collapse Hierarchy
 - Inline Class
 - Remove Parameter
 - Rename Method
 
 ### 3.14 Temporary Field
-
 Instance variables set only in certain circumstances.
 
-**Refactorings:**
+Refactorings:
 - Extract Class
 - Introduce Null Object
 
 ### 3.15 Message Chains
+Long chains: a.getB().getC().getD().doSomething()
 
-Long chains: `a.getB().getC().getD().doSomething()`
-
-**Refactorings:**
+Refactorings:
 - Hide Delegate
 - Extract Method + Move Method
 
 ### 3.16 Middle Man
-
 A class that delegates most of its work.
 
-**Refactorings:**
+Refactorings:
 - Remove Middle Man
 - Inline Method
 - Replace Delegation with Inheritance
 
 ### 3.17 Inappropriate Intimacy
-
 Classes too involved in each other's private details.
 
-**Refactorings:**
+Refactorings:
 - Move Method
 - Move Field
 - Change Bidirectional to Unidirectional
@@ -244,10 +206,9 @@ Classes too involved in each other's private details.
 - Replace Inheritance with Delegation
 
 ### 3.18 Data Class
-
 Classes with only fields and getters/setters.
 
-**Refactorings:**
+Refactorings:
 - Encapsulate Field
 - Encapsulate Collection
 - Remove Setting Method
@@ -255,36 +216,29 @@ Classes with only fields and getters/setters.
 - Extract Method
 
 ### 3.19 Refused Bequest
-
 Subclass doesn't use inherited methods/data.
 
-**Refactorings:**
+Refactorings:
 - Push Down Method
 - Push Down Field
 - Replace Inheritance with Delegation
 
 ### 3.20 Comments as Deodorant
-
 Comments hiding bad code instead of explaining why.
 
-**Refactorings:**
+Refactorings:
 - Extract Method
 - Rename Method
 - Introduce Assertion
 
 > "When you feel the need to write a comment, first try to refactor the code so that any comment becomes superfluous."
 
----
-
 ## 4. Refactoring Catalog
-
 ### 4.1 Composing Methods
-
 #### Extract Method
+Situation: Code fragment that can be grouped together.
 
-**Situation:** Code fragment that can be grouped together.
-
-**Mechanics:**
+Mechanics:
 1. Create new method named after intention (what, not how)
 2. Copy extracted code to new method
 3. Handle local variables (parameters, temps, return values)
@@ -323,8 +277,7 @@ void printDetails() {
 ```
 
 #### Inline Method
-
-**Situation:** Method body is as clear as its name.
+Situation: Method body is as clear as its name.
 
 ```java
 // Before
@@ -342,8 +295,7 @@ int getRating() {
 ```
 
 #### Replace Temp with Query
-
-**Situation:** Temporary variable holds result of an expression.
+Situation: Temporary variable holds result of an expression.
 
 ```java
 // Before
@@ -369,8 +321,7 @@ double basePrice() {
 ```
 
 #### Introduce Explaining Variable
-
-**Situation:** Complicated expression needs clarification.
+Situation: Complicated expression needs clarification.
 
 ```java
 // Before
@@ -391,8 +342,7 @@ if (isMacOs && isIEBrowser && wasInitialized() && wasResized) {
 ```
 
 #### Split Temporary Variable
-
-**Situation:** Temp assigned more than once (not loop/collecting variable).
+Situation: Temp assigned more than once (not loop/collecting variable).
 
 ```java
 // Before
@@ -409,8 +359,7 @@ System.out.println(area);
 ```
 
 #### Remove Assignments to Parameters
-
-**Situation:** Code assigns to a parameter.
+Situation: Code assigns to a parameter.
 
 ```java
 // Before
@@ -428,8 +377,7 @@ int discount(int inputVal, int quantity, int yearToDate) {
 ```
 
 #### Replace Method with Method Object
-
-**Situation:** Long method with too many local variables to extract.
+Situation: Long method with too many local variables to extract.
 
 ```java
 // Before
@@ -461,8 +409,7 @@ class PriceCalculator {
 ```
 
 #### Substitute Algorithm
-
-**Situation:** Want to replace algorithm with a clearer one.
+Situation: Want to replace algorithm with a clearer one.
 
 ```java
 // Before
@@ -487,12 +434,10 @@ String foundPerson(String[] people) {
 ```
 
 ### 4.2 Moving Features Between Objects
-
 #### Move Method
+Situation: Method uses more features of another class.
 
-**Situation:** Method uses more features of another class.
-
-**Mechanics:**
+Mechanics:
 1. Examine features used - consider moving them too
 2. Check for polymorphism in hierarchy
 3. Declare method in target class
@@ -501,10 +446,9 @@ String foundPerson(String[] people) {
 6. Compile and test
 
 #### Move Field
+Situation: Field used more by another class.
 
-**Situation:** Field used more by another class.
-
-**Mechanics:**
+Mechanics:
 1. Encapsulate field if public
 2. Create field with accessors in target
 3. Determine how to reference target from source
@@ -513,8 +457,7 @@ String foundPerson(String[] people) {
 6. Compile and test
 
 #### Extract Class
-
-**Situation:** One class doing work that should be two.
+Situation: One class doing work that should be two.
 
 ```java
 // Before
@@ -549,14 +492,12 @@ class TelephoneNumber {
 ```
 
 #### Inline Class
-
-**Situation:** Class isn't doing much.
+Situation: Class isn't doing much.
 
 Reverse of Extract Class - fold class into another.
 
 #### Hide Delegate
-
-**Situation:** Client calls delegate class of an object.
+Situation: Client calls delegate class of an object.
 
 ```java
 // Before
@@ -572,14 +513,12 @@ public Person getManager() {
 ```
 
 #### Remove Middle Man
-
-**Situation:** Class doing too much simple delegation.
+Situation: Class doing too much simple delegation.
 
 Reverse of Hide Delegate - let client call delegate directly.
 
 #### Introduce Foreign Method
-
-**Situation:** Server class needs method you can't add.
+Situation: Server class needs method you can't add.
 
 ```java
 // Before
@@ -596,16 +535,13 @@ private static Date nextDay(Date arg) {
 ```
 
 #### Introduce Local Extension
-
-**Situation:** Server class needs several methods you can't add.
+Situation: Server class needs several methods you can't add.
 
 Create subclass or wrapper with the extra methods.
 
 ### 4.3 Organizing Data
-
 #### Self Encapsulate Field
-
-**Situation:** Direct field access becoming awkward.
+Situation: Direct field access becoming awkward.
 
 ```java
 // Before
@@ -624,8 +560,7 @@ int getHigh() { return _high; }
 ```
 
 #### Replace Data Value with Object
-
-**Situation:** Data item needs additional data or behavior.
+Situation: Data item needs additional data or behavior.
 
 ```java
 // Before
@@ -644,8 +579,7 @@ class Customer {
 ```
 
 #### Replace Array with Object
-
-**Situation:** Array where elements mean different things.
+Situation: Array where elements mean different things.
 
 ```java
 // Before
@@ -660,7 +594,6 @@ row.setWins("15");
 ```
 
 #### Replace Magic Number with Symbolic Constant
-
 ```java
 // Before
 double potentialEnergy(double mass, double height) {
@@ -676,8 +609,7 @@ double potentialEnergy(double mass, double height) {
 ```
 
 #### Encapsulate Field
-
-**Situation:** Public field exists.
+Situation: Public field exists.
 
 ```java
 // Before
@@ -690,14 +622,12 @@ public void setName(String arg) { _name = arg; }
 ```
 
 #### Encapsulate Collection
-
-**Situation:** Method returns a collection.
+Situation: Method returns a collection.
 
 Return read-only view; provide add/remove methods.
 
 #### Replace Type Code with Class
-
-**Situation:** Class has numeric type code that doesn't affect behavior.
+Situation: Class has numeric type code that doesn't affect behavior.
 
 ```java
 // Before
@@ -722,8 +652,7 @@ class BloodGroup {
 ```
 
 #### Replace Type Code with Subclasses
-
-**Situation:** Immutable type code affects class behavior.
+Situation: Immutable type code affects class behavior.
 
 ```java
 // Before
@@ -740,14 +669,12 @@ class Salesman extends Employee {}
 ```
 
 #### Replace Type Code with State/Strategy
-
-**Situation:** Type code affects behavior but can't use subclassing.
+Situation: Type code affects behavior but can't use subclassing.
 
 Use State or Strategy pattern to replace the type code.
 
 #### Replace Conditional with Polymorphism
-
-**Situation:** Conditional that chooses behavior based on type.
+Situation: Conditional that chooses behavior based on type.
 
 ```java
 // Before
@@ -772,10 +699,8 @@ class NorwegianBlue extends Bird {
 ```
 
 ### 4.4 Simplifying Conditional Expressions
-
 #### Decompose Conditional
-
-**Situation:** Complicated conditional.
+Situation: Complicated conditional.
 
 ```java
 // Before
@@ -792,8 +717,7 @@ else
 ```
 
 #### Consolidate Conditional Expression
-
-**Situation:** Sequence of conditionals with same result.
+Situation: Sequence of conditionals with same result.
 
 ```java
 // Before
@@ -812,8 +736,7 @@ double disabilityAmount() {
 ```
 
 #### Consolidate Duplicate Conditional Fragments
-
-**Situation:** Same code in all branches of conditional.
+Situation: Same code in all branches of conditional.
 
 ```java
 // Before
@@ -834,14 +757,12 @@ send();
 ```
 
 #### Remove Control Flag
+Situation: Variable acting as control flag for loop.
 
-**Situation:** Variable acting as control flag for loop.
-
-Replace with `break` or `return`.
+Replace with break or return.
 
 #### Replace Nested Conditional with Guard Clauses
-
-**Situation:** Method has conditional that doesn't make clear the normal path.
+Situation: Method has conditional that doesn't make clear the normal path.
 
 ```java
 // Before
@@ -868,8 +789,7 @@ double getPayAmount() {
 ```
 
 #### Introduce Null Object
-
-**Situation:** Repeated null checks.
+Situation: Repeated null checks.
 
 ```java
 // Before
@@ -885,8 +805,7 @@ class NullCustomer extends Customer {
 ```
 
 #### Introduce Assertion
-
-**Situation:** Code assumes something about state.
+Situation: Code assumes something about state.
 
 ```java
 // Before
@@ -905,24 +824,19 @@ double getExpenseLimit() {
 ```
 
 ### 4.5 Making Method Calls Simpler
-
 #### Rename Method
-
-**Situation:** Method name doesn't reveal purpose.
+Situation: Method name doesn't reveal purpose.
 
 #### Add Parameter / Remove Parameter
-
 Add when method needs more info; remove when parameter isn't used.
 
 #### Separate Query from Modifier
-
-**Situation:** Method returns value and changes state.
+Situation: Method returns value and changes state.
 
 Split into two methods: one that returns, one that modifies.
 
 #### Parameterize Method
-
-**Situation:** Several methods do similar things with different values.
+Situation: Several methods do similar things with different values.
 
 ```java
 // Before
@@ -934,8 +848,7 @@ void raise(double percentage) { ... }
 ```
 
 #### Replace Parameter with Explicit Methods
-
-**Situation:** Method runs different code based on enum parameter.
+Situation: Method runs different code based on enum parameter.
 
 ```java
 // Before
@@ -950,8 +863,7 @@ void setWidth(int value) { _width = value; }
 ```
 
 #### Preserve Whole Object
-
-**Situation:** Getting values from object to pass as parameters.
+Situation: Getting values from object to pass as parameters.
 
 ```java
 // Before
@@ -964,8 +876,7 @@ withinPlan = plan.withinRange(daysTempRange);
 ```
 
 #### Replace Parameter with Method
-
-**Situation:** Object can get value itself instead of receiving it.
+Situation: Object can get value itself instead of receiving it.
 
 ```java
 // Before
@@ -979,8 +890,7 @@ double finalPrice = discountedPrice(basePrice);
 ```
 
 #### Introduce Parameter Object
-
-**Situation:** Group of parameters that go together.
+Situation: Group of parameters that go together.
 
 ```java
 // Before
@@ -995,14 +905,12 @@ amountOverdue(DateRange range)
 ```
 
 #### Hide Method
-
-**Situation:** Method not used by other classes.
+Situation: Method not used by other classes.
 
 Make it private.
 
 #### Replace Constructor with Factory Method
-
-**Situation:** Want more than simple construction.
+Situation: Want more than simple construction.
 
 ```java
 // Before
@@ -1015,14 +923,12 @@ Employee eng = Engineer.create();
 ```
 
 #### Replace Error Code with Exception
-
-**Situation:** Method returns special code for errors.
+Situation: Method returns special code for errors.
 
 Throw exception instead.
 
 #### Replace Exception with Test
-
-**Situation:** Throwing exception for condition caller could check.
+Situation: Throwing exception for condition caller could check.
 
 ```java
 // Before
@@ -1042,18 +948,14 @@ double getValueForPeriod(int periodNumber) {
 ```
 
 ### 4.6 Dealing with Generalization
-
 #### Pull Up Field / Push Down Field
-
 Move fields up to superclass or down to subclass as appropriate.
 
 #### Pull Up Method / Push Down Method
-
 Move methods up to superclass or down to subclass as appropriate.
 
 #### Pull Up Constructor Body
-
-**Situation:** Subclass constructors have identical bodies.
+Situation: Subclass constructors have identical bodies.
 
 ```java
 // Before
@@ -1075,32 +977,26 @@ class Manager extends Employee {
 ```
 
 #### Extract Subclass
-
-**Situation:** Class has features used only by some instances.
+Situation: Class has features used only by some instances.
 
 #### Extract Superclass
-
-**Situation:** Two classes have similar features.
+Situation: Two classes have similar features.
 
 #### Extract Interface
-
-**Situation:** Multiple clients use same subset of class interface.
+Situation: Multiple clients use same subset of class interface.
 
 #### Collapse Hierarchy
-
-**Situation:** Superclass and subclass aren't very different.
+Situation: Superclass and subclass aren't very different.
 
 Merge them.
 
 #### Form Template Method
-
-**Situation:** Subclasses have methods with similar steps in same order.
+Situation: Subclasses have methods with similar steps in same order.
 
 Put steps in superclass, call abstract methods for differences.
 
 #### Replace Inheritance with Delegation
-
-**Situation:** Subclass uses only part of superclass interface.
+Situation: Subclass uses only part of superclass interface.
 
 ```java
 // Before
@@ -1113,28 +1009,21 @@ class MyStack {
 ```
 
 #### Replace Delegation with Inheritance
-
-**Situation:** Using delegation and delegating all methods.
+Situation: Using delegation and delegating all methods.
 
 Make delegating class a subclass instead.
 
----
-
 ## 5. Testing and Refactoring
-
 ### The Essential Precondition
-
-> **"If you want to refactor, the essential precondition is having solid tests."**
+> "If you want to refactor, the essential precondition is having solid tests."
 
 ### Self-Testing Code Benefits
-
 - Writing tests speeds up programming
 - Tests are powerful bug detectors
 - Most debugging time eliminated
 - Finding bugs takes minutes, not hours
 
 ### Testing Principles
-
 ```
 Make sure all tests are fully automatic and check their own results.
 ```
@@ -1148,7 +1037,6 @@ A suite of tests is a powerful bug detector that decapitates the time it takes t
 ```
 
 ### What to Test
-
 - Test areas most worried about going wrong
 - Test boundary conditions
 - Test for expected exceptions
@@ -1167,31 +1055,25 @@ Don't forget to test that exceptions are raised when things are expected to go w
 ```
 
 ### Bug Reports
-
 ```
 When you get a bug report, start by writing a unit test that exposes the bug.
 ```
 
----
 
 ## 6. Agent-Specific Guidelines
-
 ### Before Refactoring
-
-1. **Ensure tests exist** - Don't refactor untested code
-2. **Verify tests pass** - Start from a known-good state
-3. **Understand the code** - Read before modifying
-4. **Identify the smell** - Know what you're fixing
+1. Ensure tests exist - Don't refactor untested code
+2. Verify tests pass - Start from a known-good state
+3. Understand the code - Read before modifying
+4. Identify the smell - Know what you're fixing
 
 ### During Refactoring
-
-1. **Take small steps** - One change at a time
-2. **Test after each change** - Verify nothing broke
-3. **Commit frequently** - Preserve working states
-4. **Don't add features** - Stay focused on structure
+1. Take small steps - One change at a time
+2. Test after each change - Verify nothing broke
+3. Commit frequently - Preserve working states
+4. Don't add features - Stay focused on structure
 
 ### Safe Refactoring Checklist
-
 ```markdown
 [ ] Tests exist and pass
 [ ] I understand what the code does
@@ -1202,7 +1084,6 @@ When you get a bug report, start by writing a unit test that exposes the bug.
 ```
 
 ### Common Agent Mistakes to Avoid
-
 | Mistake | Correct Approach |
 |---------|------------------|
 | Refactoring and adding features together | Separate the activities |
@@ -1213,41 +1094,35 @@ When you get a bug report, start by writing a unit test that exposes the bug.
 | Premature abstraction | Wait for third occurrence |
 
 ### Refactoring Priority for Agents
-
-**High Priority (Fix First):**
+High Priority (Fix First):
 1. Duplicated code
 2. Long methods
 3. Large classes
 4. Long parameter lists
 
-**Medium Priority:**
+Medium Priority:
 5. Feature envy
 6. Data clumps
 7. Switch statements
 8. Primitive obsession
 
-**Lower Priority (Consider Context):**
+Lower Priority (Consider Context):
 9. Speculative generality
 10. Message chains
 11. Middle man
 12. Comments hiding bad code
 
 ### Communication Guidelines
-
 When suggesting refactoring to users:
 
-1. **Explain the smell** - What's wrong and why
-2. **Propose the refactoring** - What you'll do
-3. **Describe the benefit** - Why it's better
-4. **Show before/after** - Make it concrete
-5. **Preserve behavior** - Reassure nothing breaks
-
----
+1. Explain the smell - What's wrong and why
+2. Propose the refactoring - What you'll do
+3. Describe the benefit - Why it's better
+4. Show before/after - Make it concrete
+5. Preserve behavior - Reassure nothing breaks
 
 ## 7. Quick Reference
-
 ### Smell to Refactoring Map
-
 | Smell | Primary Refactoring |
 |-------|---------------------|
 | Duplicated Code | Extract Method, Pull Up Method |
@@ -1272,7 +1147,6 @@ When suggesting refactoring to users:
 | Comments | Extract Method, Rename Method |
 
 ### Refactoring Decision Tree
-
 ```
 Is the code tested?
 ├── No → Write tests first
@@ -1287,13 +1161,11 @@ Is the code tested?
 ```
 
 ### The Refactoring Mantra
-
-1. **RED** - Write a failing test
-2. **GREEN** - Make it pass (simplest way)
-3. **REFACTOR** - Clean up while tests pass
+1. RED - Write a failing test
+2. GREEN - Make it pass (simplest way)
+3. REFACTOR - Clean up while tests pass
 
 ### Key Takeaways
-
 1. Refactoring = changing structure without changing behavior
 2. Small steps + frequent tests = safety
 3. Code smells guide when to refactor
@@ -1302,15 +1174,10 @@ Is the code tested?
 6. Three strikes, then refactor
 7. Separate refactoring from feature work
 
----
-
 ## Resources
+- Book: "Refactoring: Improving the Design of Existing Code" by Martin Fowler
+- Website: [refactoring.com](https://refactoring.com)
+- Related: "Design Patterns" by Gang of Four
+- Testing: JUnit, xUnit frameworks
 
-- **Book:** "Refactoring: Improving the Design of Existing Code" by Martin Fowler
-- **Website:** [refactoring.com](https://refactoring.com)
-- **Related:** "Design Patterns" by Gang of Four
-- **Testing:** JUnit, xUnit frameworks
-
----
-
-*This guide summarizes Martin Fowler's "Refactoring" for use by LLM agents when analyzing and improving code.*
+This guide summarizes Martin Fowler's "Refactoring" for use by LLM agents when analyzing and improving code.

@@ -1,11 +1,7 @@
 # Practical Debugging for .NET Developers - Reference Guide
-
 > A comprehensive reference for debugging .NET applications, summarized from "Practical Debugging for .NET Developers" by Michael Shpilt
 
----
-
 ## Table of Contents
-
 1. [Essential Debugging Tools](#1-essential-debugging-tools)
 2. [General Debugging Strategies](#2-general-debugging-strategies)
 3. [Working with Breakpoints](#3-working-with-breakpoints)
@@ -16,60 +12,53 @@
 8. [Third-Party and Production Code](#8-third-party-and-production-code)
 9. [ASP.NET Request Failures](#9-aspnet-request-failures)
 
----
-
 ## 1. Essential Debugging Tools
-
 ### Decompilers
 | Tool | Description |
 |------|-------------|
-| **ILSpy** | Free, open-source .NET decompiler |
-| **dotPeek** | Free JetBrains decompiler with symbol server capability |
-| **dnSpy** | Decompiler + Debugger - can debug without source code |
+| ILSpy | Free, open-source .NET decompiler |
+| dotPeek | Free JetBrains decompiler with symbol server capability |
+| dnSpy | Decompiler + Debugger - can debug without source code |
 
 ### Memory Profilers
 | Tool | Description |
 |------|-------------|
-| **dotMemory** | JetBrains memory profiler |
-| **ANTS Memory Profiler** | RedGate memory profiler |
-| **SciTech Memory Profiler** | Advanced memory analysis |
-| **Visual Studio Diagnostic Tools** | Built-in memory profiling |
+| dotMemory | JetBrains memory profiler |
+| ANTS Memory Profiler | RedGate memory profiler |
+| SciTech Memory Profiler | Advanced memory analysis |
+| Visual Studio Diagnostic Tools | Built-in memory profiling |
 
 ### Performance Profilers
 | Tool | Description |
 |------|-------------|
-| **dotTrace** | JetBrains performance profiler |
-| **ANTS Performance Profiler** | RedGate performance profiler |
-| **PerfView** | Free Microsoft tool using ETW events |
-| **Visual Studio Profiler** | Built-in performance profiling |
+| dotTrace | JetBrains performance profiler |
+| ANTS Performance Profiler | RedGate performance profiler |
+| PerfView | Free Microsoft tool using ETW events |
+| Visual Studio Profiler | Built-in performance profiling |
 
 ### Network Tools
 | Tool | Description |
 |------|-------------|
-| **Fiddler** | HTTP/HTTPS traffic monitoring and replay |
-| **Wireshark** | Network packet analysis |
+| Fiddler | HTTP/HTTPS traffic monitoring and replay |
+| Wireshark | Network packet analysis |
 
 ### System Tools
 | Tool | Description |
 |------|-------------|
-| **Sysinternals Suite** | Process Explorer, ProcMon, ProcDump, DebugView |
-| **WinDbg** | Low-level Windows debugger |
-| **Event Viewer** | Windows event logs |
-| **Performance Monitor (PerfMon)** | Performance counters monitoring |
-
----
+| Sysinternals Suite | Process Explorer, ProcMon, ProcDump, DebugView |
+| WinDbg | Low-level Windows debugger |
+| Event Viewer | Windows event logs |
+| Performance Monitor (PerfMon) | Performance counters monitoring |
 
 ## 2. General Debugging Strategies
-
 ### The Scientific Method for Debugging
-1. **Observe** - Gather information about the bug
-2. **Hypothesize** - Form theories about the cause
-3. **Predict** - What should happen if hypothesis is correct
-4. **Test** - Verify the prediction
-5. **Iterate** - Refine hypothesis based on results
+1. Observe - Gather information about the bug
+2. Hypothesize - Form theories about the cause
+3. Predict - What should happen if hypothesis is correct
+4. Test - Verify the prediction
+5. Iterate - Refine hypothesis based on results
 
 ### Key Debugging Tactics
-
 #### Divide and Conquer
 - Remove code systematically until bug disappears
 - Binary search approach: remove half the code, check if bug persists
@@ -96,20 +85,16 @@
 - Can you reproduce it in a different environment?
 - What are the exact error messages?
 
----
-
 ## 3. Working with Breakpoints
-
 ### Breakpoint Types
-
 | Type | Use Case |
 |------|----------|
-| **Line Breakpoint** | Stop at specific line |
-| **Conditional Breakpoint** | Stop only when condition is true |
-| **Hit Count Breakpoint** | Stop after N hits |
-| **Function Breakpoint** | Stop at function entry (works without source) |
-| **Data Breakpoint** | Stop when variable changes |
-| **Tracepoint** | Log without stopping |
+| Line Breakpoint | Stop at specific line |
+| Conditional Breakpoint | Stop only when condition is true |
+| Hit Count Breakpoint | Stop after N hits |
+| Function Breakpoint | Stop at function entry (works without source) |
+| Data Breakpoint | Stop when variable changes |
+| Tracepoint | Log without stopping |
 
 ### Conditional Breakpoints
 ```csharp
@@ -121,35 +106,29 @@ items.Count > 50
 
 ### Actions (Tracepoints)
 - Log messages without breaking
-- Include variable values: `{variableName}`
+- Include variable values: {variableName}
 - Useful for debugging loops without stopping
 
 ### Advanced Techniques
-
 #### Make Object ID
 1. Set breakpoint where object is created
 2. Right-click variable → Make Object ID
-3. Creates weak reference `$1`, `$2`, etc.
+3. Creates weak reference $1, $2, etc.
 4. Check if object is collected later (memory leak detection)
 
 #### Dependent Breakpoints
 - Break at A only if B was hit first
 - Useful for complex debugging scenarios
 
----
-
 ## 4. Memory Dumps
-
 ### Dump Types
-
 | Type | Size | Contains |
 |------|------|----------|
-| **Minidump** | Small | Thread stacks, loaded modules |
-| **Minidump with heap** | Medium | Above + managed heap |
-| **Full dump** | Large | Complete process memory |
+| Minidump | Small | Thread stacks, loaded modules |
+| Minidump with heap | Medium | Above + managed heap |
+| Full dump | Large | Complete process memory |
 
 ### Capturing Dumps
-
 #### Using ProcDump
 ```bash
 # Basic dump
@@ -178,7 +157,6 @@ procdump -ma -m 1024 <pid>
 - Debug → Save Dump As...
 
 ### Analyzing Dumps
-
 #### In Visual Studio
 1. File → Open → File → select .dmp
 2. Click "Debug with Managed Only" or "Debug with Mixed"
@@ -197,21 +175,17 @@ procdump -ma -m 1024 <pid>
 !gcroot <addr>    # Find GC roots
 ```
 
----
 
 ## 5. Debugging Hangs and Deadlocks
-
 ### Types of Hangs
-
 | Type | Description | Detection |
 |------|-------------|-----------|
-| **Deadlock** | Threads waiting for each other | Circular lock dependency |
-| **UI Freeze** | UI thread blocked | Non-responsive window |
-| **Infinite Loop** | CPU-bound hang | High CPU usage |
-| **Resource Starvation** | Waiting for unavailable resource | External dependency check |
+| Deadlock | Threads waiting for each other | Circular lock dependency |
+| UI Freeze | UI thread blocked | Non-responsive window |
+| Infinite Loop | CPU-bound hang | High CPU usage |
+| Resource Starvation | Waiting for unavailable resource | External dependency check |
 
 ### Detecting Deadlocks
-
 #### Visual Studio
 1. Attach to hung process
 2. Debug → Break All
@@ -224,7 +198,6 @@ procdump -ma -m 1024 <pid>
 3. Check for lock contentions
 
 ### Common Deadlock Patterns
-
 #### Classic Deadlock
 ```csharp
 // Thread 1
@@ -247,7 +220,6 @@ lock(A) {
 ```
 
 ### UI Thread Freezes
-
 #### Common Causes
 - Long-running operations on UI thread
 - Synchronous I/O operations
@@ -256,22 +228,17 @@ lock(A) {
 #### Solutions
 - Use async/await
 - Move work to background threads
-- Use `.ConfigureAwait(false)` when possible
-
----
+- Use .ConfigureAwait(false) when possible
 
 ## 6. Memory Issues
-
 ### Memory Problem Types
-
 | Issue | Symptom | Cause |
 |-------|---------|-------|
-| **Memory Leak** | Memory rises over time | Objects not released |
-| **GC Pressure** | High % time in GC | Too many allocations |
-| **OutOfMemoryException** | Crash | Memory limit reached |
+| Memory Leak | Memory rises over time | Objects not released |
+| GC Pressure | High % time in GC | Too many allocations |
+| OutOfMemoryException | Crash | Memory limit reached |
 
 ### Detecting Memory Leaks
-
 #### Performance Counters
 ```
 Process | Private Bytes          # Total memory
@@ -286,7 +253,6 @@ Process | Private Bytes          # Total memory
 4. Compare snapshots - new objects are potential leaks
 
 ### Common Memory Leak Sources
-
 #### 1. Event Subscriptions
 ```csharp
 // LEAK: subscriber referenced by publisher
@@ -330,9 +296,8 @@ timer.Change(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(5));
 - Use weak references when appropriate
 
 ### GC Pressure
-
 #### Detection
-- `% Time in GC` > 20% is problematic
+- % Time in GC > 20% is problematic
 - Frequent Generation 2 collections
 - Visual Studio Diagnostic Tools shows frequent GC
 
@@ -342,7 +307,6 @@ timer.Change(TimeSpan.FromSeconds(5), TimeSpan.FromSeconds(5));
 - Inefficient use of strings/arrays
 
 #### Solutions
-
 ##### Use ArrayPool
 ```csharp
 var pool = ArrayPool<int>.Shared;
@@ -373,7 +337,7 @@ sb.Append(a).Append(b)...
 ##### Avoid Finalizers
 - Finalizers are expensive (300x slower)
 - Use IDisposable instead
-- Call `GC.SuppressFinalize(this)` in Dispose
+- Call GC.SuppressFinalize(this) in Dispose
 
 ### Dispose Pattern
 ```csharp
@@ -405,10 +369,8 @@ public class MyClass : IDisposable
 }
 ```
 
----
 
 ## 7. Performance Issues
-
 ### When to Worry About Performance
 - In algorithms and hot paths
 - High-throughput servers
@@ -416,33 +378,29 @@ public class MyClass : IDisposable
 - Mobile/IoT devices
 
 ### Performance Analysis Workflow
-
-1. **Monitor** - Use performance counters
-2. **Profile** - Use performance profiler
-3. **Identify** - Find bottleneck
-4. **Optimize** - Fix specific issue
-5. **Benchmark** - Verify improvement
+1. Monitor - Use performance counters
+2. Profile - Use performance profiler
+3. Identify - Find bottleneck
+4. Optimize - Fix specific issue
+5. Benchmark - Verify improvement
 
 ### Key Performance Counters
-
 | Counter | Normal | Problem |
 |---------|--------|---------|
-| `% Time in GC` | < 10% | > 20% |
-| `% Processor Time` | Varies | 100% sustained |
-| `Exceptions/sec` | Low | High |
-| `Contention Rate/sec` | Low | High |
+| % Time in GC | < 10% | > 20% |
+| % Processor Time | Varies | 100% sustained |
+| Exceptions/sec | Low | High |
+| Contention Rate/sec | Low | High |
 
 ### Profiling Modes
-
 | Mode | Use Case | Overhead |
 |------|----------|----------|
-| **Sampling** | General performance | Low |
-| **Tracing** | Hit counts, all calls | Medium |
-| **Line-by-line** | Algorithm analysis | High |
-| **Timeline** | Chronological view | Low |
+| Sampling | General performance | Low |
+| Tracing | Hit counts, all calls | Medium |
+| Line-by-line | Algorithm analysis | High |
+| Timeline | Chronological view | Low |
 
 ### Using PerfView
-
 ```bash
 # Collect trace
 PerfView collect output.etl
@@ -455,16 +413,15 @@ PerfView collect output.etl -CircularMB:1024
 ```
 
 ### Common Performance Issues
-
 #### Too Many Exceptions
 - Exceptions are expensive
 - Don't use for control flow
-- Check `Exceptions/sec` counter
+- Check Exceptions/sec counter
 
 #### JIT Compilation Overhead
 - Affects startup time
 - Use NGEN or ReadyToRun (R2R) for AOT compilation
-- Check `% Time in JIT`
+- Check % Time in JIT
 
 #### Lock Contention
 ```csharp
@@ -494,7 +451,6 @@ async Task LoadDataAsync()
 ```
 
 ### Optimization Techniques
-
 #### Caching
 - Cache expensive operation results
 - Implement eviction policies
@@ -526,12 +482,9 @@ public void Method2() { /* ... */ }
 BenchmarkRunner.Run<MyBenchmarks>();
 ```
 
----
 
 ## 8. Third-Party and Production Code
-
 ### Debugging Without Source Code
-
 #### Using dnSpy
 1. Open assembly in dnSpy
 2. Set breakpoints in decompiled code
@@ -545,14 +498,12 @@ BenchmarkRunner.Run<MyBenchmarks>();
 4. Debug with decompiled source
 
 ### Handling Optimized Code
-
 #### Problem
 - Production code is optimized
 - Can't see some local variables
 - Some breakpoints don't hit
 
 #### Solutions
-
 ##### dnSpy
 - Automatically disables JIT optimization when starting process
 - Best to start process with dnSpy, not attach
@@ -562,7 +513,7 @@ BenchmarkRunner.Run<MyBenchmarks>();
 2. Check "Suppress JIT optimization on module load"
 
 ##### Using .ini file
-Create `AssemblyName.ini` next to the DLL:
+Create AssemblyName.ini next to the DLL:
 ```ini
 [.NET Framework Debugging Control]
 GenerateTrackingInfo=1
@@ -570,7 +521,6 @@ AllowOptimize=0
 ```
 
 ### Breaking on Third-Party Exceptions
-
 1. Disable "Enable Just My Code" in VS options
 2. Enable "Suppress JIT optimization"
 3. Configure Exception Settings to break on desired exceptions
@@ -578,12 +528,9 @@ AllowOptimize=0
 ### Function Breakpoints (No Source Code)
 1. Debug → Windows → Breakpoints
 2. New → Function Breakpoint
-3. Enter: `Namespace.Class.Method`
-
----
+3. Enter: Namespace.Class.Method
 
 ## 9. ASP.NET Request Failures
-
 ### Information Needed for Debugging
 - Exception type and message
 - Stack trace with line numbers
@@ -592,7 +539,6 @@ AllowOptimize=0
 - Database/HTTP calls made
 
 ### Detection Methods
-
 | Method | Information Provided |
 |--------|---------------------|
 | Event Viewer | Exception details |
@@ -641,7 +587,7 @@ public class ErrorLoggingMiddleware
 ```
 
 ### Enable stdout Logs
-In `web.config`:
+In web.config:
 ```xml
 <aspNetCore stdoutLogEnabled="true"
             stdoutLogFile=".\logs\stdout" />
@@ -656,10 +602,8 @@ procdump -ma -e 1 <pid>
 procdump -ma -e 1 -f "NullReference" <pid>
 ```
 
----
 
 ## Quick Reference: Common Commands
-
 ### ProcDump
 ```bash
 procdump -ma <pid>                    # Full dump
@@ -695,10 +639,8 @@ dotnet trace list-processes           # List processes
 dotnet trace collect -p <pid>         # Collect trace
 ```
 
----
 
 ## Debugging Checklist
-
 ### Before Starting
 - [ ] Can you reproduce the issue?
 - [ ] What changed recently?
@@ -730,15 +672,10 @@ dotnet trace collect -p <pid>         # Collect trace
 - [ ] Identify hot paths
 - [ ] Benchmark before and after changes
 
----
-
 ## Resources
+- Book: "Practical Debugging for .NET Developers" by Michael Shpilt
+- Blog: [michaelscodingspot.com](https://michaelscodingspot.com)
+- PerfView Tutorials: Microsoft Channel 9
+- BenchmarkDotNet: [benchmarkdotnet.org](https://benchmarkdotnet.org)
 
-- **Book**: "Practical Debugging for .NET Developers" by Michael Shpilt
-- **Blog**: [michaelscodingspot.com](https://michaelscodingspot.com)
-- **PerfView Tutorials**: Microsoft Channel 9
-- **BenchmarkDotNet**: [benchmarkdotnet.org](https://benchmarkdotnet.org)
-
----
-
-*This reference guide is a summary of "Practical Debugging for .NET Developers" for quick lookup during debugging sessions.*
+This reference guide is a summary of "Practical Debugging for .NET Developers" for quick lookup during debugging sessions.

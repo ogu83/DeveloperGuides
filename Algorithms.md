@@ -1,5 +1,4 @@
 ###### ALGORITHMS
-
  ROBERT SEDGEWICK
 
 BROWN UNNER!MY
@@ -8,13 +7,9 @@ ADDISON-WESLEY PUBLISHING COMPANY
 Reading, Massachusetts � Menlo Park, California
 London � Amsterdam � Don Mills, Ontario � Sydney
 
-
 BROWN UNNER!MY
 
-
------
-
-_To Adam, Brett, Robbie_
+To Adam, Brett, Robbie
 and especially Linda
 
 This book is in the
@@ -27,7 +22,7 @@ Michael A. Harrison
 Sponsoring Editor
 James T. DeWolfe
 
-**Library of Congress Cataloging in Publication Data**
+Library of Congress Cataloging in Publication Data
 
 Sedgewick, Robert, 1946
 Algorithms.
@@ -50,17 +45,10 @@ mechanical, photocopying, recording, or otherwise, without prior written permiss
 ISBN o-201-06672-6
 FGHIJ-HA-8987654
 
-
 QA76.6.S435 1983
 
-
 ###### 0
-
-
------
-
 ###### Preface
-
 This book is intended to survey the most important algorithms in use on
 computers today and to teach fundamental techniques to the growing number
 of people who are interested in becoming serious computer users. It is appropriate for use as a textbook for a second, third or fourth course in computer
@@ -99,10 +87,7 @@ students to be able to appreciate the material in this book: one course in
 
 . . .
 
-**111**
-
-
------
+111
 
 iv
 
@@ -146,9 +131,6 @@ languages, since relatively few Pascal constructs are used. Some of the programs
 available in Pascal), but this is true less often than one might think. A goal of
 this book is to present the algorithms in as simple and direct form as possible.
 
-
------
-
 The programs are not intended to be read by themselves, but as part of the
 surrounding text. This style was chosen as an alternative, for example, to
 having inline comments. Consistency in style is used whenever possible, so
@@ -160,7 +142,7 @@ described in the text. A few of the exercises at the end of each chapter involve
 implementing and putting together some of the algorithms, perhaps running
 empirical studies to learn their properties.
 
-_Acknowledgments_
+Acknowledgments
 
 Many people, too numerous to mention here, have provided me with helpful
 feedback on earlier drafts of this book. In particular, students and teaching
@@ -190,48 +172,40 @@ INRIA where I did most of the work on the book, and the Institute for Defense
 Analyses and the Xerox Palo Alto Research Center, where I did some work
 on the book while visiting.
 
-_Robert Sedgewick_
-_Marly-le-Roi, France_
-_February,_ _1985’_
-
+Robert Sedgewick
+Marly-le-Roi, France
+February, 1985’
 
 DeWolf.
 
-
 ###### QX
-
-
-_1985’_
-
-
------
+1985’
 
 ###### Contents
-
 Introduction . . . . . . . . . . . . . . . . . . . . . .
 Algorithms, Outline of Topics
 
 1. Preview. . . . . . . . . . . . . . . . . . . . . . .
-Pascal, _Euclid’s_ Algorithm, _Recursion,_ Analysis _of_ Algorithms
+Pascal, Euclid’s Algorithm, Recursion, Analysis of Algorithms
 Implementing Algorithms
 
 MATHEMATICAL ALGORITHMS
 2. Arithmetic . . . . . . . . . . . . . . . . . . . . .
-Polynomials, Matrices, Data _Structures_
+Polynomials, Matrices, Data Structures
 
 3. Random Numbers . . . . . . . . . . . . . . . . . . .
 Applications, Linear Congruential Method, Additive
-Congruential Method, Testing Randomness, Implementation _Notes_
+Congruential Method, Testing Randomness, Implementation Notes
 
 4. Polynomials . . . . . . . . . . . . . . . . . . . . . .
 Evaluation, Interpolation, Multiplication, Divide-and-conquer
 Recurrences, Matriz Multiplication
 5. Gaussian Elimination . . . . . . . . . . . . . . . . . .
-_A_ Simple Example, Outline _of_ _the_ Method, Variations and _Extensions_
+A Simple Example, Outline of the Method, Variations and Extensions
 
 6. Curve Fitting . . . . . . . . . . . . . . . . . . . . .
 
-Polynomaal Interpolation, Spline Interpolation, Method _of_ _Least Squares_
+Polynomaal Interpolation, Spline Interpolation, Method of Least Squares
 
 7. Integration . . . . . . . . . . . . . . . . . . . . . .
 
@@ -240,17 +214,17 @@ Adaptive Quadrature
 
 SORTING
 8. Elementary Sorting Methods . . . . . . . . . . . . . .
-_Rules of the_ Game, Selection Sort, Insertion Sort, _Shellsort,_
-Bubble _Sort,_ Distribution Counting, Non-Random _Files_
+Rules of the Game, Selection Sort, Insertion Sort, Shellsort,
+Bubble Sort, Distribution Counting, Non-Random Files
 
 9. Quicksort . . . . . . . . . . . . . .,, ., . . . . .
-_The Baszc_ Algorithm, Removing Recursion, Small _Subfiles,_
+The Baszc Algorithm, Removing Recursion, Small Subfiles,
 
-Median-of- _Three_ Partitioning
+Median-of- Three Partitioning
 
 10. Radix Sorting . . . . . . . . . . ., . . . . . . . . .
 
-Radiz Ezchange _Sort,_ Straight Radix _Sort,_ _A_ Linear _Sort_
+Radiz Ezchange Sort, Straight Radix Sort, A Linear Sort
 
 11. Priority Queues . . . . . . . . . . . . . . . . . . . .
 Elementary Implementations, Heap Data Structure, Algorithms
@@ -261,12 +235,11 @@ on Heaps, Heapsort, Indirect Heaps, Advanced Implementations
 Selection, Mergang, Recursion Revisited
 
 13. External Sorting . . . . . . . . . . . . . . . . . . . .
-Sort-Merge, Balanced Multiway _Merging,_ Replacement Selectzon,
+Sort-Merge, Balanced Multiway Merging, Replacement Selectzon,
 
-Practical Considerations, Polyphase Merging, _An_ Easier _Way_
+Practical Considerations, Polyphase Merging, An Easier Way
 
 vi
-
 
 . . . 3
 
@@ -296,20 +269,13 @@ vi
 
 . . 155
 
-
-_Shellsort,_
-
+Shellsort,
 
 Radiz Ezchange
 
-
 Polynomaal Interpolation, Spline Interpolation, Method
 
-
 .
-
-
------
 
 vii
 
@@ -317,143 +283,131 @@ SEARCHING
 
 14. Elementary Searching Methods . . . . . . . . . . . . . . . . 171
 
-_Sequential Searching,_ Sequential _List Searchang,_ Binary _Search,_
-Binary _‘Pree Search, Indirect Binary Search Trees_
+Sequential Searching, Sequential List Searchang, Binary Search,
+Binary ‘Pree Search, Indirect Binary Search Trees
 15. Balanced Trees . . . . . . . . . . . . . . . . . . . . . . 187
 
-Top-Down _2-9-4_ _Trees, Red-Black_ _Trees, Other Algorithms_
+Top-Down 2-9-4 Trees, Red-Black Trees, Other Algorithms
 16. Hashing . . . . . . . . . . . . . . . . ., . . . . . . . 201
 
-_Hash_ Functions, _Separate_ Chaining, Open Addresszng, Analytic Results
+Hash Functions, Separate Chaining, Open Addresszng, Analytic Results
 17. Radix Searching . . . . . . . . . . . . . . . . . . . . . . 213
 
-_Digital Search_ _Trees, Radix Search Wes, M&iway Radar_ Searching,
-_Patricia_
+Digital Search Trees, Radix Search Wes, M&iway Radar Searching,
+Patricia
 
 18. External Searching . . . . . . . .,, . . . . . . . . . . . . . 225
-Indexed Sequential _Access, B- nees, Extendible Hashing, Virtual Memory_
+Indexed Sequential Access, B- nees, Extendible Hashing, Virtual Memory
 
 STRING PROCESSING
 
 19. String Searching . . . . . . . . . . . . . . . . . . . . . . 241
-_A Short History, Brute-Force Algorithm, Knuth-Morris-Pratt Algorzthm,_
-_Bayer-Moore Algorithm, Rabin-Karp Algorithm, Multiple Searches_
+A Short History, Brute-Force Algorithm, Knuth-Morris-Pratt Algorzthm,
+Bayer-Moore Algorithm, Rabin-Karp Algorithm, Multiple Searches
 
 20. Pattern Matching . . . . . . . . . . . . . . . . . . . . . 257
-Describing _Patterns, Pattern Matching Machznes,_ Representzng
-_the_ Machine, Simulating _the_ Machine
+Describing Patterns, Pattern Matching Machznes, Representzng
+the Machine, Simulating the Machine
 21. Parsing, . . . . . . . . . . . . . . . . . . . . . . . . . 269
 
-Conteti-Free _Grammars, Top-Down_ Parsing, _Bottom-Up Parsing,_
+Conteti-Free Grammars, Top-Down Parsing, Bottom-Up Parsing,
 Compilers, Compiler-Compilers
-22. File Compression . . . . . . . . . . . . . . . . . . . . . . _283_
+22. File Compression . . . . . . . . . . . . . . . . . . . . . . 283
 
-_Run-Length_ Encoding, _Variable-Length_ Encoding
+Run-Length Encoding, Variable-Length Encoding
 
 23. Cryptology . . . . . . . . . . . . . . . . . . . . . . . . . 295
-Rules of _the_ Game, Simple _Methods,_ Encrypt:!on/Decryption
-Machines, _Publzc-Key_ Cryptosystems
+Rules of the Game, Simple Methods, Encrypt:!on/Decryption
+Machines, Publzc-Key Cryptosystems
 
 GEOMETRIC ALGORITHMS
 
 24. Elementary Geometric Methods . . . . . . . . . . . . . . . . 307
 
-Poznts, _Lines,_ and _Polygons, Line_ Intersection, Simple
-_Closed Path,_ Inclusaon in 4 Polygon, _Perspective_
+Poznts, Lines, and Polygons, Line Intersection, Simple
+Closed Path, Inclusaon in 4 Polygon, Perspective
 25. Finding the Convex Hull . . . . . . . . . . . . . . . . . . . 321
 
-_Rules_ _of_ _the_ Game, _Package_ Wrapping, _The Graham_ Scan,
-_Hull_ Selection, Performance _Issues_
+Rules of the Game, Package Wrapping, The Graham Scan,
+Hull Selection, Performance Issues
 26. Range Searching . . . . . . . . . . . . . . . . . . . . . . . 335
-_Elementary Methods,_ _Grad Method,_ _2D Trees,_
+Elementary Methods, Grad Method, 2D Trees,
 
-Multidimensaonal Range _Searching_
+Multidimensaonal Range Searching
 
 27. Geometric Intersection ., . . . . . . . . . . . . . . . . . . 349
-_Horizontal and Vertical_ Lines, General Line Intersection
+Horizontal and Vertical Lines, General Line Intersection
 28. Closest Point Problems . . . . . . . . . . . . . . . . . . . 361
-_Closest_ _Paar, Voronoi_ Diagrams
-
+Closest Paar, Voronoi Diagrams
 
 Encrypt:!on/Decryption
 
-
 Representzng
 
-
-_Publzc-Key_
-
+Publzc-Key
 
 Chaining, Open Addresszng, Analytic Results
 
-
-_Patricia_
-
+Patricia
 
 Inclusaon in
 
+Radix Search Wes, M&iway Radar
 
-_Radix Search Wes, M&iway Radar_
+Grad
 
-
-_Grad_
-
-
------
-
-**Vlll**
+Vlll
 
 GRAPH ALGORITHMS
 
 29. Elementary Graph Algorithms . . . . . . . . . . . . . . .
-_Glossary, Representation, Depth-First Search,_ Mazes, _Perspectzve_
+Glossary, Representation, Depth-First Search, Mazes, Perspectzve
 
 30. Connectivity . . . . . . . . . . . . . . . . . . . . .
-_Biconnectivity,_ Graph Traversal _Algorzthms, Union-Find Algorithms_
+Biconnectivity, Graph Traversal Algorzthms, Union-Find Algorithms
 
 31. Weighted Graphs . . . . . . . . . . . . . . . . . . .
 
-Mmimum Spanning _Tree, Shortest Path, Dense Graphs,_ Geometrzc _Problems_
+Mmimum Spanning Tree, Shortest Path, Dense Graphs, Geometrzc Problems
 
 32. Directed Graphs . . . . . . . . . . . . . . . . . . . .
 
-_Depth-Farst_ Search, Transitwe _Closure,_ Topological Sorting,
+Depth-Farst Search, Transitwe Closure, Topological Sorting,
 Strongly Connected Components
 
 33. Network Flow . . . . . . . . . . . . . . . . . . .
-_The Network Flow Problem,_ Ford-Adkerson _Method, Network_ Searching
+The Network Flow Problem, Ford-Adkerson Method, Network Searching
 
 34. Matching . . . . . . . . . . . . . . . . . ., . . . . .
 
-Bapartite Graphs, _Stable Marriage Problem,_ Advanced _Algorathms_
+Bapartite Graphs, Stable Marriage Problem, Advanced Algorathms
 
 ADVANCED TOPICS
 
 35. Algorithm Machines . . . . . . . . . . . . . . . . . . .
-General Approaches> _Perfect ShujIes, Systolic_ Arrays
+General Approaches> Perfect ShujIes, Systolic Arrays
 
 36. The Fast Fourier Transform . . . . . . . . . . . . . . .
-Evaluate, _Multiply,_ Interpolate, Complez _Roots_ of Unity, _Evaluation_
-_at the Roots of Unity,_ Interpolatzon at _the Roots of Unity,_ Implementation
+Evaluate, Multiply, Interpolate, Complez Roots of Unity, Evaluation
+at the Roots of Unity, Interpolatzon at the Roots of Unity, Implementation
 
 37. Dynamic Programming . . . . . . . . . . . . . . . . . .
-Knapsack _Problem,_ Matriz Chain _Product,_ Optimal Binary Search Trees,
+Knapsack Problem, Matriz Chain Product, Optimal Binary Search Trees,
 
-_Shortest Paths, Time_ and Space _Requirements_
+Shortest Paths, Time and Space Requirements
 
 38. Linear Programming . . . . . . . . . . . . . . . . . .
 
-Lznear _Programs, Geometric_ Interpretation, _The_ Simplex _Method,_
+Lznear Programs, Geometric Interpretation, The Simplex Method,
 Implementation
 
 39. Exhaustive Search . . . . . . . . . . . . . . . . . . .
 Exhaustive Search in Graphs, Backtrackzng, Permutation Generation,
-Approximation _Algorithms_
+Approximation Algorithms
 
 40. NP-complete Problems . . . . . . . . . . . . . . . .
 Deterministic and Nondeterministic Polynomial- Time Algorzthms,
-_NP-Completeness, Cook’s_ Theorem, _Some NP-Complete Problems_
-
+NP-Completeness, Cook’s Theorem, Some NP-Complete Problems
 
 . . 373
 
@@ -479,32 +433,21 @@ _NP-Completeness, Cook’s_ Theorem, _Some NP-Complete Problems_
 
 . . 527
 
-
 Exhaustive Search in Graphs, Backtrackzng, Permutation Generation,
-
 
 General Approaches>
 
+Perspectzve
 
-_Perspectzve_
-
-
-_Perfect ShujIes, Systolic_
-
+Perfect ShujIes, Systolic
 
 Geometrzc
 
-
 Bapartite Graphs,
-
 
 Lznear
 
-
 .
-
-
------
 
 ................................................................
 ..........................................: ........ ...... : .. .................................
@@ -524,7 +467,7 @@ Lznear
 :..: :..: .:. : :. :.:. : .:..:-:. : .:. : :. :.:. :.a: ... : :: ..: ... : .... : .... . .:. : .:. : ... : .... : .:..: .
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ...............................................
--:.::.:. . . . . . . . : :: : . ::. . . . . . . . . : .. * . . . .::: . . . . .:: : . . . :.. . . :-:-.:.:. .  .. . . ........................................................... : .... :::.: :.: : *.- : :.: :::.: -:.: 
+-:.::.:. . . . . . . . : :: : . ::. . . . . . . . . : .. * . . . .::: . . . . .:: : . . . :.. . . :-:-.:.:. . .. . . ........................................................... : .... :::.: :.: : *.- : :.: :::.: -:.:
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ................................................
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..........................................
 :. :.::: :. : .:: : :. : :..: :. : :*. :.:. :-:. .:. : ... : :.:: ... : :: : .... : ... : .:. : : .. : :..: .... : .
@@ -532,11 +475,11 @@ Lznear
 . . . . . . . . . . . . . . . . . . . . . . . . *.. . . . . . . . . . . . . ........ . .:: . : ....... : ........ . . .:. . : .. : .... : ......
 . :. . : . :. :: . :. . : . :. : : . :... : . ::. ..................................
 
-. . . . :. : .:. . .  : . :.::.. :  . :..:.:. ..:a::. :-:.. . . . . : .:..:. : : . :.. . :..:: :. : ..:..:. :....... ... :I, .:.. .....: ... :. ...... :: ..............: ... : ... : ... : ... ::. ...: ... . :. ......: .......: :: :. ..
+. . . . :. : .:. . . : . :.::.. : . :..:.:. ..:a::. :-:.. . . . . : .:..:. : : . :.. . :..:: :. : ..:..:. :....... ... :I, .:.. .....: ... :. ...... :: ..............: ... : ... : ... : ... ::. ...: ... . :. ......: .......: :: :. ..
 . . . . . . . . . . . . . . . . . . . . . * . . . . . . *.. . ... : ... : .... . ... : .... . .....................
 :...:....: : :. : . .::.:. : :.:.. : :...::: : :...::. : :...: . :.:..:. :..::.:. : :...:: -........-.,- : : [.............] .:... : ....... : ........: .... :: ....:. .: ...: .. :...:: ......: : .. : ... : .
 
-. . . : . . . : . . . : .*. : . . . : . . . : . . . . . .*. : .*. : . . . :.:,,; .*. : . . . : . ..‘. . . . : . . . : . . . : . . . : . . . : . . . : . . . : .
+. . . : . . . : . . . : .. : . . . : . . . : . . . . . .. : .. : . . . :.:,,; .. : . . . : . ..‘. . . . : . . . : . . . : . . . : . . . : . . . : . . . : .
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .-... .
 . . . . . . . . . . . . . . . a:: . ..: . .:.*. . . . : :.. . . . . . . . . . .:..: . . . . . . . :... . ..: .:... . . . . . . . . . . . . . . . . . . . . . .
 . . . . . ..: : . . . :.:.. :.... : . . . . . ..: : . . . : . . ::.. . ...,: ..; : . . -. . . : . . . . . . . :*. . :. . : : . . s-:. . : .
@@ -592,2084 +535,1386 @@ Lznear
 
 ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : ... : .
 
-
 .........................................................................................
-
 
 ...............................................
 
-
 ................................................................
 
-
 ..........................................
-
 
 ........................................
 
-
 ..........................................
-
 
 .................................
 
-
 ..............................
-
 
 ........................
 
-
 .................................
-
 
 .........................
 
-
 ..~................
-
 
 . ................ . .....
 
-
 ..................
-
-
 
 [.............]
 
-
 ..............................
-
 
 .............
 
-
 ......................
-
 
 ..~..~.
 
-
 .............................. ........
-
 
 ...........
 
-
 ..........
-
 
 ..............
 
-
 ........
-
 
 .......
 
-
 ###### ..'...:
-
+.........
 
 .........
 
-
 .........
 
-
 .........
-
-
-.........
-
 
 ............
 
-
 ......
-
 
 ..........
 
-
 ......
-
 
 ........
 
+.......
 
 .......
 
+.......
 
 .......
 
+.......
 
 .......
 
+.......
 
 .......
 
-
 .......
-
-
-.......
-
-
-.......
-
-
-.......
-
-
-.......
-
 
 .:..:-:.
 
-
 ..:....:.
 
-
 .....
 
-
 .....
-
 
 :::.:
 
-
 ......
 
-
 .....
 
-
 .....
-
 
 .......
 
-
 ......
-
 
 :.:::
 
-
 .....
 
-
 .....
-
 
 -
 
+:.:::
 
 :.:::
 
-
-:.:::
-
+.....
 
 .....
 
-
 .....
-
-
-.....
-
 
 ......
 
-
 ......
 
-
 .....
 
-
 .....
-
 
 .:..:
 
-
 :::
-
 
 .....
 
-
 :..:
-
 
 :::
 
-
 :..:
 
-
 :-:.
-
 
 ::..
 
-
 :..:
 
-
 :.:.
-
 
 :....
 
-
 :*:.
-
 
 -:.:
 
-
 :..:
-
 
 .-...
 
-
 :.:.
-
 
 :-:.
 
-
 ....
 
-
 .....
-
 
 :‘.:.
 
-
 .....
 
-
 .....
-
 
 .,.,,:
 
-
 :::
-
 
 :.::
 
-
 .:::
 
+....
 
 ....
 
-
 ....
-
-
-....
-
 
 ..:..
 
-
 :.:.
-
 
 ::.
 
+:...
 
 :...
 
-
-:...
-
-
 :::
 
-
 :::
-
 
 :..:
 
-
 :::
-
 
 .....
 
-
 :::
 
-
 ....
-
 
 -..:
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
-
 ....
-
-
-....
-
-
-....
-
-
-....
-
-
-....
-
-
-....
-
-
-....
-
-
-....
-
-
-....
-
 
 ...
-
 
 .....
 
+....
 
 ....
 
+....
 
 ....
 
+....
 
 ....
 
-
 ....
 
-
 ....
-
-
-....
-
-
-....
-
-
-....
-
 
 ...
 
+....
 
 ....
 
+....
 
 ....
 
-
 ....
 
-
 ....
-
-
-....
-
-
-....
-
 
 ...
-
 
 .:.
 
-
 :.
 
-
 :.
-
 
 .:.
 
-
 ...
-
 
 ::
-
 
 -.,-
 
-
 ...
-
 
 ::
 
-
 .:.
 
+...
 
 ...
 
-
 ...
-
-
-...
-
 
 :.:
 
-
 ...
-
 
 .::
 
-
 ...
 
-
 ...
-
 
 ::.
 
-
 .:.
 
-
 ...
-
 
 ..:
 
-
 ...
 
-
 ...
-
 
 .:.
 
+.:.
 
 .:.
 
+.:.
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
 
 .:.
 
-
-.:.
-
+...
 
 ...
 
-
 ...
 
-
 ...
-
-
-...
-
-
-...
-
-
-...
-
-
-...
-
-
-...
-
-
-.:.
-
-
-...
-
-
-...
-
-
-...
-
-
-...
-
 
 ..:
 
-
 .:.
-
 
 .::
 
-
 :.
 
-
 :.
-
 
 :*.
 
+:.
 
 :.
 
+:.
 
 :.
 
-
 :.
 
-
 :.
-
-
-:.
-
-
-:.
-
 
 .*.
 
-
 .*.
-
 
 :..
 
-
 ..:
 
-
 ..:
-
 
 :.:
 
-
 ...
-
 
 ::
 
-
 .:.
 
-
 ...
 
-
 ...
-
 
 ..:
 
-
 ...
 
-
 ...
-
 
 .:.
-
 
 :*.
 
+:.
 
 :.
 
-
-:.
-
-
 ...
 
-
 ...
-
 
 ..:
 
-
 ...
-
 
 :.:
 
-
 :..
 
+...
 
 ...
 
+...
 
 ...
 
-
 ...
-
-
-...
-
-
-...
-
-
 
 [...]
 
-
 ...
-
 
 ::.
 
-
 .:.
 
+...
 
 ...
 
+...
 
 ...
 
-
 ...
 
-
 ...
-
-
-...
-
-
-...
-
 
 .:.
 
 ...
 
+...
 
 ...
 
+...
 
 ...
 
+...
 
 ...
 
+...
 
 ...
 
-
 ...
 
-
 ...
-
-
-...
-
-
-...
-
-
-...
-
-
-...
-
 
 .:.
 
-
 ...
 
-
 ...
-
 
 .:.
 
+...
 
 ...
 
+...
 
 ...
 
-
 ...
-
-
-...
-
-
-...
-
 
 :.
 
-
 ::
 
-
 ...
-
 
 .‘:
 
-
 ...
-
 
 ::
 
-
 .:.
-
 
 ...
 
-
 .:.
-
 
 ::
 
-
 .:.
 
-
 ...
 
-
 ...
-
 
 ..:
 
-
 ...
-
 
 .:.
 
-
 ...
 
-
 .:.
-
 
 ::
 
+:.
 
 :.
 
-
 :.
-
-
-:.
-
 
 .:.
 
-
 .:.
-
 
 ...
 
-
 .:.
-
 
 ::.
 
-
 ::
 
-
 ...
-
 
 .:.
 
+.:.
 
 .:.
 
+...
+
+...
+
+...
 
 .:.
 
-
-...
-
-
-...
-
-
-...
-
-
 .:.
 
-
-.:.
-
-
 ...
 
-
 ...
-
 
 ... .
 
-
 .:.
 
-
 ...
-
 
 .;.
 
+...
 
 ...
 
-
 ...
 
-
 ...
-
-
-...
-
 
 ::
-
 
 . ..,
 
-
 *..
 
-
 ...
-
 
 ::
 
-
 ..
 
+.:
 
 .:
 
+.:
 
 .:
 
-
 .:
-
-
-.:
-
-
-.:
-
 
 ...
 
-
 .:
 
-
 ..
-
 
 ...
 
-
 ...
 
-
 ..
-
 
 .
 
-
 .
 
-
 ..
 
-
 ..
-
 
 : ..
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 . . .
 
-
 :
-
 
 . . :
 
-
 .
-
 
 :
 
-
 : . . .
 
-
 . .
-
 
 . . . . .
 
-
 : . . .
-
 
 : .
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
 
 .
 
-
 :
-
 
 .
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
 
 .
 
-
 :
-
 
 . .
 
+.
 
 .
 
+:
+
+:
+
+:
+
+:
+
+:
+
+:
 
 .
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 .
 
+.
 
 :
 
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
 
 .
 
+:
+
+:
 
 .
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-.
-
-
-:
-
-
-:
-
-
-.
-
 
 .. . :
 
-
 :
 
-
 .. . :
-
 
 . : ..
 
+:
 
 :
 
-
 :
-
-
-:
-
 
 : : ..
 
+:
 
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 .
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
 
 .
 
+.
+
+:
+
+:
 
 .
 
+:
 
 :
 
+:
 
 :
 
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
+
+:
 
 .
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 .
 
+:
 
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-.
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 : : ..
 
-
 :
-
 
 .
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-:
-
 
 .
 
+:
 
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
+:
 
 :
 
-
 :
-
-
-:
-
-
-:
-
 
 .
 
+.
+
+:
+
+:
+
+:
+
+:
+
+:
 
 .
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-:
-
-
-:
-
-
-.
-
-
-:
-
-
-:
-
-
-:
-
-
-:
-
 
 I
 
-
-
 [ . ]
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
-
 .
-
-
-.
-
-
-.
-
-
-.
-
 
 :
 
+:
 
 :
 
+:
 
 :
 
+.
 
 :
 
+:
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
 
 :
 
-
-.
-
+:
 
 :
 
+.
 
 :
 
-
 .
 
-
 .
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
 
 :
 
-
 :
-
-
-:
-
 
 .
 
+:
 
 :
 
-
-.
-
-
-.
-
+:
 
 :
 
+.
 
 :
 
-
 .
 
+.
 
 :
 
+:
+
+.
+
+.
+
+.
 
 :
 
+.
+
+.
+
+.
 
 :
 
-
-:
-
-
 .
-
-
-:
-
-
-.
-
-
-.
-
-
-:
-
-
-:
-
-
-.
-
-
-.
-
-
-.
-
-
-:
-
-
-.
-
-
-.
-
-
-.
-
-
-:
-
-
-.
-
 
 . . .
 
-
 .
-
 
 . . .
 
-
 .
-
 
 . . . . . . . . . . . . . . .
 
-
 .
-
 
 . . .
 
-
 :
 
-
 .
-
 
 . .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
-
 .
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
 
 :
 
-
 .
-
 
 :
 
-
 .
-
 
 :
 
-
 .
 
-
 .
-
 
 :
 
-
 .
-
 
 :
 
+.
 
 .
 
-
 .
-
-
-.
-
 
 :
 
+:
 
 :
 
+:
 
 :
 
-
-:
-
-
-:
-
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
 
-
 .
-
 
 .
 
-
 .
-
-
------
-
------
 
 ###### Introduction
-
 The objective of this book is to study a broad variety of important and
-useful _algorithms:_ methods for solving problems which are suited for
+useful algorithms: methods for solving problems which are suited for
 computer implementation. We’ll deal with many different areas of application, always trying to concentrate on “fundamental” algorithms which are
 important to know and interesting to stu.dy. Because of the large number of
 areas and algorithms to be covered, we won’t have room to study many of
@@ -2695,11 +1940,7 @@ knowledge of elementary calculus. We’ll also be using some very basic material
 involving linear algebra, geometry, and discrete mathematics, but previous
 knowledge of these topics is not necessary.
 
-
 Readers of this book are expected to have at least a year’s experience
-
-
------
 
 INTRODUCTION
 
@@ -2710,7 +1951,7 @@ gives the basic definitions and the “ground rules” for the chapters in that
 part; otherwise specific references make it clear when material from an earlier
 chapter is required.
 
-_Algorithms_
+Algorithms
 
 When one writes a computer program, one is generally implementing a method
 of solving a problem which has been previously devised. This method is often
@@ -2723,7 +1964,7 @@ programs. Algorithms are the “stuff” of computer science: they are central
 objects of study in many, if not most, areas of the field.
 Most algorithms of interest involve complicated methods of organizing
 the data involved in the computation. Objects created in this way are called
-data _structures,_ and they are also central objects of study in computer science.
+data structures, and they are also central objects of study in computer science.
 Thus algorithms and data structures go hand in hand: in this book we will
 take the view that data structures exist as the byproducts or endproducts of
 algorithms, and thus need to be studied in order to understand the algorithms.
@@ -2739,14 +1980,11 @@ system resources will be spent running those algorithms. In this book, we will
 study a variety of fundamental algorithms basic to large programs in many
 applications areas.
 The sharing of programs in computer systems is becoming more widespread, so that while it is true that a serious computer user will use a large
-fraction of the algorithms in this book, he may need to _implement_ only a
+fraction of the algorithms in this book, he may need to implement only a
 somewhat smaller fraction of them. However, implementing simple versions
 of basic algorithms helps us to understand them better and thus use advanced
 versions more effectively in the future. Also, mechanisms for sharing software
 on many computer systems often make it difficult to tailor standard programs
-
-
------
 
 INTRODUCTION 5
 
@@ -2791,11 +2029,7 @@ arithmetic and numerical analysis. We study methods for addition and multiplicat
 solving a variety of mathematical problems which arise in many contexts:
 random number generation, solution of simultaneous equations, data fitting,
 
-
 clompiler
-
-
------
 
 6 IiVTRODUCTIOiV
 
@@ -2834,14 +2068,9 @@ introduction to quite an advanced field of study, but several useful and interes
 ADVANCED TOPICS are discussed for the purpose of relating the material in the book to several other advanced fields of study. Special-purpose hardware, dynamic programming, linear programming, exhaustive search, and NPcompleteness are surveyed from an elementary viewpoint to give the reader
 some appreciation for the interesting advanced fields of study that are suggested by the elementary problems confronted in this book.
 
-
 IiVTRODUCTIOiV
 
-
------
-
 ###### INTRODUCTION 7
-
 The study of algorithms is interesting because it is a new field (almost
 all of the algorithms we will study are less than twenty-five years old) with
 a rich tradition (a few algorithms have been known for thousands of years).
@@ -2853,93 +2082,82 @@ different potential application areas. In doing so, we will explore a variety of
 useful tools and develop a way of “algorithmic thinking” that will serve us
 well in comnutational challenges to come.
 
-
------
-
------
-
 ###### 1. Preview
-
 To introduce the general approach that we’ll be taking to studying
 algorithms, we’ll examine a classic elementary problem: “Reduce a given
 fraction to lowest terms.” We want to write 213, not 416, 200/300, or 178468/
 
-267702. Solving this problem is equival.ent to finding the **_greatest_** common
+267702. Solving this problem is equival.ent to finding the greatest common
 divisor (gcd) of the numerator and the denominator: the largest integer which
 divides them both. A fraction is reduced to lowest terms by dividing both
 numerator and denominator by their greatest common divisor.
 
-**_Pascal_**
+Pascal
 
 A concise description of the Pascal language is given in the Wirth and Jensen
-Pascal **_User Manual and_** **_Report that serves as the definition for the language._**
+Pascal User Manual and Report that serves as the definition for the language.
 Our purpose here is not to repeat information from that book but rather to
 examine the implementation of a few simple algorithms which illustrate some
 of the basic features of the language and. the style that we’ll be using.
 Pascal has a rigorous high-level syntax which allows easy identification of
-the main features of the program. The variables **(var)** and functions **(function)**
+the main features of the program. The variables (var) and functions (function)
 used by the program are declared first, f~ollowed by the body of the program.
 (Other major program parts, not used in the program below which are declared
 before the program body are constants and types.) Functions have the same
 format as the main program except that they return a value, which is set by
 assigning something to the function name within the body of the function.
-(Functions that return no value are called **procedures.)**
-The built-in function **_readln_** reads a. line from the input and assigns the
+(Functions that return no value are called procedures.)
+The built-in function readln reads a. line from the input and assigns the
 values found to the variables given as arguments; writeln is similar. A standard
 built-in predicate, eof, is set to true when there is no more input. (Input and
-output within a line are possible with read, **_write,_** and eoln.) The declaration
-of **_input_** and **_output_** in the program statement indicates that the program is
+output within a line are possible with read, write, and eoln.) The declaration
+of input and output in the program statement indicates that the program is
 using the “standard” input and output &reams.
 
-**_9_**
-
+9
 
 equival.ent
 
-
 f~ollowed
 
-
------
-
-10 _CHAPTER 1_
+10 CHAPTER 1
 
 To begin, we’ll consider a Pascal program which is essentially a translation of the definition of the concept of the greatest common divisor into a
 programming language.
 
-**program** example(input, output);
-**var** x, y: integer;
-**function** gcd( u, v: integer) : integer;
-**var** t: integer;
-**begin**
-**if** **u<v then** _t:=u_ **else** t:=v;
-**while** **(u mod t<>O) or (vmod t<>O) do** t:=t-1;
+program example(input, output);
+var x, y: integer;
+function gcd( u, v: integer) : integer;
+var t: integer;
+begin
+if u<v then t:=u else t:=v;
+while (u mod t<>O) or (vmod t<>O) do t:=t-1;
 gcd:=t
-**end ;**
+end ;
 
-**begin**
-**while not eof do**
-**begin**
+begin
+while not eof do
+begin
 readln (x, y ) ;
 
-_writeln(x, y,_ gcd(abs(x), abs(y)));
+writeln(x, y, gcd(abs(x), abs(y)));
 
-**end**
-**end.**
+end
+end.
 
 The body of the program above is trivial: it reads two numbers from the
 input, then writes them and their greatest common divisor on the output.
 The gcd function implements a “brute-force” method: start at the smaller of
 the two inputs and test every integer (decreasing by one until 1 is reached)
 until an integer is found that divides both of the inputs. The built-in function
-abs is used to ensure that gcd is called with positive arguments. (The **mod**
-function is used to test whether two numbers divide: u **mod** v is the remainder
+abs is used to ensure that gcd is called with positive arguments. (The mod
+function is used to test whether two numbers divide: u mod v is the remainder
 when u is divided by v, so a result of 0 indicates that v divides u.)
-Many other similar examples are given in the _Pascal User Manual and_
-_Report._ The reader is encouraged to scan the manual, implement and test
+Many other similar examples are given in the Pascal User Manual and
+Report. The reader is encouraged to scan the manual, implement and test
 some simple programs and then read the manual carefully to become reasonably comfortable with most of the features of Pascal.
 
-_Euclid’s Algorithm_
+Euclid’s Algorithm
 
 A much more efficient method for finding the greatest common divisor than
 that above was discovered by Euclid over two thousand years ago. Euclid’s
@@ -2948,46 +2166,31 @@ common divisor of u and v is the same as the greatest common divisor of v
 and u - v. Applying this rule successively, we can continue to subtract off
 multiples of v from u until we get a number less than v. But this number is
 
-
 example(input, output);
 
-
-_writeln(x,_
-
+writeln(x,
 
 gcd:=t
 
-
 t:=v;
-
 
 readln
 
-
 ###### u<v
-
-
 y,
-
 
 method is based on the fact that if u is greater than v then the greatest
 
-
 u
 
-
 u
-
 
 ;
 
-
------
-
-**PREVIEW** 11
+PREVIEW 11
 
 exactly the same as the remainder left after dividing u by v, which is what
-the **mod** function computes: the greatee:t common divisor of u and v is the
+the mod function computes: the greatee:t common divisor of u and v is the
 same as the greatest common divisor of 1) and u mod v. If u mod v is 0, then v
 divides u exactly and is itself their greatest common divisor, so we are done.
 This mathematical description explains how to compute the greatest
@@ -2995,20 +2198,20 @@ common divisor of two numbers by computing the greatest common divisor
 of two smaller numbers. We can implement this method directly in Pascal
 simply by having the gcd function call itself with smaller arguments:
 
-**function** _gcd(_ u, v:integer) : integer;
+function gcd( u, v:integer) : integer;
 begin
-**if v=O then gcd:=** **u**
+if v=O then gcd:= u
 
-**else gcd:=gcd(v,** **u mod v)**
-**end;**
+else gcd:=gcd(v, u mod v)
+end;
 
-(Note that if u is less than v, then u **m’od** v is just u, and the recursive call
+(Note that if u is less than v, then u m’od v is just u, and the recursive call
 just exchanges u and v so things work as described the next time around.)
 If the two inputs are 461952 and 116298, then the following table shows the
 values of u and v each time gcd is invoked:
 
-**(461952,1:16298)**
-**(116298,1:13058)**
+(461952,1:16298)
+(116298,1:13058)
 
 (113058,324O)
 
@@ -3024,9 +2227,9 @@ values of u and v each time gcd is invoked:
 It turns out that this algorithm always uses a relatively small number of
 steps: we’ll discuss that fact in some moire detail below.
 
-_Recursion_
+Recursion
 
-A fundamental technique in the design of efficient algorithms is _recursion:_
+A fundamental technique in the design of efficient algorithms is recursion:
 solving a problem by solving smaller versions of the same problem, as in the
 program above. We’ll see this general approach used throughout this book,
 and we will encounter recursion many tirnes. It is important, therefore, for us
@@ -3034,38 +2237,25 @@ to take a close look at the features of the above elementary recursive program.
 An essential feature is that a recursive program must have a termination
 condition. It can’t always call itself, there must be some way for it to do
 
-
-**(461952,1:16298)**
-
+(461952,1:16298)
 
 (113058,324O)
 
-
 v:integer) : integer;
-
 
 (162,18)
 
-
 (1%
-
 
 0)
 
+u
 
 u
 
-
-**u**
-
-
 u
 
-
 u
-
-
------
 
 12 CHAPTER 1
 
@@ -3083,7 +2273,7 @@ some assignment statements to reset the values of the parameters as directed
 by the recursive call. After cleaning up the program left by these mechanical
 transformations, we have the following implementation of Euclid’s algorithm:
 
-function _gcd(u,_ v:integer):integer;
+function gcd(u, v:integer):integer;
 
 var t: integer;
 
@@ -3112,22 +2302,14 @@ the numbers) which we’ll normally call N. We would like to know the
 resources used (most often the amount of time taken) as a function of N.
 We’re interested in the average case, the amount of time a program might be
 
-
 v:integer):integer;
-
 
 di.fferent
 
-
 ###### v:=t
-
-
 var
 
-
------
-
-expected to take on “typical” input data, and in the _worst case,_ the amount
+expected to take on “typical” input data, and in the worst case, the amount
 of time a program would take on the worst possible input configuration.
 
 Many of the algorithms in this book are very well understood, to the point
@@ -3137,7 +2319,7 @@ quantities and then doing a mathematical analysis of the quantities involved.
 
 For some algorithms, it is easy to hgure out the running time. For example, the brute-force algorithm above obviously requires min(u, VU)-gcd(u, V)
 
-iterations of the **while** loop, and this quantity dominates the running time if
+iterations of the while loop, and this quantity dominates the running time if
 the inputs are not small, since all the other statements are executed either
 0 or 1 times. For other algorithms, a substantial amount of analysis is involved. For example, the running time of the recursive Euclidean algorithm
 obviously depends on the “overhead” required for each recursive call (which
@@ -3169,14 +2351,9 @@ The first step in getting a rough estimate of the running time of a program
 is to identify the inner loop. Which instructions in the program are executed
 most often? Generally, it is only a few instructions, nested deep within the
 
-
 VU)-gcd(u,
 
-
 worst-
-
-
------
 
 CHAPTER 1
 
@@ -3197,7 +2374,7 @@ approximately ((12 In 2)/7r2) 1n [TJ.] Often, the results of a mathematical anal
 are not exact, but approximate in a precise technical sense: the result might
 be an expression consisting of a sequence of decreasing terms. Just as we are
 most concerned with the inner loop of a program, we are most concerned with
-the leading _term_ (the largest term) of a mathematical expression.
+the leading term (the largest term) of a mathematical expression.
 
 As mentioned above, most algorithms have a primary parameter N,
 usually the number of data items to be processed, which affects the running
@@ -3225,14 +2402,9 @@ N When the running time of a program is linear, it generally is the case
 that a small amount of processing is done on each input element.
 When N is a million, then so is the running time. Whenever N
 
-
 gets slightly slower as N grows.This running time commonly occurs
 
-
 u
-
-
------
 
 PREVTEW 15
 
@@ -3240,7 +2412,6 @@ doubles, then so does the running time. This is the optimal situation
 for an algorithm that must process N inputs (or produce N outputs).
 
 ###### NlogN This running time arises in algorithms which solve a problem by
-
 breaking it up into smaller subpr’oblems, solving them independently,
 and then combining the solutions. For lack of a better adjective
 (linearithmic?), we’ll say that th’e running time of such an algorithm
@@ -3248,56 +2419,43 @@ is “N log N.” When N is a million, N log N is perhaps twenty
 million. When N doubles, the running time more than doubles (but
 not much more).
 
-
 (linearithmic?), we’ll say that
-
 
 PREVTEW
 
-
 th’e
 
+N2
 
-_N2_
-
-_N3_
+N3
 
 2N
 
-
 subpr’oblems,
 
-
 ###### NlogN
-
-
-When the running time of an algorithm is _quadratic,_ it is practical
+When the running time of an algorithm is quadratic, it is practical
 for use only on relatively small problems. Quadratic running times
 typically arise in algorithms which process all pairs of data items
 (perhaps in a double nested loop). When N is a thousand, the
 running time is a million. Whenever N doubles, the running time
 increases fourfold.
 Similarly, an algorithm which prlocesses triples of data items (perhaps
-in a triple-nested loop) has a _cubic_ running time and is practical for
+in a triple-nested loop) has a cubic running time and is practical for
 use only on small problems. VVhen N is a hundred, the running
 time is a million. Whenever N doubles, the running time increases
 eightfold.
-Few algorithms with _exponential_ running time are likely to be appropriate for practical use, though such algorithms arise naturally as
+Few algorithms with exponential running time are likely to be appropriate for practical use, though such algorithms arise naturally as
 “brute-force” solutions to problems. When N is twenty, the running
 time is a million. Whenever N doubles, the running time squares!
 
-
 prlocesses
-
 
 VVhen
 
-
-_N3_
-
+N3
 
 2N
-
 
 The running time of a particular prlogram is likely to be some constant
 times one of these terms (the “leading term”) plus some smaller terms. The
@@ -3318,11 +2476,7 @@ inputs that has a running time that is cubic in N is more properly classed
 as an N3j2 algorithm. Also some algorithms have two stages of subproblem
 decomposition, which leads to a running time proportional to N(log N)2. Both
 
-
 prlogram
-
-
------
 
 CHAPTER 1
 
@@ -3340,7 +2494,7 @@ so frequently that the abbreviation log, N = lg N is commonly used. For
 example, lg N rounded up to the nearest integer is the number of bits required
 to represent N in binary.
 
-Implementing _Algorithms_
+Implementing Algorithms
 
 The algorithms that we will discuss in this book are quite well understood,
 but for the most part we’ll avoid excessively detailed comparisons. Our goal
@@ -3369,9 +2523,6 @@ taking advantage of more advanced capabilities that are available in Pascal
 and other programming environments. Our purpose is to study algorithms,
 not systems programming nor advanced features of programming languages.
 
-
------
-
 PREVIEW 17
 
 It is hoped that the essential features of the algorithms are best exposed
@@ -3382,46 +2533,41 @@ names and few comments, so that the control structures stand out. The
 that readers who use these programs in actual applications will flesh them out
 somewhat in adapting them for a particular use.
 
+1 8
 
------
-
-_1 8_
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Solve our initial problem by writing a Pascal program to reduce a given
 fraction x/y to lowest terms.
 
 Check what values your Pascal system computes for u mod v when u and
-v are not necessarily positive. Which versions of the _gcd_ work properly
+v are not necessarily positive. Which versions of the gcd work properly
 when one or both of the arugments are O?
 
-Would our original _gcd_ program ever be faster than the nonrecursive
+Would our original gcd program ever be faster than the nonrecursive
 version of Euclid’s algorithm?
 
-Give the values of u and v each time the recursive _gcd_ is invoked after
+Give the values of u and v each time the recursive gcd is invoked after
 the initial call gcd(12345,56789).
 
 Exactly how many Pascal statements are executed in each of the three
@@ -3438,32 +2584,19 @@ Write an iterative program for the problem in the previous exercise. Also,
 write a program that does the computation using Pascal library subroutines. If possible on your computer system, compare the performance
 of these three programs.
 
-Write a program to compute the greatest common divisor of _three_ integers
+Write a program to compute the greatest common divisor of three integers
 u, v, and w.
 
 For what values of N is 10NlgN > 2N2? (Thus a quadratic algorithm
 is not necessarily slower than an NlogN one.)
 
-
 the initial call gcd(12345,56789).
 
-
 ###### NlogN
-
-
 ###### u>v
-
-
 ###### N
-
-
 ###### N
-
-
 u
-
-
------
 
 19
 
@@ -3475,8 +2608,8 @@ Cooper or Holt and Hune. Someone with experience programming in other
 languages can learn Pascal effectively directly from the manual by Wirth and
 Jensen. Of course, the most important thing to do to learn about the language
 is to implement and debug as many programs as possible.
-Many introductory Pascal textbooks contain some material on data structures. Though it doesn’t use Pascal, an important reference for further information on basic data structures is volume one of D.E. Knuth’s series on _The_
-_Art_ `of` _Computer_ Programming. Not only does this book provide encyclopedic
+Many introductory Pascal textbooks contain some material on data structures. Though it doesn’t use Pascal, an important reference for further information on basic data structures is volume one of D.E. Knuth’s series on The
+Art of Computer Programming. Not only does this book provide encyclopedic
 coverage, but also it and later books in the series are primary references for
 much of the material that we’ll be covering in this book. For example, anyone
 interested in learning more about Euclid’s algorithm will find about fifty pages
@@ -3488,37 +2621,30 @@ amount of discrete mathematics is required to properly analyze many algorithms; 
 summarized in Knuth’s first book and applied to many of the methods we’ll
 be studying in later books.
 
-M. Clancy and D. Cooper, _Oh! Pascal,_ W. W. Norton & Company, New York,
+M. Clancy and D. Cooper, Oh! Pascal, W. W. Norton & Company, New York,
 1982.
 
-R. Holt and J. P.Hume, Programming _Standard Pascal,_ Reston (Prentice-Hall),
+R. Holt and J. P.Hume, Programming Standard Pascal, Reston (Prentice-Hall),
 
 Reston, Virginia, 1980.
 
-D. E. Knuth, _The Art_ of Computer Programming. Volume 1: Fundamental
-_Algorithms,_ Addison-Wesley, Reading, MA, 1968.
+D. E. Knuth, The Art of Computer Programming. Volume 1: Fundamental
+Algorithms, Addison-Wesley, Reading, MA, 1968.
 
-D. E. Knuth, _The Art_ `of` Computer _Programming. Volume_ .2: Seminumerical
-_Algorithms,_ Addison-Wesley, Reading, MA, Second edition, 1981.
+D. E. Knuth, The Art of Computer Programming. Volume .2: Seminumerical
+Algorithms, Addison-Wesley, Reading, MA, Second edition, 1981.
 
-K. Jensen and N. Wirth, _Pascal User Manual and Report,_ Springer-Verlag,
+K. Jensen and N. Wirth, Pascal User Manual and Report, Springer-Verlag,
 New York, 1974.
-
 
 .2:
 
-
------
-
------
-
 ###### MATHEMATICAL ALGORITHMS
-
 5 *.a . .). . . ������ � �� -. . . . . .I
 
 � � � � � � ��� ���� ���� ���� � ���� � � � �� � �
 
-                                         - a-:.. .                                         - . . . . ..‘..                                         - a.. -*.. . .
+                                         - a-:.. . - . . . . ..‘.. - a.. -*.. . .
 
 ; . i ., .,.- [.] .- [c] [-*.,]‘.:. . . [.+.] . . . .. . . -, . . .:
 
@@ -3526,164 +2652,110 @@ New York, 1974.
 
 � �
 
-.- . .    - -.    - . . 5 ‘-‘-: . . . . : . I .    - -I--.
+.- . . - -. - . . 5 ‘-‘-: . . . . : . I . - -I--.
 . . : :* . . . . ‘.. :. .
-
 
 ‘.:.
 
-
 ������
-
 
 ‘-‘-:
 
-
 ��
-
 
 *.a
 
-
 :*
-
 
 -.
 
-
 ‘..
-
-
 
 [-.]
 
-
 ��
 
-
 ��
-
 
 *’
 
-
 ��
-
 
 .-
 
-
 a.
 
-
 :
-
 
 ;
 
-
 .
 
-
 .
-
 
 i
 
-
 .
-
 
 :
 
-
 .
-
 
 .I
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
+.
 
 .
 
-
 .
 
-
 .
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
-
-.
-
 
 ,
 
+.
 
 .
 
-
 .
-
-
-.
-
 
 -
 
+.
 
 .
 
-
 .
-
-
-.
-
-
------
-
------
 
 ###### 2. Arithmetic
-
 Algorithms for doing elementary arithmetic operations such as addition,
 multiplication, and division have a. very long history, dating back to
 
 ###### cl
-
 the origins of algorithm studies in the work of the Arabic mathematician
 al-Khowdrizmi, with roots going even further back to the Greeks and the
 Babylonians.
-Though the situation is beginning to change, the raison _d’e^tre_ of many
+Though the situation is beginning to change, the raison d’e^tre of many
 computer systems is their capability for doing fast, accurate numerical calculations. Computers have built-in capabilities to perform arithmetic on integers and floating-point representations of real numbers; for example, Pascal
 allows numbers to be of type integer or re;d, with all of the normal arithmetic
 operations defined on both types. Algorithms come into play when the operations must be performed on more complicated mathematical objects, such as
@@ -3698,53 +2770,46 @@ something which can be processed by a computer is fundamental in algorithm
 design. We’ll see many examples throughout this book in which a proper
 representation can lead to an efficient algorithm and vice versa. In this
 chapter, we’ll use two fundamental ways of structuring data, the array and
-the _linked list._ These data structures are used by many of the algorithms in
+the linked list. These data structures are used by many of the algorithms in
 this book; in later sections we’ll study some more advanced data structures.
 
-_Polynomials_
+Polynomials
 
 Suppose that we wish to write a program that adds two polynomials: we would
 
-_2 3_
-
+2 3
 
 ###### cl
-
-
 re;d,
 
+d’e^tre
 
-_d’e^tre_
-
-
------
-
-2 4 **_CJUJ’TER 2_**
+2 4 CJUJ’TER 2
 
 like it to perform calculations like
 
 (1+ 2x - 3x3) + (2 -x) = 3 + x - 3x3.
 
 In general, suppose we wish our program to be able to compute r(x) = p(x) +
-**_q(x),_** where p and **_q_** are polynomials with N coefficients. The following
+q(x), where p and q are polynomials with N coefficients. The following
 program is a straightforward implementation of polynomial addition:
 
 program poJyadd(input, output);
 
 con& maxN=lOO;
 
-var p, q, **_r: array [ O..maxN]_** of real;
+var p, q, r: array [ O..maxN] of real;
 
 N, i: integer;
 begin
 
 readln (N) ;
-for **_i:=O_** to N-l do read(p[i]);
-for **_i:=O_** to N-l do read(q[i]);
-for i:=O to N-J do **_r[i]_** :=p[i]+q[i];
+for i:=O to N-l do read(p[i]);
+for i:=O to N-l do read(q[i]);
+for i:=O to N-J do r[i] :=p[i]+q[i];
 for i:=O to N-l do write(r[i]);
 
-**_wri teln_**
+wri teln
 
 end.
 
@@ -3761,59 +2826,36 @@ see another technique for handling this situation below.
 The program above shows that addition is quite trivial once this representation for polynomials has been chosen; other operations are also easily
 coded. For example, to multiply we can replace the third for loop by
 
-for i:=O to 2*(N-I) do **_r[i] :=O;_**
+for i:=O to 2*(N-I) do r[i] :=O;
 for i:=O to N-l do
 for j:=O to N-l do
 
-
 ###### rTi+j]:=r[i+j]+p[i]*qb];
-
-
 :=p[i]+q[i];
-
 
 maxN=lOO;
 
-
 read(p[i]);
 
-
-**_O..maxN]_**
-
-
+O..maxN]
 
 ###### [O..N-l]
-
-
 readln (N)
-
 
 3x3)
 
-
 ###### r(x)
-
-
 con&
 
-
-**_r[i]_**
-
-
+r[i]
 
 [j]
 
-
 q,
 
-
-**_p_**
-
+p
 
 ;
-
-
------
 
 ARITHMETIC
 
@@ -3826,9 +2868,8 @@ is that space may have to be saved for more numbers than necessary. For
 example, the program above couldn’t reasonably be used to multiply
 
 ###### (1+ .10000)(1+ 2,lOOOO) = 1+ 3~10000 + 2~20000,
-
 even though the input involves only four c’oefficients and the output only three.
-An alternate way to represent a pol:ynomial is to use a _linked_ list. This
+An alternate way to represent a pol:ynomial is to use a linked list. This
 involves storing items in noncontiguous memory locations, with each item
 containing the address of the next. The Pascal mechanisms for linked lists are
 somewhat more complicated than for arrays. For example, the following program computes the sum of two polynomials using a linked list representation
@@ -3836,21 +2877,21 @@ somewhat more complicated than for arrays. For example, the following program co
 given in the text following):
 
 program polyadd(input, output);
-**type** link � = mode;
+type link � = mode;
 
-node = **record** c: real; next: link **end ;**
+node = record c: real; next: link end ;
 
-**var** N: integer; a: link;
-**function** readlist(N: integer) : link;
-**procedure** writelist(r: link);
-**function** add(p, q: link) : link;
-**begin**
+var N: integer; a: link;
+function readlist(N: integer) : link;
+procedure writelist(r: link);
+function add(p, q: link) : link;
+begin
 
 readln(N); new(z);
 
 writelist(add(readlist(N), readlist(N
 
-**end.**
+end.
 
 The polynomials are represented by linked lists which are built by the
 
@@ -3861,47 +2902,32 @@ we can examine the coefficients in order, by following links. The last node
 on each list contains a link to a special (dummy node called a: if we reach z
 when scanning through a list, we know we’re at the end. (It is possible to get
 by without such dummy nodes, but they do make certain manipulations on
-the lists somewhat simpler.) The **type** statement only describes the formats
+the lists somewhat simpler.) The type statement only describes the formats
 of the nodes; nodes can be created only when the builtin procedure new is
 called. For example, the call new(z) creates a new node, putting a pointer to
 
-
 writelist(add(readlist(N),
-
 
 program polyadd(input, output);
 
-
 writelist(r: link);
-
 
 .10000)(1+
 
-
 changed to accomodate twice as
-
 
 2,lOOOO)
 
-
 suita.bly
-
 
 3~10000
 
-
 ###### 1+
-
-
-**var**
-
+var
 
 q,
 
-
------
-
-**26** **CHAPTER 2**
+26 CHAPTER 2
 
 it in a. (The other nodes on the lists processed by this program are created
 in the readlist and add routines.)
@@ -3909,13 +2935,13 @@ The procedure to write out what’s on a list is the simplest. It simply
 steps through the list, writing out the value of the coefficient in each node
 encountered, until z is found:
 
-**procedure** writelist(r: link);
-**begin**
-**while** **r<>z do**
-**begin** write(rf.c); r:=rt.next **end;**
+procedure writelist(r: link);
+begin
+while r<>z do
+begin write(rf.c); r:=rt.next end;
 
 wri teln
-**end** **;**
+end ;
 
 The output of this program will be indistinguishable from that of the
 program above which uses the simple array representation.
@@ -3926,18 +2952,18 @@ far. The following function reads in N coefficients, assuming the same format
 as before, and constructs the linked list which represents the corresponding
 polynomial:
 
-**function readlist (N: integer) : link;**
-**var** i: integer; t: link;
-**begin**
+function readlist (N: integer) : link;
+var i: integer; t: link;
+begin
 
 t:=z;
 
-**for** i:=O to N-l **do**
-**begin** new(tf.next); t:=tt.next; read(tt.c) **end;**
+for i:=O to N-l do
+begin new(tf.next); t:=tt.next; read(tt.c) end;
 
 tf.next:=z; readlist:=zf.next; zf.next:=z
 
-**end** **;**
+end ;
 
 The dummy node z is used here to hold the link which points to the first node
 on the list while the list is being constructed. After this list is built, a is set
@@ -3950,25 +2976,16 @@ by stepping through the argument lists and adding together corresponding
 
 coefficients:
 
-
 tf.next:=z; readlist:=zf.next; zf.next:=z
 
-
 ###### r<>z
-
-
 N
-
 
 t:
 
+;
 
-**;**
-
-
------
-
-ARITHM73TIC **_2 7_**
+ARITHM73TIC 2 7
 
 function add(p, q: link): link;
 
@@ -3982,17 +2999,15 @@ repeat
 new(tt.next); t:=tf.next;
 
 ###### tf.c:=pt.c+qf.c;
-
-**_p:=pf.next;_** q:=qf.next
+p:=pf.next; q:=qf.next
 
 until (p=z) and (q=z);
 
 ###### tt.next:=z; add:=zt.next
-
 end ;
 
 Employing linked lists in this way, we use only as many nodes as are
-required by our program. As N gets larger, we simply make more calls on **_new._**
+required by our program. As N gets larger, we simply make more calls on new.
 By itself, this might not be reason enough. to use linked lists for this program,
 because it does seem quite clumsy comlpared to the array implementation
 above. For example, it uses twice as much space, since a link must be stored
@@ -4004,9 +3019,9 @@ each list node contains values of c and j to represent cxj. It is then convenien
 to separate out the function of creating a node and adding it to a list, as
 follows:
 
-type link = **_fnode;_**
+type link = fnode;
 
-node = record c: real; j: integer; **_next:_** link end;
+node = record c: real; j: integer; next: link end;
 function listadd(t: link; c: real; j: integer): link;
 
 begin
@@ -4026,44 +3041,26 @@ coefficients) or to input the coefficient and exponent directly for terms with
 nonzero coefficient. Of course, the write,!ist function also has to be changed
 suitably. To make it possible to process the polynomials in an organized
 
-
 new(tt.next);
-
 
 new(tf.next);
 
-
 ###### add:=zt.next
-
-
-**_p:=pf.next;_**
-
+p:=pf.next;
 
 ###### tt.next:=z;
-
-
 listadd:=t;
-
 
 comlpared
 
-
-**_(q=z);_**
-
+(q=z);
 
 ###### tt.j:=j;
-
-
 write,!ist
-
 
 t.
 
-
 ;
-
-
------
 
 28 CIZ4PTER 2
 
@@ -4073,112 +3070,93 @@ Now the add function becomes more interesting, since it has to perform
 an addition only for terms whose degrees match, and then make sure that no
 term with coefficient 0 is output:
 
-**function** add(p, q: link): link;
-**begin**
+function add(p, q: link): link;
+begin
 
-**t:=z; st.j:=iV+l;**
+t:=z; st.j:=iV+l;
 
-**repeat**
-**if** (pf.j=qf.j) **and (pf.c+qf.c<>O.O)** **then**
-**begin**
+repeat
+if (pf.j=qf.j) and (pf.c+qf.c<>O.O) then
+begin
 
 ###### t:=listadd(t,pf.c+qt.c,pt.j);
  p:=pt.next; q:=qf.next
-**end**
+end
 
-**else if** pf.j<qt.j **then**
-**begin** t:=listadd(t, _pt.c,_ pf.j); p:=pt.next **end**
+else if pf.j<qt.j then
+begin t:=listadd(t, pt.c, pf.j); p:=pt.next end
 
-**else if** qf.j<pt.j **then**
-**begin** t:=listadd(t, _qf.c, q1.j); q:=qt.next_ **end;**
-**until** _(p=z)_ **and** _(q=z);_
+else if qf.j<pt.j then
+begin t:=listadd(t, qf.c, q1.j); q:=qt.next end;
+until (p=z) and (q=z);
 ###### tf.next:=z; add:=zf.next
-
-**end** **;**
+end ;
 
 These complications are worthwhile for processing “sparse” polynomials
 with many zero coefficients, but the array representation is better if there are
 only a few terms with zero coefficients. Similar savings are available for other
 operations on polynomials, for example multiplication.
 
-_Matrices_
+Matrices
 
 We can proceed in a similar manner to implement basic operations on two
 dimensional matrices, though the programs become more complicated. Suppose that we want to compute the sum of the two matrices
 
 This is term-by-term addition, just as for polynomials, so the addition program is a straightforward extension of our program for polynomials:
 
-
-**and (pf.c+qf.c<>O.O)**
-
+and (pf.c+qf.c<>O.O)
 
 t:=listadd(t,
 
-
 ###### add:=zf.next
-
-
 ###### p:=pt.next;
-
-
 ###### tf.next:=z;
-
-
-_q1.j); q:=qt.next_
-
+q1.j); q:=qt.next
 
 ###### pf.j<qt.j
+(q=z);
 
+qf.c,
 
-_(q=z);_
+else
 
-
-_qf.c,_
-
-
-**else**
-
-
-**;**
-
-
------
+;
 
 ARITHMETIC 29
 
-**program** matrixadd(input, output);
+program matrixadd(input, output);
 
-**const** maxN=lO;
+const maxN=lO;
 
-**var p, q,** **r: array** [O..maxN, O..maxN] **of real;**
+var p, q, r: array [O..maxN, O..maxN] of real;
 
 N, i, j: integer;
-**begin**
+begin
 
 readln (N) ;
 
-**for** i:=O **to** N-l **do for** j:=O **to** N-l **do** read(p[i, j]);
-**for** i:=O **to N-l do for j:=O to N-l do read(q[i, j]);**
-**for** i:=O **to** N-l **do for** j:=O **to** N-l **do** r[i, j]:=p[i, j]+q[i, j];
-**for i:=O to N-l do for j:=O to N do**
-**if j=N then** writeln **else** write(r[i, j]);
-**end.**
+for i:=O to N-l do for j:=O to N-l do read(p[i, j]);
+for i:=O to N-l do for j:=O to N-l do read(q[i, j]);
+for i:=O to N-l do for j:=O to N-l do r[i, j]:=p[i, j]+q[i, j];
+for i:=O to N-l do for j:=O to N do
+if j=N then writeln else write(r[i, j]);
+end.
 
 Matrix multiplication is a more complicated operation. For our example,
 
-Element r[i, j] is the _dot_ product of the ith row of p with the jth column
-of q. The dot product is simply the sum of the N term-by-term multiplications p[i, l]*q[l, j]+p[i, 2]*q[2, j]+... p[i, N-l]*q[N-I, j] as in the following
+Element r[i, j] is the dot product of the ith row of p with the jth column
+of q. The dot product is simply the sum of the N term-by-term multiplications p[i, l]q[l, j]+p[i, 2]q[2, j]+... p[i, N-l]*q[N-I, j] as in the following
 program:
 
-**for i:=O to h-1 do**
-**for j:=O to N-l do**
-**begin**
+for i:=O to h-1 do
+for j:=O to N-l do
+begin
 
 t:=o.o;
 
-**for** k:=iO **to** N-l **do** t:=t+p[i, k]*q[k, j];
-_r[i,_ _j]:=t_
-**end ;**
+for k:=iO to N-l do t:=t+p[i, k]*q[k, j];
+r[i, j]:=t
+end ;
 
 Each of the N2 elements in the result matrix is computed with N multiplications, so about N3 operations are required to multiply two N by N
 matrices together. (As noted in the previous chapter, this is not really a cubic
@@ -4190,50 +3168,28 @@ is represented by a list node containing,a value and two links: one pointing
 to the next nonzero element in the same row and the other pointing to the
 next nonzero element in the same column. Implementing addition for sparse
 
-
 ###### N-l]*q[N-I,
-
-
 ###### t:=t+p[i,
-
-
 read(p[i,
 
-
 ###### j]+q[i,
-
-
 ###### l]*q[l,
-
-
 ###### j]+...
-
-
-_j]:=t_
-
+j]:=t
 
 readln
 
-
 k:=iO
 
-
-**const**
-
+const
 
 r[i,
 
+r[i,
 
-_r[i,_
+var p, q,
 
-
-**var p, q,**
-
-
-**r:**
-
-
------
+r:
 
 CHAPTER 2
 
@@ -4241,7 +3197,7 @@ matrices represented in this way is similar to our implementation for sparse
 polynomials, but is complicated by the fact that each node appears on two
 lists.
 
-_Data Structures_
+Data Structures
 
 Even if there are no terms with zero coefficients in a polynomial or no zero
 elements in a matrix, an advantage of the linked list representation is that we
@@ -4258,7 +3214,7 @@ multiple indices to access individual items. Similarly, we’ll encounter many
 The tradeoffs between competing structures are usually complicated, and
 different structures turn out to be appropriate for different situations.
 When possible it is wise to think of the data and the specific operations
-to be performed on it as an _abstract data_ structure which can be realized in
+to be performed on it as an abstract data structure which can be realized in
 several ways. For example, the abstract data structure for polynomials in the
 examples above is the set of coefficients: a user providing input to one of the
 programs above need not know whether a linked list or an array is being used.
@@ -4267,37 +3223,31 @@ it possible to change representations easily, even in large, tightly integrated
 
 systems.
 
+AFUTHAJETIC 31
 
------
+Exercises
 
-_AFUTHAJETIC_ 31
-
-_Exercises_
-
-
-_AFUTHAJETIC_
-
+AFUTHAJETIC
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
-_10._
-
+10.
 
 Another way to represent polynomials is to write them in the form rc(x
 ###### rr)(z - r2) . . . (X - TN). How would you multiply two polynomials in this
@@ -4331,27 +3281,17 @@ grams runs fastest on your computer system, for relatively large N.
 Give a counterexample to the assertion that the user of an abstract data
 structure need not know what representation is being used.
 
-
 ###### rc(x-
-
-
 TN).
-
 
 (X
 
-
------
-
------
-
 ###### 3. Random Numbers
-
 Our next set of algorithms will bie methods for using a computer to
 generate random numbers. We will find many uses for random numbers
 later on; let’s begin by trying to get a better idea of exactly what they are.
 Often, in conversation, people use the term random when they really
-mean _arbitrary._ When one asks for an _trrbitrary_ number, one is saying that
+mean arbitrary. When one asks for an trrbitrary number, one is saying that
 one doesn’t really care what number one gets: almost any number will do.
 By contrast, a random number is a precisely defined mathematical concept:
 every number should be equally likely to occur. A random number will satisfy
@@ -4361,7 +3301,7 @@ restrict the numbers to be used to some finite domain. You can’t have a
 random integer, only a random integer in some range; you can’t have a random
 real number, only a random fraction in some range to some fixed precision.
 It is almost always the case that not just one random number, but a
-_sequence_ of random numbers is needed (otherwise an arbitrary number might
+sequence of random numbers is needed (otherwise an arbitrary number might
 do). Here’s where the mathematics comes in: it’s possible to prove many facts
 about properties of sequences of random numbers. For example, we can expect
 to see each value about the same number of times in a very long sequence
@@ -4376,15 +3316,11 @@ to do is to write programs which produce isequences of numbers having many of
 the same properties as random numbers. Such numbers are commonly called
 pseudo-random numbers: they’re not really random, but they can be useful
 
-_3 3_
-
+3 3
 
 isequences
 
-
------
-
-_CHAF’TER 3_
+CHAF’TER 3
 
 as approximations to random numbers, in much the same way that floatingpoint numbers are useful as approximations to real numbers. (Sometimes it’s
 convenient to make a further distinction: in some situations, a few properties
@@ -4417,7 +3353,7 @@ Applications
 
 Later in the book we will meet many applications in which random numbers
 will be useful. A few of them are outlined here. One obvious application is in
-_cryptography,_ where the major goal is to encode a message so that it can’t be
+cryptography, where the major goal is to encode a message so that it can’t be
 read by anyone but the intended recipient. As we will see in Chapter 23, one
 way to do this is to make the message look random using a pseudo-random
 sequence to encode the message, in such a way that the recipient can use the
@@ -4429,14 +3365,9 @@ programs. Even if true random numbers are not needed, simulations typically
 need many arbitrary numbers for input, and these are conveniently provided
 by a random number generator.
 
-
-
 [l,lOO]
 
-
------
-
-**_RANDOM NUMBERS_** 3 5
+RANDOM NUMBERS 3 5
 
 When a very large amount of data is to be analyzed, it is sometimes
 sufficient to process only a very small amount of the data, chosen according
@@ -4451,45 +3382,39 @@ Readers of this book will find themselves using random numbers extensively for s
 Also, we will see examples of algorithms which gain efficiency by using random
 numbers to do sampling or to aid in decision making.
 
-**_Linear Congruential Method_**
+Linear Congruential Method
 
 The most well-known method for generating random numbers, which has been
 used almost exclusively since it was introduced by D. Lehmer in 1951, is the
-so-called linear congruential method. If **_a_** **_[I] contains some arbitrary number,_**
+so-called linear congruential method. If a [I] contains some arbitrary number,
 then the following statement fills up an array with N random numbers using
 this method:
 
-for **_i:=2 to N_** do
+for i:=2 to N do
 
 ###### a[i]:=(a[i-l]*b $1) mod m
-
 That is, to get a new random number, take the previous one, multiply
-it by a constant **_b,_** add 1 and take the remainder when divided by a second
+it by a constant b, add 1 and take the remainder when divided by a second
 constant m. The result is always an integer between 0 and m-l. This is
 attractive for use on computers because the mod function is usually trivial to
 implement: if we ignore overflow on the arithmetic operations, then most computer hardware will throw away the bits that overflowed and thus effectively
-perform a mod operation with **_m_** equal to one more than the largest integer
+perform a mod operation with m equal to one more than the largest integer
 that can be represented in the computer word.
 Simple as it may seem, the linear congruential random number generator
 has been the subject of volumes of detailed and difficult mathematical analysis.
-This work gives us some guidance in choosing the constants **_b_** and m. Some
+This work gives us some guidance in choosing the constants b and m. Some
 “common-sense” principles apply, but in this case common sense isn’t enough
-to ensure good random numbers. First, **_m_** should be large: it can be the
+to ensure good random numbers. First, m should be large: it can be the
 computer word size, as mentioned above, but it needn’t be quite that large
 if that’s inconvenient (see the implementation below). It will normally be
-convenient to make **_m_** a power of 10 or 2. Second, **_b_** shouldn’t be too large or
+convenient to make m a power of 10 or 2. Second, b shouldn’t be too large or
 too small: a safe choice is to use a number with one digit less than m. Third,
 
-
 ###### a[i]:=(a[i-l]*b
-
-
------
-
 CHAPTER 3
 
 b should be an arbitrary constant with no particular pattern in its digits,
-_except that_ it should end with *-~21, with z even: this last requirement is
+except that it should end with *-~21, with z even: this last requirement is
 admittedly peculiar, but it prevents the occurrence of some bad cases that
 have been uncovered by the mathematical analysis.
 
@@ -4510,91 +3435,77 @@ whole sequence as in the program above. Rather, we simply maintain a global
 variable a, initialized with some value, then updated by the computation
 
 ###### a:=(a*b+l) mod m.
-
 In Pascal (and many other programming languages) we’re still one step
 away from a working implementation because we’re not allowed to ignore
 overflow: it’s defined to be an error condition that can lead to unpredictable
 results. Suppose that we have a computer with a 32-bit word, and we choose
-_m_ =190000000, b=3f 415821, and, initially, a=1234567. All of these values are
+m =190000000, b=3f 415821, and, initially, a=1234567. All of these values are
 comfortably less than the largest integer that can be represented, but the first
-a* _b+l_ operation causes overflow. The part of the product that causes the
+a* b+l operation causes overflow. The part of the product that causes the
 overflow is not relevant to our computation, we’re only interested in the last
 eight digits. The trick is to avoid overflow by breaking the multiplication up
-into pieces. To multiply p by _q,_ we write p = 104pr + pc and _q =_ 104qr + _qo,_
+into pieces. To multiply p by q, we write p = 104pr + pc and q = 104qr + qo,
 so the product is
 
-_Pq=_ _(104Pl +_ _po)(104q1_ _+_ _qo)_
+Pq= (104Pl + po)(104q1 + qo)
 
-_= lo8Plql +_ _104(p1qo +_ _poq1) +_ _poqo._
+= lo8Plql + 104(p1qo + poq1) + poqo.
 
 Now, we’re only interested in eight digits for the result, so we can ignore
 the first term and the first four digits of the second term. This leads to the
 following program:
 
-
 =190000000,
 
+po)(104q1
 
-_po)(104q1_
-
-
-_104(p1qo_
-
+104(p1qo
 
 and, initially, a=1234567. All of these values are
 
-
-_poq1)_
-
+poq1)
 
 104pr
 
+b+l
 
-_b+l_
-
-
-_Pq=_
-
+Pq=
 
 =O,
 
-
-_+_
-
-
------
++
 
 RAAJDOM NUMBERS 37
 
-**program** random (inpu t, output) ;
+program random (inpu t, output) ;
 
-**con&** m=100000000; ml=lOOOO; b=31415821;
+con& m=100000000; ml=lOOOO; b=31415821;
 
-**var** **i,** **a,** **IV:** integer;
-**function** mult(p, q: integer): integer;
-**var** pl, ~0, ql, q0: integer;
-**begin**
-pl :=p **div** ml ; pO:=p **mod** ml ;
+var i, a, IV: integer;
+function mult(p, q: integer): integer;
+var pl, ~0, ql, q0: integer;
+begin
+pl :=p div ml ; pO:=p mod ml ;
 
-ql :=q **div** ml; qO:=q **mod** ml;
+ql :=q div ml; qO:=q mod ml;
 
-###### mult:=( ((pO*ql+pl*qO)  mod ml)*ml+pO*qO)  mod m;
-**end** **;**
+###### mult:=( ((pOql+plqO) mod ml)ml+pOqO) mod m;
+end ;
 
-**function** random : integer ;
+function random : integer ;
 
-**begin**
+begin
 ###### a:=(mult(a, b)+l) mod m;
 random :=a;
-**end** **;**
+end ;
 
-**begin**
+begin
 read(hJ, a);
-**for** i:=l **to** N **do** writeln(random)
+for i:=l to N do writeln(random)
 
-**end.**
+end.
 
-The function mult in this program computes p*q **mod** m, with no overflow
+The function mult in this program computes p*q mod m, with no overflow
 as long as m is less than half the largest integer that can be represented. The
 technique obviously can be applied with m=ml*ml for other values of ml.
 Here are the ten numbers produced by this program with the input N =
@@ -4615,115 +3526,82 @@ There is some obvious non-randomness in these numbers: for example,
 the last digits cycle through the digits O-9. It is easy to prove from the
 formula that this will happen. Generally speaking, the digits on the right are
 
+ml)ml+pOqO)
 
-ml)*ml+pO*qO)
-
-
-((pO*ql+pl*qO)
-
+((pOql+plqO)
 
 ###### a:=(mult(a,
-
-
 read(hJ, a);
 
-
 ###### m=ml*ml
-
-
 pO:=p
-
 
 ml; qO:=q
 
-
 ###### i:=l
+IV:
 
-
-**IV:**
-
-
-**var**
-
+var
 
 ###### N
+i,
 
+;
 
-**i,**
+;
 
-
-**;**
-
-
-**;**
-
-
------
-
-_CHAPTER 3_
+CHAPTER 3
 
 not particularly random. This leads to a common and serious mistake in the
 use of linear congruential random number generators: the following is a bad
 program for producing random numbers in the range [0, r - 11:
 
-**function** randombad(r: integer) : integer;
-**begin**
-a:=(mult(b, a)+l) **mod** _m;_
+function randombad(r: integer) : integer;
+begin
+a:=(mult(b, a)+l) mod m;
 
-randombad:=a **mod** _r;_
+randombad:=a mod r;
 
-**end ;**
+end ;
 
 The non-random digits on the right are the only digits that are used,
 so the resulting sequence has few of the desired properties. This problem is
 easily fixed by using the digits on the left. We want to compute a number
-between 0 and r-l by computing _a*r_ **mod** m, but, again, overflow must be
+between 0 and r-l by computing a*r mod m, but, again, overflow must be
 circumvented, as in the following implementation:
 
-**function** randomint(r: integer): integer;
-**begin**
+function randomint(r: integer): integer;
+begin
 ###### a:=(mult(a, b)+l) mod m;
-randomint:=((a **div** ml)*r) **div** _ml_
+randomint:=((a div ml)*r) div ml
 
-**end ;**
+end ;
 
 Another common technique is to generate random real numbers between
 0 and 1 by treating the above numbers as fractions with the decimal point
 to the left. This can be implemented by simply returning the real value a/m
 rather than the integer a. Then a user could get an integer in the range [O,r)
-by simply multiplying this value by _r_ and truncating to the nearest integer.
+by simply multiplying this value by r and truncating to the nearest integer.
 Or, a random real number between 0 and 1 might be exactly what is needed.
 
-_Additive Congruential Method_
+Additive Congruential Method
 
-Another method for generating random numbers is based on _linear feedback_
-_shift registers_ which were used for early cryptographic encryption machines.
+Another method for generating random numbers is based on linear feedback
+shift registers which were used for early cryptographic encryption machines.
 The idea is to start with a register filled with some arbitrary pattern, then
 shift it right (say) a step at a time, filling in vacated positions from the left
 with a bit determined by the contents of the register. The diagram below
 shows a simple 4-bit register, with the new bit taken as the “exclusive or” of
 the two rightmost bits.
 
-
 randomint:=((a
 
-
 ###### a:=(mult(a,
-
-
 ###### ml)*r)
-
-
 ###### a)+l)
+a*r
 
-
-_a*r_
-
-
-_r_
-
-
------
+r
 
 RANDOM NUMBERS 39
 
@@ -4746,11 +3624,11 @@ In our example, if we take the bitwise “exclusive or” of two successive word
 we get the word which appears three places later in the list. This leads
 us to a random number generator suitable for easy implementation on a
 general-purpose computer. Using a feedblack register with bits b and c tapped
-corresponds to using the recursion: a[k]==(a[k-b]+a[k-c]) mod _m._ To keep
+corresponds to using the recursion: a[k]==(a[k-b]+a[k-c]) mod m. To keep
 the correspondence with the shift register model, the “+” in this recursion
 should be a bitwise “exclusive or.” However, it has been shown that good
 random numbers are likely to be produced even if normal integer addition is
-used. This is termed the _additive congwential_ method.
+used. This is termed the additive congwential method.
 To implement this method, we need to keep a table of size c which always
 has the c most recently generated num.bers. The computation proceeds by
 replacing one of the numbers in the table by the sum of two of the other
@@ -4760,53 +3638,45 @@ is to use a simple linear congruential generator!) Knuth recommends the
 choices b=31, c=55 will work well for most applications, which leads to the
 implementation below.
 
-
-_additive congwential_
-
+additive congwential
 
 However,
 
-
 feedblack
-
 
 (‘One
 
-
 c
 
+40 CHAPTER 3
 
------
+procedure randinit (s: integer) ;
 
-40 _CHAPTER 3_
+begin
+a[O] :=s; j:=O;
+repeat j:=j+l; ab]:=(mult(b, alj--l])+l) mod m until j=54;
 
-**procedure** randinit (s: integer) ;
+end ;
 
-**begin**
-_a[O]_ **:=s;** _j:=O;_
-**repeat** j:=j+l; ab]:=(mult(b, alj--l])+l) **mod** m **until j=54;**
-
-**end ;**
-
-**function** randomint(r: integer): integer;
-**begin**
+function randomint(r: integer): integer;
+begin
 
 ###### j:=(j+l) mod 5.5;
  alj]:=(a[(j+23) mod 55]+a [ (jf54) mod 551) mod m;
 
-randomint:=((ab] **div** _ml)*r)_ **div** _ml_
-**end;**
+randomint:=((ab] div ml)*r) div ml
+end;
 
 The program maintains the 55 most recently generated numbers, with the last
 generated pointed to by j. Thus, the global variable a has been replaced by
 a full table plus a pointer (j) into it. This large amount of “global state” is a
 disadvantage of this generator in some applications, but it is also an advantage
 because it leads to an extremely long cycle even if the modulus m is small.
-The function randomint returns a random integer between 0 and _r-l._ Of
+The function randomint returns a random integer between 0 and r-l. Of
 course, it can easily be changed, just as above, to a function which returns a
-random real number between 0 and 1 (a _b]/m)._
+random real number between 0 and 1 (a b]/m).
 
-_Testing Randomness_
+Testing Randomness
 
 One can easily detect numbers that are not random, but certifying that a
 sequence of numbers is random is a difficult task indeed. As mentioned above,
@@ -4827,37 +3697,22 @@ and useful in several applications, so we’ll examine it more carefully.
 The idea of the x2 test is to check whether or not the numbers produced
 are spread out reasonably. If we generate N positive numbers less than r, then
 
-
 randomint:=((ab]
-
 
 ab]:=(mult(b,
 
-
 ###### alj--l])+l)
-
-
 ###### ml)*r)
-
-
 ###### j:=j+l;
+b]/m).
 
+j:=O;
 
-_b]/m)._
+a[O]
 
+:=s;
 
-_j:=O;_
-
-
-_a[O]_
-
-
-**:=s;**
-
-
------
-
-_RAh’DOM NUA4BERS_ 41
+RAh’DOM NUA4BERS 41
 
 we’d expect to get about N/r numbers o:f each value. (But the frequencies of
 occurrence of all the values should not be exactly the same: that wouldn’t be
@@ -4865,36 +3720,35 @@ random!) It turns out that calculating whether or not a sequence of numbers
 is distributed as well as a random sequence is very simple, as in the following
 program:
 
-**function** t:hisquare(N, r, s: integer) : real;
-**var** i, t: integer;
+function t:hisquare(N, r, s: integer) : real;
+var i, t: integer;
 
-f: array **[O..rmax] of** integer;
+f: array [O..rmax] of integer;
 
-**begin**
+begin
 ran&nit(s);
-**for i:=O to rmax do f[i] :=O;**
-**for** i:=l **to Ndo**
+for i:=O to rmax do f[i] :=O;
+for i:=l to Ndo
 
-**begin**
+begin
 
-_t:=ranndomint(r);_
+t:=ranndomint(r);
 
 ###### f[t]::=f[t]+l;
+end ;
 
-**end** **;**
+t:=O; for i:=O to r-l do t:=t+f[i]*f[i];
+chisquare:= ((r*t/N) - N);
 
-t:=O; for _i:=O_ **to** r-l **do** t:=t+f[i]*f[i];
-chisquare:= _((r*t/N) - N);_
-
-**end** **;**
+end ;
 
 We simply calculate the sum of the squares of the frequencies of occurrence of each value, scaled by the expected frequency then subtract off the
 size of the sequence. This number is called the “x2 statistic,” which may be
 exprebsed mathematically as
 
-_x2 = Co<i<T(fi -WY_
+x2 = Co<i<T(fi -WY
 
-_N/r_ _’_
+N/r ’
 
 If the x2 statistic is close to r, then the numbers are random; if it is too far
 away, then they are not. The notions of “close” and “far away” can be more
@@ -4910,50 +3764,29 @@ can cause serious problems. All the “good generators” that we have discussed
 pass this test; the “bad ones” do not. Using the above generators to generate
 a thousand numbers less than 100, we get a x2 statistic of 100.8 for the
 
-
-_t:=ranndomint(r);_
-
+t:=ranndomint(r);
 
 ###### f[t]::=f[t]+l;
-
-
-_= Co<i<T(fi_
-
+= Co<i<T(fi
 
 ran&nit(s);
 
-
 ###### -WY
+NUA4BERS
 
-
-_NUA4BERS_
-
-
-_RAh’DOM_
-
+RAh’DOM
 
 t:=O;
 
-
 f[i] :=O;
 
-
 ###### i:=l
-
-
-_x2_
-
+x2
 
 ###### x2
-
-
 t:
 
-
-**;**
-
-
------
+;
 
 CHAPTER 3
 
@@ -4963,7 +3796,7 @@ the rightrhand bits from the linear congruential generator the statistic is 0
 (why?) and for a linear congruential method with a bad multiplier (101011)
 the statistic is 77.8, which is significantly out of range.
 
-Implementation _Notes_
+Implementation Notes
 
 There are a number of facilities commonly added to make a random number
 generator useful for a variety of applications. Usually, it is desirable to set
@@ -4997,12 +3830,9 @@ generator, based on the mathematical analysis and the experience of others;
 just to be sure, examine the numbers to make sure that they “look” random;
 if anything goes wrong, blame the random number generator!
 
+RAh’DOM MJM73ERS 43
 
------
-
-**_RAh’DOM MJM73ERS_** **_43_**
-
-**_Exercises_**
+Exercises
 
 1. Write a program to generate random four-letter words (collections of
 letters). Estimate how many words your program will generate before
@@ -5013,7 +3843,6 @@ dice and taking their sum, with the added complication that the dice are
 nonstandard (say, painted with the numbers 1,2,3,5,8, and 13)?
 
 3. What is wrong with the following linear feedback shift register?
-
 4. Why wouldn’t the “or” or “and” function (instead of the “exclusive or”
 function) work for linear feedback shift registers?
 
@@ -5029,31 +3858,21 @@ not they’re random and apply the test.
 7. Use a linear congruential generator .with parameters of your own choosing to generate 1000 positive integers less than 1000. Design a test to
 determine whether or not they’re random and apply the test.
 
-8. Why would it be unwise to use, for example, **_b=3_** and c=6 in the additive
+8. Why would it be unwise to use, for example, b=3 and c=6 in the additive
 congruential generator?
 
 9. What is the value of the x2 statistic for a degenerate generator which
 always returns the same number?
 
-10. Describe how you would generate random numbers with **_m_** bigger than
+10. Describe how you would generate random numbers with m bigger than
 the computer word size.
 
+MJM73ERS
 
-**_MJM73ERS_**
-
-
-**_b=3_**
-
+b=3
 
 ###### x2
-
-
------
-
------
-
 ###### 4. Polynomials
-
 The methods for doing arithmetic operations given in Chapter 2 are
 simple and straightforward solutions to familiar problems. As such, they
 provide an excellent basis for applying allgorithmic thinking to produce more
@@ -5066,7 +3885,7 @@ Operations on mathematical objects are far too diverse to be catalogued
 here; we’ll concentrate on a variety of algorithms for manipulating polynomials. The principal method that we’ll study in this section is a polyno
 
 mial multiplication scheme which is of no particular practical importance but
-which illustrates a basic design paradigm called _divide-and-conquer_ which is
+which illustrates a basic design paradigm called divide-and-conquer which is
 pervasive in algorithm design. We’ll see in this section how it applies to matrix
 multiplication as well as polynomial multiplication; in later sections we’ll see
 it applied to most of the problems that we encounter in this book.
@@ -5082,18 +3901,14 @@ for any given x, one could compute x4, then compute and add 3x3, etc. This
 method requires recomputation of the powers of x; an alternate method, which
 requires extra storage, would save the powers of x as they are computed.
 A simple method which avoids recomputation and uses no extra space
-is known as _Homer’s_ rule: by alternat:ing the multiplication and addition
+is known as Homer’s rule: by alternat:ing the multiplication and addition
 operations appropriately, a degree-N polynomial can be evaluated using only
 
 45
 
-
 for any given x, one could compute x4, then compute and add 3x3, etc. This
 
-
------
-
-46 _CHAPTER 4_
+46 CHAPTER 4
 
 N - 1 multiplications and N additions. The parenthesization
 
@@ -5120,7 +3935,7 @@ rule in this case degenerates to the trivial algorithm which requires N - 1
 multiplications. For an easy example of how we can do much better, consider
 the following sequence for computing x32:
 
-x **z2** **x4** **x8** **x16 32**
+x z2 x4 x8 x16 32
 
 I 7 f f 7x .
 
@@ -5134,28 +3949,18 @@ computed values to use. (In the example, since 55 = (110111)2, all but x8
 are used.) The successive squares can be computed and the bits of N tested
 within the same loop. Two methods are available to implement this using only
 
-
 ###### i:=N-I
-
-
 P(X)
 
-
-**x4**
-
+x4
 
 7x
 
-
 f
-
 
 I
 
-
------
-
-_PoLYNoMlALs_ _4 7_
+PoLYNoMlALs 4 7
 
 one “accumulator,” like Horner’s method. One algorithm involves scanning
 the binary representation of N from left to right, starting with 1 in the
@@ -5163,7 +3968,7 @@ accumulator. At each step, square the accumulator and also multiply by z
 when there is a 1 in the binary representation of N. The following sequence
 of values is computed by this method for N = 55:
 
-1 1 z x2 x3 x6 7,) `7` `I,` xl2,xlZi,x 26 27 54 55,x,x,x .
+1 1 z x2 x3 x6 7,) 7 I, xl2,xlZi,x 26 27 54 55,x,x,x .
 ```
                                            ; / / *~
 
@@ -5172,10 +3977,10 @@ Another well-known alforithm whks similarly, bht scans N from right to
 left. This problem is a standard introductory programming exercise, but it is
 hardly of practical interest.
 
-_Interpolation_
+Interpolation
 
 The “inverse” problem to the problem of evaluating a polynomial of degree N
-at N points simultaneously is the problem of polynomial _interpolation:_ given
+at N points simultaneously is the problem of polynomial interpolation: given
 a set of N points x1,x2,. . .,xN and associated values yr,y2,. . .,yN, find the
 unique polynomial of degree N - 1 which1 has
 ```
@@ -5191,7 +3996,7 @@ interpolation formula, which is often used as a proof that a polynomial of
 degree N - 1 is completely determined by N points:
 
 This formula seems formidable at first but is actually quite simple. For
-example, the polynomial of degree 2 which has _p(l)_ = 3, p(2) = 7, and p(3) =
+example, the polynomial of degree 2 which has p(l) = 3, p(2) = 7, and p(3) =
 13 is given by
 
 x - 2 x - 3
@@ -5201,9 +4006,9 @@ which simplifies to
 
 x2 +a:+ 1.
 
-For x from xl, x2, . . ., XN, the formula is constructed so that p(xk) = yk `for`
+For x from xl, x2, . . ., XN, the formula is constructed so that p(xk) = yk for
 
-1 5 _k_ 5 N, since the product evaluates to 0 unless j = _k,_ when it evaluates
+1 5 k 5 N, since the product evaluates to 0 unless j = k, when it evaluates
 
 ```
              ;
@@ -5220,9 +4025,7 @@ p(Xl)=
 
 P(X)
 
-
 ###### xl2
-
 ```
 7,)
 
@@ -5230,10 +4033,7 @@ P(X)
 
 x2
 
-
 ###### ,x
-
-
 yk
 
 ```
@@ -5245,7 +4045,6 @@ yk
 
 ```
 
------
 
 48 CHAPTER 4
 
@@ -5268,12 +4067,12 @@ which can solve the problem in N(log N)2 steps, and in Chapter 36 we’ll see
 a method that uses only N log N multiplications for a specific set of N points
 of interest.
 
-_Multiplication_
+Multiplication
 
 Our first sophisticated arithmetic algorithm is for the problem of polynomial
-_multiplication:_ given two polynomials p(x) and _q(x),_ compute their product
+multiplication: given two polynomials p(x) and q(x), compute their product
 
-_p(x)q(x)._ As noted in Chapter 2, polynomials of degree N - 1 could have
+p(x)q(x). As noted in Chapter 2, polynomials of degree N - 1 could have
 N terms (including the constant) and the product has degree 2N - 2 and as
 many as 2N - 1 terms. For example,
 
@@ -5281,9 +4080,9 @@ many as 2N - 1 terms. For example,
 
 The naive algorithm for this problem that we implemented in Chapter 2
 requires N2 multiplications for polynomials of degree N - 1: each of the N
-terms of p(x) must be multiplied by each of the N terms of _q(x)._
+terms of p(x) must be multiplied by each of the N terms of q(x).
 To improve on the naive algorithm, we’ll use a powerful technique for
-algorithm design called _divide-and-conquer:_ split the problem into smaller
+algorithm design called divide-and-conquer: split the problem into smaller
 parts, solve them (recursively), then put the results back together in some
 way. Many of our best algorithms are designed according to this principle.
 In this section we’ll see how divide-and-conquer applies in particular to the
@@ -5295,26 +4094,17 @@ given a polynomial of degree N-l (with N coefficients) we can split it into two
 polynomials with N/2 coefficients (assume that N is even): by using the N/2
 low-order coefficients for one polynomial and the N/2 high-order coefficients
 
-
-_p(x)q(x)._
-
+p(x)q(x).
 
 CHAPTER 4
 
-
 3~~)
-
 
 26x4 +
 
-
 5s2
 
-
 3a:
-
-
------
 
 PoLMvoMIALs 49
 
@@ -5322,192 +4112,143 @@ for the other. For p(z) = po + pla: + . .. + PN-IZ?‘, define
 
 f%(x) =p,, +pla:+“~+pN,2-~xN’2-1
 
-_Ph(x) =_ _pN/2_ _+ pN/2+15_ _-I-_ _’_ _’_ _* + pN-1xN’2-?_
+Ph(x) = pN/2 + pN/2+15 -I- ’ ’ * + pN-1xN’2-?
 
-Then, splitting _q(x) in the same way, we have:_
+Then, splitting q(x) in the same way, we have:
 
-_P(x) = Pi(x) +_ _zN’2ph(x),_
+P(x) = Pi(x) + zN’2ph(x),
 
-_q(x) = 41(x) +_ _“N’2qh(x)._
+q(x) = 41(x) + “N’2qh(x).
 
 Now, in terms of the smaller polynomials;, the product is given by:
 
-_P(x)dx)_ _=_ _Pdx)ql(x) +_ _(Pdxk?h(x) + d+h(x))xN’2_ _+_ _Ph(x)qh(x)xN._
+P(x)dx) = Pdx)ql(x) + (Pdxk?h(x) + d+h(x))xN’2 + Ph(x)qh(x)xN.
 
 (We used this same split in the previous chapter to avoid overflow.) What’s
 interesting is that only three multiplications are necessary to compute these
-products, because if we compute TV = _pl(x)ql(x),_ _?-h(x) = ph(x)qh(x),_ `and`
+products, because if we compute TV = pl(x)ql(x), ?-h(x) = ph(x)qh(x), and
 
-_Tm(x)_ _= (?‘dx) + Ph(x))(ql(x)_ _+_ _qh(z)),_ [we can get the product ] _[p(x)q(x) ]_ [by]
+Tm(x) = (?‘dx) + Ph(x))(ql(x) + qh(z)), [we can get the product ] [p(x)q(x) ] [by]
 computing
 
 ###### p(x)q(x) = Tl(x) + (Tm(x) - ?-l(x)- ?-h(x))xN’2 + ‘?-h(x)xN.
-
 Polynomial addition requires a linear algorithm, and the straightforward polynomial multiplication algorithm of Chapter 2 is quadratic, so it’s worthwhile
 to do a few (easy) additions to save one (difficult) multiplication. Below we’ll
 look more closely at the savings achieved by this method.
-For the example given above, with p(x) = 1 +x +3x2 -4x3 and _q(x) =_
+For the example given above, with p(x) = 1 +x +3x2 -4x3 and q(x) =
 1 + 2x - 5x2 - 3x3, we have
 
 Q(X) = (1+ x)(1 + 2x) = I + 3x + 2x2,
 
-Q(X) = (3 -4x)(-5         - 3x) = -15 + 11x + 12x2,
+Q(X) = (3 -4x)(-5 - 3x) = -15 + 11x + 12x2,
 
-T,(X) = (4         - 3x)(-4         - x) =: -16 +8x + 3x2.
+T,(X) = (4 - 3x)(-4 - x) =: -16 +8x + 3x2.
 
 Thus, r,(x) - Q(X) -?-h(x) = -2 - 6x - 11x2, and the product is computed as
 
-_p(x)q(x) =_ (1 + 3x + 2x2) + (-2 -6x   - 11x[2])x[2] + (-15 + 11x + 12x[2])x[4]
+p(x)q(x) = (1 + 3x + 2x2) + (-2 -6x - 11x[2])x[2] + (-15 + 11x + 12x[2])x[4]
 
-= 1+3x       - 6x3       - 26x4 + 11x5 t 12x6.
+= 1+3x - 6x3 - 26x4 + 11x5 t 12x6.
 
 This divide-and-conquer approach solves a polynomial multiplication problem
 of size N by solving three subproblems of size N/2, using some polynomial
 addition to set up the subproblems and to combine their solutions. Thus, this
 procedure is easily described as a recursive program:
 
-
-######  +pla:+“~+pN,2-~xN’2-1
-
-
-_Ph(x)qh(x)xN._
-
+###### +pla:+“~+pN,2-~xN’2-1
+Ph(x)qh(x)xN.
 
 PoLMvoMIALs
 
-
 ###### PN-IZ?‘,
+Ph(x))(ql(x)
 
-
-_Ph(x))(ql(x)_
-
-
-_= ph(x)qh(x),_
-
+= ph(x)qh(x),
 
 ‘?-h(x)xN.
 
-
-_(Pdxk?h(x)_
-
+(Pdxk?h(x)
 
 ###### p(x)q(x)
+P(x)dx)
 
-
-_P(x)dx)_
-
-
-_pN/2+15_
-
+pN/2+15
 
 (Tm(x)
 
+Tm(x)
 
-_Tm(x)_
-
-
-_= (?‘dx) +_
-
+= (?‘dx) +
 
 ###### r,(x)
-
-
 ###### +3x2
-
-
 f%(x)
 
-
-_= 41(x)_
-
+= 41(x)
 
 ###### Tl(x)
-
-
 Q(X)
-
 
 12x6.
 
+Pi(x)
 
-_Pi(x)_
-
-
-_P(x)_
-
+P(x)
 
 ###### =p,,
-
-
 5x2
-
 
 pla:
 
-
 ###### N
++
 
+-I-
 
-_+_
-
-
-_-I-_
-
-
-_+_
-
++
 
 ###### +
-
-
 ###### t
-
-
 =:
-
 
 I
 
-
------
-
 50 CHAPTER 4
 
-**function** mult(p, q: **array[O..N-I]** **of real;**
-N: integer) : **array** **[O..2*N-21** **of real;**
-**var** **pl,** **41,** _ph, qh, tl,_ _t2:_ **array** **[O..(N div 2)-I] of real;**
+function mult(p, q: array[O..N-I] of real;
+N: integer) : array **[O..2*N-21 of real;
+var pl, 41, ph, qh, tl, t2: array [O..(N div 2)-I] of real;**
 
-rl, rm, _rh:_ **array [O..N-I] of** _red;_
+rl, rm, rh: array [O..N-I] of red;
 i, N2: integer;
 
-**begin**
-**if N=l then** mult[O]:=p[O]*q[O]
-**else**
-**begin**
-**N2:=N div 2;**
-**for** i:=O to N2-1 **do**
-**begin** pl[i]:=p[i]; ql[i]:=q[i] **end;**
-**for** _i:=N2_ **to N-l do**
-**begin** ph[i-N2]:=p[i]; qh[i-N2]:=q[i] **end;**
-**for** i:=O **to N2-I do** tI[i]:=pl[i]+ph[i];
+begin
+if N=l then mult[O]:=p[O]*q[O]
+else
+begin
+N2:=N div 2;
+for i:=O to N2-1 do
+begin pl[i]:=p[i]; ql[i]:=q[i] end;
+for i:=N2 to N-l do
+begin ph[i-N2]:=p[i]; qh[i-N2]:=q[i] end;
+for i:=O to N2-I do tI[i]:=pl[i]+ph[i];
 
-**for** _i:=O_ to N2-1 **do t2[i]:=ql[i]+qh[i];**
+for i:=O to N2-1 do t2[i]:=ql[i]+qh[i];
 
 ###### rm:=mult(tl, t2, N2); rl:=mult(pl, 41, N2);
-rh:=mult(ph, _qh, N2);_
+rh:=mult(ph, qh, N2);
 
-**for i:=O to N-2 do mult [i]** _:=rl[i]_
+for i:=O to N-2 do mult [i] :=rl[i]
 
 mult [N-l] :=O;
 
-**for i:=O to N-2 do mult [N+i] :=rh [i]**
-**for i:=O to N-2 do**
+for i:=O to N-2 do mult [N+i] :=rh [i]
+for i:=O to N-2 do
 
 ###### mult[N2+i]:=mult[N2+i]+rm[i]-(rl[i]+rh[i]);
+end ;
 
-**end ;**
-
-**end.**
+end.
 
 Although the above code is a succinct description of this method, it is (unfortunately) not a legal Pascal program because functions can’t dynamically declare
 arrays. This problem could be handled in Pascal by representing the polync+
@@ -5525,62 +4266,35 @@ As with polynomial evaluation and interpolation, there are sophisticated
 methods for polynomial multiplication, and in Chapter 36 we’ll see a method
 that works in time proportional to N log N.
 
-
 ###### mult[N2+i]:=mult[N2+i]+rm[i]-(rl[i]+rh[i]);
-
-
 ###### tI[i]:=pl[i]+ph[i];
-
-
 ###### ph[i-N2]:=p[i];
-
-
-**array[O..N-I]**
-
+array[O..N-I]
 
 rh:=mult(ph,
 
-
 ###### pl[i]:=p[i];
-
-
 ql[i]:=q[i]
-
 
 mult(p, q:
 
+:=rl[i]
 
-_:=rl[i]_
+div 2)-I] of real;
 
-
-**div 2)-I] of real;**
-
-
-_i:=N2_
-
+i:=N2
 
 ###### N2-1
-
+i:=O
 
 i:=O
 
-
-i:=O
-
-
-_:=rh_
-
+:=rh
 
 ###### rm,
-
-
-_t2:_
-
+t2:
 
 rl,
-
-
------
 
 POLYNOMIALS 51
 
@@ -5627,48 +4341,26 @@ above, we write N = 2?
 
 M(2n) = 2M(2’“-‘) + 2”.
 
-
 = 32M(2”-2) =
 
-
 ###### 3M(2”-l)
-
-
 ###### 3M(N/2)
-
-
 ###### 2M(N/2)
-
-
 ###### 3n~(I)
-
-
 M(2n) =
-
 
 g:iven
 
-
 Nlg3
-
 
 usled
 
-
 2n,
 
-
 2n,
-
 
 ###### 2?
-
-
 ###### z
-
-
------
-
 52 CHAPTER 4
 
 The trick to making it simple to apply this same recursive formula to itself is
@@ -5677,7 +4369,6 @@ to divide both sides by 2n:
 M(2n) M(29
 = 2n-l $1.
 ###### -2n
-
 Now, applying this same formula to itself n times ends up simply giving n
 copies of the “1,” from which it follows immediately that M(2n) = 712~. Again,
 it turns out that this holds true (roughly) for all N, and we have the solution
@@ -5713,31 +4404,18 @@ solutions of recursively solved smaller subproblems. The running time of such
 algorithms can usually be described by recurrence relationships which are a
 direct mathematical translation of the structure of the algorithm. Though
 
-
 ###### M(N/2)
-
-
 I~f(2~)
-
 
 I14(2~)
 
-
 712~.
-
 
 2n:
 
-
 ###### z
-
-
 ###### z
-
-
------
-
-PoLYNoMIALs _53_
+PoLYNoMIALs 53
 
 such relationships can be challenging to solve precisely, they are often easy to
 solve for some particular values of N to get solutions which give reasonable
@@ -5748,7 +4426,7 @@ that we’ve just solved are sufficient to describe the performance of most of
 the algorithms that we’ll be studying, and we’ll simply be referring back to
 them.
 
-_Matrix Multiplication_
+Matrix Multiplication
 
 The most famous application of the divide-and-conquer technique to an arithmetic problem is Strassen’s method for matrix multiplication. We won’t go
 into the details here, but we can sketch the method, since it is very similar to
@@ -5764,7 +4442,7 @@ rearrangement and the terms required are quite complicated.
 The number of multiplications required for matrix multiplication using
 Strassen’s method is therefore defined by the divide-and-conquer recurrence
 
-_M(N) = 7M(N/2)_
+M(N) = 7M(N/2)
 
 which has the solution
 M(N) M N1g7 FZ N2.81.
@@ -5779,20 +4457,13 @@ It is important to note that we have been counting multiplications only.
 Before choosing an algorithm for a practical application, the costs of the
 extra additions and subtractions for combining terms and the costs of the
 
-
 PoLYNoMIALs
-
 
 responds to dividing each of the matrice;s into quarters, each N/2 by N/2.
 
-
 purpo,se
 
-
 FZ
-
-
------
 
 CHAPTER 4
 
@@ -5813,22 +4484,14 @@ problems, but sophisticated algorithms can reap tremendous savings for large
 problems.
 
 r l
-###### 
-
+######
 CHAPTER 4
 
-
 ###### N.
-
-
 ###### N
-
-
------
-
 POLYNOMIALS 55
 
-_Exercises_
+Exercises
 
 1. Give a method for evaluating a polynomial with known roots ~1, ~2, . . .,
 TN, and compare your method with Horner’s method.
@@ -5838,7 +4501,6 @@ a linked list representation is used for the polynomials. Be sure that your
 program works efficiently for sparse polynomials.
 
 3. Write an N2 program to do Lagrang:ian interpolation.
-
 4. Suppose that we know that a polynomial to be interpolated is sparse (has
 few non-zero coefficients). Describe how you would modify Lagrangian
 interpolation to run in time proportional to N times the number of nonzero coefficients.
@@ -5859,40 +4521,26 @@ ones; if not, say why not.
 ones; if not, say why not.
 
 9. Describe exactly how you would modify mult to multiply a polynomial of
-degree N by another of degree _M,_ with N > _M._
+degree N by another of degree M, with N > M.
 
 10. Give the representation that you would use for programs to add and
 multiply multivariate polynomials such as xy2z + 31~~~7~~2~~ + w. Give
 the single most important reason for choosing this representation.
 
-
 ###### 1+x+~2+x3+s4+x5+x6+~7+xs.
-
-
 31~~~7~~2~~
-
 
 The polynomial multiplication routinie mult could be made more efficient
 
-
 ((to
-
 
 non-
 
-
 ~1,
-
 
 7.
 
-
------
-
------
-
 ###### 5. Gaussian Elimination
-
 Certainly one of the most fundam.ental scientific computations is the
 solution of systems of simultaneous equations. The basic algorithm for
 solving systems of equations, Gaussian elimination, is relatively simple and
@@ -5915,7 +4563,7 @@ we’ll also see examples of problems which could arise. Certainly for a large o
 important application, the use of an expertly tuned implementation is called
 for, as well as some familiarity with the underlying mathematics.
 
-**_A_** Simple Example
+A Simple Example
 
 Suppose that we have three variables :c,y and z and the following three
 equations:
@@ -5924,18 +4572,12 @@ x + 3y - 4;~ = 8,
 ###### x+y-2;z=2,
  -x-2y+5;s=-1.
 
-**_57_**
-
+57
 
 ###### -x-2y+5;s=-1.
-
-
 4;~
 
-
------
-
-_5 8_ _CHAPTER 5_
+5 8 CHAPTER 5
 
 Our goal is to compute the values of the variables which simultaneously
 satisfy the equations. Depending on the particular equations there may not
@@ -5951,7 +4593,7 @@ points, we’ll begin by renaming the variables, using subscripts:
 ###### s1+3s2-4~=8,
  21+22-223=2,
 
-_-x1_ _-_ _2x2 +_ 5x3 = -1.
+-x1 - 2x2 + 5x3 = -1.
 
 To avoid writing down variables repeatedly, it is convenient to use matrix
 notation to express the simultaneous equations. The above equations are
@@ -5959,40 +4601,28 @@ exactly equivalent to the matrix equation
 
 There are several operations which can be performed on such equations which
 will not alter the solution:
-Interchange _equations:_ Clearly, the order in which the equations are
+Interchange equations: Clearly, the order in which the equations are
 written down doesn’t affect the solution. In the matrix representation,
 this operation corresponds to interchanging rows in the matrix (and
 the vector on the right hand side).
-_Rename_ variables: This corresponds to interchanging columns in the
+Rename variables: This corresponds to interchanging columns in the
 matrix representation. (If columns i and j are switched, then variables
 ###### xi and xj must also be considered switched.)
-_Multiply_ equations _by_ a constant: Again, in the matrix representation,
+Multiply equations by a constant: Again, in the matrix representation,
 this corresponds to multiplying a row in the matrix (and the corresponding element in the vector on the righbhand side) by a constant.
-_Add two equations_ and replace one of them by the sum. (It takes a
+Add two equations and replace one of them by the sum. (It takes a
 little thought to convince oneself that this will not affect the solution.)
 For example, we can get a system of equations equivalent to the one above
 by replacing the second equation by the difference between the first two:
 
-
 ###### 21+22-223=2,
-
-
 5x3
 
-
 ###### xj
-
-
 ###### j
-
-
 y
 
-
 i
-
-
------
 
 GAUSSIAN ELIMINATION 59
 
@@ -6001,7 +4631,6 @@ we can eliminate xi from the third equation by replacing the third equation
 by the sum of the first and third:
 
 ###### (i ; ‘;)(iz) =($).
-
 Now the variable zi is eliminated from all but the first equation. By systematically proceeding in this way, we can transform the original system of
 equations into a system with the same solution that is much easier to solve.
 For the example, this requires only one more step which combines two of the
@@ -6011,8 +4640,7 @@ diagonal 0: systems of equations of this form are particularly easy to solve.
 The simultaneous equations which result in our example are:
 
 ###### xi+3xs-453=8,
-
-2x2                    - 22s = 6,
+2x2 - 22s = 6,
 
 ###### -42s = -8.
 Now the third equation can be solved immediately: x3 = 2. If we substitute
@@ -6020,105 +4648,72 @@ this value into the second equation, we can compute the value of x2:
 
 2x2 - 4 == 6,
 
-
 ###### ‘;)(iz)
-
-
 ###### xi+3xs-453=8,
-
-
 ###### (i
-
-
 ###### -42s
-
+2x2
 
 2x2
 
-
-2x2
-
-
 ###### zi
-
-
 ###### zi
-
-
 ==
-
 
 x2 == 5.
 Similarly, substituting these two values in the first equation allows the value
 of xi to be computed:
 
-x1 + 15                  - 8 = 8,
+x1 + 15 - 8 = 8,
 
 Xl = 1,
 which completes the solution of the equations.
 This example illustrates the two basic phases of Gaussian elimination.
-The first is the _forward elimination_ phase, where the original system is transformed, by systematically eliminating variables from equations, into a system
+The first is the forward elimination phase, where the original system is transformed, by systematically eliminating variables from equations, into a system
 with all zeros below the diagonal. This process is sometimes called triangulation. The second phase is the backward substitution phase, where the values
 of the variables are computed using the t:riangulated matrix produced by the
 first phase.
 
-_Outline of the Method_
+Outline of the Method
 
 In general, we want to solve a system of N equations in N unknowns:
 
 ###### allxl + a1222 + --- + alNxN = bl,
+a2121 + **a2252 + * 9 * + a2NxN =** bz,
 
-**a2121 +** **a2252 + * 9 * + a2NxN =** _bz,_
-
-**aNlx1 + aN252 $** **- -. -+ aNNxN = bN.**
-
+aNlx1 + aN252 $ - -. -+ aNNxN = bN.
 
 ###### =($).
+aNNxN = bN.
 
++ --- + alNxN =
 
-**aNNxN = bN.**
+aNlx1 +
 
+a1222
 
-**+ --- + alNxN =**
+a2252
 
-
-**aNlx1 +**
-
-
-**a1222**
-
-
-**a2252**
-
-
-_bz,_
-
+bz,
 
 x2
 
-
 Xl
 
-
-**$**
-
+$
 
 8
 
-
 ==
 
-
------
-
-_60_ CHAJ’TER 5
+60 CHAJ’TER 5
 
 In matrix form, these equations are written as a single matrix equation:
 
-or simply AX = _b,_ where _A_ represents the matrix, z represents the variables,
-and _b_ represents the rightrhand sides of the equations. Since the rows of _A_
-are manipulated along with the elements of _b,_ it is convenient to regard _b_ as
-the (N + 1)st column of _A_ and use an N-by-(N + 1) array to hold both.
+or simply AX = b, where A represents the matrix, z represents the variables,
+and b represents the rightrhand sides of the equations. Since the rows of A
+are manipulated along with the elements of b, it is convenient to regard b as
+the (N + 1)st column of A and use an N-by-(N + 1) array to hold both.
 Now the forward elimination phase can be summarized as follows: first
 eliminate the first variable in all but the first equation by adding the appropriate multiple of the first equation to each of the other equations, then
 eliminate the second variable in all but the first two equations by adding the
@@ -6134,7 +4729,7 @@ followed by b,.
 program gauss(input, output);
 const maxN=50;
 
-var a: array[I..maxN, _l..maxN]_ of real;
+var a: array[I..maxN, l..maxN] of real;
 i, J’, k, N: integer;
 
 begin
@@ -6143,59 +4738,39 @@ for j:==l to N do
 begin for k:=l to N+1 do read(ab, k]); readln end;
 for i:==l to N do
 for j:=i+l to N do
-for k:=N+l downto _i do_
+for k:=N+l downto i do
 
 ###### ab,k]:=aIj,k]-a[i,k]*ab,i]/a[i,i];
-
 for j:==l to N do
 begin for k:=l to N+1 do write(ab, k]); writeln end;
 
 end.
 
-
 array[I..maxN,
-
 
 maxN=50;
 
-
-_l..maxN]_
-
+l..maxN]
 
 for k:=N+l
 
-
 ###### j:=i+l
-
-
 readln (N)
 
-
 j:==l
 
-
 j:==l
-
 
 1)st
 
-
 ###### k:=l
-
-
 i:==l
 
-
-_b,._
-
+b,.
 
 J’,
 
-
 $-
-
-
------
 
 GAUSSIAN ELlMlNATION 61
 
@@ -6206,20 +4781,20 @@ three nested loops, so that the total running time is essentially proportional
 to N3. The third loop goes backwards so as to avoid destroying ab, i] before
 it is needed to adjust the values of other #elements in the same row.
 
-The program in the above paragraph is too simple to be quite right: _a[&_ i]
+The program in the above paragraph is too simple to be quite right: a[& i]
 might be zero, so division by zero could ‘occur. This is easily fixed, because
-we can exchange any row (from i+1 to N) with the ith row to make _a[i, i]_
+we can exchange any row (from i+1 to N) with the ith row to make a[i, i]
 non-zero in the outer loop. If no such row can be found, then the matrix is
 singular: there is no unique solution.
 
 In fact, it is advisable to do slightly more than just find a row with a
-non-zero entry in the ith column. It’s best to use the row (from _if1_ to N)
+non-zero entry in the ith column. It’s best to use the row (from if1 to N)
 whose entry in the ith column is the largest in absolute value. The reason for
-this is that severe computational errors can arise if the a[& _i]_ value which is
+this is that severe computational errors can arise if the a[& i] value which is
 used to scale a row is very small. If a[i, i] is very small, then the scaling factor
 ab, i]/a[i, i] which is used to eliminate the ith variable from the jth equation
 (for j from i+l to N) will be very large. In fact, it could get so large as to
-dwarf the actual coefficients ali, k], to the point where the alj, _k]_ value gets
+dwarf the actual coefficients ali, k], to the point where the alj, k] value gets
 distorted by “round-off error.”
 
 Put simply, numbers which differ greatly in magnitude can’t be accurately
@@ -6232,128 +4807,96 @@ might contemplate looking beyond the ith column to find a large element, but
 it has been shown that accurate answers can be obtained without resorting to
 this extra complication.
 
-The following code for the forward elimination phase of Gaussian elimination is a straightforward implementation of this process. For each _i_ from 1 to
+The following code for the forward elimination phase of Gaussian elimination is a straightforward implementation of this process. For each i from 1 to
 N, we scan down the ith column to find the largest element (in rows past the
 ith). The row containing this element is exchanged with the ith, then the ith
 variable is eliminated in the equations i+.l to N exactly as before:
 
-
 GAUSSIAN ELlMlNATION
-
-
-_a[&_
-
-
-used to scale a row is very small. If a[i, i] is very small, then the scaling factor
-
 
 a[&
 
+used to scale a row is very small. If a[i, i] is very small, then the scaling factor
+
+a[&
 
 ###### i+l
-
-
 we can exchange any row (from i+1 to N) with the ith row to make
 
-
 ###### i+l
-
-
-_k]_
-
+k]
 
 1
 
-
------
-
 62 CHAPTER 5
 
-**procedure** eliminate;
-**var** _i, j, k,_ _max: integer;_
-t: _real;_
+procedure eliminate;
+var i, j, k, max: integer;
+t: real;
 
-**begin**
-**for** _i:=l_ **to Ndo**
+begin
+for i:=l to Ndo
 
-**begin**
-_max:=i;_
-**for** _j:=i+l to N do_
-**if** abs(aIj, i])>abs(a[max, i]) **then** max:=j;
+begin
+max:=i;
+for j:=i+l to N do
+if abs(aIj, i])>abs(a[max, i]) then max:=j;
 
-**for** _k:=i to N+l do_
-**begin** t:=a[i, _k]; a[i, k] :=a[max, k]; a[max,_ _k] :=t_ **end;**
-**for** _j:=i+l_ **to N do**
-**for k:=N+l** **downto** i **do**
+for k:=i to N+l do
+begin t:=a[i, k]; a[i, k] :=a[max, k]; a[max, k] :=t end;
+for j:=i+l to N do
+for k:=N+l downto i do
 
 ###### ab,k]:=ab,k]-a[i,k]*ab,i]/a[i,i];
+end
+end ;
 
-**end**
-**end ;**
-
-(A call to eliminate should replace the three nested **for** loops in the program
+(A call to eliminate should replace the three nested for loops in the program
 gauss given above.) There are some algorithms where it is required that the
-pivot _a[i, i] be used to eliminate the ith variable from every equation but the_
-ith (not just the (i+l)st through the Nth). This process is called _full pivoting;_
+pivot a[i, i] be used to eliminate the ith variable from every equation but the
+ith (not just the (i+l)st through the Nth). This process is called full pivoting;
 for forward elimination we only do part of this work hence the process is called
-_partial pivoting ._
+partial pivoting .
 After the forward elimination phase has completed, the array a has
 all zeros below the diagonal, and the backward substitution phase can be
 executed. The code for this is even more straightforward:
 
-**procedure** substitute;
-**var** j, _k: integer;_
+procedure substitute;
+var j, k: integer;
 t: real;
 
-**begin**
-**for j:=N** **downto 1 do**
+begin
+for j:=N downto 1 do
 
-**begin**
+begin
 
-**tr=o.o;**
+tr=o.o;
 
-**for** _k:=j+l to N do_ t:=t+ab, **k]*x[k];**
+for k:=j+l to N do t:=t+ab, **k]*x[k];**
 ###### r!i:=(ali, N+ll-t)/alj,j]
-
-**end ;**
+end ;
 
 A call to eliminate followed by a call to substitute computes the solution in
 the N-element array x. Division by 0 could still occur for singular matrices.
 
-
 ###### ab,k]:=ab,k]-a[i,k]*ab,i]/a[i,i];
-
-
 ###### N+ll-t)/alj,j]
-
-
 CHAPTER 5
 
-
-**for k:=N+l**
-
+for k:=N+l
 
 ###### max:=j;
+j:=i+l
 
+tr=o.o;
 
-_j:=i+l_
+to N+l do
 
+a[i,
 
-**tr=o.o;**
+;
 
-
-**to N+l do**
-
-
-_a[i,_
-
-
-**;**
-
-
------
-
-_GAUSSLAN_ _ELMNATION_ 63
+GAUSSLAN ELMNATION 63
 
 Obviously a “library” routine would check for this explicitly.
 An alternate way to proceed after forward elimination has created all
@@ -6369,7 +4912,7 @@ severe errors. For example, very small coefficients turn up when two different
 equations have coefficients which are quite close to one another. It is actually
 possible to determine in advance whether such problems will cause inaccurate
 answers in the solution. Each matrix haa an associated numerical quantity
-called the _condition number_ which can ble used to estimate the accuracy of
+called the condition number which can ble used to estimate the accuracy of
 the computed answer. A good library subroutine for Gaussian elimination
 will compute the condition number of the matrix as well as the solution, so
 that the accuracy of the solution can be lknown. Full treatment of the issues
@@ -6383,7 +4926,7 @@ method of solution). The algorithm has been the subject of fairly detailed
 theoretical studies, and can be recommended as a computational procedure
 of very wide applicability.
 
-Variations _and Extensions_
+Variations and Extensions
 
 The method just described is most appropriate for N-by-N matrices with
 most of the N2 elements non-zero. As we’ve seen for other problems, special
@@ -6394,19 +4937,13 @@ If the non-zero elements have no particular structure, then the linked
 list representation discussed in Chapter ‘2 is appropriate, with one node for
 each non-zero matrix element, linked together by both row and column. The
 
-
-_ELMNATION_
-
+ELMNATION
 
 .the
 
-
 ‘of
 
-
------
-
-_6 4_ _CHAPTER 5_
+6 4 CHAPTER 5
 
 standard method can be implemented for this representation, with the usual
 extra complications due to the need to create and destroy non-zero elements.
@@ -6437,21 +4974,20 @@ for N = !j:
 i 0 0 0 a54 a55
 
 For such matrices, forward elimination and backward substitution each reduce
-to a single **for loop:**
+to a single for loop:
 
-**for** i:=l **to N-l do**
-**begin**
+for i:=l to N-l do
+begin
 
 ###### a[i+l, N+l]:=a[i+l, N+l]-a[i, iV+l]*a[i+l, i]/a[i,i];
  a[i+l, ifl] :=a[i+l, i+l]-a[i, i+l]*a[i+l, i]/a[i,i]
-**end ;**
+end ;
 
-**for j:== N downto 1 do**
+for j:== N downto 1 do
 
 ###### xb]:=(ab, N+1]-ab, j+l]*xb+1])/ab, j];
-
-For forward elimination, only the case _j=i+l_ and k=i+l needs to be included,
-since a[i, _k]=O for_ _k>i+l. (The case_ _k =i can be skipped since it sets to 0_
+For forward elimination, only the case j=i+l and k=i+l needs to be included,
+since a[i, k]=O for k>i+l. (The case k =i can be skipped since it sets to 0
 an array element which is never examined again -this same change could be
 made to straight Gaussian elimination.) Of course, a two-dimensional array
 of size N2 wouldn’t be used for a tridiagonal matrix. The storage required for
@@ -6460,73 +4996,44 @@ instead of the a matrix: one for each of the three nonzero diagonals and one
 for the (N + l)st column. Note that this program doesn’t necessarily pivot on
 the largest available element, so there is no insurance against division by zero
 
-
 ###### j+l]*xb+1])/ab,
-
-
 ###### N+l]:=a[i+l,
-
-
 ###### N+l]-a[i,
-
-
 ###### N+1]-ab,
-
-
 ###### i]/a[i,i];
-
-
 ###### :=a[i+l,
-
-
 ###### a[i+l,
-
-
 ###### a[i+l,
-
-
-**N downto 1 do**
-
+N downto 1 do
 
 ###### ifl]
-
-
 /a11
-
 
 a43 a44 a45
 
-
 !j:
 
+0
 
 0
 
-
 0
-
-
-0
-
 
 i
 
-
------
-
-GAUSSIAN ELMNATION **_65_**
+GAUSSIAN ELMNATION 65
 
 or the accumulation of computational errors. For some types of tridiagonal
 matrices which arise commonly, it can be proven that this is not a reason for
 concern.
 Gauss-Jordan reduction can be implemented with full pivoting to replace
 a matrix by its inverse in one sweep th.rough it. The inverse of a matrix
-**_A,_** written **_A-‘,_** has the property that a system of equations Ax = **_b_** could
-be solved just by performing the matrix multiplication z = **_A-lb._** Still, N3
-operations are required to compute x given **_b._** However, there is a way to
+A, written A-‘, has the property that a system of equations Ax = b could
+be solved just by performing the matrix multiplication z = A-lb. Still, N3
+operations are required to compute x given b. However, there is a way to
 preprocess a matrix and “decompose” it into component parts which make
 it possible to solve the corresponding system of equations with any given
-rightchand side in time proportional to **_1V2,_** a savings of a factor of N over
+rightchand side in time proportional to 1V2, a savings of a factor of N over
 using Gaussian elimination each time. Roughly, this involves remembering
 the operations that are performed on the (N + 1)st column during the forward
 elimination phase, so that the result of forward elimination on a new (N + 1)st
@@ -6541,49 +5048,39 @@ large systems of equations were to be processed routinely. As before, the
 actual running time of Gaussian elimination in terms of the number of inputs
 is N312. which is difficult to imnrove uoon in nractice.
 
-
 ###### A-‘,
-
+1)st
 
 1)st
 
+66
 
-1)st
-
-
------
-
-_66_
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Give the matrix produced by the forward elimination phase of Gaussian
 elimination (gauss, with eliminate) when used to solve the equations x +
 
 ###### y+z=6, 2x+y+3z=12, and3x+y+32=14.
-
 Give a system of three equations in three unknowns for which gauss as is
 (without eliminate) fails, even though there is a solution.
 
@@ -6605,41 +5102,31 @@ How would you test for contradictory or identical equations when using
 eliminate.
 
 Of what use would Gaussian elimination be if we were presented with a
-system of _M_ equations in N unknowns, with _M < N?_ What if _M > N?_
+system of M equations in N unknowns, with M < N? What if M > N?
 
 Give an example showing the need for pivoting on the largest available
 element, using a mythical primitive computer where numbers can be
 represented with only two significant digits (all numbers must be of the
 form z.y x 10’ for single digit integers 2, y, and 2).
 
-
 ###### and3x+y+32=14.
-
-
 ###### y+z=6,
-
-
 0’s.
 
-
 0’s.
-
-
------
 
 ###### 6. Curve Fitting
-
 The term curve fitting (or data fitting) is used to describe the general
 problem of finding a function which matches a set of observed values at
 a set of given points. Specifically, given the points
 
 and the corresponding values
 
-**Yl,Y2,--.,YN,**
+Yl,Y2,--.,YN,
 
 the goal is to find a function (perhaps of a specified type) such that
 
-**f(zl) =** **Yl,** **f(z2) = Y2,. . .,** **f(zN) = YN**
+f(zl) = Yl, f(z2) = Y2,. . ., f(zN) = YN
 
 and such that f(z) assumes “reasonable” values at other data points. It could
 be that the z’s and y’s are related by some unknown function, and our goal
@@ -6657,23 +5144,17 @@ values.
 
 Two principal methods are used to approach this problem. The first is
 interpolation: a smooth function is to be found which exactly matches the
-given values at the given points. The second method, _least squares data fitting,_
+given values at the given points. The second method, least squares data fitting,
 is used when the given values may not be exact, and a function is sought which
 matches them as well as possible.
 
-_6 7_
+6 7
 
-
-**Yl,Y2,--.,YN,**
-
+Yl,Y2,--.,YN,
 
 to produce curves that “look nice” withlout the overhead of storing a large
 
-
-**f(zl)**
-
-
------
+f(zl)
 
 68 CHAPTER 6
 
@@ -6705,27 +5186,22 @@ way; instead the interpolating polynomial tries to use the high-degree terms
 to help achieve an exact fit. These effects make interpolating polynomials
 inappropriate for many curve-fitting applications.
 
-_Spline Interpolation_
+Spline Interpolation
 
 Still, low-degree polynomials are simple curves which are easy to work with
 analytically, and they are widely used for curve fitting. The trick is to abandon
 the idea of trying to make one polynomial go through all the points and instead
 use different polynomials to connect adjacent points, piecing them together
 smoothly,, An elegant special case of this, which also involves relatively
-straightforward computation, is called _spline interpolation._
+straightforward computation, is called spline interpolation.
 A “spline” is a mechanical device used by draftsmen to draw aesthetically
 pleasing curves: the draftsman fixes a set of points (knots) on his drawing, then
 bends a flexible strip of plastic or wood (the spline) around them and traces
 it to produce the curve. Spline interpolation is the mathematical equivalent
 of this process and results in the same curve.
 
-
 ###### f
-
-
------
-
-_CURVE FITTING_ _6 9_
+CURVE FITTING 6 9
 
 It can be shown from elementary mechanics that the shape assumed by
 the spline between two adjacent knots is a third-degree (cubic) polynomial.
@@ -6740,7 +5216,7 @@ with si(x) defined to be the cubic polynomial to be used in the interval between
 
 The spline can be represented in the obvious way as four one-dimensional
 arrays (or a 4-by-(N - 1) two-dimensional array). Creating a spline consists
-of computing the necessary a, _b,_ c, _d_ coefficients from the given x points and
+of computing the necessary a, b, c, d coefficients from the given x points and
 y values. The physical constraints on the spline correspond to simultaneous
 equations which can be solved to yield the coefficients.
 For example, we obviously must have si(xi) = yi and si(xi+i) = yi+l for
@@ -6748,7 +5224,7 @@ For example, we obviously must have si(xi) = yi and si(xi+i) = yi+l for
 ###### i=1,2,***, N - 1 because the spline must touch the knots. Not only does the
 spline touch the knots, but also it curves ;smoothly around them with no sharp
 bends or kinks. Mathematically, this means that the first derivatives of the
-spline polynomials must be equal at the knots (si-i(xi) = s:(xi) for i = _2,3,. . .,_
+spline polynomials must be equal at the knots (si-i(xi) = s:(xi) for i = 2,3,. . .,
 N - 1). In fact, it turns out that the second derivatives of the polynomials
 must be equal at the knots. These conditions give a total of 4N - 6 equations
 in the 4(N-1) unknown coefficients. Two more conditions need to be specified
@@ -6762,55 +5238,33 @@ The same spline can be computed somewhat more efficiently because
 there are actually only N - 2 “unknowns”: most of the spline conditions are
 redundant. For example, suppose that p, is the value of the second derivative
 of the spline at xi, so that s:)_~(x~) = .sy(xi) = pi for i = 2,. . ., N - 1, with
-pr = pN = 0. If the values of pl, . . .,phr are known, then all of the a, _b, c, d_
+pr = pN = 0. If the values of pl, . . .,phr are known, then all of the a, b, c, d
 coefficients can be computed for the spline segments, since we have four
 
-
 ###### yps
-
-
 ###### s&,(x~)
-
-
 ###### 4(N-1)
-
-
 ###### si(xi+i)
-
-
-_CURVE_
-
+CURVE
 
 ###### i=1,2
-
-
 = s:(xi) for
-
 
 biX2
 
-
-_2,3,._
-
+2,3,.
 
 ,phr
 
-
 pN
-
 
 pl,
 
-
 pi
-
 
 yi
 
-
------
-
-_70_ _CHAPTER 6_
+70 CHAPTER 6
 
 equations in four unknowns for each spline segment: for i = 1,2,. . ., N - 1,
 we must have
@@ -6820,7 +5274,6 @@ Si(&) = yi
 %(%+1) = !A+1
 
 ###### ((Xi) = pi
-
 s:‘(xi+l) = pi+1.
 
 Thus, to fully determine the spline, we need only compute the values of
@@ -6837,7 +5290,7 @@ certain canonical form that involves fewer unknown coefficients. If we change
 variables to t = (CC - zi)/(x,+1 - Q) then the spline can be expressed in the
 following way:
 
-sip) = tyi+1 + (1 - t)yi + ( x,+1 - xd2[(t3 - qpi+1 - ((1 -t)”  - (1 - t))pJ
+sip) = tyi+1 + (1 - t)yi + ( x,+1 - xd2[(t3 - qpi+1 - ((1 -t)” - (1 - t))pJ
 
 Now each spline is defined on the interval [O,l]. This equation is less formidable than it looks because we’re mainly interested in the endpoints 0 and 1,
 and either t or (1 - t) is 0 at these points. It’s trivial to check that the spline
@@ -6845,7 +5298,7 @@ interpolates and is continuous because si-r(l) = si(O) = yi for i = 2,. . ., N-l
 and it’s only slightly more difficult to verify that the second derivative is continuous because s:(l) = s;+,(O) = pi+i. These are cubic polynomials which
 satisfy the requisite conditions at the endpoints, so they are equivalent to the
 spline segments described above. If we were to substitute for t and find the
-coefficient of x3, etc., then we would get the same expressions for the a’s, _b’s,_
+coefficient of x3, etc., then we would get the same expressions for the a’s, b’s,
 c’s, and d’s in terms of the x’s, y’s, and p’s as if we were to use the method
 described in the previous paragraph. But there’s no reason to do so, because
 we’ve checked that these spline segments satisfy the end conditions, and we
@@ -6855,83 +5308,52 @@ To solve for the p’s we need to set the first derivatives of the spline
 segments equal at the endpoints. The first derivative (with respect to x) of
 the above equation is
 
-_s:(t) =_ _zi +_ _(Xi+1_ _-_ _zJ[(3t2_ _-_ l)pi+i + (3(I - t)2 + I)pi]
-
+s:(t) = zi + (Xi+1 - zJ[(3t2 - l)pi+i + (3(I - t)2 + I)pi]
 
 s:‘(xi+l) = pi+1.
 
-
-_zJ[(3t2_
-
+zJ[(3t2
 
 ###### si-r(l)
-
-
 ###### ((Xi)
-
-
 qpi+1
 
-
 ###### zi)/(
-
-
 Si(&) =
 
-
 ###### s:(l)
-
-
-_s:(t)_
-
+s:(t)
 
 t))pJ
 
-
 P21...,
-
 
 + (3(I
 
-
 !A+1
-
 
 p’s
 
-
 t)
-
 
 pi
 
-
-_zi_
-
+zi
 
 t
 
-
 t
 
-
 t
-
 
 ###### -
-
-
 ###### -
-
-
------
-
 CURVE FITTING 71
 
 where z = (yi+l-yi)/(zi+l-zi). Now, setting &(l) = s;(O) for i = 2,. . ., N
 1 gives our system of N - 2 equations to solve:
 
-**(Xi** **-** **~i-l)Pi-l+2(~i,-l** **-** **+1)p, + (Xi+1** **-z&+1 =** **zi** **-z&1.**
+(Xi - ~i-l)Pi-l+2(~i,-l - +1)p, + (Xi+1 -z&+1 = zi -z&1.
 
 This system of equations is a simple “tridiagonal” form which is easily solved
 with a degenerate version of Gaussian elimination as we saw in Chapter 5. If
@@ -6945,101 +5367,68 @@ solution for this system of equations.
 The method described in the above paragraph for computing a cubic
 spline translates very easily into Pascal:
 
-**procedure** makespline;
+procedure makespline;
 
 var i: integer;
-**begin**
+begin
 readln (N) ;
 for i:=l to N do readln(x[i],y[i]);
 for i:=2 to N-l do d[i]:=2*(x[i+l]-x[i-11);
 for i:=l to N-l do u[i]:=x[i+l]-x[i];
-**for** i:=2 **to N-l do**
+for i:=2 to N-l do
 
 ###### w[i]:=(y[i+l]--y[i])/u[i]-(y[i]-y[i-l])/u[i-11;
-
 p[l] :=o.o; p[Nj :=o.o;
 
-**for** i:=2 to N-2 do
-**begin**
+for i:=2 to N-2 do
+begin
 
 w[i+l]:=w[i+;l]-w[i]*u[i]/d[i];
 ###### d[i+l]:=d[i+l]-u[i]*u[i]/d[i]
+end ;
 
-**end ;**
-
-**for** **i:=N-1 downto 2 do**
+for i:=N-1 downto 2 do
 
 p[i]:=(w[i]-u[i]*p[i+l])/d[i];
 
-**end** **;**
-
+end ;
 
 w[i+l]:=w[i+;l]-w[i]*u[i]/d[i];
 
-
 ###### d[i+l]:=d[i+l]-u[i]*u[i]/d[i]
-
-
 ###### (yi+l-yi)/(zi+l-zi).
-
-
-**~i-l)Pi-l+2(~i,-l**
-
+~i-l)Pi-l+2(~i,-l
 
 equ.ations
 
-
-**-z&+1**
-
+-z&+1
 
 ###### &(l)
-
-
-**+ (Xi+1**
-
++ (Xi+1
 
 p[l] :=o.o;
 
-
 s;(O)
-
 
 readln
 
-
 ###### i:=2
-
-
 ###### i:=2
-
-
 ###### i:=l
-
-
 ###### N-
-
-
 ###### zi,
-
-
 wi
-
 
 ui
 
-
-**zi**
-
+zi
 
 ;
 
-
------
-
-**_7 2_** **_CHAPTER 6_**
+7 2 CHAPTER 6
 
 The arrays d and u are the representation of the tridiagonal matrix that is
-solved using the program in Chapter 5. We use d[i] where a[i, **_i] is used in_**
+solved using the program in Chapter 5. We use d[i] where a[i, i] is used in
 that program, u[i] where a [i+l, i] or a[i, i+l] is used, and z[i] where a[i, N+I]
 
 is used.
@@ -7052,22 +5441,22 @@ spline to the five data points
 (These come from the function 1 + l/z.) The spline parameters are found by
 solving the system of equations
 
-with the result **_p2 = 0.06590,_** **_p3 = -0.01021,_** p4 = 0.00443, ps = -0.00008.
+with the result p2 = 0.06590, p3 = -0.01021, p4 = 0.00443, ps = -0.00008.
 To evaluate the spline for any value of 2 in the range [zr, zN], we simply
 find the interval [zi, zi+r] containing z, then compute t and use the formula
 above for si(z) (which, in turn, uses the computed values for pi and pi+r).
 
-**function eval(v: real): real;**
+function eval(v: real): real;
 
 var t: real; i: integer;
-**function** **_f(x: real): red;_**
-**begin** **f:=x*x*x-x end;**
-**begin**
+function f(x: real): red;
+begin **f:=xxx-x end;
+begin**
 
-**i:=O;** repeat i:=i+l **until** **_v<=x[i+l];_**
+i:=O; repeat i:=i+l until v<=x[i+l];
 t:=(v-x[i])/u[i];
-###### eval:=t*y[i+l]+(l-t)*y[i]
-end +u[i]*u[i]*(f(t)*p[i+l]-f(l-t)*p[i])
+###### eval:=ty[i+l]+(l-t)y[i]
+end +u[i]u[i](f(t)p[i+l]-f(l-t)p[i])
 
 ;
 
@@ -7082,65 +5471,42 @@ polynomials in a “smooth” way: the computation of splines is a quite well
 developed field of study. Other types of splines involve other types of smoothness criteria as well as changes such as relaxing the condition that the spline
 must exactly touch each data point. Computationally, they involve exactly
 
-
-###### eval:=t*y[i+l]+(l-t)*y[i]
-
-
+###### eval:=ty[i+l]+(l-t)y[i]
 ###### v<=x[i+l];
-
-
 (8.0,1.125),
-
 
 (1.0,2.0),
 
-
 (5.0,1.2),
 
-
-**function eval(v: real): real;**
-
+function eval(v: real): real;
 
 ###### i:=i+l
-
-
 x[IVl.
 
-
-**i:=O;**
-
+i:=O;
 
 well-
 
-
 u[i]
-
 
 where a[i, N+I]
 
-
-
 [zi,
-
 
 p4
 
-
 2
-
 
 ;
 
-
------
-
-CURVE FITTING **73**
+CURVE FITTING 73
 
 the same steps of determining the coefficients for each of the spline pieces by
 solving the system of linear equations derived from imposing constraints on
 how they are joined.
 
-_Method_ _of_ Least _Squares_
+Method of Least Squares
 
 A very common experimental situation is that, while the data values that we
 have are not exact, we do have some idea of the form of the function which
@@ -7158,24 +5524,24 @@ functions, with the unknown parameters being the coefficients:
 ```
 This includes most of the functions that we’ll be interested in. After studying
 this case, we’ll consider more general functions.
-A common way of measuring how well a function fits is the _least-squares_
-_criterion:_ the error is calculated by adding up the squares of the errors at
+A common way of measuring how well a function fits is the least-squares
+criterion: the error is calculated by adding up the squares of the errors at
 each of the observation points:
 
-_E_ _=_ _c_ `(f(xj)-yj)2.`
+E = c (f(xj)-yj)2.
 ```
                l<j<N- 
 ```
 This is a very natural measure: the squaring is done to stop cancellations
 among errors with different signs. Obviously, it is most desirable to find the
-choice of parameters that minimizes _E._ It turns out that this choice can be
-computed efficiently: this is the so-called method `of` least squares.
+choice of parameters that minimizes E. It turns out that this choice can be
+computed efficiently: this is the so-called method of least squares.
 The method follows quite directly from the definition. To simplify the
 derivation, we’ll do the case M = 2, N = 3, but the general method will follow
 directly. Suppose that we have three points xi, x2, x3 and corresponding values
-yi, ys, ys which are to be fitted to a function of the form `f(x) =` `cl` `fi(x) +`
+yi, ys, ys which are to be fitted to a function of the form f(x) = cl fi(x) +
 
-cz `f2(x).` Our job is to find the choice of the coefficients cl, cz which minimizes
+cz f2(x). Our job is to find the choice of the coefficients cl, cz which minimizes
 the least-squares error
 ```
          E =(clfl(xl) + czfdxd - yd2
@@ -7217,13 +5583,9 @@ Y2)2
 ```
 
 ###### c
-
-
 ys,
 
-
 ys
-
 
 cz
 
@@ -7236,42 +5598,40 @@ E
 
 ```
 
------
 
 74 CHAPTER 6
 
 To find the choices of cl and c2 which minimize this error, we simply need to
-set the derivatives _dE/dq_ and _dE/dcz to_ zero. For cl we have:
+set the derivatives dE/dq and dE/dcz to zero. For cl we have:
 
-###### g =2(cl.fl(G) + Czfz(~1)  - Yl)fl(~l)
+###### g =2(cl.fl(G) + Czfz(~1) - Yl)fl(~l)
+1
 
-**1**
++ 2(Clfl(~Z) + czfz(z2) - yz)f1(52)
 
-**+** **2(Clfl(~Z) +** **czfz(z2)** **-** **yz)f1(52)**
-
-**+2(clfl(~3)+CZf2(~3)-Y3)fi(X3).**
++2(clfl(~3)+CZf2(~3)-Y3)fi(X3).
 
 Setting the derivative equal to zero leaves an equation which the variables cl
 
 and cs must satisfy (fi(~i), etc. are all “constants” with known values):
 
-**clvl(~1vl(~l)** **+** **fl(~Z)fl(~Z)** **+** **fl(Z3)fi(53)]**
+clvl(~1vl(~l) + fl(~Z)fl(~Z) + fl(Z3)fi(53)]
 
-**+c2[f2(~l)fl(~l) +** **f2(~2)fl(z2)** **+** **f2(~3)fl(z3)]**
++c2[f2(~l)fl(~l) + f2(~2)fl(z2) + f2(~3)fl(z3)]
 
-**=** **Yl.fl(G)** **+** **YZfl(52)** **+** **Y3fl(53).**
+= Yl.fl(G) + YZfl(52) + Y3fl(53).
 
-We get a similar equation when we set the derivative _dE/dc2_ to zero.
+We get a similar equation when we set the derivative dE/dc2 to zero.
 These rather formidable-looking equations can be greatly simplified using
 vector notation and the “dot product” operation that we encountered briefly
 in Chapter 2. If we define the vectors x = (21, zz,23) and y = (yi, yz, ys) and
 then the dot product of x and y is the real number defined by
 
-**X-Y =** **z1y1+** _xzy2_ **+ 23y3**
+X-Y = z1y1+ xzy2 + 23y3
 
 Now, if we define the vectors fi = (fl(xi),fi(xz),fi(xs)) and fs = (fs(xi),
 
-**f2(52),** **f2(23))** **th[e n][ our equations for the coefficients ]** [cl][ and ] [cz] [ can be very]
+f2(52), f2(23)) th[e n][ our equations for the coefficients ] [cl][ and ] [cz] [ can be very]
 simply expressed:
 
 Clfi . fi + CZfi * fz = y . fi
@@ -7288,136 +5648,94 @@ slightly perturbed from the exact values for 1 + l/x). In this case, we have
 ###### fi = (l.O,l.O, l.O,l.O,l.O, 1.0) and f2 = (1.0,0.5,0.25,0.2,0.125,0.1) so we have
 to solve the system of equations
 
-
 (1.0,0.5,0.25,0.2,0.125,0.1)
 
++c2[f2(~l)fl(~l)
 
-**+c2[f2(~l)fl(~l)**
+f2(~2)fl(z2)
 
+f2(~3)fl(z3)]
 
-**f2(~2)fl(z2)**
+=2(cl.fl(G)
 
-
-**f2(~3)fl(z3)]**
-
-
-**=2(cl.fl(G)**
-
-
-**2(Clfl(~Z)**
-
+2(Clfl(~Z)
 
 (5.0,1.21),
 
-
 = (l.O,l.O, l.O,l.O,l.O, 1.0) and
 
-
-**Y3fl(53).**
-
+Y3fl(53).
 
 CHAPTER
 
-
 (8.0,1.13),
 
+YZfl(52)
 
-**YZfl(52)**
+czfz(z2)
 
+dE/dcz
 
-**czfz(z2)**
-
-
-_dE/dcz_
-
-
-**f2(23))**
-
+f2(23))
 
 ###### zz,23)
-
-
 ###### g
-
-
 ###### =y-f2.
-
-
-**z1y1+**
-
+z1y1+
 
 ys)
 
-
 CZfi
 
-
-**23y3**
-
+23y3
 
 *f2
 
-
 f2
 
-
-**th**
-
-
+th
 
 [cz]
 
-
-**+**
-
++
 
 c2
 
-
 cl
 
++
 
-**+**
++
 
-
-**+**
-
-
-**+**
-
++
 
 ###### -
-
-
------
-
-CURVE FITTING _7 5_
+CURVE FITTING 7 5
 
 with the result cl = 0.998 and c2 = 1.054 (both close to 1, as expected).
 The method outlined above easily generalizes to find more than two
 coefficients. To find the constants ~1~2,. . .,CM in
 
-**f(z) =** **clfl(z) +** **czfz(s)** **+** ***+* +** **CA4fM(Z)**
+f(z) = clfl(z) + czfz(s) + ***+* + CA4fM(Z)**
 
 which minimize the least squares error for the point and observation vectors
 
 first compute the function component vectors
 
-fl = (fl(d, f1(s2), . . ., **fl(ZN)),**
+fl = (fl(d, f1(s2), . . ., fl(ZN)),
 
-**f-2** **=** **(f2(~1),** **f2(z2), .** *** *,** **f2(Ziv)),**
+f-2 = (f2(~1), f2(z2), . *** *, f2(Ziv)),**
 
 Then make up an M-by-M linear system of equations AC = b with
 
 ###### a,j = fi ” fy,
-
 b, = fj . y.
 
 The solution to this system of simultaneous equations yields the required
 coefficients.
 
 This method is easily implemented by maintaining a two dimensional
-array for the f vectors, considering y as the _(M_ + 1)st vector. Then an array
+array for the f vectors, considering y as the (M + 1)st vector. Then an array
 a[l..M, I..M+I] can be filled as follows:
 
 for i:=l to Mdo
@@ -7432,75 +5750,48 @@ end;
 and then solved using the Gaussian elimination procedure from Chapter 5.
 The method of least squares can be extended to handle nonlinear functions (for example a function such as f(x) = cle-C2Zsincg~), and it is often
 
-
 = cle-C2Zsincg~), and it is often
 
-
 ###### t:=t+f[i,
-
-
-**f2(Ziv)),**
-
+f2(Ziv)),
 
 f1(s2),
 
-
 k]*fb, k];
 
-
 ###### j]:=t;
-
-
 ###### f(x)
-
-
 1)st
 
-
 ###### i:=l
-
-
 ,CM
-
 
 it:=
 
-
 AC
-
 
 = fj . y.
 
-
 = fi ”
-
 
 c2
 
-
 b
 
-
-***,**
-
-
------
+*,
 
 76 CHAPTER 6
 
 used for this type of application. The idea is fundamentally the same; the
 problem is that the derivatives may not be easy to compute. What is used
-is an _iterative_ method: use some estimate for the coefficients, then use these
+is an iterative method: use some estimate for the coefficients, then use these
 within the method of least squares to compute the derivatives, thus producing
 a better estimate for the coefficients. This basic method, which is widely used
 today, was outlined by Gauss in the 1820s.
 
-
------
-
 CURVE FITTING 77
 
-_Exercises_
+Exercises
 
 1. Approximate the function lgx with a degree 4 interpolating polynomial
 at the points 1,2,3,4, and 5. Estimat.e the quality of the fit by computing
@@ -7510,7 +5801,6 @@ the sum of the squares of the errors at 1.5, 2.5, 3.5, and 4.5.
 the approximation, if that’s possible on your computer system.
 
 3. Solve the previous problems using a cubic spline instead of an interpolating polynomial.
-
 4. Approximate the function lgx with a cubic spline with knots at 2N for
 N between 1 and 10. Experiment with different placements of knots in
 the same range to try to obtain a better fit.
@@ -7522,11 +5812,11 @@ was the function Ii(x) = 0 for some i?
 were O?
 
 7. What values of a, b, c minimize the least-squares error in using the function
-f(x) = ux log x + _bx_ + c to approximate the observations f(1) = 0, f(4) =
+f(x) = ux log x + bx + c to approximate the observations f(1) = 0, f(4) =
 13, f(8) = 41?
 
 8. Excluding the Gaussian elimination phase, how many multiplications are
-involved in using the method of least squares to find _M coefficients based_
+involved in using the method of least squares to find M coefficients based
 on N observations?
 
 9. Under what circumstances would the matrix which arises in least-squares
@@ -7534,33 +5824,23 @@ curve fitting be singular?
 
 10. Does the least-squares method work if two different observations are included for the same point?
 
-
 at the points 1,2,3,4, and 5. Estimat.e the quality of the fit by computing
 
-
 ###### Ii(x)
-
-
 ux
 
-
------
-
------
-
 ###### 7. Integration
-
 Computing the integral is a fundamental analytic operation often performed on functions being processed on computers. One of two completely different approaches can be used, depending on the way the function is
 represented. If an explicit representation of the function is available, then it
-may be possible to do _symbolic integrathn_ to compute a similar representation
+may be possible to do symbolic integrathn to compute a similar representation
 for the integral. At the other extreme, the function may be defined by a table,
 so that function values are known for only a few points. The most common
 situation is between these: the function to be integrated is represented in such
 a way that its value at any particular point can be computed. In this case,
 the goal is to compute a reasonable approximation to the integral of the function, without performing an excessive number of function evaluations. This
-computation is often called _quadrature_ by numerical analysts.
+computation is often called quadrature by numerical analysts.
 
-_Symbolic_ Integration
+Symbolic Integration
 
 If full information is available about a function, then it may be worthwhile
 to consider using a method which involves manipulating some representation
@@ -7576,22 +5856,16 @@ of polynomials can also be done in this way. If a polynomial
 
 79
 
-
-_symbolic integrathn_
-
+symbolic integrathn
 
 work.ed
 
-
------
-
-_8 0_ _CHAPTER 7_
+8 0 CHAPTER 7
 
 is represented simply by keeping the values of the coefficients in an array p
 then the integral can be easily computed as follows:
 
 ###### !;;:I! downto 1 do p [i] :=p[i-II/i;
-
 : ;
 
 This is a direct implementation of the well-known symbolic integration
@@ -7599,10 +5873,9 @@ rule Jc tie’ dt = xi/i for i > 0.
 
 Obviously a wider class of functions than just polynomials can be handled
 by adding more symbolic rules. The addition of composite rules such as
-integration _by parts,_
+integration by parts,
 
 ###### / [udv=uv-] s [v du,]
-
 can greatly expand the set of functions which can be handled. (Integration
 by parts requires a differentiation capability. Symbolic differentiation is somewhat easier than symbolic integration, since a reasonable set of elementary
 rules plus the composite chain rule will suffice for most common functions.)
@@ -7621,41 +5894,29 @@ there are a great many integrals (many of which occur in practice) which can’t
 be evaluated symbolically. Next, we’ll examine some techniques which have
 been developed to compute approximations to the values of real integrals.
 
-_Simple Quadrature Methods_
+Simple Quadrature Methods
 
 Perhaps the most obvious way to approximate the value of an integral is the
-_rectangle method:_ evaluating an integral is the same as computing the area
+rectangle method: evaluating an integral is the same as computing the area
 under a curve, and we can estimate the area under a curve by summing the
 areas of small rectangles which nearly fit under the curve, as diagrammed
 below.
 
-
 ###### !;;:I!
-
 : ;
 
-
-
 ###### [udv=uv-]
-
-
 ###### s
-
-
 rule Jc tie’
 
-
 i
-
-
------
 
 INTEGRATION 81
 
 To be precise, suppose that we are to compute Jab f(x)dx, and that the
-interval [a, _b]_ over which the integral is to be computed is divided into N
+interval [a, b] over which the integral is to be computed is divided into N
 parts, delimited by the points x1, x2,. . .,xN+l. Then we have N rectangles,
-with the width of the ith rectangle **(1 5** i **5 N))** given by x,+1 - x,. For the
+with the width of the ith rectangle (1 5 i 5 N)) given by x,+1 - x,. For the
 height of the ith rectangle, we could use f(x,) or f(xi+l), but it would seem
 that the result would be more accurate -if the value of f at the midpoint of
 the interval (f((xi + xi+l)/2)) is used, as in the above diagram. This leads to
@@ -7663,74 +5924,46 @@ the quadrature formula
 
 which estimates the value of the integral ‘of f(x) over the interval from a = x1
 
-to _b_ = xN+l. In the common case where all the intervals are to be the same
+to b = xN+l. In the common case where all the intervals are to be the same
 size, say x$+1 - xi = 20, we have xi+1 + zz = (2i + l)w, so the approximation
 
 ###### r to the integral is easily computed.
+function inf,rect(a, b: real; N: integer) : real;
+var i: intieger; w, i-: real;
 
-**function** inf,rect(a, b: real; N: integer) : real;
-**var** i: intieger; w, i-: real;
-
-**begin**
+begin
 r:=O; w:=(b-a)/N;
-**for** i:=l to N **do r:=r+w*f(a-w,/2+i*w);**
+for i:=l to N **do r:=r+wf(a-w,/2+iw);**
 intrect :==r;
 
-**end ;**
+end ;
 
 Of course, as N gets larger, the answer becomes more accurate, For
 example, the following table shows the estimate produced by this function for
 ###### J: dxlx (which we know to be In 2 = 0.6931471805599.. . ) when invoked with
 the call intrect(l.0,2.O,N) for N = 10,100,1000:
 
-
 the call intrect(l.0,2.O,N)
-
 
 for N = 10,100,1000:
 
-
 ###### f(x)dx,
-
-
 ###### (f((xi
-
-
 intrect
 
-
 ###### f(x,)
-
-
 ###### l)w,
-
-
 ###### i:=l
-
-
 ###### J:
-
-
 we have xi+1 + zz = (2i +
-
 
 :==r;
 
-
 ‘of
 
-
 ###### xi
-
-
 ###### f
-
-
 ###### r
-
-
------
-
 8 2 CHAPTER 7
 
 10 0.6928353604100
@@ -7749,7 +5982,6 @@ these estimates suggest more accurate methods. This can be appreciated even
 by a reader not familiar with Taylor series. It turns out that
 
 ###### s~bf(Z)dz=7+~313+W5e5f...
-
 where w is the interval width ((b - a)/N) and es depends on the value of
 the third derivative of f at the interval midpoints, etc. (Normally, this is
 a good approximation because most “reasonable” functions have small highorder derivatives, though this is not always true.) For example, if we choose
@@ -7759,59 +5991,44 @@ accurate to about six places.
 Another way to approximate the integral is to divide the area under the
 curve into trapezoids, as diagrammed below.
 
-This trapezoid _method_ leads to the quadrature formula
+This trapezoid method leads to the quadrature formula
 
-**t** **=** **c** **(x,+1** **-Xi)** [f(G)][ + ] [f(si+d]
+t = c (x,+1 -Xi) [f(G)][ + ] [f(si+d]
 
-**l<z<N** 2 .
-
-
+l<z<N 2 .
 
 ###### [f(si+d]
+(x,+1
 
+-Xi)
 
-**(x,+1**
-
-
-**-Xi)**
-
-
-**l<z<N**
-
+l<z<N
 
 ###### c
-
-
 ###### f
-
-
------
-
-INTEGRATION _8 3_
+INTEGRATION 8 3
 
 (Recall that the area of a trapezoid is one-half the product of the height and
 the sum of the lengths of the two bases.) The error for this method can be
 derived in a similar way as for the rectangle method. It turns out that
 
 ###### [-] [+ . . . .]
-
 [2w3e3] [4w5e5]
 ###### s[p][ f(x) dx = t ][-]
-
 Thus the rectangle method is twice as accurate as the trapezoid method.
 This is borne out by our example. The following procedure implements the
 trapezoid method in the common case where all the intervals are the same
 width:
 
-**function** inttrap(a, _b:_ real; N: integer): real;
+function inttrap(a, b: real; N: integer): real;
 
-**var** _i:_ integer; w, t: real;
-**begin**
-t:=O; _w:=(b-a)/N;_
-**for** _i:=l_ **to** N **do** t:=t+w*(f(a+(i--l)*w)+f(a+i*w))/2;
+var i: integer; w, t: real;
+begin
+t:=O; w:=(b-a)/N;
+for i:=l to N do t:=t+w(f(a+(i--l)w)+f(a+i*w))/2;
 inttrap:=t;
 
-**end ;**
+end ;
 
 This procedure produces the following estimates for J12 dx/x:
 
@@ -7823,43 +6040,27 @@ It may seem surprising at first that the rectangle method is more accurate
 than the trapezoid method: the rectangles tend to fall partly under the curve,
 partly over (so that the error can cancel out within an interval), while the
 trapezoids tend to fall either completely under or completely over the curve.
-Another perfectly reasonable method is spline _quadrature:_ spline interpolation is performed using methods we have discussed and then the integral
+Another perfectly reasonable method is spline quadrature: spline interpolation is performed using methods we have discussed and then the integral
 is computed by piecewise application of the trivial symbolic polynomial integration technique described above. Bel’ow, we’ll see how this relates to the
 other methods.
 
-_Compound Methods_
+Compound Methods
 
 Examination of the formulas given above for the error of the rectangle and
 trapezoid methods leads to a simple method with much greater accuracy,
 called Simpson’s method. The idea is to eliminate the leading term in the error
 
-
-###### t:=t+w*(f(a+(i--l)*w)+f(a+i*w))/2;
-
-
+###### t:=t+w(f(a+(i--l)w)+f(a+i*w))/2;
 inttrap(a,
-
-
 
 [4w5e5]
 
-
-
 [2w3e3]
-
 
 t:=O;
 
-
-
 ###### [p]
-
-
 ###### i:=l
-
-
------
-
 84 CHAPTER 7
 
 by combining the two methods. Multiplying the formula for the rectangle
@@ -7867,7 +6068,6 @@ method by 2, adding the formula for the trapezoid method then dividing by
 3 gives the equation
 
 ###### s[~bJ(~)d5=~(2r+t-2w5t5+...).]
-
 The w3 term has disappeared, so this formula tells us that we can get a method
 that is accurate to within w5 by combining the quadrature formulas in the
 same way:
@@ -7878,19 +6078,18 @@ example. The implementation of Simpson’s method is only slightly more
 complicated than the others (again, we consider the case where the intervals
 are the same width):
 
-**function** intsimp(a, _b:_ real; N: integer): real;
-**var** i: integer; w, s: real;
-**begin**
+function intsimp(a, b: real; N: integer): real;
+var i: integer; w, s: real;
+begin
 
 s:=O; w:=(b-a)/N;
 
-**for** i:=l **to Ndo**
+for i:=l to Ndo
 
-###### s:=s+w*(f(a+(i-l)*w)+4*f(a-w/2+i*w)+f(a+i*w))/6;
-
+###### s:=s+w(f(a+(i-l)w)+4f(a-w/2+iw)+f(a+i*w))/6;
 intsimp:=s;
 
-**end ;**
+end ;
 
 This program requires three “function evaluations” (rather than two) in the
 inner loop, but it produces far more accurate results than do the previous two
@@ -7902,28 +6101,18 @@ methods.
 
 More complicated quadrature methods have been devised which gain
 accuracy by combining simpler methods with similar errors. The most well
-known is _Romberg integration,_ which uses two different sets of subintervals
+known is Romberg integration, which uses two different sets of subintervals
 for its two “methods.”
 
-
-###### s:=s+w*(f(a+(i-l)*w)+4*f(a-w/2+i*w)+f(a+i*w))/6;
-
-
+###### s:=s+w(f(a+(i-l)w)+4f(a-w/2+iw)+f(a+i*w))/6;
 intsimp(a,
-
 
 CHAPTER 7
 
-
 ###### i:=l
-
-
 w5
 
-
------
-
-**_INTEGRATION_** **8 5**
+INTEGRATION 8 5
 
 It turns out that Simpson’s method is exactly equivalent to interpolating
 the data to a piecewise quadratic function, then integrating. It is interesting
@@ -7932,7 +6121,7 @@ interpolation methods: the rectangle rule interpolates to a constant (degree-O
 polynomial); the trapezoid rule to a line (degree-l polynomial); Simpson’s rule
 to a quadratic polynomial; and spline qua.drature to a cubic polynomial.
 
-**_Adaptive_** **_Quadrature_**
+Adaptive Quadrature
 
 A major flaw in the methods that we have discussed so far is that the errors
 involved depend not, only upon the subinterval size used, but also upon the
@@ -7955,27 +6144,23 @@ than the other. A method of this type is described next.
 There is significant overhead involved in recursively subdividing the interval, so it pays to use a good method fo:r estimating the integrals, as in the
 following implementation:
 
-**function adapt (a, b: real) : real;**
+function adapt (a, b: real) : real;
 
-**begin**
+begin
 
-**if abs(intsimp(a, b, 10)-intsimp(a,** b, 5))<tolerance
+if abs(intsimp(a, b, 10)-intsimp(a, b, 5))<tolerance
 
-**then adapt:=intsimp(a, b, 10)**
-**else** **_adapt:=adapt(a, (a+b)/2) + adapt((a+b)/2, b);_**
+then adapt:=intsimp(a, b, 10)
+else adapt:=adapt(a, (a+b)/2) + adapt((a+b)/2, b);
 
-**end;**
+end;
 
 Both estimates for the integral are derived from Simpson’s method, one
 using twice as many subdivisions as the other. Essentially, this amounts to
 checking the accuracy of Simpson’s method over the interval in question and
 then subdividing if it is not good enough.
 
-
-**_adapt:=intsimp(a, b, 10)_**
-
-
------
+adapt:=intsimp(a, b, 10)
 
 86 CHAPTER 7
 
@@ -8000,11 +6185,11 @@ recursive calls required by the above routine to compute Jrz dx/x:
 The above program can be improved in several ways. First, there’s
 certainly no need to call intsimp(a, b, IO) twice. In fact, the function values
 for this call can be shared by intsimp(a, b, 5). Second, the tolerance bound
-can be related to the accuracy of the answer more closely if the **_tolerance_** is
+can be related to the accuracy of the answer more closely if the tolerance is
 scaled by the ratio of the size of the current interval to the size of the full
 interval. Also, a better routine can obviously be developed by using an even
 better quadrature rule than Simpson’s (but it is a basic law of recursion that
-another **_adaptive_** routine wouldn’t be a good idea). A sophisticated adaptive
+another adaptive routine wouldn’t be a good idea). A sophisticated adaptive
 quadrature routine can provide very accurate results for problems which can’t
 be handled any other way, but careful attention must be paid to the types of
 functions to be processed.
@@ -8014,40 +6199,32 @@ problems can be a powerful one in algorithm design.
 
 r l
 
-
 ###### dx/x:
-
-
 b,
 
+INTEGRATION 8 7
 
------
-
-INTEGRATION _8 7_
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Write a program to symbolically integrate (and differentiate) polynomials
 in x and lnx. Use a recursive implementation based on integration by
@@ -8069,7 +6246,6 @@ Answer the previous question for the elementary quadrature methods.
 Give the points of evaluation when adaptive quadrature is used to integrate the function y = l/s in the interval [.l,lO] with a tolerance of
 
 ###### .l.
-
 Compare the accuracy of an adaptive quadrature based on Simpson’s
 method to an adaptive quadrature ba:sed on the rectangle method for the
 integral given in the previous problent.
@@ -8079,22 +6255,13 @@ Answer the previous question for the function y = sinx.
 Give a specific example of a function for which adaptive quadrature would
 be likely to give a drastically more accurate result than the other methods.
 
-
 val [.l,lO].
-
-
 
 [-1,2].
 
-
 x)(4 + z), f(s) =
 
-
 ###### .l.
-
-
------
-
 88
 
 SOURCES for Mathematical Algorithms
@@ -8120,65 +6287,44 @@ Chapter 2 is concerned with elementary data structures, as well as polynomials. 
 structures are handled in modern programming languages such as Ada, which
 have facilities for building abstract data structures.
 
-A. Borodin and I. Munro, _The_ Computational _Complexity_ _of_ _Algebraic_ and
-_Numerical Problems,_ American Elsevier, New York, 1975.
+A. Borodin and I. Munro, The Computational Complexity of Algebraic and
+Numerical Problems, American Elsevier, New York, 1975.
 
-G. E. Forsythe, M. A. Malcomb, and C. B. Moler, Computer _Methods_ _for_
-_Mathematical_ Computations, Prentice-Hall, Englewood Cliffs, NJ, 1977.
+G. E. Forsythe, M. A. Malcomb, and C. B. Moler, Computer Methods for
+Mathematical Computations, Prentice-Hall, Englewood Cliffs, NJ, 1977.
 
-D. E. Knuth, _The Art_ _of_ _Computer_ Programming. Volume &: Seminumerical
-_Algorithms,_ Addison-Wesley, Reading, MA (second edition), 1981.
+D. E. Knuth, The Art of Computer Programming. Volume &: Seminumerical
+Algorithms, Addison-Wesley, Reading, MA (second edition), 1981.
 
-MIT Mathlab Group, _MACSYMA Reference Manual,_ Laboratory for Computer Science, Massachusetts Institute of Technology, 1977.
+MIT Mathlab Group, MACSYMA Reference Manual, Laboratory for Computer Science, Massachusetts Institute of Technology, 1977.
 
-P. Wegner, _Programming with ada: an introduction by means_ _of_ _graduated_
-_examples,_ Prentice-Hall, Englewood Cliffs, NJ, 1980.
-
+P. Wegner, Programming with ada: an introduction by means of graduated
+examples, Prentice-Hall, Englewood Cliffs, NJ, 1980.
 
 MIT Mathlab Group,
 
-
 88
 
-
------
-
 ###### SORTING
-
-
 .-..
-
 
 .:
 
-
 :
 
+.
 
 .
 
+.
 
 .
 
-
 .
 
-
 .
-
-
-.
-
-
-.
-
-
------
-
------
 
 ###### 8. Elementary Sorting Methods
-
 As our first excursion into the area of sorting algorithms, we’ll study
 some “elementary” methods which are appropriate for small files or
 files with some special structure. There are several reasons for studying these
@@ -8210,33 +6356,27 @@ not be a problem, and if the items are not randomly arranged, some of the
 
 91
 
-
 metho’ds
 
-
 ###### N
-
-
------
-
-92 _CHAPTER 8_
+92 CHAPTER 8
 
 methods might run much faster than more sophisticated ones. However, it
 must be emphasized that these methods (with one notable exception) should
 not be used for large, randomly arranged files.
 
-_Rules of the_ Game
+Rules of the Game
 
 Before considering some specific algorithms, it will be useful to discuss some
 general terminology and basic assumptions for sorting algorithms. We’ll be
-considering methods of sorting files of records containing _keys._ The keys,
+considering methods of sorting files of records containing keys. The keys,
 which are only part of the records (often a small part), are used to control the
 sort. The objective of the sorting method is to rearrange the records so that
 their keys are in order according to some well-defined ordering rule (usually
 numerical or alphabetical order).
 If the file to be sorted will fit into memory (or, in our context, if it will
-fit into a Pascal **array),** then the sorting method is called internal. Sorting
-files from tape or disk is called _external_ sorting. The main difference between
+fit into a Pascal array), then the sorting method is called internal. Sorting
+files from tape or disk is called external sorting. The main difference between
 the two is that any record can easily be accessed in an internal sort, while
 an external sort must access records sequentially, or at least in large blocks.
 We’ll look at a few external sorts in Chapter 13, but most of the algorithms
@@ -8256,16 +6396,13 @@ a small stack or table; those that use a linked-list representation and so use
 N extra words of memory for list pointers; and those that need enough extra
 memory to hold another copy of the array to be sorted.
 A characteristic of sorting methods which is sometimes important in
-practice is _stability: a_ sorting method is called _stable_ if it preserves the relative
+practice is stability: a sorting method is called stable if it preserves the relative
 order of equal keys in the file. For example, if an alphabetized class list is
 sorted by grade, then a stable method will produce a list in which students
 with the same grade are still in alphabetical order, but a non-stable method is
 likely to produce a list with no evidence of the original alphabetic order. Most
 of the simple methods are stable, but most of the well-known sophisticated
 algorithms are not. If stability is vital, it can be forced by appending a
-
-
------
 
 ELEMENTARY SORTING METHODS 93
 
@@ -8317,46 +6454,24 @@ that simply sort arrays of integers into numerical order. It is generally straig
 large keys or records. Basically, sorting programs access records in one of two
 ways: either keys are accessed for comparison, or entire records are accessed
 
-
 threesort(input, output);
 
-
 ###### a[2]:=a[3];
-
-
 write(a[i]);
-
-
 
 [l..maxN]
 
-
 ###### a[l]>a[2]
-
-
 ###### t:=a[2];
-
-
 ###### ]:=a[2];
-
-
 ###### a[2]:=t
-
-
 sort3;
-
 
 con&
 
-
 a[1
 
-
 ###### i:=l
-
-
------
-
 94 CHAPTER 8
 
 to be moved. Most of the algorithms that we will study can be recast in terms
@@ -8388,47 +6503,44 @@ which are not obvious will be included with the program code. Also, we’ll
 sometimes assume that the array bounds go to 0 or iV+1, to hold special keys
 used by some of the algorithms. We’ll frequently use letters from the alphabet
 rather than numbers for examples: these are handled in the obvious way using
-Pascal’s _ord_ and chr “transfer functions” between integers and characters.
+Pascal’s ord and chr “transfer functions” between integers and characters.
 The sort3 program above uses an even more constrained access to the file:
 it is three instructions of the form “compare two records and exchange them
 if necessary to put the one with the smaller key first.” Programs which use
 only this type of instruction are interesting because they are well suited for
 hardware implementation. We’ll study this issue in more detail in Chapter
-_35._
+35.
 
-_Selection Sort_
+Selection Sort
 
 One of the simplest sorting algorithms works as follows: first find the smallest
 element in the array and exchange it with the element in the first position,
 then find the second smallest element and exchange it with the element in
 
-
------
-
 ELEMENTARY SORTING METHODS 95
 
 the second position, continuing in this way until the entire array is sorted.
-This method is called selection _sort_ because it works by repeatedly “selecting”
+This method is called selection sort because it works by repeatedly “selecting”
 the smallest remaining element. The following program sorts a [1..N] into
 numerical order:
 
-**procedure** selection;
+procedure selection;
 
 var i, j, min, t: integer;
 
-**begin**
+begin
 
-**for** _i:=l_ **to N do**
+for i:=l to N do
 
-**begin**
+begin
 
 min:=i;
-**for j:=i+l** **to N do**
-**if** ab]<a[min] **then** min:=j;
+for j:=i+l to N do
+if ab]<a[min] then min:=j;
 t:=a[min]; a[min]:=a[i]; a[i]:=t
-**end** **;**
+end ;
 
-**end ;**
+end ;
 
 This is among the simplest of sorting methods, and it will work very well for
 small files. Its running time is proportional to N2: the number of comparisons
@@ -8438,63 +6550,52 @@ turns out that the statement min:=j is executed only on the order of N log N
 times, so it is not part of the inner loop
 Despite its simplicity, selection sort has a quite important application:
 it is the method of choice for sorting files with very large records and small
-keys. If the records are _M words long (but the keys are only a few words long),_
-then the exchange takes time proportional to _M,_ so the total running time
-is proportional to N2 (for the comparisons) plus _NM_ (for the exchanges). If
-_M_ is proportional to N then the running time is linear in the amount of data
+keys. If the records are M words long (but the keys are only a few words long),
+then the exchange takes time proportional to M, so the total running time
+is proportional to N2 (for the comparisons) plus NM (for the exchanges). If
+M is proportional to N then the running time is linear in the amount of data
 input, which is difficult to beat even with an advanced method. Of course if
 it is not absolutely required that the records be actually rearranged, then an
-“indirect sort” can be used to avoid the _NM_ term entirely, so a method which
+“indirect sort” can be used to avoid the NM term entirely, so a method which
 uses less comparisons would be justified. Still selection sort is quite attractive
 for sorting (say) a thousand lOOO-word records on one-word keys.
 
-Insertion _Sort_
+Insertion Sort
 
 An algorithm almost as simple as selection sort but perhaps more flexible is
-_insertion sort._ This is the method often used by people to sort bridge hands:
+insertion sort. This is the method often used by people to sort bridge hands:
 consider the elements one at a time, inserting each in its proper place among
 those already considered (keeping them s.orted). The element being considered
 is inserted merely by moving larger elements one position to the right, then
 
-
 ab]<a[min]
-
 
 lOOO-word
 
-
 ###### j:=i+l
-
-
 ###### i:=l
+;
 
-
-**;**
-
-
------
-
-_96_ _ChXPTER 8_
+96 ChXPTER 8
 
 inserting the element into the vacated position. The code for this algorithm
 is straightforward:
 
-**procedure** insertion;
-**var** i, j, v: integer;
-**begin**
-**for** _i:=2_ **to N do**
-**begin**
+procedure insertion;
+var i, j, v: integer;
+begin
+for i:=2 to N do
+begin
 ###### v:=a[i]; j:=i;
+while ab-1]>v do
+begin ab] :=ab-11; j:=j-1 end;
 
-**while** _ab-1]>v_ **do**
-**begin** ab] :=ab-11; j:=j-1 **end;**
+ab] :=v
+end ;
 
-_ab] :=v_
-**end ;**
+end ;
 
-**end** **;**
-
-As is, this code doesn’t work, because the **while** will run past the left end
+As is, this code doesn’t work, because the while will run past the left end
 of the array if t is the smallest element in the array. One way to fix this is
 to put a “sentinel” key in a[O], making it at least as small as the smallest
 element in the array. Using sentinels in situations like this is common in
@@ -8502,10 +6603,10 @@ sorting programs to avoid including a test (in this case j>l) which almost
 always succeeds within the inner loop. If for some reason it is inconvenient to
 use a sentinel and the array really must have the bounds [1..N], then standard
 Pascal does not allow a clean alternative, since it does not have a “conditional”
-**and** instruction: the test **while** (j>l) and _(a1j-l]>v)_ won’t work because
-even when j=l, the second part of the **and** will be evaluated and will cause
-an o&of-bounds array access. A **goto** out of the loop seems to be required.
-(Some programmers prefer to goto some lengths to avoid **goto** instructions,
+and instruction: the test while (j>l) and (a1j-l]>v) won’t work because
+even when j=l, the second part of the and will be evaluated and will cause
+an o&of-bounds array access. A goto out of the loop seems to be required.
+(Some programmers prefer to goto some lengths to avoid goto instructions,
 for example by performing an action within the loop to ensure that the loop
 terminates. In this case, such a solution seems hardly justified, since it makes
 the program no clearer, and it adds extra overhead everytime through the
@@ -8521,58 +6622,40 @@ of moves can be lowered by using a linked list instead of an array, but then
 the methods of Chapter 14 don’t apply and N2/2 comparisons are required
 (to find each insertion point).
 
-
 ###### (a1j-l]>v)
-
-
 ###### :=ab-11;
-
-
-_ChXPTER 8_
-
+ChXPTER 8
 
 ###### j:=j-1
-
-
 ###### j>l)
+goto
 
-
-**goto**
-
-
-_i:=2_
-
+i:=2
 
 goto
 
-
 ab]
 
+to N do
 
-**to N do**
-
-
-**;**
-
-
------
+;
 
 ELEMENTARY SORTING METHODS 97
 
-_Shellsort_
+Shellsort
 
 Insertion sort is slow because it exchang,es only adjacent elements. For example, if the smallest element happens to be at the end of the array, it takes
-N steps to get it where it belongs. _Shellsort_ is a simple extension of insertion
+N steps to get it where it belongs. Shellsort is a simple extension of insertion
 sort which gets around this problem by allowing exchanges of elements that
 are far apart.
 
 If we replace every occurrence of “1” by “h” (and “2” by “h+l”) in
 insertion sort, the resulting program rearranges a file to give it the property
 that taking every hth element (starting anywhere) yields a sorted file. Such a
-file is said to be _h-sorted._ Put another way, an h-sorted file is _h_ independent
+file is said to be h-sorted. Put another way, an h-sorted file is h independent
 sorted files, interleaved together. By h-sorting for some large values of h, we
 can move elements in the array long distances and thus make it easier to h-sort
-for smaller values of _h._ Using such a procedure for any sequence of values of
+for smaller values of h. Using such a procedure for any sequence of values of
 h which ends in 1 will produce a sorted file: this is Shellsort.
 The following example shows how a sample file of fifteen elements is
 sorted using the increments 13, 4, 1:
@@ -8600,52 +6683,45 @@ put A E P T in those positions, and similarly for positions 2, 6, 10, and 14,
 etc. The last pass is just insertion sort, but no element has to move very far.
 The above description of how Shellsort gains efficiency is necessarily
 imprecise because no one has been able to analyze the algorithm. Some
-sequences of values of _h_ work better than others, but no explanation for this
+sequences of values of h work better than others, but no explanation for this
 has been discovered. A sequence which has been shown empirically to do well
 is . . .,1093,364,121,40,13,4,1, as in the following program:
 
-
 is . . . ,1093,364,121,40,13,4,1,
-
 
 h4
 
-
 C:
 
+98 CHAPTER 8
 
------
+procedure shellsort;
 
-**98** CHAPTER 8
-
-**procedure** shellsort;
-
-**label 0;**
-**var** _i, j, h, v: integer;_
-**begin**
+label 0;
+var i, j, h, v: integer;
+begin
 
 ###### h:=l; repeat h:=3*h+l until h>N;
+repeat
+h:=h div 3;
+for i:=h+l to N do
 
-**repeat**
-h:=h **div 3;**
-**for** i:=h+l **to N do**
-
-**begin**
+begin
 
 v:=a[i]; j:=i;
 
-**while** ab-h]>v **do**
-**begin**
+while ab-h]>v do
+begin
 ###### a[j]:=ab-h]; j:=j-h;
-**if** **j<=h then goto 0**
-**end** **;**
+if j<=h then goto 0
+end ;
 
-**0: ab]:=v**
+0: ab]:=v
 
-**end ;**
+end ;
 
-**until** h= 1;
-**end ;**
+until h= 1;
+end ;
 
 Note that sentinels are not used because there would have to be h of them,
 for the largest value of h used.
@@ -8655,7 +6731,7 @@ more efficient sort (the reader might be amused to try to discover one), but it
 is difficult to beat the above program by more than 20% even for relatively
 large N. (The possibility that much better increment sequences exist is still,
 however, quite real.) On the other hand, there are some bad increment
-sequences. Shellsort is sometimes implemented by starting at **_h=N_** (instead
+sequences. Shellsort is sometimes implemented by starting at h=N (instead
 of initializing so as to ensure the same sequence is always used as above). This
 virtually ensures that a bad sequence will turn up for some N.
 Comparing Shellsort with other methods analytically is difficult because
@@ -8670,65 +6746,45 @@ Shellsort is the method of choice for many sorting applications because it
 has acceptable running time even for moderately large files (say, five thousand
 elements) and requires only a very srnall amount of code, which is easy to get
 
-
 ###### a[j]:=ab-h];
-
-
 ###### ab-h]>v
-
-
 ###### h:=3*h+l
-
-
 ###### i:=h+l
-
-
 ###### h:=l;
-
-
 ###### j:=i;
-
-
 ###### h=N
-
-
 1N
 
+to N do
 
-**to N do**
-
-
------
-
-ELEMENTARY _SORTING_ METHODS 99
+ELEMENTARY SORTING METHODS 99
 
 working. We’ll see methods that are more efficient in the next few chapters,
 but they’re perhaps only twice as fast (if that much) except for large N, and
 they’re significantly more complicated. In short, if you have a sorting problem,
-use _the above program,_ then determine vvhether the extra effort required to
+use the above program, then determine vvhether the extra effort required to
 replace it with a sophisticated method will be worthwhile. (On the other
-hand, the Quicksort algorithm of the next chapter is not _that_ much more
+hand, the Quicksort algorithm of the next chapter is not that much more
 difficult to implement. . . )
 
-Digression: Bubble _Sort_
+Digression: Bubble Sort
 
 An elementary sorting method that is often taught in introductory classes is
-bubble _sort:_ keep passing through the file, exchanging adjacent elements, if
+bubble sort: keep passing through the file, exchanging adjacent elements, if
 necessary; when no exchanges are required on some pass, the file is sorted.
 An implementation of this method is given below.
 
-**procedure** bubblesort;
-**var** j, t: integer;
-**begin**
-**repeat**
+procedure bubblesort;
+var j, t: integer;
+begin
+repeat
 
 ###### t:=a[l];
-
-**for** **j:=2 to N do**
-**if** ab--l]>alj] **then**
-**begin** _t:=:a[j-I];_ ab-1]:=ab]; a[j]:=t **end**
-**until** **t=a[l];**
-**end ;**
+for j:=2 to N do
+if ab--l]>alj] then
+begin t:=:a[j-I]; ab-1]:=ab]; a[j]:=t end
+until t=a[l];
+end ;
 
 It takes a moment’s reflection to convince oneself first that this works at all,
 second that the running time is quadratic. It is not clear why this method
@@ -8736,65 +6792,51 @@ is so often taught, since insertion sort seems simpler and more efficient by
 almost any measure. The inner loop of bubble sort has about twice as many
 instructions as either insertion sort or selection sort.
 
-_Distribution Counting_
+Distribution Counting
 
 A very special situation for which there is a simple sorting algorithm is the
 following: “sort a file of N records whose keys are distinct integers between 1
 and N.” The algorithm for this problem is
 
-**for** i:=l **to** _N_ **do** _t[a[i]]:=a[i];_
-**for** i:=l **to** N **do** a[i]:=t[i];
+for i:=l to N do t[a[i]]:=a[i];
+for i:=l to N do a[i]:=t[i];
 
-
-_t[a[i]]:=a[i];_
-
+t[a[i]]:=a[i];
 
 ###### ab--l]>alj]
-
-
 ###### t:=:a[j-I];
-
-
 ###### a[j]:=t
-
-
 ###### j:=2
-
-
 ###### i:=l
-
-
------
-
-100 _CHAPTER 8_
+100 CHAPTER 8
 
 This algorithm uses a temporary array t. It is possible (but much more
 complicated) to solve this problem without an auxiliary array.
 A more realistic problem solved by an algorithm in the same spirit is:
-“sort a file of N records whose keys are integers between 0 and _M - 1.”_ If M
-is not too large, an algorithm called _distribution_ counting can be used to solve
+“sort a file of N records whose keys are integers between 0 and M - 1.” If M
+is not too large, an algorithm called distribution counting can be used to solve
 this problem. The idea is to count the number of keys with each value, then
 use the counts to move the records into position on a second pass through the
 file, as in the following code:
 
-for j:=O to _M-l_ do countlj]:=O;
+for j:=O to M-l do countlj]:=O;
 for i:=l to Ndo
 
 count[a[i]]:=count[a[i]]+l;
 
-for j:=l to _M-l_ do
+for j:=l to M-l do
 count b] :=count Ij-l]+count b] ;
 
-for _i:=N_ downto 1 do
+for i:=N downto 1 do
 
 begin
 
 t[count[a[i]]]:=a[i];
-_count[a[i]]:=count[a[i]]-1_
+count[a[i]]:=count[a[i]]-1
 
 end ;
 
-for _i:=l_ to _N_ do _a[i]:=t[i];_
+for i:=l to N do a[i]:=t[i];
 
 To see how this code works, consider the following sample file of integers:
 
@@ -8818,35 +6860,22 @@ Now, these can be used as addresses to sort the array:
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 0 0 1112 2 2 3 3 4 4 5 5 6 7
 
-
 count[a[i]]:=count[a[i]]+l;
-
 
 t[count[a[i]]]:=a[i];
 
-
 ###### Ij-l]+count
-
-
 downto
-
 
 for j:=O to
 
-
-_i:=l_
-
+i:=l
 
 b]
 
-
 t.
 
-
 ;
-
-
------
 
 ELEMENTARY SORTING METHODS 101
 
@@ -8858,7 +6887,7 @@ stable. (The reader may wish to check this.)
 This method will work very well for the type of files postulated. Furthermore, it can be extended to produce a much more powerful method that we’ll
 examine in Chapter 10.
 
-Non-Random _Files_
+Non-Random Files
 
 We usually think of sorting files that are in some arbitrarily scrambled order.
 However, it is quite often the case that we have a lot of information about a
@@ -8890,40 +6919,33 @@ In short, insertion sort is the method of choice for “almost sorted” files
 with few inversions: for such files, it will outperform even the sophisticated
 methods in the next few chapters.
 
-
 mi’sused
-
 
 t.he
 
-
------
-
 102
 
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Give a sequence of “compare-exchange” operations for sorting four records.
 
@@ -8953,16 +6975,10 @@ elements have only one of two values (x or y).
 Experiment with different increment sequences for Shellsort: find one that
 runs faster than the one given for a random file of 1000 elements.
 
-
 ###### 8,4,2,1
-
-
------
-
 ###### 9. Quicksort
-
 In this chapter, we’ll study the sorting algorithm which is probably
-more widely used than any other, _Quicksort._ The basic algorithm was
+more widely used than any other, Quicksort. The basic algorithm was
 invented in 1960 by C. A. R. Hoare, and it has been studied by many people
 since that time. Quicksort is popular because it’s not difficult to implement,
 it’s a good “general-purpose” sort (works well in a variety of situations), and
@@ -8992,16 +7008,10 @@ it is easy to be deceived, because the algorithm is so well balanced that the
 
 103
 
-
 it’s a good “general-purpose” sort (works well in a variety of situations), and
 
-
 ###### N
-
-
------
-
-104 _CHAPTER 9_
+104 CHAPTER 9
 
 effects of improvements in one part of the program can be more than offset by
 the effects of bad performance in another part of the program. We’ll examine
@@ -9016,27 +7026,27 @@ not willing to invest the effort to be sure that a Quicksort implementation is
 not flawed, Shellsort is a much safer choice and will perform adequately for
 significantly less implementation effort.
 
-_The Basic Algorithm_
+The Basic Algorithm
 
 Quicksort is a “divide-and-conquer” method for sorting. It works by partitioning a file into two parts, then sorting the parts independently. As we will see,
 the exact position of the partition depends on the file, so the algorithm has
 the following recursive structure:
 
-**procedure** quicksort(l, r: integer);
-**var i;**
-**begin**
-**if r>l then**
-**begin**
+procedure quicksort(l, r: integer);
+var i;
+begin
+if r>l then
+begin
 i:=:partition(1, r)
 
 quicksort (1, i- 1) ;
 quicksort(i+l, r);
-**end**
-**end ;**
+end
+end ;
 
 The parameters I and r delimit the subfile within the original file that is to
 be sorted: the call quicksort(l, N) sorts the whole file.
-The crux of the method is the _partition_ procedure, which must rearrange
+The crux of the method is the partition procedure, which must rearrange
 the array to make the following three conditions hold:
 
 (i) the element a[i] is in its final place in the array for some i,
@@ -9047,23 +7057,13 @@ the array to make the following three conditions hold:
 This can be simply and easily implemented through the following general
 strategy. First, arbitrarily choose a[r] to be the element that will go into
 
-
 quicksort(i+l,
-
 
 be sorted: the call quicksort(l, N) sorts the whole file.
 
-
 ###### a[i+l],
-
-
 ###### r
-
-
-_;_
-
-
------
+;
 
 QUICKSORT 105
 
@@ -9075,8 +7075,8 @@ are obviously out of place in the final p,srtitioned array, so exchange them.
 scans for elements equal to a[r], even though this might seem to involve some
 unnecessary exhanges.) Cont,inuing in this way ensures that all array elements
 to the left of the left pointer are less than a[r], and array elements to the right
-of the right pointer are greater than a **_[r]_** . When the scan pointers cross, the
-partitioning process is nearly complete: all that remains is to exchange **_a[r]_**
+of the right pointer are greater than a [r] . When the scan pointers cross, the
+partitioning process is nearly complete: all that remains is to exchange a[r]
 with the leftmost element of the right subfile.
 
 The following table shows how our sample file of keys is partitioned using
@@ -9105,57 +7105,45 @@ either side of the partitioning element (recursively).
 
 The following program gives a full implementation of the method.
 
-
 ###### INGEXAMPLH
-
-
 ###### EHTI
-
-
 Cont,inuing
 
-
 ###### Lm
-
-
 subfile.
-
 
 S
 
+106 CHAPTER 9
 
------
+procedure quicksort(1, r: integer) ;
 
-106 _CHAPTER 9_
+var v, t, i, j: integer;
+begin
+if r>l then
+begin
+v:=a[r]; i:=I-I; j:=r;
 
-**procedure** _quicksort(1,_ r: integer) ;
+repeat
+repeat i:=i+l until a[i]>=v;
+repeat j:=j-1 until ab]<=v;
+t:=a[i]; a[i]:=alj]; ab]:=t;
 
-**var** v, t, i, j: integer;
-**begin**
-**if** _r>l then_
-**begin**
-_v:=a[r]; i:=I-I;_ _j:=r;_
-
-**repeat**
-**repeat** _i:=i+l_ **until** a[i]>=v;
-**repeat** **j:=j-1 until** ab]<=v;
-t:=a[i]; a[i]:=alj]; _ab]:=t;_
-
-**until** _j<=i;_
+until j<=i;
 
 ###### a[j]:=a[i]; a[i]:=a[r]; a[rJ:=t;
-_quicksort(l, i-l);_
-_quicksort(i+l, r)_
+quicksort(l, i-l);
+quicksort(i+l, r)
 
-**end**
-**end;**
+end
+end;
 
 In this implementation, the variable v holds the current value of the “partitioning element” a[r], and i and j are the left and right scan pointers, respectively.
 An extra exchange of a[i] with a b] is done with j<i just after the pointers cross
-but before the crossing is detected and the outer **repeat** loop exited. (This
-could be avoided with a **goto.)** The three assignment statements following that
-loop implement the exchanges _a[i]_ with _a[j] (to undo the extra exchange) and_
-a[i] with _a[r] (to put the partitioning element into position)._
+but before the crossing is detected and the outer repeat loop exited. (This
+could be avoided with a goto.) The three assignment statements following that
+loop implement the exchanges a[i] with a[j] (to undo the extra exchange) and
+a[i] with a[r] (to put the partitioning element into position).
 
 As in insertion sort, a sentinel key is needed to stop the scan in the
 case that the partitioning element is the smallest element in the file. In this
@@ -9172,41 +7160,23 @@ Now the two subfiles are sorted recursively, finishing the sort. The
 following table traces through these recursive calls. Each line depicts the result
 of partitioning the displayed subfile, using the boxed partitioning element.
 
+quicksort(i+l, r)
 
-_quicksort(i+l, r)_
-
-
-_quicksort(l,_
-
+quicksort(l,
 
 ###### a[i]:=a[r];
-
-
 ###### ab]<=v;
-
-
-_v:=a[r];_
-
+v:=a[r];
 
 ###### i:=I-I;
+goto.)
 
-
-**goto.)**
-
-
-_i:=i+l_
-
+i:=i+l
 
 ###### j:=r;
+a[r]
 
-
-_a[r]_
-
-
-_a[i]_
-
-
------
+a[i]
 
 QUICKSORT 107
 
@@ -9215,7 +7185,6 @@ QUICKSORT 107
 A S O R T I N G E X A M P L E
 
 ###### AAEmTI N G O X S M P L R
-
 A A(El
 
 A A
@@ -9235,32 +7204,16 @@ L IGmOPN
 ###### u
  0P
 
-
 ###### IGmOPN
-
-
 ###### MUX
-
-
 ###### @I
-
-
 A
 ###### 0
-
-
 ###### 0P
-
-
 ###### L-l[I]
-
-
 0
 ###### u
-
-
 ###### clS T X
-
  w
 
 A A E E G I L M N O P R S T X
@@ -9278,24 +7231,11 @@ doesn’t occur in actual applications of the program.
 When equal keys are present in the file, two subtleties become apparent.
 First, there is the question of whether to have both pointers stop on keys
 
-
 ###### AAEmTI
-
-
 ###### A(El
-
-
 ###### clS
-
-
 ###### I.4
-
-
 ###### w
-
-
------
-
 CHAPTER 9
 
 equal to the partitioning element, or to have one pointer stop and the other
@@ -9342,27 +7282,15 @@ it might be worthwhile to implement several of the improvements discussed
 below which can ensure that the worst case won’t occur, reduce the average
 running time by 20-30%, and easily eliminate the need for a sentinel key.
 
-
 ###### 2C(N/2)
-
-
 ###### 2NlnN,
-
-
 ###### N
-
-
 ###### N
-
-
 25
 
+QUICKSORT 109
 
------
-
-_QUICKSORT_ _109_
-
-_Removing Recursion_
+Removing Recursion
 
 In Chapter 1 we saw that the recursive call could be removed from Euclid’s
 algorithm to yield a non-recursive program controlled by a simple loop. This
@@ -9371,12 +7299,12 @@ is more complicated when two or more recursive calls are involved, as in
 Quicksort. Before dealing with one recursive call, enough information must
 be saved to allow processing of later recursive calls.
 
-The Pascal programming environment uses _a pushdown stack_ to manage
+The Pascal programming environment uses a pushdown stack to manage
 this. Each time a procedure call is made, the values of all the variables are
-_pushed_ onto the stack (saved). Each time a procedure returns, the stack is
+pushed onto the stack (saved). Each time a procedure returns, the stack is
 popped: the information that was most recently put on it is removed.
 
-A stack may be represented as a linked list, in which case a _push_ is
+A stack may be represented as a linked list, in which case a push is
 implemented by linking a new node onto the front of the list and a pop
 by removing the first node on the list, or as an array, in which case a
 pointer is maintained which points to the top of the stack, so that a push
@@ -9405,42 +7333,36 @@ we pop the stack. When we partition, we create two subfiles to be processed,
 which can be pushed on the stack. This leads to the following non-recursive
 implementation of Quicksort:
 
-
-_QUICKSORT_
-
+QUICKSORT
 
 subfiles
 
-
 queue,
-
-
------
 
 110 CHAPTER 9
 
-**procedure** quicksort;
-**var** t, i, 1, r: integer;
-stack: **array[O..M] of** integer; p: integer;
-**begin**
-**1:=1; r:=N; p:=2;**
-**repeat**
-**if r>l then**
-**begin**
+procedure quicksort;
+var t, i, 1, r: integer;
+stack: array[O..M] of integer; p: integer;
+begin
+1:=1; r:=N; p:=2;
+repeat
+if r>l then
+begin
 i:=partition(l, r);
-**if** _(i-l)> (r-i)_
-**then begin** stack[p] :=I; stack[p+l] :=i-I; I:=i+I end
-**else begin** stack[p] _:=i+l; stack[p+l]_ :=r; r:=i-I **end;**
+if (i-l)> (r-i)
+then begin stack[p] :=I; stack[p+l] :=i-I; I:=i+I end
+else begin stack[p] :=i+l; stack[p+l] :=r; r:=i-I end;
 
-**_p:=p+2;_**
+p:=p+2;
 
-**end**
+end
 
-**else**
+else
 
-**begin** **_p:=p-2;_** I:=stack[p]; r:=stack[p+I] **end;**
-**until** **_p=O_**
-**end;**
+begin p:=p-2; I:=stack[p]; r:=stack[p+I] end;
+until p=O
+end;
 
 This program differs from the description above in two important ways. First,,
 rather than simply putting two subfiles on the stack in some arbitrary order,
@@ -9465,41 +7387,24 @@ processed doesn’t help, without end-recursion removal).
 
 Of course the non-recursive method processes the same subfiles as the
 
-
 i:=partition(l,
-
 
 I:=stack[p];
 
-
-**_p:=p+2;_**
-
+p:=p+2;
 
 subfiles
-
 
 ###### I:=i+I
-
-
 ###### r:=i-I
-
-
 subfiles
 
-
 subfiles
-
 
 end-
 
-
 ###### :=r;
-
-
 1,
-
-
------
 
 QUICKSORT 111
 
@@ -9510,7 +7415,6 @@ shown in the following table:
 A S O R T I N G E X A M P L E
 
 ###### AAEIE/I N G O X S M P L R
-
 A A[El
 
 A A
@@ -9528,28 +7432,14 @@ L I GmO P N
 ###### 0G I L
  al
 
-
 ###### AAEIE/I
-
-
 ###### GmO
-
-
 ###### al
-
-
 ###### 0G
-
-
 ###### 0A
-
-
 A
 ###### u
-
-
 ###### 0I
-
 N P 0
 ###### 0
  00 P
@@ -9567,29 +7457,16 @@ improvement is included, which involves ignoring small subfiles in the same
 
 way.
 
-
 ###### A[El
-
-
 ###### 00
-
-
 R
 ###### 0
-
-
 N
 ###### 0
-
-
 ###### PA
-
-
------
-
 112 CHAPTER 9
 
-Small _Subfiles_
+Small Subfiles
 
 The second improvement stems from the observation that a recursive program
 is guaranteed to call itself for many small subfiles, so it should be changed to
@@ -9599,13 +7476,13 @@ do this is to change the test at the beginning of the recursive routine from “
 ###### r>l then” to a call on insertion sort (modified to accept parameters defining
 the subfile to be sorted), that is “if r-l <= M then insertion(1, r).” Here M
 is some parameter whose exact value depends upon the implementation. The
-value chosen for _M_ need not be the best possible: the algorithm works about
+value chosen for M need not be the best possible: the algorithm works about
 the same for M in the range from about 5 to about 25. The reduction in the
 running time is on the order of 20% for most applications.
 A slightly easier method, which is also slightly more efficient, is to just
-change the test at the beginning to **“if** r-l **>** _M_ **then”:** that is, simply ignore
+change the test at the beginning to “if r-l > M then”: that is, simply ignore
 small subfiles during partitioning. In the non-recursive implementation, this
-would be done by not putting any files of less than _M_ on the stack. After
+would be done by not putting any files of less than M on the stack. After
 
 partitioning, what is left is a file that is almost sorted. As mentioned in the
 previous chapter, insertion sort is the method of choice for such files. That
@@ -9615,7 +7492,7 @@ be used with caution, because the insertion sort is likely always to sort even
 if the Quicksort has a bug which causes it not to work at all. The excessive
 cost may be the only sign that something went wrong.
 
-_Median-of- Three_ Partitioning
+Median-of- Three Partitioning
 
 The third improvement is to use a better partitioning element. There are
 several possibilities here. The safest thing to do to avoid the worst case would
@@ -9633,21 +7510,14 @@ chosen are from the left,, middle, and right of the array, then the use of
 sentinels can be avoided as follows: sort the three elements (using the three
 exchange method in the last chapter), then exchange the one in the middle
 with air-l], then run the partitioning algorithm on a[1+1, . . ..r-21. This
-improvement is called the _median-of-three_ partitioning method.
-
+improvement is called the median-of-three partitioning method.
 
 suspectred.
 
-
 ###### ..r-21.
-
-
 subfiles
 
-
------
-
-**_QUICKSORT_** 113
+QUICKSORT 113
 
 The median-of-three method helps Quicksort in three ways. First, it
 makes the worst case much more unlikely to occur in any actual sort. In order
@@ -9666,40 +7536,34 @@ significant time savings can be realized (with less effort) by coding the inner
 loops (or the whole program) in assembly or machine language. Neither path
 is recommended except for experts with serious sorting applications.
 
-
-**_QUICKSORT_**
-
-
------
+QUICKSORT
 
 114
 
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
 
-
 Implement a recursive Quicksort with a cutoff to insertion sort for subfiles
-with less than _M_ elements and empirically determine the value of _M_ for
+with less than M elements and empirically determine the value of M for
 which it runs fastest on a random file of 1000 elements.
 
 Solve the previous problem for a nonrecursive implementation.
@@ -9724,23 +7588,16 @@ Would it be reasonable to use a queue instead of a stack for a non-recursive
 implementation of Quicksort? Why or why not?
 
 Use a least squares curvefitter to find values of a and b that give the
-best formula of the form aN In N + _bN_ for describing the total number
+best formula of the form aN In N + bN for describing the total number
 of instructions executed when Quicksort is run on a random file.
-
 
 subfiles
 
-
-_bN_
-
+bN
 
 b
 
-
------
-
 ###### 10. Radix Sorting
-
 The “keys” used to define the order of the records in files for many
 sorting applications can be very complicated. (For example, consider
 the ordering function used in the telephone book or a library catalogue.)
@@ -9750,10 +7607,10 @@ Most of the methods we have studied can be described in terms of these two
 fundamental operations. For many applications, however, it is possible to
 take advantage of the fact that the keys can be thought of as numbers from
 some restricted range. Sorting methods which take advantage of the digital
-properties of these numbers are called radix _sorts._ These methods do not just
+properties of these numbers are called radix sorts. These methods do not just
 compare keys: they process and compare pieces of keys.
 Radix sorting algorithms treat the keys as numbers represented in a
-base-M number system, for different values of _M_ (the radix) and work with
+base-M number system, for different values of M (the radix) and work with
 individual digits of the numbers. For example, consider an imaginary problem
 where a clerk must sort a pile of cards with three-digit numbers printed on
 them. One reasonable way for him to proceed is to make ten piles: one for
@@ -9761,9 +7618,9 @@ the numbers less than 100, one for the numbers between 100 and 199, etc.,
 place the cards in the piles, then deal with the piles individually, either by
 using the same method on the next dig:t or by using some simpler method
 if there are only a few cards. This is a slimple example of a radix sort with
-_M_ = 10. We’ll examine this and some other methods in detail in this chapter.
-Of course, with most computers it’s more convenient to work with _M = 2_ (or
-some power of 2) rather than _M =_ 10.
+M = 10. We’ll examine this and some other methods in detail in this chapter.
+Of course, with most computers it’s more convenient to work with M = 2 (or
+some power of 2) rather than M = 10.
 Anything that’s represented inside a digital computer can be treated
 as a binary number, so many sorting applications can be recast to make
 feasible the use of radix sorts operating on keys which are binary numbers.
@@ -9772,11 +7629,7 @@ to write a program that depends on the binary representation of numbers.
 
 115
 
-
 slimple
-
-
------
 
 116 CYHPTER 10
 
@@ -9800,13 +7653,13 @@ In machine language, bits are extracted from binary numbers by using bitwise
 number are extracted by shifting right eight bit positions, then doing a bitwise
 
 “and” with the mask 0000000011. In Pascal, these operations can be simulated
-with **div** and **mod.** For example, the leading two bits of a ten-bit number x
-are given by (x **div 256)mod** 4. In general, “shift 2 right k bit positions”
-can be simulated by computing x **div** **2k,** and “zero all but the j rightmost
-bits of x” can be simulated by computing x **mod** **2j.** In our description of
-the radix sort algorithms, we’ll assume the existence of a **function** bits(x, k, j:
+with div and mod. For example, the leading two bits of a ten-bit number x
+are given by (x div 256)mod 4. In general, “shift 2 right k bit positions”
+can be simulated by computing x div 2k, and “zero all but the j rightmost
+bits of x” can be simulated by computing x mod 2j. In our description of
+the radix sort algorithms, we’ll assume the existence of a function bits(x, k, j:
 integer): integer which combines these operations to return the j bits which
-appear k bits from the right in 5 by computing (x **div** **ak) mod 23.** For
+appear k bits from the right in 5 by computing (x div ak) mod 23. For
 example, the rightmost bit of z is returned by the call bits(x, 0,l). This
 function can be made efficient by precomputing (or defining as constants)
 the powers of 2. Note that a program which uses only this function will
@@ -9821,41 +7674,28 @@ sorts which differ in the order in which they examine the bits of the keys. We
 assume that the keys are not short, so that it is worthwhile to go to the effort
 of extracting their bits. If the keys are short, then the distribution counting
 method in Chapter 8 can be used. Recall that this method can sort N keys
-known to be integers between 0 and _M - 1 in linear time, using one auxiliary_
-table of size _M_ for counts and another of size N for rearranging records.
+known to be integers between 0 and M - 1 in linear time, using one auxiliary
+table of size M for counts and another of size N for rearranging records.
 Thus, if we can afford a table of size 2’, then b-bit keys can easily be sorted
-
 
 function can be made efficient by precomputing (or defining as constants)
 
-
 bits(x, k, j:
 
-
 ###### 0,l).
-
-
-**ak)**
-
+ak)
 
 Thus, if we can afford a table of size 2’, then b-bit keys can easily be sorted
 
-
 ###### j
-
-
 k
-
 
 5
 
-
------
-
-_RADIX SORTING_ 117
+RADIX SORTING 117
 
 in linear time. Radix sorting comes into play if the keys are sufficiently long
-(say _b_ = 32) that this is not possible.
+(say b = 32) that this is not possible.
 
 The first basic method for radix sorting that we’ll consider examines the
 bits in the keys from left to right. It is based on the fact that the outcome of
@@ -9864,24 +7704,24 @@ first position at which they differ (reading from left to right). Thus, all keys
 with leading bit 0 appear before all keys with leading bit 1 in the sorted file;
 among the keys with leading bit 1, all keys with second bit 0 appear before
 all keys with second bit 1, and so forth. The left-to-right radix sort, which
-is called radix exchange _sort,_ sorts by sy::tematically dividing up the keys in
+is called radix exchange sort, sorts by sy::tematically dividing up the keys in
 this way.
 
-The second basic method that we’ll consider, called _straight radix sort,_
+The second basic method that we’ll consider, called straight radix sort,
 examines the bits in the keys from right to left. It is based on an interesting
-principle that reduces a sort on b-bit keys to _b_ sorts on l-bit keys. We’ll see
+principle that reduces a sort on b-bit keys to b sorts on l-bit keys. We’ll see
 how this can be combined with distribution counting to produce a sort that
 runs in linear time under quite generous assumptions.
 
-The running times of both basic radix sorts for sorting N records with _b_
-bit keys is essentially _Nb._ On the one hanIl, one can think of this running time
+The running times of both basic radix sorts for sorting N records with b
+bit keys is essentially Nb. On the one hanIl, one can think of this running time
 as being essentially the same as N log N, ;;ince if the numbers are all different,
-_b_ must be at least 1ogN. On the other hand, both methods usually use
-many fewer than _Nb_ operations: the left-to-right method because it can stop
+b must be at least 1ogN. On the other hand, both methods usually use
+many fewer than Nb operations: the left-to-right method because it can stop
 once differences between keys have been Yound; and the right-to-left method,
 because it can process many bits at once.
 
-_Radix Exchange Sort_
+Radix Exchange Sort
 
 Suppose we can rearrange the records of a file so that all those whose keys
 begin with a 0 bit come before all those whose keys begin with a 1 bit. This
@@ -9893,43 +7733,38 @@ starts with a 0 bit, exchange, and continue the process until the scanning
 pointers cross. This leads to a recursive sorting procedure that is very similar
 to Quicksort:
 
-
 Yound;
-
 
 ;;ince
 
+118 CHAPTER 10
 
------
+procedure radixexchange(l, r, b: integer);
+var t, i, j: integer;
+begin
+if (r>l) and (b>=O) then
+begin
 
-**118** **CHAPTER 10**
+i:=]; j:=r;
 
-**procedure** radixexchange(l, r, _b:_ integer);
-**var** `t, i, j: integer;`
-**begin**
-**if** _(r>l)_ **and** _(b>=O)_ **then**
-**begin**
-
-**i:=];** `j:=r;`
-
-**repeat**
-**while** (bits(a[i], _b,_ **1)=0) and** (i<j) **do** i:=i+l;
-**while** (bits(ab], b, **1)=1) and (i<j) do j:=j-1;**
+repeat
+while (bits(a[i], b, 1)=0) and (i<j) do i:=i+l;
+while (bits(ab], b, 1)=1) and (i<j) do j:=j-1;
 t:=a[i]; a[i]:=a[j]; ab]:=t;
 
-**until j=i;**
-**if** bits(a[r], b, **I)=0 then** **j:=j+l;**
+until j=i;
+if bits(a[r], b, I)=0 then j:=j+l;
 radixexchange(l, j-1, b-l);
-radixexchangedj, r, _b-l)_ _;_
-**end**
+radixexchangedj, r, b-l) ;
+end
 
-**end ;**
+end ;
 
 For simplicity, assume that a [1..N] contains positive integers less than 232
 
 (that is, they could be represented as 31-bit binary numbers). Then the call
 
-radixexchange(1, N, 30) will sort the array. The variable _b_ keeps track of
+radixexchange(1, N, 30) will sort the array. The variable b keeps track of
 the bit being examined, ranging from 30 (leftmost) down to 0 (rightmost).
 (It is normally possible to adapt the implementation of bits to the machine
 representation of negative numbers so that negative numbers are handled in
@@ -9948,24 +7783,17 @@ with Quicksort, some care is necessary in this algorithm to ensure that the
 nothing ever “falls between the cracks” when the recursive calls are made.
 The partitioning stops with j=i and all elements to the right of a[i] having 1
 bits in the bth position and all elements to the left of a[i] having 0 bits in the
-bth position. The element a[i] itself will have a **1** bit unless all keys in the
+bth position. The element a[i] itself will have a 1 bit unless all keys in the
 file have a 0 in position b. The implementation above has an extra test just
 after the partitioning loop to cover this case.
 
-
 radixexchange(l, j-1, b-l);
 
-
 ###### a[i]:=a[j];
-
-
 (bits(a[i],
 
-
 ###### i:=i+l;
-
-
-**1)=0) and**
+1)=0) and
 
 ```
 j:=r;
@@ -9973,18 +7801,10 @@ j:=r;
 ```
 
 ###### I)=0
-
-
 ###### j=i;
-
-
 232
 
-
 2b
-
-
------
 
 RADIX SORTING 119
 
@@ -10038,29 +7858,20 @@ in this table to this five-bit characte:i* code, compressing the table so that t
 
 subfile partitioning is shown “in parallel” rather than one per line, and then
 
-
 characte:i*
-
 
 This,
 
-
 M
 
-
 M
-
-
------
 
 120 CIIAF’TER 10
 
 transposing rows and columns, we can see how the leading bits of the keys
 control partitioning:
 
-
 CIIAF’TER 10
-
 
 A 00001 A 00001
 s 10011 E 00101
@@ -10081,7 +7892,6 @@ P 10000 P 10000
 L 01100 R 10010
 E 00101 s 10011
 
-
 A 00001
 E 00101
 A 00001
@@ -10100,7 +7910,6 @@ P 10000
 R 10010
 x 11000
 
-
 A 00001
 
 A 00001
@@ -10119,7 +7928,6 @@ R 10010
 P 10000
 T 10100
 
-
 M 011 i 1
 
 N 01110
@@ -10129,7 +7937,6 @@ P 100 0
 R 10010
 
 s 10011
-
 
 A 00001
 A 00001
@@ -10144,10 +7951,7 @@ N 01110
 R 10010
 s 10011
 
-
 ###### i
-
-
 One serious potential problem for radix sort not brought out in this
 example is that degenerate partitions (with all keys having the same value for
 the bit being used) can happen frequently. For example, this arises commonly
@@ -10169,16 +7973,13 @@ only examining about ten or eleven bits from each key (even if the keys
 are, say, 32-bit keys). On the other hand, notice that all the bits of equal
 keys are examined. Radix sorting simply does not work well on files which
 
-
------
-
-_R&XX SORTING_ 121
+R&XX SORTING 121
 
 contain many equal keys. Radix exchange sort is actually slightly faster than
 Quicksort if the keys to be sorted are comprised of truly random bits, but
 Quicksort can adapt better to less randon situations.
 
-_Straight Radix Sort_
+Straight Radix Sort
 
 An alternative radix sorting method is tc examine the bits from right to left.
 This is the method used by old computer-card-sorting machines: a deck of
@@ -10186,9 +7987,7 @@ cards was run through the machine 80 times, once for each column, proceeding
 from right to left. The following example shows how a right-to-left bit-by-bit
 radix sort works on our file of sample ke:rs.
 
-
 cards was run through the machine 80 times, once for each column, proceeding
-
 
 A 00001 R 10010
 s 10011 T 10100
@@ -10207,7 +8006,6 @@ M 01101 E 00101
 P 10000 A 00001
 L 01100 M 01101
 E 00101 E 00101
-
 
 T 10100
 x 11000
@@ -10229,18 +8027,16 @@ s 10011
 0 01111
 G 00111
 
-
 ke:rs.
-
 
 :c 11000
 I’ 10000
 
-**_fl 00001_**
+fl 00001
 
 .: 01001
 
-**_ii 00001_**
+ii 00001
 I1 10010
 
 3 10011
@@ -10256,7 +8052,6 @@ I? 00101
 N 01110
 0 01111
 G 00111
-
 
 P 10000 A 00001
 
@@ -10277,38 +8072,30 @@ M 01101 s 10011
 N 01110 T 10100
 0 01111 x 11000
 
-
 14
-
 
 ‘Y
 
-
 I?
 
-
-**_fl_**
-
+fl
 
 3
 
-
 The ith column in this table is sorted on the trailing i bits of the keys.
-The ith column is derived from the _(i_ - l$t column by extracting all the keys
+The ith column is derived from the (i - l$t column by extracting all the keys
 with a 0 in the ith bit, then all the keys with a 1 in the ith bit.
 It’s not easy to be convinced that the method works; in fact it doesn’t
 work at all unless the one-bit partitioning process is stable. Once stability
 has been identified as being important, a trivial proof that the method works
 can be found: after putting keys with ti,h bit 0 before those with ith bit 1
-(in a stable manner) we know that any `l,wo` keys appear in proper order (on
+(in a stable manner) we know that any l,wo keys appear in proper order (on
 the basis of the bits so far examined) in the file either because their ith bits
 are different, in which case partitioning puts them in the proper order, or
 because their ith bits are the same, in which case they’re in proper order
 because of stability. The requirement 01% stability means, for example, that
 
-
 ###### l$t
-
 ```
 l,wo
 
@@ -10316,14 +8103,9 @@ l,wo
 
 I1
 
-
 G
 
-
 12
-
-
------
 
 122 CRAPTER 10
 
@@ -10331,108 +8113,90 @@ the partitioning method used in the radix exchange sort can’t be used for this
 right-to-left sort.
 The partitioning is like sorting a file with only two values, and the distribution counting sort that we looked at in Chapter 8 is entirely appropriate
 for this. If we assume that A4 = 2 in the distribution counting program and
-replace **_a[i]_** by bits(a[i], k, l), then that program becomes a method for sorting
-the elements of the array a on the bit **_k_** positions from the right and putting
+replace a[i] by bits(a[i], k, l), then that program becomes a method for sorting
+the elements of the array a on the bit k positions from the right and putting
 the result in a temporary array t. But there’s no reason to use A4 = 2; in
 fact we should make M as large as possible, realizing that we need a table of
-**_M_** counts. This corresponds to using m bits at a time during the sort, with
-**_M =_** **_2m. Thus, straight radix sort becomes little more than a generalization_**
+M counts. This corresponds to using m bits at a time during the sort, with
+M = 2m. Thus, straight radix sort becomes little more than a generalization
 of distribution counting sort, as in the following implementation for sorting
 
 a[l..N] on the b rightmost bits:
 
-**procedure** straig&radix( b: integer) ;
-**var** i, j, **_pass: integer;_**
-**begin**
-**for** **_pass:=0_** **to (b div m)-1 do**
+procedure straig&radix( b: integer) ;
+var i, j, pass: integer;
+begin
+for pass:=0 to (b div m)-1 do
 
-**begin**
+begin
 
-**for j:=O to** **_M-l_** **do** **_countlj]_** **_:=O;_**
+for j:=O to M-l do countlj] :=O;
 
-**for** **_i:=l_** **to N do**
-count[bits(a[i],pass*m, m)] :=count[bits(a[i],pass*m, **_m)]+l;_**
+for i:=l to N do
+count[bits(a[i],passm, m)] :=count[bits(a[i],passm, m)]+l;
 
-**for** **j:=l to M-l do**
+for j:=l to M-l do
 
 countIj]:=countIj-l]+countb];
 
-**for** **_i:=N_** **downto 1 do**
-**begin**
+for i:=N downto 1 do
+begin
 
 t[count[bits(a[i],pass*m,m)]]:=a[i];
-count[bits(a[i],pass*m,m)]:=count[bits(a[i],pass*m,m)]-l;
-**end ;**
+count[bits(a[i],passm,m)]:=count[bits(a[i],passm,m)]-l;
+end ;
 
-**for** i:=l **to** N **do** a[i]:=t[i];
-**end ;**
+for i:=l to N do a[i]:=t[i];
+end ;
 
-**end ;**
+end ;
 
 For clarity, this procedure uses two calls on bits to increment and decrement
-count, when one would suffice. Also, the correspondence **_M =_** **_2m_** has been
+count, when one would suffice. Also, the correspondence M = 2m has been
 preserved in the variable names, though some versions of “pascal” can’t tell
-the difference between **_m_** and **_M._**
-The procedure above works properly only if **_b_** is a multiple of **_m._** Normally,
+the difference between m and M.
+The procedure above works properly only if b is a multiple of m. Normally,
 this is not a particularly restrictive assumption for radix sort: it simply corresponds to dividing the keys to be sorted into an integral number of equal
-size pieces. When **_m=b_** we have distribution counting sort; when **_m=l we_**
+size pieces. When m=b we have distribution counting sort; when m=l we
 
-
-count[bits(a[i],pass*m,m)]:=count[bits(a[i],pass*m,m)]-l;
-
+count[bits(a[i],passm,m)]:=count[bits(a[i],passm,m)]-l;
 
 countIj]:=countIj-l]+countb];
-
 
 straig&radix( b: integer) ;
 
-
 by bits(a[i], k,
 
+countlj]
 
-**_countlj]_**
+begin
 
-
-**begin**
-
-
-**_m=b_**
-
+m=b
 
 ###### i:=l
-
-
-**_m=l we_**
-
+m=l we
 
 ###### l),
-
-
 A4
-
 
 b
 
+b
 
-**_b_**
+RADIX SORTING 123
 
-
------
-
-_RADIX SORTING_ 123
-
-have _straight radix sort,_ the rightrto-left l&by-bit radix sort described in the
+have straight radix sort, the rightrto-left l&by-bit radix sort described in the
 example above.
 The implementation above moves the file from a to t during each distribution counting phase, then back to a in a simple loop. This “array copy”
 loop could be eliminated if desired by making two copies of the distribution
 counting code, one to sort from a into t, the other to sort from t into a.
 
-_A_ Linear _Sort_
+A Linear Sort
 
 The straight radix sort implementation given in the previous section makes
-_b/m_ passes through the file. By making rr: large, we get a very efficient sorting
+b/m passes through the file. By making rr: large, we get a very efficient sorting
 method, as long as we have M = 2m words of memory available. A reasonable
-choice is to make m about one-fourth th,e word-size _(b/4),_ so that the radix
+choice is to make m about one-fourth th,e word-size (b/4), so that the radix
 sort is four distribution counting passes. The keys are treated as base-M
 numbers, and each (base--M) digit of each key is examined, but there are
 only four digits per key. (This directly corresponds with the architectural
@@ -10446,11 +8210,11 @@ In fact, it turns out that we can get bj, with only two distribution counting
 passes. (Even a careful reader is likely ‘10 have difficulty telling right from
 left by this time, so some caution is called for in trying to understand this
 method.) This can be achieved by taking advantage of the fact that the file
-will be almost sorted if only the leading _b,‘2_ bits of the bbit keys are used. As
+will be almost sorted if only the leading b,‘2 bits of the bbit keys are used. As
 with Quicksort, the sort can be completed efficiently by using insertion sort
 on the whole file afterwards. This method is obviously a trivial modification
 to the implementation above: to do a right-to-left sort using the leading half
-of the keys, we simply start the outer loop at pass=b div _(2*m)_ rather than
+of the keys, we simply start the outer loop at pass=b div (2*m) rather than
 pass=l. Then a conventional insertion sol-t can be used on the nearly-ordered
 file that results. To become convinced that a file sorted on its leading bits
 is quite well-ordered, the reader should examine the first few columns of the
@@ -10464,29 +8228,19 @@ array of the same size as the array being sorted. It is possible to eliminate
 the extra array using linked-list techniquies, but extra space proportional to
 N (for the links) is still required.
 
-
 disal,dvantage
-
 
 techniquies,
 
+b/m
 
-_b/m_
-
-
-_b,‘2_
-
+b,‘2
 
 In fact, it turns out that we can get bj, with only two distribution counting
 
-
 2m
 
-
 ‘10
-
-
------
 
 CHAPTER 10
 
@@ -10505,12 +8259,9 @@ environment that relate to the efficiency of access and use of individual bits.
 Again, such tradeoffs need to be studied by an expert and this type of study
 is likely to be worthwhile only for serious sorting applications.
 
-
------
-
 RADlX SORTING 125
 
-_Exercises_
+Exercises
 
 1. Compare the number of exchanges used by radix exchange sort with
 the number of exchanges used by Qlricksort for the file 001,011,101,110,
@@ -10518,7 +8269,6 @@ the number of exchanges used by Qlricksort for the file 001,011,101,110,
 000,001,010,111,110,010.
 
 2. Why is it not as important to remove the recursion from the radix exchange sort as it was for Quicksort?
-
 3. Modify radix exchange sort to skip leading bits which are identical on all
 keys. In what situations would this be worthwhile?
 
@@ -10543,25 +8293,15 @@ of N b-bit keys?
 10. Empirically compare straight radix sort with radix exchange sort for a
 random file of 1000 32-bit keys.
 
-
 000,001,010,111,110,010.
-
 
 7. Aside from the extra memory reqciirement, what is the major disad-
 
-
 True or false: the running time of sti,aight radix sort does not depend on
-
 
 of N b-bit keys?
 
-
------
-
------
-
 ###### 11. Priority Queues
-
 In many applications, records with keys must be processed in order,
 but not necessarily in full sorted order and not necessarily all at once.
 Often a set of records must be collected, then the largest processed, then
@@ -10569,7 +8309,7 @@ perhaps more records collected, then the next largest processed, and so forth.
 An appropriate data structure in such an environment is one which supports
 the operations of inserting a new element and deleting the largest element.
 This can be contrasted with queues (delete the oldest) and stacks (delete the
-newest). Such a data structure is called a _priority_ queue. In fact, the priority
+newest). Such a data structure is called a priority queue. In fact, the priority
 queue might be thought of as a generalization of the stack and the queue (and
 other simple data structures), since these data structures can be implemented
 with priority queues, using appropriate priority assignments.
@@ -10594,41 +8334,38 @@ applications such as those mentioned above. Indeed, the main reason that
 
 127
 
-
------
-
-128 _CHAPTER 11_
+128 CHAPTER 11
 
 priority queues are so useful is their flexibility in allowing a variety of different
 operations to be efficiently performed on set of records with keys. We want to
 build and maintain a data structure containing records with numerical keys
 (priorities), suppor mg some of the following operations:t’
 
-_Construct_ a priority queue from N given items.
-_Insert_ a new item.
-_Remove_ the largest item.
+Construct a priority queue from N given items.
+Insert a new item.
+Remove the largest item.
 
-_Replace_ the largest item with a new item (unless the new item is larger).
+Replace the largest item with a new item (unless the new item is larger).
 Change the priority of an item.
 
-_Delete_ an arbitrary specified item.
+Delete an arbitrary specified item.
 Join two priority queues into one large one.
 
 (If records can have duplicate keys, we take “largest” to mean “any record
 with the largest key value.“)
 
-The replace operation is almost equivalent to an _insert_ followed by a
-remove (the difference being that the _insert/remove_ requires the priority queue
+The replace operation is almost equivalent to an insert followed by a
+remove (the difference being that the insert/remove requires the priority queue
 to grow temporarily by one element). Note that this is quite different from
-doing a remove followed by an _insert._ This is included as a separate capability
+doing a remove followed by an insert. This is included as a separate capability
 because, as we will see, some implementations of priority queues can do the
-replace operation quite efficiently. Similarly, the _change_ operation could be
-implemented as a _delete followed by an_ _insert and the_ _construct_ could be implemented with repeated uses of the _insert_ operation, but these operations can be
+replace operation quite efficiently. Similarly, the change operation could be
+implemented as a delete followed by an insert and the construct could be implemented with repeated uses of the insert operation, but these operations can be
 directly implemented more efficiently for some choices of data structure. The
-join operation requires quite advanced data structures for efficient implementation; we’ll concentrate instead on a “classical” data structure, called a _heap,_
+join operation requires quite advanced data structures for efficient implementation; we’ll concentrate instead on a “classical” data structure, called a heap,
 which allows efficient implementations of the first five operations.
 The priority queue as described above is an excellent example of an
-_abstract data structure:_ it is very well defined in terms of the operations
+abstract data structure: it is very well defined in terms of the operations
 performed on it, independent of the way the data is organized and processed
 in any particular implementation. The basic premise of an abstract data
 structure is that nothing outside of the definitions of the data structure
@@ -10642,13 +8379,9 @@ of) programs which use the algorithms and data structures. This makes it
 easier to understand the large program, and makes it more convenient to
 change or improve the fundamental algorithms. For example, in the present
 
-
 a.nd
 
-
------
-
-_PRIORITY QUEUES_ 129
+PRIORITY QUEUES 129
 
 context, there are several methods for implementing the various operations
 listed above that can have quite different performance characteristics. Defining
@@ -10663,25 +8396,25 @@ how the various operations can be implemented efficiently using this data
 structure. Also, we’ll examine an important sorting algorithm that follows
 naturally from these implementations.
 
-_Elementary_ _Implementations_
+Elementary Implementations
 
-One way to organize a priority queue is as an unordered _list,_ simply keeping
+One way to organize a priority queue is as an unordered list, simply keeping
 the items in an array a[l..N] without paying attention to the keys. Thus
-construct is a “no-op” for this organization. To _insert_ simply increment N and
+construct is a “no-op” for this organization. To insert simply increment N and
 put the new item into a[N], a constant-time operation. But replace requires
 scanning through the array to find the element with the largest key, which
 takes linear time (all the elements in the array must be examined). Then
 remove can be implemented by exchanging a[N] with the element with the
 largest key and decrementing N.
 
-Another organization is to use a _sorted list,_ again using an array a [1..N]
+Another organization is to use a sorted list, again using an array a [1..N]
 
 but keeping the items in increasing order of their keys. Now remove simply
 involves returning a[N] and decrementing N (constant time), but insert involves moving larger elements in the array right one position, which could
 take linear time.
 Linked lists could also be used for the unordered list or the sorted list.
 This wouldn’t change the fundamental performance characteristics for insert,
-remove, or replace, but it would make it possible to do _delete_ and join in
+remove, or replace, but it would make it possible to do delete and join in
 constant time.
 Any priority queue algorithm can be turned into a sorting algorithm by
 successively using insert to build a priority queue containing all the items to be
@@ -10694,14 +8427,9 @@ As usual, it is wise to keep these simple implementations in mind because
 they can outperform more complicated methods in many practical situations.
 For example, the first method might be appropriate in an application where
 
-
 “no-op”
 
-
 As
-
-
------
 
 130 CRAPTER 11
 
@@ -10711,7 +8439,7 @@ items inserted always tended to be close to the largest element in the priority
 queue. Implementations of methods similar to these for the searching problem
 (find a record with a given key) are given in Chapter 14.
 
-_Heap_ Data _Structure_
+Heap Data Structure
 
 The data structure that we’ll use to support the priority queue operations
 involves storing the records in an array in such a way that each key is
@@ -10721,12 +8449,12 @@ ordering is very easy to see if we draw the array in a two-dimensional “tree�
 structure with lines down from each key to the two keys known to be smaller.
 
 This structure is called a “complete binary tree”: place one node (called the
-_root),_ then, proceeding down the page and from left to right, connect two nodes
+root), then, proceeding down the page and from left to right, connect two nodes
 beneath each node on the previous level until N nodes have been placed. The
 nodes below each node are called its sons; the node above each node is called
 its father. (We’ll see other kinds of “binary trees” and “trees” in Chapter 14
 and later chapters of this book.) Now, we want the keys in the tree to satisfy
-the heap _condition:_ the key in each node should be larger than (or equal to)
+the heap condition: the key in each node should be larger than (or equal to)
 the keys in its sons (if it has any). Note that this implies in particular that
 the largest key is in the root.
 
@@ -10739,13 +8467,9 @@ For example, the array representation for the tree above is the following:
 
 X T O G S M N A E R A I
 
-
 CRAPTER
 
-
------
-
-PRIORITY QUEUES **1 3 1**
+PRIORITY QUEUES 1 3 1
 
 This natural representation is useful because it is very easy to get from a
 node to its father and sons. The father of the node in position j is in position
@@ -10769,7 +8493,7 @@ has about half as many nodes as the next, which implies that there can be
 at most lg N generations.) Thus all of the priority queue operations (except
 join) can be done in logarithmic time using heaps.
 
-Algorithms on _Heaps_
+Algorithms on Heaps
 
 The priority queue algorithms on heaps all work by first making a simple
 structural modification which could violate the heap condition, then traveling
@@ -10792,44 +8516,36 @@ than M, it is exchanged with M, and since it is greater than 0, it is exchanged
 with 0, and the process terminates since it is less that X. The following heap
 results:
 
-
 t,raversal
 
-
 ###### 2j
-
-
 ###### j
-
-
------
-
-132 **_CHAPTER 11_**
+132 CHAPTER 11
 
 The code for this method is straightforward. In the following implementation,
 insert adds a new item to a[N], then calls upheap to fix the heap condition
 violation at N
 
-**procedure** upheap(k: integer);
+procedure upheap(k: integer);
 
-**var** v: integer;
-**begin**
+var v: integer;
+begin
 v:=a[k]; a[O]:=maxint;
 
-**while** **_a[k_** **div** **21** **<=v do**
-**begin** a[k]:=a[k **div** **21;** **_k:=k_** **div 2 end;**
-**_a[k] :=v;_**
+while a[k div 21 <=v do
+begin a[k]:=a[k div 21; k:=k div 2 end;
+a[k] :=v;
 
-**end** **;**
+end ;
 
-**procedure** insert (v: integer) ;
+procedure insert (v: integer) ;
 
-**begin**
+begin
 
 ###### N:=N+l; a[N] :=v;
  whew(N)
 
-**end ;**
+end ;
 
 As with insertion sort, it is not necessary to do a full exchange within the
 loop, because v is always involved in the exchanges. A sentinel key must be
@@ -10842,41 +8558,29 @@ C, the first step is to store C at the root. This violates the heap condition,
 but the violation can be fixed by exchanging C with T, the larger of the two
 sons of the root. This creates a violation at the next level, which can be fixed
 
-
 v:=a[k]; a[O]:=maxint;
 
-
 ###### upheap
-
-
 a[O]
 
-
-**21;**
-
+21;
 
 ###### N
-
+;
 
 ;
 
-
-**;**
-
-
------
-
-**PRIORITY** **QUEUES** **133**
+PRIORITY QUEUES 133
 
 again by exchanging C with the larger of its two sons (in this case S). The
 process continues until the heap condition is no longer violated at the node
 occupied by C. In the example, C makes it all the way to the bottom of the
 heap, leaving:
 
-The **_“remove_** the largest” operation involves almost the same process.
+The “remove the largest” operation involves almost the same process.
 Since the heap will be one element smaller after the operation, it is necessary
 to decrement iV, leaving no place for the element that was stored in the last
-position. But the largest element is to be removed, so the **_remove_** operation
+position. But the largest element is to be removed, so the remove operation
 amounts to a replace, using the element that was in a(iV]. For example, the
 following heap results from removing the T from the heap above:
 
@@ -10885,29 +8589,26 @@ of fixing up a heap which satisfies the heap condition everywhere except
 possibly at the root. The same operation can be used to fix up the heap
 after the value in any position is lowered. It may be implemented as follows:
 
-
------
-
 134 CHAPTER 11
 
-**procedure** downheap(k: integer) ;
+procedure downheap(k: integer) ;
 
-**label** **0;**
+label 0;
 
-**var** i, j, v: integer;
-**begin**
+var i, j, v: integer;
+begin
 v:=a[k];
-**while** k<= N **div 2 do**
-**begin**
+while k<= N div 2 do
+begin
 j:=k+k;
-**if j<N then if** ab]<ab+l] **then** **j:=j+l;**
-**if** **v>=ab] then goto** **0;**
+if j<N then if ab]<ab+l] then j:=j+l;
+if v>=ab] then goto 0;
 ###### a[k]:=ab]; k:=j;
-**end;**
+end;
 
-**_O:a[k]_** **_:=v_**
+O:a[k] :=v
 
-**end** **;**
+end ;
 
 This procedure moves down the heap (starting from position k), exchanging
 the node at position j with the larger of its two sons if necessary, stopping when
@@ -10920,60 +8621,45 @@ interior of the heap.
 
 Now the implementation of the remove operation is simple:
 
-**function** **_remove:_** integer;
-**begin**
+function remove: integer;
+begin
 
 remove:=a[l];
 
 ###### a[l]:=a[N]; N:=N-1;
-
 downheap(1);
-**end ;**
+end ;
 
-The return value is set from **_a[l],_** then the element from a [N] is put into a[l]
+The return value is set from a[l], then the element from a [N] is put into a[l]
 
 and the size of the heap decremented, leaving only a call to downheap to fix
 up the heap condition everywhere.
 
 The implementation of the replace operation is only slightly more complicated:
 
-
 downheap(1);
 
-
 ###### ab]<ab+l]
-
-
 ###### a[k]:=ab];
-
-
 ###### v>=ab]
+O:a[k]
 
+var
 
-**_O:a[k]_**
+0;
 
-
-**var**
-
-
-**0;**
-
-
-**;**
-
-
------
+;
 
 PRIORITY QUEUES 135
 
-**function** _replace(v:_ integer):integer;
+function replace(v: integer):integer;
 
-**begin**
+begin
 a[O] :=v;
 downheap( 0) ;
 replace:=a[O];
 
-**end** **;**
+end ;
 
 This code uses a[O] in an artificial way: its sons are 0 (itself) and 1, so if v is
 larger than the largest element in the heap, the heap is not touched; otherwise
@@ -10986,56 +8672,43 @@ is raised, then upheap can be called, and if it is lowered then downheap
 does the job. On the other hand, the join operation is far more difficult and
 seems to require a much more sophisticated data structure.
 All of the basic operations insert, remove, replace, (downheap and upheup),
-_delete,_ and _change_ involve moving along a path between the root and the hot
+delete, and change involve moving along a path between the root and the hot
 tom of the heap, which includes no more than about log N elements for a heap
 of size N. Thus the running times of the above programs are logarithmic.
 
-_Heapsort_
+Heapsort
 
-An elegant and efficient sorting method can be defined from the basic operations on heaps outlined above. This method, called _Heapsort,_ uses no extra
-memory and is guaranteed to sort M elements in about Mlog _M_ steps no
+An elegant and efficient sorting method can be defined from the basic operations on heaps outlined above. This method, called Heapsort, uses no extra
+memory and is guaranteed to sort M elements in about Mlog M steps no
 matter what the input. Unfortunately, its inner loop is quite a bit longer
 than the inner loop of Quicksort, and it is about twice as slow as Quicksort
 on the average.
 The idea is simply to build a heap containing the elements to be sorted
 and then to remove them all in order. In this section, N will continue to be
 the size of the heap, so we will use M for the number of elements to be sorted.
-One way to sort is to implement the _construct_ operation by doing _M insert_
-operations, as in the first two lines of the following code, then do _M remove_
+One way to sort is to implement the construct operation by doing M insert
+operations, as in the first two lines of the following code, then do M remove
 operations, putting the element removed into the place just vacated by the
 shrinking heap:
 
-**N:=O;**
+N:=O;
 
-**for** k:=l **to** M **do** insert(a[k]);
-**for k:=M downto** 1 **do** a[k]:=remove;
-
+for k:=l to M do insert(a[k]);
+for k:=M downto 1 do a[k]:=remove;
 
 integer):integer;
 
-
 ###### downheap
-
-
 (downheap
 
-
-_replace(v:_
-
+replace(v:
 
 a[O]
 
-
 ###### k:=l
-
-
 hot-
 
-
 1
-
-
------
 
 136 CHAPTER 11
 
@@ -11051,20 +8724,19 @@ such small heaps as for the big heap. Also, we’ve noted that remove can be
 implemented by exchanging the first and last elements, decrementing N, and
 calling downheap(1). This leads to the following implementation of Heapsort:
 
-**procedure** heapsort;
-**var** k, t: integer;
-**begin**
-_N:=M;_
-**for** _k:=M_ **div 2 downto** 1 **do** downheap(
-**repeat**
+procedure heapsort;
+var k, t: integer;
+begin
+N:=M;
+for k:=M div 2 downto 1 do downheap(
+repeat
 
 ###### t:=a[l]; a[l]:=a[N]; a[N]:=t; N:=N-1; downheap(1)
-
-**until NC =** **1;**
-**end** **;**
+until NC = 1;
+end ;
 
 The first two lines of this code constitute an implementation of construct(M:
-integer) to build a heap of M elements. (The keys in a[ (M **div** _2)+1..M] each_
+integer) to build a heap of M elements. (The keys in a[ (M div 2)+1..M] each
 form heaps of one element, so they trivially satisfy the heap condition and
 don’t need to be checked.) It is interesting to note that, though the loops in
 this program seem to do very different things, they can be built around the
@@ -11075,28 +8747,17 @@ The following table shows the contents of each heap operated on by
 downheap for our sorting example, just after downheap has made the heap
 condition hold everywhere.
 
-
 downheap(1)
 
-
 ###### N:=N-1;
-
-
-_2)+1..M]_
-
+2)+1..M]
 
 ###### a[l],
-
-
 t:
 
+;
 
-**;**
-
-
------
-
-_PRIORITY_ _QUEUES_ 137
+PRIORITY QUEUES 137
 
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 A S O R T I N G E X A M P L E
@@ -11125,39 +8786,33 @@ A
 A A E E G I L M N O P R S T X
 
 As mentioned above, the primary reason that Heapsort is of practical
-interest is that the number of steps required to sort M elements is _guaranteed_
-to be proportional to _M_ log _M,_ no matter what the input. Unlike the other
-methods that we’ve seen, there is no “worst-case” input that will make Heapsort run slower. The proof of this is simple: we make about _3M/2_ calls to
-downheap (about _M/2_ to construct the heap and _M_ for the sort), each of
-which examines less than log _M_ heap elements, since the heap never has more
-than _M_ elements.
+interest is that the number of steps required to sort M elements is guaranteed
+to be proportional to M log M, no matter what the input. Unlike the other
+methods that we’ve seen, there is no “worst-case” input that will make Heapsort run slower. The proof of this is simple: we make about 3M/2 calls to
+downheap (about M/2 to construct the heap and M for the sort), each of
+which examines less than log M heap elements, since the heap never has more
+than M elements.
 Actually, the above proof uses an overestimate. In fact, it can be proven
 that the construction process takes linear time since so many small heaps are
 processed. This is not of particular importance to Heapsort, since this time
-is still dominated by the _M_ log _M_ time for sorting, but it is important for
+is still dominated by the M log M time for sorting, but it is important for
 other priority queue applications, where a linear time construct can lead to
-a linear time algorithm. Note that constructing a heap with _M_ successive
-inserts requires _M_ log _M_ steps in the worst case (though it turns out to be
+a linear time algorithm. Note that constructing a heap with M successive
+inserts requires M log M steps in the worst case (though it turns out to be
 linear on the average).
-
 
 downheap (about
 
+3M/2
 
-_3M/2_
-
-
-_M/2_
-
-
------
+M/2
 
 138 CHAPTER 11
 
 Indirect Heaps
 
 For many applications of priority queues, we don’t want the records moved
-around at all. Instead, we want the priority queue routine to tell us _which_
+around at all. Instead, we want the priority queue routine to tell us which
 of the records is the largest, etc., instead of returning values. This is akin
 to the “indirect sort” or the “pointer sort” concept described at the beginning of Chapter 8. Modification of the above programs to work in this way
 is straightforward, though sometimes confusing. It will be worthwhile to examine this in more detail here because it is so convenient to use heaps in this
@@ -11176,55 +8831,42 @@ k: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 
 a[k]:A S 0 R T I N G E X A M P L E
 
-heap[k]:lO 5 13 4 2 **3** **7** **8** **9** 1 11 12 6 14 15
+heap[k]:lO 5 13 4 2 3 7 8 9 1 11 12 6 14 15
 
 a[heap[k]]: X T P R S 0 N G E A A M I L E
 
 a[k]: A S 0 R T I N G E X A M P L E
 
-inv[k]: 10 5 **6** **4** **2** **1 3** **7** **8** **9** **1** **1 1** **1 2** **3** **1 4** **1 5**
+inv[k]: 10 5 6 4 2 1 3 7 8 9 1 1 1 1 2 3 1 4 1 5
 
 Note that heap[inv[k]]=inv[heap[k]]=k for all k from 1 to N.
 We start with heap[k]=inv[k]=k for k from 1 to N, which indicates that
 no rearrangement has been done. The code for heap construction looks much
 the same as before:
 
-**procedure** pqconstruct;
+procedure pqconstruct;
 
-**var** k: integer;
-**begin**
+var k: integer;
+begin
 N:=M;
-**for** **k:=l to N do**
-**begin** heap[k] :=k; inv[k] :=k **end;**
-**for** k:=M **div 2 downto** 1 **do** pqdownheap(k) ;
-**end** **;**
-
+for k:=l to N do
+begin heap[k] :=k; inv[k] :=k end;
+for k:=M div 2 downto 1 do pqdownheap(k) ;
+end ;
 
 Note that heap[inv[k]]=inv[heap[k]]=k
 
-
 heap[k]:lO
-
 
 inv[k]: 10
 
-
 ###### k:=M
-
-
 ###### k:=l
-
-
-**var**
-
+var
 
 1,
 
-
-**;**
-
-
------
+;
 
 PRIORITY QUEUES 139
 
@@ -11232,28 +8874,28 @@ We’ll prefix implementations of priority queue routines based on indirect heap
 with “pq” for indentification when they are used in later chapters.
 Now, to modify downheap to work indirectly, we need only examine the
 places where it references a. Where it did a comparison before, it must now
-access a indirectly through heap. Where it did a **_move_** before, it must now
-make the move in heap, not a, and it must modify **_inv_** accordingly. This leads
+access a indirectly through heap. Where it did a move before, it must now
+make the move in heap, not a, and it must modify inv accordingly. This leads
 to the following implementation:
 
-**procedure** pqdownheap(k: integer);
-**label** **0;**
-**var** j, v: integer;
-**begin**
+procedure pqdownheap(k: integer);
+label 0;
+var j, v: integer;
+begin
 
 v:=heap[k];
-**while** k<= N **div 2 do**
-**begin**
+while k<= N div 2 do
+begin
 j:=k+k;
-**if j<N then if** a[heapIj]]<a[heapb+1]] **then** **j:=j+l;**
+if j<N then if a[heapIj]]<a[heapb+1]] then j:=j+l;
 
-**if** a[v]>=a[heaplj]:] **then goto** **0;**
+if a[v]>=a[heaplj]:] then goto 0;
 
 heap [k] :=heap b] ; inv[heaplj]] :=k; k:=j;
-**end;**
+end;
 
-O:heap[k] :=v; inv[v] **_:=k_**
-**end** **;**
+O:heap[k] :=v; inv[v] :=k
+end ;
 
 The other procedures given above can be modified in a similar fashion to
 implement “pqinsert,” “pqchange,” etc.
@@ -11262,41 +8904,31 @@ heap as an array of pointers to separately allocated records. In this case, a
 little more work is required to implement the function of inv (find the heap
 position, given the record).
 
-**_Advanced_** Implementations
+Advanced Implementations
 
 If the join operation must be done efficiently, then the implementations that
 we have done so far are insufficient and more advanced techniques are needed.
 Although we don’t have space here to go into the details of such methods, we
 can discuss some of the considerations that go into their design.
-By “efficiently,” we mean that a **_join_** should be done in about the same
+By “efficiently,” we mean that a join should be done in about the same
 time as the other operations. This immediately rules out the linkless representation for heaps that we have been using, since two large heaps can be
 joined only by moving all the elements in at least one of them to a large
 array. It is easy to translate the algorithms we have been examining to use
 linked representations; in fact, sometimes there are other reasons for doing
 
-
 a[heapIj]]<a[heapb+1]]
-
 
 ; inv[heaplj]]
 
-
 implement “pqinsert,” “pqchange,” etc.
-
 
 “pq”
 
-
 O:heap[k] :=v; inv[v]
 
+var
 
-**var**
-
-
-**0;**
-
-
------
+0;
 
 140 CHAPTER 11
 
@@ -11310,38 +8942,30 @@ condition in order to gain the flexibility needed for the join. These structures
 allow all the operations be completed in logarithmic time.
 
 ###### Ll
-
-
 ###### Ll
+PRIORITY QUEUES 141
 
-
------
-
-**_PRIORITY QUEUES_** 141
-
-**_Exercises_**
-
+Exercises
 
 1.
 
-**_2 ._**
+2 .
 
-**_3 ._**
+3 .
 
-**_4 ._**
+4 .
 
-**_5 ._**
+5 .
 
-**_6 ._**
+6 .
 
-**_7 ._**
+7 .
 
-**_8 ._**
+8 .
 
-**_9 ._**
+9 .
 
-**_1 0 ._**
-
+1 0 .
 
 Draw the heap that results when the following operations are performed
 on an intitially empty heap: insert( IO), insert(5), insert(2), replate(4),
@@ -11363,31 +8987,24 @@ Show how to obtain the functions of stacks and normal queues as special
 cases of priority queues.
 
 What is the minimum number of keys that must be moved during a
-**_remove_** the largest operation in a heap? Draw a heap of size 15 for which
+remove the largest operation in a heap? Draw a heap of size 15 for which
 the minimum is achieved.
 
-Write a program to delete the element at postion **_d_** in a heap.
+Write a program to delete the element at postion d in a heap.
 
 Empirically compare the two methods of heap construction described in
 the text, by building heaps with 1000 random keys.
 
-Give the contents of **_inv after_** **_pqconstruct is used on the keys E A S Y Q_**
+Give the contents of inv after pqconstruct is used on the keys E A S Y Q
 U E S T I O N .
-
 
 postion
 
-
------
-
------
-
 ###### 12. Selection and Merging
-
 Sorting programs are often used for applications in which a full sort is
 not necessary. Two important operations which are similar to sorting
-but can be done much more efficiently are _selection,_ finding the kth smallest
-element (or finding the _k_ smallest elements) in a file, and merging, combining
+but can be done much more efficiently are selection, finding the kth smallest
+element (or finding the k smallest elements) in a file, and merging, combining
 two sorted files to make one larger sorted file. Selection and merging are
 intimately related to sorting, as we’ll see, and they have wide applicability in
 their own right.
@@ -11411,82 +9028,69 @@ case: the only known ways to merge in place (without using extra space)
 are too complex to be reduced to practical programs, as are the only known
 selection methods which are guaranteed to be linear even in the worst case.
 
-**143**
-
-
------
+143
 
 144 CHAPTER 12
 
-_Selection_
+Selection
 
 Selection has many applications in the processing of experimental and other
 data. The most prominent use is the special case mentioned above of finding
 the median element of a file: that item which is greater than half the items
 in the file and smaller than half the items in the file. The use of the median
-and other order _statistics_ to divide a file up into smaller percentile groups is
+and other order statistics to divide a file up into smaller percentile groups is
 very common. Often only a small part of a large file is to be saved for further
 processing; in such cases, a program which can select, say, the top ten percent
 of the elements of the file might be more appropriate than a full sort.
 
 An algorithm for selection must find the kth smallest item out of a file of
 N items. Since an algorithm cannot guarantee that a particular item is the
-kth smallest without having examined and identified the _k-_ 1 items which are
-smaller and the N - _k_ elements which are larger, most selection algorithms
-can return all of the _k_ smallest elements of a file without a great deal of extra
+kth smallest without having examined and identified the k- 1 items which are
+smaller and the N - k elements which are larger, most selection algorithms
+can return all of the k smallest elements of a file without a great deal of extra
 calculation.
 
-We’ve already seen two algorithms which are suitable for direct adaptation to selection methods. If _k is very small, then selection sort_ will work very
-well, requiring time proportional to _Nk:_ first find the smallest element, then
+We’ve already seen two algorithms which are suitable for direct adaptation to selection methods. If k is very small, then selection sort will work very
+well, requiring time proportional to Nk: first find the smallest element, then
 find the second smallest by finding the smallest among the remaining items,
-etc. For slightly larger _k,_ priority queues provide a selection mechanism: first
-insert _k_ items, then replace the largest N - _k_ times using the remaining items,
-leaving the _k_ smallest items in the priority queue. If heaps are used to implement the priority queue, everything can be done in place, with an approximate
-running time proportional to N log _k._
+etc. For slightly larger k, priority queues provide a selection mechanism: first
+insert k items, then replace the largest N - k times using the remaining items,
+leaving the k smallest items in the priority queue. If heaps are used to implement the priority queue, everything can be done in place, with an approximate
+running time proportional to N log k.
 
 An interesting method which will run much faster on the average can be
 formulated from the partitioning procedure used in Quicksort. Recall that
 Quicksort’s partitioning method rearranges an array a[l..N] and returns an
 integer i such that a[l],. . .,a[i-l] are less than or equal to a[i] and a[i+l],. . .,
-_a[N]_ are greater than or equal to _a[i]._ If we’re looking for the kth smallest
-element in the file, and we’re fortunate enough to have _k=i,_ then we’re done.
+a[N] are greater than or equal to a[i]. If we’re looking for the kth smallest
+element in the file, and we’re fortunate enough to have k=i, then we’re done.
 Otherwise, if k<i then we need to look for the kth smallest element in the
-left subfile, and if _k>i_ then we need to look for the (k-i)th smallest element
+left subfile, and if k>i then we need to look for the (k-i)th smallest element
 in the right subfile. This leads immediately to the recursive formulation:
 
-
 ###### a[i+l],.
-
-
 ###### ,a[i-l]
-
-
 ###### a[l],.
-
-
-_a[N]_
-
-
------
+a[N]
 
 SELECTION AAD MERGING 145
 
-**procedure** seJect(J, r, k: integer);
+procedure seJect(J, r, k: integer);
 
-**var I;**
+var I;
 
-**begil** **1**
-**if r>** J then
-**begin**
+begil 1
+if r> J then
+begin
 i::=partition(J, r);
-**if** i>J+k-1 **then** seJect(J, i-l, k);
-**if** **i<J+k-I then** seJect(i+l, r, k-i);
-**end**
-**end;**
+if i>J+k-1 then seJect(J, i-l, k);
+if i<J+k-I then seJect(i+l, r, k-i);
+end
+end;
 
 This procedure rearranges the array so lhat a[J],. . .,a[k-l] are less than or
 equal to a[k] and a[k+1],...,a[r] are greater than or equal to a[k]. For
-example, the call seJect(l, N, (N+l) **div** Z) partitions the array on its median
+example, the call seJect(l, N, (N+l) div Z) partitions the array on its median
 value. For the keys in our sorting example, this program uses only three
 recursive calls to find the median, as shown in the following table:
 
@@ -11498,7 +9102,7 @@ L INGOPMmXTS
 
 L I G(M(0 P N
 
-###### m 
+###### m
 The file is rearranged so that the median is in place with all smaller elements
 to the left and all larger elements to the right (and equal elements on either
 side), but it is not fully sorted.
@@ -11508,71 +9112,51 @@ really recursive in the sense that no stael. is needed to remove the recursion:
 when the time comes for the recursive call, we can simply reset the parameters
 and go back to the beginning, since there is nothing more to do.
 
-
 ###### INGOPMmXTS
-
-
 ###### EMT I
-
-
 seJect(i+l, r, k-i);
 
-
 ###### i>J+k-1
-
-
 ###### i<J+k-I
-
-
 ###### (N+l)
-
-
 shown
-
 
 really recursive in the sense that no stael. is needed to remove the recursion:
 
-
 Z)
 
-
-**r>**
-
+r>
 
 3
 
+146 CHAPTER 12
 
------
+procedure select(k: integer) ;
 
-146 _CHAPTER 12_
+var v t, 7 9 i j t 1 r: integer;)
 
-**procedure** select(k: integer) ;
-
-**var** v t, 7 9 i j t 1 r: integer;)
-
-**begin**
+begin
 ###### l:=l; r:=N;
-**while r>l do**
-**begin**
+while r>l do
+begin
 ###### v:=a[r]; i:=l-1; j : = r ;
-**repeat**
-**repeat** _i:=i+l_ **until** a[i]>=v;
-**repeat** **j:=j-1 until** **ab]<=v;**
+repeat
+repeat i:=i+l until a[i]>=v;
+repeat j:=j-1 until ab]<=v;
 
 ###### t:=a[i]; a[i]:=alj]; ab]:=t;
-
-**until** j<=i;
+until j<=i;
 ###### alj]:=a[i]; a[i]:=a[r]; a[r]:=t;
-**if** i>=k **then** r:=i-1;
-**if** i<=k **then** l:=i+l;
-**end** **;**
+if i>=k then r:=i-1;
+if i<=k then l:=i+l;
+end ;
 
-**end** **;**
+end ;
 
 We use the identical partitioning procedure to Quicksort: as with Quicksort,
 this could be changed slightly if many equal keys are expected. Note that in
 this non-recursive program, we’ve eliminated the simple calculations involving
-_k._
+k.
 
 This method has about the same worst case as Quicksort: using it to
 find the smallest element in an already sorted file would result in a quadratic
@@ -11583,10 +9167,10 @@ average running time is proportional to about N + Iclog(N/k), which is linear
 for any allowed value of k.
 
 It is possible to modify this Quicksort-based selection procedure so that its
-running time is _guaranteed_ to be linear. These modifications, while important
+running time is guaranteed to be linear. These modifications, while important
 from a theoretical standpoint, are extremely complex and not at all practical.
 
-_Merging_
+Merging
 
 It is common in many data processing environments to maintain a large
 (sorted) data file to which new entries are regularly added. Typically, a
@@ -11595,81 +9179,58 @@ file, and the whole thing resorted. This situation is tailor-made for merging: a
 much better strategy is to sort the (small) batch of new entries, then merge it
 with the large main file. Merging has many other similar applications which
 
-
 ###### a[i]:=alj];
-
-
 ###### ab]<=v;
-
-
 ###### v:=a[r];
-
-
-_CHAPTER 12_
-
+CHAPTER 12
 
 ###### a[r]:=t;
-
-
 ###### r:=i-1;
-
-
 ###### l:=i+l;
-
-
-**r:=N;**
-
+r:=N;
 
 ###### l:=l;
-
-
 1
-
 
 ;
 
-
-**;**
-
+;
 
 )
 
-
------
-
-_SELECTION AND MERGING_ 147
+SELECTION AND MERGING 147
 
 make it worthwhile to study. Also, we’ll examine a sorting method based on
 merging.
 
-In this chapter we’ll concentrate on programs for _two-way merging:_ programs which combine two sorted input files to make one sorted output file. In
+In this chapter we’ll concentrate on programs for two-way merging: programs which combine two sorted input files to make one sorted output file. In
 the next chapter, we’ll look in more deLii at multiway merging, when more
 than two files are involved. (The most important application of multiway
 merging is external sorting, the subject cf that chapter.)
 
-To begin, suppose that we have two sorted arrays a _[l..M]_ and b [1..N] of
-integers which we wish to merge into a third array c [ 1. _.M+N]_ . The following
+To begin, suppose that we have two sorted arrays a [l..M] and b [1..N] of
+integers which we wish to merge into a third array c [ 1. .M+N] . The following
 is a direct implementation of the obvious method of successively choosing for
-c the smallest remaining element from a and _b:_
+c the smallest remaining element from a and b:
 
-_a[M+l_ I:=maxint; _b[N+l]_ :=maxint;
-**for** **k:=l to** _M+N_ **do**
-**if** _a[il<blj]_
+a[M+l I:=maxint; b[N+l] :=maxint;
+for k:=l to M+N do
+if a[il<blj]
 
-**then begin** _c[k]:=a[i]; i:=i+l_ **end**
-**elw begin** _c[k]:=bb];_ _j:=j+l_ **end;**
+then begin c[k]:=a[i]; i:=i+l end
+elw begin c[k]:=bb]; j:=j+l end;
 
-The implementation is simplified by making room in the a and _b_ arrays for
+The implementation is simplified by making room in the a and b arrays for
 sentinel keys with values larger than all the other keys. When the a(b) array
 is exhausted, the loop simply moves the rc,st of the b(a) array into the c array.
-The time taken by this method is obviously proportional to _M+N._
+The time taken by this method is obviously proportional to M+N.
 
 The above implementation uses extra space proportional to the size of the
 merge. It would be desirable to have an in-place method which uses c[l..M]
 
-for one input and _c[M+I..M+N]_ for the other. While such methods exist,
-they are so complicated that an (N + M)log(N + _M)_ inplace sort would be
-more efficient for practical values of N and _M._
+for one input and c[M+I..M+N] for the other. While such methods exist,
+they are so complicated that an (N + M)log(N + M) inplace sort would be
+more efficient for practical values of N and M.
 
 Since extra space appears to be required for a practical implementation,
 we might as well consider a linked-list imy’lementation. In fact, this method is
@@ -11677,73 +9238,58 @@ very well suited to linked lists. A full implementation which illustrates all th
 conventions we’ll use is given below; note that the code for the actual merge
 is just about as simple as the code above:
 
-
-_c[M+I..M+N]_
-
+c[M+I..M+N]
 
 I:=maxint;
 
+c[k]:=a[i];
 
-_c[k]:=a[i];_
+a[il<blj]
 
-
-_a[il<blj]_
-
-
-_a[M+l_
-
+a[M+l
 
 ###### j:=j+l
-
-
 and b [1..N] of
-
 
 the next chapter, we’ll look in more deLii at multiway merging, when more
 
-
-**elw**
-
+elw
 
 1.
 
-
------
-
 CHAPTER 12
 
-
-**program** listmerge(input, output);
+program listmerge(input, output);
 type link=tnode;
 
-node=record k: integer; next: link **end;**
-**var** N, M: integer; z: link;
-**function** **_merge(a,_** b: link) : link;
+node=record k: integer; next: link end;
+var N, M: integer; z: link;
+function merge(a, b: link) : link;
 
 var c: link;
-**begin**
+begin
 
-**c:=z;**
+c:=z;
 
-**repeat**
-**if at.k<=bf.k**
+repeat
+if at.k<=bf.k
 
-**then begin** ct.next:=a; c:=a; a:=at.next **end**
-**else begin** ct.next:=b; c:=b; b:=bf.next **end**
-**until** cf.k=maxint;
+then begin ct.next:=a; c:=a; a:=at.next end
+else begin ct.next:=b; c:=b; b:=bf.next end
+until cf.k=maxint;
 merge:=zf.next; zt next:=z
 
 end ;
 
-**begin**
+begin
 
-**_readln (N, M) ;_**
+readln (N, M) ;
 new(z); zf.k:=maxint; zt.next:=z;
 writelist(merge(readlist(N), read&(M)))
 
 end.
 
-This program merges the list pointed to by a with the list pointed to by **_b,_**
+This program merges the list pointed to by a with the list pointed to by b,
 with the help of an auxiliary pointer c. The lists are initially built with the
 readlist routine from Chapter 2. All lists are defined to end with the dummy
 node a, which normally points to itself, and also serves as a sentinel. During
@@ -11752,8 +9298,8 @@ similar to the implementation of readlist), and c points to the end of the
 newly merged list (the node whose link field must be changed to add a new
 element to the list). After the merged list is built, the pointer to its first node
 is retrieved from z and z is reset to point to itself.
-The key comparison in **_merge_** includes equality so that the merge will be
-stable, if the **_b_** list is considered to follow the a list. We’ll see below how this
+The key comparison in merge includes equality so that the merge will be
+stable, if the b list is considered to follow the a list. We’ll see below how this
 stability in the merge implies stability in the sorting programs which use this
 merge.
 Once we have a merging procedure, it’s not difficult to use it as the basis
@@ -11765,68 +9311,52 @@ function which takes a pointer to an unsorted list as input and returns as its
 value a pointer to the sorted version of the list. The program does this by
 rearranging the nodes of the list: no temporary nodes or lists need be allocated.
 
-
 writelist(merge(readlist(N),
-
 
 merge:=zf.next;
 
-
 ###### at.k<=bf.k
-
-
 ###### cf.k=maxint;
-
-
 ###### a:=at.next
-
-
 ###### zt.next:=z;
-
-
 c:=a;
-
 
 c
 
-
 ;
 
-
------
-
-SELECTION AND _MIERGING_ 149
+SELECTION AND MIERGING 149
 
 (It is convenient to pass the list length as E. parameter to the recursive program:
 alternatively, it could be stored with the list or the program could scan the
 list to find its length.)
 
-**function** **_sort(c:_** link; fi: integer): link;
-**var** a, _b: link;_
+function sort(c: link; fi: integer): link;
+var a, b: link;
 i: integer;
 
-**begin**
-**if cf.next=z then sor~,:=c else**
+begin
+if cf.next=z then sor~,:=c else
 
-**begin**
+begin
 
-**a:=c;**
+a:=c;
 
-**for i:= 2 to N div** **2 do c:=ct.next;**
+for i:= 2 to N div 2 do c:=ct.next;
 
-b:=cf.next; **_cf.next:=z;_**
+b:=cf.next; cf.next:=z;
 
-sort:=merge(sort(a N **div** 2), sort(b, N-(N **div 2)));**
+sort:=merge(sort(a N div 2), sort(b, N-(N div 2)));
 
-**end** **;**
+end ;
 
-**end** **;**
+end ;
 
 This program sorts by splitting the list po: nted to by c into two halves, pointed
 to by a and b, sorting the two halves recursively, then using merge to produce
 the final result. Again, this program adheres to the convention that all lists
-end with z: the input list must end with z (and therefore so does the _b_ list);
-and the explicit instruction **_cf.next:=z_** puts z at the end of the **_a_** list. This
+end with z: the input list must end with z (and therefore so does the b list);
+and the explicit instruction cf.next:=z puts z at the end of the a list. This
 program is quite simple to understand in a recursive formulation even though
 it actually is a rather sophisticated algorithm.
 
@@ -11835,48 +9365,32 @@ recurrence M(N) = 2M(N/2) + N. The program is thus guaranteed to run
 in time proportional to NlogN. (See Chapter 4).
 
 Our file of sample sorting keys is processed as shown in the following
-table. Each line in the table shows the result of a call on **_merge._** First we
+table. Each line in the table shows the result of a call on merge. First we
 merge 0 and S to get 0 S, then we merge this with A to get A 0 S. Eventually
 we merge R T with I N to get I N R T, then this is merged with A 0 S to
 get A I N 0 R S T, etc.:
 
-
 sort:=merge(sort(a
 
-
 ###### 2M(N/2)
-
-
 c:=ct.next;
 
-
-_MIERGING_
-
+MIERGING
 
 ###### NlogN.
-
-
 2), sort(b, N-(N
 
-
-**sor~,:=c**
-
+sor~,:=c
 
 alternatively, it could be stored with the list or the program could scan the
 
-
 fits
 
+2
 
-**2**
+;
 
-
-**;**
-
-
------
-
-150 **_CHAPTER 12_**
+150 CHAPTER 12
 
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 
@@ -11906,7 +9420,7 @@ sorted sublists of size 4, then do 4-by-4 merges to get sorted sublists of size
 8, etc., until the whole list is sorted. Our sample file is sorted in four passes
 using this “bottom-up” mergesort:
 
-**_1_** 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
 
 A S O R T I N G E X A M P L E
 A SIO R I TIG N E XIA M L PIE
@@ -11919,51 +9433,40 @@ In general, 1ogN passes are required to sort a file of N elements, since each
 pass doubles the size of the sorted subfiles. A detailed implementation of this
 idea is given below.
 
-
 ###### XIA
-
-
 ###### SIO
-
-
 ###### N
-
-
------
-
 SELECTION AND MERGING 151
 
-**function** mergesort(c: link): link;
-**var a, b, head,** todo, t: link;
+function mergesort(c: link): link;
+var a, b, head, todo, t: link;
 i, N: integer;
-**begin**
+begin
 
 ###### N:=l; ntw(head); headf.next:=c;
-
-**repeat**
+repeat
 
 todo:=.ieadt.next; c:=head;
 
-**repeat**
+repeat
 
 t:=todo;
 
 ###### a:=t: for i:=l to N-l do t:=tf.next;
-
 b:=t”.next; tt.next:=z;
-t:=b **for** i:=l **to** N-l **do** t:=tf.next;
+t:=b for i:=l to N-l do t:=tf.next;
 todo:=tt.next; tf.next:=z;
 
 cf.nest:=merge(a, b);
-**for i: =1 to N+N do** **_c:=ct.next_**
+for i: =1 to N+N do c:=ct.next
 
-**until to do=z;**
+until to do=z;
 
 ###### N:=N+ N;
-**until** a=hf:adf.next;
+until a=hf:adf.next;
 mergesort:=headf.next
 
-**end** **;**
+end ;
 
 This program uses a “list header” node (pointed to by head) whose link field
 points to the file being sorted. Each iteration of the outer repeat loop passes
@@ -11973,11 +9476,11 @@ to the part of the list not yet seen (todoi and one to the end of the part of
 the list for which the subfiles have already been merged (c). The inner repeat
 loop merges the two subfiles of length N starting at the node pointed to by
 
-**_todo_** producing a subfile of length N+N vrhich is linked onto the c result list.
+todo producing a subfile of length N+N vrhich is linked onto the c result list.
 The actual merge is accomplished by saking a link to the first subfile to be
 merged in a, then skipping N nodes (using the temporary link t), linking z
-onto the end of **_a’s_** list, then doing the same to get another list of N nodes
-pointed to by b (updating **_todo_** with the link of the last node visited), then
+onto the end of a’s list, then doing the same to get another list of N nodes
+pointed to by b (updating todo with the link of the last node visited), then
 calling merge. (Then c is updated by simply chasing down to the end of the
 list just merged. This is a simpler (but slightly less efficient) method than
 various alternatives which are available, such as having merge return pointers
@@ -11988,65 +9491,36 @@ Like Heapsort, mergesort has a gual,anteed N log N running time; like
 Quicksort, it has a short inner loop. Thus it combines the virtues of these
 methods, and will perform well for all ir.puts (though it won’t be as quick
 
-
 mergesort:=headf.next
-
 
 todo:=.ieadt.next;
 
-
 todo:=tt.next;
-
 
 Like Heapsort, mergesort has a gual,anteed N log N running time; like
 
-
 ###### tt.next:=z;
-
-
 ###### t:=tf.next;
-
-
-**_c:=ct.next_**
-
+c:=ct.next
 
 t:=todo;
 
-
 to the part of the list not yet seen (todoi and one to the end of the part of
 
-
 ###### N:=l;
-
-
 subfiles
 
-
 subfiles
-
 
 to do=z;
 
-
 producing a subfile of length
 
-
 ###### N+N
-
-
 ###### a:=t:
-
-
 ###### i:=l
-
-
 ###### i:=l
-
-
-**var a, b, head,**
-
-
------
+var a, b, head,
 
 CHAPTER 12
 
@@ -12057,13 +9531,13 @@ is also possible to develop a nonrecursive implementation of mergesort using
 arrays, switching to a different array for each pass in the same way that we
 discussed in Chapter 10 for straight radix sort.
 
-_Recursion_ _Revisited_
+Recursion Revisited
 
 The programs of this chapter (together with Quicksort) are typical of implementations of divide-and-conquer algorithms. We’ll see several algorithms
 with similar structure in later chapters, so it’s worthwhile to take a more
 detailed look at some basic characteristics of these implementations.
 Quicksort is actually a “conquer-and-divide” algorithm: in a recursive
-implementation, most of the work is done _before_ the recursive calls. On the
+implementation, most of the work is done before the recursive calls. On the
 other hand, the recursive mergesort is more in the spirit of divide-and-conquer:
 first the file is divided into two parts, then each part is conquered individually.
 The first problem for which mergesort does actual processing is a small one;
@@ -12088,15 +9562,10 @@ nature of the recursive structure of the program and the possibility of removing
 of the algorithm, such study will at least lead to better understanding of the
 method.
 
-
 ###### N
+SELECTION AND MERGING 153
 
-
------
-
-_SELECTION AND MERGING_ 153
-
-_Exercises_
+Exercises
 
 1. For N = 1000, empirically determine: the value of k for which the Quicksort-based partitioning procedure be :omes faster than using heaps to find
 the Ic th smallest element in a randc’m file.
@@ -12106,7 +9575,7 @@ N smallest keys fall in the first N Isositions, the next N keys fall in the
 next N positions, the next N in the next N positions, and the N largest
 in the last N positions.
 
-3. Show the recursive calls made when _select_ is used to find the median of
+3. Show the recursive calls made when select is used to find the median of
 the keys EASYQUESTION.
 
 4. Write a program to rearrange a file so that all the elements with keys
@@ -12132,32 +9601,21 @@ the recursive mergesort is used to sort the keys EASY Q U E S T IO N.
 10. Show the contents of the linked l&t at each iteration when the non
 recursive mergesort is used to sort the keys EASY QUE S TIO N.
 
-
 l’assed
-
 
 sort-based partitioning procedure be :omes faster than using heaps to find
 
-
 lath
-
 
 file
 
-
 Ic
 
-
------
-
------
-
 ###### I 3. External Sorting
-
 Many important sorting applications involve processing very large files,
 much too large to fit into the primal y memory of any computer. Methods
-appropriate for such applications are ca.led _external_ methods, since they involve a large amount of processing external to the central processing unit (as
-opposed to the _internal_ methods that we’ve been studying).
+appropriate for such applications are ca.led external methods, since they involve a large amount of processing external to the central processing unit (as
+opposed to the internal methods that we’ve been studying).
 There are two major factors which make external algorithms quite different from those we’ve seen until now. l’irst, the cost of accessing an item
 is orders of magnitude greater than any bookkeeping or calculating costs.
 Second, even with this higher cost, there are severe restrictions on access,
@@ -12181,19 +9639,13 @@ in any non-trivial way is about as diffictllt as sorting it, even though no key
 
 155
 
-
 “s:istems”
-
 
 in any non-trivial way is about as diffictllt as sorting it, even though no key
 
-
 v~:ry
 
-
------
-
-156 _CWAPTER 13_
+156 CWAPTER 13
 
 comparisons, etc. are required. In external sorting, we are mainly concerned
 with limiting the number of times each piece of data is moved between the
@@ -12209,11 +9661,11 @@ that we will consider can be adapted to run well in such an environment, but
 we’ll deal exclusively with “two-level” memory hierarchies consisting of main
 memory and disk or tape.
 
-_Sort-Merge_
+Sort-Merge
 
 Most external sorting methods use the following general strategy: make a first
 pass through the file to be sorted, breaking it up into blocks about the size
-of the internal memory, and _sort_ these blocks. Then merge the sorted blocks
+of the internal memory, and sort these blocks. Then merge the sorted blocks
 together, by making several passes through the file, making successively larger
 sorted blocks until the whole file is sorted. The data is most often accessed in
 a sequential manner, which makes this method appropriate for most external
@@ -12235,11 +9687,7 @@ To begin, we’ll trace through the various steps of the simplest sort-merge
 procedure for an example file. Suppose that we have records with the keys A
 S O R T I N G A N D M E R G I N G E X A M P L E o n a n i n p u t t a p e ; t h e s e
 
-
-_CWAPTER 13_
-
-
------
+CWAPTER 13
 
 EXTERNAL SORTING 157
 
@@ -12257,8 +9705,8 @@ would use three tapes, ending up with the following configuration after the
 sorting pass:
 
 Tape I: A 0 S 1, M N A E X
-_Tape_ _2:_ I R T El G R L M P
-_Tape 3:_ A G N GIN E
+Tape 2: I R T El G R L M P
+Tape 3: A G N GIN E
 
 Now we’re ready to merge the sorted blocks of size three together. We
 read the first record off each input tapl: (there’s just enough room in the
@@ -12272,9 +9720,9 @@ on each tape into a nine-word block (whiC1 is output on a different tape, to get
 ready for the next merge). Continuing, we get three long blocks configured
 as follows:
 
-_Taped:_ A A G I N 0 R S T
+Taped: A A G I N 0 R S T
 Tape 5: D E G G I M N N R
-_Tape_ _6:_ A E E 1, M P X
+Tape 6: A E E 1, M P X
 
 Now one more three-way merge completes the sort. If we had a much
 longer file with many blocks of size 9 on each tape, then we would finish the
@@ -12282,28 +9730,18 @@ second pass with blocks of size 27 on tapes 1, 2, and 3, then a third pass
 would produce blocks of size 81 on tapes 4, 5, and 6, and so forth. We need
 six tapes to sort an arbitrarily large file: three for the input and three for the
 
-
 isequentially:
-
 
 on each tape into a nine-word block (whiC1 is output on a different tape, to get
 
-
 read the first record off each input tapl: (there’s just enough room in the
 
-
 ###### I:
-
-
 G
-
 
 we
 
-
------
-
-_CHAPTER 13_
+CHAPTER 13
 
 output of each three-way merge. Actually, we could get by with just four
 tapes: the output could be put on just one tape, then the blocks from that
@@ -12315,12 +9753,12 @@ execution times are measured in hours, which is not uncommon in external
 sorting, even a small percentage decrease in running time can be helpful and
 50% can be quite significant.)
 Suppose that we have N words to be manipulated by the sort and an
-internal memory of size _M._ Then the “sort” pass produces about _N/M_ sorted
+internal memory of size M. Then the “sort” pass produces about N/M sorted
 blocks. (This estimate assumes l-word records: for larger records, the number
 of sorted blocks is computed by multiplying further by the record size.) If
 we do P-way merges on each subsequent pass, then the number of subsequent
 passes is about logp(N/M), since each pass reduces the number of sorted
-blocks by a factor of _P._
+blocks by a factor of P.
 Though small examples can help one understand the details of the algorithm, it is best to think in terms of very large files when working with
 external sorts. For example, the formula above says that using a 4-way merge
 to sort a 200-million-word file on a computer with 1 million words of memory
@@ -12328,7 +9766,7 @@ should take a total of about five passes. A very rough estimate of the running
 time can be found by multiplying by five the running time for the reverse file
 copy implementation suggested above.
 
-_Replacement_ Selection
+Replacement Selection
 
 It turns out that the details of the implementation can be developed in an
 elegant and efficient way using priority queues. First, we’ll see that priority
@@ -12336,17 +9774,14 @@ queues provide a natural way to implement a multiway merge. More important, it t
 in such a way that they can produce sorted blocks much longer than could fit
 into internal memory.
 The basic operation needed to do P-way merging is to repeatedly output
-the smallest of the smallest elements not yet output from each of the _P_ blocks
+the smallest of the smallest elements not yet output from each of the P blocks
 to be merged. That element should be replaced with the next element from
-the block from which it came. The _replace_ operation on a priority queue
-of size _P_ is exactly what is needed. (Actually, the “indirect” verions of the
+the block from which it came. The replace operation on a priority queue
+of size P is exactly what is needed. (Actually, the “indirect” verions of the
 priority queue routines, as described in Chapter 11, are more appropriate for
 this application.) Specifically, to do a P-way merge we begin by filling up a
-priority queue of size _P_ with the smallest element from each of the _P_ inputs
+priority queue of size P with the smallest element from each of the P inputs
 using the pqinsert procedure from Chapter 11 (appropriately modified so that
-
-
------
 
 EXTERNAL SORTING 159
 
@@ -12382,36 +9817,27 @@ to see the keys in the order in which they appear in the first heap position
 and are output). When a block is exhausted, a sentinel is put on the heap
 and considered to be larger than all the other keys. When the heap consists
 of all sentinels, the merge is completed. This way of using priority queues is
-sometimes called replacement _selection._
+sometimes called replacement selection.
 Thus to do a P-way merge, we can use replacement selection on a priority
-queue of size `P` to find each element to be output in 1ogP steps. This
+queue of size P to find each element to be output in 1ogP steps. This
 performance difference is not of particular practical relevance, since a brute
-force implementation can find each elernent to output in `P` steps, and `P` is
+force implementation can find each elernent to output in P steps, and P is
 normally so small that this cost is dwarfed by the cost of actually outputting
 the element. The real importance of re’placement selection is the way that
 it can be used in the first part of the scrt-merge process: to form the initial
 sorted blocks which provide the basis fo* the merging passes.
 
-
 the element. The real importance of re’placement selection is the way that
-
 
 we output the smallest element and replace it in the priority queue with the
 
-
 normally so small that this cost is dwarfed by the cost of actually outputting
-
 
 1ogP
 
-
 fo*
 
-
 t1
-
-
------
 
 160 CHAPTER 13
 
@@ -12440,7 +9866,6 @@ block. Always, the heap condition (first key less than the second and third) is
 maintained, with elements in the next sorted block considered to be greater
 than elements in the current sorted block.
 
-
 ###### IlLI
 T
 ###### 0
@@ -12468,7 +9893,6 @@ N*
 
 N*
 
-
 S
 
 S
@@ -12486,16 +9910,14 @@ A
 A
 
 A
-
 
 ###### 0 E A M D M A* G* E” 0 ��
-
 R IRI D M E IPI E* G* M*
-###### - 
+###### -
 T 0-G E M R L 0- G* P* M*
 
 T 111 G M R IEl L* P* M”
-###### - 
+###### -
 N’ N I M R M’ P* E
 ###### �- 0
 N’ LlG MN R u P* E
@@ -12506,51 +9928,28 @@ N* i-d R G* E*
 
 D IAl X G* E*
 
-
 D
 ###### 0
-
-
 ###### 0-[I]
-
-
 ###### 0
-
 L 0
 
 ###### u-N
-
-
 ###### LlG
-
-
 ###### IlLI
-
-
 ###### I.4
-
-
 ###### Id
-
-###### IPI 
-
+###### IPI
 ###### i-d
-
-
 G*
 
-
 N*
-
 
 M’
 
-
 N*
 
-
 N’
-
 
 For example, when pqreplace is called for M, it returns N for output (A and
 D are considered greater) and then sifts down M to make the heap A M D.
@@ -12562,27 +9961,14 @@ D are considered greater) and then sifts down M to make the heap A M D.
 
 T
 ###### 0
-
-
 ###### Ll-A
-
-
 ###### Is-l -
-
-
 ###### IRI -
-
-
 IAl
-
 
 M”
 
-
 N’
-
-
------
 
 EXTERNAL SORTING 161
 
@@ -12600,10 +9986,10 @@ no merging will be necessary! This is the most important practical reason to
 use the method.
 In summary, the replacement seleclion technique can be used for both
 the “sort” and the “merge” steps of a balanced multiway merge. To sort N
-l-word records using an internal memo y of size M and _P_ + 1 tapes, first
-use replacement selection with a priority queue of size _M_ to produce initial
-runs of size about _2M_ (in a random situation) or longer (if the file is partially
-ordered) then use replacement selection with a priority queue of size _P_ for
+l-word records using an internal memo y of size M and P + 1 tapes, first
+use replacement selection with a priority queue of size M to produce initial
+runs of size about 2M (in a random situation) or longer (if the file is partially
+ordered) then use replacement selection with a priority queue of size P for
 about log,(N/2M) (or fewer) merge passes.
 
 Practical Considerations
@@ -12629,29 +10015,18 @@ the input device is filling the other. When the processor has finished using
 its buffer, it waits until the input device has filled its buffer, then the buffers
 switch roles: the processor uses the near data in the just-filled buffer while
 
-
 ###### log,(N/2M)
-
-
 as obviously require careful consideratisw of some systems (as opposed to
-
 
 pos:#ible.
 
-
 In summary, the replacement seleclion technique can be used for both
-
 
 rather than starting with sorted runs about the size of the internal memory
 
-
 overlap of I/O with computing. The idl:a is to maintain two “buffers,” one
 
-
 of’
-
-
------
 
 162 CHAPTER 13
 
@@ -12662,14 +10037,14 @@ time and so the effect of double-buffering is to overlap the computation time
 entirely; thus the buffers should be as large as possible.
 A difficulty with double-buffering is that it really uses only about half
 the available memory space. This can lead to inefficiency if a large number
-of buffers are involved, as is the case in P-way merging when _P_ is not small.
+of buffers are involved, as is the case in P-way merging when P is not small.
 This problem can be dealt with using a technique called forecasting, which
-requires the use of only one extra buffer (not `P)` during the merging process.
+requires the use of only one extra buffer (not P) during the merging process.
 Forecasting works as follows. Certainly the best way to overlap input with
 computation during the replacement selection process is to overlap the input
 of the buffer that needs to be filled next with the processing part of the
 algorithm. But it is easy to determine which buffer this is: the next input
-buffer to be emptied is the one whose _lust_ item is smallest. For example, when
+buffer to be emptied is the one whose lust item is smallest. For example, when
 merging A 0 S with I R T and A G N we know that the third buffer will be
 the first to empty, then the first. A simple way to overlap processing with
 input for multiway merging is therefore to keep one extra buffer which is filled
@@ -12679,53 +10054,47 @@ already), then switches to begin using that buffer and directs the input device
 to begin filling the buffer just emptied according to the forecasting rule.
 The most important decision to be made in the implementation of the
 
-multiway merge is the choice of the value of _P,_ the “order” of the merge. For
-tape sorting, when only sequential access is allowed, this choice is easy: _P_
+multiway merge is the choice of the value of P, the “order” of the merge. For
+tape sorting, when only sequential access is allowed, this choice is easy: P
 must be chosen to be one less than the number of tape units available: the
 
-multiway merge uses _P_ input tapes and one output tape. Obviously, there
+multiway merge uses P input tapes and one output tape. Obviously, there
 should be at least two input tapes, so it doesn’t make sense to try to do tape
 sorting with less than three tapes.
 For disk sorting, when access to arbitrary positions is allowed but is
 somewhat more expensive than sequential access, it is also reasonable to
-choose _P_ to be one less than the number of disks available, to avoid the
+choose P to be one less than the number of disks available, to avoid the
 higher cost of non-sequential access that would be involved, for example, if
 two different input files were on the same disk. Another alternative commonly
-used is to pick _P large enough so that the sort will be complete in two merging_
-phases: it is usually unreasonable to try to do the sort in one pass, but a twopass sort can often be done with a reasonably small _P._ Since replacement
+used is to pick P large enough so that the sort will be complete in two merging
+phases: it is usually unreasonable to try to do the sort in one pass, but a twopass sort can often be done with a reasonably small P. Since replacement
 selection produces about N/2M runs and each merging pass divides the
 number of runs by P, this means P should be chosen to be the smallest integer
-with _P2_ - _N/2M._ For our example of sorting a 200-million-word file on a
-computer with a l-million-word memory, this implies that _P_ = 11 would be a
-safe choice to ensure a two-pass sort. (The right value of _P could be computed_
-
+with P2 - N/2M. For our example of sorting a 200-million-word file on a
+computer with a l-million-word memory, this implies that P = 11 would be a
+safe choice to ensure a two-pass sort. (The right value of P could be computed
 
 ###### N/2M
-
-
-_P2_
-
-
------
+P2
 
 EXTERNAL SORTING 163
 
 exactly after the sort phase is completed ) The best choice between these two
-alternatives of the lowest reasonable value of _P_ and the highest reasonable
-value of _P_ is obviously very dependent on many systems parameters: both
+alternatives of the lowest reasonable value of P and the highest reasonable
+value of P is obviously very dependent on many systems parameters: both
 alternatives (and some in between) should be considered.
 
-_Polyphase Merging_
+Polyphase Merging
 
 One problem with balanced multiway merging for tape sorting is that it
 requires either an excessive number of tape units or excessive copying. For
-P-way merging either we must use _2P_ t lpes _(P_ for input and _P_ for output)
-or we must copy almost all of the file from a single output tape to _P_ input
+P-way merging either we must use 2P t lpes (P for input and P for output)
+or we must copy almost all of the file from a single output tape to P input
 tapes between merging passes, which effectively doubles the number of passes
 to be about 21og,(N/2M). S everal clevl:r tape-sorting algorithms have been
 invented which eliminate virtually all of this copying by changing the way in
 which the small sorted blocks are merged together. The most prominent of
-these methods is called _polyphase_ mergir;g.
+these methods is called polyphase mergir;g.
 
 The basic idea behind polyphase merging is to distribute the sorted blocks
 produced by replacement selection somewhat unevenly among the available
@@ -12741,52 +10110,34 @@ memory that can only hold two records.:
 Tape I : A 0 R S T I N A G N D E M R G I N
 
 ###### Tape,2:EGX A M P E L
-_Tape_ _3:_
+Tape 3:
 
 After three 2-way merges from tape3 1 and 2 to tape 3, the second tape
 becomes empty and we are left with the configuration:
 
-_T a p e l :_ D E M R G I N
-_Tape_ _2:_
+T a p e l : D E M R G I N
+Tape 2:
 ###### TapeS:AEGOR STX A I M N P A E G L N
-
 Then, after two 2-way merges from tapes 1 and 3 to tape 2, the first tape
 becomes empty, leaving:
 
-_Tape 1:_
+Tape 1:
 ###### TapeZ:ADEEGMORRSTX A G I I M N N P Tape3:AEGLN
-
-
 ###### TapeZ:ADEEGMORRSTX
-
-
 ###### TapeS:AEGOR
-
-
 ###### Tape,2:EGX
-
-
 mergir;g.
 
-
 ###### STX
-
-
 tape3
-
 
 thc:n
 
-
-_3:_
-
+3:
 
 S
 
-
------
-
-164 _CHAPTER 13_
+164 CHAPTER 13
 
 The sort is completed in two more steps. First, a two-way merge from
 tapes 2 and 3 to tape 1 leaves one file on tape 2, one file on tape 1. Then a
@@ -12805,13 +10156,13 @@ Continuing in this way, we eventually get the whole sorted file onto Tl:
 Tl T2 T3 T4
 
 0 13 11 7
-_7_ _6_ _4_ _0_
-_3_ _2_ _0_ _4_
-_1_ _0_ _2_ _2_
+7 6 4 0
+3 2 0 4
+1 0 2 2
 0 1 1 1
 1 0 0 0
 
-The merge is broken up into many _phases_ which don’t involve all the data,
+The merge is broken up into many phases which don’t involve all the data,
 but no direct copying is involved.
 
 The main difficulty in implementing a polyphase merge is to determine
@@ -12832,14 +10183,8 @@ distributing dummy runs among the tapes involves using extra phases and
 more dummy runs than would seem to be needed. The reason for this is that
 some runs are used in merges much more often than others.
 
-
 ###### Tl:
-
-
 Tl
-
-
------
 
 EXTERNAL SORTING 165
 
@@ -12849,13 +10194,13 @@ subject has been studied extensively, ant many fascinating methods have been
 defined. However, as mentioned above, the savings achievable over the simple
 multiway balanced merge are quite limited. Even polyphase merging is only
 better than balanced merging for small P, and then not substantially. For
-_P_ - 8, balanced merging is likely to run j’aster than polyphase, and for smaller
-_P_ the effect of polyphase is basically to sue two tapes (a balanced merge with
+P - 8, balanced merging is likely to run j’aster than polyphase, and for smaller
+P the effect of polyphase is basically to sue two tapes (a balanced merge with
 two extra tapes will run faster).
 
-An _Easier Way_
+An Easier Way
 
-Many modern computer systems provide a large _virtual memory_ capability
+Many modern computer systems provide a large virtual memory capability
 which should not be overlooked in imp ementing a method for sorting very
 large files. In a good virtual memory syf#tem, the programmer has the ability
 to address a very large amount of data, leaving to the system the responsibility
@@ -12876,39 +10221,30 @@ is implemented. On the other hand, th’: strategy of using a simple internal
 sorting method for sorting disk files desl:rves serious consideration in a good
 virtual memorv environment.
 
-
 would be disastrous on a virtual memory system, and even Quicksort could
-
 
 desl:rves
 
-
 virtual memorv environment.
-
 
 t&ken
 
-
 we have not considered at all is the timt: that it takes to rewind a tape. This
-
 
 subject has been studied extensively, ant many fascinating methods have been
 
-
------
-
 166
 
-_Exercises_
+Exercises
 
-1. Describe how you would do external _selection:_ find the kth largest in a
+1. Describe how you would do external selection: find the kth largest in a
 file of N elements, where N is much too large for the file to fit in main
 memory.
 
 2. Implement the replacement selection algorithm, then use it to test the
 claim that the runs produced are about twice the internal memory size.
 
-3. What is the _worst_ that can happen when replacement selection is used to
+3. What is the worst that can happen when replacement selection is used to
 produce initial runs in a file of N records, using a priority queue of size
 
 M, with M < N.
@@ -12936,9 +10272,6 @@ run on a very large file within a virtual memory environment?
 a way to support the insert and remove operations of Chapter 11, when
 the number of elements in the priority queue could grow to be much to
 large for the queue to fit in main memory.)
-
-
------
 
 167
 
@@ -12970,43 +10303,31 @@ keys, records and files as well as many other details, and it is often interesti
 to identify how the algorithms themselv:s are brought into play.
 
 M. R. Brown, “Implementation and am.lysis of binomial queue algorithms,”
-_SIAM Journal_ of Computing, 7, 3, (August, 1978).
+SIAM Journal of Computing, 7, 3, (August, 1978).
 
-C. A. R. Hoare, “Quicksort,” _Computer Journal, 5, 1_ (1962).
+C. A. R. Hoare, “Quicksort,” Computer Journal, 5, 1 (1962).
 
-D. E. Knuth, _The Art_ of _Computer_ Programming. Volume S: _Sorting_ and
+D. E. Knuth, The Art of Computer Programming. Volume S: Sorting and
 Searching, Addison-Wesley, Reading, M9, second printing, 1975.
 
-R. L. Rivest and D. E. Knuth, “BibliogIaphy 26: Computing Sorting,” Computing _Reviews,_ 13, 6 (June, 1972).
+R. L. Rivest and D. E. Knuth, “BibliogIaphy 26: Computing Sorting,” Computing Reviews, 13, 6 (June, 1972).
 
 R. Sedgewick, Quicksort, Garland, New York, 1978. (Also appeared as the
 author’s Ph.D. dissertation, Stanford University, 1975).
 
-
 those we have discussed to general-purpoire practical implementations, a reader
-
 
 R. L. Rivest and D. E. Knuth, “BibliogIaphy 26: Computing Sorting,” Com-
 
-
 that we’ve quoted on performance chal,acteristics of the various algorithms
-
 
 to identify how the algorithms themselv:s are brought into play.
 
-
 There is a vast amount of literatllre on sorting. Knuth and Rivest’s
-
 
 C. A. R. Hoare, “Quicksort,”
 
-
 S:
-
-
------
-
------
 
 ```
 SEARCHING
@@ -13014,33 +10335,22 @@ SEARCHING
 ```
 
 ###### f
-
-
-**I**
+I
 
 i
 
 ###### !t-
-
-
 ###### I
-
-
------
-
------
-
 ###### 14. Elementary Searching Methods
-
 A fundamental operation intrinsic ;o a great many computational tasks
-is _searching:_ retrieving some partic-liar information from a large amount
+is searching: retrieving some partic-liar information from a large amount
 of previously stored information. Normally we think of the information as
-divided up into records, each record haling a _key_ for use in searching. The
-goal of the search is to find all records with keys matching a given _search key._
+divided up into records, each record haling a key for use in searching. The
+goal of the search is to find all records with keys matching a given search key.
 The purpose of the search is usually to ;1ccess information within the record
 (not merely the key) for processing.
 Two common terms often used to describe data structures for searching
-are _dictionaries_ and _symbol tables._ For example, in an English language dictionary, the “keys” are the words and the “records” the entries associated with
+are dictionaries and symbol tables. For example, in an English language dictionary, the “keys” are the words and the “records” the entries associated with
 the words which contain the definition, pronunciation, and other associated information. (One can prepare for learning and appreciating searching methods
 by thinking about how one would implenent a system allowing access to an
 English language dictionary.) A symbol table is the dictionary for a program:
@@ -13061,25 +10371,20 @@ could be substituted easily. The operations of interest include:
 
 171
 
-
 Two common terms often used to describe data structures for searching
-
 
 stelre
 
+172 CHAPTER 14
 
------
-
-172 _CHAPTER 14_
-
-_Initialize_ the data structure.
-_Search_ for a record (or records) having a given key.
+Initialize the data structure.
+Search for a record (or records) having a given key.
 Insert a new record.
-_Delete_ a specified record.
-_Join_ two dictionaries to make a large one.
-_Sort_ the dictionary; output all the records in sorted order.
+Delete a specified record.
+Join two dictionaries to make a large one.
+Sort the dictionary; output all the records in sorted order.
 As with priority queues, it is sometimes convenient to combine some of these
-operations. For example, a _search and insert_ operation is often included for
+operations. For example, a search and insert operation is often included for
 efficiency in situations where records with duplicate keys are not to be kept
 within the data structure. In many methods, once it has been determined
 that a key does not appear in the data structure, then the internal state of
@@ -13092,30 +10397,27 @@ this data structure might contain, for example, a link to a list of all records
 having that key. This is the most convenient arrangement from the point
 of view of the design of searching algorithms, and it is convenient in some
 applications since all records with a given search key are returned with one
-_search._ The second possibility is to leave records with equal keys in the
+search. The second possibility is to leave records with equal keys in the
 primary searching data structure and return any record with the given key
 for a search. This is simpler for applications that process one record at a
 time, where the order in which records with duplicate keys are processed is
 not important. It is inconvenient from the algorithm design point of view
 because some mechanism for retrieving all records with a given key must still
 be provided. A third possibility is to assume that each record has a unique
-identifier (apart from the key), and require that _a search_ find the record with
+identifier (apart from the key), and require that a search find the record with
 a given identifier, given the key. Or, some more complicated mechanism could
 be used to distinguish among records with equal keys.
 Each of the fundamental operations listed above has important applications, and quite a large number of basic organizations have been suggested to
 support efficient use of various combinations of the operations. In this and the
 next few chapters, we’ll concentrate on implementations of the fundamental
-functions _search_ and insert (and, of course, _initialize),_ with some comment on
-_delete_ and _sort_ when appropriate. As with priority queues, the _join_ operation
+functions search and insert (and, of course, initialize), with some comment on
+delete and sort when appropriate. As with priority queues, the join operation
 normally requires advanced techniques which we won’t be able to consider
 here.
 
-_Sequential Searching_
+Sequential Searching
 
 The simplest method for searching is simply to store the records in an array,
-
-
------
 
 ELEMENTARY SEARCHING METHCDS 173
 
@@ -13166,48 +10468,31 @@ testing whether the index returned is g;reater than N will tell whether the
 search found the sentinel or a key from the table. This is analogous to our
 use of a sentinel record containing the smallest or largest key value to simplify
 
-
 ###### a[N+l].key:=v;
-
-
 seqinsert:=N;
-
 
 search(v,
 
-
 ###### (x<=N)
-
-
 seqinsel
-
 
 begin N:=O er d;
 
-
 vrill
-
 
 to extend the programs to handle more complicated records and keys, but
 
-
 ###### =x
-
-
 ;
-
 
 :
 
-
------
-
-174 **CHAF’TER 14**
+174 CHAF’TER 14
 
 the coding of the inner loop of various sorting algorithms.
 This method takes about N steps for an unsuccessful search (every record
 must be examined to decide that a record with any particular key is absent)
-and about N/2 steps, on the average, for a **_successful_** search (a “random”
+and about N/2 steps, on the average, for a successful search (a “random”
 search for a record in the table will require examining about half the entries,
 on the average).
 
@@ -13218,94 +10503,73 @@ and thus can be naturally adapted to use a linked list representation for the
 records. One advantage of doing so is that it becomes easy to keep the list
 sorted, as shown in the following implementation:
 
-**type** link=rnode;
+type link=rnode;
 
-**node=record key, info:** integer; **_next:_** link **end;**
-**var** head, t, z: link;
+node=record key, info: integer; next: link end;
+var head, t, z: link;
 i: integer;
-**procedure** initialize;
-**begin**
-**_new(z); zt.next:=z;_**
+procedure initialize;
+begin
+new(z); zt.next:=z;
 
 new(head); headf.next:=z;
 
-**end** **;**
+end ;
 
-**function** listsearch(v: integer; t: link): link;
-**begin**
-**_zf.key:=v;_**
-**repeat t : = tt** **_.next_** **until v< = tt .key;**
-**if v=tt** **.key then listsearch :=** t
+function listsearch(v: integer; t: link): link;
+begin
+zf.key:=v;
+repeat t : = tt .next until v< = tt .key;
+if v=tt .key then listsearch := t
 
-**else lis** tsearch : = z
+else lis tsearch : = z
 
-**end ;**
+end ;
 
-**function** listinsert (v: integer; t : link) : link;
-**var** x: link;
-**begin**
+function listinsert (v: integer; t : link) : link;
+var x: link;
+begin
 
-**zf.key:=v;**
+zf.key:=v;
 
-**while** tt.nextt.key<v **do** t:=tt.next;
+while tt.nextt.key<v do t:=tt.next;
 
 new(x); xt.next:=tf.next; tt.next:=x;
-**_xf.key:=v;_**
+xf.key:=v;
 
 Jistinsert:=x;
 
-**end ;**
+end ;
 
 With a sorted list, a search can be terminated unsuccessfully when a record
 with a key larger than the search key is found. Thus only about half the
 
-
 ###### xt.next:=tf.next;
-
-
 new(head); headf.next:=z;
-
 
 Jistinsert:=x;
 
-
 link=rnode;
 
-
 ###### t:=tt.next;
+zf.key:=v;
 
+CHAF’TER 14
 
-**_zf.key:=v;_**
-
-
-**CHAF’TER 14**
-
-
-**.key;**
-
+.key;
 
 ###### lis
-
-
-**_tt_**
-
+tt
 
 tt
 
-
 t,
 
+t
 
 t
 
-
-t
-
-
-**;**
-
-
------
+;
 
 ELEMENTARY SEARCHING METHO.DS 175
 
@@ -13336,7 +10600,7 @@ on the record access distributions, so it it; difficult to predict how it will d
 general. However, it is well suited to the quite common situation when most
 of the accesses to each record tend to happen close together.
 
-Binary _Search_
+Binary Search
 
 If the set of records is large, then the total search time can be significantly
 reduced by using a search procedure based on applying the “divide-andconquer” paradigm: divide the set of records into two parts, determine which
@@ -13351,51 +10615,39 @@ recursive call is involved, it is simpler to express the method iteratively.) Th
 brings us directly to the following implementation, which assumes that the
 array a is sorted.
 
-
 brings us directly to the following implementation, which assumes that the
-
 
 approximation to the optimal arrangerlent can be achieved with a
 
-
 duplica,te
-
 
 lis6search
 
-
 t’elongs
 
-
 ###### th:m.
-
-
 the
-
 
 lj
 
-
------
-
 176 CHAPTER 14
 
-**function** binarysearch (v: integer) : integer;
-**var** x, 1, r: integer;
-**begin**
-**1:=1; r:=N;**
-**repeat**
+function binarysearch (v: integer) : integer;
+var x, 1, r: integer;
+begin
+1:=1; r:=N;
+repeat
 
-**_x:=(I+r)_** **div 2;**
-**if** **_v<a[x].key_** **then** **_r:=x-l_** **else 1:=x+1**
+x:=(I+r) div 2;
+if v<a[x].key then r:=x-l else 1:=x+1
 
-**until** **_(v=a[x].key) or_** **_(br);_**
+until (v=a[x].key) or (br);
 
-**if** v=a **[x] .key then** binarysearch :=x
+if v=a [x] .key then binarysearch :=x
 
-**else** binarysearch := N+ 1
+else binarysearch := N+ 1
 
-**end** **;**
+end ;
 
 Like Quicksort and radix exchange sort, this method uses the pointers 1 and
 ###### r to delimit the subfile currently being worked on. Each time through the
@@ -13425,40 +10677,20 @@ over one position. A random insertion requires that N/2 records be moved,
 on the average. Thus, this method should not be used for applications which
 involve many insertions.
 
-
 ###### AAACEEEGMILMNPRSX
-
-
 ###### PNS
-
-
 ###### (br);
-
-
 ###### r:=x-l
-
-
 subfiles
 
-
 ###### x+1,
-
-
 ###### rls
-
-
 ###### :=x
-
+1
 
 1
 
-
-1
-
-
------
-
-_ELEMENTARY_ _SEARCHING_ _METHODS_ **1 7 7**
+ELEMENTARY SEARCHING METHODS 1 7 7
 
 Some care must be exercised to pro.)erly handle records with equal keys
 for this algorithm: the index returned cmluld fall in the middle of a block of
@@ -13480,37 +10712,27 @@ precisely where the key being sought falls Tvithin the current interval of inter
 (rather than blindly using the middle element at each step). This mimics the
 way one looks up a number in the telephone directory, for example: if the
 name sought begins with B, one looks r(ear the beginning, but if it begins
-with Y, one looks near the end. This method, called _interpolation search,_
+with Y, one looks near the end. This method, called interpolation search,
 requires only a simple modification to the program above. In the program
 above, the new place to search (the midpoint of the interval) is computed
-with the statement x:=(l+r) **div** 2. This is derived from the computation
+with the statement x:=(l+r) div 2. This is derived from the computation
 z = 1+ $(r - 1): the middle of the interval is computed by adding half the size
 of the interval to the left endpoint. Inte*polation search simply amounts to
 replacing i in this formula by an estima;e of where the key might be based
 on the values available: i would be appropriate if v were in the middle of the
-interval between a[I].key and _a[r].key,_ but we might have better luck trying
-
+interval between a[I].key and a[r].key, but we might have better luck trying
 
 of the interval to the left endpoint. Inte*polation search simply amounts to
 
-
-_a[r].key,_
-
+a[r].key,
 
 time for the search is proportional to lg)V plus the number of records found.
 
-
 The sequence of comparisons made by the binary search algorithm is
-
 
 z = 1+ $(r
 
-
 ###### i
-
-
------
-
 178 CHAPTER 14
 
 x:=J+(v-a[J].Jcey)*(r-J) div (a[r].Jcey-a[J].key). Of course, this assumes
@@ -13538,62 +10760,50 @@ to be worthwhile. But interpolation search certainly should be considered for
 large files, for applications where comparisons are particularly expensive, or
 for external methods where very high access costs are involved.
 
-Binary _Tree Search_
+Binary Tree Search
 
 Binary tree search is a simple, efficient dynamic searching method which
 qualifies as one of the most fundamental algorithms in computer science. It’s
 classified here as an “elementary” method because it is so simple; but in fact
 it is the method of choice in many situations.
 The idea is to build up an explicit structure consisting of nodes, each
-node consisting of a record containing a key and left and _right_ links. The
+node consisting of a record containing a key and left and right links. The
 left and right links are either null, or they point to nodes called the left son
-and the _right_ son. The sons are themselves the roots of trees, called the left
+and the right son. The sons are themselves the roots of trees, called the left
 
-_subtree_ and the _right_ subtree respectively. For example, consider the following
+subtree and the right subtree respectively. For example, consider the following
 diagram, where nodes are represented as encircled key values and the links by
 lines connected to nodes:
 
-
 ###### AAACEEEGHILMNPRSX
-
-
 CHAPTER 14
-
 
 1)*(17
 
-
 subtree
 
-
 ###### N
-
-
 S,
 
+ELEMENTARY SEARCHTNG METHODS 179
 
------
+E
 
-ELEMENTARY SEARCHTNG METHODS **179**
+A R
 
-**E**
+C H
 
-**A** **R**
-
-**C** **H**
-
-**I**
+I
 
 # e?
-
 The links in this diagram all point down. Thus, for example, E’s right link
 points to R, but H’s left link is null.
 
-The defining property of a _tree_ is that every node is pointed to by only
-one other node called its _father._ (We assume the existence of an imaginary
-node which points to the root.) The defining property of a binary _tree_ is that
+The defining property of a tree is that every node is pointed to by only
+one other node called its father. (We assume the existence of an imaginary
+node which points to the root.) The defining property of a binary tree is that
 each node has left and right links. For s:arching, each node also has a record
-with a key value; in a _binary_ search _tree_ we insist that all records with smaller
+with a key value; in a binary search tree we insist that all records with smaller
 keys are in the left subtree and that i.11 records in the right subtree have
 larger (or equal) key values. We’ll soon see that it is quite simple to ensure
 that binary search trees built by successively inserting new nodes satisfy this
@@ -13615,55 +10825,44 @@ tree to describe the sequence of comparisons made by a function searching
 in an array; here we actually construct 2. data structure of records connected
 with links which is used for the search.)
 
+E
 
-**E**
+A R
 
-**A** **R**
+C H
 
-**C** **H**
-
-**I**
+I
 
 # e?
-
-
 SEARCHTNG METHODS
-
 
 overuse,1
 
-
 betlveen
-
 
 always
 
-
 U,
-
 
 2.
 
+180 CHAPTER 14
 
------
+type link=tnode;
 
-180 **_CHAPTER 14_**
-
-**type** link=tnode;
-
-**node=record** key, info: integer; 1, r: link **end;**
-**var** t, head, z: link;
-**function** treesearch(v: integer; x: link): link;
-**begin**
+node=record key, info: integer; 1, r: link end;
+var t, head, z: link;
+function treesearch(v: integer; x: link): link;
+begin
 
 zt.key:=v;
 
-**repeat**
-**if** v<xf.key **then** **x:=xt.l else** **x:=xt.r**
+repeat
+if v<xf.key then x:=xt.l else x:=xt.r
 
-**until** v=xt . key;
+until v=xt . key;
 treesearch : =x
-**end** **;**
+end ;
 
 As with sequential list searching, the coding in this program is simplified
 by the use of a “tail” node z. Similarly, the insertion code given below is
@@ -13676,8 +10875,8 @@ an unsuccessful search. Thus, the “current subtree” pointed to by x never
 becomes empty and all searches are “successful” : the calling program can
 check whether the link returned points to a to determine whether the search
 was successful. It is sometimes convenient to think of links which point to z as
-pointing to imaginary _external_ nodes with all unsuccessful searches ending at
-external nodes. The normal nodes which cont,ain our keys are called _internal_
+pointing to imaginary external nodes with all unsuccessful searches ending at
+external nodes. The normal nodes which cont,ain our keys are called internal
 nodes; by introducing external nodes we can say that every internal node
 points to two other nodes in the tree, even though, in our implementation, all
 of the external nodes are represented by the single node z.
@@ -13693,51 +10892,37 @@ To insert a node into the tree, we just do an unsuccessful search for it,
 then hook it on in place of z at the point where the search terminated, as in
 the following code:
 
-
 treesearch(v, head).
-
 
 link=tnode;
 
-
 zt.key:=v;
 
-
 ###### x:=xt.r
-
-
 subtree”
-
 
 If a node has no left (right) subtree then its left (right) link is set to
 
-
 ###### =x
-
-
 a
-
-
------
 
 ELEMENTARY SEARCHING METHODS 181
 
-**function** treeinsert(v: integer; x:link): link;
-**var** f: link;
-**begin**
-**repeat**
+function treeinsert(v: integer; x:link): link;
+var f: link;
+begin
+repeat
 
 ###### f:=x;
+if v<xf.key then x:=x1.1 else x:=x7.1-
 
-**if** v<xf.key **then x:=x1.1 else x:=x7.1-**
-
-**until x=z;**
+until x=z;
 new(x); xf.key:=v; xt.l:=z; xf.r:=z;
-**if** v<ff.key **then f/.1:=x else** **f/x=x;**
+if v<ff.key then f/.1:=x else f/x=x;
 
 treeinsert:=x
 
-**end** **;**
+end ;
 
 To insert a new key in a tree with a tree header node pointed to by head, we
 call treeinsert(v, head). To be able to do the insertion, we must keep track of
@@ -13760,13 +10945,13 @@ are all positive integers). The left link of head is not used. The empty tree is
 represented by having the right link of head point to z, as constructed by the
 following code:
 
-**procedure** treeinitialize;
-**begin**
+procedure treeinitialize;
+begin
 new(z); new(head);
 
 headt.key:=O; headf.r:=z;
 
-**end** **;**
+end ;
 
 To see the need for head, consider what happens when the first node is inserted
 into an empty tree constructed by treeinitialize.
@@ -13774,32 +10959,16 @@ into an empty tree constructed by treeinitialize.
 The diagram below shows the tree constructed when our sample keys are
 inserted into an initially empty tree.
 
-
 headt.key:=O;
 
-
 ###### headf.r:=z;
-
-
 search(v,
 
-
 ###### xf.r:=z;
-
-
 ###### x:link):
-
-
 ###### xt.l:=z;
-
-
 ###### f:=x;
-
-
-**;**
-
-
------
+;
 
 182 CHAPTER 14
 
@@ -13807,41 +10976,33 @@ The nodes in this tree are numbered in the order in which they were inserted.
 Since new nodes are added at the bottom of the tree, the construction process
 can be traced out from this diagram: the tree as it was after Ic records had been
 inserted is simply the part of the tree consisting only of nodes with numbers
-less than _k_ (and keys from the first _k_ letters of A S E A R C H I N G E X A
+less than k (and keys from the first k letters of A S E A R C H I N G E X A
 M P L E).
 The sort function comes almost for free when binary search trees are
 used, since a binary search tree represents a sorted file if you look at it the
 right way. Consider the following recursive program:
 
-**procedure** treeprint (x: link) ;
+procedure treeprint (x: link) ;
 
-**begin**
-**if x< > a then**
-**begin**
+begin
+if x< > a then
+begin
 
 treeprint (xl .I) ;
 
-**_printnode(_**
+printnode(
 
 treeprint(xf.r)
 
-**end**
-**end ;**
-
+end
+end ;
 
 treeprint
 
-
 ###### x<
-
-
 Ic
 
-
 ;
-
-
------
 
 ELEMENTARY SEARCHING METHODS
 
@@ -13872,32 +11033,25 @@ sequential search method that we saw at the beginning of this chapter. In the
 next chapter, we’ll examine a technique for eliminating this worst case and
 making all trees look more like the best-case tree.
 The implementations given above for the fundamental search, insert, and
-_sort_ functions using binary tree structures are quite straightforward. However,
+sort functions using binary tree structures are quite straightforward. However,
 binary trees also provide a good example of a recurrent theme in the study
-of searching algorithms: the _delete_ function is often quite cumbersome to
+of searching algorithms: the delete function is often quite cumbersome to
 implement. To delete a node from a binary tree is easy if the node has no
 sons, like L or P in the tree above (lop it off by making the appropriate link
 in its father null); or if it has just one son, like G or R in the tree above
 (move the link in the son to the appropriate father link); but what about
 nodes with two sons, such as H or S in the tree above? Suppose that x is a
 link to such a node. One way to delete the node pointed to by x is to first set
-y to the node with the _next_ highest key. By examining the treeprint routine,
+y to the node with the next highest key. By examining the treeprint routine,
 one can become convinced that this node must have a null left link, and that
-it can be found by _y:=xf.r;_ **while** yt.l<>z **do** p:=yt.l. Now the deletion can
-be accomplished by copying yfkey and yf.info into _xt.key_ and xt.info, then
+it can be found by y:=xf.r; while yt.l<>z do p:=yt.l. Now the deletion can
+be accomplished by copying yfkey and yf.info into xt.key and xt.info, then
 
-
-_y:=xf.r;_
-
+y:=xf.r;
 
 and yf.info into
 
-
 ###### yfkey
-
-
------
-
 184 CIfAPTER 14
 
 deleting the node pointed to by y. Thus, we delete H in the example above
@@ -13910,24 +11064,24 @@ quite typical for searching algorithms to require significantly more complicated
 implementations for deletion: the keys themselves tend to be integral to the
 structure, and removal of a key can involve complicated repairs.
 
-**_Indirect_** Binary Search Trees
+Indirect Binary Search Trees
 
 As we saw with heaps in Chapter 11, for many applications we want a searching structure to simply help us find records, without moving them around.
 For example, we might have an array a[l..N] of records with keys, and we
-would like the **_search_** routine to give us the index into that array of the record
+would like the search routine to give us the index into that array of the record
 matching a certain key. Or we might want to remove the record with a given
 index from the searching structure, but still keep it in the array for some
 other use.
 To adapt binary search trees to such a situation, we simply make the
-**_info_** field of the nodes the array index. Then we could eliminate the **_key_** field
+info field of the nodes the array index. Then we could eliminate the key field
 by having the search routines access the keys in the records directly, e.g. via
-an instruction like if **_v<a[xt .info]_** **then.** . . . However, it is often better to
+an instruction like if v<a[xt .info] then. . . . However, it is often better to
 make a copy of the key, and use the code above just as it is given. We’ll
 use the function name bstinsert(v, info: integer; x: link) to refer to a function
 just like treeinsert, except that it also sets the info field to the value given
 in the argument. Similarly, a function bstdelete(v,info: integer;x: link) to
 delete the node with key v and array index info from the binary search tree
-rooted at x will refer to an implementation of the **_delete_** function as described
+rooted at x will refer to an implementation of the delete function as described
 above. These functions use an extra copy of the keys (one in the array, one
 in the tree), but this allows the same function to be used for more than one
 array, or as we’ll see in Chapter 27, for more than one key field in the same
@@ -13936,29 +11090,20 @@ be associated with each tree which extracts keys from records.)
 Another direct way to achieve “indirection” for binary search trees is to
 simply do away with the linked implementation entirely. That is, all links just
 become indices into an array a[1 ..N] of records which contain a key field and 1
-and r index fields. Then link references such as if **_v<xf.key_** then x:=x7.1 else
+and r index fields. Then link references such as if v<xf.key then x:=x7.1 else
 
-. . . become array references such as **if v<a[x].key** **then x:=a[x].J else.. . . No**
-calls to **_new_** are used, since the tree exists within the record array: new(head)
-becomes head:=& **_new(z)_** becomes z:=iV+1, and to insert the Mth node, we
-would pass M, not v, to treeinsert, and then simply refer to **_a[M].key_** instead
-of v and replace the line containing **_new(x)_** in treeinsert with x:=M. This
+. . . become array references such as if v<a[x].key then x:=a[x].J else.. . . No
+calls to new are used, since the tree exists within the record array: new(head)
+becomes head:=& new(z) becomes z:=iV+1, and to insert the Mth node, we
+would pass M, not v, to treeinsert, and then simply refer to a[M].key instead
+of v and replace the line containing new(x) in treeinsert with x:=M. This
 
-
-**_v<xf.key_**
-
+v<xf.key
 
 becomes head:=&
 
-
 ###### x:=x7.1
-
-
 ###### r
-
-
------
-
 ELEMENTARY SEARCHING METHODS 185
 
 way of implementing binary search trees to aid in searching large arrays of
@@ -13968,30 +11113,26 @@ storage allocation mechanism implied by new. The disadvantage is that space
 is reserved with the record array for links which may not be in use, which
 could lead to problems with large arrays in a dynamic situation.
 
-
------
-
 186
 
-_Exercises_
+Exercises
 
 1. Implement a sequential searching algorithm which averages about N/2
 steps for both successful and unsuccessful search, keeping the records in
 a sorted array.
 
 2. Give the order of the keys after records with the keys E A S Y Q U E S T
-I 0 N have been put into an intially empty table with _search_ and insert
+I 0 N have been put into an intially empty table with search and insert
 using the self-organizing search heuristic.
 
 3. Give a recursive implementation of binary search.
-
 4. Suppose a[i]=2i for 1 5 i 5 N. How many table positions are examined
-by interpolation search during the unsuccessful search for _2k -_ l?
+by interpolation search during the unsuccessful search for 2k - l?
 
 5. Draw the binary search tree that results from inserting records with the
 keys E A S Y Q U E S T I 0 N into an initially empty tree.
 
-6. Write a recursive program to compute the _height_ of a binary tree: the
+6. Write a recursive program to compute the height of a binary tree: the
 longest distance from the root to an external node.
 
 7. Suppose that we have an estimate ahead of time of how often search keys
@@ -14006,25 +11147,17 @@ have an equal key.)
 9. Write a nonrecursive program to print out the keys from a binary search
 tree in order.
 
-10. Use a least-squares curvefitter to find values of a and _b_ that give the best
-formula of the form aN In N + _bN_ for describing the total number of
+10. Use a least-squares curvefitter to find values of a and b that give the best
+formula of the form aN In N + bN for describing the total number of
 instructions executed when a binary search tree is built from N random
 keys.
 
-
 ###### a[i]=2i
-
-
-_bN_
-
+bN
 
 S
 
-
------
-
 ###### 15. Balanced Trees
-
 The binary tree algorithms of the previous section work very well for
 a wide variety of applications, but they do have the problem of bad
 worst-case performance. What’s more, as with Quicksort, it’s embarrassingly
@@ -14049,7 +11182,7 @@ this chapter an important searching method, but also it is a nice illustration
 of the relationship between a “high-level” algorithm description and a “low
 level” Pascal program to implement the algorithm.
 
-_Top-Down_ _2-3-4 Trees_
+Top-Down 2-3-4 Trees
 
 To eliminate the worst case for binary search trees, we’ll need some flexibility
 in the data structures that we use. To get this flexibility, let’s assume that we
@@ -14057,13 +11190,9 @@ can have nodes in our trees that can hold more than one key. Specifically, we’
 
 187
 
-
 “low-
 
-
------
-
-188 _CHAPTER 15_
+188 CHAPTER 15
 
 allow J-nodes and d-nodes, which can hold two and three keys respectively. A
 3-node has t.hree links coming out of it, one for all records with keys smaller
@@ -14076,7 +11205,7 @@ three keys. (The nodes in a standard binary search tree could thus be called
 and implementing the basic operations on these extended nodes; for now, let’s
 assume we can manipulate them conveniently and see how they can be put
 together to form trees.
-For example, below is a &Y-4 _tree_ which contains some keys from our
+For example, below is a &Y-4 tree which contains some keys from our
 searching example.
 
 It is easy to see how to search in such a tree. For example, to search for
@@ -14099,32 +11228,25 @@ Now we need to put a second A into the 4-node. But notice that as far as
 the search procedure is concerned, the 4-node at the right above is exactly
 equivalent to the binary tree:
 
-
 ,%nodes:
-
 
 &Y-4
 
+BALANCED TREES 189
 
------
+E
 
-**_BALANCED TREES_** 189
-
-**E**
-
-**A** **s**
+A s
 
 ###### Feii
-
 If our algorithm “splits” the 4-node to make this binary tree before trying to
 insert the A, then there will be room for A at the bottom:
 
-**E**
+E
 
-**AA** **s**
+AA s
 
 ###### F5b-l
-
 Now R, C, and the H can be inserted, but when it’s time for I to be inserted,
 there’s no room in the 4-node at the right:
 
@@ -14139,16 +11261,11 @@ all the way back up the tree. An easier way is to make sure that the father of
 any node we see won’t be a 4-node by splitting any 4-node we see on the way
 down the tree. For example, when E is inserted, the tree above first becomes
 
+E
 
-**E**
-
-**A** **s**
+A s
 
 ###### Feii
-
-
------
-
 190
 
 This ensures that we could handle the situation at the bottom even if E were
@@ -14161,9 +11278,6 @@ should transform it into a 3-node connected to two 2-nodes:
 
 and every time we encounter a 3-node connected to a 4-node, we should
 transform it into a 4-node connected to two 2-nodes:
-
-
------
 
 BALANCED TREES
 
@@ -14183,7 +11297,7 @@ three 2-nodes, as we did for our first node split in the example above. This
 
 The algorithm sketched in the previous paragraph gives a way to do
 searches and insertions in 2-3-4 trees; since the 4-nodes are split up on the
-way from the top down, the trees are called _top-down_ 2-S-4 _trees._ What’s
+way from the top down, the trees are called top-down 2-S-4 trees. What’s
 interesting is that, even though we haven’t been worrying about balancing at
 all, the resulting trees are perfectly balanced! The distance from the root to
 every external node is the same, which implies that the time required by a
@@ -14211,21 +11325,15 @@ Fortunately, as we’ll see below, there is a relatively simple representation o
 way with very little overhead beyond the costs incurred by standard binary
 tree search.
 
-
 4-nodes,
-
 
 2-S-4
 
-
 N.
 
+192 CHAPTER 15
 
------
-
-192 _CHAPTER 15_
-
-Red-Black _Trees_
+Red-Black Trees
 
 Remarkably, it is possible to represent 2-3-4 trees as standard binary trees
 (2-nodes only) by using only one extra bit per node. The idea is to represent
@@ -14240,15 +11348,11 @@ way to represent the final tree from the example above. If we eliminate the
 red links and collapse the nodes they connect together, the result is the 2-3-4
 tree from above. The extra bit per node is used to store the color of the link
 pointing to that node: we’ll refer to 2-3-4 trees represented in this way as
-_red-black trees._
-
+red-black trees.
 
 “red”
 
-
------
-
-_BALANCED TREES_ 193
+BALANCED TREES 193
 
 The “slant” of each 3-node is determined by the dynamics of the algorithm
 to be described below. There are many red-black trees corresponding to each
@@ -14277,8 +11381,8 @@ keys) could be used.
 One very nice property of red-black trees is that the treesearch procedure
 for standard binary tree search works without modification (except for the
 problem with duplicate keys discussed in the previous paragraph). We’ll
-implement the link colors by adding a boolean field _red_ to each node which is
-true if the link pointing to the node is red, false if it is black; the _treesearch_
+implement the link colors by adding a boolean field red to each node which is
+true if the link pointing to the node is red, false if it is black; the treesearch
 procedure simply never examines that field. That is, no “overhead” is added
 by the balancing mechanism to the time taken by the fundamental searching
 procedure. Each key is inserted just once, but might be searched for many
@@ -14291,34 +11395,31 @@ the tree because we’re always breaking them up. The inner loop needs only
 one extra test (if a node has two red sons, it’s a part of a 4-node), as shown
 in the following implementation of the insert procedure:
 
+1 9 4 CHripTER 15
 
------
+function rbtreeinsert(v: integer; x:Jink) : link;
+var gg, g, f: link;
 
-**_1 9 4_** **_CHripTER 15_**
+begin
+f:=x; g:=x;
+repeat
 
-**function** rbtreeinsert(v: integer; x:Jink) : link;
-**var** gg, g, f: link;
-
-**begin**
-**f:=x; g:=x;**
-**repeat**
-
-**gg:=g; g:=f; f:=x;**
-**if v<xf.key then x:=xf.J else x:=xf.r;**
-**if xt.Jt.red and xt.rt.red** **then x:=spJit(v, gg, g,** f, x);
-**until x=8;**
-**_new(x); xt.key:=v; xt.J:=z; xt.r:=z;_**
-**if v<f/.key then f/.J:=x else Q.r:=x;**
+gg:=g; g:=f; f:=x;
+if v<xf.key then x:=xf.J else x:=xf.r;
+if xt.Jt.red and xt.rt.red then x:=spJit(v, gg, g, f, x);
+until x=8;
+new(x); xt.key:=v; xt.J:=z; xt.r:=z;
+if v<f/.key then f/.J:=x else Q.r:=x;
 rbtreeinsert:=x;
 x:=spJit(v, gg, g, f, x);
 
-**end** **;**
+end ;
 
-In this program, x moves down the tree as before, with gg, g, and **_f_** kept
+In this program, x moves down the tree as before, with gg, g, and f kept
 pointing to x’s great-grandfather, grandfather, and father in the tree. To see
 why all these links are needed, consider the addition of Y to the tree above.
 When the external node at the right of the 3-node containing S and X is
-reached, gg is R, g is S, and **_f_** is X. Now, Y must be added to make a 4-node
+reached, gg is R, g is S, and f is X. Now, Y must be added to make a 4-node
 containing S, X, and Y, resulting in the following tree:
 
 We need a pointer to R (gg) because R’s right link must be changed to point
@@ -14329,41 +11430,25 @@ To understand how io implement the split operation, let’s consider the
 red-black representation for the two transformations we must perform: if we
 have a 2-node connected to a 4-node, then we should convert them into a
 
-
 rbtreeinsert:=x;
-
 
 x:=spJit(v, gg, g,
 
+new(x); xt.key:=v; xt.J:=z; xt.r:=z;
 
-**_new(x); xt.key:=v; xt.J:=z; xt.r:=z;_**
-
-
-**_v<f/.key_**
-
+v<f/.key
 
 ###### xt.rt.red
-
-
 xt.Jt.red
 
-
 ###### x:=xf.r;
-
-
-**gg:=g; g:=f; f:=x;**
-
+gg:=g; g:=f; f:=x;
 
 g,
 
-
 f,
 
-
-**;**
-
-
------
+;
 
 BALANCED TREES 195
 
@@ -14383,32 +11468,19 @@ Thus, split will begin by marking x to be red and the sons of x to be black.
 This leaves the two other situations that can arise if we encounter a S-node
 connected to a 4-node:
 
-
 a
 
+196 CHAPTER 15
 
------
-
-**196** **_CHAPTER 15_**
-
-
-**196**
-
+196
 
 ###### g
+f
 
-**f**
-
-**X**
+X
 ### 6
-
-
 ###### * ?
-
-
 ###### ?
-
-
 (Actually, there are four situations, since the mirror images of these two can
 also occur for S-nodes of the other orientation.) In these cases, the split-up of
 the 4-node has left two red links in a row, an illegal situation which must be
@@ -14422,29 +11494,22 @@ Let’s begin with the easier of the two, the third case, where the red links
 are oriented the same way. The problem is that the 3-node was oriented the
 wrong way: accordingly, we restructure the tree to switch the orientation of
 the 3-node, thus reducing this case to be the same as the second, where the
-color flip of x and its sons was sufficient. Restructuring **the** tree to reorient a
+color flip of x and its sons was sufficient. Restructuring the tree to reorient a
 S-node involves changing three links, as shown in the example below:
 
+f
 
-**f**
-
-**X**
+X
 ### 6
-
-
 ###### *
+BALANCED TREES 197
 
-
------
-
-_BALANCED_ **TREES** 197
-
-In this diagram, _TI_ represents the tree containing all the records with keys
-less than A, _Tz,_ contains all the records with keys between A and B, and so
+In this diagram, TI represents the tree containing all the records with keys
+less than A, Tz, contains all the records with keys between A and B, and so
 forth. The transformation switches the orientation of the S-node containing
 A and B without disturbing the rest of the tree. Thus none of the keys in
 
-_TI,_ _Tz,_ _T3,_ and _T,_ are touched. In this case, the transformation is effected by
+TI, Tz, T3, and T, are touched. In this case, the transformation is effected by
 the link changes st.l:=gsf.r; gst.r:=s; yt.l:=gs. Also, note carefully that the
 colors of A and B are switched. There are three analogous cases: the 3-node
 could be oriented the other way, or it could be on the right side of y (oriented
@@ -14453,8 +11518,8 @@ Disregarding the colors, this single rotation operation is defined on any
 binary search tree and is the basis for several balanced tree algorithms. It is
 important to note, however, that doing a single rotation doesn’t necessarily
 improve the balance of the tree. In the diagram above, the rotation brings
-all the nodes in _Tl_ one step closer to the root, but all the nodes in _T3_ are
-lowered one step. If _T3_ were to have more nodes than _Tl,_ then the tree after
+all the nodes in Tl one step closer to the root, but all the nodes in T3 are
+lowered one step. If T3 were to have more nodes than Tl, then the tree after
 the rotation would become less balanced, not more balanced. Top-down 2-3-4
 trees may be viewed as simply a convenient way to identify single rotations
 which are likely to improve the balance.
@@ -14467,62 +11532,42 @@ not only the two links corresponding to s and gs but also whether they are
 right or left links. We have the following function for reorienting a 3-node
 along the search path for v whose father is y:
 
-**function** rotate(v: integer; y: link): link;
-**var** s,gs: link;
-**begin**
-**if v<yt.key then** **s:=yf.l else s:=yf.r;**
-**if v<st . key**
+function rotate(v: integer; y: link): link;
+var s,gs: link;
+begin
+if v<yt.key then s:=yf.l else s:=yf.r;
+if v<st . key
 
-**then begin gs:=sf.l;** st.l:=gsf.r; gst.r:=s **end**
-**else begin** gs:=st.r; sf.r:=gsf.l; gsf.I:=s **end;**
-**if** _v<yt.key_ **then yf.l:=gs else yf.r:=gs;**
+then begin gs:=sf.l; st.l:=gsf.r; gst.r:=s end
+else begin gs:=st.r; sf.r:=gsf.l; gsf.I:=s end;
+if v<yt.key then yf.l:=gs else yf.r:=gs;
 rotate:=gs
-**end** **;**
+end ;
 
 If s is the left link of y and gs is the left link of s, this makes exactly the link
 transformations for the diagram above. The reader may wish to check the
 
-
 ###### st.l:=gsf.r;
-
-
 ###### sf.r:=gsf.l;
-
-
 ###### yf.l:=gs
-
-
 gs:=st.r;
 
-
-**else yf.r:=gs;**
-
+else yf.r:=gs;
 
 ###### s:=yf.l
+Tz,
 
+Tz,
 
-_Tz,_
+Tl,
 
+T3
 
-_Tz,_
+T3
 
-
-_Tl,_
-
-
-_T3_
-
-
-_T3_
-
-
-_Tl_
-
+Tl
 
 s
-
-
------
 
 198 CHAPTER 15
 
@@ -14534,32 +11579,31 @@ rotate(v,gg), then make x black. This reorients the 3-node consisting of the
 two nodes pointed to by g and f and reduces this case to be the same as the
 second case, when the 3-node was oriented the right way.
 Finally, to handle the case when the two red links are oriented in different
-directions, we simply set **_f_** to rotate(v, g). This reorients the “illegal” S-node
+directions, we simply set f to rotate(v, g). This reorients the “illegal” S-node
 consisting of the two nodes pointed to by f and x. These nodes are the same
 color, so no color change is necessary, and we are immediately reduced to
 the third case. Combining this and the rotation for the third case is called a
-**_double rotation for obvious reasons._**
+double rotation for obvious reasons.
 This completes the description of the operations which must be performed
 by split. It must switch the colors of x and its sons, do the bottom part of a
 double rotation if necessary, then do the single rotation if necessary:
 
-**function** split(v: integer; gg, g, f, x: link): link;
-**begin**
+function split(v: integer; gg, g, f, x: link): link;
+begin
 ###### xf.red:=true; xt.lf.red:=false; xf.rt.red:=false;
+if ft.red then
+begin
 
-**if** **_ft.red_** **then**
-**begin**
+gf.red:= true;
 
-**_gf.red:= true;_**
-
-**if** **_(v<gf.key)<> (v<fi.key)_** **then** f:=rotate(v, g);
+if (v<gf.key)<> (v<fi.key) then f:=rotate(v, g);
 x:=rotate(v, gg);
 xf.red:=false
-**end** **;**
+end ;
 
 headf.rf.red:=false;
 ###### split:=x
-**end** **;**
+end ;
 
 This procedure takes care of fixing the colors after a rotation and also restarts
 x high enough in the tree to ensure that the search doesn’t get lost due
@@ -14573,29 +11617,17 @@ the end of split to keep ihe root black.
 Assembling the code fragments above gives a very efficient, relatively
 simple algorithm for insertion using a binary tree structure that is guaranteed
 
-
 headf.rf.red:=false;
 
-
 ###### xt.lf.red:=false;
-
-
 ###### xf.red:=true;
-
-
 f:=rotate(v, g);
 
-
-**_ft.red_**
-
+ft.red
 
 f,
 
-
-**;**
-
-
------
+;
 
 BALANCED TREES
 
@@ -14604,7 +11636,7 @@ is one of the few searching algorithms with that property, and its use is
 justified whenever bad worst-case performance simply cannot be tolerated.
 Furthermore, this is achieved at very little cost. Searching is done just as
 quickly as if the balanced tree were constructed by the elementary algorithm,
-and insertion involves only one extra bit test and an occasional _split._ For
+and insertion involves only one extra bit test and an occasional split. For
 random keys the height of the tree seems to be quite close to 1gN (and only
 one or two splits are done for the average insertion) but no one has been able
 to analyze this statistic for any balanced tree algorithm. Thus a key in a file
@@ -14612,7 +11644,7 @@ to analyze this statistic for any balanced tree algorithm. Thus a key in a file
 of, say, half a million records can be found by comparing it against only about
 twenty other keys.
 
-_Other Algorithms_
+Other Algorithms
 
 The “top-down 2-3-4 tree” implementation using the “red-black” framework
 given in the previous section is one of several similar strategies than have
@@ -14622,7 +11654,7 @@ at a particular view of the trees that makes it easy to decide when to rotate.
 Other views of the trees lead to other algorithms, a few of which we’ll mention
 briefly in this section.
 The oldest and most well-known data structure for balanced trees is the
-_AVL tree._ These trees have the property that the heights of the two subtrees
+AVL tree. These trees have the property that the heights of the two subtrees
 of each node differ by at most one. If this condition is violated because of
 an insertion, it turns out that it can be reinstated using rotations. But this
 requires an extra loop: the basic algorithm is to search for the value being
@@ -14631,30 +11663,25 @@ heights of nodes using rotations. Also, it is necessary to know whether each
 node has a height that is one less than, the same, or one greater than t,he
 height of its brother. This requires two bits if encoded in a straightforward
 way, though there is a way to get by with just one bit per node.
-A second well-known balanced tree structure is the 2-3 _tree, where only_
-2-nodes and 3-nodes are allowed. It is possible to implement _insert using an_
+A second well-known balanced tree structure is the 2-3 tree, where only
+2-nodes and 3-nodes are allowed. It is possible to implement insert using an
 “extra loop” involving rotations as with AVL trees, but there is not quite
 enough flexibility to give a convenient top-down version.
 In Chapter 18, we’ll study the most important type of balanced tree, an
 extension of 2-3-4 trees called B-trees. These allow up to M keys per node for
-large _M, and are widely used for searching applications involving very large_
+large M, and are widely used for searching applications involving very large
 files.
-
 
 t,he
 
+200
 
------
-
-_200_
-
-_Exercises_
+Exercises
 
 1. Draw the top-down 2-3-4 tree that is built when the keys E A S Y Q U
 E S T I 0 N are inserted into an initially empty tree (in that order).
 
 2. Draw a red-black representation of the tree from the previous question.
-
 3. Exactly what links are modified by split and rotate when Z is inserted
 (after Y) into the example tree for this chapter?
 
@@ -14682,29 +11709,20 @@ per node for “color”?
 4-nodes to be represented as any three nodes connected by two red links
 (perfectly balanced or not)?
 
-10. Use a least-squares curvefitter to find values of a and _b_ that give the
-best formula of the form aN 1gN + _bN_ for describing the total number
+10. Use a least-squares curvefitter to find values of a and b that give the
+best formula of the form aN 1gN + bN for describing the total number
 of instructions executed when a red-black tree is built from N random
 
 keys.
 
-
 lOOO-node
 
-
-_bN_
-
+bN
 
 ###### N
-
-
 Z
 
-
------
-
 ###### 16. Hashing
-
 A completely different approach to searching from the comparison
 based tree structures of the last section is provided by hashing: directly
 referencing records in a table by doing arithmetic transformations on keys
@@ -14713,7 +11731,7 @@ from 1 to N, then we could store the record with key i in table position i,
 ready for immediate access with the key value. Hashing is a generalization
 of this trivial method for typical searching applications when we don’t have
 such specialized knowledge about the key values.
-The first step in a search using hashing is to compute a _hush_ function
+The first step in a search using hashing is to compute a hush function
 which transforms the search key into a table address. No hash function is
 perfect, and two or more different keys might hash to the same table address:
 the second part of a hashing search is a collision resolution process which
@@ -14734,19 +11752,15 @@ Hashing is a “classical” computer science problem in the sense that the
 various algorithms have been studied in some depth and are very widely used.
 There is a great deal of empirical and analytic evidence to support the utility
 
-_201_
-
+201
 
 t,able
 
-
------
-
-_202_ _CHAPTER 16_
+202 CHAPTER 16
 
 of hashing for a broad variety of applications.
 
-_Hash_ Functions
+Hash Functions
 
 The first problem we must address is the computation of the hash function
 which transforms keys into table addresses. This is an arithmetic computation
@@ -14763,19 +11777,19 @@ and packing them together in a machine word. From now on, we’ll assume
 that such an operation has been performed and that our keys are integers
 which fit into a machine word.
 One commonly used method is to take A4 to be prime and, for any key
-_k,_ compute _h(k)_ = _k_ mod _M._ This is a straightforward method which is easy
+k, compute h(k) = k mod M. This is a straightforward method which is easy
 to compute in many environments and spreads the key values out well.
 A second commonly used method is similar to the linear congruential
-random number generator: take _M_ = 2m and _h(k)_ to be the leading m bits of
-(bkmod w), where w is the word size of the computer and _b_ is chosen as for
+random number generator: take M = 2m and h(k) to be the leading m bits of
+(bkmod w), where w is the word size of the computer and b is chosen as for
 the random number generator. This can be more efficiently computed than
 the method above on some computers, and it has the advantage that it can
-spread out key values which are close to one another _(e. g., templ, temp$_
+spread out key values which are close to one another (e. g., templ, temp$
 
-_temp3)._ As we’ve noted before, languages like Pascal are not well-suited to
+temp3). As we’ve noted before, languages like Pascal are not well-suited to
 such operaiions.
 
-_Separate Chaining_
+Separate Chaining
 
 The hash functions above will convert keys into table addresses: we still need
 to decide how to handle the case when two keys hash to the same address. The
@@ -14785,53 +11799,48 @@ hash to the same table position are kept in a linked list, they might as well
 be kept in order. This leads directly to a generalization of the elementary list
 searching method that we discussed in Chapter 14. Rather than maintaining
 a single list with a single list header node head as discussed there, we maintain
-_M_ lists with _M_ list header nodes, initialized as follows:
-
+M lists with M list header nodes, initialized as follows:
 
 such operaiions.
 
+temp3).
 
-_temp3)._
+HASHTNG 203
 
+type link=fnode;
 
------
-
-_HASHTNG_ _203_
-
-**type** link=fnode;
-
-node=record key, info: integer; _next: link end;_
-**var** heads: **array** **[O..M] of** link;
+node=record key, info: integer; next: link end;
+var heads: array [O..M] of link;
 
 t, z: link;
 procedure initialize;
 var i: integer;
 
-**begin**
+begin
 new(z); zt.next:=z;
-**for** i:=O **to M-l do**
-**begin** new(heads[i]); heads[i]f.next:=z **end;**
+for i:=O to M-l do
+begin new(heads[i]); heads[i]f.next:=z end;
 
-**end ;**
+end ;
 
 Now the procedures from Chapter 14 can be used as is, with a hash function
-used to choose among the lists. For example, listinsert(v, heads[v **mod** _M] )_
-can be used to add something to the table, t:=listsearch(v, heads[v **mod** _M])_
+used to choose among the lists. For example, listinsert(v, heads[v mod M] )
+can be used to add something to the table, t:=listsearch(v, heads[v mod M])
 to find the first record with key v, and successively set t:=listsearch(v, t) until
 
 t=z to find subsequent records with key v.
 
 For example if the ith letter in the alphabet is represented with the
-number _i_ and we use the hash function _h(k)_ = kmod _M,_ then we get the
-following hash values for our sample set of keys with _M =_ **11:**
+number i and we use the hash function h(k) = kmod M, then we get the
+following hash values for our sample set of keys with M = 11:
 
-_Key:_ A S E A R C H I N G E X A M P L E
+Key: A S E A R C H I N G E X A M P L E
 
-_Hash:_ 1 8 5 1 7 3 8 9 3 7 5 2 1 2 5 1 5
+Hash: 1 8 5 1 7 3 8 9 3 7 5 2 1 2 5 1 5
 
 if these keys are successively inserted into an initially empty table, the following set of lists would result:
 
-0 1 2 3 4 5 6 7 _8_ 9 10
+0 1 2 3 4 5 6 7 8 9 10
 
 A M C E G H I
 A X N E R S
@@ -14847,25 +11856,17 @@ as it was for the elementary sequential search because the lists are quite short
 For an “unsuccessful search” (for a record with a key not in the table) we
 can assume that the hash function scrambles things enough so that each of
 
-
 new(heads[i]); heads[i]f.next:=z
-
 
 link=fnode;
 
-
-
-**[O..M]**
-
+[O..M]
 
 t,
 
+204 CHAPTER 16
 
------
-
-_204_ _CHAPTER 16_
-
-the _M_ lists is equally likely to be searched and, as in sequential list searching,
+the M lists is equally likely to be searched and, as in sequential list searching,
 that the list searched is only traversed halfway (on t,he average). The average
 length of the list examined (not counting z) in this example for unsuccessful
 search is (0+4+2+2+0+4+0+2+2+1+0)/11 z 1.545. This would be the
@@ -14877,19 +11878,19 @@ found as the second item examined, etc., so the average is (7.1+ 6.2 + 2.3 +
 ###### 2.4)/17) z 1.941. (This count assumes that equal keys are distinguished with
 a unique identifier or some other mechanism, and the search routine modified
 appropriately to be able to search for each individual key.)
-If N, the number of keys in the table, is much larger than _M_ then a good
-approximation to the average length of the lists is _N/M._ As in Chapter 14,
+If N, the number of keys in the table, is much larger than M then a good
+approximation to the average length of the lists is N/M. As in Chapter 14,
 unsuccessful and successful searches would be expected to go about halfway
 down some list. Thus, hashing provides an easy way to cut down the time
-required for sequential search by a factor of _M,_ on the average.
-In a separate chaining implementation, _M_ is typically chosen to be relatively small so as not to use up a large area of contiguous memory. But it’s
-probably best to choose _M_ sufficiently large that the lists are short enough to
+required for sequential search by a factor of M, on the average.
+In a separate chaining implementation, M is typically chosen to be relatively small so as not to use up a large area of contiguous memory. But it’s
+probably best to choose M sufficiently large that the lists are short enough to
 make sequential search the most efficient method for them: “hybrid” methods
 (such as using binary trees instead of linked lists) are probably not worth the
 trouble.
 
 The implementation given above uses a hash table of links to headers
-of the lists containing the actual keys. Maintaining _M_ list header nodes is
+of the lists containing the actual keys. Maintaining M list header nodes is
 somewhat wasteful of space; it is probably worthwhile to eliminate them and
 make heads be a table of links to the first keys in the lists. This leads to
 some complication in the algorithm. For example, adding a new record to the
@@ -14899,33 +11900,22 @@ links, not a field of a record. An alternate implementation is to put the first
 key within the table. If space is at a premium, it is necessary to carefully
 analyze the tradeoff between wasting space for a table of links and wasting
 space for a key and a link for each empty list. If N is much bigger than M then
-the alternate method is probably better, though _M_ is usually small enough
+the alternate method is probably better, though M is usually small enough
 that the extra convenience of using list header nodes is probably justified.
 
-_Open Addressing_
+Open Addressing
 
 If the number of elements to be put in the hash table can be estimated in
 advance, then it is probably not worthwhile to use any links at all in the hash
 table. Several methods have been devised which store N records in a table
 
-
 ###### (0+4+2+2+0+4+0+2+2+1+0)/11
-
-
-_CHAPTER_
-
+CHAPTER
 
 ###### 6.2
-
-
 t,he
 
-
 ###### z
-
-
------
-
 HASHING 205
 
 of size A4 > N, relying on empty places in the table to help with collision
@@ -14975,23 +11965,13 @@ The implementation of hashsearch is similar to hashinsert: simply add
 the condition “a [x] .key< >v” to the while loop, and delete the following
 instruction which stores v. This leaves the calling routine with the task
 
-
 ###### x:=(x+1)
-
-
-
 [O..M]
 
-
 ###### :=x;
-
-
 ;
 
-
------
-
-_206_ _CHAPTER 16_
+206 CHAPTER 16
 
 of checking if the search was unsuccessful, by testing whether the table
 position returned actually contains v (successful) or maxi& (unsuccessful).
@@ -15003,26 +11983,21 @@ keys in the case where each record has a unique identifier.
 
 For our example set of keys with A4 = 19, we might get the hash values:
 
-_Key:_ A S E A R C H I N G E X A M P L E
+Key: A S E A R C H I N G E X A M P L E
 
-_Hash:_ 1 0 5 1 18 3 8 9 14 7 5 5 1 13 16 12 5
+Hash: 1 0 5 1 18 3 8 9 14 7 5 5 1 13 16 12 5
 
 The following table shows the steps of successively inserting these into an
 initially empty hash table:
 
-_0_ _1_ _2_ _3_ _4_ _5_ _6_ _7_ _8_ _9_ 10 11 12 13 14 15 16 17 18
-###### 
-
-_CHAPTER 16_
-
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+######
+CHAPTER 16
 
 ###### maxi&
-
-
 S A A E
 
 ###### SAAm E
-
 S A A C E 0H
 
 S A A C E HIII
@@ -15036,7 +12011,6 @@ S A A C R~~GHI
 S A A C : ~~~~~~
 
 ###### SmbimwEEGHIX N
-
 S A A C A E E G H I X 0M N
 
 S A A C A E E G H I X M N
@@ -15044,11 +12018,8 @@ S A A C A E E G H I X M N
 S A A C A E E G H I X L-lL M N
 
 ###### SAACA~~~~~~lE]LMN
-
-
 R
 ###### 0
-
 R
 
 R
@@ -15068,38 +12039,20 @@ R
 R
 
 ###### 0P R
-
 P R
 
 P R
-
 
 ###### SAACA~~~~~~lE]LMN
-
-
 ###### ~~~~~~
-
-
 ###### SAAm
-
-
 ###### 0M
-
-
 ###### 0P
-
-
 ###### 0N
-
-
 ###### L-lL
+HASHING 207
 
-
------
-
-HASHING **207**
-
-The table size is greater than before, since we must have _M_ - N, but the
+The table size is greater than before, since we must have M - N, but the
 total amount of memory space used is less, since no links are used. The
 average number of items that must be examined for a successful search for
 this example is: 33/17 z 1.941.
@@ -15115,16 +12068,16 @@ at position 17 would cause greatly increased search times for position 16. This
 phenomenon, called clustering, can make linear probing run very slowly for
 nearly full tables.
 Fortunately, there is an easy way to virtually eliminate the clustering
-problem: _double hashing._ The basic strategy is the same; the only difference is
+problem: double hashing. The basic strategy is the same; the only difference is
 that, instead of examining each successive entry following a collided position,
 we use a second hash function to get a fixed increment to use for the “probe”
 sequence. This is easily implemented by inserting u:=h2(v) at the beginning
-of the procedure and changing x:=(x+1) **mod** M to x:=(x+u) **mod** M within
-the **while** loop. The second hash function h2 must be chosen with some care,
+of the procedure and changing x:=(x+1) mod M to x:=(x+u) mod M within
+the while loop. The second hash function h2 must be chosen with some care,
 otherwise the program might not work at all.
 
 First, we obviously don’t want to have u=O, since that would lead to an
-infinite loop on collision. Second, it is important that _M_ and u be relatively
+infinite loop on collision. Second, it is important that M and u be relatively
 prime here, since otherwise some of the probe sequences could be very short
 (for example, consider the case M=2u). This is easily enforced by making
 M prime and u<M. Third, the second hash function should be “different”
@@ -15135,33 +12088,23 @@ of “second” hash values.
 For our sample keys, we get the following hash values:
 
 ###### Key A S E A R C H I N G E X A M P L E
-_Hash 1:_ **1** **0** **5** **1** **1 8** **3** **8** **9** **1 4** **7** **5** **5** **1** **1 3 1 6 1 2** **5**
+Hash 1: 1 0 5 1 1 8 3 8 9 1 4 7 5 5 1 1 3 1 6 1 2 5
 
-_Hash 2’:_ 16 15 12 16 16 14 9 8 3 10 12 10 16 4 1 5 12
+Hash 2’: 16 15 12 16 16 14 9 8 3 10 12 10 16 4 1 5 12
 
 The following table is produced by successively inserting our sample keys
 into an initially empty table using double hashing with these values.
 
-
 ###### x:=(x+u)
-
-
 (for example, consider the case M=2u). This is easily enforced by making
 
-
-_hz(k)_
-
+hz(k)
 
 u=O,
 
-
-_2’:_
-
+2’:
 
 k
-
-
------
 
 208 CHAPTER 16
 
@@ -15175,77 +12118,48 @@ S A lEl
 ###### aI E 0A
 S A E Al-4
 
-S A **C** E A R
+S A C E A R
 
 ###### 0
+S A C E IHI A R
 
-S A **C** E IHI A R
+S A C E Hl2-l A R
 
-S A **C** E Hl2-l A R
+S A C E - H I 0N A R
 
-S A **C** E - H I 0N A R
+S A C E IGI H I N A R
 
-S A **C** E IGI H I N A R
-
-S A **C** E TH Im N A R
+S A C E TH Im N A R
 
 ###### 0 0
+S A C 0E G H I E NM A R
 
-S A **C** 0E G H I E NM A R
-
-**C** E GHIEm NX AR
+C E GHIEm NX AR
 
 ###### sm 0 cl
-S A **C** E G H I E A r - lM N X A R
+S A C E G H I E A r - lM N X A R
 
-S A **C** E G H I E A -MNX~AR
+S A C E G H I E A -MNX~AR
 
-S A **C** E GHIEAMMNXPAR
+S A C E GHIEAMMNXPAR
 
-**C** ~~G~I~AL~N~PMR
+C ~~G~I~AL~N~PMR
 
 ###### sB 0
-
-
 ###### ~~G~I~AL~N~PMR
-
-
 ###### MNX~AR
-
-
 ###### TH
-
-
 ###### sB
-
-
 ###### sm
-
-
 ###### Hl2-l
-
-
 A
 ###### 0
-
-
 ###### 0
-
-
 ###### 0C
-
-
 ###### 0N
-
-
 ###### 0NX
-
-
 ###### 0E
-
-
 IHI
-
 
 This technique uses the same amount of space as linear probing but the
 average number of items examined for successful search is slightly smaller:
@@ -15264,38 +12178,21 @@ for those records will terminate at the hole left by the deleted record. A
 way to solve this problem is to have another special key which can serve
 as a placeholder for searches but can be identified and remembered as an
 
-
 ###### GHIEAMMNXPAR
-
-
 ###### NM
-
-
 ###### Im
-
-
 ###### 0A
-
-
-**C**
+C
 ###### 0
-
-
 E
 ###### 0
-
-
 ###### lEl
-
-
------
-
 HASHING 209
 
 empty position for insertions. Note that neither table size nor deletion are a
 particular problem with separate chaining.
 
-_Analytic Results_
+Analytic Results
 
 The methods discussed above have been analyzed completely and it is possible to compare their performance in some detail. The following formulas,
 summarized from detailed analyses described by D. E. Knuth in his book on
@@ -15310,11 +12207,11 @@ Unsuccessful Successful
 Separate Chaining: 1+ 42 (a + 1)/Z
 
 Linear Probing: l/2+1/2(1-42 1 / 2 + 1 / 2 ( 1 - a )
-Double Hashing: l/(1      - a)      - ln( 1 - o)/o
+Double Hashing: l/(1 - a) - ln( 1 - o)/o
 
 For small o, it turns out that all the formulas reduce to the basic result that
-unsuccessful search takes about 1 _+ N/M_ probes and successful search takes
-about 1 _+ N/2M probes. (Except, as we’ve noted, the cost of an unsuccessful_
+unsuccessful search takes about 1 + N/M probes and successful search takes
+about 1 + N/2M probes. (Except, as we’ve noted, the cost of an unsuccessful
 search for separate chaining is reduced by about half by ordering the lists.)
 The formulas indicate how badly performance degrades for open addressing
 as CY gets close to 1. For large M and N, with a table about 90% full, linear
@@ -15336,33 +12233,18 @@ roughly predicted ahead of time.
 Many other hashing methods have been developed which have application
 in some special situations. Although we can’t go into details, we’ll briefly
 
-
 ###### l/2+1/2(1-42
-
-
 o)/o
-
 
 + 1)/Z
 
-
 ###### 1+
-
-
 ###### (a
-
-
 Q
-
 
 CY
 
-
 ###### -
-
-
------
-
 210 CHAPTER 16
 
 consider two examples to illustrate the nature of specially adapted hashing
@@ -15379,7 +12261,7 @@ method is useful for applications where unsuccessful searching is frequently
 used. For example, a text processing system might have an algorithm for
 hyphenating words that works well for most words, but not for bizarre cases
 (such as “bizarre”). The situation could be handled by looking up all words
-in a relatively small _exception_ dictionary of words which must be handled in
+in a relatively small exception dictionary of words which must be handled in
 a special way, with most searches likely to be unsuccessful.
 Similarly, there are methods for moving some records around during
 unsuccessful search to make successful searching more efficient. In fact, R. P.
@@ -15401,16 +12283,10 @@ same place even in the best hashing method), and they support a wider range
 of operations (most important, the sort function). When these factors are not
 important, hashing is certainly the searching method of choice.
 ###### 0
-
-
 ###### 0
-
-
------
-
 HASHING 211
 
-_Exercises_
+Exercises
 
 1. Describe how you might implement a hash function by making use of a
 good random number generator. Would it make sense to implement a
@@ -15455,22 +12331,14 @@ necessary) to find an empty position, then scan left to find an element
 with the same hash value. Then replace the element to be deleted with
 that element, leaving its table position empty.
 
-
 size 13 using linear probing. (Use hi(k) = kmod 13 for the hash function
-
 
 lath
 
-
------
-
------
-
 ###### 17. Radix Searching
-
 Several searching methods proceed by examining the search keys one
 bit at a time (rather than using full comparisons between keys at each
-step). These methods, called _radix searching methods,_ work with the bits of
+step). These methods, called radix searching methods, work with the bits of
 the keys themselves, as opposed to the transformed version of the keys used
 in hashing. As with radix sorting methods, these methods can be useful when
 the bits of the search keys are easily accessible and the values of the search
@@ -15491,45 +12359,42 @@ for searching applications where very long keys are involved. In addition, we’
 see the analogue to the “linear-time sort” of Chapter 10, a “constant-time”
 search which is based on the same principle.
 
-_Digital Search Trees_
+Digital Search Trees
 
 The simplest radix search method is digital tree searching: the algorithm is
 precisely the same as that for binary tree searching, except that rather than
 
 213
 
-
------
-
-214 _CHAPTER 17_
+214 CHAPTER 17
 
 branching in the tree based on the result of the comparison between the keys,
 we branch according to the key’s bits. At the first level the leading bit is
 used, at the second level the second leading bit, and so on until an external
 node is encountered. The code for this is virtually the same as the code
 for binary tree search. The only difference is that the key comparisons are
-replaced by calls on the _bits_ function that we used in radix sorting. (Recall
+replaced by calls on the bits function that we used in radix sorting. (Recall
 from Chapter 10 that bits(x, k, j) is the j bits which appear k from the right
 and can be efficiently implemented in machine language by shifting right k
 bits then setting to 0 all but the rightmost j bits.)
 
-**function** digitalsearch(v: integer; x: link) : link;
-**var** b: integer;
-**begin**
+function digitalsearch(v: integer; x: link) : link;
+var b: integer;
+begin
 
-_zf.key:=v;_ b:=maxb;
-**repeat**
-**if** bits(v, b, **I)=0 then x:=x1.1 else** **x:=xt.r;**
+zf.key:=v; b:=maxb;
+repeat
+if bits(v, b, I)=0 then x:=x1.1 else x:=xt.r;
 
-_b:=b-1;_
+b:=b-1;
 
-**until v=xt** .key;
+until v=xt .key;
 
 digitalsearch:=x
-**end ;**
+end ;
 
 The data structures for this program are the same as those that we used for
-elementary binary search trees. The constant _maxb_ is the number of bits in
+elementary binary search trees. The constant maxb is the number of bits in
 the keys to be sorted. The program assumes that the first bit in each key
 (the (maxb+l)st from the right) is 0 (perhaps the key is the result of a call to
 bits with a third argument of maxb), so that searching is done by setting x:=
@@ -15547,26 +12412,14 @@ value. As in previous chapters, we’ll assume that the ith letter of the alphab
 is represented by the five-bit binary representation of i. That is, we’ll use the
 following sample keys in this chapter:
 
-
 ###### headt.r:=z.
+zf.key:=v;
 
-
-_zf.key:=v;_
-
-
-_b:=b-1;_
-
+b:=b-1;
 
 ###### v=xt
-
-
 ###### x:=
-
-
------
-
-**RADLX SEARCHING** 215
-
+RADLX SEARCHING 215
 
 A
 
@@ -15587,7 +12440,6 @@ M
 P
 L
 
-
 00001
 10011
 00101
@@ -15602,7 +12454,6 @@ L
 10000
 01100
 
-
 To be consistent with hits, we consider the bits to be numbered O-4, from
 right to left. Thus bit 0 is A’s only nonzero bit and bit 4 is P’s only nonzero
 
@@ -15611,63 +12462,42 @@ bit.
 The insert procedure for digital search trees also derives directly from the
 corresponding procedure for binary search trees:
 
-**function** digitaJinsert(v: integer; x: link): link;
-**var** f: link; **b:** integer;
-**begin**
+function digitaJinsert(v: integer; x: link): link;
+var f: link; b: integer;
+begin
 b:=maxb;
-**repeat**
+repeat
 
 ###### f:=x;
-**if** bits(v, **b,** **I)=0 then** x:=xt.J **else x:=xf.r;**
+if bits(v, b, I)=0 then x:=xt.J else x:=xf.r;
 
 ###### b:=b-f ;
+until x=z;
 
-**until x=z;**
+new(x); xf.key:=v; xf.J:=z; xt.r:=z;
 
-**new(x);** **xf.key:=v; xf.J:=z; xt.r:=z;**
-
-**if** bits(v, **b+l,** **I)=0 then** **Q.‘.l:=x else** **ff.r:=x;**
+if bits(v, b+l, I)=0 then Q.‘.l:=x else ff.r:=x;
 
 digitalinsert: =x
-**end** **;**
+end ;
 
 To see how the algorithm works, consider what happens when a new key Z=
 11010 is added to the tree below. We go right twice because the leading two
 bits of Z are 1, then we go left, where we hit the external node at the left of
 X, where Z would be inserted.
 
-
 ###### xf.key:=v;
-
-
 ###### x:=xf.r;
-
-
 ###### ff.r:=x;
-
-
-**Q.‘.l:=x**
-
+Q.‘.l:=x
 
 ###### b:=b-f
-
-
 ###### I)=0
-
-
 right to left. Thus bit 0 is A’s only nonzero bit and bit 4 is P’s only nonzero
 
-
 ###### b+l,
-
-
 ###### =x
-
-
-**;**
-
-
------
+;
 
 216 CRAPTER 17
 
@@ -15684,7 +12514,7 @@ an attractive alternative to standard binary search trees, provided that bit
 extraction can be done as easily as key comparison (which is not really the
 case in Pascal).
 
-_Radix Search Tries_
+Radix Search Tries
 
 It is quite often the case that search keys are very long, perhaps consisting of
 twenty characters or more. In such a situation, the cost of comparing a search
@@ -15698,13 +12528,9 @@ nodes of the structure, we put nodes which contain the search keys. Thus,
 we have two types of nodes: internal nodes, which just contain links to other
 nodes, and external nodes, which contain keys and no links. (E. Fredkin
 
-
 CRAPTER 17
 
-
------
-
-**RADlX** **SEARCHING** **217**
+RADlX SEARCHING 217
 
 named this method “trie” because it is useful for retrieval; in conversation it’s
 usually pronounced “try-ee” or just “try” for obvious reasons.) To search for
@@ -15735,13 +12561,9 @@ improvement below which avoids this problem.
 The left subtree of a binary radix search trie has all the keys which have
 0 for the leading bit; the right subtree has all the keys which have 1 for the
 
+RADlX
 
-**RADlX**
-
-
------
-
-218 _CHAPTER 17_
+218 CHAPTER 17
 
 leading bit. This leads to an immediate correspondence with radix sorting:
 binary trie searching partitions the file in exactly the same way as radix
@@ -15762,7 +12584,7 @@ two links per node (though this exacerbates the “space” problem of using too
 many nodes); another way is to “collapse” paths containing one-way branches
 into single links. We’ll discuss these methods in the next two sections.
 
-_Multiway_ _Radix Searching_
+Multiway Radix Searching
 
 For radix sorting, we found that we could get a significant improvement in
 speed by considering more than one bit at a time. The same is true for radix
@@ -15770,35 +12592,31 @@ searching: by examining m bits at a time, we can speed up the search by a
 factor of 2m. However, there’s a catch which makes it necessary to be more
 careful applying this idea than was necessary for radix sorting. The problem
 is that considering m bits at a time corresponds to using tree nodes with
-_M_ = 2m links, which can lead to a considerable amount of wasted space for
-unused links. For example, if _M_ = 4 the following tree is formed for our
+M = 2m links, which can lead to a considerable amount of wasted space for
+unused links. For example, if M = 4 the following tree is formed for our
 sample keys:
 
-**H** **I** **L** **M** **R** **S**
+H I L M R S
 
+S
 
-**S**
-
-
------
-
-**_RADLX_** **_SEARCHTNG_**
+RADLX SEARCHTNG
 
 Note that there is some wasted space in this tree because of the large number
-of unused external links. As **_M_** gets larger, this effect gets worse: it turns out
-that the number of links used is about MN/In **_M_** for random keys. On the
+of unused external links. As M gets larger, this effect gets worse: it turns out
+that the number of links used is about MN/In M for random keys. On the
 other hand this provides a very efficient searching method: the running time
 is about log, N. A reasonable compromise can be struck between the time
 efficiency of multiway tries and the space efficiency of other methods by using
-a “hybrid” method with a large value of **_M_** at the top (say the first two levels)
-and a small value of **_M_** (or some elementary method) at the bottom. Again,
+a “hybrid” method with a large value of M at the top (say the first two levels)
+and a small value of M (or some elementary method) at the bottom. Again,
 efficient implementations of such methods can be quite complicated because
 of multiple node types.
 For example, a two-level 32-way tree will divide the keys into 1024 categories, each accessible in two steps down the tree. This would be quite useful
 for files of thousands of keys, because there are likely to be (only) a few keys
-per category. On the other hand, a smaller **_M_** would be appropriate for files
+per category. On the other hand, a smaller M would be appropriate for files
 of hundreds of keys, because otherwise most categories would be empty and
-too much space would be wasted, and a larger **_M_** would be appropriate for
+too much space would be wasted, and a larger M would be appropriate for
 files with millions of keys, because otherwise most categories would have too
 many keys and too much time would be wasted.
 It is amusing to note that “hybrid” searching corresponds quite closely
@@ -15814,23 +12632,19 @@ dictionary).
 In the next chapter, we’ll see a systematic way to adapt the structure to
 take advantage of multiway radix searching for arbitrary file sizes.
 
-**_Patricia_**
+Patricia
 
 The radix trie searching method as outlined above has two annoying flaws:
 there is “one-way branching” which leads to the creation of extra nodes in the
 tree, and there are two different types of nodes in the tree, which complicates
 the code somewhat (especially the insertion code). D. R. Morrison discovered
-a way to avoid both of these problems in a method which he named **_Patricia_**
+a way to avoid both of these problems in a method which he named Patricia
 (“Practical Algorithm To Retrieve Information Coded In Alphanumeric”).
 The algorithm given below is not in precisely the same form as presented
 by Morrison, because he was interested in “string searching” applications of
 the type that we’ll see in Chapter 19. In the present context, Patricia allows
 
-
-**_SEARCHTNG_**
-
-
------
+SEARCHTNG
 
 220 CHAPTER 17
 
@@ -15863,32 +12677,29 @@ searches terminate at upwards links, whereupon one full key comparison is
 done to determine whether the search was successful or not. Futhermore, it’s
 easy to test whether a link points up, because the bit indices in the nodes (by
 
-
------
-
-_RADLX SEARCHING_ 221
+RADLX SEARCHING 221
 
 definition) decrease as we travel down the tree. This leads to the following
 search code for Patricia, which is as simple as the code for radix tree or trie
 searching:
 
-**type** link=fnode;
+type link=fnode;
 
-**node=record** key, info, _b:_ integer; 1, r: link end;
+node=record key, info, b: integer; 1, r: link end;
 var head: link;
-**function** patriciasearch(v: integer; x: link): link;
-**var** f: link;
-**begin**
-**repeat**
+function patriciasearch(v: integer; x: link): link;
+var f: link;
+begin
+repeat
 
-**f:=x;**
+f:=x;
 
-**if** bits(v, xf.b, I)=0 then x:=xf.l **else x:=xf.r;**
+if bits(v, xf.b, I)=0 then x:=xf.l else x:=xf.r;
 
-**until f‘r.b<=xt.b;**
+until f‘r.b<=xt.b;
 patriciasearch :=x
 
-**end ;**
+end ;
 
 This function returns a link to the unique node which could contain the record
 with key v. The calling routine then can t 3st whether the search was successful
@@ -15898,12 +12709,12 @@ The following diagram shows the,ransformations made on the right
 
 subtree of the tree above if Z, then T art added.
 
-**X**
+X
 ```
              3
 
 ```
-**P** **z**
+P z
 ```
             1 1
        R
@@ -15912,7 +12723,7 @@ subtree of the tree above if Z, then T art added.
 ###### 7!!ic?)
 
 ```
-The search for **Z=llOlO** ends at the node c:ontaining X=11000. By the defining
+The search for Z=llOlO ends at the node c:ontaining X=11000. By the defining
 property of the tree, X is the only key i-1 the tree for which a search would
 terminate at that node. If Z is inserted, there would be two such nodes, so
 the upward link that was followed into the node containing X should be made
@@ -15920,23 +12731,14 @@ to point to a new node containing Z, with a bit index corresponding to the
 leftmost point where X and Z differ, and with two upward links: one pointing
 to X and the other pointing to Z. This corresponds precisely to replacing the
 
-
-**until f‘r.b<=xt.b;**
-
+until f‘r.b<=xt.b;
 
 c:ontaining
 
-
 ###### x:=xf.r;
-
-
 ###### x:=xf.l
-
-
 ###### I)=0
-
-
-**f:=x;**
+f:=x;
 
 ```
 --e-&
@@ -15944,14 +12746,9 @@ c:ontaining
 ```
 
 ###### :=x
-
-
 i-1
 
-
------
-
-_222_ _CHAPTER 17_
+222 CHAPTER 17
 
 external node containing X with a new internal node with X and Z as sons in
 radix trie insertion, with one-way branching eliminated by including the bit
@@ -15967,28 +12764,28 @@ same bit 2 value.
 The examples above illustrate the only two cases that arise in insertion
 for Patricia. The following implementation gives the details:
 
-**function** patriciainsert(v: integer; x: link): link;
-**var** t,f: link; _i: integer;_
-**begin**
+function patriciainsert(v: integer; x: link): link;
+var t,f: link; i: integer;
+begin
 
 t :=patriciasearch (v, x) ;
 i:=maxb;
-**while** _bits(v, i, I)=bits(tt.key,_ i, 1) do _i:=i-I;_
+while bits(v, i, I)=bits(tt.key, i, 1) do i:=i-I;
 
-**repeat**
+repeat
 
 ###### f:=x;
-**if** bits(v, _xf.b, I)=0_ **theu x:=xf.l else** _x:=xt.r;_
+if bits(v, xf.b, I)=0 theu x:=xf.l else x:=xt.r;
 
-**until** _(xT.b<=i) or (Q.b<=xt.b);_
+until (xT.b<=i) or (Q.b<=xt.b);
 new(t); tf.key:=v; tf.b:=i;
-**if** bits(v, _tf.b, I)=0_
+if bits(v, tf.b, I)=0
 
-**then begin** tt.l:=t; tt.r:=x **end**
-**else begin** tf.r:=t; _tf.l:=x_ **end;**
-**if** bits(v, Q.b, **I)=0 then** **ft.l:=t** **else** _ff.r:=t;_
+then begin tt.l:=t; tt.r:=x end
+else begin tf.r:=t; tf.l:=x end;
+if bits(v, Q.b, I)=0 then ft.l:=t else ff.r:=t;
 patriciainsert := t
-**end ;**
+end ;
 
 (This code assumes that head is initialized with key field of 0, a bit index of
 maxb and both links upward self pointers.) First, we do a search to find the
@@ -16001,50 +12798,29 @@ identify the bits which distinguish the search keys and build them into a
 data structure (with no surplus nodes) that quickly leads from any search
 key to the only key in the data structure that could be equal. Clearly, the
 
-
 I)=bits(tt.key,
 
-
-_(xT.b<=i)_
-
+(xT.b<=i)
 
 P=lOOOO,
 
-
-_ff.r:=t;_
-
+ff.r:=t;
 
 ###### x:=xf.l
-
-
 ###### ft.l:=t
-
-
 ###### tt.r:=x
-
-
-_tf.l:=x_
-
+tf.l:=x
 
 bits(v,
 
-
-_I)=0_
-
+I)=0
 
 ###### f:=x;
+xf.b,
 
-
-_xf.b,_
-
-
-**theu**
-
+theu
 
 t
-
-
------
 
 RADlX SEARCHING 223
 
@@ -16074,46 +12850,37 @@ computing the hash function plus a few elluality comparisons, and comparisonbase
 (or radix trie searching with one-way branching removed) the search method
 of choice when very long keys are involved.
 
-
 dependent
-
 
 the keys, as for the other methods. This, even Patricia would have trouble
 
-
 to eliminate one-way branching, but this only exacerbates the multiple node
-
 
 9 or 10 bytes of the search key for thl: search, plus one 125-byte equality
 
+224
 
------
-
-_224_
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Draw the digital search tree that results when the keys E A S Y Q U E
 
@@ -16145,21 +12912,15 @@ tree.
 Write a program that prints out all keys in a Patricia tree having the
 same initial t bits as a given search key.
 
-Use a least-squares curvefitter to find values of a and _b_ that give the best
-formula of the form UN 1gN + _bN_ for describing the total number of
+Use a least-squares curvefitter to find values of a and b that give the best
+formula of the form UN 1gN + bN for describing the total number of
 instructions executed when a Patricia tree is built from N random keys.
 
-
-_bN_
-
+bN
 
 t
 
-
------
-
 ###### 18. External Searching
-
 Searching algorithms appropriate for accessing items from very large
 files are of immense practical impcrtance. Searching is the fundamental
 operation on large data files, and certainly consumes a very significant fraction
@@ -16192,28 +12953,19 @@ or (most important) quickly access small bits of information inside very, very
 
 225
 
-
 hardware is a primary factor in the perfo.mance of external searching methods
-
 
 files are of immense practical impcrtance. Searching is the fundamental
 
-
 external searching method for a particlllar application is extremely compli-
-
 
 Searching is a fundamental operaticIn for disk devices. Files are typically
 
-
 1ogil:al
-
 
 A3
 
-
------
-
-_CHAPTER_ _18_
+CHAPTER 18
 
 large files. In this chapter, we’ll examine some methods for such dynamic
 situations which offer the same kinds of advantages over the straightforward
@@ -16246,7 +12998,7 @@ required to do any computing involving that page. As mentioned above, this
 is an oversimplified model for many reasons, but it retains enough characteristics of actual external storage devices to allow us to consider some of the
 fundamental methods which are used.
 
-_Indexed_ Sequential _Access_
+Indexed Sequential Access
 
 Sequential disk searching is the natural extension of the elementary sequential
 searching methods that we considered in Chapter 14: the records are stored
@@ -16257,13 +13009,10 @@ E X T E R N A L S E A R C H I N G E X A M P L E and we have disks
 capable of holding three pages of four records each, then we would have the
 configuration:
 
+EXTERNAL SEARCHING 227
 
------
-
-EXTERNAL _SEARCHING_ _227_
-
-_Diskl._ A A A C E E E E E G H I
-_Disk_ _Z?:_ L L M N N P R R S T X X
+Diskl. A A A C E E E E E G H I
+Disk Z?: L L M N N P R R S T X X
 
 As with external sorting, we must consider very small examples to understand the algorithms but think about ve y large examples to appreciate their
 performance. Obviously, pure sequentizl searching is unattractive because,
@@ -16273,10 +13022,10 @@ To vastly improve the speed of a search, we can keep, for each disk, an
 “index” of which keys belong to which pages on that disk, as in the following
 example:
 
-_Disk 1:_ *lc2e A A A C E E E E
-_Disk_ _,Z:_ eli2n E G H I L L M N
+Disk 1: *lc2e A A A C E E E E
+Disk ,Z: eli2n E G H I L L M N
 
-_Disk3:_ nlr2x N P R R S T X X
+Disk3: nlr2x N P R R S T X X
 
 The first page of each disk is its index: lower case letters indicate that
 only the key value is stored, not the full record; numbers are page indices.
@@ -16300,46 +13049,35 @@ index require reading three pages the irdex plus the two pages flanking the
 key value in the index. If no duplicate keys are in the file, then the extra page
 access can be avoided. On the other hansl, if there are many equal keys in the
 
-
 performance. Obviously, pure sequentizl searching is unattractive because,
-
 
 for example, searching for W in the exainple above would require reading all
 
-
 possil)le
-
 
 folloTved
 
-
-_Diskl._
-
+Diskl.
 
 hansl,
 
-
 index require reading three pages the irdex plus the two pages flanking the
 
+Z?:
 
-_Z?:_
-
-
------
-
-_228_ CHAPTER 18
+228 CHAPTER 18
 
 file, several page accesses might be called for (records with equal keys might
 fill several pages).
 Because it combines a sequential key organization with indexed access,
-this organization is called indexed _sequential._ It is the method of choice for
+this organization is called indexed sequential. It is the method of choice for
 applications where changes to the database are likely to be made infrequently.
 The disadvantage of using indexed sequential access is that it is very inflexible.
 For example, adding B to the configuration above requires that virtually the
 whole database be rebuilt, with new positions for many of the keys and new
 values for the indices.
 
-_B-Trees_
+B-Trees
 
 A better way to handle searching in a dynamic situation is to use balanced
 trees. In order to reduce the number of (relatively expensive) disk accesses, it
@@ -16351,26 +13089,23 @@ describe the exact data structure built by the algorithm suggested by Bayer
 and McCreight; we’ll use it as a generic term to mean “external balanced
 trees.“)
 The top-down algorithm that we used for 2-3-4 trees extends readily to
-handle more keys per node: assume that there are anywhere from 1 to _M -_ 1
-keys per node (and so anywhere from 2 to _M_ links per node). Searching
+handle more keys per node: assume that there are anywhere from 1 to M - 1
+keys per node (and so anywhere from 2 to M links per node). Searching
 proceeds in a way analogous to 2-3-4 trees: to move from one node to the
 next, first find the proper interval for the search key in the current node and
 then exit through the corresponding link to get to the next node. Continue
 in this way until an external node is reached, then insert the new key into
 the last internal node reached. As with top-down 2-3-4 trees, it is necessary
 to “split” nodes that are “full” on the way down the tree: any time we see
-a k-node attached to an _M_ node, we replace it by a _(k_ + 1)-node attached
-to two _M/2_ nodes. This guarantees that when the bottom is reached there
-is room to insert the new node. The B-tree constructed for _M_ = 4 and our
+a k-node attached to an M node, we replace it by a (k + 1)-node attached
+to two M/2 nodes. This guarantees that when the bottom is reached there
+is room to insert the new node. The B-tree constructed for M = 4 and our
 sample keys is diagrammed below:
-
-
------
 
 EXTERNAL SEARCHING 229
 
 This tree has 13 nodes, each corresponding to a disk page. Each node must
-contain links as well as records. The choice _M_ = 4 (even though it leaves us
+contain links as well as records. The choice M = 4 (even though it leaves us
 with familiar 2-3-4 trees) is meant to emphasize this point: before we could
 fit four records per page, now only three! will fit, to leave room for the links.
 The actual amount of space used up depends on the relative size of records
@@ -16383,13 +13118,13 @@ to E is on page 0 of disk 1, etc. Just as ‘ve kept the master index for indexe
 sequential search in memory, it’s reasonable to keep the root node of the B
 tree in memory. The other nodes for ou:’ example might be stored as follows:
 
-_Disk 1 :_ _20 A 21_ _22_ E 30 H 31 L 32 40 R 41 T 42
+Disk 1 : 20 A 21 22 E 30 H 31 L 32 40 R 41 T 42
 
-_Disk,!?:_ O A O O A O C O E O O E O
+Disk,!?: O A O O A O C O E O O E O
 
-_Disk 3 :_ 0 E 0 GO 0 I 0 O L O M O
+Disk 3 : 0 E 0 GO 0 I 0 O L O M O
 
-_Disk 4 :_ O N O P O R O OS0 0X0X0
+Disk 4 : O N O P O R O OS0 0X0X0
 
 The assignment of nodes to disk pages in this example is simply to proceed
 down the tree, working from right to l& at each level, assigning nodes to
@@ -16397,55 +13132,41 @@ disk 1, then disk 2, etc. In an actual ihpplication, other assignments might
 be indicated. For example, it might bt: better to avoid having all searches
 going through disk 1 by assigning first to page 0 of all the disks, etc. In
 truth, more sophisticated strategies are needed because of the dynamics of
-the tree construction (consider the diffic:ulty of implementing a _split_ routine
+the tree construction (consider the diffic:ulty of implementing a split routine
 that respects either of the above strategies).
 The nodes at the bottom level in t1 e B-trees described above all contain
 many 0 links which can be eliminated 1)~ marking such nodes in some way.
-Furthermore, a much larger value of _M_ 1:an be used at the higher levels of the
+Furthermore, a much larger value of M 1:an be used at the higher levels of the
 tree if we store just keys (not full records) in the interior nodes as in indexed
 sequential access. To see how to take aclvantage of these observations in our
 example, suppose that we can fit up to seven keys and eight links on a page, so
-that we can use _M_ = 8 for the interior rodes and _M_ = 5 for the bottom-level
+that we can use M = 8 for the interior rodes and M = 5 for the bottom-level
 nodes (not M = 4 because no space for 1 nks need be reserved at the bottom).
 A bottom node splits when a fifth record is added to it; the split involves
 “inserting” the key of the middle recortl into the tree above, which operates
-as a normal B-tree from _M_ = 8 (on stored keys, not records). This leads to
+as a normal B-tree from M = 8 (on stored keys, not records). This leads to
 the following tree:
-
 
 ihpplication,
 
-
 aclvantage
 
-
-_Disk,!?:_
-
+Disk,!?:
 
 choice
 
-
 three!
 
-
 ###### l&
-
-
 1:an
-
 
 ou:’
 
-
 bt:
-
 
 t1
 
-
------
-
-230 _CHAPTER 18_
+230 CHAPTER 18
 
 The effect for a typical application is likely to be much more dramatic since
 the branching factor of the tree is increased by roughly the ratio of the record
@@ -16453,27 +13174,27 @@ size to key size, which is likely to be large. Also, with this type of organizat
 the “index” (which contains keys and links) can be separated from the actual
 records, as in indexed sequential search:
 
-_Diskl:_ 11 112 20 a 21 e 22 e 30 h 31 32 n 40 r 41 s 42
-_Disk_ _R:_ A A A C E E E
-_Disk_ _3:_ E E G H I L L M
+Diskl: 11 112 20 a 21 e 22 e 30 h 31 32 n 40 r 41 s 42
+Disk R: A A A C E E E
+Disk 3: E E G H I L L M
 
-_Disk4:_ _N_ _N_ P R R S T X X
+Disk4: N N P R R S T X X
 
 As before, the root node is kept in memory. Also the same issues as discussed
 above regarding node placement on the disks arise.
-Now we have two values of _M, one for the interior nodes which determines_
+Now we have two values of M, one for the interior nodes which determines
 the branching factor of the tree (M I) and one for the bottom-level nodes which
-determines the allocation of records to pages _(MB)._ To minimize the number
+determines the allocation of records to pages (MB). To minimize the number
 of disk accesses, we want to make both MI and MB as large as possible, even
 at the expense of some extra computation. On the other hand, we don’t want
-to make _MI_ huge, because then most tree nodes would be largely empty and
-space would be wasted and we don’t want to make _MB_ huge because this
+to make MI huge, because then most tree nodes would be largely empty and
+space would be wasted and we don’t want to make MB huge because this
 would reduce to sequential search of the bottom-level nodes. Usually, it is
-best to relate both _MI_ and _MB_ to the page size. The obvious choice for _MB_
+best to relate both MI and MB to the page size. The obvious choice for MB
 is the number of records that can fit on a page: the goal of the search is to
-find the page containing the record sought. If _MI_ is taken to be the number
+find the page containing the record sought. If MI is taken to be the number
 of keys that can fit on two to four pages, then the B-tree is likely to be only be
-three levels deep, even for very large files (a three-level tree with _MI =_ 1024
+three levels deep, even for very large files (a three-level tree with MI = 1024
 can handle up to 10243, or over a billion, entries). But recall that the root
 node of the tree, which is accessed for every operation on the tree, is kept in
 memory, so that only two disk accesses are required to find any element in
@@ -16481,25 +13202,17 @@ the file.
 As discussed in Chapter 15, a more complicated “bottom-up” insertion
 method is commonly used for B-trees, though the distinction between top
 
-_Disk4:_
+Disk4:
 
+Diskl:
 
-_Diskl:_
+MB
 
+MB
 
-_MB_
+MI
 
-
-_MB_
-
-
-_MI_
-
-
-_R:_
-
-
------
+R:
 
 EXTERNAL. SEARCHING 231
 
@@ -16515,7 +13228,7 @@ Extendible Hashing
 
 An alternative to B-trees which extends digital searching algorithms to apply
 to external searching was developed in 1978 by R. Fagin, J. Nievergelt, N.
-Pippenger, and R. Strong. This method, called _extendible_ hashing, guarantees
+Pippenger, and R. Strong. This method, called extendible hashing, guarantees
 that no more than two disk accesses will be used for any search. As with E
 trees, our records are stored on pages which are split into two pieces when
 they fill up; as with indexed sequential access, we maintain an index which
@@ -16530,8 +13243,8 @@ We start with an “index” with just one entry, a pointer to the page
 which is to hold the records. The first four records fit on the page, leaving
 the following trivial structure:
 
-_Disk_ _1:_ _; 0_
-_Disk_ _2: ZETX_
+Disk 1: ; 0
+Disk 2: ZETX
 
 The directory on disk 1 says that all records are on page 0 of disk 2, where
 they are kept in sorted order of their keys. For reference, we also give the
@@ -16543,53 +13256,36 @@ that begin with 1 on another page. Thi: necessitates doubling the size of the
 directory, and moving half the keys from page 0 of disk 2 to a new page,
 leaving the following structure:
 
-
 down and bottom up methods loses iml)ortance for three level trees. Other
 
-
 ###### ZETX
-
-
 ks:y
-
 
 that begin with 1 on another page. Thi: necessitates doubling the size of the
 
-
 ###### E
+1:
 
+;
 
-_1:_
-
-
-_;_
-
-
------
-
-_232_ _CHAPTER 18_
+232 CHAPTER 18
 
 0 : I$101 E
 
 0101 E
 
-_Disk 1:_ _2 0 2 1_
+Disk 1: 2 0 2 1
 1: 10010 R
 
-_Disk_ _Z?:_ E E R T X
+Disk Z?: E E R T X
 
 ###### 410100 T
-
-
 0 : I$101 E
 
 0101 E
 
 ###### 4
-
-
-_Z?:_
-
+Z?:
 
 111000 x
 
@@ -16599,9 +13295,8 @@ before L=OllOO can be added:
 0: 0001 A
 0101 E
 
-_Disk 1: 20_ 21
+Disk 1: 20 21
 ###### Disk2:AEEN R T X
-
 10100 T
 11000 x
 
@@ -16622,23 +13317,18 @@ to indexed sequential search (albeit a radix version): the directory has to be
 scanned sequentially to find the proper page during a search. Alternatively,
 we can just double the size of the directory again, giving the structure:
 
-
 ###### N=OlllO
-
-
 00: 0 001 A
 0 101 E
 0 101 E
-01: 01110 L _DiskI:_
+01: 01110 L DiskI:
 
-01110 N _Disk,!?:_ A E E L N R T X
+01110 N Disk,!?: A E E L N R T X
 10: 1 010 R
 11: 1 100 T
 11000 x
 
 ###### i
-
-
 00: 0 001 A
 0 101 E
 0 101 E
@@ -16650,21 +13340,12 @@ we can just double the size of the directory again, giving the structure:
 11000 x
 
 ###### i
-
-
 ###### DiskI:
-
-
 Now we can access any record by using the first two bits of its key to access
 directly the directory entry that contains the address of the page containing
 
-
 ###### Disk2:AEEN
-
-
------
-
-EXTERNAL _SEARCHING_ 233
+EXTERNAL SEARCHING 233
 
 the record.
 
@@ -16672,22 +13353,22 @@ Continuing a little further, we call add S=lOOll and E=OOlOl before
 another split is necessary to add A=OOOOl. This split also requires doubling
 the directory, leaving the structure:
 
-_Diskl:_ 2021222230303030
-_Disk_ _2:_ A A EEE LN
+Diskl: 2021222230303030
+Disk 2: A A EEE LN
 
-_Disk3:_ R S T X
+Disk3: R S T X
 
-In general, the structure built by exl endible hashing consists of _a directory_
-of 2d words (one for each d-bit pattern) and a set of _leaf_ pages which contain
+In general, the structure built by exl endible hashing consists of a directory
+of 2d words (one for each d-bit pattern) and a set of leaf pages which contain
 all records with keys beginning with a specific bit pattern (of less than or
-equal to d bits). A search entails using,he leading _d_ bits of the key to index
+equal to d bits). A search entails using,he leading d bits of the key to index
 into the directory, which contains pointc:rs to 1ea.f pages. Then the referenced
 leaf page is accessed and searched (usin:; any strategy) for the proper record.
 A leaf page can be pointed to by more tlian one directory entry: to be precise,
-if a leaf page contains all the records uith keys that begin with a specific _k_
+if a leaf page contains all the records uith keys that begin with a specific k
 bits (those marked with a vertical line in the pages on the diagram above),
 then it will have 2d-k directory entries pointing to it. In the example above,
-we have _d_ = 3, and page 0 of disk 3 contains all the records with keys that
+we have d = 3, and page 0 of disk 3 contains all the records with keys that
 begin with a 1 bit, so there are four dirl:ctory entries pointing to it.
 
 The directory contains only pointc:rs to pages. These are likely to be
@@ -16703,42 +13384,30 @@ keys beginning with 1 are on page 1 o‘ disk 1. For our example, this split
 occurs when the E is inserted. Continuing up until the last E (see below), we
 get the following disk storage structure:
 
-
 directoTT
 
-
 pointc:rs
 
-
 pointc:rs
-
 
 leaf page is accessed and searched (usin:; any strategy) for the proper record.
 
-
 1ea.f
-
 
 2d
 
-
-_2:_
-
+2:
 
 g
 
-
------
-
 234 CHAPTER 18
 
-_Disk 1: 2 0 2 0 21 22 30 30 31 32_ 40 40 41 41 42 42 42 42
-_Disk_ _Z?:_ A A A C E E E E G
+Disk 1: 2 0 2 0 21 22 30 30 31 32 40 40 41 41 42 42 42 42
+Disk Z?: A A A C E E E E G
 
-_Disk3:_ H I L L M N N
+Disk3: H I L L M N N
 
 ###### Disk4:PRR S T x x
-
 As illustrated in the above example, insertion into an extendible hashing
 structure can involve one of three operations, after the leaf page which could
 contain the search key is accessed. If there’s room in the leaf page, the new
@@ -16747,11 +13416,11 @@ records are moved to a new page). If the directory has more than one entry
 pointing to that leaf page, then the directory entries can be split as the page
 is. If not, the size of the directory must be doubled.
 As described so far, this algorithm is very susceptible to a bad input
-key distribution: the value of _d_ is the largest number of bits required to
+key distribution: the value of d is the largest number of bits required to
 separate the keys into sets small enough to fit on leaf pages, and thus if
 a large number of keys agree in a large number of leading bits, then the
 directory could get unacceptably large. For actual large-scale applications,
-this problem can be headed _off_ by _hashing_ the keys to make the leading
+this problem can be headed off by hashing the keys to make the leading
 bits (pseudo-)random. To search for a record, we hash its key to get a bit
 sequence which we use to access the directory, which tells us which page to
 search for a record with the same key. From a hashing standpoint, we can
@@ -16769,23 +13438,17 @@ in the data structure and put pointers to linked lists of records containing
 equal keys in the leaf pages. To see the complication involved, consider the
 insertion of the last E into the structure above.
 
-_Virtual Memory_
+Virtual Memory
 
 The “easier way” discussed at the end of Chapter 13 for external sorting
 applies directly and trivially to the searching problem. A virtual memory
 is actually nothing more than a general-purpose external searching method:
 given an address (key), return the information associated with that address.
 
-
 ###### Disk4:PRR
-
-
 E’s,.)
 
-
------
-
-**_EXTERNAL. SEARCHING_** 235
+EXTERNAL. SEARCHING 235
 
 However, direct use of the virtual men ory is not recommended as an easy
 searching application. As mentioned in Chapter 13, virtual memories perform
@@ -16793,24 +13456,21 @@ best when most accesses are relatively close to previous accesses. Sorting
 algorithms can be adapted to this, but the very nature of searching is that
 requests are for information from arbitr n-y parts of the database.
 
+236
 
------
-
-_236_
-
-_Exercises_
+Exercises
 
 1. Give the contents of the B-tree that results when the keys E A S Y Q U
 E S T I 0 N are inserted in that order into an initially empty tree, with
-_M = 5._
+M = 5.
 
 2. Give the contents of the B-tree that results when the keys E A S Y Q U
 E S T I 0 N are inserted in that order into an initially empty tree, with
-_M_ = 6, using the variant of the method where all the records are kept in
+M = 6, using the variant of the method where all the records are kept in
 external nodes.
 
 3. Draw the B-tree that is built when sixteen equal keys are inserted into an
-initially empty tree, with _M = 5._
+initially empty tree, with M = 5.
 
 4. Suppose that one page from the database is destroyed. Describe how you
 would handle this event for each of the B-tree structures described in the
@@ -16826,23 +13486,18 @@ the key for the ith letter.)
 with a page capacity of three records.
 
 7. Outline a method for deleting an item from an extendible hashing table.
-
 8. Why are “top-down” B-trees better than “bottom-up” B-trees for concurrent access to data? (For example, suppose two programs are trying to
 insert a new node at the same time.)
 
-9. Implement search and insert for _internal_ searching using the extendible
+9. Implement search and insert for internal searching using the extendible
 hashing method.
 
 10. Discuss how the program of the previous exercise compares with double
 hashing and radix trie searching for internal searching applications.
 
-
 S
 
-
------
-
-**237**
+237
 
 SOURCES for Searching
 
@@ -16873,168 +13528,126 @@ D. Comer, “The ubquitous &tree,” Colrlputing Surveys, 11 (1979).
 
 R. Fagin, J. Nievergelt, N. Pippenger aIld H. R. Strong, “Extendible Hashing
 
-- a fast access method for dynamic fi.es,” _ACM_ transactions on Database
+- a fast access method for dynamic fi.es,” ACM transactions on Database
 Systems, 4, 3 (September, 1979).
 
 L. Guibas and R. Sedgewick, “A dichromatic framework for balanced trees,”
-in _19th_ Annual Sym.posium on Foundations `of` _Computer Science,_ IEEE, 1978.
-_Also_ in _A Decade_ `of` _Progress_ _1970-19811,_ Xerox PARC, Palo Alto, CA.
+in 19th Annual Sym.posium on Foundations of Computer Science, IEEE, 1978.
+Also in A Decade of Progress 1970-19811, Xerox PARC, Palo Alto, CA.
 
-D. E. Knuth, _The Art_ `of` Computer _Pr_ _,gramming._ _Volume 1:_ Fundamental
-_Algorithms,_ Addison-Wesley, Reading, IAA, 1968.
+D. E. Knuth, The Art of Computer Pr ,gramming. Volume 1: Fundamental
+Algorithms, Addison-Wesley, Reading, IAA, 1968.
 
-D. E. Knuth, _The Art_ `of` _Computer_ _PI.ogramming._ _Volume 3: Sorting and_
+D. E. Knuth, The Art of Computer PI.ogramming. Volume 3: Sorting and
 Searching, Addison-Wesley, Reading, MA, second printing, 1975.
 
-J. D. Ullman, _Principles_ `of` _Database_ Sy: _terns,_ Computer Science Press, Rock
+J. D. Ullman, Principles of Database Sy: terns, Computer Science Press, Rock
 ville, MD, 1982.
 
+PI.ogramming.
 
-_PI.ogramming._
-
-
-_,gramming._
-
+,gramming.
 
 Trees and binary trees as purely mltthematical objects have been studied
 
-
 Nievergelt, Pippenger and Stron;‘s 1979 paper. This paper is a must
-
 
 slatabase
 
-
 Fagin,
-
 
 IAA,
 
-
 come:,
-
 
 R. Fagin, J. Nievergelt, N. Pippenger aIld H. R. Strong, “Extendible Hashing
 
-
------
-
------
-
 ..~...................... . .
-
 
 .:.::.
 
-
 i:.:
-
 
 i..::.. .
 
-
 ..:.’
-
 
 ..:::.
 
-
 :...
-
 
 .:..
 
-
 *::
-
 
 :..
 
-
 .-.
-
 
 :
 
-
 .:
 
-
 .
-
 
 *..
 
-
 .
-
-
-
 
 . . . . . . . . . . . . . . .
 
-
 . . . . .
-
 
 . . . . . . .
 
-
 . . . . . . . . .
 
-
 .
 
-
 .
-
 
 . . .
 
+.
 
 .
 
-
 .
-
-
-.
-
 
 : . . . . .. . . . . . i::.... . . . . . . . ..i:. . . .:.:.:I:.:’. . . . . . . .:.:.:..:;.. .. - : . . . . . - .:. :-:. *. . . . - ::. . .. . .= . . . :.
 
 :..:...:...:............::.......:.....::...::.~:.:..:.*...:...:...:...:~..::.:::.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-. . . . . . . . . . . . .. . . . . . . . . * .: . : “:. . . ...::. . . . . .....:.*. . . . :*‘:.:: .i: -. . . . ..:*.:.:. . . . .. . . . . . . . . . . . . . :. . . . . . . . . ....* . :. ..i’:. . . . . :
+. . . . . . . . . . . . .. . . . . . . . . * .: . : “:. . . ...::. . . . . .....:.. . . . :‘:.:: .i: -. . . . ..:.:.:. . . . .. . . . . . . . . . . . . . :. . . . . . . . . .... . :. ..i’:. . . . . :
 
-.:.:.........:..:.:..........:.:......:....::.:..:.....:.....::....::::..*.:.,:..:. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ..*...... . . . . . . . . . . . . . . . . . . . . . . . . . .
+.:.:.........:..:.:..........:.:......:....::.:..:.....:.....::....::::...:.,:..:. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ........ . . . . . . . . . . . . . . . . . . . . . . . . . .
 
 : . .. .I. . . .: : . :.. . .. : :.:.n. .:.... . . ..:.. :’. . .. :.:. -.:. . . . . . . . . . . :... . . . . . . . . . ...:..::...,.. . . . . .:. -. . :
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .* . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .,.......................... . . .
 
--:.:. . . .. . . . *. . . . . . . . .:.:.. . .::. . ...:. . . . . . . ..*. :.. . . .....:;::.... - . ...:. :.:.:*:..*:.. . . . . . . . . . . . .. :’ . : . . . . . . . .. . . . .. :
+-:.:. . . .. . . . . . . . . . . . .:.:.. . .::. . ...:. . . . . . . ... :.. . . .....:;::.... - . ...:. :.:.::..:.. . . . . . . . . . . . .. :’ . : . . . . . . . .. . . . .. :
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ...~. . . . . . . . . . .
 
 .::. .. . . . . . . .‘... : -. :i’. . . . . . . . . . . .,- . :: . . .:.. . ::. . . . . . . . :.. . . -- . . .. ::. . . . . . . . . ..i. . . . . . .. . . : -.:-:.
 :....:..:.:..::...:.:.....................~..:....:.::.:.::.....~.:...:.......:.:..*. . . . . . . . . . . ....I. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-.,, :. ::.:: . . . . : . -*.. . . . .; ‘.:..’. . . . . .::... . .. . : ...*... . . : . . 1.::::.::I.:...::.:.: : . . . . .. - . . . . . .. .:
+.,, :. ::.:: . . . . : . -.. . . . .; ‘.:..’. . . . . .::... . .. . : ...... . . : . . 1.::::.::I.:...::.:.: : . . . . .. - . . . . . .. .:
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .,. I. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-.i.. : . . :.. . . . . . . . . . . . . . . . .:  - . . . . .. :: **  - ‘.: I ‘:: :..:. . . . . . . . .:. ::. .. . . . ::. . . . .. . . . .:. . . ::::... . . . . . .. . . . . -. ::.
+.i.. : . . :.. . . . . . . . . . . . . . . . .: - . . . . .. :: ** - ‘.: I ‘:: :..:. . . . . . . . .:. ::. .. . . . ::. . . . .. . . . .:. . . ::::... . . . . . .. . . . . -. ::.
 .:..........::....:....:::.....:::....:.:.........~..........:.....:...:....:....:. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .I.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-. . . . . . .::.:..:.:.:........::::..........:...:.:....::::.:..:.:.:.....:.:::::..:.:....::..... . . . . . . . .. :.. . . . . . . . . . . . . . . . . . .. . . . . ..-.. . ..:-*.-. - . . ..:-. . . . . . . . . . . .:::*::“‘..:’“‘: . . . . . . . . . ....*-.: . . . . . . . . .:*.:. . . . ....“.:. : . . . . .. .:* ‘:. . . . : . .::. . . . . . . . . .:‘.. . .. ..
-.,.“, .*. . . .:.* : ..:. :.: ..:.. . . . . . . .. . . . . .. **..* . :. . .:. . . . .
+. . . . . . .::.:..:.:.:........::::..........:...:.:....::::.:..:.:.:.....:.:::::..:.:....::..... . . . . . . . .. :.. . . . . . . . . . . . . . . . . . .. . . . . ..-.. . ..:-.-. - . . ..:-. . . . . . . . . . . .:::::“‘..:’“‘: . . . . . . . . . ....-.: . . . . . . . . .:.:. . . . ....“.:. : . . . . .. .:* ‘:. . . . : . .::. . . . . . . . . .:‘.. . .. ..
+.,.“, .. . . .:. : ..:. :.: ..:.. . . . . . . .. . . . . .. **..* . :. . .:. . . . .
 
-:... . . . . . . . . .: *:.: . . :. . 1.. . .:. *..*. . . . . . .‘*I . . . . . . .
+:... . . . . . . . . .: *:.: . . :. . 1.. . .:. ... . . . . . .‘*I . . . . . . .
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . *........... . . . . . . . . . . . . . . . .
 
-::...:.....:......:...:.:......:.......::.:.....:.,........:.:.....:...:.:.:.::.... . .*. . . . . .. . . -: ..r . . . . . . . . ..: -: . . . . . . .*.. . .. . . . . . . .. . . . . . .. . .:*. . . . . . .. .. . .*. . . ::.:.:.:..:... . . . . . . .. . . . . . . . . . . . . . . .. . . . . . . . . . . . 1: . .. . . . . .‘::. . . . . . .. . . . . .:. . . . . .. . . .*. .. . . . . . . : . . . ..:
+::...:.....:......:...:.:......:.......::.:.....:.,........:.:.....:...:.:.:.::.... . .. . . . . .. . . -: ..r . . . . . . . . ..: -: . . . . . . ... . .. . . . . . . .. . . . . . .. . .:. . . . . . .. .. . .. . . ::.:.:.:..:... . . . . . . .. . . . . . . . . . . . . . . .. . . . . . . . . . . . 1: . .. . . . . .‘::. . . . . . .. . . . . .:. . . . . .. . . .*. .. . . . . . . : . . . ..:
 
 :.:. ..::.:..:.:.........:....:.::.::.:.::.i...::.....:.....~.::.........:...::::....... . . . . .. . .:. . . . . . . . ..*-. : .... . . ‘..:. .. :. .. . : .. . . . . . . . . . . . . . . . . . . . . .. ..:.... . . . .ia..... . . . . ..:.:. : . . . . . . . . . . . . . . . .. . . . . . . . . . ...::-:. . . . :.. . . . ..,. . . . . . . .. . . . . . . . . . .. . . . . .. . .. ..O ..: . . .. :
 
@@ -17044,481 +13657,323 @@ i..::.. .
 
 . :.: :::.:: . . . . . . . .. . . : :..;..- . . . . . . . . . . . ..:..::..: I.. . . .‘:.. .:..: i: . ..:.:...........:......::.:..:....:...............,...:...:...:::.::.:..~:.....*... . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-
 ..::.:..:.:.........:....:.::.::.:.::.i...::.....:.....~.::.........:...::::....... . . . . . . . . . . . . . ..O . .
-
 
        - . “: . . . . . . .
 
 .:.:.........:..:.:..........:.:......:....::.:..:.....:.....::....::::..*.:.,:..:
 
-
 .:..........::....:....:::.....:::....:.:.........~..........:.....:...:....:....:* . . . . . . . . . . . . . . .
 
-
 ::...:.....:......:...:.:......:.......::.:.....:.,........:.:.....:...:.:.:.::...*. . . . . . . . . . . . . . . . .
-
 
 . . . . . . . . . . . . . . . . . i: .
 ..:.:...........:......::.:..:....:...............,...:...:...:::.::.:..~:.....*..
 
-
 :..;..-
-
 
 :.: :::.::
 
-
 .:.,...:.:
-
 
 ::::..
 
-
 i::....
-
 
 .:*.:.:
 
-
 ..i.
-
 
 .:-..::
 
-
 .:..::
-
 
 .‘*I
 
-
 ..:...
-
 
 ..::-:
 
-
 ::....
-
 
 .:...
 
-
 .::I.:...:
 
-
-*..*.
-
+...
 
 -:.:
 
-
 -*..:
-
 
 .:”
 
-
 ...*
-
 
 .:..
 
-
 :..
-
 
 .::.
 
-
 “‘:
 
-
 .:.*
-
 
 *:.:
 
-
 .I.
-
 
 .i.
 
-
 :...
-
 
 .:.*
 
-
 :i’
-
 
 -:.
 
-
 :..:
-
 
 *.-.
 
-
 :.:
-
 
 i:
 
-
 :::
-
 
 .:*
 
-
 .*.
 
-
 :.
-
 
 *..
 
-
 1.:
 
-
 ::
-
 
 .:-
 
-
 ..:
 
-
 ..:
-
 
 :.
-
 
 .*
 
+::
 
 ::
 
-
-::
-
-
 :.
 
-
 :.
-
 
 .:
 
-
 .*
 
-
 :
-
 
 :’
 
-
 .:.
 
+:
+
+:.
 
 :
 
-
 :.
-
-
-:
-
-
-:.
-
 
 *.
 
-
 .:
-
 
 *.
 
-
 .:
 
-
 :.
-
 
 .n.
 
+.
 
 .
 
+:
 
 .
 
-
-:
-
-
 .
 
-
-.
-
+:
 
 :
 
-
 :
-
-
-:
-
 
 . . . . . . .
 
+:
 
 :
 
-
 :
 
-
 :
-
-
-:
-
 
 .
 
-
 .
-
 
 . . . . . . . . .
 
-
 . . . . . . . . .
 
-
 .
 
-
 .
-
 
 . . . . . . . . . . . . . . . . .
 
-
 .
 
-
 .
-
 
 . . . . .
 
-
 . . . . . . . . . . . . . . . . .
-
 
 . . . . . . .
 
-
 . . .
-
 
 . . . . . . . . . . . . . . . . . . . . .
 
-
 . . . . . . . . . . . . .
-
 
 -
 
-
 . . . . . . . .
-
 
 .
 
-
 . . . . . . .
 
-
 . . . . .
-
 
 . . . . . . . . . . ,
 
-
 .
 
-
 . . .
-
 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-
 .
 
-
 .
-
 
 . . .
-
 
 . . . . . . . . . . . . .
 
-
 . . .
-
 
 . . . . . . . . . . . . . . . . .
 
-
 .
 
-
 . . . . .
-
 
 . . .
 
-
 . . . . .
-
 
 . . . . . . .
 
-
 . . . . . . . . . . . . .
 
-
 .
-
 
 . . . . . . . . . . .
 
+.
 
 .
 
+. . .
+
+. . .
+
+. . .
+
+. . .
 
 .
 
-
 . . .
-
-
-. . .
-
-
-. . .
-
-
-. . .
-
-
-.
-
-
-. . .
-
 
 . .
 
-
 . . .
 
-
 .
-
 
 . . . . . . . . . . . . .
 
-
 . . . . .
-
 
 .
 
-
 . . . . .
-
 
 . . . . . . .
 
-
 .
-
 
 . . .
 
-
 . . . . .
 
+.
 
 .
 
-
 .
 
-
 .
-
-
-.
-
 
 . . . . . . .
 
-
 . . . . .
 
+.
 
 .
 
-
 .
-
-
-.
-
 
 . . . . . . .
-
-
------
-
------
 
 ###### 19. String Searching
-
-Data to be processed often does not decompose logically into independent records with small identifiable pieces. This type of data is characterized only by the fact that it can be written down as a _string:_ a linear
+Data to be processed often does not decompose logically into independent records with small identifiable pieces. This type of data is characterized only by the fact that it can be written down as a string: a linear
 (typically very long) sequence of characters.
 Strings are obviously central in “word processing” systems, which provide
-a variety of capabilities for the manipulation of text. Such systems process _text_
-_strings,_ which might be loosely defined as sequences of letters, numbers, and
+a variety of capabilities for the manipulation of text. Such systems process text
+strings, which might be loosely defined as sequences of letters, numbers, and
 special characters. These objects can be quite large (for example, this book
 contains over a million characters), and efficient algorithms play an important
 role in manipulating them.
-Another type of string is the _binary string, a_ simple sequence of 0 and 1
+Another type of string is the binary string, a simple sequence of 0 and 1
 values. This is in a sense merely a special type of text string, but it is worth
 making the distinction not only because different algorithms are appropriate
 but also binary strings arise naturally in many applications. For example,
@@ -17532,17 +13987,14 @@ by (say) eight binary bits and a binary string can be viewed as a text string by
 treating eight-bit chunks as characters. We’ll see that the size of the alphabet
 from which the characters are taken to form a string is an important factor
 in the design of string processing algorithms.
-A fundamental operation on strings is pattern matching: given a _text_
-string of length N and _a pattern_ of length M, find an occurrence of the
+A fundamental operation on strings is pattern matching: given a text
+string of length N and a pattern of length M, find an occurrence of the
 pattern within the text. (We will use the term “text” even when referring to
 a sequence of O-l values or some other special type of string.) Most algorithms
 
 241
 
-
------
-
-_242_ CHAPTER 19
+242 CHAPTER 19
 
 for this problem can easily be extended t,o find all occurrences of the pattern
 in the text, since they scan sequentially through t,he text and can be restarted
@@ -17554,18 +14006,18 @@ to study because several very different (and surprising) algorithms have only
 recently been discovered which not only provide a spectrum of useful practical
 methods but also illustrate some fundamental algorithm design techniques.
 
-_A Short History_
+A Short History
 
 The development of the algorithms that we’ll be examining has an interesting
 history: we’ll summarize it here to place the various methods into perspective.
 There is an obvious brute-force algorithm for string processing which is in
 widespread use. While it has a worst-case running time proportional to MN,
 the strings which arise in many applications lead to a running time which
-is virtually always proportional to _M_ + N. Furthermore, it is well suited to
+is virtually always proportional to M + N. Furthermore, it is well suited to
 good architectural features on most computer systems, so an optimized version
 provides a “standard” which is difficult to beat with a clever algorithm.
 In 1970, S. A. Cook proved a theoretical result about a particular type of
-abstract machine implying that an algorithm exists which solves the patternmatching problem in time proportional to _M + N_ in the worst case. D. E.
+abstract machine implying that an algorithm exists which solves the patternmatching problem in time proportional to M + N in the worst case. D. E.
 Knuth and V. R. Pratt laboriously followed through the construction Cook
 used to prove his theorem (which was not intended at all to be practical)
 to get an algorithm which they were then able to refine to be a relatively
@@ -17585,16 +14037,11 @@ decrease in response time for string searches.
 Both the Knuth-Morris-Pratt and the Boyer-Moore algorithms require
 some complicated preprocessing on the pattern that is difficult to understand
 
-
 t,he
 
+M + N
 
-_M + N_
-
-
------
-
-STRING SEARCHING **243**
+STRING SEARCHING 243
 
 and has limited the extent, to which they are used. (In fact, the story goes
 that an unknown systems programmer found Morris’ algorithm too difficult
@@ -17602,76 +14049,62 @@ to understand and replaced it with a brute-force implementation.)
 In 1980, R. M. Karp and M. 0. Rabin observed that the problem is not
 as different from the standard searching problem as it had seemed, and came
 up with an algorithm almost as simple as the brute-force algorithm which
-virtually always runs in time proportional to _M_ + N. Furthermore, their
+virtually always runs in time proportional to M + N. Furthermore, their
 algorithm extends easily to two-dimensional patterns and text, which makes
 it more useful than the others for picture processing.
 This story illustrates that the search for a “better algorithm” is still very
 often justified: one suspects that there are still more developments on the
 horizon even for this problem.
 
-_Brute-Force Algorithm_
+Brute-Force Algorithm
 
 The obvious method for pattern matching that immediately comes to mind is
 just to check, for each possible position in the text at which the pattern could
 match, whether it does in fact match. The following program searches in this
 way for the first occurrence of a pattern p [ 1. .M] in a text string a [ 1. .N] :
 
-**function** _brutesearch: integer;_
+function brutesearch: integer;
 
-**var** i, j: integer;
-**begin**
+var i, j: integer;
+begin
 ###### i:=l; j:=l;
+repeat
+if a[i]=plj]
 
-**repeat**
-**if** a[i]=plj]
-
-**then begin** i:=i+l; j:=j+l **end**
-**else begin** i:=i-j+2; j:=1 **end;**
-**until** **(j>M) or** _(i>N);_
-**if** _j>M_ **then** _brutesearch:=i-M_ **else brutesearch:=i**
-**end** **;**
+then begin i:=i+l; j:=j+l end
+else begin i:=i-j+2; j:=1 end;
+until (j>M) or (i>N);
+if j>M then brutesearch:=i-M else brutesearch:=i
+end ;
 
 The program keeps one pointer (i) into the text, and another pointer (j) into
 the pattern. As long as they point to matching characters, both pointers are
 incremented. If the end of the pattern is reached (j>M), then a match has
-been found. If _i_ and j point to mismatching characters, then j is reset to point
-to the beginning of the pattern and _i_ is reset to correspond to moving the
+been found. If i and j point to mismatching characters, then j is reset to point
+to the beginning of the pattern and i is reset to correspond to moving the
 pattern to the right one position for matching against the text. If the end
-of the text is reached _(i>N),_ then there is no match. If the pattern does not
+of the text is reached (i>N), then there is no match. If the pattern does not
 occur in the text, the value N+l is returned.
 In a text-editing application, the inner loop of this program is seldom
 iterated, and the running time is very nearly proportional to the number of
 
-
-_brutesearch:=i-M_
-
+brutesearch:=i-M
 
 a[i]=plj]
 
-
 ###### j:=j+l
-
-
-_(i>N),_
-
+(i>N),
 
 ###### i:=i+l;
-
 ```
 j:=l;
 
 ```
 
 ###### j:=1
-
-
 1.
 
-
-**;**
-
-
------
+;
 
 244 CHAPTER 19
 
@@ -17706,25 +14139,20 @@ in the following binary string:
 10010
 10010111
 
-There is one line in this table for each time the body of the **repeat** loop
+There is one line in this table for each time the body of the repeat loop
 is entered, and one character for each time j is incremented. These are the
 “false starts” that occur when trying to find the pattern: an obvious goal is
 to try to limit the number and length of these.
 
-_Knuth-Morris-Pratt Algorithm_
+Knuth-Morris-Pratt Algorithm
 
 The basic idea behind the algorithm discovered by Knuth, Morris, and Pratt
 is this: when a mismatch is detected, our “false start” consists of characters
 that we know in advance (since they’re in the pattern). Somehow we should be
-able to take advantage of this information instead of backing up the _i_ pointer
+able to take advantage of this information instead of backing up the i pointer
 over all those known characters.
 
-
 ###### j:=j+l
-
-
------
-
 STRING SEARCHING 245
 
 For a simple example of this, suppose that the first character in the
@@ -17769,22 +14197,14 @@ value of nextb] is the maximum k<j for which the first k-l characters of
 the pattern match the last k-l characters of the first j-l characters of the
 pattern. A vertical line is drawn just after plj-next[j] ] on each line of the
 
-
 ###### p[l..j-l]
-
-
 pbl.
-
 
 b]
 
-
 ]
 
-
------
-
-**246** **CHAPTER 19**
+246 CHAPTER 19
 
 table. As we’ll soon see, it is convenient to define next[I] to be 0.
 
@@ -17798,21 +14218,21 @@ match the first nextb]-l characters of the pattern, so there’s no need to
 back up the i pointer that far: we can simply leave the i pointer unchanged
 and set the j pointer to next b], as in the following program:
 
-**function** kmpsearch : integer ;
+function kmpsearch : integer ;
 
-**var** i, j: integer;
-**begin**
+var i, j: integer;
+begin
 ###### i:=l; j:=l;
-**repeat**
-**if (j=O) or** (a[i]=pb])
+repeat
+if (j=O) or (a[i]=pb])
 
-**then begin** i:=i+l; j:=j+l **end**
-**else begin** j:=nextLj] **end;**
-**until** **(j>M) or** (i>N);
+then begin i:=i+l; j:=j+l end
+else begin j:=nextLj] end;
+until (j>M) or (i>N);
 
-**if** j> **M then** kmpsearch : =i-M **else** kmpsearch : =i;
+if j> M then kmpsearch : =i-M else kmpsearch : =i;
 
-**end ;**
+end ;
 
 When j=l and a[i] does not match the pattern, there is no overlap, so we want
 to increment i and set j to the beginning of the pattern. This is achieved by
@@ -17828,24 +14248,12 @@ It remains to compute the next table. The program for this is short but
 tricky: it is basically the same program as above, except that it is used to
 match the pattern against itself.
 
-
 ###### (a[i]=pb])
-
-
 ###### nextb]--I
-
-
 ###### nextb]-l
-
-
 ###### j:=j+l
-
-
 ###### (i>N);
-
-
 ###### i-j+1
-
 ```
 j:=l;
 
@@ -17853,34 +14261,27 @@ j:=l;
 
 p[O]
 
-
 ###### j=l
-
-
 i
-
 
 :
 
+STRING SEARCHING 247
 
------
-
-_STRING SEARCHING_ 247
-
-**procedure initnext ;**
-**var** i, j: integer;
-**begin**
+procedure initnext ;
+var i, j: integer;
+begin
 ###### i:=l; j:=O; next[l]:=O;
-**repeat**
-**if (j=O) or** (p[i]=plj])
+repeat
+if (j=O) or (p[i]=plj])
 
-**then begin** i:=i+l; j:=j+l; next[i]:=j **end**
-**else begin** j:=nextIj] **end;**
-**until** i>M;
-**end** **;**
+then begin i:=i+l; j:=j+l; next[i]:=j end
+else begin j:=nextIj] end;
+until i>M;
+end ;
 
 Just after i and j are incremented, it has been determined that the first j-l
-characters of the pattern match the characters in positions p [i-j- 1. _.i-1_ 1, the
+characters of the pattern match the characters in positions p [i-j- 1. .i-1 1, the
 last j-l characters in the first i-l characters of the pattern. And this is the
 largest j with this property, since otherwise a “possible match” of the pattern
 with itself would have been missed. Thus, j is exactly the value to be assigned
@@ -17893,24 +14294,24 @@ pattern that we’ve been considering, but it’s likely to be much more efficie
 
 i:=O;
 
-**0: i:=i+l;**
+0: i:=i+l;
 
-1: **if** **a[i]<>‘l’then goto** 0; i:=i+l;
+1: if a[i]<>‘l’then goto 0; i:=i+l;
 
-**2: if a[i]<>‘O’then goto** 1; i:=i+l;
-**3: if** **a[i]<>‘l’then goto** 1; i:=i+l;
-**4: if a[i]<>‘O’then goto 2;** i:=i+l;
+2: if a[i]<>‘O’then goto 1; i:=i+l;
+3: if a[i]<>‘l’then goto 1; i:=i+l;
+4: if a[i]<>‘O’then goto 2; i:=i+l;
 
-**5: if a[i]<>‘O’then goto** 3; i:=i+l;
+5: if a[i]<>‘O’then goto 3; i:=i+l;
 
-**6: if** **a[i]<>‘l’then goto** 1; i:=i+l;
+6: if a[i]<>‘l’then goto 1; i:=i+l;
 
-**7: if** **a[i]<>‘l’then goto 2;** i:=i+l;
-8: **if** **a[i]<>‘l’then goto 2;** i:=i+l;
+7: if a[i]<>‘l’then goto 2; i:=i+l;
+8: if a[i]<>‘l’then goto 2; i:=i+l;
 
 search : =i-8;
 
-The **goto** labels in this program correspond precisely to the next table. In
+The goto labels in this program correspond precisely to the next table. In
 fact, the in&next program above which computes the next table could easily
 be modified to output this program ! To avoid checking whether i>N each
 time i is incremented, we assume that the pattern itself is stored at the end
@@ -17918,73 +14319,35 @@ of the text as a sentinel, in a[N+l ..N+M]. (This optimization could also
 be applied to the standard implementation.) This is a simple example of a
 “string-searching compiler” : given a pattern, we can produce a very efficient
 
-
 ###### a[i]<>‘l’then
-
-
 ###### a[i]<>‘l’then
-
-
 ###### a[i]<>‘l’then
-
-
 ###### a[i]<>‘l’then
-
-
 ###### next[l]:=O;
-
-
 ###### next[i]:=j
-
-
 ###### i:=i+l;
-
-
 ###### j:=j+l;
-
-
 ###### i:=i+l;
-
-
 ###### i:=i+l;
-
-
 ###### i:=i+l;
-
-
 ###### i:=i+l;
-
-
-**if (j=O) or**
-
+if (j=O) or
 
 ###### j:=O;
-
-
 i:=O;
 
-
 ###### i:=l;
+goto
 
+goto 2;
 
-**goto**
+goto
 
+0:
 
-**goto 2;**
+;
 
-
-**goto**
-
-
-**0:**
-
-
-**;**
-
-
------
-
-_248_ _CHAPTER 19_
+248 CHAPTER 19
 
 program which can scan for that pattern in an arbitrarily long text string.
 We’ll see generalizations of this concept in the next two chapters.
@@ -18004,8 +14367,8 @@ ff////-_I,---. \ \ \ f ’ / e--. ’[--.]\ \ ‘\ \ \
           - .- .N-w--=z--------_----[#CC] .' [cc)] /' /
 
 ```
-The machine consists of _states_ (indicated by circled letters) and _transi-_
-_tions_ (indicated by arrows). Each state has two transitions leaving it: a match
+The machine consists of states (indicated by circled letters) and transi-
+tions (indicated by arrows). Each state has two transitions leaving it: a match
 transition (solid line) and a non-match transition (dotted line). The states
 are where the machine executes instructions; the transitions are the goto instructions. When in the state labeled “5,” the machine can perform just
 one instruction: “if t.he current character is x then scan past it and take the
@@ -18020,11 +14383,10 @@ pattern-matching algorithm.
 The alert reader may have noticed that there’s still some room for improvement in this algorithm, because it doesn’t take into account the character
 which caused the mismatch. For example, suppose that we encounter 1011
 when searching for our sample pattern 10100111. After matching 101, we
-find a mismatch on the fourth character, at which point the _next_ table says
+find a mismatch on the fourth character, at which point the next table says
 to check the second character, since we already matched the 1 in the third
 character. However, we could not have a match here: from the mismatch, we
 know that the next character in the text is not 0, as required by the pattern.
-
 
 \ f
 ```
@@ -18044,10 +14406,7 @@ know that the next character in the text is not 0, as required by the pattern.
 
 goto
 
-
-
 ###### [--.]
-
 ```
 [#CC]
 
@@ -18066,7 +14425,6 @@ N-w
 
 ..
 
-
 //
 
 ```
@@ -18082,7 +14440,6 @@ ff
 ```
 
 \
-
 
 \
 
@@ -18101,7 +14458,6 @@ ff
 
 f
 
-
 ’
 
 ```
@@ -18113,19 +14469,18 @@ I
 
 ```
 
------
 
-**_STRING SEARCHING_** **_249_**
+STRING SEARCHING 249
 
 Another way to see this is to look at the version of the program with the next
-table “wired in”: at label 4 we go to 2 if **_a[i]_** is not 0, but at label 2 we go
+table “wired in”: at label 4 we go to 2 if a[i] is not 0, but at label 2 we go
 to 1 if a[i] is not 0. Why not just go to 1 directly? Fortunately, it is easy
 to put this change into the algorithm. We need only replace the statement
 next[i] :=j in the initnext program by
 
 if plj]<>p[i] then next[i]:=j else next[i]:=nextb];
 
-With this change, we either increment j cr reset it from the **_next_** table at most
+With this change, we either increment j cr reset it from the next table at most
 once for each value of i, so the algorithm is clearly linear.
 The Knuth-Morris-Pratt algorithm LS not likely to be significantly faster
 than the brute-force method in most actual applications, because few applications involve searching for highly self-repetitive patterns in highly selfrepetitive text. However, the method does have a major virtue from a practical point of view: it proceeds sequentially through the input and never “backs
@@ -18133,7 +14488,7 @@ up” in the input. This makes the method convenient for use on a large file
 being read in from some external device. (Algorithms which require backup
 require some complicated buffering in this situation.)
 
-**_Boyer-Moore Algorithm_**
+Boyer-Moore Algorithm
 
 If “backing up” is not a problem, then a significantly faster string searching
 method can be developed by scanning .,he pattern from right to left when
@@ -18146,58 +14501,38 @@ pattern at the end does appear elsewhere: in general, so we need a next table
 as above. For example, the following is a right-to-left version of the next table
 for the pattern 10110101:
 
-**_j_** **_p[M--j+2..M] p[M-n~3xt~]+l..M] nextb]_**
+j p[M--j+2..M] p[M-n~3xt~]+l..M] nextb]
 
 2 1 101 4
 3 010110101 7
 4 10101 2
 
-
-**_p[M--j+2..M] p[M-n~3xt~]+l..M] nextb]_**
-
+p[M--j+2..M] p[M-n~3xt~]+l..M] nextb]
 
 not on the fifth, then we can immediatelyi slide the pattern seven positions to
 
-
 elsewhm?re
-
 
 elsewhere:
 
-
-**_a[i]_**
-
+a[i]
 
 does
 
-
 .,he
-
 
 5 010110101
 
-
 ###### next[i]:=nextb];
-
-
 ###### next[i]:=j
-
-
 next[i]
 
-
 ###### :=j
-
-
 LS
-
 
 5
 
-
 ###### plj]<>p[i]
-
-
 self
 
 6 1010110101 5
@@ -18205,10 +14540,7 @@ self
 7 11010110101 5
 8 0110101101011 5
 
-
------
-
-_250_ _CHAPTER 19_
+250 CHAPTER 19
 
 The number at the right on the jth line of the table gives the maximum
 number of character positions that the pattern can be shifted to the right
@@ -18245,32 +14577,25 @@ so that the its T matches the T in the text and find the full match. This
 method brings us right to the match position at a cost of examining only seven
 characters in the text (and five more to verify the match)! If the alphabet
 is not small and the pattern is not long, then this “mismatched character
-algorithm” will find a pattern of length _M_ in a text string of length N in
-about _N/M_ steps.
+algorithm” will find a pattern of length M in a text string of length N in
+about N/M steps.
 
 The mismatched character algorithm is quite easy to implement. It
 simply improves a brute-force right-to-left pattern scan by using an array
 skip which tells, for each character in the alphabet, how far to skip if that
 character appears in the text and causes a mismatch:
 
-
 given that a mismatch in a right-toleft scan occurred on the jth character
 
-
 ###### N
-
-
 S
-
-
------
 
 STRING SEARCHING 251
 
 function mischarsearch: integer;
 var i, j: integer;
 begin
-i:=M; `j:=:M;`
+i:=M; j:=:M;
 repeat
 if a[i]=pb]
 
@@ -18279,11 +14604,9 @@ else
 
 begin
 ###### i:=i+M-j+l; j:=M;
-
 if skip[index(a[i])]>M-j+1 then
 
 ###### i:=i+skip[index(a[i])]-(M-j+l);
-
 end;
 until (j<l) or (i>N);
 mischarsearch:=i+l
@@ -18300,7 +14623,7 @@ and then for j from 1 to M sets skip[index(pb])] to M-j. For example, for
 the pattern STING, the skip entry for G would be 0, the entry for N would be
 1, the entry for I would be 2, the entry for T would be 3, the entry for S would
 be 4, and the entries for all other letters T,vould be 5. Thus, for example, when
-an S is encountered during a right-to-lefi, search, the _i_ pointer is incremented
+an S is encountered during a right-to-lefi, search, the i pointer is incremented
 by 4 so that the end of the pattern is alig;ned four positions to the right of the
 S (and consequently the S in the pattern lines up with the S in the text). If
 there were more than one S in the pattern, we would want to use the rightmost
@@ -18314,133 +14637,105 @@ The mismatched character algorithm obviously won’t help much for binary string
 the mismatch (and these are both likely to be in the pattern). However, the
 bits can be grouped together to make “characters” which can be used exactly
 
-
 ###### i:=i+skip[index(a[i])]-(M-j+l);
-
-
 ###### i:=i+M-j+l;
-
-
 ###### i:=i+M-j+1
-
-
 if a[i]=pb]
-
 
 alig;ned
 
-
 ###### (j<l)
-
-
 ###### j:=M;
-
-
 T,vould
-
 
 ;
 
-
------
-
 252 CRAI’TER 19
 
-as above. If we take _b bits at a time, then we need a_ _skip table with 2b entries._
-The value of _b_ should be chosen small enough so that this table is not too
+as above. If we take b bits at a time, then we need a skip table with 2b entries.
+The value of b should be chosen small enough so that this table is not too
 large, but large enough that most b-bit sections of the text are not likely to
-be in the pattern. Specifically, there are _M_ - _b_ + 1 different b-bit sections in
-the pattern (one starting at each bit position from 1 through _M-b+_ 1) so we
-want _M_ - _b_ + 1 to be significantly less than 2b. For example, if we take _b_ to
+be in the pattern. Specifically, there are M - b + 1 different b-bit sections in
+the pattern (one starting at each bit position from 1 through M-b+ 1) so we
+want M - b + 1 to be significantly less than 2b. For example, if we take b to
 be about lg(4M), then the skip table will be more than three-quarters filled
-with _M_ entries. Also _b_ must be less than _M/2,_ otherwise we could miss the
+with M entries. Also b must be less than M/2, otherwise we could miss the
 pattern entirely if it were split between two b-bit text sections.
 
-**Rabin-Karp** _Algorithm_
+Rabin-Karp Algorithm
 
 A brute-force approach to string searching which we didn’t examine above
-would be to use a large memory to advantage by treating each possible _M-_
+would be to use a large memory to advantage by treating each possible M-
 character section of the text as a key in a standard hash table. But it is
 not necessary to keep a whole hash table, since the problem is set up so that
 only one key is being sought: all that we need to do is to compute the hash
 function for each of the possible M-character sections of the text and check if
 it is equal to the hash function of the pattern. The problem with this method
-is that it seems at first to be just as hard to compute the hash function for _M_
+is that it seems at first to be just as hard to compute the hash function for M
 characters from the text as it is merely to check to see if they’re equal to the
 pattern. Rabin and Karp found an easy way to get around this problem for the
-hash function _h(k)_ = kmodq where _q_ (the table size) is a large prime. Their
+hash function h(k) = kmodq where q (the table size) is a large prime. Their
 method is based on computing the hash function for position i in the text
 given its value for position i - 1. The method follows quite directly from the
-mathematical formulation. Let’s assume that we translate our _M_ characters
+mathematical formulation. Let’s assume that we translate our M characters
 to numbers by packing them together in a computer word, which we then
 treat as an integer. This corresponds to writing the characters as numbers in
 a base-d number system, where d is the number of possible characters. The
-number corresponding to _a[i..i_ + _M_ - l] is thus
+number corresponding to a[i..i + M - l] is thus
 
-_z =_ _a[i]dMP1 +_ _a[i_ _+_ lIdMe + ... + a[i + _M -_ l]
+z = a[i]dMP1 + a[i + lIdMe + ... + a[i + M - l]
 
-and we can assume that we know the value of _h(z)_ = xmodq. But shifting
+and we can assume that we know the value of h(z) = xmodq. But shifting
 one position right in the text simply corresponds to replacing x by
 
-_(x - a[i]dMel)d + a[i_ _+ M]._
+(x - a[i]dMel)d + a[i + M].
 
 A fundamental property of the mod operation is that we can perform it at any
 time during these operations and still get the same answer. Put another way,
-if we take the remainder when divided by _q_ after each arithmetic operation
+if we take the remainder when divided by q after each arithmetic operation
 (to keep the numbers that we’re dealing with small) then we get the same
 answer that we would if we were to perform all of the arithmetic operations,
-then take the remainder when divided by _q._
+then take the remainder when divided by q.
 
-
-_a[i]dMel)d +_
-
+a[i]dMel)d +
 
 ###### lIdMe
-
-
-_a[i_
-
+a[i
 
 + a[i +
 
-
 2b.
 
++
 
-_+_
+q
 
-
-_q_
-
-
------
-
-STRING SEARCHTNG _253_
+STRING SEARCHTNG 253
 
 This leads to the very simple pattelm-matching algorithm implemented
 below. The program assumes the same i.ldex function as above, but d=32 is
 used for efficiency (the multiplications might be implemented as shifts).
 
-**function** rksearch : integer;
+function rksearch : integer;
 
-**const** q=33554393; d=3.Z;
+const q=33554393; d=3.Z;
 
-**var** hl, h2, dM, i: integer:
-**begin**
-###### dM:=l; for i:=l to M-1 do dM:=(d*dM) mod q; hl:=O; for i:=l to M do hl:=(hl*d+index(p[i])) mod q;
+var hl, h2, dM, i: integer:
+begin
+###### dM:=l; for i:=l to M-1 do dM:=(ddM) mod q; hl:=O; for i:=l to M do hl:=(hld+index(p[i])) mod q;
  h2:=0; for i:=l to M do h2:=(h2*d+index(a[i])) mod q;
  i:=l;
-**while** (hloh2) **and** **(i<=N-M) do**
-**begin**
-h2:=(h2+d*q-index(,t[i])*dM) **mod q;**
+while (hloh2) and (i<=N-M) do
+begin
+h2:=(h2+dq-index(,t[i])dM) mod q;
 
-h2:=(h2*d+index(a[i+M])) **mod** q;
+h2:=(h2*d+index(a[i+M])) mod q;
 
 ###### i:=i+l;
-**end** **;**
+end ;
 
 rksearch :=i;
-**end ;**
+end ;
 
 The program first computes a hash valle hl for the pattern, then a hash
 value h2 for the first M characters of the text. (Also it computes the value
@@ -18448,69 +14743,45 @@ of d”-’ modq in the variable dM.) Then it proceeds through the text string,
 using the technique above to compute the hash function for the M characters
 starting at position i for each i, comparing each new hash value to hl. The
 prime q is chosen to be as large as possible, but small enough that (d+l)*q
-doesn’t cause overflow: this requires less **mod** operations then if we used the
+doesn’t cause overflow: this requires less mod operations then if we used the
 largest repesentable prime. (An extra d*q is added during the h2 calculation
-to make sure that everything stays positive so that the **mod** operation works
+to make sure that everything stays positive so that the mod operation works
 as it should.)
 
-This algorithm obviously takes time proportional to N + _M._ Note that
+This algorithm obviously takes time proportional to N + M. Note that
 it really only finds a position in the text which has the same hash value as the
 pattern, so, to be sure, we really should do a direct comparison of that text
 with the pattern. However, the use of suc:i a large value of q, made possible by
-the **mod** computations and by the fact that we don’t have to keep the actual
+the mod computations and by the fact that we don’t have to keep the actual
 hash table around, make8 it extremely unlikely that a collision will occur.
-Theoretically, this algorithm could still take _NM_ steps in the (unbelievably)
+Theoretically, this algorithm could still take NM steps in the (unbelievably)
 worst case, but in practice the algorithm can be relied upon to take about
-_N + M_ steps.
+N + M steps.
 
-
-h2:=(h2+d*q-index(,t[i])*dM)
-
+h2:=(h2+dq-index(,t[i])dM)
 
 ###### hl:=(hl*d+index(p[i]))
-
-
 This leads to the very simple pattelm-matching algorithm implemented
-
 
 q=33554393;
 
-
 ###### (d+l)*q
-
-
 ###### hl:=O;
-
-
 ###### i:=i+l;
-
-
 dM.)
 
-
 ###### i:=l;
-
-
-**const**
-
+const
 
 ###### i:=l
-
-
 ###### i:=l
-
-
 suc:i
 
+;
 
-**;**
+254 CHAPTER 19
 
-
------
-
-254 _CHAPTER 19_
-
-_Multiple Searches_
+Multiple Searches
 
 The algorithms that we’ve been discussing are all oriented towards a specific
 string searching problem: find an occurrence of a given pattern in a given
@@ -18543,48 +14814,39 @@ and lead to drastically different methods, as we’ll discover in the next two
 chapters.
 
 ###### r-l
-
-
-_CHAPTER 19_
-
+CHAPTER 19
 
 ###### a[l..N],
+STRING SEARCHING 255
 
-
------
-
-STRING SEARCHING _255_
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
 
-
 Implement a brute-force pattern ms.tching algorithm that scans the pattern from right to left.
 
-Give the _next_ table for the Knuth-Morris-Pratt algorithm for the pattern
+Give the next table for the Knuth-Morris-Pratt algorithm for the pattern
 AAIWUAA.
 
-Give the _next_ table for the Knuth-Morris-Pratt algorithm for the pattern
+Give the next table for the Knuth-Morris-Pratt algorithm for the pattern
 AERACADABRA.
 
 Draw a finite state machine which can search for the pattern AE3RACAD
@@ -18592,7 +14854,7 @@ AFBA.
 
 How would you search a text file fo; a string of 50 consecutive blanks?
 
-Give the right-to-left _skip_ table for the right-left scan for the pattern
+Give the right-to-left skip table for the right-left scan for the pattern
 
 AENACADABRA.
 
@@ -18608,45 +14870,33 @@ two-dimensional pattern in a given two-dimensional text. Assume both
 pattern and text are rectangles of characters.
 
 Write programs to generate a random lOOO-bit text string, then find all
-occurrences of the last /c bits elsewhere in the string, for _k =_ _5,10,15._
-(Different methods might be appropriate for different values of _k.)_
-
+occurrences of the last /c bits elsewhere in the string, for k = 5,10,15.
+(Different methods might be appropriate for different values of k.)
 
 AERACADABRA.
 
-
 AAIWUAA.
-
 
 Implement a brute-force pattern ms.tching algorithm that scans the pat-
 
-
 lOOO-bit
-
 
 How would you search a text file fo; a string of 50 consecutive blanks?
 
-
 /c
 
-
------
-
------
-
 ###### 20. Pattern Matching
-
 It is often desirable to do string searching with somewhat less than
 complete information about the pattern to be found. For example, the
 user of a text editor may wish to specif;r only part of his pattern, or he may
 wish to specify a pattern which could match a few different words, or he might
 wish to specify that any number of occurrences of some specific characters
-should be ignored. In this chapter we’ll consider how _pattern_ matching of this
+should be ignored. In this chapter we’ll consider how pattern matching of this
 type can be done efficiently.
 The algorithms in the previous chapter have a rather fundamental dependence on complete specification of the pattern, so we have to consider different
 methods. The basic mechanisms that we will consider make possible a very
 powerful string searching facility which can match complicated M-character
-patterns in N-character text strings in time proportional to _MN._
+patterns in N-character text strings in time proportional to MN.
 First, we have to develop a way to describe the patterns: a “language”
 that can be used to specify, in a rigorous way, the kinds of partial string
 searching problems suggested above. Th .s language will involve more powerful
@@ -18664,20 +14914,16 @@ related to fundamental processes in computer science. For example, the
 method that we will use in our program to perform the string searching task
 implied by a given pattern description is akin to the method used by the
 
-_257_
-
+257
 
 .s
 
-
------
-
-_258_ _CHAPTER 20_
+258 CHAPTER 20
 
 Pascal system to perform the computational task implied by a given Pascal
 program.
 
-Describing _Patterns_
+Describing Patterns
 
 We’ll consider pattern descriptions made up of symbols tied together with the
 following three fundamental operations.
@@ -18702,13 +14948,13 @@ to be repeated. For example, AB* matches strings consisting of an A
 followed by any number of B’s, while (AB)” matches strings consisting
 of alternating A’s and B’s.
 
-A string of symbols built up using these three operations is called a _regular_
-_expression._ Each regular expression describes many specific text patterns.
+A string of symbols built up using these three operations is called a regular
+expression. Each regular expression describes many specific text patterns.
 Our goal is to develop an algorithm which will determine if any of the patterns
 described by a given regular expression occur in a given text string.
 We’ll concentrate on concatenation, or, and closure in order to show
-the basic principles in developing a regular-expression pattern matching algorithm. Various additions are commonly made in actual systems for convenience. For example, -A might mean “match any character _except_ A.”
-This _not_ operation is the same as an or involving all the characters except
+the basic principles in developing a regular-expression pattern matching algorithm. Various additions are commonly made in actual systems for convenience. For example, -A might mean “match any character except A.”
+This not operation is the same as an or involving all the characters except
 A but is much easier to use. Similarly, “7” might mean “match any letter.”
 Again, this is obviously much more compact than a large or. Other examples
 of additional symbols which might make specification of large patterns easier
@@ -18717,13 +14963,9 @@ number, etc.
 These operations can be remarkably descriptive. For example, the pattern
 description ?*(ie + ei)?’ matches all words which have ie or ei in them (and so
 
-
 AI3
 
-
------
-
-PATTERN _h4ATCHliVG_
+PATTERN h4ATCHliVG
 
 are likely to be misspelled!); and (1 + 01)’ (0 + 1) describes all strings of O’s and
 l’s which do not have two consecutive 0’~ Obviously there are many different
@@ -18738,7 +14980,7 @@ scanning the text string from left to rignt, testing, at each position whether
 there is a substring beginning at that position which matches the pattern
 description.
 
-Pattern Matching _Machines_
+Pattern Matching Machines
 
 Recall that we can view the Knuth-Morris-Pratt algorithm as a finite-state
 machine constructed from the search pattern which scans the text. The
@@ -18751,7 +14993,7 @@ changing to one state if there’s a match, to another state if not. A mismatch
 at any point means that the pattern couldn’t occur in the text starting at that
 point. The algorithm itself can be thought of as a simulation of the machine.
 The characteristic of the machine that makes it easy to simulate is that it
-is _deterministic:_ each state transition is completely determined by the next
+is deterministic: each state transition is completely determined by the next
 input character.
 
 To handle regular expressions, it will be necessary to consider a more
@@ -18759,7 +15001,7 @@ powerful abstract machine. Because of the or operation, the machine can’t
 determine whether or not the pattern could occur at a given point by examining just one character; in fact, because 0:’ closure, it can’t even determine how
 many characters might need to be exam:ned before a mismatch is discovered.
 The most natural way to overcome these problems is to endow the machine
-with the power of _nondeterminism:_ when faced with more than one way to
+with the power of nondeterminism: when faced with more than one way to
 try to match the pattern, the machine should “guess” the right one! This
 operation seems impossible to allow, but, we will see that it is easy to write a
 program to simulate the actions of such a machine.
@@ -18768,19 +15010,13 @@ For example, the following diagram shows a nondeterministic finite-state
 machine that could be used to search for the pattern description (A*B+AC)D
 in a text string.
 
-
-_h4ATCHliVG_
-
+h4ATCHliVG
 
 are likely to be misspelled!); and (1 + 01)’ (0 + 1) describes all strings of O’s and
 
-
 or
 
-
------
-
-_260_ _CHAPTER 20_
+260 CHAPTER 20
 
 As in the deterministic machine of the previous chapter, the machine can
 travel from a state labeled with a character to the state “pointed to” by that
@@ -18790,7 +15026,7 @@ states) which not only are not labeled, but also can “point to” two differen
 successor states. (Some null states, such as sta.te 4 in the diagram, are “noop” states with one exit, which don’t affect the operation of the machine,
 but which make easier the implementation of the program which constructs
 the machine, as we’ll see. State 9 is a null state with no exits, which stops
-the machine.) When in such a state, the machine can go to _either_ successor
+the machine.) When in such a state, the machine can go to either successor
 state regardless of what’s in the input (without scanning past anything). The
 machine has the power to guess which transition will lead to a match for the
 given text string (if any will). Note that there are no “non-match” transitions
@@ -18814,28 +15050,19 @@ character; it would work some to report failure on the next two characters; it
 would immediately report failure on the fifth or sixth characters; and it would
 guess the sequence of state transitions
 
-
 sta.te
 
-
 op”
-
-
------
 
 PATTERN iMATCHING
 
 5 2 2 1 2
 
-
 261
-
 
 iMATCHING
 
-
 1 2 3 4 8 9
-
 
 to recognize AAAE%D if started on the seventh character.
 We can construct the machine for a given regular expression by building
@@ -18847,7 +15074,6 @@ convenient to write this as a two-state machine, with one initial state (which
 also recognizes the character) and one final state, as below:
 
 ###### -49-O
-
 Now to build the machine for the concatenation of two expressions from the
 machines for the individual expressions, we simply merge the final state of
 the first with the initial state of the second:
@@ -18860,14 +15086,8 @@ Finally, the machine for the closure operation is built by making the final
 state the initial state and making it point back to the old initial state and a
 new final state.
 
-
 ###### -49-O
-
-
 AAAE%D
-
-
------
 
 262 CHAPTER 20
 
@@ -18880,7 +15100,7 @@ for each letter in the regular expression, and each + and * causes one state to
 be created (concatenation causes one to be deleted) so the number of states is
 certainly less than twice the number of characters in the regular expression.
 
-_Representing the_ Machine
+Representing the Machine
 
 Our nondeterministic machines will all be constructed using only the three
 composition rules outlined above, and we can take advantage of their simple
@@ -18891,38 +15111,29 @@ and unlabeled (null) states (with two or fewer arrows leaving). This means
 that the machine can be represented with only a few pieces of information
 per node. For example, the machine above might be represented as follows:
 
-_State_ Character _Next_ _I Next_ _2_
+State Character Next I Next 2
 
-_0_ 5                  
+0 5
 
 ###### I
-
-
 1 A 2
 2 3 1
 
-3 B 4              
+3 B 4
 4 8 8
 5 6 2
-6 A 7              
-7 C 8              
+6 A 7
+7 C 8
 8 D 9
 9 0 0
 
-The rows in this table may be interpreted as instructions to the nondeterministic machine of the iorm “If _you_ are in _State_ and _you see Character_ then
-scan the character and go to state _Next_ I (or _Next_ 2)” State 9 is the final
-state in this example, and State 0 is a pseudo-initial state whose _Next_ _I_ entry
-
+The rows in this table may be interpreted as instructions to the nondeterministic machine of the iorm “If you are in State and you see Character then
+scan the character and go to state Next I (or Next 2)” State 9 is the final
+state in this example, and State 0 is a pseudo-initial state whose Next I entry
 
 ###### 2)”
-
-
 ###### I
-
-
------
-
-PATTERN _MATCHING_
+PATTERN MATCHING
 
 is the number of the actual initial state. (Note the special representation used
 for null states with 0 or 1 exits.)
@@ -18930,9 +15141,9 @@ Since we often will want to access states just by number, the most suitable
 organization for the machine is to use the array representation. We’ll use the
 three arrays
 
-_ch:_ amty [O..Mmax] of _char;_
+ch: amty [O..Mmax] of char;
 
-_nextl, next2:_ array [O..Mmax] of integer;
+nextl, next2: array [O..Mmax] of integer;
 
 Here Mmax is the maximum number of’ states (twice the maximum pattern
 length). It would be possible to get by with two-thirds this amount of space,
@@ -18947,42 +15158,38 @@ another matter. In fact, even writing a program to determine if a given regular
 expression is legal is challenging for the uninitiated. In the next chapter, we’ll
 study this operation, called parsing, in much more detail. For the moment,
 we’ll assume that this translation has been done, so that we have available
-the _ch,_ nextl, and next2 arrays representing a particular nondeterministic
+the ch, nextl, and next2 arrays representing a particular nondeterministic
 machine which corresponds to the regular expression pattern description of
 interest.
 
-_Simulating the Machine_
+Simulating the Machine
 
 The last step in the development of a. general regular-expression patternmatching algorithm is to write a program which somehow simulates the operation of a nondeterministic pattern-matching machine. The idea of writing a
 program which can “guess” the right answer seems ridiculous. However, in
-this case it turns out that we can keep track of all _possible_ matches in a
+this case it turns out that we can keep track of all possible matches in a
 systematic way, so that we do eventually encounter the correct one.
 One possibility would be to develop a recursive program which mimics
 the nondeterministic machine (but tries all possibilities rather than guessing
 the right one). Instead of using this approach, we’ll look at a nonrecursive
 implementation which exposes the basic operating principles of the method
 by keeping the states under consideration in a rather peculiar data structure
-called a _deque,_ described in some detail below.
+called a deque, described in some detail below.
 The idea is to keep track of all states that could possibly be encountered
 while the machine is “looking at” the c:lrrent input character. Each of these
 
-
 array [O..Mmax] of integer;
-
-
------
 
 264 CHAPTER 20
 
 states are processed in turn: null states lead to two (or fewer) states, states for
 characters which do not match the current input are eliminated, and states
 for characters which do match the current input lead to new states for use
-when the machine is looking at the _next_ input character. Thus, we maintain
+when the machine is looking at the next input character. Thus, we maintain
 a list of all the states that the nondeterministic machine could possibly be in
 at a particular point in the text: the problem is to design an appropriate data
 structure for this list.
 
-Processing null states seems to require a _stack,_ since we are essentially
+Processing null states seems to require a stack, since we are essentially
 postponing one of two things to be done, just as when we removed the
 recursion from Quicksort (so the new state should be put at the beginning
 of the current list, lest it get postponed indefinitely). Processing the other
@@ -19006,20 +15213,17 @@ in any one of several possible states: the program keeps track of these in
 a deque dq. One pointer (head) to the head of the deque is maintained so
 that items can be inserted or removed at the beginning, and another pointer
 (tail) to the tail of the deque is maintained so that items can be inserted
-at the end. If the pattern description has _M_ characters the deque can be
-implemented in a “circular” manner in an array of _M_ integers. The contents of the deque are the elements “between” head and tail (inclusive): if
+at the end. If the pattern description has M characters the deque can be
+implemented in a “circular” manner in an array of M integers. The contents of the deque are the elements “between” head and tail (inclusive): if
 
 head<=tail, the meaning is obvious; if head>tail we take the elements that
 would fall between head and tail if the elements of dq were arranged in a
 circle: dq[head], dq[head+l],. . .,dq[M-l],dq[O], dq[l], . . .,dq[tail]. This is
 quite simply implemented by using head:= head+1 mod M to increment head
-and similarly for tail. Similarly, head:= head+M-1 mod M refers to the element _before_ head in the rrray: this is the position at which an element should
+and similarly for tail. Similarly, head:= head+M-1 mod M refers to the element before head in the rrray: this is the position at which an element should
 be added to the beginning of the deque.
 
 The main loop of the program removes a state from the deque (by
-
-
------
 
 PATTERN MATCHING 265
 
@@ -19047,11 +15251,9 @@ procedure addtail(x: integer);
 begin tail:=(tail+l) mod M; dq[tail]:=x end;
 begin
 ###### head:=l; taiJ:=O;
-
 addtail(next1 [O]); addtail(scan);
 
 ###### match:=j-1;
-
 repeat
 if dq [head] =scan thfsn
 
@@ -19077,44 +15279,25 @@ end ;
 
 This function takes as its argument the -1osition j in the text string a at which
 
-
 else if ch [dq[head]]==alj] then
-
 
 addtail(next1 [dq[head]])
 
-
 addtail(scan) end
 
-
 ###### match:=j-1;
-
-
 dq: array [O..Mmax] of integer;
-
-
 
 [dq[her!d]]
 
-
 ###### j:=j+l;
-
-
 ###### r’l<>n2
-
-
 nl :=nextl
-
 
 const
 
-
 ###### nl,
-
-
------
-
-266 **_GIAF'TER20_**
+266 GIAF'TER20
 
 it should start trying to match. It returns the index of the last character in
 the match found (if any, otherwise it returns j-1).
@@ -19126,11 +15309,9 @@ between the head and tail pointers.) The characters appear in the lefthand
 column in the table at the point when the program has finished scanning
 them.
 
-**_5_** **_scan_**
+5 scan
 
-
-**_GIAF'TER20_**
-
+GIAF'TER20
 
 2 6
 
@@ -19143,28 +15324,27 @@ A scan 2
 
 1 3
 3 7
-7 **_scan_**
+7 scan
 
 A scan 2
-2 **_scan_**
+2 scan
 
 1 3
-3 **_scan_**
+3 scan
 
 B scan 4
 4 scan
-8 **_scan_**
+8 scan
 
-D scan **_9_**
+D scan 9
 
-9 **_scan_**
+9 scan
 
 0 scan
 
-
 scan
-6 **_scan_**
-**_scan_** 2
+6 scan
+scan 2
 2
 7
 scan
@@ -19172,8 +15352,7 @@ scan
 scan 2
 2
 
-**_scan_**
-
+scan
 
 Thus, we start with State 5 while scanning the first character. First State 5
 leads to States 2 and 6, then State 2 leads to States 1 and 3, all of which need
@@ -19185,15 +15364,12 @@ the deque, we see that the machine could be either in State 2 or State 7 after
 scanning an A. Continuing, the program eventually ends up the final state,
 after considering all transitions consistent with the text string.
 
-
------
-
 PATTERN MATCHING
 
 The running time of this program obviously depends very heavily on
 the pattern being matched. However, for each of the N input characters, it
-processes at most _M_ states of the mac:nne, so the worst case running time
-is proportional to _MN._ For sure, not all nondeterministic machines can be
+processes at most M states of the mac:nne, so the worst case running time
+is proportional to MN. For sure, not all nondeterministic machines can be
 simulated so efficiently, as discussed in more detail in Chapter 40, but the use
 of a simple hypothetical pattern-matching machine in this application leads
 to a quite reasonable algorithm for a quite difficult problem. However, to
@@ -19204,15 +15380,11 @@ a more general discussion of compilers a,nd parsing techniques.
 
 r - l
 
-
 a,nd
 
+268
 
------
-
-_268_
-
-_Exercises_
+Exercises
 
 1. Give a regular expression for recognizing all occurrences of four or fewer
 consecutive l’s in a binary string.
@@ -19230,25 +15402,19 @@ the “not” function.
 “don’t-care” characters.
 
 6. What would happen if match were to try to simulate the following machine?
-
 7. Modify match to handle regular expressions with the “not” function and
 “don’t-care” characters.
 
-8. Show how to construct a pattern description of length _M_ and a text
+8. Show how to construct a pattern description of length M and a text
 string of length N for which the running time of match is as large as
 possible.
 
-9. Why must the deque in match have only one _“scan”_ sentinel in it?
-
+9. Why must the deque in match have only one “scan” sentinel in it?
 10. Show the contents of the deque each time a state is removed when match
 is used to simulate the example machine in the text with the text string
 ACD.
 
-
------
-
 ###### 21. Parsing
-
 Several fundamental algorithms have been developed to recognize legal
 computer programs and to decomI:ose their structure into a form suitable
 for further processing. This operation, called parsing, has application beyond
@@ -19276,22 +15442,15 @@ Our intent in this chapter is to give some feeling for the basic principles
 
 269
 
-
 “compiler” to complete the pattern-mats:hing algorithm of the previous chap-
-
 
 decomI:ose
 
-
 est is translating from a “high-level” co.nputer language like Pascal (suitable
-
 
 easier
 
-
------
-
-_270_ _CHAPTER 21_
+270 CHAPTER 21
 
 of parsing and compiling while at the same time developing a useful pattern
 matching algorithm. Certainly we cannot treat the issues involved at the
@@ -19299,69 +15458,61 @@ level of depth that they deserve. The reader should be warned that subtle
 difficulties are likely to arise in applying the same approach to similar problems, and advised that compiler construction is a quite well-developed field
 with a variety of advanced methods available for serious applications.
 
-_Context-Free_ Grammars
+Context-Free Grammars
 
 Before we can write a program to determine whether a program written in
 a given language is legal, we need a description of exactly what constitutes
 a legal program. This description is called a grammar: to appreciate the terminology, think of the language as English and read “sentence” for “program”
-in the previous sentence (except for the first occurrence!). Programming languages are often described by a particular type of grammar called _a_ _context-_
+in the previous sentence (except for the first occurrence!). Programming languages are often described by a particular type of grammar called a context-
 free grammar. For example, the context-free grammar which defines the set
 of all legal regular expressions (as described in the previous chapter) is given
 below.
 
-_(expression) : : = (term) 1 (term)_ + (expression)
-_(term)_ ::= (factor) _1 (factor)(term)_
+(expression) : : = (term) 1 (term) + (expression)
+(term) ::= (factor) 1 (factor)(term)
 
-_(factor) ::= ((expression)) ( 21 1 (factor)*_
+(factor) ::= ((expression)) ( 21 1 (factor)*
 
 This grammar describes regular expressions like those that we used in the last
-chapter, such as (l+Ol)*(O+l) or (A*B+AC)D. Each line in the grammar is
-called a _production_ or replacement rule. The productions consist of _terminal_
+chapter, such as (l+Ol)(O+l) or (AB+AC)D. Each line in the grammar is
+called a production or replacement rule. The productions consist of terminal
 symbols (, ), + and - which are the symbols used in the language being
 described (‘91,” a special symbol, stands for any letter or digit); nonterminal
-symbols _(expression), (term),_ and (factor) which are internal to the grammar;
-and _metasymbols I:= and ( which are used to describe the meaning of the_
+symbols (expression), (term), and (factor) which are internal to the grammar;
+and metasymbols I:= and ( which are used to describe the meaning of the
 productions. The ::= symbol, which may be read 2s a,” defines the left-hand
 side of the production in terms of the right-hand side; and the 1 symbol, which
 may be read as “or” indicates alternative choices. The various productions,
 though expressed in this concise symbolic notation, correspond in a simple
 way to an intuitive description of the grammar. For example, the second
-production in the example grammar might be read _“a (term)_ is a _(factor)_
-or a _(factor)_ followed by a (term).” One nonterminal symbol, in this case
+production in the example grammar might be read “a (term) is a (factor)
+or a (factor) followed by a (term).” One nonterminal symbol, in this case
 
-_(expreswon),_ is distinguished in the sense that a string of terminal symbols is
+(expreswon), is distinguished in the sense that a string of terminal symbols is
 in the language described by the grammar if and only if there is some way to
 use the productions to derive that string from the distinguished nonterminal
 by replacing (in any number of steps) a nonterminal symbol by any of the “or”
 clauses on the right-hand side of a production for that nonterminal symbol.
 
+(factor)(term)
 
-_(factor)(term)_
-
-
-_context-_
-
+context-
 
 “or”
 
-
 (,
 
+21
 
-_21_
-
-
------
-
-**_PARSING_** 271
+PARSING 271
 
 One natural way to describe the result of this derivation process is called
 a purse tree: a diagram of the complete grammatical structure of the string
 being parsed. For example, the following parse tree shows that the string
 (A*B+AC)D is in the language described by the above grammar.
 
-The circled internal nodes labeled E, F, a.nd T represent **_(expression), (factor),_**
-and **_(term),_** respectively. Parse trees like this are sometimes used for English,
+The circled internal nodes labeled E, F, a.nd T represent (expression), (factor),
+and (term), respectively. Parse trees like this are sometimes used for English,
 to break down a “sentence” into “subject,” “verb,” “object,” etc.
 The main function of a parser is to accept strings which can be so derived
 and reject those that cannot, by attempting to construct a parse tree for
@@ -19374,17 +15525,12 @@ by starting with the string at the bottom, working backwards up towards the
 distinguished nonterminal at the top.
 As we’ll see, if the strings being reo>gnized also have meanings implying
 further processing, then the parser can convert them into an internal representation which can facilitate such processing.
-Another example of a context-free grammar may be found in the appendix of the **_Pascal_** User Manual and **_Report:_** it describes legal Pascal programs.
+Another example of a context-free grammar may be found in the appendix of the Pascal User Manual and Report: it describes legal Pascal programs.
 The principles considered in this section for recognizing and using legal expressions apply directly to the complex job of compiling and executing Pascal
-
 
 As we’ll see, if the strings being reo>gnized also have meanings implying
 
-
 a.nd
-
-
------
 
 272 CHAPTER 21
 
@@ -19397,7 +15543,7 @@ of Pascal, arithmetic expressions involving addition and multiplication.
 
 Again, w is a special symbol which stands for any letter, but in this grammar
 the letters are likely to represent variables with numeric values. Examples of
-legal strings for this grammar are A+(B*C) and (A+B*C)*D*(A+(B+C)).
+legal strings for this grammar are A+(BC) and (A+BC)D(A+(B+C)).
 As we have defined things, some strings are perfectly legal both as arithmetic expressions and as regular expressions. For example, A*(B+C) might
 mean “add B to C and multiply the result by A” or “take any number of A’s
 followed by either B or C.” This points out the obvious fact that checking
@@ -19416,7 +15562,7 @@ worked out and form a beautiful theory which lies at the heart of computer
 
 science.
 
-_Top-Down_ Parsing
+Top-Down Parsing
 
 One parsing method uses recursion to recognize strings from the language
 described exactly as specified by the grammar. Put simply, the grammar is
@@ -19428,25 +15574,20 @@ input correspond to (possibly recursive) procedure calls; terminals correspond
 to scanning the input string. For example, the following procedure is part of
 a top-down parser for our regular expression grammar:
 
-
 non-
-
 
 21
 
+PARSING 273
 
------
+procedure expression;
+begin
 
-**PARSING** 273
+term ;
 
-**procedure** expression;
-**begin**
-
-_term ;_
-
-**if** **plj]=‘+’ then**
-**begin** j:=j+ 1; expression **end**
-**end** **;**
+if plj]=‘+’ then
+begin j:=j+ 1; expression end
+end ;
 
 An array p contains the regular expre:;sion being parsed, with an index j
 pointing to the character currently begin examined. To parse a given regular
@@ -19456,87 +15597,72 @@ j being set to M+1, then the regular ex 3ression is in the language described
 by the grammar. Otherwise, we’ll see below how various error conditions are
 handled.
 
-The first thing that expression does is call _term, which has a slightly more_
+The first thing that expression does is call term, which has a slightly more
 complicated implementation:
 
 procedure term ;
-**begin**
-fact _x-;_
-**if** (1: b]=‘( ‘) or letter(ptj]) **then** term;
-**end**
+begin
+fact x-;
+if (1: b]=‘( ‘) or letter(ptj]) then term;
+end
 
-A direct translation from the grammar would simply have _term_ call factor
+A direct translation from the grammar would simply have term call factor
 and then term. This obviously won’t work because it leaves no way to
 exit from term: this program would go into an infinite recursive loop if
 called. (Such loops have particularly unpleasant effects in many systems.)
 The implementation above gets around this by first checking the input to
-decide whether term should be called. l’he first thing that _term_ does is call
+decide whether term should be called. l’he first thing that term does is call
 factor, which is the only one of the proc:dures that could detect a mismatch
 in the input. From the grammar, we know that when factor is called, the
 current input character must be either :L “(” or an input letter (represented
 by u). This process of checking the nez- t character (without incrementing j
-to decide what to do is called _lookahead._ For some grammars, this is not
+to decide what to do is called lookahead. For some grammars, this is not
 necessary; for others even more lookahead is required.
 
-Now, the implementation of _factor_ fallows directly from the grammar. If
+Now, the implementation of factor fallows directly from the grammar. If
 the input character being scanned is not a “(” or an input letter, a procedure
-_error_ is called to handle the error condit on:
-
+error is called to handle the error condit on:
 
 or letter(ptj])
 
-
 ###### plj]=‘+’
-
-
 b]=‘(
-
 
 j being set to M+1, then the regular ex
 
-
 “(”
-
 
 u).
 
-
 nez-
-
 
 (1:
 
-
 p
 
-
-**;**
-
-
------
+;
 
 274 CHAPTER 21
 
-**procedure factor;**
+procedure factor;
 
-**begin**
-**if pb]=‘(‘then**
+begin
+if pb]=‘(‘then
 
-**begin**
+begin
 ###### j:=j+l;
-
 expression ;
 
-**if p b] = ‘)** **’ then j : =j+ 1 else error**
-**end**
+if p b] = ‘) ’ then j : =j+ 1 else error
+end
 
-**else if** letter(plj]) **then** j:=j+l **else** error;
-**if pb]=‘*‘then j:=j+l;**
-**end ;**
+else if letter(plj]) then j:=j+l else error;
+**if pb]=‘*‘then j:=j+l;
+end ;**
 
 Another error condition occurs when a “)” is missing.
 These procedures are obviously recursive; in fact they are so intertwined
-that they can’t be compiled in Pascal without using the **forward** construct
+that they can’t be compiled in Pascal without using the forward construct
 to get around the rule that a procedure can’t be used without first being
 declared.
 The parse tree for a given string gives the recursive cal! structure during
@@ -19548,82 +15674,63 @@ they move down the parse tree recursively.
 The top-down approach won’t work for all possible context-free grammars. For example, if we had the production (expression) ::= v 1 (expression)
 + (term) then we would have
 
-**procedure** badexpression ;
+procedure badexpression ;
 
-**begin**
-**if** letter(pb]) **then** **j:=j+l else**
+begin
+if letter(pb]) then j:=j+l else
 
-**begin**
+begin
 
 badexpression ;
 
-**if p b] < > ‘+** **’ then error else**
-**begin** j:=j+l; term **end**
+if p b] < > ‘+ ’ then error else
+begin j:=j+l; term end
 
-**end**
-**end ;**
+end
+end ;
 
 If this procedure were called with plj] a nonletter (as in our example, for
 
 ###### j=l) then it would go into an infinite recursive loop. Avoiding such loops is
 a principal difficulty in the implementation of recursive descent parsers. For
 
-
-**if pb]=‘(‘then**
-
+if pb]=‘(‘then
 
 letter(plj])
 
-
 ###### j:=j+l;
-
-
 ###### j:=j+l;
-
-
 ###### j:=j+l
-
-
 ###### j=1.
-
-
 “)”
 
+b]
 
-**b]**
+‘)
 
-
-**‘)**
-
-
-**1**
-
-
-**;**
-
+1
 
 ;
 
+;
 
------
+PARSING 275
 
-**_PARSING_** 275
-
-**_term, we_** used lookahead to avoid such a loop; in this case the proper way to
+term, we used lookahead to avoid such a loop; in this case the proper way to
 get around the problem is to switch the grammar to say (term)+(expression).
 The occurrence of a nonterminal as the first thing on the right hand side of
 a replacement rule for itself is called left recursion. Actually, the problem
 is more subtle, because the left recursion can arise indirectly: for example
-if we were to have the productions **_(expression)_** ::= (term) and **_(term) ::=_**
+if we were to have the productions (expression) ::= (term) and (term) ::=
 
-**_v 1 (expression)_** + (term). Recursive descent parsers won’t work for such
+v 1 (expression) + (term). Recursive descent parsers won’t work for such
 grammars: they have to be transformed to equivalent grammars without left
 recursion, or some other parsing method has to be used. In general, there
 is an intimate and very widely studied connection between parsers and the
 grammars they recognize. The choice of a parsing technique is often dictated
 by the characteristics of the grammar to be parsed.
 
-**_Bottom- Up Parsing_**
+Bottom- Up Parsing
 
 Though there are several recursive calls in the programs above, it is an instructive exercise to remove the recursion systematically. Recall from Chapter
 9 (where we removed the recursion from Quicksort) that each procedure call
@@ -19631,8 +15738,8 @@ can be replaced by a stack push and each procedure return by a stack pop,
 mimicking what the Pascal system does to implement recursion. A reason
 for doing this is that many of the calls which seem recursive are not truly
 recursive. When a procedure call is the last action of a procedure, then a
-simple goto can be used. This turns **_expression_** and term into simple loops,
-which can be incorporated together and combined with **_factor_** to produce a
+simple goto can be used. This turns expression and term into simple loops,
+which can be incorporated together and combined with factor to produce a
 single procedure with one true recursive call (the call to expression within
 factor).
 This view leads directly to a quite simple way to check whether regular
@@ -19652,23 +15759,17 @@ implicit way, as in the top-down parser) for other processing. It turns out to
 be possible to do this with programs with the same essential structure as the
 parenthesis checker described in the previous paragraph. One type of parser
 
-
 “(I’.
-
 
 ‘I+”
 
-
-**_v_**
-
-
------
+v
 
 276 CHAPTER 21
 
-which works in this way is the ‘so-called **_shift-reduce_** parser. The idea is to
+which works in this way is the ‘so-called shift-reduce parser. The idea is to
 maintain a pushdown stack which holds terminal and nonterminal symbols.
-Each step in the parse is either a **_shift_** step, in which the next input character
+Each step in the parse is either a shift step, in which the next input character
 is simply pushed onto the stack, or a reduce step, in which the top characters
 on the stack are matched to the right-hand side of some production in the
 grammar and “reduced to” (replaced by) the nonterminal on the left side
@@ -19684,7 +15785,7 @@ slightly more efficient and significantly more flexible. Certainly we don’t ha
 space here to do justice to this field, and we’ll forgo even the details of an
 implementation for our example.
 
-**_Compilers_**
+Compilers
 
 A compiler may be thought of as a program which translates from one language to another. For example, a Pascal compiler translates programs from
 the Pascal language into the machine language of some particular computer.
@@ -19699,41 +15800,35 @@ for the pattern-matching machine (an entry in each of the arrays). The trick
 is to keep track of the information necessary to fill in the next1 and next2
 arrays. To do so, we’ll convert each of the procedures in our recursive descent
 parser into functions which create pattern-matching machines. Each function
-will add new states as necessary onto the end of the **_ch, nextl,_** and **_next2_**
+will add new states as necessary onto the end of the ch, nextl, and next2
 arrays, and return the index of the initial state of the machine created (the
 final state will always be the last entry in the arrays).
 
 For example, the function given below for the (expression) production
 creates the “or” states for the pattern matching machine.
 
-
 ###### nextl,
+PARSING 277
 
-
------
-
-**PARSING** 277
-
-**function** expression : integer;
-**var** tl, t2: integer;
-**begin**
+function expression : integer;
+var tl, t2: integer;
+begin
 
 tl : = term ; expression : = tl ;
 
-**if** plj]=‘+’ then
-**begin**
+if plj]=‘+’ then
+begin
 
 ###### j:=j+l; state:=state+I;
-
 t2:=state; expression:=t2; state:=state+l;
 
 setstate(t2, ’ ‘, expression, tl ) ;
 
 setstate(t2-I, ’ ‘, state, state);
 
-**end ;**
+end ;
 
-**end** **;**
+end ;
 
 This function uses a procedure setstate which simply sets the ch, nextl, and
 next2 array entries indexed by the first argument to the values given in the
@@ -19764,36 +15859,26 @@ machine for another (term). This is easier done than said, since state is the
 final state index of the call to factor. A call to term without incrementing
 state does the trick:
 
-
 t2:=state; expression:=t2;
-
 
 state:=state+I;
 
-
 ###### plj]=‘+’
-
-
 This function uses a procedure setstate which simply sets the ch, nextl, and
-
 
 ‘,
 
-
 ;
 
+278 CHAPTER 21
 
------
-
-_278_ _CHAPTER 21_
-
-**function** term ;
-**var** t: integer;
-**begin**
+function term ;
+var t: integer;
+begin
 term :=factor;
 
-**if** (pb]=‘(‘) or letter(p[j]) **then** t:=term
-**end** **;**
+if (pb]=‘(‘) or letter(p[j]) then t:=term
+end ;
 
 (We have no use for the initial state index returned by the second call to
 term, but Pascal requires us to put it, somewhere, so we throw it away in a
@@ -19803,84 +15888,60 @@ a parenthesis calls for a recursive call on expression; a v calls for simple
 concatenation of a new state; and a - calls for operations similar to those in
 expression, according to the closure diagram from the previous section:
 
-**function** factor;
-**var** tl, t2: integer;
-**begin**
+function factor;
+var tl, t2: integer;
+begin
 
 tl :=state;
-**if plj]=‘(‘then**
+if plj]=‘(‘then
 
-**begin**
+begin
 ###### j:=j+l; t2:=expression;
-**if p b] =** **‘)** **’ then j := j+** 1 **else error**
-**end**
-**else if** letter(pb]) then
-**begin**
+if p b] = ‘) ’ then j := j+ 1 else error
+end
+else if letter(pb]) then
+begin
 setstate(state,plj], state+l, 0);
 
 t2:=state; j:=j+l; state:=state+I
 
-**end**
-**else** error;
-**if p[j]<>‘*‘thenfactor:=t2 else**
-**begin**
-setstate(state, ’ ‘, state+l, _t2);_
+end
+else error;
+**if p[j]<>‘*‘thenfactor:=t2 else
+begin**
+setstate(state, ’ ‘, state+l, t2);
 factor:=state; next1 [tl-I] :=state;
 
 ###### j:=j+l; state:=state+l;
+end ;
 
-**end** **;**
-
-**end ;**
+end ;
 
 The reader may find it instructive to trace through the construction of
 the machine for the pattern (A*B+AC)D given in the previous chapter.
 
-
 setstate(state,plj],
 
-
 ###### p[j]<>‘*‘then
-
-
 ###### state:=state+l;
-
-
 letter(pb])
-
 
 term :=factor;
 
-
 state+l, 0);
 
-
 ###### j:=j+l;
-
-
 state+l,
 
-
-
 ###### [tl-I]
-
-
 ###### tl,
-
-
 t:
-
 
 ‘,
 
-
 v
 
-
-**;**
-
-
------
+;
 
 PARSING 279
 
@@ -19889,11 +15950,11 @@ procedure, as follows:
 
 j:==l; state:=l;
 
-ne Ytl _[0]_ _:=expression;_
+ne Ytl [0] :=expression;
 
 setstate(state, ’ ‘, 0,O);
 
-foI _i:=l_ to N-l do
+foI i:=l to N-l do
 if match(i)>=i then writeln(i);
 
 This program will print out all character positions in a text string a[l.. . N]
@@ -19921,51 +15982,33 @@ function! The principal difference is that context-free grammars are capable
 of describing a much wider class of strings. For example, the set of all regular
 expressions can’t be described with regular expressions.
 Another difference in the way we’ve implemented the programs is that the
-context-free grammar is “built in” to the parser, while the _match_ procedure
+context-free grammar is “built in” to the parser, while the match procedure
 is “table-driven”: the same program wol,ks for all regular expressions, once
 they have been translated into the propel. format. It turns out to be possible
 to build parsers which are table-driven In the same way, so that the same
-program can be used to parse all language 3 which can be described by contextfree grammars. A _parser generator_ is a program which takes a grammar as
+program can be used to parse all language 3 which can be described by contextfree grammars. A parser generator is a program which takes a grammar as
 input and produces a parser for the language described by that grammar as
-
 
 setstate(state,
 
-
-_:=expression;_
-
+:=expression;
 
 The program for general regular expresr:ion pattern matching that we have
 
-
 strings.
-
 
 way, we used the context-free gramma]’ to specify a particular “pattern”:
 
-
 ###### a[l..
-
-
 ###### p[l..
-
-
 wol,ks
 
-
 ###### i:=l
-
-
 foI
-
 
 >f
 
-
 ‘,
-
-
------
 
 280 CHAPTER 21
 
@@ -19984,13 +16027,9 @@ we have a straightforward method which can be used for applications where
 a great deal of implementation effort might not be justified, and several advanced methods which can lead to significant performance improvements for
 large-scale applications. Of course, in this case, this is significantly understating the point: we’ve only scratched the surface of this extensively researched
 
+PARSING 281
 
------
-
-_PARSING_ 281
-
-_Exercises_
-
+Exercises
 
 1.
 
@@ -20012,11 +16051,10 @@ _Exercises_
 
 10.
 
-
 How does the recursive descent parser find an error in a regular expression
 such as (A+B)*BC+ which is incomplete?
 
-Give the parse tree for the regular expression ((A+B)+(Ct-D)*)*.
+Give the parse tree for the regular expression ((A+B)+(Ct-D)).
 
 Extend the arithmetic expression grammar to include exponentiation, div
 and mod.
@@ -20029,7 +16067,7 @@ recognize a regular expression in terms of the number of concatenation,
 or, and closure operations and the number of parentheses?
 
 Give the ch, next1 and next2 arrays that result from building the pattern
-matching machine for the pattern ((A+B)+(C+D)*)*.
+matching machine for the pattern ((A+B)+(C+D)).
 
 Modify the regular expression grammar to handle the “not” function and
 “don’t-care” characters.
@@ -20042,25 +16080,17 @@ the resulting code as much as possible. Compare the running time of the
 nonrecursive and recursive methods.
 
 Write a compiler for simple arithmetic expressions described by the grammar in the text. It should produce a list of ‘*instructions” for a machine
-capable of three operations: _Pugh_ the value of a variable onto a stack;
+capable of three operations: Pugh the value of a variable onto a stack;
 add the top two values on the stick, removing them from the stack, then
 putting the result there; and mt.ltiply the top two values on the stack, in
 the same way.
 
-
 d’:scribe
 
-
-_Pugh_
-
-
------
-
------
+Pugh
 
 ###### 22. File Compression
-
-For the most part, the algorithms that we have studied have been designed primarily to use as little _time_ as possible and only secondarily to
+For the most part, the algorithms that we have studied have been designed primarily to use as little time as possible and only secondarily to
 
 conserve space. In this section, we’ll examine some algorithms with the opposite orientation: methods designed primarily to reduce space consumption
 without using up too much time. Ironically, the techniques that we’ll examine
@@ -20087,17 +16117,14 @@ than in the past. On the other hand, it can be argued that file compression
 
 283
 
-
------
-
-_CHAPTER 22_
+CHAPTER 22
 
 techniques are more important than ever because, since so much storage is in
 use, the savings they make possible are greater. Compression techniques are
 also appropriate for storage devices which allow extremely high-speed access
 and are by nature relatively expensive (and therefore small).
 
-_Run-Length Encoding_
+Run-Length Encoding
 
 The simplest type of redundancy in a file is long runs of repeated characters.
 For example, consider the following string:
@@ -20121,7 +16148,7 @@ Here “4A” means “four A’s,” and so forth. Note that is is not worthwhi
 to encode runs of length one or two, since two characters are needed for the
 encoding.
 
-For binary files (containing solely O’s and **l’s),** a refined version of this
+For binary files (containing solely O’s and l’s), a refined version of this
 method is typically used to yield dramatic savings. The idea is simply to store
 the run lengths, taking advantage of the fact that the runs alternate between
 0 and 1 to avoid storing the O’s and l’s themselves. (This assumes that there
@@ -20133,13 +16160,9 @@ text formatting system (such as the one used to print this book); at the right
 is a list of numbers which might be used to store the letter in a compressed
 form.
 
-
 “4A”
 
-
------
-
-**_FILE COMPRESSION_**
+FILE COMPRESSION
 
 000000000000000000000000000011111111111111000000000
 000000000000000000000000001111111111111111110000000
@@ -20161,7 +16184,6 @@ form.
 0!1111111111111111111111111111111111111111111111111
 
 011000000000000000000000000000000000000000000000011
-
 
 285
 
@@ -20185,9 +16207,7 @@ form.
 1 50
 1 2 4 6 2
 
-
 0!1111111111111111111111111111111111111111111111111
-
 
 That is, the first line consists of 28 O’s followed by 14 l’s followed by 9 more
 
@@ -20219,15 +16239,12 @@ the alphabet represent the number i. Thus our example string would be
 
 represented as follows with Q as the escape character:
 
-
------
-
-286 _CHAPTER 22_
+286 CHAPTER 22
 
 QDABBBAAQEBQHCDABCBAAAQDBCCCD
 
 The combination of the escape character, the count, and the one copy
-of the repeated character is called an _escape sequence._ Note that it’s not
+of the repeated character is called an escape sequence. Note that it’s not
 worthwhile to encode runs less than four characters long since at least three
 characters are required to encode any run.
 But what if the escape character itself happens to occur in the input?
@@ -20263,18 +16280,13 @@ the one above (but modified to handle all representable characters) saves only
 about 4% when used on the text file for this chapter (and this savings all
 comes from the letter “q” example!).
 
-_Variable-Length_ Encoding
+Variable-Length Encoding
 
 In this section we’ll examine a file compression technique called Huffman
 
-
 expansion program can resynchronize itself in case of an error.
 
-
 “q”
-
-
------
 
 FILE COMPRESSION 287
 
@@ -20322,23 +16334,14 @@ For our example string, the count table produced is
 
 1 1 3 3 1 2 5 1 2 0 6 0 0 2 4 5 3 1 0 2 4 3 2 0 0 0 0 0
 
-
 for the ith letter of the alphabet in count[i], with count[0] used for blanks.)
-
 
 SIMPLE
 
-
-_:=O;_
-
+:=O;
 
 ###### i:=l
-
-
 i
-
-
------
 
 288 CHAPTER 22
 
@@ -20361,10 +16364,7 @@ Next, the nodes with frequency 3 are put together, creating two new nodes
 of frequency 6, etc. Ultimately, all the nodes are combined together into a
 single tree:
 
-
------
-
-_FILE COMPRESSION_ _289_
+FILE COMPRESSION 289
 
 1 1
 ###### c!lb
@@ -20377,9 +16377,9 @@ number labeling each internal (round) node is the sum of the labels of its
 two sons. The small number above each node in this tree is the index into
 the count array where the label is stored, for reference when examining the
 program which constructs the tree below. (The labels for the internal nodes
-will be stored in _count[27..51]_ in an order determined by the dynamics of the
+will be stored in count[27..51] in an order determined by the dynamics of the
 construction.) Thus, for example, the 5 in the leftmost external node (the
-frequency count for N) is stored in _count_ [14], the 6 in the next external node
+frequency count for N) is stored in count [14], the 6 in the next external node
 (the frequency count for I) is stored in count [9], and the 11 in the father of
 these two is stored in count[33], etc.
 
@@ -20394,31 +16394,25 @@ has been reversed. One advantage of using indirection is that it is easy to
 ignore zero frequency counts. The following table shows the heap constructed
 for our example:
 
-
-
 [9],
 
-
------
-
-290 _CWTER 22_
+290 CWTER 22
 
 k 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 
 ###### heap PI 3 7 16 21 12 15 6 20 9 4 13 14 5 2 18 19 1 0
-
 count[heap[k]] 1 2 1 2 2 3 1 3 6 2 4 5 5 3 2 4 3 11
 
 Specifically, this heap is built by first initializing the heap array to point to
 the non-zero frequency counts, then using the pqdownheap procedure from
 Chapter 11, as follows:
 
-**N:=O;**
+N:=O;
 
-**for i:=O** **to 26 do**
-**if count [i] < > 0 then**
-**begin** N:=N+I; heap[N] :=i end;
-**for** _k:=N_ **downto** 1 do pqdownheap(k);
+for i:=O to 26 do
+if count [i] < > 0 then
+begin N:=N+I; heap[N] :=i end;
+for k:=N downto 1 do pqdownheap(k);
 
 As mentioned above, this assumes that the sense of the inequalities in the
 pqdownheap code has been reversed.
@@ -20427,18 +16421,16 @@ result back into the heap. At each step we create one new count, and decrease
 the size of the heap by one. This process creates N-l new counts, one for
 each of the internal nodes of the tree being created, as in the following code:
 
-**repeat**
+repeat
 
 ###### t:=heap[l]; heap[l]:=heap[N]; N:=N-1;
-
 pqdownheap(l);
 
 count[26+N]:=count[heap[I]]+count[t];
 dad[t]:=26+N; dad[heap[l]]:=-26-N;
 
 ###### heap[l]:=26+N; pqdownheap(1);
-
-**until N=** **1;**
+until N= 1;
 
 dad[26+N] :=O;
 
@@ -20448,41 +16440,25 @@ given a value equal to the sum of the value at the root and value just removed.
 Then this node is put at the root, which raises its priority, necessitating
 another call on pqdownheap to restore order in the heap. The tree itself is
 represented with an array of “father” links: dad[t] is the index of the father
-of the node whose weight **is** in count [t]. The sign of dad[t] indicates whether
+of the node whose weight is in count [t]. The sign of dad[t] indicates whether
 the node is a left or right son of its father. For example, in the tree above
-we might have dad[O]=-30, count[30]=21, dad[30]=-28, and _count[28]=37_
-
+we might have dad[O]=-30, count[30]=21, dad[30]=-28, and count[28]=37
 
 count[26+N]:=count[heap[I]]+count[t];
 
-
 pqdownheap(l);
-
 
 pqdownheap(1);
 
-
-_count[28]=37_
-
+count[28]=37
 
 ###### t:=heap[l];
-
-
 ###### N:=N-1;
-
-
-**downto**
-
+downto
 
 ###### heap
-
-
 ###### PI
-
-
------
-
-**_FILE COMPRESSION_** **_2 9 1_**
+FILE COMPRESSION 2 9 1
 
 (indicating that the node of weight 21 has index 30 and its father has index
 28 and weight 37).
@@ -20492,54 +16468,45 @@ frequencies at the bottom nodes with the associated letters and then viewing
 the tree as a radix search trie:
 
 ###### CP
-
 Now the code can be read directly from this tree. The code for N is 000,
 the code for I is 001, the code for C is 110100, etc. The following program
 fragment reconstructs this information from the representation of the coding
 tree computed during the sifting process. The code is represented by two
-arrays: **_code[k]_** gives the binary representation of the kth letter and **_len [k]_**
-gives the number of bits from **_code[k]_** to use in the code. For example, I is
+arrays: code[k] gives the binary representation of the kth letter and len [k]
+gives the number of bits from code[k] to use in the code. For example, I is
 the 9th letter and has code 001, so code [9]=1 and len [ 9]=3.
 
-
-**_code[k]_**
-
+code[k]
 
 ###### CP
-
-
-**_len_**
-
-
------
+len
 
 292 CHAPTER 22
 
-**for** **k:=O to 26 do**
-**if** count[k]=O **then**
-**begin** code[k] :=O; len[k] :=O **end**
+for k:=O to 26 do
+if count[k]=O then
+begin code[k] :=O; len[k] :=O end
 
-**else**
+else
 
-**begin**
+begin
 i:=O; j:=l; t:=dad[k]; x:=0;
-**repeat**
-**if t<O then begin x:=x+j;** **t:=--t end;**
+repeat
+if t<O then begin x:=x+j; t:=--t end;
 
 ###### t:=dad[t]; j:=j+j; i:=i+I
-
-**until** **t=O;**
+until t=O;
 
 code[k] :=x; len[k] :=i;
 
-**end ;**
+end ;
 
 Finally, we can use these computed representations of the code to encode the
 
 message:
 
-**for** **j:=l to** M **do**
-**for** i:=Ien[index(ab])] **downto** **1 do**
+for j:=l to M do
+for i:=Ien[index(ab])] downto 1 do
 
 write(bits(code[index(ab])],i-I, 1):1);
 
@@ -20563,40 +16530,23 @@ code. Starting at the root, proceed down the tree according to the bits in the
 message: each time an external node is encountered, output the character at
 that node and restart at the root. But the tree is built at the time we encode
 
-
 write(bits(code[index(ab])],i-I,
-
 
 count[k]=O
 
-
 ###### t:=dad[t];
-
-
 len[k]
 
-
 ###### j:=l;
-
-
-**downto**
-
+downto
 
 ###### t:=--t
-
-
-**t=O;**
-
+t=O;
 
 code[k] :=O; len[k] :=O
 
-
 ###### :=i;
-
-
------
-
-_FlLE_ _COMPRESSION_ _293_
+FlLE COMPRESSION 293
 
 the message: this means that we need to save the tree along with the message
 in order to decode it. Fortunately, this does not present any real difficulty.
@@ -20621,40 +16571,32 @@ work because each character will occur approximately the same number of
 times, which will lead to a fully balanced coding tree and an equal number of
 bits per letter in the code. I
 
-
 ###### I
-
-
 “;”
-
-
------
 
 294
 
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
-_10._
-
+10.
 
 Implement compression and expansion procedures for the run-length encoding method for a fixed alphabet described in the text, using Q as the
 escape character.
@@ -20685,24 +16627,18 @@ What would be the result of breaking up a Huffman-encoded string into
 five-bit characters and Huffman encoding that string?
 
 Implement a procedure to decode a Huffman-encoded string, given the
-code and _len arrays._
-
+code and len arrays.
 
 five-
 
-
-_len_
-
-
------
+len
 
 ###### 23. Cryptology
-
 In the previous chapter we looked at methods for encoding strings of
 characters to save space. Of course, there is another very important
 reason to encode strings of characters: to keep them secret.
 Cryptology, the study of systems for secret communications, consists of
-two competing fields of study: _cryptography,_ the design of secret communications systems, and cryptanalysis, the study of ways to compromise secret communications systems. The main application of cryptology has been in military
+two competing fields of study: cryptography, the design of secret communications systems, and cryptanalysis, the study of ways to compromise secret communications systems. The main application of cryptology has been in military
 and diplomatic communications systems, but other significant applications
 are becoming apparent. Two principal examples are computer file systems
 (where each user would prefer to keep his files private) and “electronic funds
@@ -20723,10 +16659,7 @@ understood. Like algorithms, cryptosystems have been around far longer
 
 295
 
-
------
-
-_296_ CHAPTER 23
+296 CHAPTER 23
 
 than computers. Secrecy system design and algorithm design have a common
 heritage, and the same people are attracted to both.
@@ -20750,30 +16683,26 @@ it’s not difficult to “keep people honest” by encrypting things with a sim
 cryptographic algorithm, it is dangerous to rely upon a method implemented
 by a non-expert.
 
-_Rules_ _of_ _the_ Game
+Rules of the Game
 
 All the elements that go into providing a means for secure communications
-between two individuals together are called a _cryptosystem._ The canonical
+between two individuals together are called a cryptosystem. The canonical
 structure of a typical cryptosystem is diagramed below:
 
-**“attack**
-**at dawn”**
+“attack
+at dawn”
 
-The sender (S) wishes to send a message (called the _plaintezt)_ to the
+The sender (S) wishes to send a message (called the plaintezt) to the
 receiver (R). To do so, he transforms the plaintext into a secret form suitable
 
+plaintezt)
 
-_plaintezt)_
-
-
------
-
-_CRYPTOLOGY_
+CRYPTOLOGY
 
 for transmission (called the ciphertext) using a cryptographic algorithm (the
 encryption method) and some key (K) parameters. To read the message,
 the receiver must have a matching cryptographic algorithm (the decryption
-_method)_ and the same key parameters, which he can use to transform the
+method) and the same key parameters, which he can use to transform the
 ciphertext back into the plaintext, the message. It is usually assumed that
 the ciphertext is sent over insecure communications lines and is available to
 the cryptanalyst (A). It also is usually assumed that the encryption and
@@ -20806,30 +16735,24 @@ naturally imply that very large amounts of money are used for cryptanalysis.)
 In algorithm design, we try to keep track of costs to help us choose the best
 algorithms; in cryptology, costs play a central role in the design process.
 
-_Simple Methods_
+Simple Methods
 
 Among the simplest (and among the oldest) methods for encryption is the
-Caesar _cipher:_ if a letter in the plaintext is the Nth letter in the alphabet,
+Caesar cipher: if a letter in the plaintext is the Nth letter in the alphabet,
 replace it by the (N + K)th letter in the alphabet, where K is some fixed
 integer (Caesar used K = 3). For example, the table below shows how a
-message is encrypted using this method with _K = 1:_
-
+message is encrypted using this method with K = 1:
 
 for transmission (called the ciphertext) using a cryptographic algorithm (the
 
-
 ###### K
-
-
------
-
 298 CHAPTER 23
 
 Plaintext: ATTACK AT DAWN
 Ciphertext: BUUBDLABUAEB X 0
 
 This method is weak because the cryptanalyst has only to guess the value
-of _K:_ by trying each of the 26 choices, he can be sure that he will read the
+of K: by trying each of the 26 choices, he can be sure that he will read the
 message.
 
 A far better method is to use a general table to define the substitution
@@ -20857,7 +16780,7 @@ and combinations of letters, a cryptanalyst can very easily break a simple
 substitution cipher.
 One way to make this type of attack more difficult is to use more than
 one table. A simple example of this is an extension of the Caesar cipher called
-the Vigenere _cipher:_ a small repeated key is used to determine the value of _K_
+the Vigenere cipher: a small repeated key is used to determine the value of K
 for each letter. At each step, the key letter index is added to the plaintext
 letter index to determine the ciphertext letter index. Our sample plaintext,
 with the key ABC, is encrypted as follows:
@@ -20866,11 +16789,7 @@ Key: ABCABCABCABCAB
 Plaintext: ATTACK AT DAWN
 Ciphertext: BVWBENACWAFDX P
 
-
 27!
-
-
------
 
 CRYPTOLOGY 299
 
@@ -20880,8 +16799,8 @@ and the corresponding key letter is B (the 2nd letter).
 The Vigenere cipher can obviously be made more complicated by using
 different general tables for each letter of the plaintext (rather than simple
 offsets). Also, it is obvious that the longer the key, the better. In fact, if the
-key is as long as the plaintext, we have the V&am _cipher,_ more commonly
-called the _one-time_ pad. This is the only provably secure cryptosystem known,
+key is as long as the plaintext, we have the V&am cipher, more commonly
+called the one-time pad. This is the only provably secure cryptosystem known,
 and it is reportedly used for the Washington-Moscow hotline and other vital
 applications. Since each key letter is used only once, the cryptanalyst can
 do no better than try every possible key letter for every message position,
@@ -20900,7 +16819,7 @@ This seems surprising at first, but actually many cryptographic systems have
 the property that the cryptanalyst can discover the key if he knows the
 plaintext.
 
-_Encryption/Decryption_ _Machines_
+Encryption/Decryption Machines
 
 Many cryptographic applications (for example, voice systems for military
 communications) involve the transmission of large amounts of data, and this
@@ -20917,13 +16836,8 @@ Key generation in this context is obviously very much like random number
 generation, and our random number generation methods are appropriate for
 key generation (the cryptovariables are the initial seeds of the random number
 
-
 ###### V&am
-
-
------
-
-_300_ _CHAPTER 23_
+300 CHAPTER 23
 
 generator). In fact, the linear feedback shift registers that we discussed in
 Chapter 3 were first developed for use in encryption/decryption machines
@@ -20940,7 +16854,7 @@ the cryptanalyst knows everything about the structure of the machine (maybe
 he stole one) except the cryptovariables, but if some of the cryptovariables are
 used to “configure” the machine, he may have difficulty finding their values.
 Another method commonly used to confuse the cryptanalyst is the product
-_cipher,_ where two different machines are combined to produce a complicated
+cipher, where two different machines are combined to produce a complicated
 key stream (or to drive each other). Another method is nonlinear substitution;
 here the translation between plaintext and ciphertext is done in large chunks,
 not bit-by-bit. The general problem with such complex methods is that they
@@ -20955,7 +16869,7 @@ traditional applications of cryptography. The prospect of providing long
 keys (which must be changed often) to every citizen, while still maintaining both security and cost-effectiveness, certainly inhibits the development of
 such systems. Methods have recently been developed, however, which promise
 to eliminate the key distribution problem completely. Such systems, called
-_public-key cryptosystems,_ are likely to come into widespread use in the near
+public-key cryptosystems, are likely to come into widespread use in the near
 future. One of the most prominent of these systems is based on some of the
 arithmetic algorithms that we have been studying, so we will take a close look
 at how it works.
@@ -20966,11 +16880,7 @@ book. Everyone also has a secret key used for decryption; this secret key
 sender looks up the receiver’s public key, uses it to encrypt the message, and
 then transmits the message. We’ll denote the encrypted message (ciphertext)
 
-
 “phone
-
-
------
 
 CRYPTOLOGY
 
@@ -20989,9 +16899,9 @@ provide the security, and the fourth makes the system feasible for use.
 This general scheme was outlined by W. Diffie and M. Hellman in 1976,
 but they had no method which satisfied all of these properties. Such a
 method was discovered soon afterwards by R. Rivest, A. Shamir, and L.
-Adleman. Their scheme, which has come to be known as the _RSA public-_
+Adleman. Their scheme, which has come to be known as the RSA public-
 
-_key cryptosystem,_ is based on arithmetic algorithms performed on very large
+key cryptosystem, is based on arithmetic algorithms performed on very large
 integers. The encryption key P is the integer pair (N,p) and the decryption
 key S is the integer pair (N,s), where s is kept secret. These numbers are
 intended to be very large (typically, N might be 200 digits and p and s might
@@ -21000,7 +16910,7 @@ the message is broken up into numbers less than N (for example, by taking
 lg N bits at a time from the binary string corresponding to the character
 encoding of the message). Then these numbers are independently raised to a
 power modulo N: to encrypt a (piece of a) message M, compute C = P(M) =
-MPmod N, and to _decrypt_ a ciphertext C, compute _M = S(C) =_ C”mod
+MPmod N, and to decrypt a ciphertext C, compute M = S(C) = C”mod
 N. This computation can be quickly and easily performed by modifying the
 elementary exponentiation algorithm that we studied in Chapter 4 to take
 the remainder when divided by N after each multiplication. (No more than
@@ -21015,31 +16925,21 @@ we can outline the main ideas. First, it is necessary to generate three large
 (approximately loo-digit) “random” prime numbers: the largest will be s and
 we’ll call the other two x and y. Then N is chosen to be the product of x
 and y, and p is chosen so that ps mod (x - l)(y - 1) = 1. It is possible to prove
-that, with N, p, and s chosen in this way, we have _Mps_ mod N = _M_ for all
-messages _M._
+that, with N, p, and s chosen in this way, we have Mps mod N = M for all
+messages M.
 More specifically, each large prime can be generated by generating a large
 random number, then testing successive numbers starting at that point until
 
-
 ###### (N,s),
-
-
 tot,al
-
 
 (iv)
 
-
 (4
 
-
 s
 
-
 s
-
-
------
 
 302 CHAPTER 23
 
@@ -21076,50 +16976,40 @@ public-key cryptography, have made this an active area of current research.
 
 r l
 
-
 ###### l/2,
-
+s
 
 s
 
+303
 
-s
-
-
------
-
-_303_
-
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Decrypt the following message, which was encrypted with a Vigenere
 cipher using the pattern CAB (repeated as necessary) for the key (on a
 27-letter alphabet, with blank preceding A): DOBHBUAASXFZWJQQ
 
-What table should be used to _decrypt_ messages that have been encrypted
+What table should be used to decrypt messages that have been encrypted
 using the table substitution method?
 
 Suppose that a Vigenere cipher with a two-character key is used to encrypt
@@ -21145,18 +17035,14 @@ same message to several different users. Discuss your answer.
 
 What is P(S(M)) for the RSA method for public-key cryptography?
 
-RSA encoding might involve computing _Mn,_ where _M_ might be a _k_ digit
-number, represented in an array of _k_ integers, say. About how many
+RSA encoding might involve computing Mn, where M might be a k digit
+number, represented in an array of k integers, say. About how many
 operations would be required for this computation?
 
 Implement encryption/decryption procedures for the RSA method (assume that s, p and N are all given and represented in arrays of integers
 of size 25).
 
-
 Could one encrypt plaintext by “and”ing it (bit by bit) with the key?
-
-
------
 
 ```
 304
@@ -21178,46 +17064,35 @@ are a large number of standard references available, for example the book
 by Aho and Ullman. An extensive amount of background information on
 cryptography may be found in the book by Kahn.
 
-A. V. Aho and J. D. Ullman, _Principles_ _of_ Compiler _Design,_ Addison-Wesley,
+A. V. Aho and J. D. Ullman, Principles of Compiler Design, Addison-Wesley,
 Reading, MA, 1977.
 
-R. S. Boyer and J. S. Moore, “A fast string searching algorithm,” Communications _of the_ _ACM,_ 20, 10 (October, 1977).
+R. S. Boyer and J. S. Moore, “A fast string searching algorithm,” Communications of the ACM, 20, 10 (October, 1977).
 
 D. A. Huffman, “A method for the construction of minimum-redundancy
-codes,” Proceedings _of the IRE,_ `40` (1952).
+codes,” Proceedings of the IRE, 40 (1952).
 
 D. Kahn, The Codebreakers, Macmillan, New York, 1967.
 
 D. E. Knuth, J. H. Morris, and V. R. Pratt, “Fast pattern matching in strings,”
-_SIAM_ Journal _on Computing,_ 6, 2 (June, 1977).
+SIAM Journal on Computing, 6, 2 (June, 1977).
 
 R. L. Rivest, A. Shamir and L. Adleman, “A method for obtaining digital
-signatures and public-key cryptosystems,” Communications _of the_ _ACM,_ `21,`
+signatures and public-key cryptosystems,” Communications of the ACM, 21,
 ```
 2 (February, 1978).
 
 ```
-T. A. Standish, _Data Structure_ Techniques, Addison-Wesley, Reading, MA,
+T. A. Standish, Data Structure Techniques, Addison-Wesley, Reading, MA,
 1980.
 
-K. Thompson, “Regular expression search algorithm,” Communications _of_ _the_
-_ACM,_ `11,` 6 (June, 1968).
-
+K. Thompson, “Regular expression search algorithm,” Communications of the
+ACM, 11, 6 (June, 1968).
 
 Aho
 
-
------
-
 ###### GEOMETRIC ALGORITHMS
-
-
------
-
------
-
 ###### 24. Elementary Geometric Methods
-
 Computers are being used more and more to solve large-scale problems
 which are inherently geometric. Geometric objects such as points, lines
 and polygons are the basis of a broad variety of important applications and
@@ -21247,10 +17122,7 @@ for a person.
 
 307
 
-
------
-
-**CWAPTER 24**
+CWAPTER 24
 
 One might suspect that geometric algorithms would have a long history
 because of the constructive nature of ancient geometry and because useful
@@ -21261,7 +17133,7 @@ study because there is strong historical context, because new fundamental
 algorithms are still being developed, and because many important large-scale
 applications require these algorithms.
 
-Points, Lines, and _Polygons_
+Points, Lines, and Polygons
 
 Most of the programs that we’ll study will operate on simple geometric objects
 defined in a two-dimensional space. (But we will consider a few algorithms
@@ -21276,8 +17148,8 @@ is connected to the last to make a closed figure.
 To work with these geometric objects, we need to be decide how to
 represent them. Most of our programs will use the obvious representations
 
-type point = record x,y: integer **end;**
-line = **record** _pl,_ p2: point **end;**
+type point = record x,y: integer end;
+line = record pl, p2: point end;
 
 Note that points are restricted to have integer coordinates. A real representation could also be used. However, it is important to note that restricting
 the algorithms to process only integers can be a very significant timesaver
@@ -21291,48 +17163,40 @@ polygon being included twice (though that still might be the natural representat
 include extra information associated with each point or line. This can clearly
 be handled by adding an info field to the records.
 
+CWAPTER 24
 
-**CWAPTER 24**
+pl,
 
-
-_pl,_
-
-
------
-
-**_ELEMENTARY GEOMETRIC METHODS_** **_309_**
+ELEMENTARY GEOMETRIC METHODS 309
 
 We’ll use the following set of sixteen points to illustrate the operation of
 several geometric algorithms:
 
-**‘N**
+‘N
 
 ###### .E
  ‘L
 
-� **K**
+� K
 
-**‘ 0**
+‘ 0
 
-� **F**
+� F
 
-***A**
+*A
 
 ###### ‘C
-
-**‘ I**
+‘ I
 
 ###### ‘G
-
-� **J**
+� J
 
 ###### ‘H
+� D
 
-� **D**
+� M
 
-� **M**
-
-� **B**
+� B
 
 The points are labeled with single letters for reference in explaining the
 examples. The programs usually have no reason to refer to points by “name”;
@@ -21354,30 +17218,16 @@ of p [I], the second pair to the x and y coordinates of p [2], etc. When p
 is representing a polygon, it is sometimes convenient to maintain “sentinel”
 values p[O]=p[N] and p[N+l]=p[l].
 
-
 ###### p[N+l]=p[l].
-
-
 ###### ‘G
-
-
-
 [2],
 
-
 ###### ‘L
+309
 
-
-**_309_**
-
-
-***A**
-
+*A
 
 p
-
-
------
 
 310 CXAPTER 24
 
@@ -21392,21 +17242,21 @@ simply want a collection of points that approximates the line. The following
 recursive program draws a line by drawing the endpoints, then splitting the
 line in half and drawing the two halves.
 
-**procedure** draw(l: line) ;
-**var** dx, dy: integer;
+procedure draw(l: line) ;
+var dx, dy: integer;
 
 t: point; 11,12: line;
-**begin**
+begin
 
 ###### dot(l.pl.x,l.pl.y); dot(l.p2.x,l.p2.y);
  dx:=J.p2.x-1.pl.x; dy:=l.p2.y-1.pl.y;
-**if** (abs(dx)>l) **or** (abs(dy)>l) **then**
-**begin**
+if (abs(dx)>l) or (abs(dy)>l) then
+begin
 
 ###### t.x:=l.pl .x+dx div 2; t.y:=l.pl .y+dy div 2; Il.pl:=l.pl; H.p2:=t; draw(l1);
  /2.pl:=t; /2.p2:=l.p2; draw(12);
-**end ;**
-**end ;**
+end ;
+end ;
 
 The procedure dot is assumed to “draw” a single point. One way to
 implement this is to maintain a two-dimensional array of characters with one
@@ -21419,40 +17269,22 @@ with a 33x33 picture array to “draw” the lines connecting our sample points
 BG, CD, EO, IL, and PK at a resolution of two characters per unit of measure,
 we get the following picture:
 
-
 dot(l.p2.x,l.p2.y);
-
 
 dy:=l.p2.y-1.pl.y;
 
-
 ###### (abs(dx)>l)
-
-
 ###### Il.pl:=l.pl;
-
-
 H.p2:=t; draw(l1);
 
-
 ###### t.x:=l.pl
-
-
 ###### /2.pl:=t;
-
-
 ###### 33x33
-
-
 rr*“)
-
 
 t:
 
-
------
-
-ELEMENTARY GEOMETRIC _METHODS_ 311
+ELEMENTARY GEOMETRIC METHODS 311
 
 .................................
 
@@ -21464,19 +17296,19 @@ ELEMENTARY GEOMETRIC _METHODS_ 311
 
 ...... ..* .................... ...*
 
-..... ..*.......................*.
+..... ..........................
 
-.... ..*.............*.........* ..
+.... ........................* ..
 
-... ..*...............*.......* ...
+... ........................* ...
 
-.. ..*................*......* ....
+.. ........................* ....
 
-.................... ..*....* .....
+.................... ...... .....
 
-..................... ..*..* ......
+..................... .... ......
 
-..................... ..*.* .......
+..................... ... .......
 
 ...................... ..* ........
 
@@ -21486,11 +17318,11 @@ ELEMENTARY GEOMETRIC _METHODS_ 311
 
 ................... ..* ...........
 
-.......... ..*.......* ............
+.......... ......... ............
 
-.......... ..*......* .............
+.......... ........ .............
 
-......... ..*......* ..............
+......... ........ ..............
 
 ......... ..* .....................
 
@@ -21539,127 +17371,85 @@ algorithms are called for, or other technologies might be appropriate. For
 example, the text of this book was printed on a device capable of printing
 millions of dots per square inch, but most of the lines in the figures were drawn
 
+........................*
 
-..*...............*.......*
-
-
-..*.............*.........*
-
+........................*
 
 ......................
 
-
 ....................
 
-
 .................................
 
-
 .................................
-
 
 .....................
 
-
 ....................
-
 
 .................
 
-
 ...............
 
-
 ......................
-
-
-..*.......*
-
-
-..**.......*
-
-
-.......................
-
-
-......................
-
-
-..*.....***
-
-
-.....................
-
-
-..*......*
-
-
-..........
-
-
-.***...*
-
 
 .........
 
+..**.......*
 
-..............
+.......................
 
+......................
 
-..*..**
+..*.....***
 
-
-.......
-
-
-.......
-
-
-..........
-
-
-..**.*
-
-
-......
-
-
-...........
-
-
-.....
-
+.....................
 
 ........
 
+..........
 
-....
+.***...*
 
+.........
 
-..*
+..............
 
+..*..**
 
-..*
+.......
 
+.......
 
-..*
+..........
 
+..**.*
 
-..*
+......
 
-
-..*
-
+...........
 
 .....
 
+........
+
+....
+
+..*
+
+..*
+
+..*
+
+..*
+
+..*
+
+.....
 
 ..
 
-
------
-
-**_312_** **_CHAPTER 24_**
+312 CHAPTER 24
 
 with pen and ink.
 
@@ -21669,10 +17459,9 @@ As our first example of an elementary geometric problem, we’ll consider the
 problem of determining whether or not two given line segments intersect. The
 following diagram illustrates some of the situations that can arise.
 
-**E**
+E
 
 ###### /0
-
 When line segments actually intersect, as do CD and BG, the situation is quite
 straightforward except that the endpoint of one line might fall on the other, as
 in the case of KP and IL. When they don’t intersect, then we extend the line
@@ -21688,30 +17477,24 @@ oints, we’re often interested in whether the two points fall on the same
 the line or not. This function is straightforward to compute from the
 for the lines as follows:
 
-
 ###### /
+ELEMENTARY GEOMETRIC METHODS 313
 
+function same(l: line; pl,p2: point): integer;
 
------
+var dx, dy, dxl, dx2, dyl, dy2: integer;
+begin
+dx:=l.p2.x-1.pl.x; dy:=l.p2.y-1.pl.y;
 
-**ELEMENTARY** **GEOMETRIC** **METHODS** **313**
-
-**function** same(l: line; pl,p2: point): integer;
-
-**var** dx, dy, dxl, dx2, dyl, dy2: integer;
-**begin**
-**_dx:=l.p2.x-1.pl.x;_** dy:=l.p2.y-1.pl.y;
-
-**_dxl :=pl .x-1.~1.~; dyl :=pl.y-1.~1_** .y;
+dxl :=pl .x-1.~1.~; dyl :=pl.y-1.~1 .y;
 
 ###### dx2:=p2.x-1.p2.x; dy2:=p2.y-1.p2.y;
-
-same:=(dx*dyl-ddy*dxl)*(dx*dy2-dpdx2)
-**end;**
+same:=(dxdyl-ddydxl)(dxdy2-dpdx2)
+end;
 
 In terms of the variables in this program, it is easy to check that the quantity
 
-(da: dyl - dy dzl) is 0 if **_pl_** is on the line, positive if **_pl_** is on one side, and
+(da: dyl - dy dzl) is 0 if pl is on the line, positive if pl is on one side, and
 negative if it is on the other side. The same holds true for the other point, so
 the product of the quantities for the two points is positive if and only if the
 points fall on the same side of the line, negative if and only if the points fall
@@ -21722,13 +17505,13 @@ This immediately gives an implementation of the intersect function. If
 the endpoints of both line segments are on opposite sides of the other then
 they must intersect.
 
-**function** intersect(ll,l2: line): boolean;
-**begin**
+function intersect(ll,l2: line): boolean;
+begin
 intersect:=(same(ll, 12.pl,12.p2)<=0)
 
-**and** (same(l2,ll.pl,ll.p2)<=0)
+and (same(l2,ll.pl,ll.p2)<=0)
 
-**end ;**
+end ;
 
 Unfortunately, there is one case where this function returns the wrong answer:
 if the four line endpoints are collinear, it always will report intersection, even
@@ -21740,51 +17523,38 @@ If many lines are involved, the situation becomes much more complicated.
 Later on, we’ll see a sophisticated algorithm for determining whether any pair
 in a set of N lines intersects.
 
-**_Simple Closed Path_**
+Simple Closed Path
 
 To get the flavor of problems dealing with sets of points, let’s consider the
 problem of finding a path through a set of N given points which doesn’t
 
-
-same:=(dx*dyl-ddy*dxl)*(dx*dy2-dpdx2)
-
+same:=(dxdyl-ddydxl)(dxdy2-dpdx2)
 
 intersect:=(same(ll,
 
-
-**_dx:=l.p2.x-1.pl.x;_**
-
+dx:=l.p2.x-1.pl.x;
 
 dy2:=p2.y-1.p2.y;
 
-
 intersect(ll,l2:
 
-
-**_dxl :=pl .x-1.~1.~; dyl_**
-
+dxl :=pl .x-1.~1.~; dyl
 
 ###### pl,p2:
-
-
 dyl
-
 
 .y;
 
-
------
-
-314 _CHAF’TER 24_
+314 CHAF’TER 24
 
 intersect itself, visits all the points, and returns to the point at which it
-started. Such a path is called a _simple closed path._ One can imagine many
+started. Such a path is called a simple closed path. One can imagine many
 applications for this: the points might represent homes and the path the route
 that a mailman might take to get to each of the homes without crossing his
 path. Or we might simply want a reasonable way to draw the points using a
 mechanical plotter. This is an elementary problem because it asks only for
 any closed path connecting the points. The problem of finding the best such
-path, called the traveling _salesman problem,_ is much, much more difficult.
+path, called the traveling salesman problem, is much, much more difficult.
 We’ll look at this problem in some detail in the last few chapters of this book.
 In the next chapter, we’ll consider a related but much easier problem: finding
 the shortest path that surrounds a set of N given points. In Chapter 31, we’ll
@@ -21798,26 +17568,23 @@ each point with the anchor point as origin). Next, sort the points according
 to that angle. Finally, connect adjacent points. The result is a simple closed
 path connecting the points, as drawn below:
 
-
------
-
 ELEMENTARY GEOMETRIC METHODS 315
 
 In this example, B is used as the anchor. If the points are visited in the order
 B M J L N P K F I E C 0 A H G D B then a simple closed polygon will be
 traced out.
-If **_dx and dy are the delta x and y distances from some point to the anchor_**
-point, then the angle needed in this algorithm is tan-’ **_dyldx._** Although
+If dx and dy are the delta x and y distances from some point to the anchor
+point, then the angle needed in this algorithm is tan-’ dyldx. Although
 the arctangent is a built-in function in Pascal (and some other programming
 environments), it is likely to be slow and it leads to at least two annoying extra
-conditions to compute: whether **_dx_** is zero, and which quadrant the point is
+conditions to compute: whether dx is zero, and which quadrant the point is
 in. Since the angle is used only for the sort in this algorithm, it makes sense
 to use a function that is much easier to compute but has the same ordering
 properties as the arctangent (so that when we sort, we get the same result).
 A good candidate for such a function is simply dy/(dy + dz). Testing for
 exceptional conditions is still necessary, but simpler. The following program
-returns a number between 0 and 360 that is **_not_** the angle made by pl and
-**_p2_** with the horizontal but which has the same order properties as the true
+returns a number between 0 and 360 that is not the angle made by pl and
+p2 with the horizontal but which has the same order properties as the true
 angle.
 
 function theta(pl, p2: point): real;
@@ -21830,12 +17597,12 @@ begin
 dx:=p2.x-p1.x; ax:=abs(dx);
 dy:=p2.y-p1.y; ay:=abs(dy);
 
-if (dx=O) and **_(dy=O)_** then t:=O
+if (dx=O) and (dy=O) then t:=O
 
 else t:=dy/(ax+ay);
 
-if **_dx<O_** then t:= 2-t
-else if **_dy<O_** then t:=4+t;
+if dx<O then t:= 2-t
+else if dy<O then t:=4+t;
 
 theta:=t*90.0;
 
@@ -21846,48 +17613,30 @@ programs instead of standard trigonometric functions; in others it might lead
 to significant savings. (In some cases it might be worthwhile to change theta
 to have an integer value, to avoid using real numbers entirely.)
 
-**_Inclusion in a Polygon_**
+Inclusion in a Polygon
 
 The next problem that we’ll consider is a natural one: given a polygon represented as an array of points and another point, determine whether the point
 is inside or outside. A straightforward solution to this problem immediately
 suggests itself: draw a long line segment from the point in any direction (long
 enough so that its other endpoint is guaranteed to be outside the polygon) and
 
-
 ###### t:=dy/(ax+ay);
-
-
 dy:=p2.y-p1.y;
-
 
 ay:=abs(dy);
 
-
-**_(dy=O)_**
-
+(dy=O)
 
 ###### t:=4+t;
-
-
 ###### tan-’
-
-
-**_dx<O_**
-
+dx<O
 
 t:=O
 
-
-**_p2_**
-
+p2
 
 ###### t:=
-
-
 t:
-
-
------
 
 316 CHAPTER 24
 
@@ -21914,47 +17663,44 @@ forces us to do more than just count the line segments in the polygon which
 intersect the test line. Essentially, we want to travel around the polygon,
 incrementing an intersection counter whenever we go from one side of the test
 
-
------
-
-ELEMENTARY GEOMETRIC METHODS **317**
+ELEMENTARY GEOMETRIC METHODS 317
 
 line to another. One way to implement this is to simply ignore points which
 fall on the test line, as in the following program:
 
-**function** inside(t: point): boolean;
+function inside(t: point): boolean;
 
-**var** count, i,j: integer;
+var count, i,j: integer;
 
-**_It, lp: line;_**
-**begin**
+It, lp: line;
+begin
 
 count:=O; j:=O;
 
 ###### PPI :=PPI; P[N+~I :=~[ll;
- lt.pl:=t; It.p2:=t;  It.plx:=maxint;
+ lt.pl:=t; It.p2:=t; It.plx:=maxint;
 
-**for** i:=l **to N do**
-**begin**
+for i:=l to N do
+begin
 
 ###### Ip.pl:=p[i]; Ip.p2:=p[i];
-**if not** intersect(lp, It) **then**
-**begin**
+if not intersect(lp, It) then
+begin
 Ip.p2:=pIj] ; j:=i;
-**if** intersect(lp, It) **then** count:=count+l;
-**end ;**
+if intersect(lp, It) then count:=count+l;
+end ;
 
-**end** **;**
+end ;
 
-inside:=( (count **mod 2)=1);**
-**end** **;**
+inside:=( (count mod 2)=1);
+end ;
 
 This program uses a horizontal test line for ease of calculation (imagine the
 above diagram as rotated 45 degrees). The variable j is maintained as the
 index of the last point on the polygon known not to lie on the test line. The
-program assumes that **_p[l]_** is the point with the smallest z coordinate among
-all the points with the smallest y coordinate, so that if **_p[l]_** is on the test
-line, then p [0] cannot be. For example, this choice might be used for **_p_** **_[I]_** as
+program assumes that p[l] is the point with the smallest z coordinate among
+all the points with the smallest y coordinate, so that if p[l] is on the test
+line, then p [0] cannot be. For example, this choice might be used for p [I] as
 the “anchor” for the procedure suggested above for computing a simple closed
 polygon. The same polygon can be represented by N different p arrays, but
 as this illustrates it is sometimes convenient to fix a standard rule for p [l]. If
@@ -21968,48 +17714,30 @@ If the polygon has only three or four sides, as is true in many applications,
 then such a complex program is not called for: a simpler procedure based on
 calls to same will be adequate.
 
-
 ###### It.plx:=maxint;
-
-
 Ip.p2:=p[i];
-
 
 intersect(lp, It)
 
-
 Ip.p2:=pIj] ; j:=i;
-
 
 count:=O; j:=O;
 
-
 ###### lt.pl:=t;
-
-
 ###### P[N+~I
+mod 2)=1);
 
-
-**mod 2)=1);**
-
-
-**_p[l]_**
-
+p[l]
 
 It)
 
+It,
 
-**_It,_**
+;
 
+318 CHAPTER 24
 
-**;**
-
-
------
-
-318 _CHAPTER 24_
-
-_Perspective._
+Perspective.
 
 From the few examples given, it should be clear that it is easy to underestimate
 the difficulty of solving a particular geometric problem with a computer.
@@ -22021,10 +17749,10 @@ solving the more difficult problems.
 Some of the algorithms that we’ll study involve building geometric structures from a given set of points. The “simple closed polygon” is an elementary
 example of this. We will need to decide upon appropriate representations
 for such structures, develop algorithms to build them, and investigate their
-use for particular applications areas. As usual, these considerations are intertwined. For example, the algorithm used in the _inside_ procedure in this
+use for particular applications areas. As usual, these considerations are intertwined. For example, the algorithm used in the inside procedure in this
 chapter depends in an essential way on the representation of the simple closed
 polygon as an ordered set of points (rather than as an unordered set of lines).
-Many of the algorithms that we’ll study involve _geometric search: we_
+Many of the algorithms that we’ll study involve geometric search: we
 want to know which points from a given set are close to a given point, or which
 points fall in a given rectangle, or which points are closest to each other. Many
 of the algorithms appropriate for such search problems are closely related to
@@ -22040,34 +17768,29 @@ As usual in such situations, we do have empirical evidence which suggests
 good algorithms for particular applications. Also, many of the algorithms are
 designed to nerform well in the worst case. no matter what the inout is.
 
-
------
-
 ELEMENTARY GEOMETRIC METHODS 319
 
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 List the points plotted by draw when plotting a line from (0,O) to (1,21).
 
@@ -22098,13 +17821,7 @@ on a polygon with N vertices? Give an example supporting your answer.
 Write an efficient program for determining if a given point is inside a
 given quadrilateral.
 
-
------
-
------
-
 ###### 25. Finding the Convex Hull
-
 Often, when we have a large number of points to process, we’re interested in the boundaries of the point set. When looking at a diagram of
 a set of points plotted in the plane, a human has little trouble distinguishing
 those on the “inside” of the point set from those which lie on the edge. This
@@ -22119,7 +17836,7 @@ itself lie inside the polygon. For example, the “simple closed polygon” that
 we computed in the previous chapter is decidedly nonconvex, but any triangle
 or rectangle is convex.
 Now, the mathematical name for the natural boundary of a point set is
-the convex _hull._ The convex hull of a set of points in the plane is defined to
+the convex hull. The convex hull of a set of points in the plane is defined to
 be the smallest convex polygon containing them all. Equivalently, the convex
 hull is the shortest path which surrounds the points. An obvious property of
 the convex hull that is easy to prove is that the vertices of the convex polygon
@@ -22135,16 +17852,9 @@ many points on the convex hull; others work better when there are only a few.
 
 321
 
-
 ###### N
-
-
 ###### N
-
-
------
-
-_322_ CHAPTER 25
+322 CHAPTER 25
 
 Below is diagramed our sample set of points and their convex hull.
 
@@ -22159,7 +17869,7 @@ The convex hull naturally defines the “boundaries” of a point set and is
 a fundamental geometric computation. It plays an important role in many
 statistical computations, especially when generalized to higher dimensions.
 
-_Rules_ _of_ _the Game_
+Rules of the Game
 
 The input to an algorithm for finding the convex hull will obviously be an
 array of points; we can use the point type defined in the previous chapter.
@@ -22168,10 +17878,7 @@ property that tracing through the points in the order in which they appear in
 the array traces the outline of the polygon. On reflection, this might appear
 to require an extra ordering condition on the computation of the convex hull
 
-
------
-
-_FINDING THE: CONVEXHULL_ _323_
+FINDING THE: CONVEXHULL 323
 
 (why not just return the points on the hull in any order?), but output in
 the ordered form is obviously more useful, and it has been shown that the
@@ -22209,7 +17916,7 @@ the hull.
 We’ll look at three quite different methods for finding the convex hull of
 a set of points and then discuss their relative running times.
 
-Package _Wrapping_
+Package Wrapping
 
 The most natural convex hull algorithm, which parallels the method a human
 would use to draw the convex hull of a set of points, is a systematic way to
@@ -22217,11 +17924,7 @@ would use to draw the convex hull of a set of points, is a systematic way to
 convex hull (say the one with the smallest y coordinate), take a horizontal ray
 in the positive direction and “sweep” it upward until hitting another point; this
 
-
 bet,ween
-
-
------
 
 324 CHAPTER 25
 
@@ -22240,45 +17943,38 @@ program finds the convex hull of an array p [I..iV] of points, represented as
 described in the previous chapter (the array position p[N+l] is also used, to
 hold a sentinel):
 
-
 ###### pl,
-
-
 p
-
-
------
 
 FINDING THE CONVEX HULL 325
 
-**function** wrap: integer;
+function wrap: integer;
 
-**var** i, min, M: integer;
+var i, min, M: integer;
 minangle, v: real;
 
 t: point;
-**begin**
+begin
 
 ###### min:=l;
-
-**for** **i:=2 to Ndo**
-**if** p[i].y<p[min].y **then** min:=i;
+for i:=2 to Ndo
+if p[i].y<p[min].y then min:=i;
 
 M:=O; p[N+1]:=p[min]; minangle:=O.O;
-**repeat**
+repeat
 
 M:=M+1; t:=p[M]; p[Mj:=p[min]; p[min]:=t;
 
 ###### min:=N+l; v:=minangle; minangle:=360.0;
-**for** i:=M+1 **to** **N+I do**
-**if** theta(p[M],p[i])>v **then**
-**if** theta(p[M], p[i])<minangle **then**
-**begin** min:=i; minangle:=theta(p[M], p[min]) **end;**
-**until** min= N+1;
+for i:=M+1 to N+I do
+if theta(p[M],p[i])>v then
+if theta(p[M], p[i])<minangle then
+begin min:=i; minangle:=theta(p[M], p[min]) end;
+until min= N+1;
 
 wrap:=M;
 
-**end** **;**
+end ;
 
 First, the point with the lowest y coordinate is found and copied into p[N+l]
 
@@ -22305,58 +18001,35 @@ The following table traces the operation of this algorithm: the Mth line
 of the table gives the value of v and the contents of the p array after the Mth
 point has been added to the hull.
 
-
 minangle:=theta(p[M],
 
-
 ###### p[N+1]:=p[min];
-
-
 theta(p[M], p[i])<minangle
-
 
 minangle:=O.O;
 
-
 ###### min:=N+l;
-
-
 point that was put into p[N+1]) is encountered again.
-
 
 p[min])
 
-
 ###### min:=l;
-
-
 ###### min:=i;
-
-
 p[M]
 
-
 ###### N+I
+var
 
-
-**var**
-
-
-**;**
-
-
------
+;
 
 326 CHAPTER 25
 
 ###### 7.50(B(A C D E F G H I J K L M N 0 P
-
 18.00 BmC D E F G H I J K L A N 0 P
 
 83.08 B MWD E F G H I J K C A N 0 P
 
 ###### 144.00BMLmEFGHIJKCADOP
-
 190.00 B M L NHF G H I J K C A D 0 P
 225.00 B M L N EmG H I J K C A D F P
 
@@ -22375,7 +18048,7 @@ the minimum. The major disadvantage of the method is that in the worst case,
 when all the points fall on the convex hull, the running time is proportional
 to N2.
 
-_The Graham_ Scan
+The Graham Scan
 
 The next method that we’ll examine, invented by R. L. Graham in 1972,
 is interesting because most of the computation involved is for sorting: the
@@ -22392,31 +18065,16 @@ Computation of the convex hull is completed by proceeding around,
 trying to place each point on the hull and eliminating previously placed points
 that couldn’t possibly be on the hull. For our example, we consider the points
 
-
 ###### 144.00BMLmEFGHIJKCADOP
-
-
 ###### OmH
-
-
 ###### NHF
-
-
 ###### EmG
-
-
 P~~l,Pk% . . .
 
-
 ###### p[l]
-
-
 to N2.
 
-
------
-
-_FINDING_ _‘IYE CONVEXHULL_ 327
+FINDING ‘IYE CONVEXHULL 327
 
 in the order B M J L N P K F I E C 0 A H G D. The test for which points to
 eliminate is not difficult. After each point has been added, we assume that we
@@ -22429,118 +18087,78 @@ eliminate from the hull any edge which violates this condition.
 Specifically, the test for eliminating a point is the following: when we
 come to examine a new point p[i], we eliminate p[k] from the hull if the line
 between p[k] and p[k-l] g oes between p[i] and p[l]. If p[i] and p[l] are
-on the same side of the line, then _p[k]_ could still be on the hull, so we don’t
+on the same side of the line, then p[k] could still be on the hull, so we don’t
 eliminate it. The following diagram shows the situation for our example when
 L is considered:
 
 � �
 
-
-_CONVEXHULL_
-
+CONVEXHULL
 
 ###### p[k-l]
-
-
 ###### p[l].
+p[k]
 
-
-_p[k]_
-
-
-_‘IYE_
-
+‘IYE
 
 .
 
-
 ###### p[l]
-
-
-� **K**
-
+� K
 
 point,s
 
+.
 
 .
 
+.
 
 .
 
-
-.
-
-
-.
-
-
-� **F**
+� F
 
 ###### ‘P
-
 \
 
 \
 ###### .I \ \
+J
 
-**J**
+.
 
-**.**
+M
 
-**M**
+\
 
-**\**
-
-**B** **\**
+B \
 
 #### J
-
-
 ###### ‘P
-
+.
 
 .
 
-
-.
-
-
-**J**
+J
 
 #### J
-
-
 The extended line JM runs between L and B, so J couldn’t be on the hull. Now
 L, N, and P are added to the hull, then P is eliminated when K is considered
 (because the extended line NP goes between B and K), then F and I are added,
 leaving the following situation when E is considered.
 
-
 ###### .I
-
-
------
-
 328 CHAPTER 25
 
 .
 
-
 328
 
-
 ###### \
-
-
 .
 
-
 ###### \
-
-
 .
-
 
 ###### \ \ \ ‘il \ \
  \ \ \
@@ -22549,37 +18167,23 @@ leaving the following situation when E is considered.
 
 ‘\JB
 
-
 ###### ‘il
  \ \
  J
 
-
 ‘\
 
-
 ###### \
-
-
 ###### \
-
-
 ###### \
-
-
 At this point, I must be eliminated because FI runs between E and B, then F
 and K must be eliminated because NKF runs between E and B. Continuing
 in this way, we finally arrive back at B, as illustrated below:
 
 G
 
-
 ###### \
-
-
------
-
-_FINDING THE CONVEX HULL_ _329_
+FINDING THE CONVEX HULL 329
 
 The dotted lines in the diagrams are all the edges that were included, then
 eliminated. The initial sort guarantees that each point is considered as a
@@ -22590,44 +18194,43 @@ the hull.
 
 Once the basic method is understood, the implementation is straightforward. First, the point with the minimum y value is exchanged with p[l].
 
-Next, _shellsort_ (or some other appropriate sorting routine) is used to rearrange the points, modified as necessary to compare two points using their
+Next, shellsort (or some other appropriate sorting routine) is used to rearrange the points, modified as necessary to compare two points using their
 theta values with p[l]. Finally, the scan described above is performed. The
 following program finds the convex hull of the point set p [1..N] (no sentinel
 is needed):
 
-**function** _grahamscan_ _: integer;_
+function grahamscan : integer;
 
-**var** i, j, min, M: integer;
+var i, j, min, M: integer;
 
 1: line; t: point;
-**begin**
+begin
 ###### min:=l;
-**for** _i:=2_ **to N do**
-**if** p [i] .y<p [min] .y then min:=i;
+for i:=2 to N do
+if p [i] .y<p [min] .y then min:=i;
 
 ###### t:=p[l]; p[l]:=p[min]; p[min]:=t;
-_shellsort_ _;_
+shellsort ;
 
 M:=2;
-**for** _i:=4_ **to Ndo**
-**begin**
+for i:=4 to Ndo
+begin
 
 M:=M+2;
 
-**repeat**
+repeat
 
 ###### M:=M-1;
 I.pl:=p[M]; l.p2:=p[M-I];
 
-**until** same(l,p[l],p[i])>=O;
+until same(l,p[l],p[i])>=O;
 
 ###### t:=p[M+I]; p[M+I]:=p[i]; p[i]:=t;
-
-**end** **;**
+end ;
 
 grahamscan : =M;
 
-**end** **;**
+end ;
 
 The loop maintains a partial hull in p[l], . . ., p [Ml, as described in the text,
 above. For each new i value considered, M is decremented if necessary to
@@ -22635,61 +18238,32 @@ eliminate points from the partial hull and then p [i] is exchanged with p [M+1]
 to (tentatively) add it to the partial hull. The following table shows the
 contents of the p array each time a new point is considered for our example:
 
-
 ###### same(l,p[l],p[i])>=O;
-
-
 ###### p[M+I]:=p[i];
-
-
 I.pl:=p[M];
 
-
 ###### p[min]:=t;
-
-
 ###### M:=M-1;
-
-
 ###### p[i]:=t;
-
-
 ###### p[l],
-
-
 ###### p[l].
-
-
-
-_[i] .y<p_
-
-
+[i] .y<p
 
 [Ml,
 
-
-_i:=2_
-
+i:=2
 
 t:
 
-
 p
 
+;
 
-**;**
-
-
-_;_
-
+;
 
 :
 
-
------
-
 330 CHAF’TER 25
-
 
 1
 
@@ -22721,7 +18295,6 @@ B
 
 B
 
-
 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 
 M ~~NPKFIEC~AHGD
@@ -22731,79 +18304,49 @@ M ~~NPKFIEC~AHGD
 
 M L;J’BymF- - I E C O A H G D
 ###### MLNHJPBI E C O A H G D
- MLNKmPJmECOAHGD- - MLNKFWJPNCOAHGD- 
+ MLNKmPJmECOAHGD- - MLNKFWJPNCOAHGD-
 M L N IEl F I J P K ICI 0 A H G D
 
 ###### MLN6@I- JPKymAHGD- MLNEMIJPKFCMHGD MLNEOaJPKFCImGD - - MLNEOANPKFCI- MLNEOMHPKFCI J [Jlc.lE]Au
  MLNEOGmPKFCI- J A H
 
-
-###### MLNKmPJmECOAHGD- 
-
+###### MLNKmPJmECOAHGD-
 ###### MLNEMIJPKFCMHGD
-
-
-###### MLNKFWJPNCOAHGD- 
-
+###### MLNKFWJPNCOAHGD-
 ###### MLNEOANPKFCI
-
 ###### MLNEOMHPKFCI
-
-
 ###### MLNHJPBI
-
-
-###### L;J’BymF- 
-
-
+###### L;J’BymF-
 ###### [Jlc.lE]
-
-
 ###### IEl
-
-
 This table depicts, for i from 4 to hJ, the solution when p[i] is first considered,
 with p[M] and p[i] boxed.
 The program as given above could fail if there is more than one point with
-the lowest y coordinate, unless _theta_ is modified to properly sort collinear
+the lowest y coordinate, unless theta is modified to properly sort collinear
 points, as described above. (This is a subtle point which the reader may
 wish to check.) Alternatively, the min computation could be modified to find
 the point with the lowest x coordinate among all points with the lowest y
 coordinate, the canonical form described in Chapter 24.
 One reason that this method is interesting to study is that it is a simple
-form of _backtracking,_ the algorithm design technique of “try something, if it
+form of backtracking, the algorithm design technique of “try something, if it
 doesn’t work then try something else” which we’ll see in much more complicated forms in Chapter 39.
 
-_Hull Selection_
+Hull Selection
 
 Almost any convex hull method can be vastly improved by a method developed
 independently by W. F. Eddy and R. W. Floyd. The general idea is simple:
 pick four points known to be on the hull, then throw out everything inside the
 quadrilateral formed by those four points. This leaves many fewer points to
 
-
 ###### MLNEOaJPKFCImGD - -
-
-
 ###### MLmJmKFIECOAHGD
-
-
 ###### MLNEOGmPKFCI-
-
-
 ###### MMJNPKF
-
-
 p[M]
-
 
 the solution when p[i] is first considered,
 
-
 hJ,
-
-
------
 
 FINDING THE CONVEXHULL 331
 
@@ -22822,7 +18365,7 @@ then choosing four points by scanning in from the corners might be better
 two coordinates). The diagram below shows that only A and J survive the
 application of this technique to our example set of points.
 
-**G**
+G
 
 The recursive version of this technique is very similar to the Quicksort
 like select procedure for selection that we discussed in Chapter 12. Like that
@@ -22831,19 +18374,13 @@ all the original points are on the convex hull, then no points will get thrown
 out in the recursive step. Like select, the running time is linear on the average,
 as discussed further below.
 
-
 y
-
 
 5
 
+CHAPTER 25
 
------
-
-**_CHAPTER 25_**
-
-
-Performance **_Issues_**
+Performance Issues
 
 As mentioned in the previous chapter, geometric algorithms are somewhat
 harder to analyze than algorithms from some of the other areas we’ve studied
@@ -22862,12 +18399,12 @@ proportional to N log N for the sort and N for the scan. A moment’s reflection
 is necessary to convince oneself that the scan is linear, since it does have
 a repeat “loop-within-a-loop.” However, it is easy to see that no point is
 “eliminated” more than once, so the total number of times the code within
-that **repeat** loop is iterated must be less than N.
+that repeat loop is iterated must be less than N.
 The “package-wrapping” technique, on the other hand, obviously takes
-about **_MN_** steps, where **_M_** is the number of vertices on the hull. To compare
-this with the Graham scan analytically would require a formula for **_M_** in terms
+about MN steps, where M is the number of vertices on the hull. To compare
+this with the Graham scan analytically would require a formula for M in terms
 of N, a difficult problem in stochastic geometry. For a circular distribution
-(and some others) the answer is that **_M_** is about N1/3, and for values of N
+(and some others) the answer is that M is about N1/3, and for values of N
 which are not large N‘j3 is comparable to log N (which is the expected value
 for a rectangular distribution), so this method will compete very favorably
 with the Graham scan for many practical problems. Of course, the N2 worst
@@ -22882,26 +18419,17 @@ application of the Floyd-Eddy met,hod, since so few points are likely to be
 left. However, to protect against the worst case (when all points are on the
 hull), it is prudent to use the Graham scan. This gives an algorithm which is
 almost sure to run in linear time in practice and is guaranteed to run in time
-proportional to N log N.- **_**
+proportional to N log N.- _
 
 ###### r-l
-
-
 ###### r-l
-
-
 LLrandom”
-
-
------
 
 FINDING THE CONVEX HULL 333
 
-_Exercises_
-
+Exercises
 
 FINDING THE CONVEX HULL
-
 
 1.
 
@@ -22922,7 +18450,6 @@ FINDING THE CONVEX HULL
 9.
 
 10,
-
 
 Suppose it is known in advance that the convex hull of a set of points is
 a triangle. Give an easy algorithm for finding the triangle. Answer the
@@ -22959,16 +18486,9 @@ Use your curve-fitting routine to find an approximate formula for the
 number of points left after the Floyd-Eddy method is used on point sets
 with x and y equally likely to be between 0 and 1000.
 
-
 10,
 
-
------
-
------
-
 ###### 26. Range Searching
-
 Given a set of points in the plane, it is natural to ask which of those
 points fall within some specified area. “List all cities within 50 miles of
 Providence” is a question of this type which could reasonably be asked if a
@@ -22983,12 +18503,12 @@ all stars within 50 light years of the sun, we have a three-dimensional problem,
 and if we want the rich young people of the second example in the paragraph
 above to be tall and female as well, we have a four-dimensional problem. In
 fact, the dimension can get very high for such problems.
-In general, we assume that we have a set of records with certain _at-_
-_tributes_ that take on values from some ordered set. (This is sometimes called
-a _database,_ though more precise and complete definitions have been developed
+In general, we assume that we have a set of records with certain at-
+tributes that take on values from some ordered set. (This is sometimes called
+a database, though more precise and complete definitions have been developed
 for this important term.) The problem of finding all records in a database
 which satisfy specified range restrictions on a specified set of attributes is
-called _range searching._ For practical applications, this is a difficult and important problem. In this chapter, we’ll concentrate on the two-dimensional
+called range searching. For practical applications, this is a difficult and important problem. In this chapter, we’ll concentrate on the two-dimensional
 geometric problem in which records are points and attributes are their coordinates, then we’ll discuss appropriate generalizations.
 The methods that we’ll look at are direct generalizations of methods that
 we have seen for searching on single keys (in one dimension). We presume that
@@ -22998,10 +18518,7 @@ into a structure supporting efficient range searching, and a range-searching
 
 335
 
-
------
-
-_336_ _CHAPTER 26_
+336 CHAPTER 26
 
 algorithm, which uses the structure to return points falling within any given
 (multidimensional) range. This separation makes different methods difficult
@@ -23025,43 +18542,39 @@ left endpoint of the interval falls to the left of the point at the root, we
 (recursively) search the left subtree, similarly for the right, checking each
 node we encounter to see whether its point falls within the interval:
 
+RANGE SEARCHING
 
------
-
-_RANGE SEARCHING_
-
-type interval = **record** xl, x2: integer **end;**
-**procedure** bstrange(t: link; int: interval);
-**var** txl, tx2: boolean;
-**begin**
-**if** t<>z **then**
-**begin**
+type interval = record xl, x2: integer end;
+procedure bstrange(t: link; int: interval);
+var txl, tx2: boolean;
+begin
+if t<>z then
+begin
 
 ###### txl:=tt.key>=int.xl; tx2:=tt.key<=int.x2;
+if txl then bstrange(tt .l, int);
+if txl and tx2 then write(name(tt.id), ’ ‘);
 
-**if** txl **then** bstrange(tt .l, int);
-**if** txl **and** tx2 **then** write(name(tt.id), ’ ‘);
-
-**if** _tx2_ **then** bstrange( tt.r, int);
-**end**
-**end** **;**
+if tx2 then bstrange( tt.r, int);
+end
+end ;
 
 (This program could be made slightly more efficient by maintaining the interval int as a global variable rather than passing its unchanged values through
 the recursive calls.) For example, when called on the interval [5,9] for the example tree above, range prints out E C H F I. Note that the points returned
 do not necessarily need to be connected in the tree.
 
-These methods require time proportional to about N log N for preprocessing, and time proportional to about R+log N for range, where _R_ is the number
+These methods require time proportional to about N log N for preprocessing, and time proportional to about R+log N for range, where R is the number
 of points actually falling in the range. (The reader may wish to check that
 this is true.) Our goal in this chapter will be to achieve these same running
 times for multidimensional range searching.
-The parameter _R_ can be quite significant: given the facility to make range
+The parameter R can be quite significant: given the facility to make range
 queries, it is easy for a user to formulate queries which could require all or
 nearly all of the points. This type of query could reasonably occur in many
 applications, but sophisticated algorithms are not necessary if all queries are
 of this type. The algorithms that we consider are designed to be efficient for
 queries which are not expected to return a large number of points.
 
-_Elementary Methods_
+Elementary Methods
 
 In two dimensions, our “range” is an area in the plane. For simplicity, we’ll
 consider the problem of finding all points whose 5 coordinates fall within a
@@ -23071,44 +18584,29 @@ type rectangle which is a record of four integers, the horizontal and vertical
 interval endpoints. The basic operation that we’ll use is to test whether a
 point falls within a given rectangle, so we’ll assume a function insiderect(p:
 
-point; _rect: rectangle)_ which checks this in the obvious way, returning true if
-
+point; rect: rectangle) which checks this in the obvious way, returning true if
 
 write(name(tt.id),
 
-
 ###### tx2:=tt.key<=int.x2;
-
-
 bstrange(
-
 
 t<>z
 
-
 ###### txl,
-
-
-_tx2_
-
+tx2
 
 ‘);
 
-
 ###### txl
-
-
 5
-
-
------
 
 338 CHAPTER 26
 
-_p_ falls within rect. Our goal is to find all the points which fall within a given
+p falls within rect. Our goal is to find all the points which fall within a given
 rectangle, using as few calls to insiderect as possible.
 
-The simplest way to solve this problem is _sequential search:_ scan through
+The simplest way to solve this problem is sequential search: scan through
 all the points, testing each to see if it falls within the specified range (by calling
 insiderect for each point). This method is in fact used in many database
 applications because it is easily improved by “batching” the range queries,
@@ -23124,91 +18622,55 @@ known one-dimensional method along one or more of the dimensions to be
 searched. For example, suppose the following search rectangle is specified for
 our sample set of points:
 
-
 CHAPTER 26
 
-
 ###### .L
-
  ‘M
-
 
 t,his
 
-
 ###### .L
-
-
 ###### ‘K
-
-
 ###### ‘K
+‘ 0
 
+‘A
 
-**‘ 0**
+E
 
-**‘A**
-
-
-**E**
-
-� **F**
+� F
 
 ##### D
-
 ###### ‘C
+‘ I
 
-**‘ I**
-
-� **H**
+� H
 
 ###### ‘D
-
-
 ###### ‘P
-
-
 � �
 
 ###### ‘J
+E
 
-
-**E**
-
-� **F**
+� F
 
 ##### D
-
-
 ###### ‘C
-
-
-**‘G**
-
+‘G
 
 ###### ‘P
-
-
 ###### ‘D
-
-
 One way to proceed is to find the points whose x coordinates fall within the x
 range specified by the rectangle, then check the y coordinates of those points
 
-
 ###### ‘M
-
-
 ###### ‘J
-
-
------
-
-_RANGE SEARCHING_
+RANGE SEARCHING
 
 to determine whether or not they fall within the rectangle. Thus, points that
 could not be within the rectangle because their x coordinates are out of range
-are never examined. This technique is called _projection;_ obviously we could
+are never examined. This technique is called projection; obviously we could
 also project on y. For our example, we would check E C H F and I for an x
 projection, as described above and we would check 0 E F K P N and L for a
 y projection.
@@ -23236,7 +18698,7 @@ all the points in the x range or all the points in the y range in the worst case
 serve mainly to give one an appreciation for the more sophisticated methods
 that we are about to study.
 
-_Grid Method_
+Grid Method
 
 A simple but effective technique for maintaining proximity relationships among
 points in the plane is to construct an artificial grid which divides the area to
@@ -23245,9 +18707,6 @@ each square. (This technique is reportedly used in archaeology, for example.)
 Then, when points that fall within a given rectangle are sought, only the lists
 corresponding to squares that intersect the rectangle have to be searched. In
 our example, only E, C, F, and K are examined, as sketched below.
-
-
------
 
 340 CRAPTER 26
 
@@ -23264,57 +18723,53 @@ contain one point.
 Below is a straightforward implementation of a program to read in zy
 
 coordinates of a set of points, then build the grid structure containing those
-points. The variable _size_ is used to control how big the grid squares are and
+points. The variable size is used to control how big the grid squares are and
 thus determine the resolution of the grid. For simplicity, assume that the
 coordinates of all the points fall between 0 and some maximum value max.
 Then, to get a G-by-G grid, we set size to the value max/G, the width of
 the grid square. To find which grid square a point belongs to, we divide its
 coordinates by size, as in the following implementation:
 
-
 CRAPTER 26
 
+RANGE SEARCHING 341
 
------
+program rangegrid(input, output);
 
-**_RANGE SEARCHING_** _341_
+const Gmax=20;
 
-**program** rangegrid(input, output);
-
-const **_Gmax=20;_**
-
-type point = record x, y, info: integer **end;**
+type point = record x, y, info: integer end;
 
 Jink=tnode;
 
-node=record p: point; **_next:_** link end;
-var **_grid:_** array[O..Gmax, O..Gmax] of link;
-**_p:_** point;
-**_i, j, k, size, N: integer;_**
+node=record p: point; next: link end;
+var grid: array[O..Gmax, O..Gmax] of link;
+p: point;
+i, j, k, size, N: integer;
 z: link;
 procedure insert(p: point);
-**var** t: link;
-**begin**
-**_new(t);_** tf.p:=p;
+var t: link;
+begin
+new(t); tf.p:=p;
 
 ###### tf.next:=grid[p.x div size,p.y div size];
 grid [p.x div size, p.y div size] := t ;
-**end** **;**
+end ;
 
-**begin**
-**_new(z);_**
-**for** **_i:=O_** **to** **_Gmax_** **do**
-**for** j:=O to Gmax **do** grid[i, j] :=z;
+begin
+new(z);
+for i:=O to Gmax do
+for j:=O to Gmax do grid[i, j] :=z;
 
 readln (N) ;
 
-**for** **_k:=l_** **to N do**
-**begin**
-readJn(p.x, **_p.y);_** p.info:=k;
+for k:=l to N do
+begin
+readJn(p.x, p.y); p.info:=k;
 insert(p)
-**end ;**
+end ;
 
-**end.**
+end.
 
 This program uses our standard linked list representations, with dummy tail
 node z. The point type is extended to include a field info which contains
@@ -23324,89 +18779,70 @@ name(k) to return the Jcth letter of the alphabet: clearly a more general
 naming mechanism will be appropriate for actual applications.
 As mentioned above, the setting of the variable size (which is omitted
 from the above program) depends on the number of points, the amount of
-memory available, and the range of coordinate values. Roughly, to get _M_
-points per grid square, size should be chosen to be the nearest integer to **_max_**
-divided by,/m. This leads to about _N/M_ grid squares. These estimates
+memory available, and the range of coordinate values. Roughly, to get M
+points per grid square, size should be chosen to be the nearest integer to max
+divided by,/m. This leads to about N/M grid squares. These estimates
 aren’t accurate for small values of the parameters, but they are useful for
 most situations, and similar estimates can easily be formulated for specialized
 applications.
 
-
 ###### tf.next:=grid[p.x
-
-
 rangegrid(input, output);
 
-
-**_Gmax=20;_**
-
+Gmax=20;
 
 ###### ,/m.
-
-
 procedure insert(p: point);
 
-
 ###### tf.p:=p;
-
-
 grid[i, j]
-
 
 readln
 
-
 const
 
-
 ###### :=z;
-
-
 y,
-
 
 t
 
-
------
-
-_342_ _CHAF’TER_ _26_
+342 CHAF’TER 26
 
 Now, most of the work for range searching is handled by simply indexing
-into the _grid_ array, as follows:
+into the grid array, as follows:
 
-**procedure** gridrange(rect : rectangle) ;
+procedure gridrange(rect : rectangle) ;
 
-**var** **t:** _link;_
+var t: link;
 i, j: integer;
-**begin**
-**for** i:=(rect.xl **div** size) **to (rect.x2 div** _size)_ **do**
-**for** j:=(rect.yl **div size) to** _(rect.y2_ **div size) do**
-**begin**
+begin
+for i:=(rect.xl div size) to (rect.x2 div size) do
+for j:=(rect.yl div size) to (rect.y2 div size) do
+begin
 
 t:=grid[i, j];
-**while** t<>z **do**
-**begin**
-**if** insiderect( tt.p, rect) **then** _write(name(_ _tt.p.info));_
+while t<>z do
+begin
+if insiderect( tt.p, rect) then write(name( tt.p.info));
 
 ###### t:=tf.next
-**end**
-**end**
+end
+end
 
-**end ;**
+end ;
 
 The running time of this program is proportional to the number of grid squares
 touched. Since we were careful to arrange things so that each grid square
 contains a constant number of points on the average, this is also proportional,
 on the average, to the number of points examined. If the number of points
-in the search rectangle is _R,_ then the number of grid squares examined is
-proportional to _R._ The number of grid squares examined which do not fall
+in the search rectangle is R, then the number of grid squares examined is
+proportional to R. The number of grid squares examined which do not fall
 completely inside the search rectangle is certainly less than a small constant
-times _R,_ so the total running time (on the average) is linear in _R,_ the number
-of points sought. For large _R,_ the number of points examined which don’t fall
+times R, so the total running time (on the average) is linear in R, the number
+of points sought. For large R, the number of points examined which don’t fall
 in the search rectangle gets quite small: all such points fall in a grid square
 which intersects the edge of the search rectangle, and the number of such
-squares is proportional to fi for large _R._ Note that this argument falls
+squares is proportional to fi for large R. Note that this argument falls
 apart if the grid squares are too small (too many empty grid squares inside
 the search rectangle) or too large (too many points in grid squares on the
 perimeter of the search rectangle) or if the search rectangle is thinner than
@@ -23418,40 +18854,27 @@ the points could fall in one grid box, which would mean that all the grid
 machinery gained nothing.) The next method that we will examine makes
 this worst case very unlikely by subdividing the space in a nonuniform way,
 
-
 gridrange(rect : rectangle)
 
-
 ###### j:=(rect.yl
-
-
-_tt.p.info));_
-
+tt.p.info));
 
 t:=grid[i, j];
 
-
 ###### t:=tf.next
-
-
-_(rect.y2_
-
+(rect.y2
 
 t<>z
 
-
 ;
 
-
------
-
-_RANGE SEARCHING_ _343_
+RANGE SEARCHING 343
 
 adapting to the point set at hand.
 
-_2D_ _Trees_
+2D Trees
 
-Two-dimensional _trees_ are dynamic, adaptable data structures which are very
+Two-dimensional trees are dynamic, adaptable data structures which are very
 similar to binary trees but divide up a geometric space in a manner convenient
 for use in range searching and other problems. The idea is to build binary
 search trees with points in the nodes, using the y and x coordinates of the
@@ -23465,21 +18888,14 @@ encountered. For example, the following 2D tree is built for our sample set of
 points:
 
 ###### El El
-
 The particular coordinate used is given at each node along with the point
 name: nodes for which the y coordinate is used are drawn vertically, and
 those for which the x coordinates is used are drawn horizontally.
 
-
 ###### El
-
-
 2
 
-
------
-
-**344** **CHAPTER 26**
+344 CHAPTER 26
 
 This technique corresponds to dividing up the plane in a simple way: all
 the points below the point at the root go in the left subtree, all those above in
@@ -23501,33 +18917,30 @@ The code for the construction of 2D trees is a straightforward modification
 of standard binary tree search to switch between x and y coordinates at each
 level:
 
+RANGE SEARCHING 345
 
------
-
-RANGE SEARCHING **345**
-
-**function** twoDinsert(p: point; t: link) : link;
-**var** f: link;
+function twoDinsert(p: point; t: link) : link;
+var f: link;
 d, td: boolean;
-**begin**
+begin
 
 d:=true;
 
-**repeat**
-**if d then** td:=p.x<tt.p.x
+repeat
+if d then td:=p.x<tt.p.x
 
-**else** td :=p.y< tt .p.y;
+else td :=p.y< tt .p.y;
 
 ###### f:=t;
-**if** td **then** t:=tt.l **else** t:=tf.r;
+if td then t:=tt.l else t:=tf.r;
 
-**d:= not d;**
-**until** t=z;
+d:= not d;
+until t=z;
 n e w ( t ) ; tf.p:=p; tf.l:=z; tt.r:=z;
-**if** td **then** **Q.l:=t else** fi.r:=t;
+if td then Q.l:=t else fi.r:=t;
 
 twoDinsert:=t
-**end** **;**
+end ;
 
 As usual, we use a header node head with an artificial point (0,O) which is
 “less” than all the other points so that the tree hangs off the right link of
@@ -23551,52 +18964,34 @@ to checking areas 12 and 14 of the plane, which overlap the search rectangle.
 This process is easily implemented with a straightforward generalization of
 the 1D range procedure that we examined at the beginning of this chapter:
 
-
 ###### tf.p:=p;
-
-
 ###### t:=tf.r;
-
-
 ###### fi.r:=t;
-
-
 ###### Q.l:=t
-
-
 ###### f:=t;
-
-
 ###### N,
-
-
 td
-
 
 y
 
-
------
-
 346 CHAPTER 26
 
-**procedure** twoDrange(t: link; rect: rectangle; d: boolean);
-**var** tl, t2, txl, tx2, tyl, ty2: boolean ;
-**begin**
-**if** t<>z **then**
-**begin**
+procedure twoDrange(t: link; rect: rectangle; d: boolean);
+var tl, t2, txl, tx2, tyl, ty2: boolean ;
+begin
+if t<>z then
+begin
 
 ###### txl:=rect.xl<tf.p.x; tx2:=tt.p.x<=rect.x2;
-
 tyl :=rect.yl<tf.p.y; ty2:=tf.p.y<=rect.y2;
 
-**if** **d then begin** tl := txl ; t2:= tx2 **end**
-**else begin** _tl:=tyl;_ t2:=ty2 **end;**
-**if** tl **then** twoDrange(tt.l,rect, **not** _d);_
-**if** insiderect( _tt.p, rect)_ **then** write(name( tt.p.info), ’ ‘);
-**if** t2 **then** twoDrange(tf.r, _rect,_ **not** _d);_
-**end**
-**end** **;**
+if d then begin tl := txl ; t2:= tx2 end
+else begin tl:=tyl; t2:=ty2 end;
+if tl then twoDrange(tt.l,rect, not d);
+if insiderect( tt.p, rect) then write(name( tt.p.info), ’ ‘);
+if t2 then twoDrange(tf.r, rect, not d);
+end
+end ;
 
 This procedure goes down both subtrees only when the dividing line cuts the
 rectangle, which should happen infrequently for relatively small rectangles.
@@ -23605,7 +19000,7 @@ to be proportional to R + log N to retrieve R points from reasonable ranges in
 a region containing N points, which makes it very competitive with the grid
 method.
 
-_Multidimensional_ Range _Searching_
+Multidimensional Range Searching
 
 Both the grid method and 2D trees generalize directly to more than two dimensions: simple, straightforward extensions to the above algorithms immediately
 yield range-searching methods which work for more than two dimensions.
@@ -23615,7 +19010,7 @@ be difficult to predict for a particular application.
 To implement the grid method for k-dimensional searching, we simply
 make grid a k-dimensional array and use one index per dimension. The main
 problem is to pick a reasonable value for size. This problem becomes quite
-obvious when large _k_ is considered: what type of grid should we use for **lo-**
+obvious when large k is considered: what type of grid should we use for lo-
 dimensional search? The problem is that even if we use only three divisions
 per dimension, we need 31° grid squares, most of which will be empty, for
 reasonable values of N.
@@ -23625,48 +19020,31 @@ between x and y) while going down the tree. As before, in a random situation,
 the resulting trees have the same characteristics as binary search trees. Also
 as before, there is a natural correspondence between the trees and a simple
 
-
 twoDrange(tt.l,rect,
-
 
 ty2:=tf.p.y<=rect.y2;
 
-
 ###### :=rect.yl<tf.p.y;
-
-
 t2:=ty2
 
-
-_rect,_
-
+rect,
 
 ###### t2:=
-
-
 tyl
 
-
 ###### tl,
-
-
 ‘);
 
+d
 
-**d**
+;
 
-
-**;**
-
-
------
-
-_RANGE_ _SEARCHING_ 347
+RANGE SEARCHING 347
 
 geometric process. In three dimensions, branching at each node corresponds
 to cutting the three-dimensional region of interest with a plane; in general we
-cut the k-dimensional region of interest with a _(k-_ 1)-dimensional hyperplane.
-If _k_ is very large, there is likely to be a significant amount of imbalance
+cut the k-dimensional region of interest with a (k- 1)-dimensional hyperplane.
+If k is very large, there is likely to be a significant amount of imbalance
 in the kD trees, again because practical point sets can’t be large enough to
 take notice of randomness over a large number of dimensions. Typically, all
 points in a subtree will have the same value across several dimensions, which
@@ -23686,13 +19064,9 @@ particular application. This is a quite important problem which is still being
 
 activelv studied.
 
-
------
-
 348
 
-_Exercises_
-
+Exercises
 
 1.
 
@@ -23714,10 +19088,9 @@ _Exercises_
 
 10.
 
-
 Write a nonrecursive version of the 1D range program given in the text.
 
-Write a program to print out all points from a binary tree which do _not_
+Write a program to print out all points from a binary tree which do not
 fall in a specified interval.
 
 Give the maximum and minimum number of grid squares that will be
@@ -23732,7 +19105,7 @@ to be used?
 
 Draw the tree and the subdivision of the plane that results if we build a
 2D tree for our sample points starting with a vertical dividing line. (That
-is, call range with a third argument of _false_ rather than true.)
+is, call range with a third argument of false rather than true.)
 
 Give a set of points which leads to a worst-case 2D tree having no nodes
 with two sons; give the subdivision of the plane that results.
@@ -23749,14 +19122,9 @@ the points cluster together in large groups spaced far apart?
 Draw the 3D tree that results when the points (3,1,5) (4,8,3) (8,3,9)
 (6,277) (1,673) (1,375) (6,4,2) are inserted into an initially empty tree.
 
-
 9.
 
-
------
-
 ###### 27. Geometric Intersection
-
 A natural problem arising frequently in applications involving geometric
 data is: “Given a set of N objects, do any two intersect?” The “objects”
 involved may be lines, rectangles, circles, polygons, or other types of geometric
@@ -23787,9 +19155,6 @@ makes the problem easier in one sense (horizontal and vertical lines are relativ
 
 349
 
-
------
-
 350 CHAPTER 27
 
 intersecting pairs is more difficult than simply determining whether one such
@@ -23804,7 +19169,7 @@ of geometric objects. However, for lines and other objects, the extension
 to return all intersecting pairs is somewhat more complicated than for the
 horizontal-vertical case.
 
-_Horizontal_ and _Vertical Lines_
+Horizontal and Vertical Lines
 
 To begin, we’ll assume that all lines are either horizontal or vertical: the two
 points defining each line either have equal x coordinates or equal y coordinates,
@@ -23814,21 +19179,14 @@ as in the following sample set of lines:
 
 I
 
-**[J]**
+[J]
 ###### I
-
 (This is sometimes called Manhattan geometry because, the Chrysler building
 notwithstanding, the Manhattan skyline is often sketched using only horizontal and vertical lines.) Constraining lines to be horizontal or vertical is certainly a severe restriction, but this is far from a “toy” problem. It is often
 the case that this restriction is imposed for some other reason for a particular
 
-
 ###### N
-
-
 I
-
-
------
 
 GEOMETRIC INTERSECTION
 
@@ -23867,40 +19225,30 @@ B B D E F H J C G D I C A G J F E I
 Each vertical line appears twice in this list, each horizontal line appears
 once. For the purposes of the line intersection algorithm, this sorted list
 can be thought of as a sequence of insert (vertical lines when the bottom
-endpoint is encountered), _delete_ (vertical lines when the top endpoint is encountered), and range (for the endpoints of horizontal lines) commands. All
+endpoint is encountered), delete (vertical lines when the top endpoint is encountered), and range (for the endpoints of horizontal lines) commands. All
 of these “commands” are simply calls on the standard binary tree routines
 from Chapters 14 and 26, using x coordinates as keys.
 
 For our example, we begin with the following sequence of binary search
 trees:
 
-
------
-
-_352_ _CHAPTER 27_
-
+352 CHAPTER 27
 
 ###### %
+D
 
+E
 
-**D**
-
-**E**
-
-**F**
+F
 
 ##### 3
+D
 
+E
 
-**D**
-
-**E**
-
-**F**
+F
 
 ##### 3
-
-
 First B is inserted into an empty tree, then deleted. Then D, E, and F are
 inserted. At this point, H is encountered, and a range search for the interval
 defined by H is performed on the rightmost tree in the above diagram. This
@@ -23908,30 +19256,23 @@ search discovers the intersection between H and F. Proceeding down the list
 above in order, we add J, C, then G to get the following sequence of trees:
 
 ###### D
+E
 
-**E**
+F
 
-**F**
-
-**J**
+J
 
 ###### I:k
-
 Next, the upper endpoint of D is encountered, so it is deleted; then I is added
 and C deleted, which gives the following sequence of trees:
 
 At this point A is encountered, and a range search for the interval defined
 
-
 D
 
-**E**
+E
 
 ###### %
-
-
------
-
 GEOMETRIC INTERSECTION 353
 
 by A is performed on the rightmost tree in the diagram above. This search
@@ -23946,7 +19287,7 @@ y coordinate. But since binary trees are going to be used to maintain the
 status of vertical lines with respect to the horizontal scan line, they may as
 well be used for the initial y sort! Specifically, we will use two “indirect”
 binary trees on the line set, one with header node hy and one with header
-node **_hx._** The y tree will contain all the line endpoints, to be processed in
+node hx. The y tree will contain all the line endpoints, to be processed in
 order one at a time; the x tree will contain the lines that intersect the current
 horizontal scan line. We begin by initializing both hx and hy with 0 keys
 and pointers to a dummy external node z, as in treeinitialize in Chapter 14.
@@ -23954,24 +19295,23 @@ Then the hy tree is constructed by inserting both y coordinates from vertical
 lines and the y coordinate of horizontal lines into the binary search tree with
 header node hy, as follows:
 
-**procedure** buildytree;
+procedure buildytree;
 
-**var** N, k, xl, yl, x2, y2: integer;
-**begin**
+var N, k, xl, yl, x2, y2: integer;
+begin
 readln (N) ;
 
-**for** **_k:=l_** **to N do**
-**begin**
+for k:=l to N do
+begin
 readln (xl, yl, x2, y2) ;
 ###### lines[k].pl.x:=xl; lines[k].pl.y:=yl;
-
 lines[k].p2.x:=x2; lines[k].p2.y:=y2;
 
-bstinsert(k, yl, **_hy);_**
-**if y2< >yl then b&insert (k, y2, hy) ;**
-**end ;**
+bstinsert(k, yl, hy);
+if y2< >yl then b&insert (k, y2, hy) ;
+end ;
 
-**end** **;**
+end ;
 
 This program reads in groups of four numbers which specify lines, and puts
 them into the lines array and the binary search tree on the y coordinate. The
@@ -23979,35 +19319,20 @@ standard b&insert routine from Chapter 14 is used, with the y coordinates as
 keys, and indices into the array of lines as the info field. For our example set
 of lines, the following tree is constructed:
 
-
 lines[k].p2.y:=y2;
 
-
 ###### lines[k].pl.y:=yl;
-
-
 bstinsert(k,
 
-
 ###### k:=l
-
-
-**if y2<**
-
+if y2<
 
 ###### yl,
-
-
 readln (xl, yl , x2, y2)
-
 
 ;
 
-
-**;**
-
-
------
+;
 
 354 CHAPTER 27
 
@@ -24016,46 +19341,41 @@ structure as the treeprint routine for binary search trees in Chapter 14. We
 visit the nodes in increasing y order by visiting all the nodes in the left subtree
 
 of the hy tree, then visiting the root, then visiting all the nodes in the right
-subtree of the _hy_ tree. At the same time, we maintain a separate tree (rooted
+subtree of the hy tree. At the same time, we maintain a separate tree (rooted
 at hx) as described above, to simulate the operation of passing a horizontal
 scan line through. The code at the point where each node is “visited” is rather
 straightforward from the description above. First, the coordinates of the
-endpoint of the corresponding line are fetched from the _lines_ array, indexed
-by the info field of the node. Then the _key_ field in the node is compared
+endpoint of the corresponding line are fetched from the lines array, indexed
+by the info field of the node. Then the key field in the node is compared
 against these to determine whether this node corresponds to the upper or the
 lower endpoint of the line: if it is the lower endpoint, it is inserted into the
-_hx_ tree, and if it is the upper endpoint, it is deleted from the hx tree and
+hx tree, and if it is the upper endpoint, it is deleted from the hx tree and
 a range search is performed. The implementation differs slightly from this
 description in that horizontal lines are actually inserted into the hx tree, then
 immediately deleted, and a range search for a one-point interval is performed
 for vertical lines. This makes the code properly handle the case of overlapping
 vertical lines, which are considered to “intersect.”
 
-
 y
-
-
------
 
 GEOMETRIC INTERSECTION
 
-**procedure scan (next:** link) ;
-**var** t, xl, x2, yl, y2: integer;
+procedure scan (next: link) ;
+var t, xl, x2, yl, y2: integer;
 int: interval;
-**begin**
-**if** next< **>** **z then**
-**begin**
+begin
+if next< > z then
+begin
 
 scan(nextf.1);
 ###### xl:=lines[nextt.info].pl.x; yl :=lines[nextf.info].pl.y;
-
 x2:=lines[nextf.info].p2.x; y2:=lines[nextf.info].p2.y;
 
-**if** **x2<xl then begin** t:=x2; x2:=x1; xl :=t **end;**
-**if** **y2<yl then begin** t:=y2; y2:=yl; yl :=t **end;**
-**if** nextf.key=yl **then** bstinsert(nextf.info, _xl, hx);_
-**if** _nextf .key=y2_ **then**
-**begin**
+if x2<xl then begin t:=x2; x2:=x1; xl :=t end;
+if y2<yl then begin t:=y2; y2:=yl; yl :=t end;
+if nextf.key=yl then bstinsert(nextf.info, xl, hx);
+if nextf .key=y2 then
+begin
 
 bstdelete(nextt.info, xl, hx);
 
@@ -24065,12 +19385,12 @@ write(name(nextt.info), ‘: ‘);
 
 bstrange(hxf.r, int);
 
-_wri teln ;_
-**end** **;**
+wri teln ;
+end ;
 
-_scan (nextf .r)_
-**end**
-**end** **;**
+scan (nextf .r)
+end
+end ;
 
 The running time of this program depends on the number of intersections that
 are found as well as the number of lines. The tree manipulation operations
@@ -24090,72 +19410,42 @@ This approach of intermixed application of recursive procedures operating on the
 Another example of this is the 2D tree algorithm of the previous chapter, and
 we’ll see yet another example in the next chapter.
 
-
 ###### xl:=lines[nextt.info].pl.x;
-
-
 y2:=lines[nextf.info].p2.y;
-
 
 write(name(nextt.info),
 
-
 bstinsert(nextf.info,
-
 
 scan(nextf.1);
 
-
 ###### i&.x2:=x2;
-
-
 ###### x2:=x1;
+nextf .key=y2
 
-
-_nextf .key=y2_
-
-
-_(nextf_
-
+(nextf
 
 ###### y2<yl
-
-
 ###### N+I,
-
-
 ###### :=x1;
-
-
-_wri teln ;_
-
+wri teln ;
 
 ###### :=t
-
-
-_.r)_
-
+.r)
 
 yl
 
-
 t,
-
 
 ‘:
 
+z
 
-**z**
+;
 
+356 CHAPTER 27
 
-**;**
-
-
------
-
-_356_ _CHAPTER 27_
-
-_General Line Intersection_
+General Line Intersection
 
 When lines of arbitrary slope are allowed, the situation can become more
 complicated, as illustrated by the following example.
@@ -24178,9 +19468,6 @@ no line endpoints appear. Just as before, we proceed through the sorted list
 of points, adding each line to a binary search tree when its bottom point is
 encountered and deleting it when its top point is encountered. Just as before,
 the binary tree gives the order in which the lines appear in the horizontal
-
-
------
 
 GEOMETRIC INTERSECTION 357
 
@@ -24206,46 +19493,38 @@ desired) can be used. For example, the following sequence of diagrams shows
 the manipulation of the tree for our example between the time that line C is
 encountered and the time that line D is encountered.
 
-**B** **B**
+B B
 
-**H** **F** **H**
+H F H
 
-**G** **G**
+G G
 
 ###### %
-
-**D**
+D
 
 ## 9
-
 Each “comparison” performed during the tree manipulation procedures is
 actually a line intersection test: if the binary search tree procedure can’t
 decide to go right or left, then the two lines in question must intersect, and
 we’re finished.
 
+B
 
-**B**
+F H
 
-**F** **H**
+G
 
-**G**
-
-**D**
+D
 
 ## 9
+B
 
+H
 
-**B**
-
-**H**
-
-**G**
+G
 
 ###### %
-
-
 5
-
 
 But this is not the whole story, because this generalized comparison
 operation is not transitive. In the example above, F is to the left of B (because
@@ -24254,10 +19533,7 @@ is essential to note this, because the binary tree deletion procedure assumes
 that the comparison operation is transitive: when B is deleted from the last
 tree in the above sequence, the tree
 
-
------
-
-_358_ _CHAPTER 27_
+358 CHAPTER 27
 
 is formed without F and D ever having been explicitly compared. For our
 intersection-testing algorithm to work correctly, we must explicitly test that
@@ -24293,11 +19569,7 @@ solve the problem for testing for the existence of an intersecting pair among
 a set of more general geometric shapes just by changing the generalized
 comparison procedure. For example, if we implement a procedure which
 
-
 5
-
-
------
 
 GEOMETRIC INTERSECTION 359
 
@@ -24317,15 +19589,11 @@ of lines and to use the line intersection procedure.
 
 r l
 
-
 5
 
+360
 
------
-
-_360_
-
-_Exercises_
+Exercises
 
 1. How would you determine whether two triangles intersect? Squares?
 Regular n-gons for n > 4?
@@ -24362,18 +19630,14 @@ are described in the text transitive?
 of N random lines, each line generated with random integer coordinates
 between 0 and 1000.
 
-
------
-
 ###### 28. Closest Point Problems
+Geometric problems involving points on the plane usually involve implicit or explicit treatment of distances between the points. For example, a very natural problem which arises in many applications is the nearest-
 
-Geometric problems involving points on the plane usually involve implicit or explicit treatment of distances between the points. For example, a very natural problem which arises in many applications is the _nearest-_
-
-_neighbor_ problem: find the point among a set of given points closest to a given
+neighbor problem: find the point among a set of given points closest to a given
 new point. This seems to involve checking the distance from the given point to
 each point in the set, but we’ll see that much better solutions are possible. In
 this section we’ll look at some other distance problems, a prototype algorithm,
-and a fundamental geometric structure called the _Voronoi diagram_ that can
+and a fundamental geometric structure called the Voronoi diagram that can
 be used effectively for a variety of such problems in the plane. Our approach
 will be to describe a general method for solving closest point problems through
 careful consideration of a prototype implementation, rather than developing
@@ -24394,15 +19658,12 @@ the two coordinate directions. The two previous methods of this type that
 
 361
 
-
------
-
-_362_ _CHAPTER 28_
+362 CHAPTER 28
 
 we’ve seen (IcD trees and line intersection) have been based on binary search
 trees; in this case the method is based on mergesort.
 
-_Closest Pair_
+Closest Pair
 
 The closest-pair problem is to find the two points that are closest together
 among a set of points. This problem is related to the nearest-neighbor problem; though it is not as widely applicable, it will serve us well as a prototype
@@ -24444,26 +19705,20 @@ of the current point, but not more than min less. The fact that the distance
 between all pairs of points in each half is at least min means that only a few
 points are likely to be checked, as demonstrated in our example set of points:
 
-
 (IcD
-
-
------
 
 CLOSEST POINT PROBLEMS 363
 
 I I
 
 ###### /& I
-
 I ‘1.
 
-� **L**
+� L
 
-**J**
+J
 
 ###### \ M
-
 A vertical dividing line just to the right of F has eight points to the left, eight
 points to the right. The closest pair on the left half is AC (or AO), the closest
 pair on the right is JM. If we have the points sorted on y, then the closest pair
@@ -24486,33 +19741,21 @@ Specifically, we’ll write one recursive routine that both sorts on y and finds
 closest pair. It will do so by splitting the point set in half, then calling itself
 recursively to sort the two halves on y and find the closest pair in each half,
 
-
-**J**
+J
 
 ###### \
-
-
 that this implies that T(N) is proportional to
-
 
 log2
 
-
 ###### N
-
-
 y,
 
+I
 
 I
 
-
-I
-
-
------
-
-**_364_** **_CHAPTER 28_**
+364 CHAPTER 28
 
 then merging to complete the sort on y and applying the procedure above to
 complete the closest pair computation. In this way, we avoid the cost of doing
@@ -24528,14 +19771,14 @@ the implementation is not difficult to understand.
 As mentioned above, the implementation will use the recursive sort and
 merge procedures of Chapter 12. The first step is to modify the list structures
 to hold points instead of keys, and to modify merge to check a global variable
-**_pass_** to decide how to do its comparison. If **_pass=l,_** the comparison should
+pass to decide how to do its comparison. If pass=l, the comparison should
 be done using the x coordinates of the two points; if pass=2 we do the y
 coordinates of the two points. The dummy node z which appears at the
 end of all lists will contain a “sentinel” point with artificially high z and y
 coordinates.
 The next step is to modify the recursive sort of Chapter 12 also to do the
 closest-point computation when pass=2. This is done by replacing the line
-containing the call to merge and the recursive calls to **_sort_** in that program
+containing the call to merge and the recursive calls to sort in that program
 by the following code:
 
 if pass=2 then middle:=bt.p.x;
@@ -24543,62 +19786,45 @@ if pass=2 then middle:=bt.p.x;
 c:=merge(sort(a, N div 2), sort(b, N-(N div 2)));
 sort:=c;
 
-**if** pass=2 **then**
-**begin**
+if pass=2 then
+begin
 
-**_a:=c; pl :=zt.p; p2:=zt.p; p3:=zt.p; p4:=zf.p;_**
+a:=c; pl :=zt.p; p2:=zt.p; p3:=zt.p; p4:=zf.p;
 
-**repeat**
-**if** abs(at.p.x-middle)<min **then**
-**begin**
+repeat
+if abs(at.p.x-middle)<min then
+begin
 
 check(at.p, pl);
 check( at .p, p2) ;
 check(af.p, ~3);
 check(at.p, ~4);
 
-**_pl_** :=p2; **_p2:=p3; p3:=p4;_** p4:=at.p
-**end** **;**
+pl :=p2; p2:=p3; p3:=p4; p4:=at.p
+end ;
 
 ###### a:=af.next
-
-**until a=z**
-**end**
-
+until a=z
+end
 
 ###### abs(at.p.x-middle)<min
-
-
 ###### middle:=bt.p.x;
-
-
 check(at.p, ~4);
 
-
-**_a:=c; pl :=zt.p; p2:=zt.p; p3:=zt.p; p4:=zf.p;_**
-
+a:=c; pl :=zt.p; p2:=zt.p; p3:=zt.p; p4:=zf.p;
 
 ###### a:=af.next
-
-
 sort:=c;
-
 
 closest-point computation when pass=2. This is done by replacing the line
 
-
 :=p2;
-
 
 .p,
 
-
 ;
 
-
------
-
-CLOSEST **_POINT_** PROBLEMS **_365_**
+CLOSEST POINT PROBLEMS 365
 
 If pass=1, this is straight mergesort: it returns a linked list containing the
 points sorted on their z coordinates (because of the change to merge). The
@@ -24609,15 +19835,14 @@ two points given as arguments is less than the global variable min. If so, it
 resets min to that distance and saves the points in the global variables cpl
 and cp2. Thus, the global min always contains the distance between cpl and
 
-**_cp2,_** the closest pair found so far.
+cp2, the closest pair found so far.
 
 First, we sort on x, then we sort on y and find the closest pair by invoking
 sort as follows:
 
-new(z); **_zf.next:=z;_**
+new(z); zf.next:=z;
 
 ###### zf.p.x:=maxint; zt.p.y:=maxint;
-
 new(h); ht.next:=readlist;
 ###### min:=maxint;
 pass:=l; hf.next:=sort(hf.next, N);
@@ -24626,12 +19851,12 @@ pass:=2; hf.next:=sort(hf.next, N);
 
 After these calls, the closest pair of points is found in the global variables cpl
 
-and **_cp2_** which are managed by the **_check_** “find the minimum” procedure.
+and cp2 which are managed by the check “find the minimum” procedure.
 
-The crux of the implementation is the operation of **_sort_** when pass=2.
+The crux of the implementation is the operation of sort when pass=2.
 
-**_Before_** the recursive calls the points are sorted on x: this ordering is used to
-divide the points in half and to find the x coordinate of the dividing line. **_Ajter_**
+Before the recursive calls the points are sorted on x: this ordering is used to
+divide the points in half and to find the x coordinate of the dividing line. Ajter
 the recursive calls the points are sorted on y and the distance between every
 pair of points in each half is known to be greater than min. The ordering on
 y is used to scan the points near the dividing line; the value of min is used to
@@ -24648,36 +19873,26 @@ It is interesting to examine the order in which the various vertical dividing
 lines are tried in this algorithm. This can be described with the aid of the
 following binary tree:
 
-
 pass:=l; hf.next:=sort(hf.next,
-
 
 new(h); ht.next:=readlist;
 
-
 zt.p.y:=maxint;
 
+zf.next:=z;
 
-**_zf.next:=z;_**
+Ajter
 
+cp2,
 
-**_Ajter_**
-
-
-**_cp2,_**
-
-
------
-
-_CHAPTER 28_
+CHAPTER 28
 
 ###### G OA DE CH FI KB PN JM L
-
 Each node in this tree represents a vertical line dividing the points in the left
 and right subtree. The nodes are numbered in the order in which the vertical
 lines are tried in the algorithm. Thus, first the line between G and 0 is tried
 and the pair GO is retained as the closest so far. Then the line between A and
-D is tried, but A and D are too far apart to change _min. Then the line between_
+D is tried, but A and D are too far apart to change min. Then the line between
 0 and A is tried and the pairs GD G-4 and OA all are successively closer pairs.
 It happens for this example that no closer pairs are found until FK, which is
 the last pair checked for the last dividing line tried. This diagram reflects the
@@ -24693,10 +19908,10 @@ one above with extra processing along the dividing line to find, for each point,
 whether there is a point on the other side closer than its closest point on its
 own side. Again, the “free” y sort is helpful for this computation.
 
-_Voronoi Diagrams_
+Voronoi Diagrams
 
 The set of all points closer to a given point in a point set than to all other points
-in the set is an interesting geometric structure called the _Voronoi polygon_ for
+in the set is an interesting geometric structure called the Voronoi polygon for
 the point. The union of all the Voronoi polygons for a point set is called its
 Voronoi diagram. This is the ultimate in closest-point computations: we’ll see
 that most of the problems involving distances between points that we face
@@ -24704,12 +19919,7 @@ have natural and interesting solutions based on the Voronoi diagram. The
 diagram for our sample point set is comprised of the thick lines in the diagram
 below:
 
-
 ###### FI
-
-
------
-
 CLOSEST POINT PROBLEMS 367
 
 Basically, the Voronoi polygon for a point is made up of the perpendicular
@@ -24733,9 +19943,6 @@ finding the minimum length line among the lines in the dual. Similarly, the
 line connecting each point to its nearest neighbor must be in the dual, so the
 all-nearest-neighbors problem reduces directly to finding the dual. The convex
 hull of the point set is part of the dual, so computing the Voronoi dual is yet
-
-
------
 
 CHAPTER 28
 
@@ -24766,14 +19973,9 @@ compute the Voronoi diagram, so it is powerful enough for algorithms based
 on the Voronoi diagram, and it may admit to simpler, more efficient code, just
 as we saw for the closest-nair nroblem.
 
-
------
-
 369
 
-
-_Exercises_
-
+Exercises
 
 1.
 
@@ -24795,7 +19997,6 @@ _Exercises_
 
 10.
 
-
 Write programs to solve the nearest-neighbor problem, first using the grid
 method, then using 2D trees.
 
@@ -24809,7 +20010,7 @@ Give an algorithm that, given a set of 2N points, half with positive z
 coordinates, half with negative x coordinates, finds the closest pair with
 one member of the pair in each half.
 
-Give the successive pairs of points assigned to _cpl_ and _cp2_ when the
+Give the successive pairs of points assigned to cpl and cp2 when the
 program in the text is run on the example points, but with A removed.
 
 Test the effectiveness of making min global by comparing the performance
@@ -24827,12 +20028,7 @@ N2) for computing the Voronoi diagram.
 Write a program that uses the same recursive structure as the closest-pair
 implementation given in the text to find the convex hull of a set of points.
 
-
 ###### 2N
-
-
------
-
 ```
 370
 
@@ -24860,43 +20056,33 @@ their behavior on different types of point sets. This field is still in its infa
 and the best algorithms are yet to be discovered.
 
 J. L. Bentley, “Multidimensional binary search trees used for associative
-searching,” Communications of the _ACM,_ 18, 9 (September, 1975).
+searching,” Communications of the ACM, 18, 9 (September, 1975).
 
 J. L. Bentley and J.H. Friedman, “Data structures for range searching,”
 Computing Surveys, 11, 4 (December, 1979).
 
-J. L. Bentley and T. Ottmann, “Algorithms for reporting and counting geometric intersections,” _IEEE_ Transactions on Computing, C-28, 9 (September,
+J. L. Bentley and T. Ottmann, “Algorithms for reporting and counting geometric intersections,” IEEE Transactions on Computing, C-28, 9 (September,
 1979).
 
-W. F. Eddy, “A new convex hull algorithm for planar sets,” _ACM_ Transactions
-on _Mathematical Software, 3_ (1977).
+W. F. Eddy, “A new convex hull algorithm for planar sets,” ACM Transactions
+on Mathematical Software, 3 (1977).
 
 R. L. Graham, “An efficient algorithm for determining the convex hull of a
-finite planar set,” _Information Processing Letters,_ `1` (1972).
+finite planar set,” Information Processing Letters, 1 (1972).
 
 R. A. Jarvis, “On the identification of the convex hull of a finite set of points
 in the plane,” Information Processing Letters, 2 (1973).
 
-M. I. Shamos, _Problems in_ Computational _Geometry,_ unpublished manuscript,
+M. I. Shamos, Problems in Computational Geometry, unpublished manuscript,
 1975.
 
-M. I. Shamos and D. Hoey, “Closest-point problems,” in _16th Annual_ Symposium _on Foundations_ `of` _Computer Science,_ IEEE, 1975.
+M. I. Shamos and D. Hoey, “Closest-point problems,” in 16th Annual Symposium on Foundations of Computer Science, IEEE, 1975.
 
-M. I. Shamos and D. Hoey, “Geometric intersection problems,” in _17th Annual_
-Symposium on Foundations `of` Computer Science, IEEE, 1976.
-
-
------
+M. I. Shamos and D. Hoey, “Geometric intersection problems,” in 17th Annual
+Symposium on Foundations of Computer Science, IEEE, 1976.
 
 ###### GRAPH ALGORITHMS
-
-
------
-
------
-
 ###### 29. Elementary Graph Algorithms
-
 A great many problems are naturally formulated in terms of objects
 and connections between them. For example, given an airline route
 map of the eastern U. S., we might be interested in questions like: “What’s
@@ -24915,7 +20101,7 @@ A third example is “job scheduling,” where the objects are tasks to be
 performed, say in a manufacturing process, and interconnections indicate
 which jobs should be done before others. Here we might be interested in
 answering questions like “When should each task be performed?”
-A _graph_ is a mathematical object which accurately models such situations.
+A graph is a mathematical object which accurately models such situations.
 In this chapter, we’ll examine some basic properties of graphs, and in the next
 several chapters we’ll study a variety of algorithms for answering questions of
 the type posed above.
@@ -24923,12 +20109,9 @@ Actually, we’ve already encountered graphs in several instances in previous ch
 and some of the algorithms that we’ll see for processing graphs are similar to
 algorithms that we’ve already seen for processing trees and other structures.
 
-_373_
+373
 
-
------
-
-_374_ _CHAPTER 29_
+374 CHAPTER 29
 
 For example, the finite-state machines of Chapters 19 and 20 are represented
 with graph structures.
@@ -24952,7 +20135,7 @@ A good deal of nomenclature is associated with graphs. Most of the terms
 have straightforward definitions, and it is convenient to put them in one place
 even though we won’t be using some of them until later.
 
-A _graph_ is a collection of _vertices_ and edges. Vertices are simple objects
+A graph is a collection of vertices and edges. Vertices are simple objects
 which can have names and other properties; an edge is a, connection between
 two vertices. One can draw a graph by marking points for the vertices and
 drawing lines connecting them for the edges, but it must be borne in mind
@@ -24963,13 +20146,9 @@ We define this graph by saying that it consists of the set of vertices A B C D
 E F G H I J K L M and the set of edges between these vertices AG Al3 AC
 LMJMJLJKEDFDHIFEAF’GE.
 
-
 a,
 
-
------
-
-ELEMENTARY GRAPH _ALGORITHMS_ _375_
+ELEMENTARY GRAPH ALGORITHMS 375
 
 For some applications, such as the airline route example above, it might
 not make sense to rearrange the placement of the vertices as in the diagrams
@@ -24987,12 +20166,12 @@ from B to G in the graph above. A graph is connected if there is a path
 from every node to every other node in the graph. Intuitively, if the vertices
 were physical objects and the edges were strings connecting them, a connected
 graph would stay in one piece if picked up by any vertex. A graph which is
-not connected is made up of _connected components;_ for example, the graph
-drawn above has three connected components. A _simple path_ is a path in
+not connected is made up of connected components; for example, the graph
+drawn above has three connected components. A simple path is a path in
 which no vertex is repeated. (For example, BAFEGAC is not a simple path.)
 A cycle is a path which is simple except that the first and last vertex are the
 same (a path from a point back to itself): the path AFEGA is a cycle.
-A graph with no cycles is called a _tree._ There is only one path between
+A graph with no cycles is called a tree. There is only one path between
 any two nodes in a tree. (Note that binary trees and other types of trees that
 we’ve built with algorithms are special cases included in this general definition
 of trees.) A group of disconnected trees is called a forest. A spanning tree of a
@@ -25002,87 +20181,76 @@ of our sample graph.
 
 Note that if we add any edge to a tree, it must form a cycle (because
 there is already a path between the two vertices that it connects). Also, it is
-easy to prove by induction that a tree on V vertices has exactly _V -_ 1 edges.
+easy to prove by induction that a tree on V vertices has exactly V - 1 edges.
 
+376 CHAPTER 29
 
------
-
-_376_ CHAPTER 29
-
-If a graph with _V_ vertices has less than _V_ - 1 edges, it can’t be connected.
-If it has more that _V_ - 1 edges, it must have a cycle. (But if it has exactly
-_V_ _-_ 1 edges, it need not be a tree.)
-We’ll denote the number of vertices in a given graph by _V,_ the number
-of edges by E. Note that _E_ can range anywhere from 0 to _$V(V_ - 1). Graphs
+If a graph with V vertices has less than V - 1 edges, it can’t be connected.
+If it has more that V - 1 edges, it must have a cycle. (But if it has exactly
+V - 1 edges, it need not be a tree.)
+We’ll denote the number of vertices in a given graph by V, the number
+of edges by E. Note that E can range anywhere from 0 to $V(V - 1). Graphs
 with all edges present are called complete graphs; graphs with relatively few
-edges (say less than Vlog _V)_ are called sparse; graphs with relatively few of
+edges (say less than Vlog V) are called sparse; graphs with relatively few of
 the possible edges missing are called dense.
 This fundamental dependence on two parameters makes the comparative
 study of graph algorithms somewhat more complicated than many algorithms
-that we’ve studied, because more possibilities arise. For example, one algorithm might take about _V2_ steps, while another algorithm for the same problem might take _(E_ + _V)_ log _E_ steps. The second algorithm would be better for
+that we’ve studied, because more possibilities arise. For example, one algorithm might take about V2 steps, while another algorithm for the same problem might take (E + V) log E steps. The second algorithm would be better for
 sparse graphs, but the first would be preferred for dense graphs.
 Graphs as defined to this point are called undirected graphs, the simplest
 type of graph. We’ll also be considering more complicated type of graphs, in
-which more information is associated with the nodes and edges. In _weighted_
-_graphs integers (weights) are assigned to each edge to represent, say, distances_
+which more information is associated with the nodes and edges. In weighted
+graphs integers (weights) are assigned to each edge to represent, say, distances
 or costs. In directed graphs, edges are “one-way”: an edge may go from x to
 y but not the other way. Directed weighted graphs are sometimes called net_works._ As we’ll discover, the extra information weighted and directed graphs
 contain makes them somewhat more difficult to manipulate than simple undirected graphs.
 
-_Representation_
+Representation
 
 In order to process graphs with a computer program, we first need to decide
 how to represent them within the computer. We’ll look at two commonly used
 representations; the choice between them depends whether the graph is dense
 or sparse.
 The first step in representing a graph is to map the vertex names to
-integers between 1 and _V._ The main reason for doing this is to make it
+integers between 1 and V. The main reason for doing this is to make it
 possible to quickly access information corresponding to each vertex, using
 array indexing. Any standard searching scheme can be used for this purpose:
-for instance, we can translate vertex names to integers between 1 and _V_
+for instance, we can translate vertex names to integers between 1 and V
 by maintaining a hash table or a binary tree which can be searched to find
 the integer corresponding to any given vertex name. Since we have already
-studied these techniques, we’ll assume that we have available a function _index_
+studied these techniques, we’ll assume that we have available a function index
 to convert from vertex names to integers between 1 and V and a function name
 to convert from integers to vertex names. In order to make the algorithms easy
 to follow, our examples will use one-letter vertex names, with the ith letter
 of the alphabet corresponding to the integer i. Thus, though name and index
 
+$V(V
 
-_$V(V_
+V2
 
+ELEMENTARY GRAPH ALGORITHMS 377
 
-_V2_
-
-
------
-
-_ELEMENTARY_ _GRAPH_ _ALGORITHMS_ _377_
-
-are trivial to implement for our examples, their use makes it _easy_ to extend
+are trivial to implement for our examples, their use makes it easy to extend
 the algorithms to handle graphs with real vertex names using techniques from
 Chapters 14-17.
 The most straightforward representation for graphs is the so-called ad
-_jacenc y matrix_ representation. A V-by-V array of boolean values is maintained, with a[x, y] set to true if there is an edge from vertex x to vertex y
+jacenc y matrix representation. A V-by-V array of boolean values is maintained, with a[x, y] set to true if there is an edge from vertex x to vertex y
 and false otherwise. The adjacency matrix for our example graph is given
 below.
 
 A B C D E F G H I J K L M
 A 1 1 1 0 0 1 1 0 0 0 0 0 0
 ###### B1100000000000 c1010000000000 D0001110000000 E0001111000000 F1001110000000 G1000101000000 H0000000110000
-
 1 0 0 0 0 0 0 0 1 1 0 0 0 0
 ###### J0000000001111
-
 K O O O O O O O O O 1 1 0 0
 ###### L0000000001011 M0000000001011
-
 Notice that each edge is really represented by two bits: an edge connecting
-x and y is represented by true values in both a[x, y] and _a[y,_ x]. While it
+x and y is represented by true values in both a[x, y] and a[y, x]. While it
 is possible to save space by storing only half of this symmetric matrix, it
 is inconvenient to do so in Pascal and the algorithms are somewhat simpler
 with the full matrix. Also, it’s sometimes convenient to assume that there’s
-an “edge” from each vertex to itself, so a[x, x] is set to 1 for x from 1 to _V._
+an “edge” from each vertex to itself, so a[x, x] is set to 1 for x from 1 to V.
 A graph is defined by a set of nodes and a set of edges connecting them.
 To read in a graph, we need to settle on a format for reading in these sets.
 The obvious format to use is first to read in the vertex names and then read
@@ -25090,46 +20258,29 @@ in pairs of vertex names (which define edges). As mentioned above, one easy
 way to proceed is to read the vertex names into a hash table or binary search
 tree and to assign to each vertex name an integer for use in accessing vertexindexed arrays like the adjacency matrix. The ith vertex read can be assigned
 the integer i. (Also, as mentioned above, we’ll assume for simplicity in our
-examples that the vertices are the first _V_ letters of the alphabet, so that we
-can read in graphs by reading _V_ and _E,_ then _E_ pairs of letters from the first
-
+examples that the vertices are the first V letters of the alphabet, so that we
+can read in graphs by reading V and E, then E pairs of letters from the first
 
 ###### J0000000001111
-
-
 ###### D0001110000000
-
-
 ###### B1100000000000
-
-
 ###### E0001111000000
-
-
 ###### H0000000110000
-
-
-_a[y,_
-
+a[y,
 
 ###### a[x,
-
-
 y]
 
+378 CHAPTER 29
 
------
-
-_378_ _CHAPTER 29_
-
-_V_ letters of the alphabet.) Of course, the order in which the edges appear is
+V letters of the alphabet.) Of course, the order in which the edges appear is
 not relevant. All orderings of the edges represent the same graph and result
 in the same adjacency matrix, as computed by the following program:
 
 program adjmatrix(input, output);
 
 const maxV=50;
-var j, x, y, V, _E: integer;_
+var j, x, y, V, E: integer;
 a: array[l..maxV, l..maxq of boolean;
 
 begin
@@ -25152,16 +20303,16 @@ end.
 The types of vl and v2 are omitted from this program, as well as the code for
 index. These can be added in a straightforward manner, depending on the
 graph input representation desired. (For our examples, vl and v2 could be of
-type char and index a simple function which uses the Pascal _ord_ function.)
+type char and index a simple function which uses the Pascal ord function.)
 
 The adjacency matrix representation is satisfactory only if the graphs
-to be processed are dense: the matrix requires _V2_ bits of storage and _V2_
+to be processed are dense: the matrix requires V2 bits of storage and V2
 steps just to initialize it. If the number of edges (the number of one bits
-in the matrix) is proportional to _V2, then this may be no problem because_
-about _V2_ steps are required to read in the edges in any case, but if the graph
+in the matrix) is proportional to V2, then this may be no problem because
+about V2 steps are required to read in the edges in any case, but if the graph
 is sparse, just initializing this matrix could be the dominant factor in the
 running time of an algorithm. Also this might be the best representation for
-some algorithms which require more than _V2_ steps for execution. Next we’ll
+some algorithms which require more than V2 steps for execution. Next we’ll
 look at a representation which is more suitable for graphs which are not dense.
 
 In the adjacency structure representation all the vertices connected to
@@ -25169,73 +20320,52 @@ each vertex are listed on an adjacency list for that vertex. This can be easily
 accomplished with linked lists, as shown in the program below which builds
 the adjacency structure for our sample graph.
 
-
 array[l..maxV,
 
-
 ###### x:=index(vl);
-
-
 ###### a[x,y]:=true;
-
-
 ###### l..maxq
-
-
 y] :=false;
 
-
 ###### j:=l
-
-
 ###### a[x,
-
-
 const
 
+V2,
 
-_V2,_
+V2
 
-
-_V2_
-
-
-_V2_
-
+V2
 
 list
 
-
 v2
 
+ELEMENTARY GRAPH ALGORITHMS 379
 
------
+program adjlist(input, output);
+const maxV= 1000;
+type link=fnode;
 
-ELEMENTARY _GRAPH ALGORITHMS_ _379_
-
-**program** adjlist(input, output);
-**const** **maxV= 1000;**
-**type** link=fnode;
-
-node=record v: integer; next: link **end;**
-**var** j, x, y, V, _E:_ integer;
+node=record v: integer; next: link end;
+var j, x, y, V, E: integer;
 
 t, z: link;
 adj: array[I..maxV] of link;
-**begin**
+begin
 readln (V, E) ;
-_new(z); zt.next:=z;_
-**for** j:=l **to** V **do** adjb] :=z;
-**for** **j:=l to E do**
-**begin**
+new(z); zt.next:=z;
+for j:=l to V do adjb] :=z;
+for j:=l to E do
+begin
 
-_readln_ _(vl_ _, v2)_ _;_
+readln (vl , v2) ;
 ###### x:=index(vl); y:=index(v2);
-_n e w ( t ) ; tt.v:=x;_ tf.next:=adj[y]; adj[y]:=t;
-_new(t);_ tf.v:=y; tt.next:=adj[x]; adj[x]:=t;
-**end** **;**
+n e w ( t ) ; tt.v:=x; tf.next:=adj[y]; adj[y]:=t;
+new(t); tf.v:=y; tt.next:=adj[x]; adj[x]:=t;
+end ;
 
-**end.**
+end.
 
 (As usual, each linked list ends with a link to an artificial node z, which
 links to itself.) For this representation, the order in which the edges appear
@@ -25259,47 +20389,26 @@ If the edges appear in the order listed after the first drawing of our sample
 graph at the beginning of the chapter, the program above builds the following
 adjacency list structure:
 
-
 ###### tt.next:=adj[x];
-
-
 ###### x:=index(vl);
-
-
 adj: array[I..maxV]
-
 
 adj[y]:=t;
 
-
 ###### adj[x]:=t;
-
-
 node=record
-
 
 adjb]
 
-
 ###### j:=l
-
-
-_, v2)_
-
+, v2)
 
 ###### :=z;
-
-
 y,
-
 
 v:
 
-
-_;_
-
-
------
+;
 
 CXAPTER 29
 
@@ -25347,16 +20456,11 @@ directed graph with directed edges going both ways between each pair of
 vertices connected by an edge. For weighted graphs, everything again is the
 same except that we fill the adjacency matrix with weights instead of boolean
 
-
 CXAPTER 29
-
 
 x?”
 
-
------
-
-ELEMENTARY _GRAPH_ _ALGORITHMS_
+ELEMENTARY GRAPH ALGORITHMS
 
 values (using some non-existent weight to represent false), or we include a
 field for the edge weight in adjacency list records in the adjacency structure.
@@ -25371,12 +20475,12 @@ edge can be put in the adjacency list nodes (or in an array a of records in
 the adjacency matrix representation), or in auxiliary arrays indexed by edge
 number (this requires numbering the edges).
 
-_Depth-First Search_
+Depth-First Search
 
 At the beginning of this chapter, we saw several natural questions that arise
 immediately when processing a graph. Is the graph connected? If not, what
 are its connected components? Does the graph have a cycle? These and many
-other problems can be easily solved with a technique called _depth-first search,_
+other problems can be easily solved with a technique called depth-first search,
 which is a natural way to “visit” every node and check every edge in the graph
 systematically. We’ll see in the chapters that follow that simple variations
 on a generalization of this method can be used to solve a variety of graph
@@ -25384,57 +20488,49 @@ problems.
 
 For now, we’ll concentrate on the mechanics of examining every piece
 of the graph in an organized way. Below is an implementation of depth-first
-search which fills in an array _vaJ_ [l..Vl as it visits every vertex of the graph.
-The array is initially set to all zeros, so _vaJ[k]=O_ indicates that vertex k has
+search which fills in an array vaJ [l..Vl as it visits every vertex of the graph.
+The array is initially set to all zeros, so vaJ[k]=O indicates that vertex k has
 not yet been visited. The goal is to systematically visit all the vertices of the
-graph, setting the _vaJ_ entry for the nowth vertex visited to _now,_ for _now=_
+graph, setting the vaJ entry for the nowth vertex visited to now, for now=
 
 ###### 1,2,..., V. The program uses a recursive procedure visit which visits all the
 vertices in the same connected component as the vertex given in the argument.
 To visit a vertex, we check all its edges to see if they lead to vertices which
 haven’t yet been visited (as indicated by 0 vaJ entries); if so, we visit them:
 
-
-_vaJ[k]=O_
-
-
-_vaJ_
-
+vaJ[k]=O
 
 vaJ
 
-
------
+vaJ
 
 382 CHAPTER 29
 
-**procedure dfs;**
-**var** now, k: integer;
-val: **array** [l..maxv] **of** integer;
-**procedure** visit(k: integer);
-**var** t: link;
-**begin**
+procedure dfs;
+var now, k: integer;
+val: array [l..maxv] of integer;
+procedure visit(k: integer);
+var t: link;
+begin
 now:=now+l; val[k] :=now;
 
 ###### t:=adj[k];
-
-**while** t<>z **do**
-**begin**
-**if** val[tt.v]=O **then** visit(tf.v);
+while t<>z do
+begin
+if val[tt.v]=O then visit(tf.v);
 
 ###### t:=tf.next
+end
 
-**end**
+end ;
 
-**end ;**
-
-**begin**
+begin
 now:=O;
-**for** k:=l **to V do** val[k] :=O;
-**for** k:=l **to** V **do**
-**if** val[k]=O **then** visit(k)
+for k:=l to V do val[k] :=O;
+for k:=l to V do
+if val[k]=O then visit(k)
 
-**end ;**
+end ;
 
 First visit is called for the first vertex, which results in nonzero val values
 being set for all the vertices connected to that vertex. Then dfs scans through
@@ -25454,41 +20550,25 @@ gives the following structure.
 ```
 Vertices in this structure are numbered with their val values: the vertices are
 
-
 now:=now+l;
 
-
 ###### t:=tf.next
-
-
-
 ###### [l..maxv]
-
-
 now:=O;
-
 
 val[k] :=O;
 
-
 ###### k:=l
-
-
 t<>z
-
 
 val
 
-
 t:
-
-
------
 
 ELEMENTARY GRAPH ALGORITHMS
 
 actually visited in the order A F E G D C B H I J K L M. Each connected
-component leads to a tree, called the _depth-first search tree._ It is important
+component leads to a tree, called the depth-first search tree. It is important
 to note that this forest of depth-first search trees is simply another way of
 drawing the graph; all vertices and edges of the graph are examined by the
 algorithm.
@@ -25508,7 +20588,7 @@ list), we’ll check that G was already visited later on when we’re back at A 
 encountering G in A’s adjacency list).
 
 A crucial property of these depth-first search trees for undirected graphs
-is that the dotted links always go from a node to some _ancestor_ in the tree
+is that the dotted links always go from a node to some ancestor in the tree
 (another node in the same tree, that is higher up on the path to the root).
 At any point during the execution of the algorithm, the vertices divide into
 three classes: those for which visit has finished, those for which visit has only
@@ -25521,17 +20601,14 @@ vertices on the path from the current vertex to the root in the same tree, and
 any edge to any of them will correspond to a dotted link in the depth-first
 search tree.
 
-The running time of dfs is clearly proportional to _V_ + _E_ for any graph.
-We set each of the _V val_ values (hence the _V_ term), and we examine each
-edge twice (hence the _E_ term).
+The running time of dfs is clearly proportional to V + E for any graph.
+We set each of the V val values (hence the V term), and we examine each
+edge twice (hence the E term).
 
 The same method can be applied to graphs represented with adjacency
 matrices by using the following visit procedure:
 
-
------
-
-_384_ _CHAPTER 29_
+384 CHAPTER 29
 
 procedure visit(k: integer);
 var t: integer;
@@ -25563,23 +20640,14 @@ Similarly, depth-first search finds the connected components of a graph.
 Each nonrecursive call to visit corresponds to a different connected component.
 An easy way to print out the connected components is to have visit print out
 
-
 now:=now+l;
-
 
 procedure visit(k: integer);
 
-
-_V2,_
-
+V2,
 
 ###### t:=l
-
-
 t:
-
-
------
 
 ELEMENTARY GRAPH ALGORITMMS 385
 
@@ -25608,7 +20676,7 @@ example if the adjacency list version of dfs were modified in this way:
 
 k n a m e ( k ) vaJIk1 invaJ[k]
 
-1 A 1                  - 1
+1 A 1 - 1
 
 2 B 7 6
 3 C 6 5
@@ -25616,10 +20684,10 @@ k n a m e ( k ) vaJIk1 invaJ[k]
 5 E 3 4
 6 F 2 3
 7 G 4 2
-8 H 8              - 8
+8 H 8 - 8
 
 9 I 9 9
-10 J 10             - 1 0
+10 J 10 - 1 0
 
 11 K 11 11
 12 L 12 12
@@ -25629,20 +20697,15 @@ With such techniques, a graph can be divided up into its connected com
 
 ELEMENTARY GRAPH ALGORITMMS
 
-
 vaJIk1
-
 
 inval
 
-
------
-
-_386_ _CHAPTER 29_
+386 CHAPTER 29
 
 ponents for later processing by more sophisticated algorithms.
 
-_Mazes_
+Mazes
 
 This systematic way of examining every vertex and edge of a graph has a
 distinguished history: depth-first search was first stated formally hundreds
@@ -25664,22 +20727,19 @@ To use depth-first search to get from one place to another in a maze, we
 use visit, starting at the vertex on the graph corresponding to our starting
 point. Each time visit “follows” an edge via a recursive call, we walk along
 the corresponding path in the maze. The trick in getting around is that we
-must walk _back_ along the path that we used to enter each vertex when visit
+must walk back along the path that we used to enter each vertex when visit
 finishes for that vertex. This puts us back at the vertex one step higher up
 in the depth-first search tree, ready to follow its next edge.
 The maze graph given above is an interesting “medium-sized” graph
 which the reader might be amused to use as input for some of the algorithms in
 later chapters. To fully capture the correspondence with the maze, a weighted
 
-
------
-
-_ELEMENTARY GRAPH ALGORITHMS_ 387
+ELEMENTARY GRAPH ALGORITHMS 387
 
 version of the graph should be used, with weights on edges corresponding to
 distances (in the maze) between vertices.
 
-_Perspective_
+Perspective
 
 In the chapters that follow we’ll consider a variety of graph algorithms largely
 aimed at determining connectivity properties of both undirected and directed
@@ -25691,7 +20751,7 @@ algorithms have not yet been found.
 Some very efficient algorithms have been developed which are much too
 complicated to present here. For example, it is possible to determine efficiently
 whether or not a graph can be drawn on the plane without any intersecting
-lines. This problem is called the _planarity_ problem, and no efficient algorithm
+lines. This problem is called the planarity problem, and no efficient algorithm
 for solving it was known until 1974, when R. E. Tarjan developed an ingenious
 (but quite intricate) algorithm for solving the problem in linear time, using
 depth-first search.
@@ -25699,11 +20759,11 @@ Some graph problems which arise naturally and are easy to state seem
 to be quite difficult, and no good algorithms are known to solve them. For
 example, no efficient algorithm is known for finding the minimum-cost tour
 which visits each vertex in a weighted graph. This problem, called the
-_traveling_ salesman _problem,_ belongs to a large class of difficult problems that
+traveling salesman problem, belongs to a large class of difficult problems that
 we’ll discuss in more detail in Chapter 40. Most experts believe that no
 efficient algorithms exist for these problems.
 Other graph problems may well have efficient algorithms, though none has
-been found. An example of this is the _graph isomorphism_ problem: determine
+been found. An example of this is the graph isomorphism problem: determine
 whether two graphs could be made identical by renaming vertices. Efficient
 algorithms are known for this problem for many special types of graphs, but
 the general problem remains open.
@@ -25715,19 +20775,12 @@ quite often, and the graph algorithms that we will study serve well in a great
 variety of applications.
 
 ###### n
-
-
 ###### n
+388
 
-
------
-
-_388_
-
-_Exercises_
+Exercises
 
 1. Which undirected graph representation is most appropriate for determining quickly whether a vertex is isolated (is connected to no other vertices)?
-
 2. Suppose depth-first search is used on a binary search tree and the right
 edge taken before the left out of each node. In what order are the nodes
 visited?
@@ -25740,53 +20793,44 @@ required for the adjacency list representation?
 two edges crossing.
 
 5. Write a program to delete an edge from a graph represented with adjacency lists.
-
 6. Write a version of adjlist that keeps the adjacency lists in sorted order of
 vertex index. Discuss the merits of this approach.
 
 7. Draw the depth-first search forests that result for the example in the text
-when _dfs_ scans the vertices in reverse order (from _V_ down to l), for both
+when dfs scans the vertices in reverse order (from V down to l), for both
 representations.
 
 8. Exactly how many times is visit called in the depth-first search of an
-undirected graph, in terms of the number of vertices _V,_ the number of
-edges _E,_ and the number of connected components C?
+undirected graph, in terms of the number of vertices V, the number of
+edges E, and the number of connected components C?
 
 9. Find the shortest path which connects all the vertices in the maze graph
 example, assuming each edge to be of length 1.
 
-10. Write a program to generate a “random” graph of _V_ vertices and _E_ edges
-as follows: for each pair of integers i < j between 1 and _V,_ include an
+10. Write a program to generate a “random” graph of V vertices and E edges
+as follows: for each pair of integers i < j between 1 and V, include an
 edge from i to j if and only if randomint(V*(V-l)div 2) is less than
-_E._ Experiment to determine about how many connected components are
-created for _V_ = _E_ = 10,100, and 1000.
-
+E. Experiment to determine about how many connected components are
+created for V = E = 10,100, and 1000.
 
 ###### randomint(V*(V-l)div
-
-
 ###### l),
-
-
------
-
 ###### 30. Connectivity
-
 The fundamental depth-first search procedure in the previous chapter
 finds the connected components of a given graph; in this section we’ll
 examine related algorithms and problems concerning other graph connectivity
 properties.
-As a first example of a non-trivial graph algorithm we’ll look at a generalization of connectivity called _biconnectivity._ Here we are interested in knowing
+As a first example of a non-trivial graph algorithm we’ll look at a generalization of connectivity called biconnectivity. Here we are interested in knowing
 if there is more than one way to get from one vertex to another in the graph.
 A graph is biconnected if and only if there are at least two different paths
 connecting each pair of vertices. Thus even if one vertex and all the edges
 touching it are removed, the graph is still connected. If it is important that
-a graph _be_ connected for some application, it might also be important that
-it _stay_ connected. We’ll look at a method for testing whether a graph is
+a graph be connected for some application, it might also be important that
+it stay connected. We’ll look at a method for testing whether a graph is
 biconnected using depth-first search.
 Depth-first search is certainly not the only way to traverse the nodes of
 a graph. Other strategies are appropriate for other problems. In particular,
-we’ll look at _breadth-first search,_ a method appropriate for finding the shortest
+we’ll look at breadth-first search, a method appropriate for finding the shortest
 path from a given vertex to any other vertex. This method turns out to differ
 from depth-first search only in the data structure used to save unfinished paths
 during the search. This leads to a generalized graph traversal program that
@@ -25800,16 +20844,13 @@ to the same connected component. We’ll look at an interesting family of
 algorithms for this problem. The problem is sometimes called the “union-find”
 problem, a nomenclature which comes from the application of the algorithms
 
-_389_
+389
 
-
------
-
-390 _CHAPTER 30_
+390 CHAPTER 30
 
 to processing simple operations on sets of elements.
 
-_Biconnectivity_
+Biconnectivity
 
 It is sometimes reasonable to design more than one route between points on a
 graph, so as to handle possible failures at the connection points (vertices). For
@@ -25820,9 +20861,9 @@ still can function if one component fails. Another application, which is not
 particularly realistic but which illustrates the concept is to imagine a wartime
 stituation where we can make it so that an enemy must bomb at least two
 stations in order to cut our rail lines.
-_An articulation point_ in a connected graph is a vertex which, if deleted,
+An articulation point in a connected graph is a vertex which, if deleted,
 would break the graph into two or more pieces. A graph with no articulation
-points is said to be _biconnected. In a biconnected graph, there are two distinct_
+points is said to be biconnected. In a biconnected graph, there are two distinct
 paths connecting each pair of vertices. If a graph is not biconnected, it
 divides into biconnected components, sets of nodes mutually accessible via two
 distinct paths. For example, consider the following undirected graph, which
@@ -25839,9 +20880,6 @@ J (because it connects K to the rest of the graph), and G (because the graph
 would fall into three pieces if G were deleted). There are six biconnected
 components: ACGDEF, GJLM, and the individual nodes B, H, I, and K.
 Determining the articulation points turns out to be a simple extension
-
-
------
 
 CONNECTIVITY 391
 
@@ -25863,44 +20901,38 @@ These tests are easily incorporated into depth-first search by changing the
 node-visit procedure into a function which returns the highest point in the
 tree (lowest val value) seen during the search, as follows:
 
-
 val
 
+CHAPTER 30
 
------
+function visit (k: integer): integer;
 
-_CHAPTER 30_
-
-**function** visit (k: integer): integer;
-
-**var** t: link;
+var t: link;
 m, min: integer;
-**begin**
-_now:=now+l;_ val[k]:=now; min:=now;
+begin
+now:=now+l; val[k]:=now; min:=now;
 
 ###### t:=adj[k];
-
-**while** t<>z do
-**begin**
-**if** val[tt.v]=O **then**
-**begin**
+while t<>z do
+begin
+if val[tt.v]=O then
+begin
 ###### m:=visit(tt.v);
-**if** m<min **then** min:=m;
-**if** m>=val[k] **then** write(name(k));
-**end**
-**else if** val[tt.v]<min **then min:=val[tt.v];**
+if m<min then min:=m;
+if m>=val[k] then write(name(k));
+end
+else if val[tt.v]<min then min:=val[tt.v];
 
 ###### t:=tf.next
-
-**end**
+end
 
 visit:=min;
 
-**end ;**
+end ;
 
-This procedure recursively determines the highest point in the tree reachable (via a dotted link) from any descendant of vertex _k_ and uses this information to determine if _k_ is an articulation point. Normally this calculation
+This procedure recursively determines the highest point in the tree reachable (via a dotted link) from any descendant of vertex k and uses this information to determine if k is an articulation point. Normally this calculation
 simply involves testing whether the minimum value reachable from a son is
-higher up in the tree, but we need an extra test to determine whether _k_ is the
+higher up in the tree, but we need an extra test to determine whether k is the
 root of a depth-first search tree (or, equivalently, whether this is the first call
 to visit for the connected component containing k), since we’re using the same
 recursive program for both cases. This test is properly performed outside the
@@ -25909,7 +20941,7 @@ recursive visit, so it does not appear in the code above.
 The program above simply prints out the articulation points. Of course,
 as before, it is easily extended to do additional processing on the articulation
 points and biconnected components. Also, since it is a depth-first search
-procedure, the running time is proportional to _V + E._
+procedure, the running time is proportional to V + E.
 
 Besides the “reliability” sort of application mentioned above, biconnectedness can be helpful in decomposing large graphs into manageable pieces. It is
 obvious that a very large graph may be processed one connected component
@@ -25917,37 +20949,22 @@ at a time for many applications; it is somewhat less obvious but sometimes as
 useful that a graph can sometimes be processed one biconnected component
 at a time.
 
-
 write(name(k));
 
-
 ###### m:=visit(tt.v);
-
-
-_now:=now+l;_
-
+now:=now+l;
 
 m>=val[k]
 
-
 ###### t:=adj[k];
-
-
 visit:=min;
 
-
 ###### min:=m;
-
-
-**var**
-
+var
 
 t:
 
-
------
-
-_CONNECTMTY_
+CONNECTMTY
 
 Graph Traversal Algorithms
 
@@ -25971,7 +20988,7 @@ implementation in more detail, we’ll look at a more general framework which
 encompasses several algorithms.
 
 We begin by thinking of the vertices as being divided into three classes:
-_tree_ (or _visited)_ vertices, those connected together by paths that we’ve traversed; fringe vertices, those adjacent to tree vertices but not yet visited; and
+tree (or visited) vertices, those connected together by paths that we’ve traversed; fringe vertices, those adjacent to tree vertices but not yet visited; and
 unseen vertices, those that haven’t been encountered at all yet. To search a
 connected component of a graph systematically (implement the visit procedure
 of the previous chapter), we begin with one vertex on the fringe, all others
@@ -25993,14 +21010,9 @@ this chapter. The following table shows the contents of the fringe each time
 a vertex is moved to the tree; the corresponding search tree is shown at the
 right:
 
-
 t,o
 
-
------
-
 394 CHAPTER 30
-
 
 A
 G
@@ -26020,7 +21032,6 @@ L
 K
 B
 
-
 A
 G B C F
 E C H J L B F
@@ -26034,7 +21045,6 @@ M L K B
 L K B
 K B
 B
-
 
 In this algorithm, the fringe essentially operates as a pushdown stack: we
 remove a vertex (call it 5) from the beginning of the fringe, then go through
@@ -26061,22 +21071,17 @@ the entry), it is changed whenever the node moves to the front of the fringe,
 and it is needed when the node is removed from the table (to determine where
 in the tree to attach it).
 A second classic traversal method derives from maintaining the fringe
-as a queue: always pick the _least_ recently encountered vertex. This can be
+as a queue: always pick the least recently encountered vertex. This can be
 maintained by putting the unseen vertices adjacent to x at the end of the fringe
-
-
------
 
 COivNECTNITY 395
 
-in the general strategy above. This method is called _breadth-first_ search: first
+in the general strategy above. This method is called breadth-first search: first
 we visit a node, then all the nodes adjacent to it, then all the nodes adjacent
 to those nodes, etc. This leads to the following fringe table and search tree
 for our example graph:
 
-
 COivNECTNITY
-
 
 A
 
@@ -26096,7 +21101,6 @@ M
 K
 I
 
-
 A
 F C B G
 C B G E
@@ -26111,11 +21115,9 @@ M K I
 K I
 I
 
-
 D
 
 H
-
 
 We remove a vertex (call it X) from the beginning of the fringe, then go
 through z’s edge list, putting unseen vertices at the end of the fringe. Again,
@@ -26133,37 +21135,33 @@ in the programs from Chapter 11. The following program is a “priority first
 search” routine for a graph represented with adjacency lists (so it is most
 appropriate for sparse graphs).
 
+396 CHAPTER 30
 
------
-
-**396** _CHAPTER 30_
-
-**procedure** sparsepfs;
-**var** now, k: integer;
+procedure sparsepfs;
+var now, k: integer;
 
 t: link;
-**begin**
+begin
 now:=O;
-_for k:=l to V do_
-**begin** vaI[k] :=unseen; dad[k] :=O **end;**
+for k:=l to V do
+begin vaI[k] :=unseen; dad[k] :=O end;
 pqconstruct;
-**repeat**
+repeat
 
 k:=pqremove;
-**if** val[k]=unseen **then**
-**begin** **val[k]** **:=O; now:=now+l** **end**
+if val[k]=unseen then
+begin val[k] :=O; now:=now+l end
 t:=adj[k];
-**while** **t<>z do**
-**begin**
-**if** val[tt.v]=unseen **then** _now:=now+l;_
-**if** onpq(t1.v) **and** (val[tf.v]>priority) **then**
-**begin** pqchange(tt.v, priority); dad[tt.v] _:=k end;_
+while t<>z do
+begin
+if val[tt.v]=unseen then now:=now+l;
+if onpq(t1.v) and (val[tf.v]>priority) then
+begin pqchange(tt.v, priority); dad[tt.v] :=k end;
 
 ###### t:=tf.next
-
-**end**
-**until** pqempty;
-**end;**
+end
+until pqempty;
+end;
 
 (The functions onpq and pqempty are priority queue utility routines which
 are easily implemented additions to the set of programs given in Chapter 11:
@@ -26185,32 +21183,19 @@ to that vertex.
 
 If all vertices on the priority queue are unseen, then no vertex previously
 
-
 (val[tf.v]>priority)
-
 
 val[k]=unseen
 
-
-_now:=now+l_
-
+now:=now+l
 
 ###### t:=tf.next
-
-
-**:=O;**
-
+:=O;
 
 ###### t<>z
-
-
 t:
 
-
------
-
 ###### CONNECTNlTY 397
-
 encountered is connected to any vertex on the queue: that is, we’re entering
 a new connected component. This is automatically handled by the priority
 queue mechanism, so there is no need for a separate visit procedure inside a
@@ -26221,30 +21206,30 @@ zero for the root of the depth-first search tree for each connected component:
 it might be more convenient to set it to zero or some other value (for example,
 now) for various applications.
 
-Now, recall that now increases from 1 to _V_ during the execution of the
+Now, recall that now increases from 1 to V during the execution of the
 algorithm so it can be used to assign unique priorities to the vertices. If we
-change the two occurrences of _priority_ in _sparsepfs_ to V-now, we get depthfirst search, because newly encountered nodes have the highest priority. If
-_we_ use now for _priority_ we get breadth-first search, because old nodes have
+change the two occurrences of priority in sparsepfs to V-now, we get depthfirst search, because newly encountered nodes have the highest priority. If
+we use now for priority we get breadth-first search, because old nodes have
 the highest priority. These priority assignments make the priority queues
 operate like stacks and queues as described above. (Of course, if we were only
 interested in using depth-first or breadth-first search, we would use a direct
-implementation for stacks or queues, not priority queues as in _sparsepfs.)_
+implementation for stacks or queues, not priority queues as in sparsepfs.)
 In the next chapter, we’ll see that other priority assignments lead to other
 classical graph algorithms.
 
 The running time for graph traversal when implemented in this way
 depends on the method of implementing the priority queue. In general, we
 have to do a priority queue operation for each edge and for each vertex, so the
-worst case running time should be proportional to (E + _V)_ log _V_ if the priority
+worst case running time should be proportional to (E + V) log V if the priority
 queue is implemented as a heap as indicated. However, we’ve already noted
 that for both depth-first and breadth-first search we can take advantage of
 the fact that each new priority is the highest or the lowest so far encountered
-to get a running time proportional to _E_ + _V._ Also, other priority queue
+to get a running time proportional to E + V. Also, other priority queue
 implementations might sometimes be appropriate: for example if the graph is
 dense then we might as well simply keep the priority queue as an unordered
-array. This gives a worst case running time proportional to _E_ + _V2_ (or just
+array. This gives a worst case running time proportional to E + V2 (or just
 
-_V2),_ since each edge simply requires setting or resetting a priority, but each
+V2), since each edge simply requires setting or resetting a priority, but each
 vertex now requires searching through the whole queue to find the highest
 priority vertex. An implementation which works in this way is given in the
 next chapter.
@@ -26254,14 +21239,8 @@ edges and nodes visited when depth-first search is halfway through the maze
 graph of the previous chapter starting at the upper left corner; the diagram
 at right is the corresponding picture for breadth-first search:
 
-
 ###### CONNECTNlTY
-
-
-_V2),_
-
-
------
+V2),
 
 398 CHAPTER 30
 
@@ -26282,20 +21261,17 @@ seen that the true underlying data structure for graph algorithms is a priority
 queue, and this admits a wealth of interesting properties to consider. Again,
 we’ll see more examples in the next chapter.
 
-Union-Find _Algorithms_
+Union-Find Algorithms
 
 In some applications we wish to know simply whether a vertex x is connected
 to a vertex y in a graph; the actual path connecting them may not be
 relevant. This problem has been carefully studied in recent years; some
 efficient algorithms have been developed which are of independent interest
-because they can also be used for processing _sets_ (collections of objects).
+because they can also be used for processing sets (collections of objects).
 Graphs correspond to sets of objects in a natural way, with vertices
 corresponding to objects and edges have the meaning “is in the same set as.”
 Thus, the sample graph in the previous chapter corresponds to the sets {A B
 C D E F G}, {H I} and {J K L M}. Eac connected component correspondsh
-
-
------
 
 CONNECTIVITY 399
 
@@ -26337,13 +21313,9 @@ has a slightly different structure (note that JL doesn’t contribute anything,
 since LM and JM put L and J in the same component), and the edges ED,
 FD, and HI build two more trees, leaving the forest:
 
-
 y?”
 
-
------
-
-**_400_** **_CHAPTER 30_**
+400 CHAPTER 30
 
 This forest indicates that the edges processed to this point describe a graph
 with four connected components, or, equivalently, that the set union operations processed to this point have led to four sets {A B C G}, {J K L M}, {D E
@@ -26362,27 +21334,23 @@ we represented graph search trees: we keep an array of integers dad [l ..v]
 which contains, for each vertex, the index of its father (with a 0 entry for
 nodes which are at the root of a tree). To find the father of a vertex j, we
 simply set j : =dad b], and to find the root of the tree to which j belongs, we
-repeat this operation until reaching 0. The union and **_find_** operations are then
-
+repeat this operation until reaching 0. The union and find operations are then
 
 AE
 
-
------
-
-COiViVECTMTY **401**
+COiViVECTMTY 401
 
 very easily implemented:
 
-**function** find(x, y: integer; union: boolean): boolean;
-**var** i, j: integer;
-**begin**
-###### i:=x; while dad[i]>O  do i:=dad[i];
- j:=y; while dadb]>O  do j:=dadlj];
+function find(x, y: integer; union: boolean): boolean;
+var i, j: integer;
+begin
+###### i:=x; while dad[i]>O do i:=dad[i];
+ j:=y; while dadb]>O do j:=dadlj];
 
-**if** union **and** (i<>j) **then** dadb] :=i;
+if union and (i<>j) then dadb] :=i;
 ###### find:=(i<>j)
-**end** **;**
+end ;
 
 This function returns true if the two given vertices are in the same component.
 In addition, if they are not in the same component and the union flag is set,
@@ -26405,36 +21373,25 @@ JK: AA A J J L
 ED: A A E A J J L
 FD: A A E F A J J L
 HI: AAEF A H J J L
-FE: AAEF A H J J L       AF: A A E F A A H J J L
-GE: A A E F A A H J J L       GC: A A E F A A H J J L *
+FE: AAEF A H J J L AF: A A E F A A H J J L
+GE: A A E F A A H J J L GC: A A E F A A H J J L *
 GH: A A E F A A A H J J L
 J G : J A A E F A A A H J J L
-L G : J A A E F A A A H J J L      
+L G : J A A E F A A A H J J L
 An asterisk at the right indicates that the vertices are already in the same
 component at the time the edge is processed. As usual, we are assuming
 
-
 COiViVECTMTY
 
-
 ###### j:=dadlj];
-
-
 dad[i]>O
-
 
 dadb]
 
-
 ###### i:=x;
+;
 
-
-**;**
-
-
------
-
-_402_ _CHAPTER 30_
+402 CHAPTER 30
 
 that we have available functions index and name to translate between vertex names and integers between 1 and V each table entry is the name of
 the corresponding dad array entry. Also, for example, the function call
@@ -26448,7 +21405,7 @@ The algorithm described above has bad worst-case performance because
 the trees formed could be degenerate. For example, taking the edges Al3 BC
 CD DE EF FG GH HI IJ . . . YZ in that order will produce a long chain
 with Z pointing to Y, Y pointing to X, etc. This kind of structure takes time
-proportional to _V2_ to build, and has time proportional to _V_ for an average
+proportional to V2 to build, and has time proportional to V for an average
 equivalence test.
 
 Several methods have been suggested to deal with this problem. One
@@ -26459,21 +21416,21 @@ dadIj]=i. When a tree rooted at i is to be merged with a tree rooted at j, one
 of the nodes must remain a root and the other (and all its descendants) must
 go one level down in the tree. To minimize the distance to the root for the
 most nodes, it makes sense to take as the root the node with more descendant,s.
-This idea, called _weight_ balancing, is easily implemented by maintaining the
-size of each tree (number of descendants of the root) in the _dad_ array entry
+This idea, called weight balancing, is easily implemented by maintaining the
+size of each tree (number of descendants of the root) in the dad array entry
 for each root node, encoded as a nonpositive number so that the root node
-can be detected when traveling up the tree in _find._
+can be detected when traveling up the tree in find.
 
 Ideally, we would like every node to point directly to the root of its tree.
 No matter what strategy we use, achieving this ideal would require examining
 at least all the nodes in the smaller of the two trees to be merged, and this
 could be quite a lot compared to the relatively few nodes on the path to the
-root that _find_ usually examines. But we can approach the ideal by making
+root that find usually examines. But we can approach the ideal by making
 all the nodes that we do examine point to the root! This seems like a drastic
 step at first blush, but it is relatively easy to do, and it must be remembered
 that there is nothing sacrosanct about the structure of these trees: if they
 can be modified to make the algorithm more efficient, we should do so. This
-method, called _path_ compression, is easily implemented by making another
+method, called path compression, is easily implemented by making another
 pass through each tree after the root has been found, and setting the dad
 entry of each vertex encountered along the way to point to the root.
 
@@ -26482,40 +21439,33 @@ the algorithms will run very quickly. The following implementation shows
 that the extra code involved is a small price to pay to guard against degenerate
 cases.
 
-
 f?nd(index(x), index(y), f
-
 
 descendant,s.
 
-
-_V2_
-
+V2
 
 1
 
-
------
-
 CONNECTIVITY 403
 
-**function** fastfind(x, y: integer; union: boolean): boolean;
-**var** i, j, t: integer;
-**begin**
-**i:=x; while** dad[i]>O **do** i:=dad[i];
+function fastfind(x, y: integer; union: boolean): boolean;
+var i, j, t: integer;
+begin
+i:=x; while dad[i]>O do i:=dad[i];
 
-###### j:=y; while dadlj]>0  do j:=dadb];
-**while dad [x] >** 0 **do**
-**begin** _t:=x;_ x:=dad[x]; dad[t]:=i **end;**
-**while dad [y] >** 0 **do**
-**begin** t:=y; y:=dad[y]; dad[t]:=j **end;**
-**if** union **and** **(i<>j)** **then**
-**if dad b]** <dad [i]
-**then begin** dadlj]:=dadb]+dad[i]-I; dad[i]:=j **end**
-**else begin** dad[i]:=dad[i]+dadb]-1; dadlj]:=i **end;**
+###### j:=y; while dadlj]>0 do j:=dadb];
+while dad [x] > 0 do
+begin t:=x; x:=dad[x]; dad[t]:=i end;
+while dad [y] > 0 do
+begin t:=y; y:=dad[y]; dad[t]:=j end;
+if union and (i<>j) then
+if dad b] <dad [i]
+then begin dadlj]:=dadb]+dad[i]-I; dad[i]:=j end
+else begin dad[i]:=dad[i]+dadb]-1; dadlj]:=i end;
 
 ###### fastfind:=(i<>j)
-**end ;**
+end ;
 
 The dad array is assumed to be initialized to 0. (We’ll assume in later chapters
 that this is done in a separate procedure findinit.) For our sample set of edges,
@@ -26530,41 +21480,22 @@ puts the JKLM tree below A, resulting in the following tree:
 The following table gives the contents of the dad array as this forest is
 constructed:
 
-
 ###### dad[i]:=dad[i]+dadb]-1;
-
-
 ###### x:=dad[x];
-
-
 ###### j:=dadb];
-
-
 i:=dad[i];
 
-
 ###### dad[t]:=j
-
-
 dad[i]>O
 
-
 ###### t:=y;
-
-
-_t:=x;_
-
+t:=x;
 
 b]
 
-
 t:
 
-
 0
-
-
------
 
 404 CHAPTER 30
 
@@ -26586,38 +21517,21 @@ HI: 3 A A E 2 E A 1HLL 3 L
 F E : 3AAE2EAlHLL3L*
 
 A F : GAAEAEAlHLL 3 L
-G E : GAAEAEAlHLL 3 L      
+G E : GAAEAEAlHLL 3 L
 G C : GAAEAEAlHLL 3 L *
 G H : 8AAEAEAAHLL3L
 
 ###### JG:12AAEAEAAHLLAL
  LG:12AAEAEAAHLLAL *
 
-
 ###### 3AAOOOAOOLO2L*
-
-
 ###### LG:12AAEAEAAHLLAL
-
-
 ###### 3AAOOOAOOLL3L
-
-
 ###### 3AAE2EAOOLL3L
-
-
 ###### 100000A000000
-
-
 ###### GAAEAEAlHLL
-
-
 ###### GAAEAEAlHLL
-
-
 ###### 1HLL
-
-
 For clarity in this table, each positive entry i is replaced by the ith letter of the
 alphabet (the name of the father), and each negative entry is complemented
 to give a positive integer (the weight of the tree).
@@ -26626,11 +21540,11 @@ another pass up through the tree. Another technique, called halving, is to
 make each node point to its granddad on the way up the tree. Still another
 technique, splitting, is like halving, but is applied only to every other node
 on the search path. Either of these can be used in combination with weight
-balancing or with _height_ balancing, which is similar but uses tree height instead of tree size to decide which way to merge trees.
+balancing or with height balancing, which is similar but uses tree height instead of tree size to decide which way to merge trees.
 
 How is one to choose from among all these methods? And exactly how
 “flat” are the trees produced? Analysis for this problem is quite difficult
-because the performance depends not only on the _V_ and _E_ parameters, but
+because the performance depends not only on the V and E parameters, but
 also on the number of find operations and, what’s worse, on the order in which
 the union and find operations appear. Unlike sorting, where the actual files
 that appear in practice are quite often close to “random,” it’s hard to see
@@ -26639,23 +21553,12 @@ this reason, algorithms which do well in the worst case are normally preferred
 for union-find (and other graph algorithms), though this may be an overly
 ccnservative approach.
 
-
 ###### 3AAE2EAlHLL3L*
-
-
 ###### 3AAElOAOOLL3L
-
-
 ###### 2AOOOOA000000
-
-
 ccnservative approach.
 
-
 i
-
-
------
 
 CONNECTMTY 405
 
@@ -26666,38 +21569,32 @@ will perform in a practical situation. If either weight balancing or height
 balancing is used in combination with either path compression, halving, or
 splitting, then the total number of operations required to build up a structure
 with E edges is proportional to Es(E), where a(E) is a function that is so
-slowly growing that o(E) < 4 unless _E_ is so large that taking lg _E,_ then
+slowly growing that o(E) < 4 unless E is so large that taking lg E, then
 taking lg of the result, then taking lg of that result, and continuing 16 times
 still gives a number bigger than 1. This is a stunningly large number; for all
 practical purposes, it is safe to assume that the average amount of time to
 execute each union and find operation is constant. This result is due to R. E.
 
 Tarjan, who further showed that no algorithm for this problem (from a certain
-general class) can do better that _E&(E),_ so that this function is intrinsic to
+general class) can do better that E&(E), so that this function is intrinsic to
 the problem.
 An important practical application of union-find algorithms is that they
-can be used to determine whether a graph with _V_ vertices and _E_ edges is
-connected in space proportional to _V_ (and almost linear time). This is an
+can be used to determine whether a graph with V vertices and E edges is
+connected in space proportional to V (and almost linear time). This is an
 advantage over depth-first search in some situations: here we don’t need to
 ever store the edges. Thus connectivity for a graph with thousands of vertices
 and millions of edges can be determined with one quick pass through the
 edges.
 
-
 ###### o(E)
+406
 
-
------
-
-_406_
-
-_Exercises_
+Exercises
 
 1. Give the articulation points and the biconnected components of the graph
 formed by deleting GJ and adding IK to our sample graph.
 
 2. Write a program to print out the biconnected components of a graph.
-
 3. Give adjacency lists for one graph where breadth-first search would find a
 cycle before depth first search would, and another graph where depth-first
 search would find the cycle first.
@@ -26709,7 +21606,7 @@ nodes already on the fringe (as in breadth-first search).
 the priority of nodes already on the fringe (as in depth-first search).
 
 6. Draw the union-find forest constructed for the example in the text, but
-assuming that find is changed to set _a[i]=j_ rather than a b]=i.
+assuming that find is changed to set a[i]=j rather than a b]=i.
 
 7. Solve the previous problem, assuming further that path compression is
 
@@ -26725,20 +21622,15 @@ that both are used.
 determine their comparative performance for 1000 union operations with
 both arguments random integers between 1 and 100.
 
-10. Write a program to generate a random connected graph on _V_ vertices
-by generating random pairs of integers between 1 and _V._ Estimate how
-many edges are needed to produce a connected graph as a function of _V._
+10. Write a program to generate a random connected graph on V vertices
+by generating random pairs of integers between 1 and V. Estimate how
+many edges are needed to produce a connected graph as a function of V.
 
-
-_a[i]=j_
-
-
------
+a[i]=j
 
 ###### 3 1. Weighted Graphs
-
 It is often necessary to model practical problems using graphs in which
-_weights_ or _costs_ are associated with each edge. In an airline map where
+weights or costs are associated with each edge. In an airline map where
 edges represent flight routes, these weights might represent distances or fares.
 In an electric circuit where edges represent wires, the length or cost of the wire
 are natural weights to use. In a job-scheduling chart, weights could represent
@@ -26748,8 +21640,8 @@ In this chapter, we’ll examine algorithms for two such problems in detail: “
 the lowest-cost way to connect all of the points,” and “find the lowest-cost
 path between two given points.” The first, which is obviously useful for graphs
 representing something like an electric circuit, is called the minimzlm spanning
-_tree_ problem; the second, which is obviously useful for graphs representing
-something like an airline route map, is called the _shortest path_ problem. These
+tree problem; the second, which is obviously useful for graphs representing
+something like an airline route map, is called the shortest path problem. These
 problems are representative of a variety of problems that arise on weighted
 graphs.
 Our algorithms involve searching through the graph, and sometimes our
@@ -26766,12 +21658,9 @@ the shortest paths in the graph do not necessarily use edges of the minimum
 spanning tree: for example, the shortest path from vertex A to vertex G is
 AF’EG.
 
-_407_
+407
 
-
------
-
-_408_ _CHAPTER 31_
+408 CHAPTER 31
 
 It is obvious how to represent weighted graphs: in the adjacency matrix
 representation, the matrix can contain edge weights rather than boolean
@@ -26787,19 +21676,16 @@ that can arise, suppose that we have a situation where the sum of the weights
 of the edges around a cycle is negative: an infinitely short path could be
 generated by simply spinning around the cycle.
 
-_Minimum Spanning Tree_
+Minimum Spanning Tree
 
-A _minimum spanning tree_ of a weighted graph is a collection of edges that
+A minimum spanning tree of a weighted graph is a collection of edges that
 connects all the vertices such that the sum of the weights of the edges is at
 least as small as the sum of the weights of any other collection of edges that
 connects all the vertices. The minimum spanning tree need not be unique: for
 example, the following diagram shows three other minimum spanning trees
 for our sample graph.
 
-
------
-
-_WEIGHTED GRAPHS_ _409_
+WEIGHTED GRAPHS 409
 
 It’s easy to prove that the “collection of edges” referred to in the definition
 above must form a spanning tree: if there’s any cycle, some edge in the cycle
@@ -26816,16 +21702,13 @@ strategy is used for our example graph.
 
 The implementation of this strategy is a trivial application of the priority
 graph search procedure in the previous chapter: we simply add a weight field
-to the _edge_ record (and modify the input code to read in weights as well),
-then use tt.weight for _priority_ in that program. Thus we always visit next the
+to the edge record (and modify the input code to read in weights as well),
+then use tt.weight for priority in that program. Thus we always visit next the
 vertex in the fringe which is closest to the tree. The traversal is diagramed as
 above for comparison with a completely different method that we’ll examine
 below; we can also redraw the graph in our standard search tree format:
 
-
------
-
-**410** _CHAPTER 31_
+410 CHAPTER 31
 
 This method is based on the following fundamental property of minimum
 spanning trees: “Given any division of the vertices of a graph into two sets,
@@ -26849,7 +21732,7 @@ on the minimum spanning tree.
 As described in the previous chapter, the priority graph traversal alge
 
 rithm has a worst-case running time proportional to (E + V)logV, though
-a different implementation of the priority queue can give a _V2 algorithm,_
+a different implementation of the priority queue can give a V2 algorithm,
 which is appropriate for dense graphs. Later in this chapter, we’ll examine
 this implementation of the priority graph traversal for dense graphs in full
 detail. For minimum spanning trees, this reduces to a method discovered by
@@ -26861,16 +21744,12 @@ matrix version given later in this chapter (for dense graphs) as “Prim’s al
 
 s
 
-
 s
 
+WEIGHTED GRAPHS 411
 
------
-
-WEIGHTED _GRAPHS_ 411
-
-gorithm.” Note that Prim’s algorithm takes time proportional to _V2_ even
-for sparse graphs (a factor of about _V2/E_ 1ogV slower than the priority-first
+gorithm.” Note that Prim’s algorithm takes time proportional to V2 even
+for sparse graphs (a factor of about V2/E 1ogV slower than the priority-first
 search solution, and that the priority-first search solution is a factor of 1ogV
 slower than Prim’s algorithm for dense graphs.
 A completely different approach to finding the minimum spanning tree is
@@ -26879,10 +21758,9 @@ does not form a cycle. This algorithm gradually builds up the tree one edge at
 a time from disconnected components, as illustrated in the following sequence
 of diagrams for our sample graph:
 
-**D**
+D
 
 ###### 8[F’]
-
 The correctness of this algorithm also follows from the general property of
 minimum spanning trees that is proved above.
 The code for this method can be pieced together from programs that
@@ -26891,58 +21769,49 @@ consider the edges in order of their weight, and the job of testing for cycles c
 be obviously done with union-find structures. The appropriate data structure
 to use for the graph is simply an array edge with one entry for each edge. The
 indirect priority queue procedures pqconstruct and pqremove from Chapter 11
-can be used to maintain the priority queue, using the _weight fields in the edge_
-array for priorities. Also, the program uses the findinit and _fastfind_ procedures
+can be used to maintain the priority queue, using the weight fields in the edge
+array for priorities. Also, the program uses the findinit and fastfind procedures
 from Chapter 30. The program simply prints out the edges which comprise
-the spanning tree; with slightly more work a _dad_ array or other representation
+the spanning tree; with slightly more work a dad array or other representation
 could be computed:
 
-
-
 ###### [F’]
-
-
 1ogV
 
+V2
 
-_V2_
+412 CHAPTER 31
 
+program kruskaI(input, output);
+const maxV=50; maxE=2500;
 
------
-
-**412** _CHAPTER 31_
-
-**program** kruskaI(input, output);
-**const** maxV=50; maxE=2500;
-
-**type** edge=record x, y, _weight:_ integer **end;**
-**var i, j, m, x, y,** _V, E:_ integer;
-edges: **array [O..maxE] of edge;**
-**begin**
+type edge=record x, y, weight: integer end;
+var i, j, m, x, y, V, E: integer;
+edges: array [O..maxE] of edge;
+begin
 readln (V, E) ;
 ###### forj:=l toEdo
-
-**begin**
-readln (c, d, _edges/j]_ . weight) ;
+begin
+readln (c, d, edges/j] . weight) ;
 
 edgesb].x:=index(c);
 edgesb].y:=index(d);
 
-**end ;**
+end ;
 
-findinit; pqconstruct; _i:=O;_
-**repeat**
+findinit; pqconstruct; i:=O;
+repeat
 
-m:=pqremove; _x:=edges[m].x; y:=edges[m].y;_
-**if not** _fastfind(x,_ y, true) **then**
-**begin**
+m:=pqremove; x:=edges[m].x; y:=edges[m].y;
+if not fastfind(x, y, true) then
+begin
 writeln(name(x), name(y), edges[m].weight);
 
-_i:=i+l_
-**end**
-**until** i=V-I;
+i:=i+l
+end
+until i=V-I;
 
-**end.**
+end.
 
 The running time of this program is dominated by the time spent processing
 edges in the priority queue. Suppose that the graph consists of two clusters of
@@ -26956,66 +21825,51 @@ queue initially).
 
 An alternate implementation of the same strategy is to sort the edges by
 weight initially, then simply process them in order. Also, the cycle testing
-can be done in time proportional to Elog _E_ with a much simpler strategy
+can be done in time proportional to Elog E with a much simpler strategy
 than union-find, to give a minimum spanning tree algorithm that always takes
-_E_ log _E_ steps. This method was proposed by J. Kruskal in 1956, even earlier
+E log E steps. This method was proposed by J. Kruskal in 1956, even earlier
 than Prim’s algorithm. We’ll refer to the modernized version above, which
 uses priority queues and union-find structures, as “Kruskal’s algorithm.”
 
 The performance characteristics of these three methods indicate that the
 
-
 edgesb].x:=index(c);
-
 
 writeln(name(x),
 
-
 maxE=2500;
-
 
 edge=record x, y,
 
-
-**array [O..maxE] of edge;**
-
+array [O..maxE] of edge;
 
 ###### forj:=l
-
-
 ###### i=V-I;
+i:=i+l
 
-
-_i:=i+l_
-
-
-_V,_
-
+V,
 
 ;
 
-
------
-
-_WEIGHTED GRAPHS_ 413
+WEIGHTED GRAPHS 413
 
 priority-first search method will be faster for some graphs, Prim’s for some
 others, Kruskal’s for still others. As mentioned above, the worst case for the
 priority-first search method is (E + V)logV while the worst case for Prim’s
-is _V2_ and the worst case for Kruskal’s is Elog E. But it is unwise to choose
+is V2 and the worst case for Kruskal’s is Elog E. But it is unwise to choose
 between the algorithms on the basis of these formulas because “worstrcase”
 graphs are unlikely to occur in practice. In fact, the priority-first search
 method and Kruskal’s method are both likely to run in time proportional to
-_E_ for graphs that arise in practice: the first because most edges do not really
+E for graphs that arise in practice: the first because most edges do not really
 require a priority queue adjustment that takes 1ogV steps and the second
 because the longest edge in the minimum spanning tree is probably sufficiently
 short that not many edges are taken off the priority queue. Of course, Prim’s
-method also runs in time proportional to about _E_ for dense graphs (but it
+method also runs in time proportional to about E for dense graphs (but it
 shouldn’t be used for sparse graphs).
 
-_Shortest Path_
+Shortest Path
 
-The _shortest path_ problem is to find the path in a weighted graph connecting
+The shortest path problem is to find the path in a weighted graph connecting
 two given vertices x and y with the property that the sum of the weights of
 all the edges is minimized over all such paths.
 
@@ -27025,13 +21879,13 @@ Moreover, we’ve already considered an algorithm which solves the problem:
 breadth-first search. It is easy to prove by induction that breadth-first search
 starting at x will first visit all vertices which can be reached from z with 1
 edge, then al: vertices which can be reached from x with 2 edges, etc., visiting
-all vertices which can be reached with _k_ edges before encountering any that
-require _k_ + 1 edges. Thus, when y is first encountered, the shortest path from
+all vertices which can be reached with k edges before encountering any that
+require k + 1 edges. Thus, when y is first encountered, the shortest path from
 x has been found (because no shorter paths reached y).
 
 In general, the path from z to y could touch all the vertices, so we usually
 consider the problem of finding the shortest paths connecting a given vertex
-x with _each_ of the other vertices in the graph. Again, it turns out that the
+x with each of the other vertices in the graph. Again, it turns out that the
 problem is simple to solve with the priority graph traversal algorithm of the
 previous chapter.
 
@@ -27041,27 +21895,21 @@ to a different spanning tree; for example, the following three diagrams show
 the shortest path spanning trees for vertices A, B, and E in the example graph
 that we’ve been using.
 
-
 “worstrcase”
 
-
 ###### E.
-
-
------
-
-414 _CHAPTER 31_
+414 CHAPTER 31
 
 The priority-first search solution to this problem is very similar to the
 solution for the minimum spanning tree: we build the tree for vertex z by
 adding, at each step, the vertex on the fringe which is closest to z (before,
 we added the one closest to the tree). To find which fringe vertex is closest
-to CC, we use the val array: for each tree vertex _k, val[k] will be the distance_
+to CC, we use the val array: for each tree vertex k, val[k] will be the distance
 from that vertex to z, using the shortest path (which must be comprised of
-tree nodes). When _k is added to the tree, we update the fringe by going_
-through _k’s adjacency list. For each node t on the list, the shortest distance_
-to z through _k from_ _tf.v_ is val[k]+tf.weight. Thus, the algorithm is trivially
-implemented by using this quantity for _priority_ in the priority graph traversal
+tree nodes). When k is added to the tree, we update the fringe by going
+through k’s adjacency list. For each node t on the list, the shortest distance
+to z through k from tf.v is val[k]+tf.weight. Thus, the algorithm is trivially
+implemented by using this quantity for priority in the priority graph traversal
 program. The following sequence of diagrams shows the construction of the
 shortest path search tree for vertex A in our example.
 ```
@@ -27097,19 +21945,13 @@ shortest path search tree for vertex A in our example.
 
 ```
 
-**F**
+F
 ###### 0
-
-
-_tf.v_
-
+tf.v
 
 CC,
 
-
------
-
-WEIGHTED _GRAPHS_ 415
+WEIGHTED GRAPHS 415
 
 First we visit the closest vertex to A, which is B. Then both C and F are
 distance 2 from A, so we visit them next (in whatever order the priority queue
@@ -27117,7 +21959,7 @@ returns them). Then D can be attached at F or at B to get a path of distance
 3 to A. (The algorithm attaches it to B because it was put on the tree before
 F, so D was already on the fringe when F was put on the tree and F didn’t
 provide a shorter path to A.) Finally, E and G are visited. As usual, the tree
-is represented by the _dad_ array of father links. The following table shows the
+is represented by the dad array of father links. The following table shows the
 array computed by the priority graph traversal procedure for our example:
 
 A B C D E F G
@@ -27132,43 +21974,36 @@ in the dad array, starting at G). Note that the correct operation of this
 program depends on the val entry for the root being zero, the convention that
 we adopted for sparsepfs.
 As before, the priority graph traversal algorithm has a worst-case running
-time proportional to _(E_ + _V)_ log _V,_ though a different implementation of the
-priority queue can give a _V2_ algorithm, which is appropriate for dense graphs.
+time proportional to (E + V) log V, though a different implementation of the
+priority queue can give a V2 algorithm, which is appropriate for dense graphs.
 Below, we’ll examine this implementation of priority graph traversal for dense
 graphs in full detail. For the shortest path problem, this reduces to a method
 discovered by E. Dijkstra in 1956. Though the methods are the same in
-essence, we’ll refer to the _sparsepfs_ program of the previous chapter with
-priority replaced by val _[k] + tt . weight_ as the “priority-first search solution” to
+essence, we’ll refer to the sparsepfs program of the previous chapter with
+priority replaced by val [k] + tt . weight as the “priority-first search solution” to
 the shortest paths problem and the adjacency matrix version given below as
 “Dijkstra’s algorithm.”
 
-_Dense Graphs_
+Dense Graphs
 
 As we’ve discussed, when a graph is represented with a adjacency matrix, it is
 best to use an unordered array representation for the priority queue in order
-to achieve a _V2_ running time for any priority graph traversal algorithm. That
+to achieve a V2 running time for any priority graph traversal algorithm. That
 is, this provides a linear algorithm for the priority first search (and thus the
 minimum spanning tree and shortest path problems) for dense graphs.
 Specifically, we maintain the priority queue in the val array just as in
-_sparsepfs_ but we implement the priority queue operations directly rather than
+sparsepfs but we implement the priority queue operations directly rather than
 using heaps. First, we adopt the convention that the priority values in the
 val array will be negated, so that the sign of a val entry tells whether the
 corresponding vertex is on the tree or the priority queue. To change the
 
-
-_GRAPHS_
-
+GRAPHS
 
 val
 
-
 val
 
-
 val
-
-
------
 
 416 CRAPTER 31
 
@@ -27180,29 +22015,29 @@ vaJ array to find the vertex with the largest negative (closest to 0) vaJ value
 the sparsepfs program of the previous chapter, we are left with the following
 compact program.
 
-**procedure densepfs;**
-**var** _k,_ min, t: integer;
-**begin**
-_for_ _k:=l to_ **Vdo**
-**begin** vaJ[k]:=-unseen; dad[k]:=O **end;**
+procedure densepfs;
+var k, min, t: integer;
+begin
+for k:=l to Vdo
+begin vaJ[k]:=-unseen; dad[k]:=O end;
 
 vaJ[O]:=-(unseen+l);
 
 ###### min:=l;
-**repeat**
+repeat
 k:=min; vaJ[k]:=-vaJ[k]; min:=O;
 
-**if** vaJ[k]=unseen then vaJ[k] :=O;
-**for** t:=l **to Vdo**
-**if** vaJ[t]<O **then**
-**begin**
-**if** (a[k, t]<>O) **and** (vaJ[t]<-priority) **then**
-**begin** _vaJ[t] :=-p_ riority; dad [ t] :=k **end;**
-**if** vaJ[t]>vaJ[min] **then** min:=t;
-**end**
-**until** min=O;
+if vaJ[k]=unseen then vaJ[k] :=O;
+for t:=l to Vdo
+if vaJ[t]<O then
+begin
+if (a[k, t]<>O) and (vaJ[t]<-priority) then
+begin vaJ[t] :=-p riority; dad [ t] :=k end;
+if vaJ[t]>vaJ[min] then min:=t;
+end
+until min=O;
 
-**end ;**
+end ;
 
 Note that, the loop to update the priorities and the loop to find the minimum
 are combined: each time we remove a vertex from the fringe, we pass through
@@ -27213,51 +22048,39 @@ and the negative of this value must be representable.)
 If we use a[k, t] for priority in this program, we get Prim’s algorithm
 for finding the minimum spanning tree; if we use vaJ[k]+a[k, t] for priority
 we get Dijkstra’s algorithm for the shortest path problem. As in Chapter
-30, if we include the code to maintain _now_ as the number of vertices so far
-searched and use V-now for _priority,_ we get depth-first search; if we use _now_
+30, if we include the code to maintain now as the number of vertices so far
+searched and use V-now for priority, we get depth-first search; if we use now
 we get breadth-first search. This program differs from the sparsepfs program
 of Chapter 30 only in the graph representation used (adjacency matrix instead
 of adjacency list) and the priority queue implementation (unordered array
 
-
 vaJ[O]:=-(unseen+l);
-
 
 CRAPTER 31
 
-
 min=O;
-
 
 riority;
 
-
 vaJ[k]
 
-
 ###### t:=l
-
-
 vaJ
 
-
 vaJ
-
-
------
 
 WEIGHTED GRAPHS 417
 
 instead of indirect heap). These changes yield a worst-case running time
 proportional to V2, as opposed to (E + V)logV for sparsepfs. That is, the
-running time is linear for dense graphs (when _E_ is proportional to _V2),_ but
+running time is linear for dense graphs (when E is proportional to V2), but
 sparsepfs is likely to be much faster for sparse graphs.
 
 Geometric Problems
 
 Suppose that we are given N points in the plane and we want to find the
 shortest set of lines connecting all the points. This is a geometric problem,
-called the Euclidean minimum spanning _tree_ problem. It can be solved using the graph algorithm given above, but it seems clear that the geometry
+called the Euclidean minimum spanning tree problem. It can be solved using the graph algorithm given above, but it seems clear that the geometry
 provides enough extra structure to allow much more efficient algorithms to be
 developed.
 
@@ -27292,14 +22115,9 @@ search method would efficiently finish the job.
 It is interesting to reflect on the relationship between graph and geometric
 algorithms brought out by the problem posed in the previous paragraphs. It
 
-
-_V2),_
-
+V2),
 
 it,
-
-
------
 
 CHAPTER 31
 
@@ -27329,25 +22147,19 @@ that one at the end of Chapter 29 might require examining a number of nodes
 proportional to @, while the standard algorithm has to examine virtually
 all the nodes.
 
-
 ###### @,
+WEIGHTED GRAPHS 419
 
-
------
-
-_WEIGHTED_ _GRAPHS_ _419_
-
-_Exercises_
+Exercises
 
 1. Give another minimum spanning tree for the example graph at the beginning of the chapter.
-
-2. Give an algorithm to find the minimum spanning _forest_ of a connected
+2. Give an algorithm to find the minimum spanning forest of a connected
 graph (each vertex must be touched by some edge, but the resulting graph
 doesn’t have to be connected).
 
-3. Is there a graph with _V_ vertices and _E_ edges for which the priority-first
+3. Is there a graph with V vertices and E edges for which the priority-first
 solution to the minimum spanning tree problem algorithm could require
-time proportional to (E + _V)_ log _V?_ Give an example or explain your
+time proportional to (E + V) log V? Give an example or explain your
 answer.
 
 4. Suppose we maintained the priority queue as a sorted list in the general
@@ -27360,32 +22172,25 @@ problems: “at each step visit the unvisited vertex closest to the one just
 visited.”
 
 6. Give the shortest path trees for the other nodes in the example graph.
-
 7. Find the shortest path from the upper right-hand corner to the lower
 left-hand corner in the maze graph of Chapter 29, assuming all edges
 have weight 1.
 
-8. Write a program to generate random connected graphs with _V_ vertices,
+8. Write a program to generate random connected graphs with V vertices,
 then find the minimum spanning tree and shortest path tree for some
-vertex. Use random weights between 1 and _V._ How do the weights of the
-trees compare for different values of _V?_
+vertex. Use random weights between 1 and V. How do the weights of the
+trees compare for different values of V?
 
-9. Write a program to generate random complete weighted graphs with _V_
-vertices by simply filling in an adjacency matrix with random numbers between 1 and _V._ Run empirical tests to determine which method finds the
-minimum spanning tree faster for _V_ = 10, 25, 100: Prim’s or Kruskal’s.
+9. Write a program to generate random complete weighted graphs with V
+vertices by simply filling in an adjacency matrix with random numbers between 1 and V. Run empirical tests to determine which method finds the
+minimum spanning tree faster for V = 10, 25, 100: Prim’s or Kruskal’s.
 
 10. Give a counterexample to show why the following method for finding the
 Euclidean minimum spanning tree doesn’t work: “Sort the points on their
 x coordinates, then find the minimum spanning trees of the first half and
 the second half, then find the shortest edge that connects them.”
 
-
------
-
------
-
 ###### 32. Directed Graphs
-
 Directed graphs are graphs in which edges connecting nodes are oneway; this added structure makes it more difficult to determine various
 properties. Processing such graphs is akin to traveling around in a city with
 many one-way streets or to traveling around in a country where airlines rarely
@@ -27401,7 +22206,7 @@ to perform each of the jobs so that none of these precedence relationships are
 violated?
 
 In this chapter, we’ll look at depth-first search for directed graphs, as well
-as algorithms for computing the _transitive_ closure (which summarizes connectivity information) and for topological _sorting_ and for computing _strongly_
+as algorithms for computing the transitive closure (which summarizes connectivity information) and for topological sorting and for computing strongly
 connected components (which have to do with precedence relationships).
 
 As mentioned in Chapter 29, representations for directed graphs are
@@ -27414,25 +22219,17 @@ column Z) if there is an edge from x to y.
 
 A directed graph similar to the undirected graph that we’ve been considering is drawn below. This graph consists of the edges AG AI3 CA LM JM
 ###### JLJKEDDFHIFEAFGEGCHGGJLGMML.
-
 421
 
-
 ###### JLJKEDDFHIFEAFGEGCHGGJLGMML.
-
-
 AI3
 
-
 Z)
-
-
------
 
 422 CHAPTER 32
 
 The order in which the edges appear is now significant: the notation AG
-describes an edge which points from A to G, but _not_ from G to A. But it is
+describes an edge which points from A to G, but not from G to A. But it is
 possible to have two edges between two nodes, one in either direction (we have
 both HI and IH and both LM and ML in the above graph).
 Note that, in these representations, no difference could be perceived
@@ -27440,7 +22237,7 @@ between an undirected graph and a directed graph with two opposite directed
 edges for each edge in the undirected graph. Thus, some of algorithms in this
 chapter can be considered generalizations of algorithms in previous chapters.
 
-_Depth-First Search_
+Depth-First Search
 
 The depth-first search algorithm of Chapter 29 works properly for directed
 graphs exactly as given. In fact, its operation is a little more straightforward
@@ -27450,8 +22247,6 @@ the search trees have a somewhat more complicated structure. For example,
 the following depth-first search structure describes the operation of the recursive algorithm of Chapter 29 on our sample graph.
 
 As before, this is a redrawn version of the graph, with solid edges correspond
-
------
 
 DIRECTED GRAPHS
 
@@ -27473,7 +22268,7 @@ in the tree, and cross edges, which point from a vertex to some vertex which
 is neither a descendant nor an ancestor in the tree.
 As with undirected graphs, we’re interested in connectivity properties of
 directed graphs. We would like to be able to answer questions like “Is there
-_a directed path_ from vertex x to vertex y (a path which only follows edges in
+a directed path from vertex x to vertex y (a path which only follows edges in
 the indicated direction)?” and “Which vertices can we get to from vertex x
 with a directed path?” and “Is there a directed path from vertex x to vertex
 y and a directed path from y to x.7” Just as with undirected graphs, we’ll be
@@ -27497,22 +22292,18 @@ out all the nodes that can be reached from the start node. But note carefully
 that it is not necessarily true that each tree in the depth-first search forest
 contains all the nodes that can be reached from the root of that tree (in our
 example, all the nodes in the graph can be reached from H, not just I). To
-get all the nodes that can be visited from each node, we simply call _visit V_
+get all the nodes that can be visited from each node, we simply call visit V
 times, once for each node:
-
 
 7”
 
+424 CHAPTER 32
 
------
-
-_424_ _CHAPTER 32_
-
-_for k:=l to Vdo_
-**begin**
+for k:=l to Vdo
+begin
 now:=&
 
-for j:=1 to _V do vaIli] :=O;_
+for j:=1 to V do vaIli] :=O;
 
 visit(k);
 wri teln
@@ -27549,81 +22340,64 @@ added and the transitive closure is likely to be dense, so an adjacency matrix
 representation is called for. This is an analogue to connected components in
 an undirected graph; once we’ve performed this computation once, then we
 can quickly answer questions like ‘5s there a way to get from x to y?”
-Using depth-first search to compute the transitive closure requires _V3_
+Using depth-first search to compute the transitive closure requires V3
 
 steps in the worst case, since we may have to examine every bit of the
 
-
-_CHAPTER_
-
+CHAPTER
 
 do vaIli] :=O;
 
-
-_V3_
-
+V3
 
 ‘5s
 
-
------
-
-DIRECTED GRAPHS **425**
+DIRECTED GRAPHS 425
 
 adjacency matrix for the depth-first search from each vertex. There is a
 remarkably simple nonrecursive program for computing the transitive closure
 of a graph represented with an adjacency matrix:
 
-**for y:=l to V do**
-**for x:=1 to V do**
-**if a[x, y] then**
-**for** **j:=l to Vdo**
-**if a[y, j] then** **a[x, j]:=true;**
+for y:=l to V do
+for x:=1 to V do
+if a[x, y] then
+for j:=l to Vdo
+if a[y, j] then a[x, j]:=true;
 
 S. Warshall invented this method in 1962, using the simple observation that
 “if there’s a way to get from node x to node y and a way to get from node y to
 node j then there’s a way to get from node x to node j.” The trick is to make
 this observation a little stronger, so that the computation can be done in only
 one pass through the matrix, to wit: “if there’s a way to get from node x to
-node y _using_ only _nodes with indices_ less than x and a way to get from node
+node y using only nodes with indices less than x and a way to get from node
 y to node j then there’s a way to get from. node x to node j using only nodes
-_with_ indices _less than x+1.”_ The above program is a direct implementation
+with indices less than x+1.” The above program is a direct implementation
 of this.
 
 Warshall’s method converts the adjacency matrix for our sample graph,
 given at left in the table below, into the adjacency matrix for its transitive
 closure, given at the right:
 
+j]:=true;
 
-**j]:=true;**
+a[x,
 
+a[x,
 
-**a[x,**
-
-
-**a[x,**
-
-
-**a[y,**
-
+a[y,
 
 A B C D E F G H I J K L M
 A 1 1 0 0 0 1 1 0 0 0 0 0 0
 B O l O O O O O O O O O O O
 ###### c1010000000000 DOOOlOlOOOOOOO EOOOllOOOOOOOO FOOOOllOOOOOOO GOOlOlOlOOlOOO HOOOOOOlllOOOO
-
 1 0 0 0 0 0 0 0 1 1 0 0 0 0
 ###### JOOOOOOOOOllll
-
 K O O O O O O O O O O l O O
 
 ###### L0000001000011
  MOOOOOOOOOOOll
 
-
 ###### j:=l
-
-
 A B C D E F G H I J K L M
 A 1 1 1 1 1 1 1 0 0 1 1 1 1
 B O l O O O O O O O O O O O
@@ -27631,59 +22405,35 @@ B O l O O O O O O O O O O O
 H l l l l l l l l l l l l l
 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 ###### JlllllllOOllll
-
 K O O O O O O O O O O l O O
 ###### L1111111001111 MlllllllOOllll
-
-
 ###### MlllllllOOllll
-
-
 ###### GlllllllOOllll
-
-
 ###### c1111111001111
-
-
 ###### FOOOOllOOOOOOO
-
-
 ###### MOOOOOOOOOOOll
-
-
 ###### EOOOllOOOOOOOO
-
-
 ###### L1111111001111
-
-
 ###### JlllllllOOllll
-
-
 ###### FOOOlllOOOOOOO
+for x:=1 to V do
 
-
-**for x:=1 to V do**
-
-
------
-
-_426_ _CHAPTER 32_
+426 CHAPTER 32
 
 For very large graphs, this computation can be organized so that the
 operations on bits can be done a computer word at a time, which will lead to
 significant savings in many environments. (As we’ve seen, it is not intended
 that such optimizations be tried with Pascal.)
 
-_Topological Sorting_
+Topological Sorting
 
 For many applications involving directed graphs, cyclic graphs do arise. If,
 however, the graph above modeled a manufacturing line, then it would imply,
 say, that job A must be done before job G, which must be done before job
 C, which must be done before job A. But such a situation is inconsistent:
-for this and many other applications, directed graphs with no _directed cycles_
+for this and many other applications, directed graphs with no directed cycles
 (cycles with all edges pointing the same way) are called for. Such graphs are
-called _directed acyclic graphs,_ or just dags for short. Dags may have many
+called directed acyclic graphs, or just dags for short. Dags may have many
 cycles if the directions on the edges are not taken into account; their defining
 property is simply that one should never get in a cycle by following edges in
 the indicated direction. A dag similar to the directed graph above, with a
@@ -27701,10 +22451,7 @@ looks like a tree; put another way, the depth-first search forest for a dag has
 no up edges. For example, the following depth-first search forest describes
 the operation of dfs on the example dag above.
 
-
------
-
-_DIRECTED GRAPHS_ _427_
+DIRECTED GRAPHS 427
 
 A fundamental operation on dags is to process the vertices of the graph
 in such an order that no vertex is processed before any vertex that points
@@ -27717,7 +22464,7 @@ If edges were to be drawn with the vertices in these positions, all the edges
 would go from left to right. As mentioned above, this has obvious application,
 for example, to graphs which represent manufacturing processes, for it gives a
 specific way to proceed within the constraints represented by the graph. This
-operation is called _topological_ sorting, because it involves ordering the vertices
+operation is called topological sorting, because it involves ordering the vertices
 of the graph.
 In general, the vertex order produced by a topological sort is not unique.
 For example, the order
@@ -27735,25 +22482,22 @@ defined in a programming language manual (or a book on algorithms!) with
 an edge from x to y if the definition of x uses y. In this case, it would be
 useful to find an ordering with the property that every term is defined before
 it is used in another definition. This corresponds to positioning the vertices
-in a line so that edges would all go from right to left. A _reverse topological_
-_order_ for our sample graph is:
+in a line so that edges would all go from right to left. A reverse topological
+order for our sample graph is:
 
 D E F C B I H G A K M L J
 
-
------
-
-_CHAPTER 32_
+CHAPTER 32
 
 The distinction here is not crucial: performing a reverse topological sort on a
 graph is equivalent to performing a topological sort on the graph obtained by
 reversing all the edges.
 But we’ve already seen an algorithm for reverse topological sorting, the
 standard recursive depth-first search procedure of Chapter 29! Simply changing visit to print out the vertex visited just before exiting, for example by
-inserting _write(name[k]_ ) right at the end, causes _dfs_ to print out the vertices
+inserting write(name[k] ) right at the end, causes dfs to print out the vertices
 in reverse topological order, when the input graph is a dag. A simple induction
 argument proves that this works: we print out the name of each vertex after
-we’ve printed out the names of all the vertices that it points to. When _visit_
+we’ve printed out the names of all the vertices that it points to. When visit
 is changed in this way and run on our example, it prints out the vertices in
 the reverse topological order given above. Printing out the vertex name on
 exit from this recursive procedure is exactly equivalent to putting the vertex
@@ -27762,9 +22506,9 @@ be ridiculous to use an explicit stack in this case, since the mechanism for
 recursion provides it automatically; we mention this because we do need a
 stack for the more difficult problem to be considered next.
 
-_Strongly Connected Components_
+Strongly Connected Components
 
-If a graph contains _a directed cycle,_ (if we can get from a node back to itself
+If a graph contains a directed cycle, (if we can get from a node back to itself
 by following edges in the indicated direction), then it it is not a dag and it
 can’t be topologically sorted: whichever vertex on the cycle is printed out first
 will have another vertex which points to it which hasn’t yet been printed out.
@@ -27772,7 +22516,7 @@ The nodes on the cycle are mutually accessible in the sense that there is a
 way to get from every node on the cycle to another node on the cycle and
 back. On the other hand, even though a graph may be connected, it is not
 likely to be true that any node can be reached from any other via a directed
-path. In fact, the nodes divide themselves into sets called _strongly connected_
+path. In fact, the nodes divide themselves into sets called strongly connected
 components with the property that all nodes within a componenl are mutually
 accessible, but there is no way to get from a node in one component to a node
 in another component and back. The strongly connected components of the
@@ -27784,20 +22528,15 @@ get from F to A.
 The strongly connected components of a directed graph can be found
 using a variant of depth-first search, as the reader may have learned to expect.
 The method that we’ll examine was discovered by R. E. Tarjan in 1972. Since
-it is based on depth-first search, it runs in time proportional to _V_ + _E,_ but it is
+it is based on depth-first search, it runs in time proportional to V + E, but it is
 actually quite an ingenious method. It requires only a few simple modifications
 to our basic visit procedure, but before Tarjan presented the method, no linear
 
-
-_write(name[k]_
-
+write(name[k]
 
 29!
 
-
------
-
-DLRECTED **_GRAPHS_** **_429_**
+DLRECTED GRAPHS 429
 
 time algorithm was known for this problem, even though many people had
 worked on it.
@@ -27805,45 +22544,45 @@ worked on it.
 The modified version of depth first search that we use to find the strongly
 connected components of a graph is quite similar to the program that we
 studied in Chapter 30 for finding biconnected components. The recursive
-visit function given below uses the same **_min_** computation to find the highest
+visit function given below uses the same min computation to find the highest
 vertex reachable (via an up link) from any descendant of vertex k, but uses
 the value of min in a slightly different way to write out the strongly connected
 components:
 
-**function** visit(k: integer): integer;
-**var** t: link;
+function visit(k: integer): integer;
+var t: link;
 m, min : integer;
-**begin**
-**_now:=now+l;_** **_val[k] :=now;_** min:=now;
+begin
+now:=now+l; val[k] :=now; min:=now;
 
 stack[p] :=k; p:=p+I;
 
 t:=adj[k] ;
 
-**while** **t<>z do**
-**begin**
-**if** vaJ[tr.v]=O
+while t<>z do
+begin
+if vaJ[tr.v]=O
 
-**then** m:=visit(tf.v)
-**else** m:=vaJ[tf.v];
+then m:=visit(tf.v)
+else m:=vaJ[tf.v];
 
-**if** m<min **then** min:=m;
+if m<min then min:=m;
 ###### t:=tt.next
-**end ;**
+end ;
 
-**if** min=vaJ[k] **then**
-**begin**
-**repeat**
+if min=vaJ[k] then
+begin
+repeat
 
 ###### p:=p-1; write(name(stack[p]));
 vaJ[stack[p]]:=V+I
 
-**until** stack[p]=k;
+until stack[p]=k;
 wri teln
-**end** **;**
+end ;
 
 visit:=min;
-**end** **;**
+end ;
 
 This program pushes the vertex names onto a stack on entry to visit, then
 
@@ -27852,43 +22591,26 @@ strongly connected component. The point of the computation is the test
 whether min=vaJ[k] at the end: if so, all vertices encountered since entry
 (except those already printed out) belong to the same strongly connected
 
-
 write(name(stack[p]));
-
 
 m:=visit(tf.v)
 
-
-**_now:=now+l;_**
-
+now:=now+l;
 
 vaJ[tr.v]=O
 
-
 visit:=min;
-
 
 stack[p] :=k;
 
-
 ###### min:=m;
-
-
 ###### p:=p-1;
-
-
 ###### m<min
+teln
 
+;
 
-**_teln_**
-
-
-**;**
-
-
------
-
-_430_ _CHAPTER 32_
+430 CHAPTER 32
 
 component as k. As usual, this program could easily be modified to do more
 sophisticated processing than simply writing out the components.
@@ -27921,22 +22643,16 @@ be ignored.
 This program provides a deceptively simple solution to a relatively difficult
 problem. It is certainly testimony to the subtleties involved in searching
 directed graphs, subtleties which can be handled (in this case) by a carefully
-crafted recursive program.- **-**
+crafted recursive program.- -
 
 ###### r-l
-
-
 “up”
 
-
 “up”
-
-
------
 
 DIRECTED GRAPHS 431
 
-_Exercises_
+Exercises
 
 1. Give the adjacency matrix for the transitive closure of the example dag
 given in this chapter.
@@ -27954,7 +22670,7 @@ the recursion.
 
 5. Give the topological ordering produced for the example dag given in
 the text when the suggested method is used with an adjacency matrix
-representation, but _dfs_ scans the vertices in reverse order (from _V_ down
+representation, but dfs scans the vertices in reverse order (from V down
 to 1) when looking for unvisited vertices.
 
 6. Does the shortest path algorithm from Chapter 31 work for directed
@@ -27964,33 +22680,26 @@ graphs? Explain why or give an example for which it fails.
 dag.
 
 8. How many strongly connected components are there in a dag? In a graph
-with a directed cycle of size _V?_
+with a directed cycle of size V?
 
 9. Use your programs from Chapters 29 and 30 to produce large random
-directed graphs with _V_ vertices. How many strongly connected components do such graphs tend to have?
+directed graphs with V vertices. How many strongly connected components do such graphs tend to have?
 
 10. Write a program that is functionally analogous to find from Chapter
-30, but maintains _strongly_ connected components of the _directed_ graph
+30, but maintains strongly connected components of the directed graph
 described by the input edges. (This is not an easy problem: you certainly
 won’t be able to get as efficient a program as find.)
 
-
------
-
------
-
 ###### 33. Network Flow
-
 Weighted directed graphs are useful models for several types of applications involving commodities flowing through an interconnected network.
 
 ###### �
-
 Consider, for example, a network of oil pipes of varying sizes, interconnected
 in complex ways, with switches controlling the direction of flow at junctions.
 Suppose further that the network has a single source (say, an oil field) and a
 single destination (say, a large refinery) to which all of the pipes ultimately
 connect. What switch settings will maximize the amount of oil flowing from
-source to destination? Complex interactions involving material flow at junctions make this problem, called the networkflow _problem, a_ nontrivial problem
+source to destination? Complex interactions involving material flow at junctions make this problem, called the networkflow problem, a nontrivial problem
 to solve.
 This same general setup can be used to describe traffic flowing along
 highways, materials flowing through factories, etc. Many different versions
@@ -27998,7 +22707,7 @@ of the problem have been studied, corresponding to many different practical
 situations where it has been applied. There is clearly strong motivation to
 find an efficient algorithm for these problems.
 This type of problem lies at the interface between computer science
-and the field of _operations research._ Operations researchers are generally
+and the field of operations research. Operations researchers are generally
 concerned with mathematical modeling of complex systems for the purpose
 of (preferably optimal) decision-making. Network flow is a typical example
 of an operations research problem; we’ll briefly touch upon some others in
@@ -28011,14 +22720,11 @@ being studied: unlike many of the problems that we’ve looked at, the “best�
 solution has not yet been found and good new algorithms are still being
 discovered.
 
-_433_
-
-
------
+433
 
 434 CRAPTER 33
 
-_The Network Flow Problem_
+The Network Flow Problem
 
 Consider the following rather idealized drawing of a small network of oil pipes:
 
@@ -28044,27 +22750,22 @@ output pipe. Now suppose that the upward diagonal pipe is shut off. This
 shuts flow equal to its capacity out of the bottom, and the top is unaffected
 because there’s room to replace its flow from the input pipe; thus we have:
 
-
 CRAPTER 33
-
 
 flow
 
-
------
-
-_NETWORK_ _FLOW_ 435
+NETWORK FLOW 435
 
 The total flow into and out of the network is increased to substantially.
 This situation can obviously be modeled using a directed graph, and it
-turns out that the programs that we have studied can apply. Define _a network_
+turns out that the programs that we have studied can apply. Define a network
 as a weighted directed graph with two distinguished vertices: one with no
-edges pointing in (the source); one with no edges pointing out (the _sink)._ The
+edges pointing in (the source); one with no edges pointing out (the sink). The
 weights on the edges, which we assume to be non-negative, are called the edge
-_capacities._ Now, a flow is defined as another set of weights on the edges such
+capacities. Now, a flow is defined as another set of weights on the edges such
 that the how on each edge is equal to or less than the capacity, and the flow
 into each vertex is equal to the flow out of that vertex. The value of the flow
-is the flow into the source (or out of the sink). The _network_ flow problem is
+is the flow into the source (or out of the sink). The network flow problem is
 to find a flow with maximum value for a given network.
 Networks can obviously be represented using either the adjacency matrix
 or adjacency list representations that we have used for graphs in previous
@@ -28075,12 +22776,12 @@ or as two fields within a single record in either representation. Even though
 networks are directed graphs, the algorithms that we’ll be examining need
 to traverse edges in the “wrong” direction, so we use an undirected graph
 representation: if there is an edge from x to y with size s and flow f, we also
-keep an edge from y to x with size -s and flow _-f._ In an adjacency list
+keep an edge from y to x with size -s and flow -f. In an adjacency list
 representation, it is necessary to maintain links connecting the two list nodes
 which represent each edge, so that when we change the flow in one we can
 update it in the other.
 
-_Ford-Fulkerson Method_
+Ford-Fulkerson Method
 
 The classical approach to the network flow problem was developed by L. R.
 Ford and D. R. Fulkerson in 1962. They gave a method to improve any legal
@@ -28091,15 +22792,9 @@ Consider any directed path through the network (from source to sink).
 Clearly, the flow can be increased by at least the smallest amount of unused
 capacity on any edge on the path, by increasing the flow in all edges on the
 
-
 flow
 
-
 ###### -s
-
-
------
-
 436 CRAPTER 33
 
 path by that amount. In our example, this rule could be applied along the
@@ -28107,14 +22802,13 @@ path ADEBCF:
 
 then along the path ABCDEF:
 
-**C**
+C
 U4
 
-2/3 **F**
+2/3 F
 ###### *
-
 2/5
-**E**
+E
 
 4/5
 
@@ -28125,28 +22819,22 @@ is filled to capacity. But there is another way to increase the flow: we can
 consider arbitrary paths through the network which can contain edges which
 point the “wrong way” (from sink to source along the path). The flow can
 
-
-**C**
+C
 U4
 
-2/3 **F**
+2/3 F
 ###### *
-
 2/5
-**E**
-
+E
 
 4/5
-
-
------
 
 NETWORK FLOW 437
 
 be increased along such a path by increasing the flow on edges from source
 to sink and decreasing the flow on edges from sink to source by the same
 amount. To simplify terminology, we’ll call edges which flow from source to
-sink along a particular path _forward_ edges and edges which flow from sink to
+sink along a particular path forward edges and edges which flow from sink to
 source backward edges. For example, the flow in the network above can be
 increased by 2 along the path ABEF.
 
@@ -28169,16 +22857,12 @@ edges can be found. The crux of the Ford-Fulkerson method is the observation
 that if no such path can be found then the flow is maximal. The proof of
 this fact goes as follows: if every path from the source to the sink has a full
 forward edge or an empty backward edge, then go through the graph and
-identify the first such edge on every path. This set of edges _cuts_ the graph in
+identify the first such edge on every path. This set of edges cuts the graph in
 two parts, as shown in the diagram below for our example.
-
 
 flow
 
-
------
-
-_438_ _CHAF’TER 33_
+438 CHAF’TER 33
 
 For any cut of the network into two parts, we can measure the flow “across”
 the cut: the total of the flow on the edges which go from the source to the sink
@@ -28187,34 +22871,33 @@ cut has a value of 8, which is equal to the total flow for the network. It turns
 out that whenever the cut flow equals the total flow, we know not only that
 the flow is maximal, but also that the cut is minimal (that is, every other
 cut has at least as high a flow “across”). This is called the maxfiow-mincut
-_theorem:_ the flow couldn’t be any larger (otherwise the cut would have to be
+theorem: the flow couldn’t be any larger (otherwise the cut would have to be
 larger also); and no smaller cuts exist (otherwise the flow would have to be
 smaller also).
 
-_Network_ Searching
+Network Searching
 
 The Ford-Fulkerson method described above may be summarized as follows:
 “start with zero flow everywhere and increase the flow along any path from
 source to sink with no full forward edges or empty backward edges, continuing
-until there are no such paths in the network.” But this is not an _algorithm_ in
+until there are no such paths in the network.” But this is not an algorithm in
 the sense to which we have become accustomed, since the method for finding
 paths is not specified. The example above is based on the intuition that the
 longer the path, the more the network is filled up, and thus that long paths
 should be preferred. But the following classical example shows that some care
 should be exercised:
 
-**B**
-0/1000 `0/1000`
+B
+0/1000 0/1000
 ```
                     A O/l c
 
 ```
-`o/loo0` 0/1000
+o/loo0 0/1000
 
-**D**
+D
 
 ###### @
-
 Now, if the first path chosen is ABDC, then the flow is increased by only one.
 Then the second path chosen might be ADBC, again increasing the flow by
 
@@ -28225,13 +22908,9 @@ Then the second path chosen might be ADBC, again increasing the flow by
 
 0/1000
 
-
 flow
 
-
------
-
-NETWORK FLOW _439_
+NETWORK FLOW 439
 
 one, and leaving an situation identical to the initial situation, except that the
 flows on the outside edges are increased only by 1. Any algorithm which chose
@@ -28244,8 +22923,8 @@ algorithm to be useful, we must avoid having the running time so dependent
 on the magnitude of the capacities.
 Fortunately, the problem is easily eliminated. It was proven by Edmonds
 and Karp that if breadth-first search were used to find the path, then the
-number of paths used before the maximum flow is found in a network of _V_
-vertices and E edges must be less than _VE._ (This is a worstccase bound: a
+number of paths used before the maximum flow is found in a network of V
+vertices and E edges must be less than VE. (This is a worstccase bound: a
 typical network is likely to require many fewer steps.) In other words, simply
 use the shortest available path from source to sink in the Ford-Fulkerson
 method.
@@ -28263,65 +22942,55 @@ else priority:=-flow[k, t] ;
 
 if priority>val[k] then priority:=val[k] ;
 
-Then, since we want to take the node with the _highest priority value, we must_
+Then, since we want to take the node with the highest priority value, we must
 either reorient the priority queue mechanisms in those programs to return
-the maximum instead of the minimum or use them as is with _priority_ set
-to _maxim?-l-priority_ (and the process reversed when the value is removed).
+the maximum instead of the minimum or use them as is with priority set
+to maxim?-l-priority (and the process reversed when the value is removed).
 Also, we modify the priority first search procedure to take the source and sink
 as arguments, then to start at the source and stop when a path to the sink
 has been found. If such a path is not found, the partial priority search tree
 defines a mincut for the network. Finally, the val for the source should be set
-to _maxi&_ before the search is started, to indicate that any amount of flow
+to maxi& before the search is started, to indicate that any amount of flow
 can be achieved at the source (though this is immediately restricted by the
 total capacity of all the pipes leading directly out of the source).
-With _densepfs_ implemented as described in the previous paragraph, finding the maximum flow is actually quite simple, as shown by the following
-
+With densepfs implemented as described in the previous paragraph, finding the maximum flow is actually quite simple, as shown by the following
 
 priority:=-flow[k,
 
-
 priority:=size[k,
-
 
 priority:=val[k]
 
-
-_maxi&_
-
+maxi&
 
 val
 
-
 t]
-
 
 ;
 
-
------
-
-_440_ _CHAPTER 33_
+440 CHAPTER 33
 
 program:
 
-**repeat**
+repeat
 
 densepfs(l, V);
 ###### y:=V, x:=dad[q;
-**while** **xc>0 do**
-**begin**
+while xc>0 do
+begin
 
 Aow[x,y]:=Aow[x,y]+val[Vl;
 
 Aow[y, x] :=-Aow[x, y] ;
 ###### y:=x; x:=dad[y]
-**end**
-**until val [v] = unseen**
+end
+until val [v] = unseen
 
 This program assumes that the adjacency matrix representation is being used
 for the network. As long as densepfs can find a path which increases the
 flow (by the maximum amount), we trace back through the path (using the
-dad array constructed by densepfs) and increase the how as indicated. If _V_
+dad array constructed by densepfs) and increase the how as indicated. If V
 remains unseen after some call to densepfs, then a mincut has been found and
 the algorithm terminates.
 For our example network, the algorithm first increases the flow along the
@@ -28332,12 +23001,12 @@ chapter we’ll see a graph for which this algorithm uses backwards edges to
 find the maximum how.
 
 Though this algorithm is easily implemented and is likely to work well
-for networks that arise in practice, the analysis of this method is quite complicated. First, as usual, densepfs requires _V2_ steps in the worst case, or we
-could use sparsepfs to run in time proportional to _(E_ + _V)_ log _V_ per iteration,
+for networks that arise in practice, the analysis of this method is quite complicated. First, as usual, densepfs requires V2 steps in the worst case, or we
+could use sparsepfs to run in time proportional to (E + V) log V per iteration,
 though the algorithm is likely to run somewhat faster than this, since it stops
 when it reaches the sink. But how many iterations are required? Edmonds
-and Karp show the worst case to be 1 + logMIMP1 _f *_ where _f_ _*_ is the cost
-of the flow and _M_ is the maximum number of edges in a cut of the network.
+and Karp show the worst case to be 1 + logMIMP1 _f _ where f __ is the cost
+of the flow and M is the maximum number of edges in a cut of the network.
 This is certainly complicated to compute, but it is not likely to be large for
 real networks. This formula is included to give an indication not of how long
 the algorithm might take on an actual network, but rather of the complexity
@@ -28348,40 +23017,24 @@ developed.
 The network flow problem can be extended in several ways, and many
 variations have been studied in some detail because they are important in
 
-
 Aow[x,y]:=Aow[x,y]+val[Vl;
 
-
 ###### x:=dad[q;
-
-
 x:=dad[y]
-
 
 Aow[y,
 
-
 ###### xc>0
-
-
 how
 
-
-
 ###### [v]
-
-
 flow
-
 
 ;
 
+NETWORK FLOW 441
 
------
-
-_NETWORK FLOW_ 441
-
-actual applications. For example, the _multicommodity_ _flow problem_ involves
+actual applications. For example, the multicommodity flow problem involves
 introducing multiple sources, sinks, and types of material in the network. This
 makes the problem much more difficult and requires more advanced algorithms
 than those considered here: for example, no analogue to the max-flow mincut theorem is known to hold for the general case. Other extensions to the
@@ -28395,18 +23048,13 @@ nroblem from onerations research.1 I
 
 r l
 
-
 nroblem from onerations research.I
-
 
 1
 
-
------
-
 442
 
-_Exercises_
+Exercises
 
 1. Give an algorithm to solve the network flow problem for the case that the
 network forms a tree if the sink is removed.
@@ -28427,26 +23075,20 @@ has a directed cycle?
 set of paths than the method given in the text.
 
 7. Give a counterexample which shows why depth-first search is not appropriate for the network flow problem.
-
 8. Find an assignment of sizes that would make the algorithm given in the
 text use a backward edge on the example graph, or prove that none exists.
 
 9. Implement the breadth-first search solution to the network flow problem,
 
-using _sparsepfs._
+using sparsepfs.
 
-10. Write a program to find maximum flows in random networks with _V_
-nodes and about 1OV edges. How many calls to _sparsepfs_ are made, for
-_V = 25, 50, lOO?_
-
+10. Write a program to find maximum flows in random networks with V
+nodes and about 1OV edges. How many calls to sparsepfs are made, for
+V = 25, 50, lOO?
 
 lOO?
 
-
------
-
 ###### 34. Matching
-
 A problem which often arises is to “pair up” objects according to preference relationships which are likely to conflict. For example, a quite
 complicated system has been set up in the U. S. to place graduating medical
 students into hospital residence positions. Each student lists several hospitals
@@ -28462,24 +23104,21 @@ this frequently occurs: after the algorithm has done the best that it can,
 there is a last minute scramble among unmatched hospitals and students to
 complete the process.
 This example is a special case of a difficult fundamental problem on
-graphs that has been widely studied. Given a graph, a _matching_ is a subset
+graphs that has been widely studied. Given a graph, a matching is a subset
 of the edges in which no vertex appears more than once. That is, each vertex
 touched by one of the edges in the matching is paired with the other vertex
 of that edge, but some vertices may be left unmatched. Even if we insist
 that there should be no edges connecting unmatched vertices, different ways
 of choosing the edges could lead to different numbers of leftover (unmatched)
 vertices.
-Of particular interest is a mazimum _matching,_ which contains as many
+Of particular interest is a mazimum matching, which contains as many
 edges as possible or, equivalently, which minimizes the number of unmatched
 vertices. The best that we could hope to do would be to have a set of edges
 in which each vertex appears exactly once (such a matching in a graph with
 
-2V vertices would have _V edges), but it is not always possible to achieve this._
+2V vertices would have V edges), but it is not always possible to achieve this.
 
-_443_
-
-
------
+443
 
 444 CHAPTER 34
 
@@ -28491,7 +23130,7 @@ the subgraph consisting of just the first six vertices and the edges connecting
 them.
 For the medical student matching problem described above, the students
 and hospitals would correspond to nodes in the graph; their preferences to
-edges. If they assign values to their preferences (perhaps using the timehonored “l-10” scale), then _we_ have the _weighted_ matching problem: given
+edges. If they assign values to their preferences (perhaps using the timehonored “l-10” scale), then we have the weighted matching problem: given
 a weighted graph, find a set of edges in which no vertex appears more than
 once such that the sum of the weights on the edges in the set chosen is
 maximized. Below we’ll see another alternative, where we respect the order in
@@ -28503,20 +23142,17 @@ book. Our intent here is to provide the reader with an appreciation for the
 problem by considering some interesting special cases while at the same time
 developing some useful algorithms.
 
-_Bipartite Graphs_
+Bipartite Graphs
 
 The example mentioned above, matching medical students to residencies, is
 certainly representative of many other matching applications. For example,
 we might be matching men and women for a dating service, job applicants to
 available positions, courses to available hours, or congressmen to committee
-assignments. The graphs resulting from modeling such cases are called _bipar-_
-_tite_ graphs, which are defined to be graphs in which all edges go between two
+assignments. The graphs resulting from modeling such cases are called bipar-
+tite graphs, which are defined to be graphs in which all edges go between two
 sets of nodes (that is, the nodes divide into two sets and no edges connect
 two nodes in the same set). Obviously, we wouldn’t want to “match” one job
 applicant to another or one committee assignment to another.
-
-
------
 
 The reader might be amused to search for a maximum matching in the
 typical Lipartite graph drawn below:
@@ -28555,11 +23191,7 @@ problem.
 The construction is straightforward: given an instance of bipartite match
 
 ###### Bl.
-
-
------
-
-_CHAPTER 34_
+CHAPTER 34
 
 ing, construct an instance of network flow by creating a source vertex with
 edges pointing to all the members of one set in the bipartite graph, then make
@@ -28574,7 +23206,7 @@ Note that the bipartite property of the graph, the direction of the flow, and
 the fact that all capacities are 1 force each path through the network to
 correspond to an edge in a matching: in the example, the paths found so far
 correspond to the partial matching Al B2 C3 D5. Each time the network flow
-algorithm calls _pfs_ it either finds a path which increases the flow by one or
+algorithm calls pfs it either finds a path which increases the flow by one or
 terminates.
 Now all forward paths through the network are full, and the algorithm
 must use backward edges. The path found in this example is the path
@@ -28584,13 +23216,9 @@ of instructions to create a new partial matching (with one more edge) from the
 current one. This construction follows in a natural way from tracing through
 the path in order: “4A” means to add A4 to the matching, which requires
 
-
 flow
 
-
------
-
-_MATCHING_
+MATCHING
 
 that “Al” be deleted; “1C” means to add Cl to the matching, which requires
 that “C3” be deleted; “3E” means to add E3 to the matching. Thus, after
@@ -28610,13 +23238,13 @@ format the graph so as to be suitable for input to the network flow algorithm
 of the previous chapter. Of course, the graphs presented to the network flow
 algorithm in this case are much simpler than the general graphs the algorithm
 is designed to handle, and it turns out that the algorithm is somewhat more
-efficient for this case. The construction ensures that each call to _pfs_ adds
-one edge to the matching, so we know that there are at most _V/2_ calls to
-_pfs_ during the execution of the algorithm. Thus, for example, the total time
-to find the maximum matching for a dense bipartite graph with _V_ vertices
-(using the adjacency matrix representation) is proportional to _V3._
+efficient for this case. The construction ensures that each call to pfs adds
+one edge to the matching, so we know that there are at most V/2 calls to
+pfs during the execution of the algorithm. Thus, for example, the total time
+to find the maximum matching for a dense bipartite graph with V vertices
+(using the adjacency matrix representation) is proportional to V3.
 
-Stable _Marriage Problem_
+Stable Marriage Problem
 
 The example given at the beginning of this chapter, involving medical students
 and hospitals, is obviously taken quite seriously by the participants. But
@@ -28635,14 +23263,9 @@ inconsistent (one woman’s 10 might be another woman’s 7). A more natural
 way to express the preferences is to have each person list in order of preference
 all the people of the opposite sex. The following two tables might show
 
-
-_V/2_
-
+V/2
 
 flow
-
-
------
 
 448 CHAPTER 34
 
@@ -28664,7 +23287,7 @@ way as to respect all their preferences as much as possible, then perform N
 marriages in a grand ceremony. In developing a solution, we must assume that
 anyone assigned to someone less than their first choice will be disappointed
 and will always prefer anyone higher up on the list. A set of marriages is
-called _unstable_ if two people who are not married both prefer each other to
+called unstable if two people who are not married both prefer each other to
 their spouses. For example, the assignment Al B3 C2 D4 E5 is unstable
 because A prefers 2 to 1 and 2 prefers A to C. Thus, acting according to their
 preferences, A would leave 1 for 2 and 2 would leave C for A (leaving 1 and
@@ -28689,15 +23312,9 @@ configuration. An algorithm which attempts to solve the stable marriage
 problem by removing stable pairs one by one is bound to get caught in this
 type of loop.
 
-
 CHAPTER 34
 
-
 ###### N
-
-
------
-
 ```
 MATCHING 449
 
@@ -28733,10 +23350,7 @@ link was used by that man to propose to that woman. This extra information
 is useful in tracking the sequence of proposals when D and E become the
 suitor, as shown in the following figure:
 
-
------
-
-_450_ _CWTER 34_
+450 CWTER 34
 
 When D proposes to 1, we have our first broken engagement, since 1 prefers
 D to B. Then B becomes the suitor and proposes to 2, which gives our second
@@ -28754,39 +23368,31 @@ as a two-dimensional array is called for: we’ll maintain a two-dimensional
 array for the preference list so that, for example, prefer[m, w] will be the wth
 woman in the preference list of the mth man. In addition, we need to keep
 track of how far each man has progressed on his list. This can be handled
-with a one-dimensional array **_next,_** initialized to zero, with next[m]+1 the
-index of the next woman on man **_m’s_** preference list: her identifier is found in
+with a one-dimensional array next, initialized to zero, with next[m]+1 the
+index of the next woman on man m’s preference list: her identifier is found in
 prefer[m, next[m]+l].
 
 For each woman, we need to keep track of her fiancee (fiancee[w] will
 be the man engaged to woman w) and we need to be able to answer the
 question “Is man s preferable to fiancee [ w] ?” This could be done by searching
-the preference list sequentially until either s or **_fiancee[w]_** is found, but this
+the preference list sequentially until either s or fiancee[w] is found, but this
 method would be rather inefficient if they’re both near the end. What is called
 for is the “inverse” of the preference list: rank[w, s] is the index of man s on
 woman w’s preference list. For the example above this array is
 
-
 ###### next[m]+l].
-
-
 ###### CWTER
-
-
 ?”
 
-
------
-
-**MATCHING** 451
+MATCHING 451
 
 1: 2 4 5 3 1
-**2: 4 3 5 1 2**
-**3:** 1 3 4 2 5
-**4: 4 2** 1 3 5
-**5: 5 2 3** 1 4
+2: 4 3 5 1 2
+3: 1 3 4 2 5
+4: 4 2 1 3 5
+5: 5 2 3 1 4
 
-The suitability of suitor s can be very quickly tested by the statement **if**
+The suitability of suitor s can be very quickly tested by the statement if
 
 rank[w, s]<rank[w, fiancee[w]] . . . . These arrays are easily constructed directly from the preference lists. To get things started, we use a “sentinel” man
 0 as the initial suitor, and put him at the end of all the women’s preference
@@ -28795,21 +23401,20 @@ lists.
 With the data structures initialized in this way, the implementation as
 described above is straightforward:
 
-**for** m:=l **to N do**
-**begin**
+for m:=l to N do
+begin
 
 ###### s:=m;
-
-**repeat**
+repeat
 
 ###### next[s]:=next[s]+l; w:=prefer[s,next[s]];
-**if** rank[w, s]<rank[w, **fiancee[w]] then**
-**begin** t:=fiancee[w]; fiancee[w]:=s; s:=t **end;**
-**until** **s=O;**
-**end** **;**
+if rank[w, s]<rank[w, fiancee[w]] then
+begin t:=fiancee[w]; fiancee[w]:=s; s:=t end;
+until s=O;
+end ;
 
 Each iteration starts with an unengaged man and ends with an engaged
-woman. The **repeat** loop must terminate because every man’s list contains
+woman. The repeat loop must terminate because every man’s list contains
 every woman and each iteration of the loop involves incrementing some man’s
 list, and thus an unengaged woman must be encountered before any man’s
 list is exhausted. The set of engagements produced by the algorithm is stable
@@ -28826,25 +23431,15 @@ that this one is “optimal” for the women, in the sense that no other stable
 configuration will give any woman a better choice from her list. (Of course,
 the first stable configuration for our example is optimal for the men.)
 
-
 w:=prefer[s,next[s]];
-
 
 rank[w, s]<rank[w, fiancee[w]] . . . .
 
-
 rank[w, s]<rank[w,
 
-
 ###### s:=m;
-
-
 ###### s:=t
-
-
------
-
-_452_ _CHAPTER 34_
+452 CHAPTER 34
 
 Another feature of the algorithm which seems to be biased is the order in
 which the men become the suitor: is it better to be the first man to propose
@@ -28864,35 +23459,29 @@ graphs, where edges have weights and a matching with maximum total weight
 is sought; and weighted matching for general graphs. Treating the many techniques that have been tried for matching on general graphs would fill an entire
 volume: it is one of the most extensively studied problems in graph theory.
 
+453
 
------
-
-_453_
-
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Find all the matchings with five edges for the given sample bipartite
 graph.
@@ -28905,7 +23494,7 @@ Construct a bipartite graph with six nodes and eight edges which has a
 three-edge matching, or prove that none exists.
 
 Suppose that vertices in a bipartite graph represent jobs and people and
-that each person is to be assigned to _two_ jobs. Will reduction to network
+that each person is to be assigned to two jobs. Will reduction to network
 flow give an algorithm for this problem? Prove your answer.
 
 Modify the network flow program of Chapter 33 to take advantage of the
@@ -28928,13 +23517,8 @@ Run the stable marriage program for N = 50, using random permutations
 for preference lists. About how many proposals are made during the
 execution of the algorithm?
 
-
 ###### N
-
-
------
-
-**454**
+454
 
 SOURCES for Graph Algorithms
 
@@ -28961,48 +23545,35 @@ Kruskal still make interesting reading. Our treatment of the stable marriage
 problem in Chapter 34 is based on the entertaining account given by Knuth.
 
 E. W. Dijkstra, “A note on two problems in connexion with graphs,” Numer
-ishe Muthemutik, **1 (1959).**
+ishe Muthemutik, 1 (1959).
 
-_S._ Even, _Graph Algorithms,_ Computer Science Press, Rockville, MD, 1980.
+S. Even, Graph Algorithms, Computer Science Press, Rockville, MD, 1980.
 
-D. E. Knuth, Marriages _stables,_ Les Presses de L’Universite de Montreal,
+D. E. Knuth, Marriages stables, Les Presses de L’Universite de Montreal,
 Montreal, 1976.
 
 J. R. Kruskal Jr., “On the shortest spanning subtree of a graph and the
-traveling salesman problem,” Proceedings _AMS, 7,_ 1 (1956).
+traveling salesman problem,” Proceedings AMS, 7, 1 (1956).
 
-C. H. Papadimitriou and K. Steiglitz, Combinatorial _Optimization: Algorithms_
-and _Complexity,_ Prentice-Hall, Englewood Cliffs, NJ, **1982.**
+C. H. Papadimitriou and K. Steiglitz, Combinatorial Optimization: Algorithms
+and Complexity, Prentice-Hall, Englewood Cliffs, NJ, 1982.
 
-R. C. Prim, “Shortest connection networks and some generalizations,” _Bell_
-_System Technical Journal, 36_ (1957).
+R. C. Prim, “Shortest connection networks and some generalizations,” Bell
+System Technical Journal, 36 (1957).
 
-R. E. Tarjan, “Depth-first search and linear graph algorithms,” _SIAM Journal_
+R. E. Tarjan, “Depth-first search and linear graph algorithms,” SIAM Journal
 on Computing, 1, 2 (1972).
 
-J. van Leeuwen and R. E. Tarjan, “Worst-case analysis of set-union algorithms,” Journal _of_ _the ACM,_ to appear.
-
+J. van Leeuwen and R. E. Tarjan, “Worst-case analysis of set-union algorithms,” Journal of the ACM, to appear.
 
 Les Presses de L’Universite de Montreal,
 
-
 problems is the work of R. E. Tarjan, whose original paper merits further
-
 
 30
 
-
------
-
 ###### ADVANCED TOPICS
-
-
------
-
------
-
 ###### 35. Algorithm Machines
-
 The algorithms that we have studied are, for the most part, remarkably
 robust in their applicability. Most of the methods that we have seen
 are a decade or more old and have survived many quite radical changes in
@@ -29014,7 +23585,7 @@ One reason for this is that the fundamental design of “conventional”
 computers has changed little over the years. The design of the vast majority
 of computing systems is guided by the same underlying principle, which was
 developed by the mathematician J. von Neumann in the early days of modern
-computing. When we speak of the von Neumann _model of computation, we_
+computing. When we speak of the von Neumann model of computation, we
 refer to a view of computing in which instructions and data are stored in the
 same memory and a single processor fetches instructions from the memory
 and executes them (perhaps operating on the data), one by one. Elaborate
@@ -29034,10 +23605,7 @@ the problems and algorithms we have been considering.
 
 457
 
-
------
-
-458 _CHAPTER 35_
+458 CHAPTER 35
 
 General Approaches
 
@@ -29064,11 +23632,11 @@ have as many different things as possible happening at any instant. This can
 lead to chaos if it is not done in an orderly manner. Below, we’ll consider
 two examples which illustrate some techniques for achieving a high degree of
 parallelism for some specific classes of problems. The idea is to assume that
-we have not just one but _M_ processors on which our program can run. Thus,
-if things work out well, we can hope to have our program run _M_ times faster
+we have not just one but M processors on which our program can run. Thus,
+if things work out well, we can hope to have our program run M times faster
 than before.
 
-There are several immediate problems involved in getting _M_ processors
+There are several immediate problems involved in getting M processors
 to work together to solve the same problem. The most important is that they
 must communicate in some way: there must be wires interconnecting them
 and specific mechanisms for sending data back and forth along those wires.
@@ -29079,10 +23647,7 @@ which have, say, 32 pins to be used for interconnection. Even if we had 1000
 such processors, we could connect each to at most 32 others. The choice
 of how to interconnect the processors is fundamental in parallel computing.
 
-
------
-
-_ALGORITHM MACHINES_ _459_
+ALGORITHM MACHINES 459
 
 Moreover, it’s important to remember that this decision must be made ahead
 of time: a program can change the way in which it does things depending on
@@ -29107,26 +23672,23 @@ design a, new computer without some idea of what it will be used for, and one
 would like to use the best available computers to execute the most important
 fundamental algorithms.
 
-_Perfect Shufles_
+Perfect Shufles
 
 To illustrate some of the issues involved in implementing algorithms as machines instead of programs, we’ll look at an interesting method for merging
 which is suitable for hardware implementation. As we’ll see, the same general
 method can be developed into a design for an “algorithm machine” which
 incorporates a fundamental interconnection pattern to achieve parallel operation of M processors for solving several problems in addition to merging.
 As mentioned above, a fundamental difference between writing a program
-to solve a problem and designing a machine is that a program can _adapt_ its
+to solve a problem and designing a machine is that a program can adapt its
 behavior to the particular instance of the problem being solved, while the
 machine must be “wired” ahead of time always to perform the same sequence
 of operations. To see the difference, consider the first sorting program that we
-studied, _sort3_ from Chapter 8. No matter what three numbers appear in the
+studied, sort3 from Chapter 8. No matter what three numbers appear in the
 data, the program always performs the same sequence of three fundamental
 “compare-exchange” operations. None of the other sorting algorithms that
 we studied have this property. They all perform a sequence of comparisons
 that depends on the outcome of previous comparisons, which presents severe
 problems for hardware implementation.
-
-
------
 
 460 CRAPTER 35
 
@@ -29159,10 +23721,7 @@ merged together into one sorted file. First write one file below the other, then
 compare those that are vertically adjacent and exchange them if necessary to
 put the larger one below the smaller one.
 
-
------
-
-_ALGORITHM_ _MACHINES_ 461
+ALGORITHM MACHINES 461
 
 A E G G I M N R A B E E I M N R
 A B E E L M P X A E G G L M P X
@@ -29185,13 +23744,8 @@ turns out that this property is preserved by the same operation: split each
 line in half, interleave the halves, and do compare-exchanges between items
 now vertically adjacent that came from different lines.
 
-
 ###### AEGG
-
-
 ###### ABEE
-
-
 A B
 E E
 A E
@@ -29200,11 +23754,8 @@ I M
 N R
 L M
 P x
-
 
 ###### AEGG
-
-
 A B
 A E
 E E
@@ -29213,13 +23764,9 @@ I M
 L M
 N R
 P x
-
 
 We have doubled the number of rows, halved the number of columns, and still
 kept the rows and the columns sorted. One more step completes the merge:
-
-
------
 
 462 CHAPTER 35
 
@@ -29269,59 +23816,38 @@ The reader should be sure to check the correspondence between this diagram
 and the tables given above. The compare-exchange boxes are drawn explicitly,
 and explicit lines are drawn showing how elements move in the “split-andinterleave” operation:
 
-
 “split-
 
-
 ###### N
-
-
------
-
-_ALGORITHM MACHINES_ _463_
+ALGORITHM MACHINES 463
 
 ###### AEGGIMNRABEELMPX
-
  A I A L B M E M E IN G\ P E It3 GI X Ill
 
-**A** **X**
+A X
 
-**A** **X**
+A X
 
-**A** **X**
-
+A X
 
 ###### AEGGIMNRABEELMPX
-
-
 ###### G\
+IN
 
+A
 
-**IN**
-
-
-**A**
-
-**A**
-
+A
 
 ###### Ill
-
-
 ###### GI
-
-
 ###### B A E E E G G I M L M N R P ’ X ABEEEGGILMMNPRX
-
 |B A AB|Col2|E E EE|Col4|E G EG|G|I M GI|L|L M M|M|N R N|P|P ’ RX|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 
-
-**It3**
-
+It3
 
 Surprisingly, in this representation each “split-and-interleave” operation reduces to precisely the same interconnection pattern. This pattern is called
-the _perfect shufle_ because the wires are exactly interleaved, in the same way
+the perfect shufle because the wires are exactly interleaved, in the same way
 that cards from the two halves would be interleaved in an ideal mix of a deck
 of cards.
 
@@ -29334,18 +23860,12 @@ less than N log N compare-exchange boxes. From the description above, this
 might seem like a straightforward result: actually, the problem of finding such
 a machine had stumped researchers for quite some time.
 Batcher also developed a closely related (but more difficult to understand)
-merging algorithm, the _bitonic_ merge, which leads to an even simpler machine.
-
+merging algorithm, the bitonic merge, which leads to an even simpler machine.
 
 ###### ABEEEGGILMMNPRX
+bitonic
 
-
-_bitonic_
-
-
------
-
-_464_ _CHAF’TER 35_
+464 CHAF’TER 35
 
 This method can be described in terms of the “split-and-interleave” operation
 on tables exactly as above, except that we begin with the second file in reverse
@@ -29358,7 +23878,6 @@ each stage of the bitonic merge has exactly the same number of comparators,
 in exactly the same positions:
 
 ###### A E G G I M N R X P M L E E B A
-
  A X E P G M G L I E M E N B R A
 
  A X E P G M G L E I E M B N A R
@@ -29386,15 +23905,8 @@ directly to a way to do the merge using only N compare-exchange boxes. The
 |AA AA|Col2|BB EE|Col4|EE EE|Col6|GG GG|Col8|II LL|MM|MM|NN|PP|RR|XX|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
-
 ###### I3
-
-
 ###### \\\w///
-
-
------
-
 ALGORITHM MACHINES 465
 
 idea is to simply collapse the rows in the table above to just one pair of rows,
@@ -29402,9 +23914,9 @@ and thus produce a cycling machine wired together as follows:
 
 I,
 
-**I**
+I
 
-**’** **I** **I** **’** **’** 1
+’ I I ’ ’ 1
 
 Such a machine can do log N compare-exchange-shuffle “cycles,” one for each
 of the stages in the figure above.
@@ -29436,21 +23948,15 @@ have even suggested the use of the perfect shuffle interconnection for “genera
 ||||||||
 ||||||||
 
-
 other problems. For example, if a 2n-by-2n square matrix is kept in row-major
 
-
-**I**
-
+I
 
 ,
 
-
------
-
 466 CHAPTER 35
 
-_Systolic Arrays_
+Systolic Arrays
 
 One problem with the perfect shuffle is that the wires used for interconnection
 are long. Furthermore, there are many wire crossings: a shuffle with N wires
@@ -29463,7 +23969,7 @@ be connected only to processors which are physically adjacent. As above, we
 operate the processors synchronously: at each step, each processor reads inputs
 from its neighbors, does a computation, and writes outputs to its neighbors.
 It turns out that this is not necessarily restrictive, and in fact H. T. Kung
-showed in 1978 that arrays of such processors, which he termed _systolic_ arrays
+showed in 1978 that arrays of such processors, which he termed systolic arrays
 (because the way data flows within them is reminiscent of a heartbeat), allow
 very efficient use of the processors for some fundamental problems.
 
@@ -29472,32 +23978,24 @@ matrix-vector multiplication. For a particular example, consider the matrix
 operation
 
 ###### (L/ -3 ‘X)-(g)
-
 This computation will be carried out on a row of simple processors each of
 which has three input lines and two output lines, as depicted below:
 
 Five processors are used because we’ll be presenting the inputs and reading
 the outputs in a carefully timed manner, as described below.
 During each step, each processor reads one input from the left, one from
-the _top,_ and one from the _right;_ performs a simple computation; and writes
-one output to the left and one output to the _right._ Specifically, the _right_
-output gets whatever was on the left input, and the _left_ output gets the result
-computed by multiplying together the _left_ and _top_ inputs and adding the _right_
+the top, and one from the right; performs a simple computation; and writes
+one output to the left and one output to the right. Specifically, the right
+output gets whatever was on the left input, and the left output gets the result
+computed by multiplying together the left and top inputs and adding the right
 input. A crucial characteristic of the processors is that they always perform a
 dynamic transformation of inputs to outputs; they never have to “remember”
 computed values. (This is also true of the processors in the perfect shuffle
 machine.) This is a ground rule imposed by low-level constraints on the
 
-
 ###### (L/
-
-
 ###### N
-
-
------
-
-_ALGORITHA4 MACHTNES_ 467
+ALGORITHA4 MACHTNES 467
 
 hardware design, since the addition of such a “memory” capability can be
 (relatively) quite expensive.
@@ -29513,7 +24011,7 @@ and the vector through the left input of processor A, to be passed on to the
 other processors. Intermediate results are passed from right to left in the
 array, with t,he output eventually appearing on the left output of processor
 A. The specific timing for our example is shown in the following table, which
-gives the values of the left, _top,_ and _right_ inputs for each processor at each
+gives the values of the left, top, and right inputs for each processor at each
 step:
 
 A B C D E A B C D E A B C D
@@ -29535,31 +24033,25 @@ A B C D E A B C D E A B C D
 
 The input vector is presented to the left input of processor A at steps 1, 3,
 and 5 and passed right to the other processors in subsequent steps. The input
-matrix is presented to the _top_ inputs of the processors starting at steps 3,
+matrix is presented to the top inputs of the processors starting at steps 3,
 skewed so the right-tcFleft diagonals of the matrix are presented in successive
-steps. The output vector appears as the _left_ output of processor A at steps
-6, 8, and 10. (In the table, this appears as the _right_ input of an imaginary
+steps. The output vector appears as the left output of processor A at steps
+6, 8, and 10. (In the table, this appears as the right input of an imaginary
 processor to the left of A, which is collecting the answer.)
-The actual computation can be traced by following the _right_ inputs _(left_
+The actual computation can be traced by following the right inputs (left
 outputs) which move from right to left through the array. All computations
-produce a zero result until step 3, when processor C has 1 for its _left_ input
-and 1 for its _top_ input, so it computes the result 1, which is passed along
+produce a zero result until step 3, when processor C has 1 for its left input
+and 1 for its top input, so it computes the result 1, which is passed along
 
+ALGORITHA4
 
-_ALGORITHA4_
-
-
-_MACHTNES_
-
+MACHTNES
 
 t,he
 
+CHAPTER 35
 
------
-
-_CHAPTER 35_
-
-_as_ processor B’s _right_ input for step 4. At step 4, processor B has non-zero
+as processor B’s right input for step 4. At step 4, processor B has non-zero
 values for all three of its inputs, and it computes the value 16, to be passed
 on to processor A for step 5. Meanwhile, processor D computes a value 1 for
 processor C’s use at step 5. Then at step 5, processor A computes the value
@@ -29573,7 +24065,7 @@ A for output at step 10.
 Once the process has been checked at a detailed level as in the previous
 paragraph, the method is better understood at a somewhat higher level. The
 numbers in the middle part of the table above are simply a copy of the input
-matrix, rotated and reflected as required for presentation to the _top_ inputs
+matrix, rotated and reflected as required for presentation to the top inputs
 of the processors. If we check the numbers in the corresponding positions at
 the left part of the table, we find three copies of the input vector, located in
 exactly the right positions and at the right times for multiplication against
@@ -29604,11 +24096,7 @@ be worked out before such a systolic machine can be constructed.
 As with perfect shuffle machines, systolic arrays may be used in many
 different types of problems, including string matching and matrix multiplication among others. Some researchers have even suggested the use of this
 
-
 1*5
-
-
------
 
 ALGORITMM h4ACHIAJES 469
 
@@ -29635,26 +24123,14 @@ parallel computers that will provide improved performance for a wide variety
 of algorithms.
 
 ###### t-l
-
-
 ALGORITMM
 
-
 ###### t-l
-
-
 ###### N
-
-
 ###### N
-
-
------
-
 470
 
-_Exercises_
-
+Exercises
 
 1.
 
@@ -29675,7 +24151,6 @@ _Exercises_
 9.
 
 10.
-
 
 Outline two possible ways to use parallelism in Quicksort.
 
@@ -29704,15 +24179,10 @@ machine which can multiply an M-by-N matrix by an N-by-l vector?
 
 Give a simple parallel scheme for matrix-vector multiplication using processors which have the capability to “remember” computed values.
 
-
------
-
 ###### 36. The Fast Fourier Transform
-
 One of the most widely used arithmetic algorithms is the fast Fourier
 transform, which (among many other applications) can provide a sub
 ###### �
-
 stantial reduction in the time required to multiply two polynomials. The
 Fourier transform is of fundamental importance in mathematical analysis and
 is the subject of volumes of study. The emergence of an efficient algorithm
@@ -29726,7 +24196,7 @@ used to multiply polynomials, and it is possible to appreciate the fast Fourier
 transform algorithm without fully understanding the underlying mathematics.
 The divide-and-conquer technique is applied in a way similar to other important algorithms that we’ve seen.
 
-_Evaluate, Multiply, Interpolate_
+Evaluate, Multiply, Interpolate
 
 The general strategy of the improved method for polynomial multiplication
 that we’ll be examining takes advantage of the fact that a polynomial of degree
@@ -29740,22 +24210,19 @@ for multiplying two polynomials of degree N - 1:
 
 471
 
-
------
-
 472 CHAPTER 36
 
-_Evaluate_ the input polynomials at 2N    - 1 distinct points.
-_Multiply_ the two values obtained at each point.
+Evaluate the input polynomials at 2N - 1 distinct points.
+Multiply the two values obtained at each point.
 
-_Interpolate_ to find the unique result polynomial that has the given value
+Interpolate to find the unique result polynomial that has the given value
 at the given points.
 
-For example, to compute T(Z) = _p(x)q(x)_ with p(z) = 1+x+x2 and _q(x) =_
-2 -x+x2, we can evaluate p(x) and _q(x)_ at any five points, say -2,-1,0,1,2,
+For example, to compute T(Z) = p(x)q(x) with p(z) = 1+x+x2 and q(x) =
+2 -x+x2, we can evaluate p(x) and q(x) at any five points, say -2,-1,0,1,2,
 to get the values
 
-_[P(-%P(-l),P(O),P(l),P(2)1_ _= [3,1,1,3,71,_
+[P(-%P(-l),P(O),P(l),P(2)1 = [3,1,1,3,71,
 
 [4(-2), 4(-i), do), 4(l), 4641 = [8,4,2,2,41.
 
@@ -29763,133 +24230,82 @@ Multiplying these together term-by-term gives enough values for the product
 polynomial,
 
 ###### [r(-2), 7(-l), r(O), r(l), r(2)] = [24,4,2,6,281,
-
 that its coefficients can be found by interpolation. By the Lagrange formula,
 
 ###### x+1 x - o x - l x - 2
-r(x) = 24--2+1         - 2 - o - 2 - l - 2 - 2--         
+r(x) = 24--2+1 - 2 - o - 2 - l - 2 - 2--
 ###### x+2 x - o x - l x - 2 +4---- -1+2 - 1 - o - 1 - 1 - 1 - 2
- +2-x + 2 ~x+1 z - 1 x - 2-  0+2 0+1 o - 1 o - 2
- +6-x + 2 -x+1 x - o x - 2-  1+2 1Sl 1 - o l - 2
+ +2-x + 2 ~x+1 z - 1 x - 2- 0+2 0+1 o - 1 o - 2
+ +6-x + 2 -x+1 x - o x - 2- 1+2 1Sl 1 - o l - 2
 x + 2 x+1 x - o x - l
 ###### +28- - - - 2+2 2fl 2 - o 2 - l ’
-
-
-
-_[P(-%P(-l),P(O),P(l),P(2)1_
-
+[P(-%P(-l),P(O),P(l),P(2)1
 
 r(2)] = [24,4,2,6,281,
 
-
 = [8,4,2,2,41.
 
-
 ###### -x+x2,
-
-
-_p(x)q(x)_
-
+p(x)q(x)
 
 ###### +28
-
-
 ###### [r(-2),
-
-
-
 [4(-2),
 
-
 ###### 4(-i),
-
-
 ###### -2+1
-
-
 r(O),
 
-
-###### x+1 
-
+###### x+1
 T(Z)
 
-
 ###### 2+2
-
-
 ###### ~x+1
-
-
 ###### 0+2
-
-
 ###### 0+1
-
-
 ###### x+1
-
-
 which simplifies to the result
 
 ###### r(x)=2+x+2x2+x4.
-
 As described so far, this method is not a good algorithm for polynomial multiplication since the best algorithms we have so far for both evaluation (repeated
 application of Horner’s method) and interpolation (Lagrange formula) require
 N2 operations. However, there is some hope of finding a better algorithm because the method works for any choice of 2N - 1 distinct points whatsoever,
 and it is reasonable to expect that evaluation and interpolation will be easier
 for some sets of points than for others.
 
-
-_= [3,1,1,3,71,_
-
+= [3,1,1,3,71,
 
 CHAPTER 36
 
-
 ###### +2-
-
-
 ###### 7(-l),
-
-
 ###### -1+2
-
-
 ###### r(l),
-
-
 do), 4(l),
-
 
 with p(z) =
 
-
 ###### 1Sl
+THE FAST FOURIER TRANSFORM 473
 
-
------
-
-_THE FAST FOURIER TRANSFORM_ 473
-
-_Complex Roots of Unity_
+Complex Roots of Unity
 
 It turns out that the most convenient points to use for polynomial interpolation
 and evaluation are complex numbers, in fact, a particular set of complex
-numbers called the complex _roots of unity._
+numbers called the complex roots of unity.
 A brief review of some facts about complex analysis is necessary. The
 number i = fl is an imaginary number: though \/-i is meaningless as
 a real number, it is convenient to give it. a name, i, and perform algebraic
 manipulations with it, replacing i2 with -1 whenever it appears. A complex
-number consists of two parts, real and imaginary, usually written as a + _bi,_
-where a and _b_ are reals. To multiply complex numbers, apply the usual rules,
+number consists of two parts, real and imaginary, usually written as a + bi,
+where a and b are reals. To multiply complex numbers, apply the usual rules,
 but replace i2 with -1 whenever it appears. For example,
 
-_(CL + bi)(c + di) = (ac_ _- bd) + (ad + bc)i._
+(CL + bi)(c + di) = (ac - bd) + (ad + bc)i.
 
 Sometimes the real or imaginary part can cancel out when a complex multiplication is performed. For example,
 
-(1                    - i)(l -i) = -2i,
+(1 - i)(l -i) = -2i,
 
 (1 + i)” = -4,
 
@@ -29900,7 +24316,7 @@ Scaling this last equation by dividing through by 16 = a*), we find that
 In general, there are many complex numbers that evaluate to 1 when raised
 to a power. These are the so-called complex roots of unity. In fact, it turns
 out that for each N, there are exactly N complex numbers z with zN = 1.
-One of these, named WN, is called the _principal Nth root of unity;_ the others
+One of these, named WN, is called the principal Nth root of unity; the others
 are obtained by raising WN to the kth power, for k = 0,1,2,. . .,N - 1. For
 example, we can list the eighth roots of unity as follows:
 
@@ -29910,30 +24326,19 @@ The precise values of the roots are unimportant for the moment. We’ll be
 using only simple properties which can easily be derived from the basic fact
 that the Nth power of any Nth root of unity must be 1.
 
-
 ###### \/-i
-
-
 ###### -i)
-
-
 WN,
-
 
 with zN = 1.
 
-
 WN
-
 
 k
 
-
------
-
 474 CXAPTER 36
 
-_Evaluation at the Roots_ _of_ _Unity_
+Evaluation at the Roots of Unity
 
 The crux of our implementation will be a procedure for evaluating a polynomial of degree N - 1 at the Nth roots of unity. That is, this procedure
 transforms the N coefficients which define the polynomial into the N values
@@ -29943,7 +24348,7 @@ the polynomial multiplication procedure we need to evaluate polynomials of
 degree N - 1 at 2N - 1 points. Actually, this is no problem, since we can view
 a polynomial of degree N - 1 as a polynomial of degree 2N - 2 with N - 1
 coefficients (those for the terms of largest degree) which are 0.
-The algorithm that we’ll use to evaluate a polynomial of degree N   - 1
+The algorithm that we’ll use to evaluate a polynomial of degree N - 1
 at N points simultaneously will be based on a simple divide-and-conquer
 strategy. Rather than dividing the polynomials in the middle (as in the
 multiplication algorithm in Chapter 4) we’ll divide them into two parts by
@@ -29974,9 +24379,8 @@ Since wi = -1, this is the same as the sequence
 
 w* : w;, w;, w;, w;, -w;, -w;, -w;, -w;.
 
-Squaring each term of this sequence gives two copies of the sequence _(W4)_ of
+Squaring each term of this sequence gives two copies of the sequence (W4) of
 the fourth roots of unity:
-
 
 w~:w~,w~,w~,w~,w~,w~,w~,w~.
 
@@ -29997,21 +24401,14 @@ CXAPTER 36
 ```
 
 ###### ;Nth
-
 ```
 &(X2)
 
 ```
 
 ###### -w;,
-
-
 ###### -w;.
-
-
 ###### ;N
-
-
 w* : w;, w;, w;, w;,
 
 ```
@@ -30019,9 +24416,8 @@ w* : w;, w;, w;, w;,
 
 ```
 
------
 
-**THE FAST FOURLEX TRAhBFORM** 475
+THE FAST FOURLEX TRAhBFORM 475
 
 Now, our equation
 
@@ -30032,18 +24428,15 @@ above, which requires adding the appropriate p, value to the product of the
 appropriate p, value and the eighth root of unity:
 
 ###### P(4) = P&4, + w:Po(w:), Pm = P&4 + w;P&J:), P(4) = Pe(W,“, + w:Po(w.f),
-
 PM3 = P&3 + w;Po(w:),
 ###### P(4) = Pew2 - w:Po(w:),
-
-PO-4 = Pebi,              - w;P&J~),
+PO-4 = Pebi, - w;P&J~),
 ###### P(4) = P&4, - w;Po(w:), P(4) = P&3 - w:Pob4
-
 In general, to evaluate p(x) on the Nth roots of unity, we recursively evaluate
 p,(x) and pO(x) on the ;Nth roots of unity and perform the N multiplications
 as above. This only works when N is even, so we’ll assume from now on that
 N is a power of two, so that it remains even throughout the recursion. The
-recursion stops when N = 2 and we have po + pix to be evaluated at **1** and
+recursion stops when N = 2 and we have po + pix to be evaluated at 1 and
 -1, with the results po + pi and pc -pi.
 
 The number of multiplications used satisfies the “fundamental divide
@@ -30063,72 +24456,35 @@ Fourier transform (FFT). (These same techniques apply to more general
 functions than polynomials. More precisely we’re doing the “discrete” Fourier
 transform.)
 
-
 ###### w;P&J:),
-
-
 + w;Po(w:),
-
 
 w;P&J~),
 
-
 ###### w:Pob4
-
-
-**THE FAST FOURLEX TRAhBFORM**
-
+THE FAST FOURLEX TRAhBFORM
 
 ###### P&4
-
-
 ###### P&3
-
-
 ###### P&3
-
-
 ###### Pebi,
-
-
 ###### P(4)
-
-
 ###### ;Nth
-
-
 ###### P(4)
-
-
 ###### P(4)
-
-
 ###### P(4)
-
-
 pO(x)
 
-
 ###### p,(x)
-
-
 po
-
 
 pc
 
-
 ###### -
-
-
 ###### -
-
-
------
-
 476 CHAPTER 36
 
-_Interpolation_ _at the Roots of Unity_
+Interpolation at the Roots of Unity
 
 Now that we have a fast way to evaluate polynomials at a specific set of points,
 all that we need is a fast way to interpolate polynomials at those same points,
@@ -30141,12 +24497,11 @@ For our example with N = 8, the interpolation problem is to find the
 polynomial
 
 ###### r(x) = To + TlX + %X2 + r3x3 + r4x4 + r5x5 + QX6 + r7x7
-
 which has the values
 
-r(w;)= so, r(wk)= Sl, r(wi)= `s 2,` r(wg)= `sg,`
+r(w;)= so, r(wk)= Sl, r(wi)= s 2, r(wg)= sg,
 
-?(w;)= `$4,` T(t”;)= `85,` T(w;)= `~96,` +;)= `~97.`
+?(w;)= $4, T(t”;)= 85, T(w;)= ~96, +;)= ~97.
 
 As we’ve said before, the interpolation problem is the “inverse” of the evaluation problem. When the points under consideration are the complex roots of
 unity, this is literally true. If we let
@@ -30164,14 +24519,12 @@ which is the same sequence as the complex roots of unity, but in a different
 order:
 
 ###### w,l : w;, w;, w;, w;, w;, w;, w;, w18'
-
 In other words, we can use exactly the same routine for interpolation as
 for evaluation: only a simple rearrangement of the points to be evaluated is
 required.
 The proof of this fact requires some elementary manipulations with finite
 sums: those unfamiliar with such manipulations may wish to skip to the end
 of this paragraph. Evaluating s(z) at the inverse of the tth Nth root of unity
-
 
 ###### w;,wi1,w-2,w-3
 ```
@@ -30181,18 +24534,12 @@ of this paragraph. Evaluating s(z) at the inverse of the tth Nth root of unity
 
 r(w;)=
 
-
 r(wg)=
-
 
 T(t”;)=
 
-
 ###### +;)=
-
-
 ###### w,l
-
 ```
 81w8
 
@@ -30200,12 +24547,9 @@ T(t”;)=
 
 r5x5
 
-
 %X2
 
-
 r7x7
-
 
 w;, w;, w;, w;, w;, w;, w;,
 
@@ -30215,7 +24559,6 @@ w;, w;, w;, w;, w;, w;, w;,
 ```
 
 TlX
-
 
 Sl,
 
@@ -30233,91 +24576,51 @@ $4,
 ```
 
 ###### N
-
-
 ###### +
-
-
 ###### +
-
-
 ###### +
-
-
 ###### +
-
-
 :
 
-
------
-
-_THE FAST FOURLER TRANSFORM_ _477_
-
+THE FAST FOURLER TRANSFORM 477
 
 gives
 
-
 ###### s(w$) = c Sj(W$)t)
-
-**_O<j<N_**
+O<j<N
 
 = c r(wg(wj$
 
-
 ###### r(wg(wj$
-
-
 ###### s(w$)
-
-
-**_O<j<N_**
-
+O<j<N
 
 ###### c
-
-
-**_O<j<N_**
+O<j<N
 
 ###### = c c Ti(W$J(Wf;t)J
-
-**_OQ<N_** **_O<i<N_**
+OQ<N O<i<N
 
 Nearly everything disappears in the last term because the inner sum is trivially
 N if i = t: if i # t then it evaluates to
 
 ###### W(Z-W _ 1
+j ( i - t ) ___ N
 
-**_j ( i - t )_** **___** **_N_**
-
-###### c wN 
-**_O<l<N_**
-
+###### c wN
+O<l<N
 
 ###### Ti(W$J(Wf;t)J
-
-
 ###### W(Z-W
+O<i<N
 
-
-**_O<i<N_**
-
-
-**_O<l<N_**
-
+O<l<N
 
 ###### c
-
-
 ###### c
-
-
-**_wN_**
-
+wN
 
 ###### =
-
-
 Note that an extra scaling factor of N arises. This is the “inversion theorem”
 for the discrete Fourier transform, which says that the same method will
 convert a polynomial both ways: between its representation as coefficients and
@@ -30327,35 +24630,28 @@ quite easy to apply: to interpolate a polynomial on the Nth roots of unity,
 use the same procedure as for evaluation, using the interpolation values as
 polynomial coefficients, then rearrange and scale the answers.
 
-_Implementation_
+Implementation
 
 Now we have all the pieces for a divide-and-conquer algorithm to multiply
 two polynomials using only about N lg N operations. The general scheme is
 to:
 
-Evaluate the input polynomials at the (2N    - 1)st roots of unity.
-_Multiply_ the two values obtained at each point.
+Evaluate the input polynomials at the (2N - 1)st roots of unity.
+Multiply the two values obtained at each point.
 Interpolate to find the result by evaluating the polynomial defined by
-the numbers just computed at the (2N    - 1)st roots of unity.
+the numbers just computed at the (2N - 1)st roots of unity.
 
 The description above can be directly translated into a program which uses a
 procedure that can evaluate a polynomial of degree N - 1 at the Nth roots
 of unity. Unfortunately, all the arithmetic in this algorithm is to be complex
-arithmetic, and Pascal has no built-in type _complex._ While it is possible
+arithmetic, and Pascal has no built-in type complex. While it is possible
 
-
-**_O<j<N_**
-
+O<j<N
 
 1)st
 
-
 ###### c
-
-
------
-
-_478_ _CHAPTER 36_
+478 CHAPTER 36
 
 to have a user-defined type for the complex numbers, it is then necessary
 to also define procedures or functions for all the arithmetic operations on
@@ -30365,16 +24661,16 @@ functions are defined:
 
 eval(p, outN, 0);
 eval(q, outN, 0);
-**for** i:=O **to outNdo** r[i]:=p[i]*q[i];
+for i:=O to outNdo r[i]:=p[i]*q[i];
 
 eval(r, outN, 0);
-**for i:=l to N do**
-**begin** t:=r[i]; r[i]:=r[outN+1-i]; r[outN+l-i]:=t **end;**
-**for i:=O to outN** **do r[i]** :=r[i]/(outN+l);
+for i:=l to N do
+begin t:=r[i]; r[i]:=r[outN+1-i]; r[outN+l-i]:=t end;
+for i:=O to outN do r[i] :=r[i]/(outN+l);
 
-This program assumes that the global variable _outN_ has been set to 2N-1,
-and that p, q, and _r_ are arrays indexed from 0 to 2N - 1 which hold complex
-numbers. The two polynomials to be multiplied, p and q are of degree N - **1,**
+This program assumes that the global variable outN has been set to 2N-1,
+and that p, q, and r are arrays indexed from 0 to 2N - 1 which hold complex
+numbers. The two polynomials to be multiplied, p and q are of degree N - 1,
 and the other coefficients in those arrays are initially set to 0. The procedure
 eval replaces the coefficients of the polynomial given as the first argument by
 the values obtained when the polynomial is evaluated at the roots of unity.
@@ -30394,47 +24690,30 @@ even coefficients. On reflection, the reader will see that the “perfect shuffl
 of the previous chapter is exactly what is needed here. We can get the odd
 coefficients in a contiguous subarray (the first half) and the even coefficients
 in a contiguous subarray (the second half) by doing a “perfect unshuffle” of
-the input, as diagramed below for N = **15:**
-
+the input, as diagramed below for N = 15:
 
 ###### r[i]:=r[outN+1-i];
-
-
 ###### r[outN+l-i]:=t
-
-
 ###### t:=r[i];
-
-
 eval(p, outN, 0);
-
 
 eval(r, outN, 0);
 
-
 i:=O
 
+outN
 
-_outN_
-
-
-_r[i]_
-
+r[i]
 
 q,
 
-
 q
 
+r
 
-_r_
+THE FAST FOURlER TRANSFORM 479
 
-
------
-
-**_THE_** FAST FOURlER TRANSFORM 479
-
-`PO p,` `P2` `P3` `p4` `P5` `P6` `p7` `&I` `p!3 PlO` `PI1 p12 P13` P14 `P15`
+PO p, P2 P3 p4 P5 P6 p7 &I p!3 PlO PI1 p12 P13 P14 P15
 
 This leads to the following implementation of the FFT:
 
@@ -30446,8 +24725,7 @@ begin
 t:=p[k]; pl:=p[k+l];
 
 ###### :I] :=t+pl; p[k+l] :=t-pl
-
-**_else_**
+else
 
 begin
 fori:=Oto Ndiv 2do
@@ -30459,20 +24737,19 @@ begin
 end;
 for i:=O to N do p[k+i] := t [i] ;
 
-**_eval(p, N div 2, k) ;_**
+eval(p, N div 2, k) ;
 
-**_eval(p, N_** div 2, k+l+N div 2);
+eval(p, N div 2, k+l+N div 2);
 
 ###### j:=(outN+l) div (Nfl);
-
 fori:=Oto Ndiv 2do
 begin
-t:=w[i*j]*p[k+(N div **_2)+l+i];_**
+t:=w[ij]p[k+(N div 2)+l+i];
 
 ###### t[i]:=p[k+i]+t; t[i+(Ndiv 2)+1]:=p[k+i]-t
 end ;
 
-for **_i:=O_** to N do p[k+i]:=t[i]
+for i:=O to N do p[k+i]:=t[i]
 end
 end ;
 
@@ -30482,42 +24759,21 @@ p[k..k+N] using the recursive method outlined above. (For simplicity, the
 code assumes that N+l is a power of two, though this dependence is not hard
 to remove.) If N = 1, then the easy computation to evaluate at 1 and -1 is
 
-
 ###### 2)+1]:=p[k+i]-t
-
-
 ###### t[i+l+Ndiv
-
-
 ###### j:=(outN+l)
-
-
 ###### t[i]:=pb];
-
-
 ###### 2)+l+i];
-
-
 FAST FOURlER TRANSFORM
 
-
 ###### p[k+l]
-
-
 to N do p[k+i] :=
 
-
-**_eval(p,_**
-
+eval(p,
 
 ###### k+l+N
-
-
 ###### :=t-pl
-
-
 ###### N+l
-
 ```
  PlO 
 
@@ -30547,9 +24803,8 @@ PO
 
 ```
 
------
 
-480 **_CHAPTER 36_**
+480 CHAPTER 36
 
 performed. Otherwise the procedure first shuffles, then recursively calls itself
 to transform the two halves, then combines the results of these computations
@@ -30572,18 +24827,13 @@ design paradigm to achieve truly significant computational savings.
 
 r l
 
-
 w[O],
-
 
 t.he
 
+THE FAST FOURLER TRANSFORM 481
 
------
-
-THE FAST _FOURLER_ TRANSFORM 481
-
-_Exercises_
+Exercises
 
 1. Explain how you would improve the simple evaluate-multiply-interpolate
 algorithm for multiplying together two polynomials p(z) and q(z) with
@@ -30595,10 +24845,8 @@ evaluated using substantially fewer than N2 operations.
 3. Find a set of N real numbers at which a polynomial of degree N can be
 interpolated using substantially fewer than N2 operations.
 
-4. What is the value of WE for _M > N?_
-
+4. What is the value of WE for M > N?
 5. Would it be worthwhile to multiply sparse polynomials using the FFT?
-
 6. The FFT implementation has three calls to eval, just as the polynomial
 multiplication procedure in Chapter 4 has three calls to mult. Why is the
 FFT implementation more efficient?
@@ -30613,37 +24861,23 @@ four integer multiplication operations.
 problems with dynamically declared arrays in the polynomial multiplication procedure of Chapter 4?
 
 10. Write an efficient program to multiply a polynomial of degree N by a
-polynomial of degree _M_ (not necessarily powers of two).
-
+polynomial of degree M (not necessarily powers of two).
 
 ###### #N-I
-
-
 WE
-
 
 eval,
 
-
 ~1,.
-
 
 ~0,
 
-
 4?
-
 
 .
 
-
------
-
------
-
 ###### 37. Dynamic Programming
-
-The principle of _divide-and-conquer_ has guided the design of many of
+The principle of divide-and-conquer has guided the design of many of
 the algorithms we’ve studied: to solve a large problem, break it up into
 smaller problems which can be solved independently. In dynamic programming
 this principle is carried to an extreme: when we don’t know exactly which
@@ -30663,7 +24897,7 @@ do something, and they have the general property that any decision involved
 in finding the best way to do a small subproblem remains a good decision even
 when that subproblem is included as a piece of some larger problem.
 
-Knapsack _Problem_
+Knapsack Problem
 
 Suppose that a thief robbing a safe finds N items of varying size and value
 that he could steal, but has only a small knapsack of capacity A4 which he
@@ -30674,16 +24908,13 @@ and the safe contains many items of each of the following sizes and values:
 
 483
 
-
------
-
 CHAPTER 37
 
 name A B C D E
 
-_size_ _3_ _4_ _7_ _8_ _9_
+size 3 4 7 8 9
 
-_value_ _4_ _5_ 10 11 13
+value 4 5 10 11 13
 
 (As before, we use single letter names for the items in the example and integer
 indices in the programs, with the knowledge that more complicated names
@@ -30698,7 +24929,7 @@ arise: for example, there might be a limited number of each kind of item
 available. Many such variants can be handled with the same approach that
 we’re about to examine for solving the basic problem stated above.
 
-In a dynamic programming solution to the knapsack problem, we calculate the best combination for all knapsack sizes up to _M._ It turns out that we
+In a dynamic programming solution to the knapsack problem, we calculate the best combination for all knapsack sizes up to M. It turns out that we
 can perform this calculation very efficiently by doing things in an appropriate
 order, as in the following program:
 
@@ -30707,7 +24938,7 @@ for j:=l to N do
 begin
 for i:=l to M do
 
-if _i-sizeb]>=O_ then
+if i-sizeb]>=O then
 
 if cost[i]<(cost[i-sizeb]]+valIj]) then
 
@@ -30721,44 +24952,34 @@ end ;
 end ;
 
 In this program, cost[i] is the highest value that can be achieved with a
-knapsack of capacity i and best _[i]_ is the last item that was added to achieve
+knapsack of capacity i and best [i] is the last item that was added to achieve
 that maximum (this is used to recover the contents of the knapsack, as
 described below). First, we calculate the best that we can do for all knapsack
 sizes when only items of type A are taken, then we calculate the best that we
 can do when only A’s and B’s are taken, etc. The solution reduces to a simple
-calculation for cost _[il._ Suppose an item j is chosen for the knapsack: then the
+calculation for cost [il. Suppose an item j is chosen for the knapsack: then the
 best value that could be achieved for the total would be va1b] (for the item)
-
 
 cost[i]<(cost[i-sizeb]]+valIj])
 
-
-_i-sizeb]>=O_
-
+i-sizeb]>=O
 
 cost[i]
 
-
 ###### i:=l
-
-
 A’s
-
 
 ;
 
-
------
-
-_DYNAMIC PROGRAMMING_ 485
+DYNAMIC PROGRAMMING 485
 
 plus cost [i-sizeb]] (to fill up the rest of the knapsack). If this value exceeds
-the best value that can be achieved _without_ an item j, then we update cost [i]
+the best value that can be achieved without an item j, then we update cost [i]
 and best[i]; otherwise we leave them alone. A simple induction proof shows
 that this strategy solves the problem.
 The following table traces the computation for our example. The first
 pair of lines shows the best that can be done (the contents of the cost and
-_best_ arrays) with only A’s, the second pair of lines shows the best that can be
+best arrays) with only A’s, the second pair of lines shows the best that can be
 done with only A’s and B’s, etc.:
 
 1 2 3 4 5 6 7 8 9 1011121314151617
@@ -30784,36 +25005,30 @@ For example, the highest value that can be achieved with a knapsack of size
 16 using only A’s B’s and C’s is 22.
 
 The actual contents of the optimal knapsack can be computed with the
-aid of the _best_ array. By definition, _best [M]_ is included, and the remaining
-contents are the same as for the optimal knapsack of size _M-size[best_ _[Ml]._
+aid of the best array. By definition, best [M] is included, and the remaining
+contents are the same as for the optimal knapsack of size M-size[best [Ml].
 
-Therefore, _best [M-size [ best_ _[Ml]]_ is included, and so forth. For our example,
+Therefore, best [M-size [ best [Ml]] is included, and so forth. For our example,
 
-_best[l7]=C,_ then we find another type C item at size 10, then a type A item
+best[l7]=C, then we find another type C item at size 10, then a type A item
 at size 3.
 It is obvious from inspection of the code that the running time of this
-algorithm is proportional to _NM._ Thus, it will be fine if _M_ is not large,
+algorithm is proportional to NM. Thus, it will be fine if M is not large,
 but could become unacceptable for large capacities. In particular, a crucial
 point that should not be overlooked is that the method does not work at all if
-_M_ and the sizes or values are, for example, real numbers instead of integers.
+M and the sizes or values are, for example, real numbers instead of integers.
 This is more than a minor annoyance: it is a fundamental difficulty. No good
 solution is known for this problem, and we’ll see in Chapter 40 that many
 
+best[l7]=C,
 
-_best[l7]=C,_
+[Ml]]
 
-
-
-_[Ml]]_
-
-
------
-
-486 _CHAPTER 37_
+486 CHAPTER 37
 
 people believe that no good solution exists. To appreciate the difficulty of the
 problem, the reader might wish to try solving the case where the values are
-all 1, the size of the jth item is & and _M_ is N/2.
+all 1, the size of the jth item is & and M is N/2.
 But when capacities, sizes and values are all integers, we have the fundamental principle that optimal decisions, once made, do not need to be
 changed. Once we know the best way to pack knapsacks of any size with the
 first j items, we do not need to reexamine those problems, regardless of what
@@ -30824,7 +25039,7 @@ optimal decisions needs to be saved. Different dynamic programming applications 
 
 below.
 
-_Matrix_ Chain _Product_
+Matrix Chain Product
 
 Suppose that the six matrices
 
@@ -30841,24 +25056,18 @@ we proceed from right to left instead, we get the same 4-by-3 result with only
 69 scalar multiplications.
 Many other orders are clearly possible. The order of multiplication can be
 expressed by parenthesization: for example the left-Wright order described
-above is the ordering (((((A*B)*C)*D)*E)*F), and the right-to-left order is
-(A*(B*(C*(D*(E*F))))). Any legal parenthesization will lead to the correct
+above is the ordering (((((AB)C)D)E)*F), and the right-to-left order is
+(A(B(C(D(E*F))))). Any legal parenthesization will lead to the correct
 answer, but which leads to the fewest scalar multiplications?
 Very substantial savings can be achieved when large matrices are involved:
 for example, if matrices B, C, and F in the example above were to each have
 a dimension of 300 where their dimension is 3, then the left-to-right order
 will require 6024 scalar multiplications but the right-to-left order will use an
 
-
-_CHAPTER 37_
-
+CHAPTER 37
 
 ###### j
-
-
------
-
-_DMVAMlC_ _PROGRAhdMING_ 487
+DMVAMlC PROGRAhdMING 487
 
 astronomical 274,200. (In these calculations we’re assuming that the standard
 method of matrix multiplication is used. Strassen’s or some similar method
@@ -30871,112 +25080,90 @@ In general, suppose that N matrices are to be multiplied together:
 where the matrices satisfy the constraint that Mi has ri rows and ri+i columns
 for 1 5 i < N. Our task is to find the order of multiplying the matrices
 that minimizes the total number of multiplications used. Certainly trying
-all possible orderings is impractical. (The number of orderings is a wellstudied combinatorial function called the Catalan _number:_ the number of
+all possible orderings is impractical. (The number of orderings is a wellstudied combinatorial function called the Catalan number: the number of
 ways to parenthesize N variables is about 4N-‘/Nm.) But it is certainly
 worthwhile to expend some effort to find a good solution because N is generally
 quite small compared to the number of multiplications to be done.
 As above, the dynamic programming solution to this problem involves
 working “bottom up,” saving computed answers to small partial problems to
-avoid recomputation. First, there’s only one way to multiply _Ml_ by _Mz,_ _Mz_
-by _MS,_ . . ., _MN-~_ by _MN;_ we record those costs. Next, we calculate the best
+avoid recomputation. First, there’s only one way to multiply Ml by Mz, Mz
+by MS, . . ., MN-~ by MN; we record those costs. Next, we calculate the best
 way to multiply successive triples, using all the information computed so far.
-For example, to find the best way to multiply _MlMzMs,_ first we find the cost
-of computing _MI_ _MZ_ from the table that we saved and then add the cost of
-multiplying that result by _Ms._ This total is compared with the cost of first
-multiplying _MzM3_ then multiplying by _Ml,_ which can be computed in the
+For example, to find the best way to multiply MlMzMs, first we find the cost
+of computing MI MZ from the table that we saved and then add the cost of
+multiplying that result by Ms. This total is compared with the cost of first
+multiplying MzM3 then multiplying by Ml, which can be computed in the
 same way. The smaller of these is saved, and the same procedure followed for
 all triples. Next, we calculate the best way to multiply successive groups of
 four, using all the information gained so far. By continuing in this way we
 eventually find the best way to multiply together all the matrices.
-In general, for 1 5 j 5 N   - 1, we can find the minimum cost of computing
+In general, for 1 5 j 5 N - 1, we can find the minimum cost of computing
 
-_MiMi+l* * *Mt+j_
+MiMi+l* * *Mt+j
 
-for 1 5 i 5 N - j by finding, for each _k_ between i and i + j, the cost of
-computing _MiMi+l*** Mk-1_ and MkMk+i.” _Mi+j_ and then adding the cost
+for 1 5 i 5 N - j by finding, for each k between i and i + j, the cost of
+computing MiMi+l* Mk-1 and MkMk+i.” Mi+j and then adding the cost
 of multiplying these results together. Since we always break a group into two
 smaller groups, the minimum costs for the two groups need only be looked
 up in a table, not recomputed. In particular, if we maintain an array with
-entries _cost_ [1, r] giving the minimum cost of computing _MLML+I**.M,,_ then
-the cost of the first group above is cost [i, _k-l]_ and the cost of the second
+entries cost [1, r] giving the minimum cost of computing MLML+I.M,, then
+the cost of the first group above is cost [i, k-l] and the cost of the second
 
-
-_PROGRAhdMING_
-
+PROGRAhdMING
 
 ###### MkMk+i.”
+MiMi+l***
 
+MiMi+l*
 
-_MiMi+l***_
+*Mt+j
 
+MN-~
 
-_MiMi+l*_
+Mk-1
 
+Mz,
 
-_*Mt+j_
+Ml,
 
-
-_MN-~_
-
-
-_Mk-1_
-
-
-_Mz,_
-
-
-_Ml,_
-
-
-_Mz_
-
+Mz
 
 ###### ri+i
-
-
 Mi
-
 
 pqr
 
-
-
 [1,
-
 
 for 1 5 i 5 N
 
-
 q
-
-
------
 
 488 CHAPTER 37
 
 group is cost [k, i+j]. The cost of the final multiplication is easily determined:
 
-_M,M,+I... Mk-1_ is a rz-by-rk matrix, and MkMk+l* * * Mi+j is a rk-by-ri+j+l
+M,M,+I... Mk-1 is a rz-by-rk matrix, and MkMk+l* * * Mi+j is a rk-by-ri+j+l
 
 matrix, so the cost of multiplying these two is rirkri+j+l. This gives a way
 to compute cost[i, i+j] for 1 5 i 5 N-j with j increasing from 1 to N - 1.
 When we reach j = N - 1 (and i = l), then we’ve found the minimum cost of
-computing _Ml_ _Mze_ +. _MN,_ as desired. This leads to the following program:
+computing Ml Mze +. MN, as desired. This leads to the following program:
 
-**for** **i:=l to N do**
-**for** j:=i+l **to N do cost [i, j] :=maxint;**
+for i:=l to N do
+for j:=i+l to N do cost [i, j] :=maxint;
 
-**for** i:=l **to N do** cost[i, i]:=O;
-**for** **j:=l to N-l do**
-**for** i:=l **to N-j do**
-**for** k:=i+1 **to** i+j **do**
-**begin**
+for i:=l to N do cost[i, i]:=O;
+for j:=l to N-l do
+for i:=l to N-j do
+for k:=i+1 to i+j do
+begin
 
-t:=cost[i, k-l]+cost[k, i+j]+r[i]*r[k]*r[i+j+l];
+t:=cost[i, k-l]+cost[k, i+j]+r[i]r[k]r[i+j+l];
 
-**if** t<cost[i, i+j] **then**
-**begin** cost[i,i+j]:=t; best[i, i+j]:=k **end;**
-**end** **;**
+if t<cost[i, i+j] then
+begin cost[i,i+j]:=t; best[i, i+j]:=k end;
+end ;
 
 As above, we need to keep track of the decisions made in a separate array
 best for later recovery when the actual sequence of multiplications is to be
@@ -30985,48 +25172,27 @@ generated.
 The following table is derived in a straightforward way from the cost and
 best arrays for the sample problem given above:
 
-
-###### i+j]+r[i]*r[k]*r[i+j+l];
-
-
+###### i+j]+r[i]r[k]r[i+j+l];
 ###### k-l]+cost[k,
-
-
-_M,M,+I... Mk-1_
-
+M,M,+I... Mk-1
 
 t<cost[i, i+j]
 
-
 ###### rirkri+j+l.
-
-
 best[i,
 
-
 cost[i,
 
-
 cost[i,
-
 
 ###### i+j].
-
-
 ###### j:=l
-
-
-_Mze_
-
+Mze
 
 ###### i:=l
+Ml
 
-
-_Ml_
-
-
-**;**
-
+;
 
 B C D E
 
@@ -31044,28 +25210,16 @@ D 4
 D E
 E
 
-
 ###### cost[i,i+j]:=t;
-
-
 t:=cost[i,
 
-
 ###### i+j]:=k
-
-
 ###### k:=i+1
+Mi+j
 
-
-_Mi+j_
-
-
-_MN,_
-
+MN,
 
 ###### i:=l
-
-
 F
 36
 C D
@@ -31086,21 +25240,12 @@ E F
 
 E F
 
-
 is a rk-by-ri+j+l
 
-
 ###### l),
-
-
 For example, the entry in row A and column F says that 36 scalar multiplications are required to multiply matrices A through F together, and that this can
 
-
 ###### i:=l
-
-
------
-
 DYNAMIC PROGR.AMMlNG 489
 
 be achieved by multiplying A through C in the optimal way, then multiplying D through F in the optimal way, then multiplying the resulting matrices
@@ -31110,19 +25255,19 @@ C in the optimal way, we look in row A and column C, etc. The following
 program implements this process of extracting the optimal parenthesization
 from the cost and best arrays computed by the program above:
 
-**procedure** order(i, j: integer);
-**begin**
-**if** i=j **then** write(name(i)) **else**
-**begin**
+procedure order(i, j: integer);
+begin
+if i=j then write(name(i)) else
+begin
 
-write( ‘( **‘);**
+write( ‘( ‘);
 order(i, best [i, j]-1); write(‘*‘); order(best[i, j], j);
 write( ‘) ‘)
 
-**end**
-**end** **;**
+end
+end ;
 
-For our example, the parenthesization computed is ((A*(B*C))*((D*E)*F))
+For our example, the parenthesization computed is ((A(BC))((DE)*F))
 which, as mentioned above, requires only 36 scalar multiplications. For the
 example cited earlier with the dimensions cf 3 in B, C and F changed to 300,
 the same parenthesization is optimal, requiring 2412 scalar multiplications.
@@ -31132,14 +25277,14 @@ proportional to N3 and the space required is proportional to N2, substantially
 more than we used for the knapsack problem. But this is quite palatable
 compared to the alternative of trying all 4N-‘/Na possibilities.
 
-Optimal _Binary Search Trees_
+Optimal Binary Search Trees
 
 In many applications of searching, it is known that the search keys may occur
 with widely varying frequency. For example, a program which checks the
 spelling of words in English text is likely to look up words like “and” and “the”
 far more often than words like “dynamic” and “programming.” Similarly,
-a Pascal compiler is likely to see keywords like **“end”** and **“do”** far more
-often than **“label”** or **“downto.”** If binary tree searching is used, it is clearly
+a Pascal compiler is likely to see keywords like “end” and “do” far more
+often than “label” or “downto.” If binary tree searching is used, it is clearly
 advantageous to have the most frequently sought keys near the top of the tree.
 A dynamic programming algorithm can be used to determine how to arrange
 the keys in the tree so that the total cost of searching is minimized.
@@ -31147,43 +25292,29 @@ Each node in the following binary search tree on the keys A through G is
 labeled with an integer which is assumed to be proportional to its frequency
 of access:
 
-
 ###### 4N-‘/Na
-
-
 DYNAMIC PROGR.AMMlNG
-
 
 order(i, best
 
-
 write(
 
-
 ###### j],
-
-
-
 [i,
 
-
-**‘(**
-
+‘(
 
 ‘)
 
-
------
-
-_490_ CHAPTER 37
+490 CHAPTER 37
 
 That is, out of every 18 searches in this tree, we expect 4 to be for A, 2 to
 be for B, 1 to be for C, etc. Each of the 4 searches for A requires two node
 accesses, each of the 2 searches for B requires 3 node accesses, and so forth.
 We can compute a measure of the “cost” of the tree by simply multiplying
 the frequency for each node by its distance to the root and summing. This is
-the _weighted internal path length_ of the tree. For the example tree above, the
-weighted internal path length is 4*2 + 2*3 + l*l + 3*3 + 5*4 + 2*2 + 1*3 = 51.
+the weighted internal path length of the tree. For the example tree above, the
+weighted internal path length is 42 + 23 + ll + 33 + 54 + 22 + 1*3 = 51.
 We would like to find the binary search tree for the given keys with the given
 frequencies that has the smallest internal path length over all such trees.
 
@@ -31197,7 +25328,7 @@ the same program can be used.
 
 Specifically, we assume that we are given a set of search keys K1 < Kz <
 . .. < KN and associated frequencies rc, rl, . . ., TN, where ri is the anticipated
-frequency of reference to key _Ki._ We want to find the binary search tree that
+frequency of reference to key Ki. We want to find the binary search tree that
 minimizes the sum, over all keys, of these frequencies times the distance of
 the key from the root (the cost of accessing the associated node).
 
@@ -31205,54 +25336,34 @@ We proceed exactly as for the matrix chain problem: we compute, for
 each j increasing from 1 to N - 1, the best way to build a subtree containing
 ###### K,, J&+1,. . [. ] [,Ki+j ] [for 1 2 ] [i ] [2 N-j. This computation is done by trying each]
 node as the root and using precomputed values to determine the best way to
-do the subtrees. For each _k_ between _i_ and i + j, we want to find the optimal
+do the subtrees. For each k between i and i + j, we want to find the optimal
 tree containing K,, Ki+l,. . ., Ki+j with Kk at the root. This tree is formed
-by using the optimal tree for _K,, Ki+l,._ . .,Kk-r as the left subtree and the
-optimal tree for Kk+r, Kk+z,. . . _,K2+3 as the right subtree. The internal path_
+by using the optimal tree for K,, Ki+l,. . .,Kk-r as the left subtree and the
+optimal tree for Kk+r, Kk+z,. . . ,K2+3 as the right subtree. The internal path
 length of this tree is the sum of the internal path lengths for the two subtrees
-
 
 as the right subtree. The internal path
 
+[,Ki+j ]
 
-
-_[,Ki+j ]_
-
-
-_K,, Ki+l,._
-
+K,, Ki+l,.
 
 ###### ,Kk-r
+Ki.
 
-
-_Ki._
-
-
-_< Kz <_
-
+< Kz <
 
 3*3
 
-
 1*3
-
 
 2*2
 
-
 TN,
 
-
 ###### rl
-
-
 ###### j
-
-
------
-
 ###### DYNMC PROGRAMMING 491
-
 plus the sum of the frequencies for all the nodes (since each node is one step
 further from the root in the new tree). This leads to the following program:
 
@@ -31270,7 +25381,6 @@ for k:=i to i+j do
 begin
 
 ###### t:=cost[i,k-l]+cost[k+l,i+j];
-
 if t<cost [i, i+j] then
 begin cost[i, i+j] :=t; best[i, i+j] :=k end;
 
@@ -31290,153 +25400,99 @@ As before, a short recursive program is required to recover the actual tree
 from the best array computed by the program. For the example given above,
 the optimal tree computed is
 
-
 ###### t:=cost[i,k-l]+cost[k+l,i+j];
-
-
 ###### t:=t+f[k];
-
-
 i+j] :=cost[i,
 
-
 ###### i-l]=0
-
-
 i+j] :=t; best[i, i+j] :=k
 
+cost[i,
 
 cost[i,
 
-
 cost[i,
-
-
-cost[i,
-
 
 t:=O;
 
-
 t<cost [i,
-
 
 to N+l do
 
-
 ###### i:=l
-
-
 ###### i:=l
-
-
 ###### i+j
-
-
 ;
 
-
-**A”**
+A”
 
 ###### B2
-
  C’
  Y;
 
-
 PROGRAMMING
-
 
 j] :=maxint;
 
-
 cost[i,
 
-
 ###### D3
-
-
 ###### j:=l
-
-
 to N+l do
 
-
 ###### i:=l
-
-
-
 [i,
-
 
 ###### G’
  73
 
-
 ###### D3
-
-**A”**
+A”
 
 ###### B2
-
  C’
  Y;
 
-
 ###### DYNMC
-
-
 ###### j:=i+l
-
-
 ###### i+j]
-
-
 ###### i:=l
-
-
 which has a weighted internal path length of 41.
-
 
 ###### ES
  2
 
-**F**
+F
 
 ###### G’
  73
 
-
 ###### ES
-
-
------
-
-_492_ _CHAPTER 37_
+492 CHAPTER 37
 
 As above, this algorithm requires time proportional to N3 since it works
 with a matrix of size N2 and spends time proportional to N on each entry.
 It is actually possible in this case to reduce the time requirement to N2 by
 taking advantage of the fact that the optimal position for the root of a tree
 can’t be too far from the optimal position for the root of a slightly smaller
-tree, so that _k_ doesn’t have to range over all the values from i to i + j in the
+tree, so that k doesn’t have to range over all the values from i to i + j in the
 program above.
 
-_Shortest Paths_
+Shortest Paths
 
 In some cases, the dynamic programming formulation of a method to solve
 a problem produces a familiar algorithm. For example, Warshall’s algorithm
 (given in Chapter 32) for finding the transitive closure of a directed graph
 follows directly from a dynamic programming formulation. To show this,
-we’ll consider the more general _all-pairs shortest paths_ problem: given a graph
+we’ll consider the more general all-pairs shortest paths problem: given a graph
 with vertices { 1,2,. . .,V} determine the shortest distance from each vertex
 to every other vertex.
 
-Since the problem calls for _V2_ numbers as output, the adjacency matrix
+Since the problem calls for V2 numbers as output, the adjacency matrix
 representation for the graph is obviously appropriate, as in Chapters 31 and
 32. Thus we’ll assume our input to be a V-by-V array a of edge weights, with
 a[i, j] :=w if there is an edge from vertex i to vertex j of weight w. If a[i, j]=
-a b, _i]_ for all i and j then this could represent an undirected graph, otherwise it
+a b, i] for all i and j then this could represent an undirected graph, otherwise it
 represents a directed graph. Our task is to find the directed path of minimum
 weight connecting each pair of vertices. One way to solve this problem is to
 simply run the shortest path algorithm of Chapter 31 for each vertex, for a
@@ -31445,40 +25501,28 @@ same performance can be derived from a dynamic programming approach.
 
 The dynamic programming algorithm for this problem follows directly
 from our description of Warshall’s algorithm in Chapter 32. We compute,
-1 5 _k_ 5 N, the shortest path from each vertex to each other vertex _which_
-_uses only vertices from_ {1,2,. . ., _k}._ The shortest path from vertex i to vertex
+1 5 k 5 N, the shortest path from each vertex to each other vertex which
+uses only vertices from {1,2,. . ., k}. The shortest path from vertex i to vertex
 
 ###### j using only vertices from 1,2, . . ., k is either the shortest path from vertex i
-to vertex j using only vertices from 1,2,. . ., _k - 1 or a path composed of the_
-shortest path from vertex i to vertex _k using only vertices from 1,2, . . .,_ _k -_ 1
-and the shortest path from vertex _k_ to vertex j using only vertices from
+to vertex j using only vertices from 1,2,. . ., k - 1 or a path composed of the
+shortest path from vertex i to vertex k using only vertices from 1,2, . . ., k - 1
+and the shortest path from vertex k to vertex j using only vertices from
 
-1,2,. . ., _k_ - 1. This leads immediately to the following program.
-
+1,2,. . ., k - 1. This leads immediately to the following program.
 
 {1,2,. . . ,
 
-
 1,2,.
-
 
 b,
 
-
 3.
 
-
 ###### j
-
-
 {
 
-
 ###### j
-
-
------
-
 ```
 DYNAMlC PROGRAMMlNG 493
 
@@ -31489,23 +25533,16 @@ if a[x,y]<>maxint div 2 then
 for j:=l to Vdo
 
 ###### if a[x,jl>(a[x,Yl+a[y,jl)
-
 then a[x,j]:=a[x,y]+a[y,j];
 
-
 ###### a[x,jl>(a[x,Yl+a[y,jl)
-
 ```
 DYNAMlC PROGRAMMlNG
 
 ```
 
 ###### j:=l
-
-
 ###### if
-
-
 The value maxint div 2 is used as a sentinel in matrix positions corresponding
 to edges not present in the graph. This eliminates the need to test explicitly
 in the inner loop whether there is an edge from x to j or from y to j. A “small”
@@ -31516,15 +25553,9 @@ operations. The following table shows the adjacency matrix before and after
 this algorithm is run on directed graph example of Chapter 32, with all edge
 weights set to 1:
 
-
 ###### a[x,y]<>maxint
-
-
 ###### y:=l
-
-
 for x:=1 to Vdo
-
 
 A B C D E F G H I J K L M
 A 0 1 1 1
@@ -31543,7 +25574,6 @@ K 0
 L 1 0 1
 
 M 1 0
-
 
 A B C D E F G H I J K L M
 A 0 1 2 3 2 1 1 2 33 3
@@ -31565,10 +25595,7 @@ K 0
 L 3 4 2 3 2 4 1 2 3 0 1
 M 4 5 3 4 3 5 2 3 4 1 0
 
-
 ###### G2312130
-
-
 Thus the shortest path from M to B is of length 5, etc. Note that, for this
 algorithm, the weight corresponding to the edge between a vertex and itself
 is 0. Except for this, if we consider nonzero entries as 1 bits, we have exactly
@@ -31576,11 +25603,7 @@ the bit matrix produced by the transitive closure algorithm of Chapter 32.
 From a dynamic programming standpoint, note that the amount of information saved about small subproblems is nearly the same as the amount
 of information to be output, so little space is wasted.
 
-
 is 0. Except for this, if we consider nonzero entries as 1 bits, we have exactly
-
-
------
 
 CHAPTER 37
 
@@ -31589,10 +25612,10 @@ Chapter 31 is that it works properly even if negative edge weights are allowed,
 as long as there are no cycles of negative weight in the graph (in which case
 the shortest paths connecting nodes on the cycle are not defined). If a cycle
 of negative weight is present in the graph, then the algorithm can detect that
-fact, because in that case a[i, _i]_ will become negative for some i at some point
+fact, because in that case a[i, i] will become negative for some i at some point
 during the algorithm.
 
-_Time and Space Requirements_
+Time and Space Requirements
 
 The above examples demonstrate that dynamic programming applications can
 have quite different time and space requirements depending on the amount of
@@ -31611,23 +25634,19 @@ small cases must be computed and stored. Dynamic programming is a natural
 design technique that appears in many guises to solve problems throughout
 this range.
 
+DYNAMIC PROGRAMMING 495
 
------
-
-DYNAMIC PROGRAMMING _495_
-
-_Exercises_
+Exercises
 
 1. In the example given for the knapsack problem, the items are sorted by
 size. Does the algorithm still work properly if they appear in arbitrary
 order?
 
 2. Modify the knapsack program to take into account another constraint
-defined by an array _num_ [1..N] which contains the number of items of
+defined by an array num [1..N] which contains the number of items of
 each type that are available.
 
 3. What would the knapsack program do if one of the values were negative?
-
 4. True or false: If a matrix chain involves a l-by-k by k-by-l multiplication,
 then there is an optimal solution for which that multiplication is last.
 Defend your answer.
@@ -31644,35 +25663,24 @@ optimal binary search tree.
 8. Suppose that we’ve computed the optimum binary search tree for some
 set of keys and frequencies, and say that one frequency is incremented by
 1. Write a program to compute the new optimum tree.
-
 9. Why not solve the knapsack problem in the same way as the matrix chain
 and optimum binary search tree problems, by minimizing, for k from 1
 to M, the sum of the best value achievable for a knapsack of size k and
-the best value achievable for a knapsack of size _M-k?_
+the best value achievable for a knapsack of size M-k?
 
 10. Extend the program for the shortest paths problem to include a procedure
 
 paths(i, j: integer) that will fill an array path with the shortest path from
-_i_ to j. This procedure should take time proportional to the length of the
+i to j. This procedure should take time proportional to the length of the
 path each time it is called, using an auxiliary data structure built up by
 a modified version of the program given in the text.
 
-
 ray matrices[l..Nmax,
 
-
 ###### l..r[i],
-
-
-_num_
-
-
------
-
------
+num
 
 ###### 3 8. Linear Programming
-
 Many practical problems involve complicated interactions between a
 number of varying quantities. One example of this is the network flow
 problem discussed in Chapter 33: the flows in the various pipes in the network
@@ -31681,7 +25689,7 @@ is scheduling various tasks in (say) a manufacturing process in the face of
 deadlines, priorities, etc. Very often it is possible to develop a precise mathematical formulation which captures the interactions involved and reduces
 the problem at hand to a more straightforward mathematical problem. This
 process of deriving a set of mathematical equations whose solution implies the
-solution of a given practical problem is called **_mathematical programming._** In
+solution of a given practical problem is called mathematical programming. In
 this section, we consider a fundamental variant of mathematical programming,
 linear programming, and an efficient algorithm for solving linear programs, the
 simplex method.
@@ -31700,14 +25708,11 @@ other algorithms that we’ve studied.
 
 497
 
+498 CHAPTER 38
 
------
+Linear Programs
 
-_498_ _CHAPTER 38_
-
-_Linear Programs_
-
-Mathematical programs involve a set of _variables_ related by a set of mathematical equations called _constraints_ and an _objective function_ involving the
+Mathematical programs involve a set of variables related by a set of mathematical equations called constraints and an objective function involving the
 variables that are to be maximized subject to the constraints. If all of
 the equations involved are simply linear combinations of the variables, we
 have the special case that we’re considering called linear programming. The
@@ -31720,15 +25725,15 @@ to the mathematical equations.)
 The following linear program corresponds to the network flow problem
 that we considered in Chapter 33.
 
-_Maximize XAB_ _+ XAD_
-_subject to the_ constraints
+Maximize XAB + XAD
+subject to the constraints
 ```
              2~858 xCD<2
 
 ```
-`xAD<2` `XCF-5` 4
+xAD<2 XCF-5 4
 
-`xBC<6` `XEBI` 3
+xBC<6 XEBI 3
 ```
              xDE<s xEF<s
                xAB+xEB=xBC,
@@ -31741,9 +25746,9 @@ _subject to the_ constraints
 There is one variable in this linear program corresponding to the flow in
 each of the pipes. These variables satisfy two types of equations: inequalities,
 corresponding to capacity constraints on the pipes, and equalities, corresponding to flow constraints at every junction. Thus, for example, the inequality
-`XAB` 5 8 says that pipe m has capacity 8, and the equation XAB + `XEB` = XBC
+XAB 5 8 says that pipe m has capacity 8, and the equation XAB + XEB = XBC
 says that the inflow must equal the outflow at junction B. Note that adding all
-the equalities together gives the implicit constraint `XAB` + `XAD` = `XCF` + `XEF`
+the equalities together gives the implicit constraint XAB + XAD = XCF + XEF
 
 which says that the inflow must equal the outflow for the whole network. Also,
 of course, all of the flows must be positive.
@@ -31799,9 +25804,8 @@ XEF
 
 ```
 
------
 
-_LINEAR PROGRAMMING_ 499
+LINEAR PROGRAMMING 499
 
 instance of the network flow problem. The point of this example is not
 that linear programming will provide a better algorithm for this problem,
@@ -31825,38 +25829,33 @@ to its widespread use. The danger in relying upon it too heavily is that it may
 lead to inefficient solutions for some simple problems (for example, many of
 those for which we have studied algorithms in this book).
 
-_Geometric_ _Interpretation_
+Geometric Interpretation
 
 Linear programs can be cast in a geometric setting. The following linear
 program is easy to visualize because only two variables are involved.
 
-_Maximize_ _x1 + 52_
+Maximize x1 + 52
 
-_subject to the constraints_
+subject to the constraints
 
-`-x1` +x2 55,
+-x1 +x2 55,
 
-`X1` **+4X2** 5 45,
+X1 +4X2 5 45,
 
-_2x1 +x2i 27,_
+2x1 +x2i 27,
 
 3x1 - 4x2 5 24,
 
-**X1,X2** `2` `0.`
+X1,X2 2 0.
 
 It corresponds to the following diagram:
 
-
-**X1,X2**
-
+X1,X2
 
 ###### 55,
-
-
 4x2
 
-
-_52_
+52
 
 ```
 X1
@@ -31867,10 +25866,7 @@ X1
 
 ```
 
-_+_
-
-
------
++
 
 500 CIIAPTER 38
 
@@ -31898,19 +25894,11 @@ is moved in from infinity. This point is the solution to the linear program: it
 satisfies all the inequalities because it is in the simplex, and it maximizes the
 objective function because no points with larger values were encountered. For
 
-
 CIIAPTER 38
 
-
 ###### -xi
-
-
 ###### I
-
-
------
-
-_LINEAR PROGRAMMING_
+LINEAR PROGRAMMING
 
 our example, the line hits the simplex at (9,9) which maximizes the objective
 function at 18.
@@ -31956,15 +25944,11 @@ inequalities to equalities. For example, if we add the inequalities x3 5 4 and
 x3 2 0 to the linear program above, the simplex becomes the solid object
 diagramed below:
 
-
 ~1
-
-
------
 
 502 CHAPTER 38
 
-**(8,070) );**
+(8,070) );
 
 To make the example more three-dimensional, suppose that we change the
 objective function to ~1 + ~2 + 2s. This defines a plane perpendicular to the
@@ -31973,7 +25957,7 @@ hit the simplex at the point (9,9,4) which is the solution. (Also shown in
 the diagram is a path along the vertices of the simplex from (O,O, 0) to the
 solution, for reference in the description of the algorithm below.)
 
-In n dimensions, we intersect halfspaces defined by (n   - 1)-dimensional
+In n dimensions, we intersect halfspaces defined by (n - 1)-dimensional
 hyperplanes to define the n-dimensional simplex, and bring in an (n - l)
 dimensional hyperplane from infinity to intersect the simplex at the solution
 point. As mentioned above, we risk oversimplification by concentrating on
@@ -31984,24 +25968,16 @@ intuition is valuable, since it can help us to understand the fundamental
 characteristics of the basic method that is used in practice to solve higher
 dimensional problems.
 
-
-**(8,070) );**
-
+(8,070) );
 
 (O,O,
 
-
 ###### zl
-
-
 ~2
 
+LINEAR PROGRAMMING
 
------
-
-_LINEAR_ _PROGRAMMING_
-
-_The Simplex Method_
+The Simplex Method
 
 Simplex is the name commonly used to describe a general approach to solving
 linear programs by using pivoting, the same fundamental operation used in
@@ -32018,25 +25994,25 @@ many different forms. For example, the linear program above for the network
 flow problem has a mixture of equalities and inequalities, but the geometric
 examples above use only inequalities. It is convenient to reduce the number
 of possibilities somewhat by insisting that all linear programs be presented in
-the same _standard form,_ where all the equations are equalities except for an
+the same standard form, where all the equations are equalities except for an
 inequality for each variable stating that it is nonnegative. This may seem like
 a severe restriction, but actually it is not difficult to convert general linear
 programs to this standard form. For example, the following linear program is
 the standard form for the three-dimensional example given above:
-_Maximize_ _x1 +x2 +_ _x3_
-_subject to the constraints_
+Maximize x1 +x2 + x3
+subject to the constraints
 
-**-21+zz+y1=5**
+-21+zz+y1=5
 
 ###### zl+422+yz=45 &+zz+yg=27
  3x1-4x2+y4=24
 
-**x3** + y5 = 4
+x3 + y5 = 4
 
-**xl,x2,x3,Yl,Y2,Y3,Y4,Y5** 2 0.
+xl,x2,x3,Yl,Y2,Y3,Y4,Y5 2 0.
 
 Each inequality involving more than one variable is converted into an equality
-by introducing a new variable. The y’s are called _slack_ variables because they
+by introducing a new variable. The y’s are called slack variables because they
 take up the slack allowed by the inequality. Any inequality involving only one
 variable can be converted to the standard nonnegative constraint simply by
 renaming the variable. For example, a constraint such as x3 < -1 would be
@@ -32046,33 +26022,21 @@ and simultaneous equations. We have N equations in M unknown variables,
 all constrained to be positive. In this case, note that there are N slack
 variables, one for each equation (since we started out with all inequalities).
 
-
 ###### 3x1-4x2+y4=24
-
-
 ###### zl+422+yz=45
+-21+zz+y1=5
 
++x2 +
 
-**-21+zz+y1=5**
-
-
-_+x2 +_
-
-
-_x3_
-
+x3
 
 y5
 
-
 +
 
+504 CHAPTER 38
 
------
-
-504 _CHAPTER 38_
-
-We assume that _M_ - N which implies that there are many solutions to
+We assume that M - N which implies that there are many solutions to
 the equations: the problem is to find the one which maximizes the objective
 function.
 For our example, there is a trivial solution to the equations: take z1 =
@@ -32086,10 +26050,10 @@ on the right-hand side of the inequalities in the standard form of the linear
 program are positive and slack variables all have positive coefficients (as in
 our example) then there is clearly a solution with all the original variables
 zero. Later we’ll return to the general case.
-Given a solution with _M-N_ variables set to 0, it turns out that we can
+Given a solution with M-N variables set to 0, it turns out that we can
 find another solution with the same property by using a familiar operation,
-_pivoting._ This is essentially the same operation used in Gaussian elimination:
-an element a[p, _q]_ is chosen in the matrix of coefficients defined by the equations, then the pth row is multiplied by an appropriate scalar and added to all
+pivoting. This is essentially the same operation used in Gaussian elimination:
+an element a[p, q] is chosen in the matrix of coefficients defined by the equations, then the pth row is multiplied by an appropriate scalar and added to all
 other rows to make the qth column all 0 except for the entry in row q, which
 is made 1. For example, consider the following matrix, which represents the
 linear program given above:
@@ -32102,7 +26066,7 @@ linear program given above:
 0.00 0.00 1.00 0.00 0.00 0.00 0.00 1.00 4.00
 
 This (N + 1)-by-(M + 1) matrix contains the coefficients of the linear program
-in standard form, with the _(M_ + 1)st column containing the numbers on the
+in standard form, with the (M + 1)st column containing the numbers on the
 right-hand sides of the equations (as in Gaussian elimination), and the 0th row
 containing the coefficients of the objective function, with the sign reversed.
 The significance of the 0th row is discussed below; for now we’ll treat it just
@@ -32110,30 +26074,23 @@ like all of the other rows.
 For our example, we’ll carry out all computations to two decimal places.
 Obviously, issues such as computational accuracy and accumulated error are
 just as important here as they are in Gaussian elimination.
-The variables which correspond to a solution are called the _basis variables_
+The variables which correspond to a solution are called the basis variables
 and those which are set to 0 to make the solution are called non-basis variables.
 In the matrix, the columns corresponding to basis variables have exactly one 1
 with all other values 0, while non-basis variables correspond to columns with
 more than one nonzero entry.
 
-
 0,O)
-
 
 1)st
 
-
 qth
-
 
 +
 
+LINEAR PROGRAMMTNG 505
 
------
-
-_LINEAR PROGRAMMTNG_ 505
-
-Now, suppose that we wish to pivot this matrix for p = 4 and _q_ = 1. That
+Now, suppose that we wish to pivot this matrix for p = 4 and q = 1. That
 is, an appropriate multiple of the fourth row is added to each of the other
 rows to make the first column all 0 except for a 1 in row 4. This produces the
 following result:
@@ -32154,9 +26111,9 @@ In the solution corresponding to the above matrix, both x2 and 2s are zero
 because they are non-basis variables and xi = 8, so the matrix corresponds
 to the point (8,0,0) on the simplex. (We’re not interested particularly in the
 values of the slack variables.) Note that the upper right hand corner of the
-matrix (row 0, column _M_ + 1) contains the value of the objective function at
+matrix (row 0, column M + 1) contains the value of the objective function at
 this point. This is by design, as we shall soon see.
-Now suppose that we perform the pivot operation for p = 3 and _q = 2:_
+Now suppose that we perform the pivot operation for p = 3 and q = 2:
 
 f 0.00 0.00 -1.00 0.00 0.00 0.64 -0.09 0.00 15.00
 0.00 0.00 0.00 1.00 0.00 0.09 0.27 0.00 14.00
@@ -32171,18 +26128,14 @@ variables to 0 and solving for basis variables as before, we see that this matri
 corresponds to the point (12,3,0) on the simplex, for which the objective
 function has the value 15. Note that the value of the objective function is
 strictly increasing. Again, this is by design, as we shall soon see.
-How do we decide which values of p and _q_ to use for pivoting? This
+How do we decide which values of p and q to use for pivoting? This
 is where row 0 comes in. For each non-basis variable, row 0 contains the
 amount by which the objective function would increase if that variable were
 changed from 0 to 1, with the sign reversed. (The sign is reversed so that the
 standard pivoting operation will maintain row 0, with no changes.) Pivoting
-using column _q_ amounts to changing the value of the corresponding variable
+using column q amounts to changing the value of the corresponding variable
 
-
-_LINEAR PROGRAMMTNG_
-
-
------
+LINEAR PROGRAMMTNG
 
 506 CRAPTER 38
 
@@ -32193,10 +26146,10 @@ increase the objective function, but we also must make sure that it will result
 in a matrix corresponding to a point on the simplex. Here the central concern
 is that one of the entries in column M + 1 might become negative. This can be
 forestalled by finding, among the positive elements in column q (not including
-row 0), the one that gives the smallest value when divided into the **_(M +_** 1)st
+row 0), the one that gives the smallest value when divided into the (M + 1)st
 element in the same row. If we take p to be the index of the row containing
 this element and pivot, then we can be sure that the objective function will
-increase and that none of the entries in column **_M_** + 1 will become negative;
+increase and that none of the entries in column M + 1 will become negative;
 this is enough to ensure that the resulting matrix corresponds to a point on
 the simplex.
 There are two potential problems with this procedure for finding the
@@ -32205,7 +26158,7 @@ an inconsistent situation: the negative entry in row 0 says that the objective
 function can be increased, but there is no way to increase it. It turns out that
 this situation arises if and only if the simplex is unbounded, so the algorithm
 can terminate and report the problem. A more subtle difficulty arises in the
-degenerate case when the **_(M_** + 1)st entry in some row (with a positive entry
+degenerate case when the (M + 1)st entry in some row (with a positive entry
 in column q) is 0. Then this row will be chosen, but the objective function
 will increase by 0. This is not a problem in itself: the problem arises when
 there are two such rows. Certain natural policies for choosing between such
@@ -32229,20 +26182,13 @@ This gives the following matrix:
 1.00 0.00 0.00 0.00 0.00 0.36 0.09 0.00 12.00
 0.00 0.00 1.00 0.00 0.00 0.00 0.00 1.00 4.00
 
-
 CRAPTER 38
-
 
 1)st
 
-
 q)
 
-
 q
-
-
------
 
 LIhJEAR PROGRAMMING 507
 
@@ -32251,7 +26197,7 @@ the objective function is 19.
 In general, there might be several negative entries in row 0, and several
 different strategies for choosing from among them have been suggested. We
 have been proceeding according to one of the most popular methods, called
-the _greatest increment_ method: always choose the column with the smallest
+the greatest increment method: always choose the column with the smallest
 value in row 0 (largest in absolute value). This does not necessarily lead to the
 largest increase in the objective function, since scaling according to the row p
 chosen has to be done. If this column selection policy is combined with the row
@@ -32260,9 +26206,9 @@ of lowest index being removed from the basis, then cycling cannot happen.
 (This anticycling policy is due to R. G. Bland.) Another possibility for column
 selection is to actually calculate the amount by which the objective function
 would increase for each column, then use the column which gives the largest
-result. This is called the _steepest descent_ method. Yet another interesting
+result. This is called the steepest descent method. Yet another interesting
 possibility is to choose randomly from among the available columns.
-Finally, after one more pivot at p = 2 and _q_ = 7, we arrive at the solution:
+Finally, after one more pivot at p = 2 and q = 7, we arrive at the solution:
 
 I 0.00 0.00 0.00 0.00 0.14 0.43 0.00 1.00 22.00
 0.00 0.00 0.00 1.00 -0.43 0.71 0.00 0.00 5.00
@@ -32289,13 +26235,9 @@ beyond the scope of this book. But the simplex algorithm for the general
 case operates in essentially the same manner as for the simple problem traced
 above.
 
-
 I
 
-
------
-
-**_508_** CHAPTER 38
+508 CHAPTER 38
 
 Implementation
 
@@ -32304,73 +26246,58 @@ is quite straightforward from the description. First, the requisite pivoting
 procedure uses code similar to our implementation of Gaussian elimination in
 Chapter 5:
 
-**procedure** pivot(p, q: integer);
-**var** j, k: integer;
-**begin**
-**for j:=O to N do**
-**for** k:=M+l **downto 1 do**
-**if** **(j<>p) and** (k<>q) **then**
+procedure pivot(p, q: integer);
+var j, k: integer;
+begin
+for j:=O to N do
+for k:=M+l downto 1 do
+if (j<>p) and (k<>q) then
 
 ###### 4.i kl:=dL kl-ab, kl*d.L d/ah 41;
-
-**for j:=O to N do if** j<>p **then** ab, q] :=O;
-**for** k:=l **to** M+l **do if** k<>q **then** a[p, k] **_:=a[p, k]/a[p, q];_**
+for j:=O to N do if j<>p then ab, q] :=O;
+for k:=l to M+l do if k<>q then a[p, k] :=a[p, k]/a[p, q];
 
 ###### 4-3 41 :=I
-**end** **;**
+end ;
 
 This program adds multiples of row p to each row as necessary to make column
 
-**_q_** all zero except for a 1 in row **_q_** as described above. As in Chapter 5, it is
-necessary to take care not to change the value of **_a[p, q]_** before we’re done
+q all zero except for a 1 in row q as described above. As in Chapter 5, it is
+necessary to take care not to change the value of a[p, q] before we’re done
 using it.
 In Gaussian elimination, we processed only rows below p in the matrix
-during forward elimination and only rows above **_p_** during backward substitution using the Gauss-Jordan method. A system of N linear equations in N
-unknowns could be solved by calling pivot(i, **_i)_** for i ranging from 1 to N then
+during forward elimination and only rows above p during backward substitution using the Gauss-Jordan method. A system of N linear equations in N
+unknowns could be solved by calling pivot(i, i) for i ranging from 1 to N then
 back down to 1 again.
 The simplex algorithm, then, consists simply of finding the values of p
 
 and q as described above and calling pivot, repeating the process until the
 optimum is reached or the simplex is determined to be unbounded:
 
-**repeat**
+repeat
 
-**q:=O; repeat** **_q:=q+l_** **until** (q=M+l) or `(a[O,` `q]<O);`
+q:=O; repeat q:=q+l until (q=M+l) or (a[O, q]<O);
 
-**p:=O; repeat** **_p:=p+l_** **until** (p=N+l) or (a[p, `q]>O);`
-**for** i:=p+l to N **do**
-**if** a[& **_q]>O_** **then**
+p:=O; repeat p:=p+l until (p=N+l) or (a[p, q]>O);
+for i:=p+l to N do
+if a[& q]>O then
 
-if (a[& _M+l]/a[i,_ q])<(a[p, M+l]/a[p, q]) **then** **_p:=i;_**
-if (q<M+l) **and** (p<N+l) **then** pivot(p, q)
-**until** (q=M+l) **or** (p=N+l);
-
+if (a[& M+l]/a[i, q])<(a[p, M+l]/a[p, q]) then p:=i;
+if (q<M+l) and (p<N+l) then pivot(p, q)
+until (q=M+l) or (p=N+l);
 
 ###### M+l]/a[i,
-
-
 ###### (q<M+l)
-
-
 q])<(a[p, M+l]/a[p, q])
 
-
 ###### (p=N+l)
-
-
 pivot(p, q)
 
-
-**_:=a[p, k]/a[p, q];_**
-
+:=a[p, k]/a[p, q];
 
 ###### kl:=dL
-
-
-######  kl-ab, 
-
-
-**_q:=q+l_**
+###### kl-ab,
+q:=q+l
 
 ```
 q]>O);
@@ -32378,13 +26305,12 @@ q]>O);
 ```
 
 ###### i:=p+l
-
 ```
 q]<O);
 
 ```
 
-**downto 1 do**
+downto 1 do
 
 ```
 (a[O,
@@ -32392,32 +26318,18 @@ q]<O);
 ```
 
 ###### M+l
-
-
 ###### 4-3
-
-
-**_a[p, q]_**
-
+a[p, q]
 
 ###### k:=l
-
-
 ###### 4.i
+p
 
+q
 
-**_p_**
+;
 
-
-**_q_**
-
-
-**;**
-
-
------
-
-_LINEAR PROGRAMMING_ _509_
+LINEAR PROGRAMMING 509
 
 If the program terminates with q=M+1 then an optimal solution has been
 found: the value achieved for the objective function will be in a[& M+1] and
@@ -32431,24 +26343,24 @@ outb[p]:=q after each pivot. Then the loop to calculate p can be modified
 to set p:=i also if equality holds in the ratio test and outb[p]<outb[q].
 
 Alternatively, the selection of a random element could be implemented by
-generating a random integer x and replacing each array reference a[p, _q]_
-(or _a[i, q])_ by a[(p+x)mod(N+l), _q]_ (or a[(i+x)mod(N+l), _q])._ This has
+generating a random integer x and replacing each array reference a[p, q]
+(or a[i, q]) by a[(p+x)mod(N+l), q] (or a[(i+x)mod(N+l), q]). This has
 the effect of searching through the column q in the same way as before,
 but starting at a random point instead of the beginning. The same sort of
 technique could be used to choose a random column (with a negative entry in
 row 0) to pivot on.
 The program and example above treat a simple case that illustrates the
 principle behind the simplex algorithm but avoids the substantial complications that can arise in actual applications. The main omission is that the
-program requires that the matrix have a _feasible basis:_ a set of rows and
+program requires that the matrix have a feasible basis: a set of rows and
 columns which can be permuted into the identity matrix. The program starts
-with the assumption that there is a solution with the _M_ - N variables appearing in the objective function set to zero and that the N-by-N submatrix
+with the assumption that there is a solution with the M - N variables appearing in the objective function set to zero and that the N-by-N submatrix
 involving the slack variables has been “solved” to make that submatrix the
 identity matrix. This is easy to do for the particular type of linear program
 that we stated (with all inequalities on positive variables), but in general we
 need to find some point on the simplex. Once we have found one solution, we
 can make appropriate transformations (mapping that point to the origin) to
 bring the matrix into the required form, but at the outset we don’t even know
-whether a solution exists. In fact, it has been shown that _detecting_ whether a
+whether a solution exists. In fact, it has been shown that detecting whether a
 solution exists is as difficult computationally as finding the optimum solution,
 given that one exists.
 Thus it should not be surprising that the technique that is commonly used
@@ -32462,26 +26374,15 @@ then this objective function can be maximized at 0. If the maximum reached
 is not zero, then the original linear program is infeasible. If the maximum
 is zero, then the normal situation is that ~1, ~2,. . ., sN all become non-basis
 
-
 ###### a[(p+x)mod(N+l),
-
-
 ###### p=N+l,
-
-
 then an unbounded si:uation has been detected.
-
 
 -s2
 
-
 sN
 
-
 ~1,
-
-
------
 
 510 CRAPTER 38
 
@@ -32508,19 +26409,13 @@ providing a complete set of tools which can be used to solve a variety of very
 important practical problems.
 
 r l
-###### 
-
+######
 CRAPTER 38
-
 
 s
 
-
------
-
 ###### LINEARPROGRAh4MlNG 511
-
-_Exercises_
+Exercises
 
 ```
 LINEARPROGRAh4MlNG
@@ -32529,24 +26424,23 @@ LINEARPROGRAh4MlNG
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Draw the simplex defined by the inequalities ~1 2 0, 52 > 0, x3 2 0,
 
@@ -32569,7 +26463,7 @@ chapter for the knapsack problem.
 
 How many pivot steps are required to solve the linear program “Maximize
 
-**Xl** **+** [...] [+x~][ subject to the constraints ] [xl,..] [.,x~][ 5 1 and x1 ] [,...,][x~][ 2]
+Xl + [...] [+x~][ subject to the constraints ] [xl,..] [.,x~][ 5 1 and x1 ] [,...,][x~][ 2]
 
 0” ?
 
@@ -32583,47 +26477,23 @@ selection methods.
 Modify the implementation given in the text to actually write out the
 coordinates of the optimal solution point.
 
-
-
 ###### [+x~]
-
-
 ###### +x3
-
-
-
 ###### [xl,..]
-
-
-
 ###### [x~]
-
-
 - 0, x3 2 0,
-
 
 52
 
-
-
 [ 2]
-
 
 0” ?
 
-
-**+**
-
++
 
 q
 
-
------
-
------
-
 ###### 39. Exhaustive Search
-
 Some problems involve searching through a vast number of potential
 solutions to find an answer, and simply do not seem to be amenable to
 solution by efficient algorithms. In this chapter, we’ll examine some characteristics of problems of this sort and some techniques which have proven to
@@ -32637,7 +26507,7 @@ bad and cubic algorithms to be awful. But for the problems that we’ll consider
 in this and the next chapter, any computer scientist would be absolutely
 delighted to know a cubic algorithm. In fact, even an N5’ algorithm would be
 pleasing (from a theoretical standpoint) because these problems are believed
-to require _exponential_ time.
+to require exponential time.
 Suppose that we have an algorithm that takes time proportional to 2N. If
 we were to have a computer 1000 times faster than the fastest supercomputer
 available today, then we could perhaps solve a problem for N = 50 in an
@@ -32649,18 +26519,14 @@ a million such computers available, we couldn’t get to N = 100 in a year’s
 time. Realistically, we have to settle for N on the order of 25 or 30. A “more
 efficient” algorithm in this situation may be one that could solve a problem
 for N = 100 with a realistic amount of time and money.
-The most famous problem of this type is the _traveling salesman problem:_
+The most famous problem of this type is the traveling salesman problem:
 given a set of N cities, find the shortest route connecting them all, with no
 
 513
 
-
 or N3/2 to
 
-
------
-
-**514** _CHAPTER 39_
+514 CHAPTER 39
 
 city visited twice. This problem arises naturally in a number of important applications, so it has been studied quite extensively. We’ll use it as an example
 in this chapter to examine some fundamental techniques. Many advanced
@@ -32668,7 +26534,7 @@ methods have been developed for this problem but it is still unthinkable to
 solve an instance of the problem for N = 1000.
 The traveling salesman problem is difficult because there seems to be no
 way to avoid having to check the length of a very large number of possible
-tours. To check each and every tour is exhaustive _search:_ first we’ll see how
+tours. To check each and every tour is exhaustive search: first we’ll see how
 that is done. Then we’ll see how to modify that procedure to greatly reduce
 the number of possibilities checked, by trying to discover incorrect decisions
 as early as possible in the decision-making process.
@@ -32682,7 +26548,7 @@ for coping with practical problems which seem to require exhaustive search.
 In the next chapter, we’ll examine in some detail the reasons why no efficient
 algorithm is likely to be found for many such problems.
 
-Exhaustive _Search_ in _Graphs_
+Exhaustive Search in Graphs
 
 If the traveling salesman is restricted to travel only between certain pairs of
 cities (for example, if he is traveling by air), then the problem is directly
@@ -32703,11 +26569,7 @@ a solution is not apparent: it seems to be necessary to visit each node many
 times. For the other problems, we were building a tree: when a “dead end”
 was reached in the search, we could start it up again, working on another
 
-
-_CHAPTER 39_
-
-
------
+CHAPTER 39
 
 EXHAUSTIVE SEARCH 515
 
@@ -32722,23 +26584,23 @@ Depth-first search would visit the nodes in this graph in the order A B C E
 D F G (assuming an adjacency matrix or sorted adjacency list representation).
 This is not a simple cycle: to find a Hamilton cycle we have to try another way
 to visit the nodes. It turns out the we can systematically try all possibilities
-with a simple modification to the _visit_ procedure, as follows:
+with a simple modification to the visit procedure, as follows:
 
-**procedure** visit(k: integer);
-**var** t: integer;
-**begin**
-_now:=now+l;_ val[k] :=now;
-**for** t:=l **to** Vdo
-**if** a[k, t] **then**
-**if** _val[t]=O_ **then** visit(t);
+procedure visit(k: integer);
+var t: integer;
+begin
+now:=now+l; val[k] :=now;
+for t:=l to Vdo
+if a[k, t] then
+if val[t]=O then visit(t);
 
 now:=now-1; va1[k] :=O
 
-**end** **;**
+end ;
 
 Rather than leaving every node that it touches marked with a nonzero
 
-val entry, this procedure “cleans up after itself” and leaves _now_ and the val
+val entry, this procedure “cleans up after itself” and leaves now and the val
 array exactly as it found them. The only marked nodes are those for which
 visit hasn’t completed, which correspond exactly to a simple path of length
 now in the graph, from the initial node to the one currently being visited. To
@@ -32746,20 +26608,12 @@ visit a node, we simply visit all unmarked adjacent nodes (marked ones would
 not correspond to a simple path). The recursive procedure checks all simple
 paths in the graph which start at the initial node.
 
-
 now:=now-1;
 
-
 ###### t:=l
-
-
 val
 
-
 t:
-
-
------
 
 516 CHAPTER 39
 
@@ -32774,23 +26628,19 @@ to F are marked (have non-zero val entries), so visit for F unmarks F and
 returns. Then visit for D unmarks D and returns. Then visit for E tries F
 which tries D, corresponding to the path A B C E F D. Note carefully that
 in depth-first search F and D remain marked after they are visited, so that F
-would _not_ be visited from E. The “unmarking” of the nodes makes exhaustive
+would not be visited from E. The “unmarking” of the nodes makes exhaustive
 search essentially different from depth-first search, and the reader should be
 sure to understand the distinction.
-As mentioned above, _now_ is the current length of the path being tried,
+As mentioned above, now is the current length of the path being tried,
 and val[k] is the position of node k on that path. Thus we can make the visit
 procedure given above test for the existence of a Hamilton cycle by having
-it test whether there is an edge from **_k_** to 1 when val[k]=V. In the example
+it test whether there is an edge from k to 1 when val[k]=V. In the example
 above, there is only one Hamilton cycle, which appears twice in the tree,
 traversed in both directions. The program can be made to solve the traveling
 salesman problem by keeping track of the length of the current path in the
 val array, then keeping track of the minimum of the lengths of the Hamilton
 
-
 val
-
-
------
 
 EXhXJSTIVE SEARCH 517
 
@@ -32802,7 +26652,7 @@ The time taken by the exhaustive search procedure given above is proportional
 to the number of calls to visit, which is the number of nodes in the exhaustive
 search tree. For large graphs, this will clearly be very large. For example, if
 the graph is complete (every node connected to every other node), then there
-are _V! simple cycles, one corresponding to each arrangement of the nodes._
+are V! simple cycles, one corresponding to each arrangement of the nodes.
 (This case is studied in more detail below.) Next we’ll examine techniques to
 greatly reduce the number of possibilities tried. All of these techniques involve
 adding tests to visit to discover that recursive calls should not be made for
@@ -32819,9 +26669,6 @@ is already on the path. This leads to a drastically smaller tree:
 This technique is not always applicable: for example, suppose that we’re trying
 to find the minimum-cost path (not cycle) connecting all the vertices. In the
 above example, A G E F D B C is a path which connects all the vertices, but
-
-
------
 
 CHAPTER 39
 
@@ -32867,20 +26714,16 @@ Drawn below is the search tree that results when all of these rules are
 applied to the problem of finding the best Hamilton path in the sample graph
 that we’ve been considering:
 
+EXHAUSTIVE SEARCH 519
 
------
-
-_EXHAUSTIVE SEARCH_ _519_
-
-**G**
+G
 ###### 6
-
 Again the tree is drastically smaller. It is important to note that the savings
 achieved for this toy problem is only indicative of the situation for larger
 problems. A cutoff high in the tree can lead to truly significant savings;
 missing an obvious cutoff can lead to truly significant waste.
 The general procedure of solving a problem by systematically generating
-all possible solutions as described above is called _backtracking._ Whenever we
+all possible solutions as described above is called backtracking. Whenever we
 have a situation where partial solutions to a problem can be successively augmented in many ways to produce a complete solution, a recursive implementation like the program above may be appropriate. As above, the process
 can be described by an exhaustive search tree whose nodes correspond to the
 partial solutions. Going down in the tree corresponds to forward progress
@@ -32899,14 +26742,9 @@ effective for this problem, since the order in which objects are put into the
 knapsack doesn’t affect the cost.
 Backtracking and branch-and-bound are quite widely applicable as general
 
-
-**G**
+G
 ###### 6
-
-
------
-
-520 _CHAPTER 39_
+520 CHAPTER 39
 
 problem-solving techniques. For example, they form the basis for many programs which play games such as chess or checkers. In this case, a partial
 solution is some legal positioning of all the pieces on the board, and the descendant of a node in the exhaustive search tree is a position that can be
@@ -32936,7 +26774,7 @@ problem that can be solved. For example, an algorithm which runs in time
 proportional to 1.1 N can solve a problem perhaps eight times a large as one
 which runs in time proportional to 2N.
 
-_Digression: Permutation Generation_
+Digression: Permutation Generation
 
 An interesting computational puzzle is to write a program that generates all
 possible ways of rearranging N distinct items. A simple program for this
@@ -32944,34 +26782,29 @@ permutation generation problem can be derived directly from the exhaustive
 search program above because, as noted above, if it is run on a complete graph,
 then it must try to visit the vertices of that graph in all possible orders.
 
-
 (Y,
-
 
 cr
 
-
------
-
 EXHAUSTIVE SEARCH 521
 
-**procedure** visit(k: integer);
-**var** t: integer;
-**begin**
+procedure visit(k: integer);
+var t: integer;
+begin
 now:=now+l; vaI[k] :=now;
-**if now= V then** writeperm;
-**for** t:=l **to** Vdo
-**if** vaI[t]=O **then** visit(t);
+if now= V then writeperm;
+for t:=l to Vdo
+if vaI[t]=O then visit(t);
 
 ###### now:=now-I; val[k] :=O
-**end** **;**
+end ;
 
 This program is derived from the procedure above by eliminating all reference
 to the adjacency matrix (since all edges are present in a complete graph). The
 procedure writeperm simply writes out the entries of the val array. This is
-done each time **_now=V,_** corresponding to the discovery of a complete path
+done each time now=V, corresponding to the discovery of a complete path
 in the graph. (Actually, the program can be improved somewhat by skipping
-the **for** loop when **_now=V,_** since at that point is known that all the val entries
+the for loop when now=V, since at that point is known that all the val entries
 are nonzero.) To print out all permutations of the integers 1 through N, we
 invoke this procedure with the call visit(O) with now initialized to -1 and the
 
@@ -32980,84 +26813,62 @@ the complete graph, and checking all paths in the graph starting with node
 0. When invoked in this way for N=4, this procedure produces the following
 output (rearranged here into two columns):
 
-
 ###### now:=now-I;
-
-
 vaI[t]=O
-
 
 invoke this procedure with the call visit(O) with now initialized to -1 and the
 
-
-**_now=V,_**
-
+now=V,
 
 ###### t:=l
-
-
 val
-
 
 t:
 
+;
 
-**;**
-
-
-**_1 2 3 4_**
+1 2 3 4
 1 2 4 3
-**_1 3 2 4_**
+1 3 2 4
 1 4 2 3
 1 3 4 2
 1 4 3 2
-**_2_** 1 3 4
-**_2 1 4 3_**
-**_3_** 1 2 4
-**_4_** 1 2 3
-**_3 1 4 2_**
-**_4_** 1 3 2
-
+2 1 3 4
+2 1 4 3
+3 1 2 4
+4 1 2 3
+3 1 4 2
+4 1 3 2
 
 now:=now+l;
 
-
-**_now=V,_**
-
+now=V,
 
 0. When invoked in this way for N=4, this procedure produces the following
 
-
 val
 
+2 3 1 4
+2 4 1 3
+3 2 1 4
+4 2 1 3
+3 4 1 2
+4 3 1 2
+2 3 4 1
+2 4 3 1
+3 2 4 1
+4 2 3 1
+3 4 2 1
+4 3 2 1
 
-**_2 3_** 1 4
-**_2 4_** 1 3
-**_3 2_** 1 4
-**_4 2_** 1 3
-**_3 4_** 1 2
-**_4 3_** 1 2
-**_2 3 4_** 1
-**_2 4 3_** 1
-**_3 2 4_** 1
-**_4 2 3 1_**
-**_3 4 2_** 1
-**_4 3 2_** 1
-
-
-**_:=O_**
-
+:=O
 
 Admittedly, the interpretation of the procedure as generating paths in a
 complete graph is barely visible. But a direct examination of the procedure
 reveals that it generates all N! permutations of the integers 1 to N by
 first generating all (N - l)! permutations with the 1 in the first position
 
-
-**_val[k]_**
-
-
------
+val[k]
 
 522 CRAPTER 39
 
@@ -33086,7 +26897,7 @@ are a number of related procedures for generating other combinatorial objects.
 In some cases, the number of objects generated are not quite so numerous are
 as permutations, and such procedures can be useful for larger N in practice.
 An example of this is a procedure to generate all ways of choosing a subset of
-size _k_ out of a set of N items. For large N and small _k,_ the number of ways
+size k out of a set of N items. For large N and small k, the number of ways
 of doing this is roughly proportional to N k. Such a procedure could be used
 as the basis for a backtracking program to solve the knapsack problem.
 
@@ -33100,26 +26911,19 @@ deal with problems much larger than is possible with the techniques above.
 For example, it’s relatively easy to find a tour which is longer by at most a
 factor of two than the optimal tour. The method is based on simply finding the
 minimum spanning tree: this not only, as mentioned above, provides a lower
-bound on the length of the tour but also turns out to provide an upper _bound_
+bound on the length of the tour but also turns out to provide an upper bound
 on the length of the tour, as follows. Consider the tour produced by visiting
 the nodes of the minimum spanning tree using the following procedure: to
 
-
 CRAPTER 39
-
 
 upper
 
-
 l)!
-
 
 k.
 
-
------
-
-**_EXHAUSTIVE SEARCH_** **_523_**
+EXHAUSTIVE SEARCH 523
 
 process node x, visit x, then visit each son of x, applying this visiting procedure
 recursively and returning to node x after each son has been visited, ending up
@@ -33141,9 +26945,6 @@ conclusion.
 
 Another approach that has been tried is to develop techniques to improve an existing tour in the hope that a short tour can be found by applying such improvements repeatedly. For example, if we have (as above)
 a Euclidean traveling salesman problem where graph distances are distances
-
-
------
 
 524 CHAPTER 39
 
@@ -33178,39 +26979,33 @@ we’ll see why most computer scientists believe that there is no such algorithm
 and why approximation algorithms of the type discussed in this section must
 therefore be studied.
 
+EXHAUSTAL!? SEARCH 525
 
------
+Exercises
 
-**EXHAUSTAL!? SEARCH** _525_
-
-_Exercises_
-
-
-**EXHAUSTAL!?**
-
+EXHAUSTAL!?
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
 
 11.
-
 
 Which would you prefer to use, an algorithm that requires N5 steps or
 one that requires 2N steps?
@@ -33247,13 +27042,7 @@ given points in the plane with no intersecting edges.
 Solve the Euclidean traveling salesman problem for our sixteen sample
 points.
 
-
------
-
------
-
 ###### 40. NP-complete Problems
-
 The algorithms we’ve studied in this book generally are used to solve
 practical problems and therefore consume reasonable amounts of resources. The practical utility of most of the algorithms is obvious: for many
 problems we have the luxury of several efficient algorithms to choose from.
@@ -33280,13 +27069,10 @@ consider similar problems that ask for only “yes-no” answers:
 
 527
 
+528 CHAPTER 40
 
------
-
-_528_ _CHAPTER 40_
-
-Easy: Is there a path from x to y with weight 5 _M?_
-Hard(?): Is there a path from x to y with weight 2 _M?_
+Easy: Is there a path from x to y with weight 5 M?
+Hard(?): Is there a path from x to y with weight 2 M?
 
 Breadth-first search will lead to a solution for the first problem in linear time,
 but all known algorithms for the second problem could take exponential time.
@@ -33312,37 +27098,31 @@ In this model, the efficiency of an algorithm is a function of the number
 of bits used to encode the input, using a “reasonable” encoding scheme. (The
 precise definition of “reasonable” includes all common methods of encoding
 things for computers: an example of an unreasonable coding scheme is unary,
-where _M_ bits are used to represent the number _M._ Rather, we would
-expect that the number of bits used to represent the number _M_ should be
-proportional to log _M.)_ We’re interested merely in identifying algorithms
+where M bits are used to represent the number M. Rather, we would
+expect that the number of bits used to represent the number M should be
+proportional to log M.) We’re interested merely in identifying algorithms
 guaranteed to run in time proportional to some polynomial in the number of
 bits of input. Any problem which can be solved by such an algorithm is said
 to belong to
 
-_P :_ the set of all problems which can be solved by deterministic
+P : the set of all problems which can be solved by deterministic
 algorithms in polynomial time.
 
-By _deterministic_ we mean that at any time, whatever the algorithm is doing,
+By deterministic we mean that at any time, whatever the algorithm is doing,
 there is only one thing that it could do next. This very general notion covers
 the way that programs run on actual computers. Note that the polynomial
 is not specified at all and that this definition certainly covers the standard
-algorithms that we’ve studied so far. Sorting belongs to _P_ because (for
-
+algorithms that we’ve studied so far. Sorting belongs to P because (for
 
 ###### 2”’
-
-
 size N, takes time proportional to 2N (at least). (The substance of the
 
-
------
-
-**NP-COMPLETE** **PROBLEMS** **529**
+NP-COMPLETE PROBLEMS 529
 
 example)1 insertion sort runs in time proportional to N2: the existence of
 N log N sorting algorithms is not relevant to the present discussion. Also, the
 time taken by an algorithm obviously depends on the computer used, but it
-turns `out` that using a different computer will affect the running time by only
+turns out that using a different computer will affect the running time by only
 a polynomial factor (again, assuming reasonable limits), so that also is not
 particularly relevant to the present discussion.
 Of course, the theoretical results that we’re discussing are based on a
@@ -33359,40 +27139,32 @@ solution is correct. In Chapter 20, we saw how nondeterminism can be useful
 as a tool for algorithm design; here we use it as a theoretical device to help
 classify problems. We have
 
-_NP:_ the set of all problems which can be solved by nondeterministic
+NP: the set of all problems which can be solved by nondeterministic
 algorithms in polynomial time.
 
-Obviously, any problem in _P_ is also in _NP._ But it seems that there should be
-many other problems in _NP:_ to show that a problem is in _NP, we_ need only
+Obviously, any problem in P is also in NP. But it seems that there should be
+many other problems in NP: to show that a problem is in NP, we need only
 find a polynomial-time algorithm to check that a given solution (the guessed
 solution) is valid. For example, the “yes-no” version of the longest-path
-problem is in _NP._ Another example of a problem in _NP_ is the _satisfiability_
+problem is in NP. Another example of a problem in NP is the satisfiability
 problem. Given a logical formula of the form
 
-(Xl + 23 + %)*(Icl + z2 + x4)*(23 + x4 + %)*(x2 + :3 _+ x5)_
+(Xl + 23 + %)(Icl + z2 + x4)(23 + x4 + %)*(x2 + :3 + x5)
 
-where the zz’s represent variables which take on truth values **(true** or false),
+where the zz’s represent variables which take on truth values (true or false),
 
 “+” represents or, “*” represents and, and z represents not, the satisfiability
 problem is to determine whether or not there exists an assignment of truth
-values to the variables that makes the formula **true** (“satisfies” it). We’ll see
+values to the variables that makes the formula true (“satisfies” it). We’ll see
 below that this particular problem plays a special role in the theory.
 Nondeterminism is such a powerful operation that it seems almost absurd to consider it seriously. Why bother considering an imaginary tool that
 makes difficult problems seem trivial? The answer is that, powerful as nondeterminism may seem, no one has been able to prove that it helps for any
 particular problem! Put another way, no one has been able to find a single
 
-
 ###### satisfiability
-
-
 ###### + %)*(x2
-
-
 ###### + x4)*(23 +
-
-
 ###### x5)
-
 ```
 out
 
@@ -33400,53 +27172,47 @@ out
 
 :3
 
-
 “*”
-
 
 x4
 
-
 +
-
-
------
 
 530 CHAPTER 40
 
 example of a problem which can be proven to be in NP but not in P (or even
-prove that one exists): we do not know whether or not _P_ = _NP._ This is a
+prove that one exists): we do not know whether or not P = NP. This is a
 quite frustrating situation because many important practical problems belong
-to _NP_ (they could be solved efficiently on a non-deterministic machine) but
-may or may not belong to _P_ (we don’t know any efficient algorithms for
+to NP (they could be solved efficiently on a non-deterministic machine) but
+may or may not belong to P (we don’t know any efficient algorithms for
 them on a deterministic machine). If we could prove that a problem doesn’t
-belong to _P,_ then we could abandon the search for an efficient solution to
+belong to P, then we could abandon the search for an efficient solution to
 it. In the absence of such a proof, there is the lingering possibility that some
 efficient algorithm has gone undiscovered. In fact, given the current state
 of our knowledge, it could be the case that there is some efficient algorithm
-for every problem in _NP,_ which would imply that many efficient algorithms
-have gone undiscovered. Virtually no one believes that _P_ = _NP,_ and a considerable amount of effort has gone into proving the contrary, but this remains
+for every problem in NP, which would imply that many efficient algorithms
+have gone undiscovered. Virtually no one believes that P = NP, and a considerable amount of effort has gone into proving the contrary, but this remains
 the outstanding open research problem in computer science.
 
-_NP-Completeness_
+NP-Completeness
 
-Below we’ll look at a list of problems that are known to belong to _NP_ but
-which might or might not belong to _P._ That is, they are easy to solve on a
+Below we’ll look at a list of problems that are known to belong to NP but
+which might or might not belong to P. That is, they are easy to solve on a
 non-deterministic machine, but, despite considerable effort, no one has been
 able to find an efficient algorithm on a conventional machine (or prove that
 none exists) for any of them. These problems have an additional property
-that provides convincing evidence that _P # NP: if any of the problems can be_
+that provides convincing evidence that P # NP: if any of the problems can be
 solved in polynomial time on a deterministic machine, then so can all problems
-in _NP_ (i.e., _P_ = _NP)._ That is, the collective failure of all the researchers
+in NP (i.e., P = NP). That is, the collective failure of all the researchers
 to find efficient algorithms for all of these problems might be viewed as a
-collective failure to prove that _P_ = _NP._ Such problems are said to be _NP-_
+collective failure to prove that P = NP. Such problems are said to be NP-
 
 complete. It turns out that a large number of interesting practical problems
 have this characteristic.
 
 The primary tool used to prove that problems are NP-complete uses
-the idea of polynomial _reducibility._ We show that any algorithm to solve a
-new problem in _NP_ can be used to solve some known NP-complete problem
+the idea of polynomial reducibility. We show that any algorithm to solve a
+new problem in NP can be used to solve some known NP-complete problem
 by the following process: transform any instance of the known NP-complete
 problem to an instance of the new problem, solve the problem using the given
 algorithm, then transform the solution back to a solution of the NP-complete
@@ -33456,26 +27222,22 @@ we mean that the transformations can be done in polynomial time: thus the
 existence of a polynomial-time algorithm for the new problem would imply the
 existence of a polynomial-time algorithm for the NP-complete problem, and
 this would (by definition) imply the existence of polynomial-time algorithms
-for all problems in _NP._
-
+for all problems in NP.
 
 #
-
-
------
 
 NP-COMPLETE PROBLEMS 531
 
 The concept of reduction provides a useful mechanism for classifying
-algorithms. For example, to prove that a problem in _NP_ is NP-complete,
+algorithms. For example, to prove that a problem in NP is NP-complete,
 we need only show that some known NP-complete problem is polynomially
 reducible to it: that is, that a polynomial-time algorithm for the new problem
 could be used to solve the NP-complete problem, and then could, in turn, be
-used to solve all problems in _NP._ For an example of reduction, consider the
+used to solve all problems in NP. For an example of reduction, consider the
 following two problems:
 
 TRAVELING SALESMAN: Given a set of cities, and distances between
-all pairs, find a tour of all the cities of distance less than _M._
+all pairs, find a tour of all the cities of distance less than M.
 HAMILTON CYCLE: Given a graph, find a simple cycle that includes
 all the vertices.
 
@@ -33509,13 +27271,9 @@ problem (a graph) with the property that knowing whether the graph has a
 Hamilton cycle tells us whether the formula is satisfiable. The graph is built
 from small components (corresponding to the variables) which can be traversed
 
-
 t’he
 
-
------
-
-_532_ _ChXPTER 40_
+532 ChXPTER 40
 
 by a simple path in only one of two ways (corresponding to the truth or falsity
 of the variables). These small components are attached together as specified
@@ -33528,7 +27286,7 @@ Thus, if we were to have a polynomial-time algorithm for the traveling
 salesman problem, then we would have a polynomial-time algorithm for the
 Hamilton cycle problem, which would also give us a polynomial-time algorithm
 for the satisfiability problem. Each problem that is proven NP-complete
-provides another potential basis for proving yet another future problem _NP-_
+provides another potential basis for proving yet another future problem NP-
 complete. The proof might be as simple as the reduction given above from the
 Hamilton cycle problem to the traveling salesman problem, or as complicated
 as the transformation sketched above from the satisfiability problem to the
@@ -33536,37 +27294,31 @@ Hamilton cycle problem, or somewhere in between. Literally thousands of
 problems have been proven to be NP-complete over the last ten years by
 transforming one to another in this way.
 
-_Cook’s Theorem_
+Cook’s Theorem
 
 Reduction uses the NP-completeness of one problem to imply the NP-completeness of another. There is one case where it doesn’t apply: how was the
 first problem proven to be NP-complete? This was done by S. A. Cook in
 1971. Cook gave a direct proof that satisfiability is NP-complete: that if
 there is a polynomial time algorithm for satisfiability, then all problems in
-_NP_ can be solved in polynomial time.
+NP can be solved in polynomial time.
 The proof is extremely complicated but the general method can be explained. First, a full mathematical definition of a machine capable of solving
-any problem in _NP_ is developed. This is a simple model of a general-purpose
+any problem in NP is developed. This is a simple model of a general-purpose
 computer known as a Turing machine which can read inputs, perform certain
 operations, and write outputs. A Turing machine can perform any computation that any other general purpose computer can, using the same amount of
 time (to within a polynomial factor), and it has the additional advantage that
 it can be concisely described mathematically. Endowed with the additional
-power of nondeterminism, a Turing machine can solve any problem in _NP._
+power of nondeterminism, a Turing machine can solve any problem in NP.
 The next step in the proof is to describe each feature of the machine, including the way that instructions are executed, in terms of logical formulas such
-as appear in the satisfiability problem. In this way a correspondence is established between every problem in _NP_ (which can be expressed as a program on
+as appear in the satisfiability problem. In this way a correspondence is established between every problem in NP (which can be expressed as a program on
 the nondeterministic Turing machine) and some instance of satisfiability (the
 translation of that program into a logical formula). Now, the solution to the
 satisfiability problem essentially corresponds t,o a simulation of the machine
 
-
-_ChXPTER 40_
-
+ChXPTER 40
 
 first
 
-
 t,o
-
-
------
 
 W-COMPLETE PROBLEMS
 
@@ -33575,14 +27327,14 @@ instance of the given problem. Further details of this proof are well beyond
 the scope of this book. Fortunately, only one such proof is really necessary:
 it is much easier to use reduction to prove NP-completeness.
 
-Some _NP-_ Complete _Problems_
+Some NP- Complete Problems
 
 As mentioned above, literally thousands of diverse problems are known to be
 NP-complete. In this section, we list a few for purposes of illustrating the
 wide range of problems that have been studied. Of course, the list begins
-with _satisfiability_ and includes _traveling salesman_ and _Hamilton cycle, as_ well
+with satisfiability and includes traveling salesman and Hamilton cycle, as well
 
-as longest _path._ The following additional problems are representative:
+as longest path. The following additional problems are representative:
 PARTITION: Given a set of integers, can they be divided into two sets
 whose sum is equal?
 INTEGER LINEAR PROGRAMMING: Given a linear program, is there
@@ -33593,10 +27345,10 @@ the tasks be arranged so that the deadline is met?
 VERTEX COVER: Given a graph and an integer N, is there a set of
 less than N vertices which touches all the edges?
 These and many related problems have important natural practical applications, and there has been strong motivation for some time to find good algorithms to solve them. The fact that no good algorithm has been found for any
-of these problems is surely strong evidence that _P_ # _NP,_ and most researchers certainly believe this to be the case. (On the other hand, the fact that
-no one has been able to prove that any of these problem do not belong to _P_
+of these problems is surely strong evidence that P # NP, and most researchers certainly believe this to be the case. (On the other hand, the fact that
+no one has been able to prove that any of these problem do not belong to P
 could be construed to comprise a similar body of circumstantial evidence on
-the other side.) Whether or not _P_ = _NP,_ the practical fact is that we have at
+the other side.) Whether or not P = NP, the practical fact is that we have at
 present no algorithms that are guaranteed to solve any of the NP-complete
 problems efficiently.
 As indicated in the previous chapter, several techniques have been developed to cope with this situation, since some sort of solution to these various
@@ -33610,13 +27362,9 @@ while it may not be possible to find an algorithm that is guaranteed to work
 well on all instances of a problem, it may well be possible to solve efficiently
 virtually all of the instances that arise in practice. A third approach is to work
 
-
 W-COMPLETE
 
-
------
-
-**_534_** **_CHAPTER 40_**
+534 CHAPTER 40
 
 with “efficient” exponential algorithms, using the backtracking techniques
 described in the previous chapter. Finally, there is quite a large gap between
@@ -33625,7 +27373,7 @@ about an algorithm that runs in time proportional to Nl”sN or ‘2m?
 
 All of the application areas that we’ve studied in this book are touched
 by NP-completeness: there are NP-complete problems in numerical applications, in sorting and searching, in string processing, in geometry, and in graph
-processing. The most important practical contribution of the theory of **_NP-_**
+processing. The most important practical contribution of the theory of NP-
 
 completeness is that it provides a mechanism to discover whether a new problem from any of these diverse areas is “easy” or “hard.” If one can find an
 efficient algorithm to solve a new problem, then there is no difficulty. If not,
@@ -33637,41 +27385,35 @@ have learned a great deal about efficient computational methods since Euclid,
 but the theory of NP-completeness shows that, indeed, we still have a great
 deal to learn.
 
+535
 
------
-
-_535_
-
-
-_Exercises_
-
+Exercises
 
 1.
 
-_2._
+2.
 
-_3._
+3.
 
-_4._
+4.
 
-_5._
+5.
 
-_6._
+6.
 
-_7._
+7.
 
-_8._
+8.
 
-_9._
+9.
 
 10.
-
 
 Write a program to find the longest simple path from x to y in a given
 weighted graph.
 
 Could there be an algorithm which solves an NP-complete problem in
-an average time of N log N, if _P_ # _NP?_ Explain your answer.
+an average time of N log N, if P # NP? Explain your answer.
 
 Give a nondeterministic polynomial-time algorithm for solving the PARTITION problem.
 
@@ -33684,11 +27426,11 @@ salesman problem in time proportional to l.lN?
 Is the logical formula given in the text satisfiable?
 
 Could one of the “algorithm machines” with full parallelism be used to
-solve an NP-complete problem in polynomial time, if _P_ # _NP?_ Explain
+solve an NP-complete problem in polynomial time, if P # NP? Explain
 your answer.
 
-How does the problem “compute the exact value of 2N” fit into the _P-_
-_NP_ classification scheme?
+How does the problem “compute the exact value of 2N” fit into the P-
+NP classification scheme?
 
 Prove that the problem of finding a Hamilton cycle in a directed graph is
 NP-complete, using the NP-completeness of the Hamilton cycle problem
@@ -33698,18 +27440,10 @@ Suppose that two problems are known to be NP-complete. Does this
 imply that there is a polynomial-time reduction from one to the other, if
 
 ###### P#NP?
-
-
 ###### P#NP?
-
-
-_P_
-
+P
 
 #
-
-
------
 
 536
 
@@ -33734,34 +27468,31 @@ Lewis and Papadimitriou and the book by Garey and Johnson, which has a
 full description of various types of NP-completeness and a categorized listing
 of hundreds of NP-complete problems.
 
-M. R. Garey and D. S. Johnson, Computers _and Intractability: a Guide to the_
-_Theory_ _of_ NP-Completeness, Freeman, San Francisco, CA, 1979.
+M. R. Garey and D. S. Johnson, Computers and Intractability: a Guide to the
+Theory of NP-Completeness, Freeman, San Francisco, CA, 1979.
 
-T. _C._ Hu, _Combinatorial Algorithms,_ Addison-Wesley, Reading, MA, 1982.
+T. C. Hu, Combinatorial Algorithms, Addison-Wesley, Reading, MA, 1982.
 
 H. R. Lewis and C. H. Papadimitriou, “The efficiency of algorithms,” Scientific
 American, 238, 1 (1978).
 
-C. A. Mead and L. C. Conway, _Introduction to VLSI Design,_ Addison-Wesley,
+C. A. Mead and L. C. Conway, Introduction to VLSI Design, Addison-Wesley,
 Reading, MA, 1980.
 
-C. H. Papadimitriou and K. Steiglitz, _Combinatorial Optimization: Algorithms_
-_and Complexity,_ Prentice-Hall, Englewood Cliffs, NJ, 1982.
+C. H. Papadimitriou and K. Steiglitz, Combinatorial Optimization: Algorithms
+and Complexity, Prentice-Hall, Englewood Cliffs, NJ, 1982.
 
-E. M. Reingold, J. Nievergelt, and _N._ Deo, _Combinatorial Algorithms: Theory_
-_and Practice,_ Prentice-Hall, Englewood Cliffs, NJ, 1982.
+E. M. Reingold, J. Nievergelt, and N. Deo, Combinatorial Algorithms: Theory
+and Practice, Prentice-Hall, Englewood Cliffs, NJ, 1982.
 
-L. R. Rabiner and B. Gold, _Digital Signal Processing,_ Prentice-Hall, Englewood
+L. R. Rabiner and B. Gold, Digital Signal Processing, Prentice-Hall, Englewood
 Cliffs, NJ, 1974.
 
-H. S. Stone, “Parallel processing with the perfect shuffle,” _IEEE_ Transactions
-_on Computing,_ C-20, 2 (February, 1971).
+H. S. Stone, “Parallel processing with the perfect shuffle,” IEEE Transactions
+on Computing, C-20, 2 (February, 1971).
 
-M. B. Wells, _Elements_ _of_ _Combinatorial Computing,_ Pergaman Press, Oxford,
+M. B. Wells, Elements of Combinatorial Computing, Pergaman Press, Oxford,
 1971.
-
-
------
 
 Abacus, 528.
 Abstract data structures, 30, 88,
@@ -33772,7 +27503,7 @@ Additive congruential generator
 (randomint), 38-40.
 add (polynomials represented
 with linked lists), 27.
-**_add_** (sparse polynomials), 28.
+add (sparse polynomials), 28.
 Adjacency lists, 3788381, 3822
 383, 391-392, 410-411, 435.
 Adjacency matrix, 3777378, 384,
@@ -33790,9 +27521,7 @@ All-nearest-neighbors, 366.
 All-pairs shortest paths, 4922494.
 Analysis of algorithms, 12-16, 19.
 
-
 ###### Index
-
 Approximation algorithms, 522
 524, 533.
 Arbitrary numbers, 33.
@@ -33822,14 +27551,9 @@ Biconnectivity, 390-392, 429.
 
 537
 
-
 Balanced multiway merging,
 
-
 Aho,
-
-
------
 
 538
 
@@ -33853,7 +27577,7 @@ Binary trees, 179, 237.
 Binomial queues, 167.
 Bipartite graphs, 444-447.
 Bitonic merge, 463-465.
-_bits,_ 116, 118, 122, 214, 215, 221,
+bits, 116, 118, 122, 214, 215, 221,
 222.
 Bland, R. G., 507.
 Bland’s method (for cycle
@@ -33879,8 +27603,7 @@ bstinsert (binary search tree insertion), 184, 353, 355.
 b&range (one-dimensional range
 search), 337, 355.
 
-_bubblesort,_ _99._
-
+bubblesort, 99.
 
 Caesar cipher, 297.
 Catalan numbers, 487.
@@ -33924,20 +27647,13 @@ Convex hull, 321.
 Convex hull algorithms, 321-333,
 368, 370.
 
-
 (binarysearch), 336.
-
 
 250-251.
 
-
 353, 3566359.
 
-
 178%
-
-
------
 
 INDEX
 
@@ -33982,7 +27698,6 @@ Btree, 228-231, 237.
 binary search tree, 178-185.
 deque, 263-267.
 
-
 539
 
 heap, 129-140.
@@ -34025,11 +27740,7 @@ Digital search trees, 213-216.
 digitalinsert, 215.
 digitalsearch, 214.
 
-
 stack, 109-110, 264, 394, 428,
-
-
------
 
 540
 
@@ -34074,7 +27785,6 @@ backward, 437.
 capacities, 435.
 cross, 423, 430.
 down, 423.
-
 
 forward, 437.
 negative weight, 494.
@@ -34121,14 +27831,9 @@ External nodes, 180, 230, 289,
 External searching, 225-235.
 External sorting, 155-165.
 
-
 426-428.
 
-
 eval
-
-
------
 
 INDEX
 
@@ -34177,7 +27882,6 @@ Garey, M. R., 536.
 Gauss-Jordan method, 63, 65,
 508.
 
-
 541
 
 Gaussian elimination, 57-65, 60
@@ -34221,17 +27925,11 @@ exhaustive search for cycles,
 maximum tlow in a network,
 439-440.
 
-
 findinit (fastfind initialization),
-
 
 Cnode, 188.
 
-
 515-520.
-
-
------
 
 542
 
@@ -34278,7 +27976,6 @@ g7ngegrid), 342 (gridrange),
 
 Guibas, L., 237.
 
-
 Hamilton cycle problem, 514520, 531-532.
 Hash functions, 202.
 Hashing, 201-210, 234.
@@ -34320,14 +28017,9 @@ Horner’s rule, 45-46.
 Hu, T. C., 536.
 Huffman, D. A., 304.
 
-
 join, 139-140.
 
-
 421&
-
-
------
 
 INDEX
 
@@ -34372,7 +28064,6 @@ Interpolation search, 177-178.
 Interpolation.
 polynomial, 68.
 
-
 543
 
 spline, 68-72.
@@ -34415,14 +28106,9 @@ Lagrange’s interpolation formula,
 47, 472.
 Leading term, 14, 15.
 
-
 (kruskal), 417.
 
-
 Intersection, 349-359, 370.
-
-
------
 
 544
 
@@ -34453,11 +28139,11 @@ input and construction, 26
 (readlist).
 merging, 148 (listmerge).
 output, 26 (writelist).
-sequential search, 174 _(listin-_
+sequential search, 174 (listin-
 
 sert, listsearch), 203, 341,
 343.
-sorting, 149-152, 149 _(sort),_
+sorting, 149-152, 149 (sort),
 151 (mergesort).
 
 InN, 16.
@@ -34468,7 +28154,6 @@ Lookahead, 273.
 
 MACSYMA, 88.
 Malcomb, M. A., 88.
-
 
 Master index, 227.
 Matching, 443-452, 454.
@@ -34506,20 +28191,13 @@ Microprocessors, 458, 469.
 Minimum cut, 438.
 Minimum spanning trees, 408413, 417, 454, 518, 522-524.
 
-
 initialization (buildytree), 353.
-
 
 McCreight, E., 228.
 
-
 InN, 16.
 
-
 sert,
-
-
------
 
 INDEX
 
@@ -34566,7 +28244,6 @@ Numerical analysis, 88.
 
 Objective function, 498.
 
-
 545
 
 Odd-even merge, 459-463.
@@ -34609,18 +28286,11 @@ Perfect shuffle, 459-465, 468469, 478-480, 536.
 Permutation generation, 520522.
 Pippenger, N., 231, N., 237.
 
-
 (bstrange), 337.
-
 
 quer), 48-50 (mult).
 
-
 ###### N
-
-
------
-
 546
 
 Pivoting, 5044510, 508 (pivot).
@@ -34655,7 +28325,7 @@ repair, indirect), 139, 289,
 
 pqinsert, 139.
 
-**_pqreznove_** (remove largest item
+pqreznove (remove largest item
 from priority queue), 396,
 139, 290, 411.
 Pratt, V. R., 242, 304.
@@ -34664,8 +28334,7 @@ Prim, R. C., 410, 454.
 Prim’s algorithm (minimum
 spanning tree), 410-411, 413.
 Print binary search tree
-**_(treeprint), 336._**
-
+(treeprint), 336.
 
 Priority graph traversal (priority
 first search).
@@ -34676,7 +28345,7 @@ Euclidean shortest path, 418.
 minimum spanning tree, 409411, 416.
 network flow, 439-440.
 shortest path, 413-416.
-**_sparsepfs,_** **_395-397._**
+sparsepfs, 395-397.
 Priority queues, 127-140, 144,
 158-161, 167, 395-397.
 Probe, 205.
@@ -34698,7 +28367,7 @@ Quicksort, 103-113, 118, 124,
 Rabin, M. O., 243.
 Rabin-Karp string searching
 
-**_(rksearch),_** **_252-253._**
+(rksearch), 252-253.
 Rabiner, L. R., 536.
 radixexchange (radix exchange
 sort), 118.
@@ -34707,17 +28376,11 @@ digital search trees, 213-216.
 multiway, 218-219.
 Patricia, 219-223.
 
-
-**_(rksearch),_**
-
+(rksearch),
 
 pqinsert, 139.
 
-
-**_pqreznove_**
-
-
------
+pqreznove
 
 INDEX
 
@@ -34770,7 +28433,6 @@ removal, 110-111, 145-146,
 
 12.
 
-
 547
 
 two-dimensional, 356, 361,
@@ -34782,7 +28444,7 @@ Regular expression, 258.
 Regular-expression pattern
 matching, 258, 279, 304.
 Reingold, E. M., 536.
-**_remove_** (delete largest element in
+remove (delete largest element in
 heap), 134.
 Replacement selection, 158-161.
 replace (replace largest element
@@ -34810,17 +28472,13 @@ Run-length encoding, 284-286.
 RSA public-key cryptosystem,
 301-302.
 
-**_same_** (test if two points are on the
+same (test if two points are on the
 same side of a line), 313.
 Satisfiability, 529, 531-532.
 
-
 /CD
 
-
------
-
-_548_
+548
 
 Scan conversion, 310-311.
 scan (line intersection, Manhattan), 355.
@@ -34837,7 +28495,7 @@ external searching, 225-235.
 hashing, 201-210.
 indexed dequential access,
 
-_226-228._
+226-228.
 
 Patricia, 221-222.
 radix search tries, 216-218.
@@ -34849,23 +28507,22 @@ Sedgewick, R., 167, 237.
 Selection, 144-146.
 select (selection, nonrecursive),
 146.
-_select_ (selection, recursive), 145.
-Selection sort, 95 _(selection),_ 144,
+select (selection, recursive), 145.
+Selection sort, 95 (selection), 144,
 
-_326._
+326.
 
 Self-organizing search, 175.
 Seminumerical algorithms, 88.
 Sentinel, 106, 173, 273, 309, 329,
-_96, 247, 254, 493._
+96, 247, 254, 493.
 Separate chaining, 202-204, 209.
 Sequential searching, 172-174,
 339.
 Sets, 398-405.
 Shamir, A., 301, 304.
 Shamos, M. I., 349, 370.
-Shellsort _(shellsort),_ _97-99, 329._
-
+Shellsort (shellsort), 97-99, 329.
 
 Shortest path, 413-415, 418, 454,
 492-494.
@@ -34873,7 +28530,7 @@ Simple closed path, 313-315.
 Simplex method, 497-510.
 Simultaneous equations, 58, 75,
 
-_503-504._
+503-504.
 
 Single rotation, 196-197.
 Sink, 435.
@@ -34900,7 +28557,7 @@ Quicksort, 103-114.
 radix exchange, 117-121.
 relationship to convex hull,
 
-_323._
+323.
 
 selection, 94-95.
 shellsort, 97-99.
@@ -34913,14 +28570,9 @@ Spanning trees, 375, 408-413.
 Sparse graphs, 376, 378, 396,
 397-398, 411, 413.
 
-
-_(shellsort),_
-
+(shellsort),
 
 150-152.
-
-
------
 
 INDEX
 
@@ -34961,7 +28613,6 @@ substitute (backward substitution), 62.
 Supercomputer, 458, 513, 528.
 Symbol tables, 171.
 Systolic arrays, 466, 536.
-
 
 549
 
@@ -35009,14 +28660,9 @@ father link representation,
 290-292, 395-396, 4OOC404,
 411, 415.
 
-
 (eval).
 
-
 428-430.
-
-
------
 
 550
 
@@ -35050,7 +28696,7 @@ Union-find algorithms, 398-405.
 analysis, 405.
 
 (fastfind), 403.
-_(find),_ 401.
+(find), 401.
 halving, 404.
 height balancing, 404.
 path compression, 403.
@@ -35064,7 +28710,6 @@ upheap, insert (heap insertion at
 bottom), 132.
 
 van Leeuwan, J., 454.
-
 
 Variable-length encoding, 286293.
 Vernam cipher, 299.
@@ -35101,9 +28746,6 @@ Warshall’s algorithm (computing
 transitive closure), 425, 492493.
 Wegner, P., 88.
 
-
------
-
 INDEX 551
 
 Weight balancing, 402.
@@ -35127,11 +28769,7 @@ z, 25-28, 174-175, 180-181, 194,
 203, 214-215, 221-222, 341,
 345, 352-353, 364-365.
 
-
 221-222,
-
-
------
 
 DESIGNS
 
@@ -35155,53 +28793,40 @@ Page 1
 
 Back
 
-
 Insertion sort: Color represents the key value; the ith column (from
 right to left) shows result of ith insertion.
 
-Relatively prime _numbers:_ A mark is in positions i,j for which the
+Relatively prime numbers: A mark is in positions i,j for which the
 greatest common divisor of i and j is not 1.
 
-_Random points:_ A mark is in position i, j with i and j generated by
+Random points: A mark is in position i, j with i and j generated by
 a linear congruential random number generator.
 
-_A heap:_ Horizontal coordinate is position in heap, vertical coordinate
+A heap: Horizontal coordinate is position in heap, vertical coordinate
 is value.
 
-_A_ binary _search tree_ laid out in the manner of an H-tree.
+A binary search tree laid out in the manner of an H-tree.
 
-_Huffman’s algorithm before and_ after: run on the initial part of the
+Huffman’s algorithm before and after: run on the initial part of the
 text file for Chapter 22.
 
 One intersecting pair among a set of random horizontal and vertical
 
 lines.
 
-_Depth first search on a grid_ graph: each node is adjacent to its
+Depth first search on a grid graph: each node is adjacent to its
 immediate neighbors; adjacency lists are in random order.
 
-_Counting to_ 28: eight cyclic rotations.
+Counting to 28: eight cyclic rotations.
 
-_Random permutation:_ Color represents the key value; the ith column
+Random permutation: Color represents the key value; the ith column
 (from right to left) shows result of exchanging ith item with one
 having a random index greater than i.
 
-
 ###### i,j
-
-
 ###### j
-
-
 ###### j
-
-
 Heap design inspired by the movie “Sorting out Sorting,” R. Baecker, University of Toronto.
 Pictures printed by Tom Freeman, using programs from the text.
 
-
 ###### j
-
-
------
-
